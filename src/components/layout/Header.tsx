@@ -66,6 +66,9 @@ export function Header({ onMenuToggle }: HeaderProps) {
                 <Link to="/bonus" className="block px-4 py-2.5 text-sm text-white hover:bg-surface transition-colors">
                   Bonuses
                 </Link>
+                <Link to="/bets" className="block px-4 py-2.5 text-sm text-white hover:bg-surface transition-colors">
+                  Bet History
+                </Link>
                 <Link to="/transactions" className="block px-4 py-2.5 text-sm text-white hover:bg-surface transition-colors">
                   Transactions
                 </Link>

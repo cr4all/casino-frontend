@@ -1,5 +1,5 @@
 import { useEffect, useState, type FormEvent } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { playerApi } from '@/api/wallet.api';
 import { useAuthStore } from '@/stores/authStore';
 import { Button } from '@/components/common/Button';
@@ -69,6 +69,36 @@ export function ProfilePage() {
           <div>
             <span className="text-xs text-muted">Country</span>
             <p className="text-sm text-white">{profile?.country ?? '—'}</p>
+          </div>
+        </div>
+
+        <div className="mb-6 border-b border-white/5 pb-6">
+          <p className="mb-3 text-xs font-medium text-muted">Account</p>
+          <div className="flex flex-wrap gap-2">
+            <Link
+              to="/bets"
+              className="rounded-md border border-white/10 px-3 py-1.5 text-xs text-white hover:border-accent/40 hover:text-accent"
+            >
+              Bet History
+            </Link>
+            <Link
+              to="/transactions"
+              className="rounded-md border border-white/10 px-3 py-1.5 text-xs text-white hover:border-accent/40 hover:text-accent"
+            >
+              Transactions
+            </Link>
+            <Link
+              to="/deposit"
+              className="rounded-md border border-white/10 px-3 py-1.5 text-xs text-white hover:border-accent/40 hover:text-accent"
+            >
+              Deposit
+            </Link>
+            <Link
+              to="/withdraw"
+              className="rounded-md border border-white/10 px-3 py-1.5 text-xs text-white hover:border-accent/40 hover:text-accent"
+            >
+              Withdraw
+            </Link>
           </div>
         </div>
 

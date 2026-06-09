@@ -3,12 +3,15 @@ import { Link, Navigate, useSearchParams } from 'react-router-dom';
 import { gameApi } from '@/api/game.api';
 import { paymentApi, type DepositItem, type WithdrawalItem } from '@/api/payment.api';
 import { walletApi } from '@/api/wallet.api';
+import { BetHistoryTable } from '@/components/account/BetHistoryTable';
 import { Pagination } from '@/components/common/Pagination';
 import { StatusBadge } from '@/components/common/StatusBadge';
 import { useAuthStore } from '@/stores/authStore';
 import type { BetHistoryItem, PaginationMeta, Transaction } from '@/types';
 
 type Tab = 'bets' | 'deposits' | 'withdrawals' | 'wallet';
+
+const VALID_TABS: Tab[] = ['bets', 'deposits', 'withdrawals', 'wallet'];
 
 const EMPTY_PAGINATION: PaginationMeta = {
   current_page: 1,
@@ -20,7 +23,8 @@ const EMPTY_PAGINATION: PaginationMeta = {
 export function TransactionsPage() {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const [searchParams, setSearchParams] = useSearchParams();
-  const tab = (searchParams.get('tab') as Tab) || 'bets';
+  const tabParam = searchParams.get('tab');
+  const tab: Tab = VALID_TABS.includes(tabParam as Tab) ? (tabParam as Tab) : 'bets';
 
   const [bets, setBets] = useState<BetHistoryItem[]>([]);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
@@ -64,6 +68,10 @@ export function TransactionsPage() {
   useEffect(() => {
     loadData();
   }, [loadData]);
+
+  useEffect(() => {
+    setPage(1);
+  }, [tab]);
 
   if (!isAuthenticated) {
     return <Navigate to="/" replace />;
@@ -112,48 +120,15 @@ export function TransactionsPage() {
         ))}
       </div>
 
-      {loading ? (
+      {tab === 'bets' ? (
+        <BetHistoryTable
+          bets={bets}
+          pagination={pagination}
+          loading={loading}
+          onPageChange={setPage}
+        />
+      ) : loading ? (
         <p className="text-muted">Loading...</p>
-      ) : tab === 'bets' ? (
-        bets.length === 0 ? (
-          <EmptyState message="No bets yet. Play a game to see your history here." />
-        ) : (
-          <>
-            <Table>
-              <thead>
-                <tr className="border-b border-white/5 bg-surface text-left">
-                  <Th>Game</Th>
-                  <Th>Bet</Th>
-                  <Th>Win</Th>
-                  <Th>Net</Th>
-                  <Th>Status</Th>
-                  <Th className="hidden sm:table-cell">Date</Th>
-                </tr>
-              </thead>
-              <tbody>
-                {bets.map((bet) => (
-                  <tr key={bet.id} className="border-b border-white/5 hover:bg-surface/50">
-                    <td className="px-4 py-3 text-white">{bet.game.name}</td>
-                    <td className="px-4 py-3 font-mono text-white">
-                      {bet.currency} {bet.bet_amount}
-                    </td>
-                    <td className="px-4 py-3 font-mono text-accent-gold">
-                      {bet.currency} {bet.win_amount}
-                    </td>
-                    <td className={`px-4 py-3 font-mono ${parseFloat(bet.net_amount) >= 0 ? 'text-green-400' : 'text-red-400'}`}>
-                      {bet.net_amount}
-                    </td>
-                    <td className="px-4 py-3"><StatusBadge status={bet.status} /></td>
-                    <td className="px-4 py-3 text-xs text-muted hidden sm:table-cell">
-                      {bet.played_at ? new Date(bet.played_at).toLocaleString() : '—'}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </Table>
-            <Pagination pagination={pagination} onPageChange={setPage} />
-          </>
-        )
       ) : tab === 'deposits' ? (
         deposits.length === 0 ? (
           <EmptyState message="No deposit requests yet." action={{ label: 'Make a deposit', to: '/deposit' }} />

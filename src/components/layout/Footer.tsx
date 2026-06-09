@@ -19,6 +19,7 @@ export function Footer() {
               <li><Link to="/deposit" className="text-xs text-muted hover:text-white transition-colors">Deposit</Link></li>
               <li><Link to="/withdraw" className="text-xs text-muted hover:text-white transition-colors">Withdraw</Link></li>
               <li><Link to="/bonus" className="text-xs text-muted hover:text-white transition-colors">Bonuses</Link></li>
+              <li><Link to="/bets" className="text-xs text-muted hover:text-white transition-colors">Bet History</Link></li>
               <li><Link to="/transactions" className="text-xs text-muted hover:text-white transition-colors">Transactions</Link></li>
             </ul>
           </div>
