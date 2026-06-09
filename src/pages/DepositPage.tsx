@@ -1,18 +1,40 @@
 import { useEffect, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
-import { paymentApi, type DepositItem, type DepositRequest, type PaymentMethod } from '@/api/payment.api';
+import { paymentApi, type CryptoCurrency, type DepositItem, type DepositRequest, type PaymentMethod } from '@/api/payment.api';
 import { useAuthStore } from '@/stores/authStore';
 import { useWalletStore } from '@/stores/walletStore';
 import { Button } from '@/components/common/Button';
 import { StatusBadge } from '@/components/common/StatusBadge';
 import { getApiErrorMessage } from '@/utils/apiError';
 
+function CopyButton({ value }: { value: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(value);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={handleCopy}
+      className="ml-2 rounded px-2 py-0.5 text-xs text-accent hover:bg-accent/10"
+    >
+      {copied ? 'Copied' : 'Copy'}
+    </button>
+  );
+}
+
 export function DepositPage() {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const fetchBalance = useWalletStore((s) => s.fetchBalance);
   const [methods, setMethods] = useState<PaymentMethod[]>([]);
+  const [cryptoCurrencies, setCryptoCurrencies] = useState<CryptoCurrency[]>([]);
   const [deposits, setDeposits] = useState<DepositItem[]>([]);
   const [methodId, setMethodId] = useState<number | ''>('');
+  const [payCurrency, setPayCurrency] = useState('');
   const [amount, setAmount] = useState('');
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
@@ -33,21 +55,42 @@ export function DepositPage() {
       .finally(() => setLoading(false));
   }, [isAuthenticated]);
 
+  const selected = methods.find((m) => m.id === methodId);
+  const isCrypto = selected?.type === 'crypto';
+
+  useEffect(() => {
+    if (!isCrypto) {
+      setCryptoCurrencies([]);
+      setPayCurrency('');
+      return;
+    }
+
+    paymentApi.getCryptoCurrencies()
+      .then((items) => {
+        setCryptoCurrencies(items);
+        if (items.length > 0) setPayCurrency(items[0].code);
+      })
+      .catch(() => setCryptoCurrencies([]));
+  }, [isCrypto, methodId]);
+
   if (!isAuthenticated) {
     return <Navigate to="/" replace />;
   }
 
-  const selected = methods.find((m) => m.id === methodId);
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!methodId || !amount) return;
+    if (isCrypto && !payCurrency) return;
     setSubmitting(true);
     setError(null);
     setMessage(null);
     setLastDeposit(null);
     try {
-      const result = await paymentApi.createDeposit(methodId, amount);
+      const result = await paymentApi.createDeposit(
+        methodId,
+        amount,
+        isCrypto ? payCurrency : undefined,
+      );
       setLastDeposit(result);
       setMessage(`Deposit request #${result.deposit_id} submitted. Status: ${result.status}`);
       setAmount('');
@@ -59,6 +102,9 @@ export function DepositPage() {
       setSubmitting(false);
     }
   };
+
+  const paymentInfo = lastDeposit?.payment_info ?? {};
+  const isCryptoPayment = isCrypto || Boolean(paymentInfo.pay_address || paymentInfo.address);
 
   return (
     <div className="py-8 max-w-2xl">
@@ -90,6 +136,29 @@ export function DepositPage() {
                 ))}
               </select>
             </div>
+
+            {isCrypto && (
+              <div>
+                <label htmlFor="deposit-currency" className="mb-1 block text-xs text-muted">Cryptocurrency</label>
+                <select
+                  id="deposit-currency"
+                  value={payCurrency}
+                  onChange={(e) => setPayCurrency(e.target.value)}
+                  className="w-full rounded-md border border-white/10 bg-background px-3 py-2 text-sm text-white"
+                  required
+                >
+                  {cryptoCurrencies.length === 0 ? (
+                    <option value="">Loading currencies...</option>
+                  ) : (
+                    cryptoCurrencies.map((c) => (
+                      <option key={c.code} value={c.code}>
+                        {c.name} ({c.code})
+                      </option>
+                    ))
+                  )}
+                </select>
+              </div>
+            )}
 
             {selected && (
               <p className="text-xs text-muted">
@@ -123,18 +192,37 @@ export function DepositPage() {
           {lastDeposit?.payment_info && Object.keys(lastDeposit.payment_info).length > 0 && (
             <div className="mt-4 rounded-lg border border-accent-gold/30 bg-accent-gold/5 p-4">
               <h3 className="mb-2 text-sm font-semibold text-accent-gold">Payment Instructions</h3>
+
+              {(paymentInfo.pay_amount || paymentInfo.pay_currency) && (
+                <p className="mb-3 text-sm text-white">
+                  Send{' '}
+                  <span className="font-mono font-semibold text-accent-gold">
+                    {String(paymentInfo.pay_amount ?? '')} {String(paymentInfo.pay_currency ?? '').toUpperCase()}
+                  </span>
+                  {' '}to the address below
+                </p>
+              )}
+
               <dl className="space-y-2">
-                {Object.entries(lastDeposit.payment_info).map(([key, value]) => (
-                  <div key={key}>
-                    <dt className="text-xs capitalize text-muted">{key.replace(/_/g, ' ')}</dt>
-                    <dd className="text-sm text-white break-all">
-                      {typeof value === 'object' ? JSON.stringify(value) : String(value)}
-                    </dd>
-                  </div>
-                ))}
+                {Object.entries(lastDeposit.payment_info).map(([key, value]) => {
+                  const display = typeof value === 'object' ? JSON.stringify(value) : String(value);
+                  const isAddress = key === 'address' || key === 'pay_address';
+
+                  return (
+                    <div key={key}>
+                      <dt className="text-xs capitalize text-muted">{key.replace(/_/g, ' ')}</dt>
+                      <dd className="text-sm text-white break-all">
+                        {display}
+                        {isAddress && display && <CopyButton value={display} />}
+                      </dd>
+                    </div>
+                  );
+                })}
               </dl>
               <p className="mt-3 text-xs text-muted">
-                After transfer, admin will confirm your deposit and credit your wallet.
+                {isCryptoPayment
+                  ? 'After blockchain confirmation, your wallet will be credited automatically.'
+                  : 'After transfer, admin will confirm your deposit and credit your wallet.'}
               </p>
             </div>
           )}

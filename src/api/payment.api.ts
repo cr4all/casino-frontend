@@ -9,6 +9,11 @@ export interface PaymentMethod {
   max_amount: string | null;
 }
 
+export interface CryptoCurrency {
+  code: string;
+  name: string;
+}
+
 export interface DepositRequest {
   deposit_id: number;
   status: string;
@@ -42,10 +47,16 @@ export const paymentApi = {
     return data.data;
   },
 
-  createDeposit: async (paymentMethodId: number, amount: string) => {
+  getCryptoCurrencies: async () => {
+    const { data } = await api.get<ApiResponse<{ items: CryptoCurrency[] }>>('/payment/crypto/currencies');
+    return data.data.items;
+  },
+
+  createDeposit: async (paymentMethodId: number, amount: string, payCurrency?: string) => {
     const { data } = await api.post<ApiResponse<DepositRequest>>('/payment/deposits', {
       payment_method_id: paymentMethodId,
       amount,
+      ...(payCurrency ? { pay_currency: payCurrency } : {}),
     });
     return data.data;
   },
