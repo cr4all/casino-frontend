@@ -1,0 +1,172 @@
+import { useEffect, useState } from 'react';
+import { Navigate } from 'react-router-dom';
+import { bonusApi, type ActiveBonus, type BonusPolicy } from '@/api/bonus.api';
+import { useAuthStore } from '@/stores/authStore';
+import { useWalletStore } from '@/stores/walletStore';
+import { Button } from '@/components/common/Button';
+import { StatusBadge } from '@/components/common/StatusBadge';
+import { getApiErrorMessage } from '@/utils/apiError';
+
+function WageringBar({ required, wagered }: { required: string; wagered: string }) {
+  const req = parseFloat(required) || 1;
+  const wag = parseFloat(wagered) || 0;
+  const pct = Math.min(100, (wag / req) * 100);
+
+  return (
+    <div className="mt-2">
+      <div className="mb-1 flex justify-between text-xs text-muted">
+        <span>Wagering progress</span>
+        <span>{pct.toFixed(0)}%</span>
+      </div>
+      <div className="h-1.5 overflow-hidden rounded-full bg-background">
+        <div
+          className="h-full rounded-full bg-accent-purple transition-all"
+          style={{ width: `${pct}%` }}
+        />
+      </div>
+      <p className="mt-1 text-xs text-muted">
+        {wagered} / {required}
+      </p>
+    </div>
+  );
+}
+
+export function BonusPage() {
+  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
+  const fetchBalance = useWalletStore((s) => s.fetchBalance);
+  const [available, setAvailable] = useState<BonusPolicy[]>([]);
+  const [active, setActive] = useState<ActiveBonus[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [claimingId, setClaimingId] = useState<number | null>(null);
+  const [message, setMessage] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  const load = () => {
+    setLoading(true);
+    Promise.all([bonusApi.getAvailable(), bonusApi.getActive()])
+      .then(([avail, act]) => {
+        setAvailable(avail);
+        setActive(act);
+      })
+      .finally(() => setLoading(false));
+  };
+
+  useEffect(() => {
+    if (!isAuthenticated) return;
+    load();
+  }, [isAuthenticated]);
+
+  if (!isAuthenticated) {
+    return <Navigate to="/" replace />;
+  }
+
+  const handleClaim = async (policyId: number) => {
+    setClaimingId(policyId);
+    setError(null);
+    setMessage(null);
+    try {
+      const result = await bonusApi.claim(policyId);
+      setMessage(`Bonus claimed: ${result.amount} (${result.status})`);
+      await fetchBalance();
+      load();
+    } catch (err) {
+      setError(getApiErrorMessage(err, 'Failed to claim bonus.'));
+    } finally {
+      setClaimingId(null);
+    }
+  };
+
+  return (
+    <div className="py-8">
+      <h1 className="mb-6 text-2xl font-bold text-white">Bonuses</h1>
+
+      {message && (
+        <p className="mb-4 rounded-md bg-green-500/10 px-4 py-3 text-sm text-green-400">{message}</p>
+      )}
+      {error && (
+        <p className="mb-4 rounded-md bg-red-500/10 px-4 py-3 text-sm text-red-400">{error}</p>
+      )}
+
+      {loading ? (
+        <p className="text-muted">Loading bonuses...</p>
+      ) : (
+        <div className="space-y-8">
+          <section>
+            <h2 className="mb-4 text-lg font-semibold text-white">Active Bonuses</h2>
+            {active.length === 0 ? (
+              <div className="rounded-lg border border-white/5 bg-surface p-6 text-center">
+                <p className="text-muted text-sm">No active bonuses.</p>
+              </div>
+            ) : (
+              <div className="grid gap-4 sm:grid-cols-2">
+                {active.map((bonus) => (
+                  <div
+                    key={bonus.id}
+                    className="rounded-lg border border-white/5 bg-surface p-5 shadow-card"
+                  >
+                    <div className="flex items-start justify-between gap-2">
+                      <div>
+                        <h3 className="font-semibold text-white">{bonus.policy_name ?? 'Bonus'}</h3>
+                        <p className="mt-1 text-xl font-bold text-accent-gold">{bonus.amount}</p>
+                      </div>
+                      <StatusBadge status={bonus.status} />
+                    </div>
+                    {bonus.wagering && (
+                      <WageringBar
+                        required={bonus.wagering.required}
+                        wagered={bonus.wagering.wagered}
+                      />
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+          </section>
+
+          <section>
+            <h2 className="mb-4 text-lg font-semibold text-white">Available Bonuses</h2>
+            {available.length === 0 ? (
+              <div className="rounded-lg border border-white/5 bg-surface p-6 text-center">
+                <p className="text-muted text-sm">No bonuses available at the moment.</p>
+              </div>
+            ) : (
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {available.map((policy) => (
+                  <div
+                    key={policy.policy_id}
+                    className="rounded-lg border border-accent/20 bg-gradient-to-br from-card to-surface p-5 shadow-card"
+                  >
+                    <span className="text-xs font-medium uppercase text-accent">{policy.type}</span>
+                    <h3 className="mt-1 font-semibold text-white">{policy.name}</h3>
+                    <p className="mt-2 text-sm text-muted">
+                      {policy.amount_type === 'percentage'
+                        ? `${policy.amount_value}% match`
+                        : `${policy.amount_value} fixed`}
+                      {' · '}
+                      {policy.wagering_multiplier}x wagering
+                    </p>
+                    {policy.type === 'welcome' && (
+                      <Button
+                        variant="primary"
+                        className="mt-4 w-full text-xs"
+                        disabled={claimingId === policy.policy_id}
+                        onClick={() => handleClaim(policy.policy_id)}
+                      >
+                        {claimingId === policy.policy_id ? 'Claiming...' : 'Claim Bonus'}
+                      </Button>
+                    )}
+                    {policy.type !== 'welcome' && (
+                      <p className="mt-4 text-xs text-muted">
+                        Applied automatically on qualifying deposits.
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+          </section>
+        </div>
+      )}
+    </div>
+  );
+}

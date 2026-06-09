@@ -1,0 +1,104 @@
+@import 'tailwindcss';
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+@theme {
+  --color-background: #0b101b;
+  --color-surface: #0f1522;
+  --color-sidebar: #0c111c;
+  --color-card: #151b28;
+  --color-card-hover: #1a2233;
+  --color-accent: #ffc107;
+  --color-accent-gold: #ffc107;
+  --color-accent-purple: #ffc107;
+  --color-accent-blue: #ffc107;
+  --color-accent-pink: #ffc107;
+  --color-muted: #6b7280;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-gold: 0 0 20px rgba(255, 193, 7, 0.15);
+  --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-background);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.sidebar-active {
+  background: linear-gradient(90deg, rgba(255, 193, 7, 0.12) 0%, transparent 100%);
+  border-left: 3px solid var(--color-accent-gold);
+}
+
+.hero-glow {
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(255, 193, 7, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 90% 30%, rgba(255, 193, 7, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, #0b101b 0%, #121828 50%, #0b101b 100%);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #ffc107 !important;
+  width: 32px !important;
+  height: 32px !important;
+  background: rgba(21, 27, 40, 0.95);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 12px !important;
+  font-weight: bold;
+}
+
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ffc107 !important;
+}
+
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-animate {
+  animation: ticker-scroll 30s linear infinite;
+}
+
+.ticker-animate:hover {
+  animation-play-state: paused;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

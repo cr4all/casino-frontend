@@ -1,0 +1,33 @@
+{
+  "name": "casino-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run generate:api && tsc -b && vite build",
+    "preview": "vite preview",
+    "generate:api": "openapi-typescript contracts/player-v1.yaml -o src/types/api.generated.ts",
+    "sync:contract": "echo Update contracts/player-v1.yaml from https://github.com/cr4all/casino-api-contract tags"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "framer-motion": "^12.15.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.0",
+    "swiper": "^11.2.8",
+    "zustand": "^5.0.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.8",
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
+    "@types/node": "^22.15.0",
+    "@vitejs/plugin-react": "^4.5.0",
+    "openapi-typescript": "^7.8.0",
+    "tailwindcss": "^4.1.8",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}

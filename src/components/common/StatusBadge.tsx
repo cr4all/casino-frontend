@@ -1,0 +1,25 @@
+const statusStyles: Record<string, string> = {
+  pending: 'bg-yellow-500/15 text-accent-gold border border-accent-gold/30',
+  requested: 'bg-yellow-500/15 text-accent-gold border border-accent-gold/30',
+  confirmed: 'bg-green-500/15 text-green-400 border border-green-500/30',
+  approved: 'bg-green-500/15 text-green-400 border border-green-500/30',
+  rejected: 'bg-red-500/15 text-red-400 border border-red-500/30',
+  cancelled: 'bg-white/5 text-muted border border-white/10',
+  active: 'bg-accent-gold/15 text-accent-gold border border-accent-gold/30',
+  completed: 'bg-green-500/15 text-green-400 border border-green-500/30',
+  wagering: 'bg-accent-gold/10 text-accent-gold border border-accent-gold/20',
+};
+
+interface StatusBadgeProps {
+  status: string;
+}
+
+export function StatusBadge({ status }: StatusBadgeProps) {
+  const style = statusStyles[status] ?? 'bg-surface text-muted border border-white/10';
+
+  return (
+    <span className={`inline-block rounded-md px-2 py-0.5 text-xs font-medium capitalize ${style}`}>
+      {status.replace(/_/g, ' ')}
+    </span>
+  );
+}
