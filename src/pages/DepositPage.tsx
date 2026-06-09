@@ -140,7 +140,14 @@ export function DepositPage() {
           )}
 
           <section className="mt-8">
-            <h2 className="mb-4 text-lg font-semibold text-white">Deposit History</h2>
+            <div className="mb-4 flex items-center justify-between gap-4">
+              <h2 className="text-lg font-semibold text-white">Recent Deposits</h2>
+              {deposits.length > 0 && (
+                <Link to="/transactions?tab=deposits" className="text-xs text-accent hover:underline">
+                  View all
+                </Link>
+              )}
+            </div>
             {deposits.length === 0 ? (
               <p className="text-sm text-muted">No deposit requests yet.</p>
             ) : (
@@ -156,7 +163,7 @@ export function DepositPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {deposits.map((d) => (
+                    {deposits.slice(0, 5).map((d) => (
                       <tr key={d.id} className="border-b border-white/5 hover:bg-surface/50">
                         <td className="px-4 py-3 text-white">#{d.id}</td>
                         <td className="px-4 py-3 font-mono text-white">

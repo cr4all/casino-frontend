@@ -162,7 +162,14 @@ export function WithdrawPage() {
           </form>
 
           <section className="mt-8">
-            <h2 className="mb-4 text-lg font-semibold text-white">Withdrawal History</h2>
+            <div className="mb-4 flex items-center justify-between gap-4">
+              <h2 className="text-lg font-semibold text-white">Recent Withdrawals</h2>
+              {withdrawals.length > 0 && (
+                <Link to="/transactions?tab=withdrawals" className="text-xs text-accent hover:underline">
+                  View all
+                </Link>
+              )}
+            </div>
             {withdrawals.length === 0 ? (
               <p className="text-sm text-muted">No withdrawal requests yet.</p>
             ) : (
@@ -178,7 +185,7 @@ export function WithdrawPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {withdrawals.map((w) => (
+                    {withdrawals.slice(0, 5).map((w) => (
                       <tr key={w.id} className="border-b border-white/5 hover:bg-surface/50">
                         <td className="px-4 py-3 text-white">#{w.id}</td>
                         <td className="px-4 py-3 font-mono text-white">

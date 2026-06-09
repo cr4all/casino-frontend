@@ -48,19 +48,45 @@ export interface Transaction {
   id: number;
   type: string;
   amount: string;
+  balance_after?: string | null;
   status: string;
   description: string | null;
+  reference_type?: string | null;
+  reference_id?: string | null;
   created_at: string | null;
+}
+
+export interface BetHistoryItem {
+  id: number;
+  round_id: string;
+  game: {
+    id: number | null;
+    name: string;
+    provider: string | null;
+  };
+  bet_amount: string;
+  win_amount: string;
+  net_amount: string;
+  status: string;
+  currency: string;
+  played_at: string | null;
+}
+
+export interface PaginationMeta {
+  current_page: number;
+  per_page: number;
+  total: number;
+  last_page: number;
 }
 
 export interface PaginatedTransactions {
   items: Transaction[];
-  pagination: {
-    current_page: number;
-    per_page: number;
-    total: number;
-    last_page: number;
-  };
+  pagination: PaginationMeta;
+}
+
+export interface PaginatedBetHistory {
+  items: BetHistoryItem[];
+  pagination: PaginationMeta;
 }
 
 export interface Game {

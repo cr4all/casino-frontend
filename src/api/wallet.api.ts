@@ -7,9 +7,13 @@ export const walletApi = {
     return data.data;
   },
 
-  getTransactions: async (page = 1, perPage = 20) => {
+  getTransactions: async (
+    page = 1,
+    perPage = 20,
+    filters?: { type?: string; from?: string; to?: string },
+  ) => {
     const { data } = await api.get<ApiResponse<PaginatedTransactions>>('/wallet/transactions', {
-      params: { page, per_page: perPage },
+      params: { page, per_page: perPage, ...filters },
     });
     return data.data;
   },

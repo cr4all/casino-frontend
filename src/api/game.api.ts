@@ -1,5 +1,5 @@
 import api from '@/api/axios';
-import type { ApiResponse, Game } from '@/types';
+import type { ApiResponse, Game, PaginatedBetHistory } from '@/types';
 
 export interface GameVendor {
   id: number;
@@ -67,6 +67,13 @@ export const gameApi = {
 
   getGame: async (gameId: number) => {
     const { data } = await api.get<ApiResponse<Game>>(`/games/${gameId}`);
+    return data.data;
+  },
+
+  getBets: async (page = 1, perPage = 20) => {
+    const { data } = await api.get<ApiResponse<PaginatedBetHistory>>('/games/bets', {
+      params: { page, per_page: perPage },
+    });
     return data.data;
   },
 };

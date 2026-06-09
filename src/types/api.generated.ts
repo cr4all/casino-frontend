@@ -324,6 +324,10 @@ export interface paths {
             parameters: {
                 query?: {
                     per_page?: components["parameters"]["PerPage"];
+                    /** @description Comma-separated transaction types (deposit, withdraw, bet, win, rollback, bonus) */
+                    type?: string;
+                    from?: string;
+                    to?: string;
                 };
                 header?: never;
                 path?: never;
@@ -882,6 +886,52 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/games/bets": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** List player bet history (game rounds) */
+        get: {
+            parameters: {
+                query?: {
+                    per_page?: components["parameters"]["PerPage"];
+                    game_id?: number;
+                    status?: "bet" | "settled" | "cancelled";
+                    from?: string;
+                    to?: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Paginated bet history */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: components["schemas"]["PaginatedBetHistory"];
+                        };
+                    };
+                };
+                401: components["responses"]["Unauthorized"];
+                404: components["responses"]["NotFound"];
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/games/{id}": {
         parameters: {
             query?: never;
@@ -1070,10 +1120,34 @@ export interface components {
             id: number;
             type: string;
             amount: string;
+            balance_after?: string | null;
             status: string;
             description?: string | null;
+            reference_type?: string | null;
+            reference_id?: string | null;
             /** Format: date-time */
             created_at?: string | null;
+        };
+        BetHistoryGame: {
+            id?: number | null;
+            name?: string;
+            provider?: string | null;
+        };
+        BetHistoryItem: {
+            id: number;
+            round_id: string;
+            game?: components["schemas"]["BetHistoryGame"];
+            bet_amount: string;
+            win_amount: string;
+            net_amount: string;
+            status: string;
+            currency: string;
+            /** Format: date-time */
+            played_at?: string | null;
+        };
+        PaginatedBetHistory: {
+            items: components["schemas"]["BetHistoryItem"][];
+            pagination: components["schemas"]["Pagination"];
         };
         PaymentMethod: {
             id: number;

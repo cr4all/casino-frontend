@@ -1,5 +1,5 @@
 import api from '@/api/axios';
-import type { ApiResponse } from '@/types';
+import type { ApiResponse, PaginationMeta } from '@/types';
 
 export interface PaymentMethod {
   id: number;
@@ -50,10 +50,11 @@ export const paymentApi = {
     return data.data;
   },
 
-  getDeposits: async (page = 1) => {
-    const { data } = await api.get<ApiResponse<{ items: DepositItem[] }>>('/payment/deposits', {
-      params: { page },
-    });
+  getDeposits: async (page = 1, perPage = 20, filters?: { status?: string }) => {
+    const { data } = await api.get<ApiResponse<{ items: DepositItem[]; pagination: PaginationMeta }>>(
+      '/payment/deposits',
+      { params: { page, per_page: perPage, ...filters } },
+    );
     return data.data;
   },
 
@@ -65,10 +66,11 @@ export const paymentApi = {
     return data.data;
   },
 
-  getWithdrawals: async (page = 1) => {
-    const { data } = await api.get<ApiResponse<{ items: WithdrawalItem[] }>>('/payment/withdrawals', {
-      params: { page },
-    });
+  getWithdrawals: async (page = 1, perPage = 20, filters?: { status?: string }) => {
+    const { data } = await api.get<ApiResponse<{ items: WithdrawalItem[]; pagination: PaginationMeta }>>(
+      '/payment/withdrawals',
+      { params: { page, per_page: perPage, ...filters } },
+    );
     return data.data;
   },
 };

@@ -1,36 +1,69 @@
-import { useEffect, useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { useCallback, useEffect, useState } from 'react';
+import { Link, Navigate, useSearchParams } from 'react-router-dom';
+import { gameApi } from '@/api/game.api';
 import { paymentApi, type DepositItem, type WithdrawalItem } from '@/api/payment.api';
 import { walletApi } from '@/api/wallet.api';
-import { useAuthStore } from '@/stores/authStore';
+import { Pagination } from '@/components/common/Pagination';
 import { StatusBadge } from '@/components/common/StatusBadge';
-import type { Transaction } from '@/types';
+import { useAuthStore } from '@/stores/authStore';
+import type { BetHistoryItem, PaginationMeta, Transaction } from '@/types';
 
-type Tab = 'ledger' | 'deposits' | 'withdrawals';
+type Tab = 'bets' | 'deposits' | 'withdrawals' | 'wallet';
+
+const EMPTY_PAGINATION: PaginationMeta = {
+  current_page: 1,
+  per_page: 20,
+  total: 0,
+  last_page: 1,
+};
 
 export function TransactionsPage() {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
-  const [tab, setTab] = useState<Tab>('ledger');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const tab = (searchParams.get('tab') as Tab) || 'bets';
+
+  const [bets, setBets] = useState<BetHistoryItem[]>([]);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [deposits, setDeposits] = useState<DepositItem[]>([]);
   const [withdrawals, setWithdrawals] = useState<WithdrawalItem[]>([]);
+  const [pagination, setPagination] = useState<PaginationMeta>(EMPTY_PAGINATION);
+  const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  const setTab = (next: Tab) => {
+    setSearchParams({ tab: next });
+    setPage(1);
+  };
+
+  const loadData = useCallback(async () => {
     if (!isAuthenticated) return;
     setLoading(true);
-    Promise.all([
-      walletApi.getTransactions(),
-      paymentApi.getDeposits(),
-      paymentApi.getWithdrawals(),
-    ])
-      .then(([tx, dep, wit]) => {
-        setTransactions(tx.items);
-        setDeposits(dep.items);
-        setWithdrawals(wit.items);
-      })
-      .finally(() => setLoading(false));
-  }, [isAuthenticated]);
+    try {
+      if (tab === 'bets') {
+        const data = await gameApi.getBets(page);
+        setBets(data.items);
+        setPagination(data.pagination);
+      } else if (tab === 'deposits') {
+        const data = await paymentApi.getDeposits(page);
+        setDeposits(data.items);
+        setPagination(data.pagination ?? EMPTY_PAGINATION);
+      } else if (tab === 'withdrawals') {
+        const data = await paymentApi.getWithdrawals(page);
+        setWithdrawals(data.items);
+        setPagination(data.pagination ?? EMPTY_PAGINATION);
+      } else {
+        const data = await walletApi.getTransactions(page);
+        setTransactions(data.items);
+        setPagination(data.pagination);
+      }
+    } finally {
+      setLoading(false);
+    }
+  }, [isAuthenticated, tab, page]);
+
+  useEffect(() => {
+    loadData();
+  }, [loadData]);
 
   if (!isAuthenticated) {
     return <Navigate to="/" replace />;
@@ -46,9 +79,10 @@ export function TransactionsPage() {
   };
 
   const tabs: { id: Tab; label: string }[] = [
-    { id: 'ledger', label: 'Wallet Ledger' },
+    { id: 'bets', label: 'Bets' },
     { id: 'deposits', label: 'Deposits' },
     { id: 'withdrawals', label: 'Withdrawals' },
+    { id: 'wallet', label: 'Wallet' },
   ];
 
   return (
@@ -80,16 +114,75 @@ export function TransactionsPage() {
 
       {loading ? (
         <p className="text-muted">Loading...</p>
-      ) : tab === 'ledger' ? (
-        transactions.length === 0 ? (
-          <EmptyState message="No wallet transactions yet." />
+      ) : tab === 'bets' ? (
+        bets.length === 0 ? (
+          <EmptyState message="No bets yet. Play a game to see your history here." />
         ) : (
+          <>
+            <Table>
+              <thead>
+                <tr className="border-b border-white/5 bg-surface text-left">
+                  <Th>Game</Th>
+                  <Th>Bet</Th>
+                  <Th>Win</Th>
+                  <Th>Net</Th>
+                  <Th>Status</Th>
+                  <Th className="hidden sm:table-cell">Date</Th>
+                </tr>
+              </thead>
+              <tbody>
+                {bets.map((bet) => (
+                  <tr key={bet.id} className="border-b border-white/5 hover:bg-surface/50">
+                    <td className="px-4 py-3 text-white">{bet.game.name}</td>
+                    <td className="px-4 py-3 font-mono text-white">
+                      {bet.currency} {bet.bet_amount}
+                    </td>
+                    <td className="px-4 py-3 font-mono text-accent-gold">
+                      {bet.currency} {bet.win_amount}
+                    </td>
+                    <td className={`px-4 py-3 font-mono ${parseFloat(bet.net_amount) >= 0 ? 'text-green-400' : 'text-red-400'}`}>
+                      {bet.net_amount}
+                    </td>
+                    <td className="px-4 py-3"><StatusBadge status={bet.status} /></td>
+                    <td className="px-4 py-3 text-xs text-muted hidden sm:table-cell">
+                      {bet.played_at ? new Date(bet.played_at).toLocaleString() : '—'}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+            <Pagination pagination={pagination} onPageChange={setPage} />
+          </>
+        )
+      ) : tab === 'deposits' ? (
+        deposits.length === 0 ? (
+          <EmptyState message="No deposit requests yet." action={{ label: 'Make a deposit', to: '/deposit' }} />
+        ) : (
+          <>
+            <PaymentTable items={deposits} />
+            <Pagination pagination={pagination} onPageChange={setPage} />
+          </>
+        )
+      ) : tab === 'withdrawals' ? (
+        withdrawals.length === 0 ? (
+          <EmptyState message="No withdrawal requests yet." action={{ label: 'Request withdrawal', to: '/withdraw' }} />
+        ) : (
+          <>
+            <PaymentTable items={withdrawals} />
+            <Pagination pagination={pagination} onPageChange={setPage} />
+          </>
+        )
+      ) : transactions.length === 0 ? (
+        <EmptyState message="No wallet transactions yet." />
+      ) : (
+        <>
           <Table>
             <thead>
               <tr className="border-b border-white/5 bg-surface text-left">
                 <Th>Type</Th>
                 <Th>Amount</Th>
-                <Th className="hidden sm:table-cell">Description</Th>
+                <Th className="hidden md:table-cell">Balance After</Th>
+                <Th className="hidden sm:table-cell">Reference</Th>
                 <Th>Date</Th>
               </tr>
             </thead>
@@ -100,7 +193,12 @@ export function TransactionsPage() {
                     {tx.type}
                   </td>
                   <td className="px-4 py-3 font-mono text-white">{tx.amount}</td>
-                  <td className="px-4 py-3 text-muted hidden sm:table-cell">{tx.description ?? '—'}</td>
+                  <td className="px-4 py-3 font-mono text-muted hidden md:table-cell">
+                    {tx.balance_after ?? '—'}
+                  </td>
+                  <td className="px-4 py-3 text-xs text-muted hidden sm:table-cell">
+                    {tx.reference_type ? `${tx.reference_type}/${tx.reference_id}` : (tx.description ?? '—')}
+                  </td>
                   <td className="px-4 py-3 text-xs text-muted">
                     {tx.created_at ? new Date(tx.created_at).toLocaleString() : '—'}
                   </td>
@@ -108,65 +206,39 @@ export function TransactionsPage() {
               ))}
             </tbody>
           </Table>
-        )
-      ) : tab === 'deposits' ? (
-        deposits.length === 0 ? (
-          <EmptyState message="No deposit requests yet." action={{ label: 'Make a deposit', to: '/deposit' }} />
-        ) : (
-          <Table>
-            <thead>
-              <tr className="border-b border-white/5 bg-surface text-left">
-                <Th>ID</Th>
-                <Th>Amount</Th>
-                <Th>Method</Th>
-                <Th>Status</Th>
-                <Th className="hidden sm:table-cell">Date</Th>
-              </tr>
-            </thead>
-            <tbody>
-              {deposits.map((d) => (
-                <tr key={d.id} className="border-b border-white/5 hover:bg-surface/50">
-                  <td className="px-4 py-3 text-white">#{d.id}</td>
-                  <td className="px-4 py-3 font-mono text-white">{d.currency} {d.amount}</td>
-                  <td className="px-4 py-3 text-muted">{d.payment_method ?? '—'}</td>
-                  <td className="px-4 py-3"><StatusBadge status={d.status} /></td>
-                  <td className="px-4 py-3 text-xs text-muted hidden sm:table-cell">
-                    {d.created_at ? new Date(d.created_at).toLocaleString() : '—'}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
-        )
-      ) : withdrawals.length === 0 ? (
-        <EmptyState message="No withdrawal requests yet." action={{ label: 'Request withdrawal', to: '/withdraw' }} />
-      ) : (
-        <Table>
-          <thead>
-            <tr className="border-b border-white/5 bg-surface text-left">
-              <Th>ID</Th>
-              <Th>Amount</Th>
-              <Th>Method</Th>
-              <Th>Status</Th>
-              <Th className="hidden sm:table-cell">Date</Th>
-            </tr>
-          </thead>
-          <tbody>
-            {withdrawals.map((w) => (
-              <tr key={w.id} className="border-b border-white/5 hover:bg-surface/50">
-                <td className="px-4 py-3 text-white">#{w.id}</td>
-                <td className="px-4 py-3 font-mono text-white">{w.currency} {w.amount}</td>
-                <td className="px-4 py-3 text-muted">{w.payment_method ?? '—'}</td>
-                <td className="px-4 py-3"><StatusBadge status={w.status} /></td>
-                <td className="px-4 py-3 text-xs text-muted hidden sm:table-cell">
-                  {w.created_at ? new Date(w.created_at).toLocaleString() : '—'}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
+          <Pagination pagination={pagination} onPageChange={setPage} />
+        </>
       )}
     </div>
+  );
+}
+
+function PaymentTable({ items }: { items: (DepositItem | WithdrawalItem)[] }) {
+  return (
+    <Table>
+      <thead>
+        <tr className="border-b border-white/5 bg-surface text-left">
+          <Th>ID</Th>
+          <Th>Amount</Th>
+          <Th>Method</Th>
+          <Th>Status</Th>
+          <Th className="hidden sm:table-cell">Date</Th>
+        </tr>
+      </thead>
+      <tbody>
+        {items.map((item) => (
+          <tr key={item.id} className="border-b border-white/5 hover:bg-surface/50">
+            <td className="px-4 py-3 text-white">#{item.id}</td>
+            <td className="px-4 py-3 font-mono text-white">{item.currency} {item.amount}</td>
+            <td className="px-4 py-3 text-muted">{item.payment_method ?? '—'}</td>
+            <td className="px-4 py-3"><StatusBadge status={item.status} /></td>
+            <td className="px-4 py-3 text-xs text-muted hidden sm:table-cell">
+              {item.created_at ? new Date(item.created_at).toLocaleString() : '—'}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </Table>
   );
 }
 
