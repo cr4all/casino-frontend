@@ -57,6 +57,7 @@ export function DepositPage() {
 
   const selected = methods.find((m) => m.id === methodId);
   const isCrypto = selected?.type === 'crypto';
+  const isLocalGateway = selected?.type === 'local';
 
   useEffect(() => {
     if (!isCrypto) {
@@ -105,6 +106,8 @@ export function DepositPage() {
 
   const paymentInfo = lastDeposit?.payment_info ?? {};
   const isCryptoPayment = isCrypto || Boolean(paymentInfo.pay_address || paymentInfo.address);
+  const paymentUrl = typeof paymentInfo.payment_url === 'string' ? paymentInfo.payment_url : null;
+  const isRedirectPayment = isLocalGateway || Boolean(paymentUrl);
 
   return (
     <div className="py-8 max-w-2xl">
@@ -163,6 +166,7 @@ export function DepositPage() {
             {selected && (
               <p className="text-xs text-muted">
                 Min: {selected.min_amount} · Max: {selected.max_amount ?? 'No limit'}
+                {isLocalGateway && ' · Currency: IDR'}
               </p>
             )}
 
@@ -197,23 +201,38 @@ export function DepositPage() {
                 <p className="mb-3 text-sm text-white">
                   Send{' '}
                   <span className="font-mono font-semibold text-accent-gold">
-                    {String(paymentInfo.pay_amount ?? '')} {String(paymentInfo.pay_currency ?? '').toUpperCase()}
+                    {String(paymentInfo.pay_amount ?? paymentInfo.amount ?? '')} {String(paymentInfo.pay_currency ?? paymentInfo.currency ?? '').toUpperCase()}
                   </span>
                   {' '}to the address below
                 </p>
               )}
 
+              {paymentUrl && (
+                <div className="mb-3">
+                  <a
+                    href={paymentUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex rounded-md bg-accent-gold px-4 py-2 text-sm font-semibold text-background hover:bg-accent-gold/90"
+                  >
+                    Open Payment Page
+                  </a>
+                </div>
+              )}
+
               <dl className="space-y-2">
                 {Object.entries(lastDeposit.payment_info).map(([key, value]) => {
+                  if (key === 'payment_url') return null;
                   const display = typeof value === 'object' ? JSON.stringify(value) : String(value);
                   const isAddress = key === 'address' || key === 'pay_address';
+                  const isQr = key === 'qr_string';
 
                   return (
                     <div key={key}>
                       <dt className="text-xs capitalize text-muted">{key.replace(/_/g, ' ')}</dt>
                       <dd className="text-sm text-white break-all">
                         {display}
-                        {isAddress && display && <CopyButton value={display} />}
+                        {(isAddress || isQr) && display && <CopyButton value={display} />}
                       </dd>
                     </div>
                   );
@@ -222,7 +241,9 @@ export function DepositPage() {
               <p className="mt-3 text-xs text-muted">
                 {isCryptoPayment
                   ? 'After blockchain confirmation, your wallet will be credited automatically.'
-                  : 'After transfer, admin will confirm your deposit and credit your wallet.'}
+                  : isRedirectPayment
+                    ? 'Complete payment on the SmilePayz page. Your wallet will be credited after payment confirmation.'
+                    : 'After transfer, admin will confirm your deposit and credit your wallet.'}
               </p>
             </div>
           )}
