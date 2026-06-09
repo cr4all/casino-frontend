@@ -1,18 +1,20 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useGameTypes } from '@/hooks/useGameTypes';
+import { useTranslation } from '@/hooks/useTranslation';
 import { typePath, typeIcon } from '@/stores/gameStore';
 
 export function GameCategoryTabs() {
+  const { t, tGameType } = useTranslation();
   const location = useLocation();
   const { types, loading } = useGameTypes();
 
   const tabs = [
-    { id: 'all', label: 'ALL GAMES', icon: '⭐', path: '/category/all' },
-    ...types.map((t) => ({
-      id: `type-${t.slug}`,
-      label: t.name.toUpperCase(),
-      icon: typeIcon(t.icon, t.slug),
-      path: typePath(t.slug),
+    { id: 'all', label: t('nav.allGames'), icon: '⭐', path: '/category/all' },
+    ...types.map((type) => ({
+      id: `type-${type.slug}`,
+      label: tGameType(type.slug, type.name).toUpperCase(),
+      icon: typeIcon(type.icon, type.slug),
+      path: typePath(type.slug),
     })),
   ];
 
@@ -26,7 +28,7 @@ export function GameCategoryTabs() {
   if (loading && tabs.length <= 1) {
     return (
       <div className="rounded-lg border border-white/[0.08] bg-card/50 p-3">
-        <p className="text-xs text-muted px-2">Loading categories...</p>
+        <p className="text-xs text-muted px-2">{t('common.loadingCategories')}</p>
       </div>
     );
   }

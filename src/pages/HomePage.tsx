@@ -7,27 +7,26 @@ import { HorizontalSlider } from '@/components/common/HorizontalSlider';
 import { ProviderCard, ProviderStrip } from '@/components/provider/ProviderCard';
 import { gameApi } from '@/api/game.api';
 import { useGameVendors } from '@/hooks/useGameVendors';
+import { useTranslation } from '@/hooks/useTranslation';
+import { getVendorBannerUrl } from '@/data/providerBanners';
 import { collectionPath, vendorGradient, vendorPath } from '@/stores/gameStore';
 import type { Game } from '@/types';
 
-const COLLECTIONS = [
-  { slug: 'top', title: 'Top Games' },
-  { slug: 'popular', title: 'Popular Games' },
-  { slug: 'new', title: 'New Games' },
-] as const;
+const COLLECTION_SLUGS = ['top', 'popular', 'new'] as const;
 
 export function HomePage() {
+  const { t, tCollection } = useTranslation();
   const { vendors, loading: vendorsLoading } = useGameVendors();
   const [collectionGames, setCollectionGames] = useState<Record<string, Game[]>>({});
   const [loadingGames, setLoadingGames] = useState(true);
 
   useEffect(() => {
     setLoadingGames(true);
-    Promise.all(COLLECTIONS.map((c) => gameApi.getCollection(c.slug)))
+    Promise.all(COLLECTION_SLUGS.map((slug) => gameApi.getCollection(slug)))
       .then((results) => {
         const bySlug: Record<string, Game[]> = {};
-        COLLECTIONS.forEach((c, i) => {
-          bySlug[c.slug] = results[i]?.games ?? [];
+        COLLECTION_SLUGS.forEach((slug, i) => {
+          bySlug[slug] = results[i]?.games ?? [];
         });
         setCollectionGames(bySlug);
       })
@@ -35,7 +34,8 @@ export function HomePage() {
   }, []);
 
   const loading = vendorsLoading || loadingGames;
-  const hasContent = COLLECTIONS.some((c) => (collectionGames[c.slug]?.length ?? 0) > 0) || vendors.length > 0;
+  const hasContent =
+    COLLECTION_SLUGS.some((slug) => (collectionGames[slug]?.length ?? 0) > 0) || vendors.length > 0;
 
   return (
     <div className="space-y-5">
@@ -43,20 +43,20 @@ export function HomePage() {
       <GameCategoryTabs />
 
       {loading ? (
-        <p className="text-muted px-2">Loading games...</p>
+        <p className="text-muted px-2">{t('common.loadingGames')}</p>
       ) : !hasContent ? (
         <div className="rounded-xl border border-white/[0.08] bg-card p-8 text-center">
-          <p className="text-muted">No games available yet.</p>
-          <p className="mt-2 text-xs text-muted">Run game catalog sync from admin.</p>
+          <p className="text-muted">{t('home.noGames')}</p>
+          <p className="mt-2 text-xs text-muted">{t('home.noGamesHint')}</p>
         </div>
       ) : (
         <>
-          {COLLECTIONS.map(({ slug, title }) => {
+          {COLLECTION_SLUGS.map((slug) => {
             const games = collectionGames[slug] ?? [];
             if (games.length === 0) return null;
             return (
               <section key={slug}>
-                <HorizontalSlider title={title} showAllPath={collectionPath(slug)}>
+                <HorizontalSlider title={tCollection(slug)} showAllPath={collectionPath(slug)}>
                   {games.map((game) => (
                     <GameCard key={game.id} game={game} isNew={slug === 'new'} />
                   ))}
@@ -68,18 +68,18 @@ export function HomePage() {
           {vendors.length > 0 && (
             <section>
               <div className="mb-3 flex items-center justify-between px-0.5">
-                <h2 className="text-sm font-bold tracking-wide text-white">Browse by Provider</h2>
+                <h2 className="text-sm font-bold tracking-wide text-white">{t('home.browseByProvider')}</h2>
                 <Link to="/category/all" className="text-xs text-accent-gold hover:underline">
-                  View all
+                  {t('common.viewAll')}
                 </Link>
               </div>
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
                 {vendors.slice(0, 6).map((vendor, index) => (
                   <ProviderCard
                     key={vendor.id}
-                    id={vendor.id}
                     name={vendor.name}
                     gameCount={vendor.game_count}
+                    imageUrl={getVendorBannerUrl(vendor)}
                     gradient={vendorGradient(index)}
                     path={vendorPath(vendor.id)}
                   />

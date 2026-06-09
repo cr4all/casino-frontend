@@ -4,8 +4,10 @@ import { Button } from '@/components/common/Button';
 import { useAuthStore } from '@/stores/authStore';
 import { useUiStore } from '@/stores/uiStore';
 import { useWalletStore } from '@/stores/walletStore';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export function LoginModal() {
+  const { t } = useTranslation();
   const activeModal = useUiStore((s) => s.activeModal);
   const closeModal = useUiStore((s) => s.closeModal);
   const openModal = useUiStore((s) => s.openModal);
@@ -28,21 +30,21 @@ export function LoginModal() {
       setEmail('');
       setPassword('');
     } catch {
-      setError('Invalid email or password.');
+      setError(t('auth.loginError'));
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <Modal isOpen={activeModal === 'login'} onClose={closeModal} title="Login">
+    <Modal isOpen={activeModal === 'login'} onClose={closeModal} title={t('auth.loginTitle')}>
       <form onSubmit={handleSubmit} className="space-y-4">
         {error && (
           <p className="rounded-md bg-accent/10 px-3 py-2 text-sm text-accent">{error}</p>
         )}
         <div>
           <label htmlFor="login-email" className="mb-1 block text-xs text-muted">
-            Email
+            {t('auth.email')}
           </label>
           <input
             id="login-email"
@@ -51,12 +53,12 @@ export function LoginModal() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="w-full rounded-md border border-white/10 bg-card px-3 py-2.5 text-sm text-white placeholder:text-muted focus:border-accent focus:outline-none"
-            placeholder="player@example.com"
+            placeholder={t('auth.emailPlaceholder')}
           />
         </div>
         <div>
           <label htmlFor="login-password" className="mb-1 block text-xs text-muted">
-            Password
+            {t('auth.password')}
           </label>
           <input
             id="login-password"
@@ -69,16 +71,16 @@ export function LoginModal() {
           />
         </div>
         <Button type="submit" fullWidth disabled={loading}>
-          {loading ? 'Logging in...' : 'Login'}
+          {loading ? t('common.loggingIn') : t('nav.login')}
         </Button>
         <p className="text-center text-xs text-muted">
-          Don&apos;t have an account?{' '}
+          {t('auth.noAccount')}{' '}
           <button
             type="button"
             onClick={() => openModal('register')}
             className="text-accent hover:underline"
           >
-            Register
+            {t('nav.register')}
           </button>
         </p>
       </form>

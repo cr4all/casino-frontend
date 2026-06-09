@@ -3,6 +3,7 @@ import { Link, Navigate } from 'react-router-dom';
 import { gameApi } from '@/api/game.api';
 import { BetHistoryTable } from '@/components/account/BetHistoryTable';
 import { useAuthStore } from '@/stores/authStore';
+import { useTranslation } from '@/hooks/useTranslation';
 import type { BetHistoryItem, PaginationMeta } from '@/types';
 
 const EMPTY_PAGINATION: PaginationMeta = {
@@ -13,6 +14,7 @@ const EMPTY_PAGINATION: PaginationMeta = {
 };
 
 export function BetHistoryPage() {
+  const { t } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const [bets, setBets] = useState<BetHistoryItem[]>([]);
   const [pagination, setPagination] = useState<PaginationMeta>(EMPTY_PAGINATION);
@@ -43,11 +45,11 @@ export function BetHistoryPage() {
     <div className="py-8">
       <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-white">Bet History</h1>
-          <p className="mt-1 text-sm text-muted">Your game bets and wins by round</p>
+          <h1 className="text-2xl font-bold text-white">{t('betHistory.title')}</h1>
+          <p className="mt-1 text-sm text-muted">{t('betHistory.subtitle')}</p>
         </div>
         <Link to="/transactions" className="text-xs text-accent hover:underline">
-          All transactions →
+          {t('betHistory.allTransactions')}
         </Link>
       </div>
 

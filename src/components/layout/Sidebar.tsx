@@ -3,26 +3,27 @@ import { Link, useLocation } from 'react-router-dom';
 import { useAuthStore } from '@/stores/authStore';
 import { useUiStore } from '@/stores/uiStore';
 import { useUnreadNotifications } from '@/hooks/useUnreadNotifications';
-import { useGameVendors } from '@/hooks/useGameVendors';
 import { useGameTypes } from '@/hooks/useGameTypes';
-import { typeIcon, typePath, vendorPath } from '@/stores/gameStore';
+import { useTranslation } from '@/hooks/useTranslation';
+import { typeIcon, typePath } from '@/stores/gameStore';
+import { Logo } from '@/components/common/Logo';
 
 interface StaticNavItem {
   id: string;
-  label: string;
-  sublabel: string;
+  labelKey: string;
+  sublabelKey: string;
   icon: string;
   path: string;
   auth?: boolean;
 }
 
 const accountItems: StaticNavItem[] = [
-  { id: 'deposit', label: 'DEPOSIT', sublabel: 'Deposit', icon: '💳', path: '/deposit', auth: true },
-  { id: 'withdraw', label: 'WITHDRAW', sublabel: 'Withdraw', icon: '💸', path: '/withdraw', auth: true },
-  { id: 'bets', label: 'BET HISTORY', sublabel: 'Game bets', icon: '🎰', path: '/bets', auth: true },
-  { id: 'transactions', label: 'HISTORY', sublabel: 'Transactions', icon: '📋', path: '/transactions', auth: true },
-  { id: 'notices', label: 'NOTICES', sublabel: 'Notices', icon: '🔔', path: '/notifications', auth: true },
-  { id: 'bonus', label: 'BONUSES', sublabel: 'Bonuses', icon: '🎁', path: '/bonus', auth: true },
+  { id: 'deposit', labelKey: 'nav.deposit', sublabelKey: 'nav.depositLabel', icon: '💳', path: '/deposit', auth: true },
+  { id: 'withdraw', labelKey: 'nav.withdraw', sublabelKey: 'nav.withdrawLabel', icon: '💸', path: '/withdraw', auth: true },
+  { id: 'bets', labelKey: 'nav.betHistory', sublabelKey: 'nav.gameBets', icon: '🎰', path: '/bets', auth: true },
+  { id: 'transactions', labelKey: 'nav.history', sublabelKey: 'nav.transactions', icon: '📋', path: '/transactions', auth: true },
+  { id: 'notices', labelKey: 'nav.notices', sublabelKey: 'nav.noticesLabel', icon: '🔔', path: '/notifications', auth: true },
+  { id: 'bonus', labelKey: 'nav.bonuses', sublabelKey: 'nav.bonusesLabel', icon: '🎁', path: '/bonus', auth: true },
 ];
 
 interface SidebarProps {
@@ -30,11 +31,11 @@ interface SidebarProps {
 }
 
 export function Sidebar({ onNavigate }: SidebarProps) {
+  const { t, tGameType } = useTranslation();
   const location = useLocation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const openModal = useUiStore((s) => s.openModal);
   const unreadCount = useUnreadNotifications();
-  const { vendors } = useGameVendors();
   const { types } = useGameTypes();
 
   const isPathActive = (path: string) =>
@@ -50,11 +51,9 @@ export function Sidebar({ onNavigate }: SidebarProps) {
 
   return (
     <aside className="flex h-full w-[220px] shrink-0 flex-col border-r border-white/[0.06] bg-sidebar">
-      <Link to="/" onClick={onNavigate} className="flex items-center gap-0.5 px-5 py-6">
-        <span className="text-xl font-bold italic tracking-tight text-white">Casino</span>
-        <span className="text-xl font-bold italic tracking-tight text-accent-gold">24</span>
-        <span className="text-sm text-muted">.com</span>
-      </Link>
+      <div className="px-5 py-6">
+        <Logo height={36} onClick={onNavigate} />
+      </div>
 
       <nav className="flex flex-1 flex-col gap-0.5 overflow-y-auto px-2">
         <Link
@@ -68,14 +67,15 @@ export function Sidebar({ onNavigate }: SidebarProps) {
         >
           <span className="text-xl leading-none">🏠</span>
           <div>
-            <p className="text-xs font-bold tracking-wide">ALL GAMES</p>
-            <p className="text-[10px] text-muted">Browse all</p>
+            <p className="text-xs font-bold tracking-wide">{t('nav.allGames')}</p>
+            <p className="text-[10px] text-muted">{t('nav.browseAll')}</p>
           </div>
         </Link>
 
         {types.map((type) => {
           const path = typePath(type.slug);
           const active = isPathActive(path);
+          const typeName = tGameType(type.slug, type.name);
           return (
             <Link
               key={type.id}
@@ -88,42 +88,15 @@ export function Sidebar({ onNavigate }: SidebarProps) {
               <span className="text-xl leading-none">{typeIcon(type.icon, type.slug)}</span>
               <div className="min-w-0 flex-1">
                 <p className={`text-xs font-bold tracking-wide truncate ${active ? 'text-accent-gold' : 'text-white'}`}>
-                  {type.name.toUpperCase()}
+                  {typeName.toUpperCase()}
                 </p>
-                <p className="text-[10px] text-muted">{type.game_count} games</p>
+                <p className="text-[10px] text-muted">
+                  {t('common.gamesCount', { count: type.game_count })}
+                </p>
               </div>
             </Link>
           );
         })}
-
-        {vendors.length > 0 && (
-          <>
-            <div className="my-2 border-t border-white/[0.06]" />
-            <p className="px-3 py-1 text-[10px] font-bold tracking-wider text-muted">PROVIDERS</p>
-            {vendors.slice(0, 8).map((vendor) => {
-              const path = vendorPath(vendor.id);
-              const active = isPathActive(path);
-              return (
-                <Link
-                  key={vendor.id}
-                  to={path}
-                  onClick={onNavigate}
-                  className={`group relative flex items-center gap-3 rounded-md px-3 py-2.5 transition-all ${
-                    active ? 'sidebar-active text-accent-gold' : 'text-white hover:bg-card/60'
-                  }`}
-                >
-                  <span className="text-lg leading-none">🎮</span>
-                  <div className="min-w-0 flex-1">
-                    <p className={`text-[11px] font-bold tracking-wide truncate ${active ? 'text-accent-gold' : 'text-white'}`}>
-                      {vendor.name}
-                    </p>
-                    <p className="text-[10px] text-muted">{vendor.game_count} games</p>
-                  </div>
-                </Link>
-              );
-            })}
-          </>
-        )}
 
         <div className="my-2 border-t border-white/[0.06]" />
 
@@ -143,9 +116,9 @@ export function Sidebar({ onNavigate }: SidebarProps) {
               <span className="relative text-xl leading-none">{item.icon}</span>
               <div className="min-w-0 flex-1">
                 <p className={`text-xs font-bold tracking-wide ${active ? 'text-accent-gold' : 'text-white'}`}>
-                  {item.label}
+                  {t(item.labelKey)}
                 </p>
-                <p className="text-[10px] text-muted truncate">{item.sublabel}</p>
+                <p className="text-[10px] text-muted truncate">{t(item.sublabelKey)}</p>
               </div>
               {showBadge && (
                 <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-red-500" />
@@ -156,7 +129,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
       </nav>
 
       <div className="border-t border-white/[0.06] p-4">
-        <p className="text-[10px] text-muted text-center">18+ · Play Responsibly</p>
+        <p className="text-[10px] text-muted text-center">{t('nav.playResponsibly')}</p>
       </div>
     </aside>
   );

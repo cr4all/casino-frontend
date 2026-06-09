@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { useUiStore } from '@/stores/uiStore';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface ModalProps {
   isOpen: boolean;
@@ -9,6 +10,8 @@ interface ModalProps {
 }
 
 export function Modal({ isOpen, onClose, title, children }: ModalProps) {
+  const { t } = useTranslation();
+
   if (!isOpen) return null;
 
   return (
@@ -25,7 +28,7 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
             type="button"
             onClick={onClose}
             className="rounded-lg p-1 text-muted hover:bg-surface hover:text-white transition-colors"
-            aria-label="Close"
+            aria-label={t('common.close')}
           >
             ✕
           </button>
@@ -37,19 +40,20 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
 }
 
 export function ComingSoonModal() {
+  const { t } = useTranslation();
   const activeModal = useUiStore((s) => s.activeModal);
   const message = useUiStore((s) => s.comingSoonMessage);
   const closeModal = useUiStore((s) => s.closeModal);
 
   return (
-    <Modal isOpen={activeModal === 'comingSoon'} onClose={closeModal} title="Coming Soon">
+    <Modal isOpen={activeModal === 'comingSoon'} onClose={closeModal} title={t('modal.comingSoon')}>
       <p className="text-muted mb-6">{message}</p>
       <button
         type="button"
         onClick={closeModal}
         className="w-full rounded-lg bg-accent-gold py-2.5 text-sm font-bold text-background hover:bg-accent-gold/90 transition-colors"
       >
-        OK
+        {t('common.ok')}
       </button>
     </Modal>
   );

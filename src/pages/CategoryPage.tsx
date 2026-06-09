@@ -7,16 +7,18 @@ import { PromoBannerGrid } from '@/components/home/PromoBanner';
 import { gameApi } from '@/api/game.api';
 import { useGameTypes } from '@/hooks/useGameTypes';
 import { useGameVendors } from '@/hooks/useGameVendors';
+import { useTranslation } from '@/hooks/useTranslation';
 import { mockPromotions } from '@/data/mockData';
 import type { Game } from '@/types';
 
 export function CategoryPage() {
+  const { t, tGameType, tCollection, language } = useTranslation();
   const { category = 'all' } = useParams<{ category: string }>();
   const [searchParams, setSearchParams] = useSearchParams();
   const { vendors } = useGameVendors();
   const { types } = useGameTypes();
   const [games, setGames] = useState<Game[]>([]);
-  const [title, setTitle] = useState('All Games');
+  const [title, setTitle] = useState('');
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [lastPage, setLastPage] = useState(1);
@@ -57,18 +59,18 @@ export function CategoryPage() {
 
         if (vendorId) {
           const vendor = vendors.find((v) => v.id === vendorId);
-          setTitle(vendor?.name ?? 'Games');
+          setTitle(vendor?.name ?? t('category.games'));
         } else if (typeSlug) {
-          const type = types.find((t) => t.slug === typeSlug);
-          setTitle(type?.name ?? 'Games');
+          const type = types.find((tp) => tp.slug === typeSlug);
+          setTitle(type ? tGameType(type.slug, type.name) : t('category.games'));
         } else if (collectionSlug) {
-          setTitle(collectionSlug.charAt(0).toUpperCase() + collectionSlug.slice(1) + ' Games');
+          setTitle(tCollection(collectionSlug));
         } else {
-          setTitle('All Games');
+          setTitle(t('category.allGames'));
         }
       })
       .finally(() => setLoading(false));
-  }, [category, page, search, vendors, types]);
+  }, [category, page, search, vendors, types, t, tGameType, tCollection, language]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -84,9 +86,9 @@ export function CategoryPage() {
     return (
       <div className="space-y-5">
         <GameCategoryTabs />
-        <SectionTitle title="Promotions" showAllPath="/bonus" showArrows={false} />
+        <SectionTitle title={t('category.promotions')} showAllPath="/bonus" showArrows={false} />
         <Link to="/bonus" className="inline-flex rounded-lg bg-accent-gold px-6 py-2.5 text-sm font-bold text-background">
-          View Bonuses →
+          {t('category.viewBonuses')}
         </Link>
         <PromoBannerGrid promotions={mockPromotions} />
       </div>
@@ -104,23 +106,23 @@ export function CategoryPage() {
             type="search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search games..."
+            placeholder={t('category.searchPlaceholder')}
             className="w-full sm:w-56 rounded-lg border border-white/10 bg-card px-3 py-2 text-sm text-white placeholder:text-muted focus:border-accent-gold focus:outline-none"
           />
           <button
             type="submit"
             className="shrink-0 rounded-lg bg-accent-gold px-4 py-2 text-sm font-bold text-background hover:bg-accent-gold/90"
           >
-            Search
+            {t('common.search')}
           </button>
         </form>
       </div>
 
       {loading ? (
-        <p className="text-muted">Loading games...</p>
+        <p className="text-muted">{t('common.loadingGames')}</p>
       ) : games.length === 0 ? (
         <div className="rounded-xl border border-white/[0.08] bg-card p-8 text-center">
-          <p className="text-muted">No games found.</p>
+          <p className="text-muted">{t('category.noGamesFound')}</p>
         </div>
       ) : (
         <>
@@ -138,10 +140,10 @@ export function CategoryPage() {
                 onClick={() => setPage((p) => p - 1)}
                 className="rounded-lg border border-white/10 bg-card px-4 py-2 text-sm text-white disabled:opacity-40 hover:border-accent-gold/30"
               >
-                Previous
+                {t('common.previous')}
               </button>
               <span className="text-sm text-muted">
-                Page {page} of {lastPage}
+                {t('common.pageOf', { page, last: lastPage })}
               </span>
               <button
                 type="button"
@@ -149,7 +151,7 @@ export function CategoryPage() {
                 onClick={() => setPage((p) => p + 1)}
                 className="rounded-lg border border-white/10 bg-card px-4 py-2 text-sm text-white disabled:opacity-40 hover:border-accent-gold/30"
               >
-                Next
+                {t('common.next')}
               </button>
             </div>
           )}

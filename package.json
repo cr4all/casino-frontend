@@ -11,6 +11,8 @@
     "sync:contract": "echo Update contracts/player-v1.yaml from https://github.com/cr4all/casino-api-contract tags"
   },
   "dependencies": {
+    "@fontsource/roboto": "^5.2.10",
+    "@fontsource/roboto-condensed": "^5.2.8",
     "axios": "^1.9.0",
     "framer-motion": "^12.15.0",
     "react": "^19.1.0",
@@ -21,9 +23,9 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.8",
+    "@types/node": "^22.15.0",
     "@types/react": "^19.1.4",
     "@types/react-dom": "^19.1.5",
-    "@types/node": "^22.15.0",
     "@vitejs/plugin-react": "^4.5.0",
     "openapi-typescript": "^7.8.0",
     "tailwindcss": "^4.1.8",

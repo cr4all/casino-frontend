@@ -1,24 +1,53 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface ProviderCardProps {
-  id: number;
   name: string;
   gameCount: number;
+  imageUrl?: string | null;
   gradient: string;
   path: string;
 }
 
-export function ProviderCard({ name, gameCount, gradient, path }: ProviderCardProps) {
+export function ProviderCard({ name, gameCount, imageUrl, gradient, path }: ProviderCardProps) {
+  const { t } = useTranslation();
+  const [imgError, setImgError] = useState(false);
+  const showImage = imageUrl && !imgError;
+
   return (
     <Link to={path} className="group block w-full text-left">
       <motion.div
-        className={`flex h-24 flex-col items-center justify-center rounded-md bg-gradient-to-br ${gradient} p-4 shadow-card group-hover:shadow-hover transition-shadow`}
+        className={`relative h-28 overflow-hidden rounded-md shadow-card transition-shadow group-hover:shadow-hover ${
+          showImage ? '' : `bg-gradient-to-br ${gradient}`
+        }`}
         whileHover={{ scale: 1.02, y: -3 }}
         transition={{ duration: 0.2 }}
       >
-        <span className="text-sm font-bold text-white text-center">{name}</span>
-        <span className="mt-1 text-xs text-white/70">{gameCount} games</span>
+        {showImage && (
+          <img
+            src={imageUrl}
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            onError={() => setImgError(true)}
+          />
+        )}
+
+        <div
+          className={`absolute inset-0 ${
+            showImage
+              ? 'bg-gradient-to-t from-black/85 via-black/40 to-black/10'
+              : 'bg-black/20'
+          }`}
+        />
+
+        <div className="absolute inset-x-0 bottom-0 p-3">
+          <p className="text-sm font-bold text-white drop-shadow-md">{name}</p>
+          <p className="mt-0.5 text-xs text-white/85 drop-shadow-sm">
+            {t('common.gamesCount', { count: gameCount })}
+          </p>
+        </div>
       </motion.div>
     </Link>
   );
@@ -35,7 +64,7 @@ export function ProviderStrip({ vendors }: ProviderStripProps) {
         <Link
           key={vendor.id}
           to={vendor.path}
-          className="rounded-full border border-white/10 bg-card px-4 py-2 text-xs font-medium text-white hover:border-accent/50 hover:bg-surface transition-colors"
+          className="rounded-full border border-white/10 bg-card px-4 py-2 text-xs font-medium text-white transition-colors hover:border-accent/50 hover:bg-surface"
         >
           {vendor.name}
         </Link>

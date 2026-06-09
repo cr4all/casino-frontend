@@ -25,6 +25,7 @@ export interface PlayerProfile {
   nickname: string | null;
   country: string | null;
   currency: string | null;
+  language: string | null;
   status: string;
   kyc_status: string;
 }

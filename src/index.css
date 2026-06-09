@@ -21,7 +21,8 @@
   --radius-lg: 12px;
   --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.4);
   --shadow-gold: 0 0 20px rgba(255, 193, 7, 0.15);
-  --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-condensed: 'Roboto Condensed', 'Roboto', sans-serif;
 }
 
 * {
@@ -38,7 +39,15 @@ body {
   background-color: var(--color-background);
   color: #ffffff;
   font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.4;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.font-condensed {
+  font-family: var(--font-condensed);
 }
 
 #root {
@@ -55,6 +64,211 @@ body {
     radial-gradient(ellipse 80% 60% at 70% 50%, rgba(255, 193, 7, 0.18) 0%, transparent 60%),
     radial-gradient(ellipse 40% 40% at 90% 30%, rgba(255, 193, 7, 0.1) 0%, transparent 50%),
     linear-gradient(135deg, #0b101b 0%, #121828 50%, #0b101b 100%);
+}
+
+/* Hero banner — layered bg (1920×500) + dealer overlay */
+.hero-banner {
+  background: #0a0a0a;
+  aspect-ratio: 1920 / 500;
+  width: 100%;
+  max-height: 500px;
+  --hero-slant-top: 40%;
+  --hero-slant-bottom: 24%;
+}
+
+.hero-banner__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.hero-banner__dealer {
+  position: absolute;
+  z-index: 7;
+  bottom: 0;
+  left: 58%;
+  transform: translateX(-50%);
+  height: 94%;
+  max-height: 100%;
+  width: auto;
+  max-width: 44%;
+  object-fit: contain;
+  object-position: bottom center;
+  pointer-events: none;
+  filter:
+    drop-shadow(0 12px 32px rgba(0, 0, 0, 0.55))
+    contrast(1.06)
+    saturate(1.1);
+}
+
+.hero-banner__gold-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  clip-path: polygon(var(--hero-slant-top) 0, 100% 0, 100% 100%, var(--hero-slant-bottom) 100%);
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(255, 180, 60, 0.04) 45%,
+    rgba(255, 140, 0, 0.06) 100%
+  );
+}
+
+.hero-banner__text-panel {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  clip-path: polygon(0 0, var(--hero-slant-top) 0, var(--hero-slant-bottom) 100%, 0 100%);
+  background: #0a0a0a;
+  pointer-events: none;
+}
+
+.hero-banner__text-panel::after {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -1px;
+  width: 3px;
+  height: 120%;
+  background: linear-gradient(
+    118deg,
+    rgba(255, 193, 7, 0.15) 0%,
+    rgba(255, 220, 100, 0.85) 45%,
+    rgba(255, 140, 0, 0.5) 100%
+  );
+  transform: rotate(-18deg);
+  transform-origin: center;
+  filter: blur(1px);
+}
+
+.hero-banner__text-panel-sparks {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero-banner__dark-spark {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #ffc107;
+  box-shadow: 0 0 6px 2px rgba(255, 193, 7, 0.55);
+  opacity: 0;
+  animation: hero-dark-spark 3.5s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.45s);
+  left: calc(6% + (var(--i) * 7%));
+  top: calc(18% + (var(--i) * 11%));
+}
+
+@keyframes hero-dark-spark {
+  0%,
+  100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 0.65; transform: scale(1); }
+}
+
+.hero-banner__content-wrap {
+  height: 100%;
+  min-height: 140px;
+}
+
+.hero-banner__content {
+  max-width: 32%;
+}
+
+.hero-banner__sparks {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  clip-path: polygon(var(--hero-slant-top) 0, 100% 0, 100% 100%, var(--hero-slant-bottom) 100%);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-banner__spark {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 8px 3px rgba(255, 230, 120, 0.9);
+  opacity: 0;
+  animation: hero-spark 2.4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.14s);
+  left: calc(36% + (var(--i) * 2.4%));
+  top: calc(6% + (var(--i) * 3.8%));
+}
+
+.hero-banner__spark:nth-child(odd) {
+  width: 2px;
+  height: 9px;
+  border-radius: 2px;
+  background: linear-gradient(to bottom, #fff, #ffc107);
+}
+
+.hero-banner__spark:nth-child(3n) {
+  left: calc(55% + (var(--i) * 2%));
+  top: calc(22% + (var(--i) * 3%));
+}
+
+@keyframes hero-spark {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(0) scale(0.4);
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+    transform: translateY(-20px) scale(1);
+  }
+  85% {
+    opacity: 0;
+    transform: translateY(-38px) scale(0.25);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-banner {
+    aspect-ratio: auto;
+    max-height: none;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(255, 193, 7, 0.12) 0%, transparent 60%),
+      linear-gradient(135deg, #0b101b 0%, #121828 50%, #0b101b 100%);
+  }
+
+  .hero-banner__content {
+    max-width: 100%;
+  }
+
+  .hero-banner__content-wrap {
+    min-height: 140px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-banner {
+    --hero-slant-top: 46%;
+    --hero-slant-bottom: 30%;
+  }
+
+  .hero-banner__content {
+    max-width: 38%;
+  }
+
+  .hero-banner__dealer {
+    left: 60%;
+    max-width: 46%;
+    height: 90%;
+  }
 }
 
 .swiper-button-prev,

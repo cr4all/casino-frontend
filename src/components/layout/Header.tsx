@@ -3,13 +3,17 @@ import { useAuthStore } from '@/stores/authStore';
 import { useWalletStore } from '@/stores/walletStore';
 import { useUiStore } from '@/stores/uiStore';
 import { useUnreadNotifications } from '@/hooks/useUnreadNotifications';
+import { useTranslation } from '@/hooks/useTranslation';
 import { Button } from '@/components/common/Button';
+import { LanguageSelector } from '@/components/common/LanguageSelector';
+import { Logo } from '@/components/common/Logo';
 
 interface HeaderProps {
   onMenuToggle?: () => void;
 }
 
 export function Header({ onMenuToggle }: HeaderProps) {
+  const { t } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const logout = useAuthStore((s) => s.logout);
   const balance = useWalletStore((s) => s.balance);
@@ -22,24 +26,25 @@ export function Header({ onMenuToggle }: HeaderProps) {
         type="button"
         onClick={onMenuToggle}
         className="flex h-9 w-9 items-center justify-center rounded-md border border-white/10 text-white lg:hidden"
-        aria-label="Open menu"
+        aria-label={t('common.openMenu')}
       >
         ☰
       </button>
 
       <div className="flex-1 lg:hidden">
-        <span className="text-sm font-bold italic text-white">Casino</span>
-        <span className="text-sm font-bold italic text-accent-gold">24</span>
+        <Logo height={28} />
       </div>
 
       <div className="hidden flex-1 lg:block" />
 
       <div className="flex items-center gap-2 md:gap-3">
+        <LanguageSelector />
+
         {isAuthenticated ? (
           <>
             <div className="flex items-center gap-2 rounded-lg border border-white/10 bg-card px-4 py-2">
-              <span className="text-xs text-muted hidden sm:inline">Balance</span>
-              <span className="text-sm font-bold text-accent-gold">
+              <span className="text-xs text-muted hidden sm:inline">{t('nav.balance')}</span>
+              <span className="font-condensed text-sm font-bold tracking-wide text-accent-gold">
                 {balance?.currency ?? 'EUR'} {balance?.balance ?? '0.00'}
               </span>
             </div>
@@ -55,25 +60,25 @@ export function Header({ onMenuToggle }: HeaderProps) {
               </button>
               <div className="absolute right-0 top-full mt-2 hidden w-48 rounded-lg border border-white/10 bg-card py-1 shadow-card group-hover:block z-50">
                 <Link to="/profile" className="block px-4 py-2.5 text-sm text-white hover:bg-surface transition-colors">
-                  Profile
+                  {t('nav.profile')}
                 </Link>
                 <Link to="/deposit" className="block px-4 py-2.5 text-sm text-white hover:bg-surface transition-colors">
-                  Deposit
+                  {t('nav.depositLabel')}
                 </Link>
                 <Link to="/withdraw" className="block px-4 py-2.5 text-sm text-white hover:bg-surface transition-colors">
-                  Withdraw
+                  {t('nav.withdrawLabel')}
                 </Link>
                 <Link to="/bonus" className="block px-4 py-2.5 text-sm text-white hover:bg-surface transition-colors">
-                  Bonuses
+                  {t('nav.bonusesLabel')}
                 </Link>
                 <Link to="/bets" className="block px-4 py-2.5 text-sm text-white hover:bg-surface transition-colors">
-                  Bet History
+                  {t('betHistory.title')}
                 </Link>
                 <Link to="/transactions" className="block px-4 py-2.5 text-sm text-white hover:bg-surface transition-colors">
-                  Transactions
+                  {t('nav.transactions')}
                 </Link>
                 <Link to="/notifications" className="block px-4 py-2.5 text-sm text-white hover:bg-surface transition-colors">
-                  Notices
+                  {t('nav.noticesLabel')}
                   {unreadCount > 0 && <span className="ml-1 text-accent-gold">({unreadCount})</span>}
                 </Link>
                 <button
@@ -81,7 +86,7 @@ export function Header({ onMenuToggle }: HeaderProps) {
                   onClick={logout}
                   className="w-full px-4 py-2.5 text-left text-sm text-red-400 hover:bg-surface transition-colors"
                 >
-                  Logout
+                  {t('nav.logout')}
                 </button>
               </div>
             </div>
@@ -89,10 +94,10 @@ export function Header({ onMenuToggle }: HeaderProps) {
         ) : (
           <>
             <Button variant="ghost" className="text-xs" onClick={() => openModal('login')}>
-              Login
+              {t('nav.login')}
             </Button>
             <Button variant="gold" className="text-xs" onClick={() => openModal('register')}>
-              Register
+              {t('nav.register')}
             </Button>
           </>
         )}

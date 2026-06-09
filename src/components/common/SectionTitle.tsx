@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface SectionTitleProps {
   title: string;
@@ -15,6 +16,8 @@ export function SectionTitle({
   onNext,
   showArrows = true,
 }: SectionTitleProps) {
+  const { t } = useTranslation();
+
   return (
     <div className="mb-4 flex items-center justify-between gap-4">
       <div className="flex items-center gap-2">
@@ -29,7 +32,7 @@ export function SectionTitle({
             to={showAllPath}
             className="text-xs font-semibold text-accent-gold hover:text-accent-gold/80 transition-colors"
           >
-            View all &gt;
+            {t('common.viewAllArrow')}
           </Link>
         )}
         {showArrows && onPrev && onNext && (
@@ -38,7 +41,7 @@ export function SectionTitle({
               type="button"
               onClick={onPrev}
               className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-card text-white hover:border-accent-gold/30 transition-colors"
-              aria-label="Previous"
+              aria-label={t('common.previous')}
             >
               ‹
             </button>
@@ -46,7 +49,7 @@ export function SectionTitle({
               type="button"
               onClick={onNext}
               className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-card text-white hover:border-accent-gold/30 transition-colors"
-              aria-label="Next"
+              aria-label={t('common.next')}
             >
               ›
             </button>

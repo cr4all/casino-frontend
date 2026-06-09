@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { notificationApi, type InternalMessage } from '@/api/notification.api';
 import { useAuthStore } from '@/stores/authStore';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export function NotificationsPage() {
+  const { t } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const [messages, setMessages] = useState<InternalMessage[]>([]);
   const [loading, setLoading] = useState(true);
@@ -26,22 +28,20 @@ export function NotificationsPage() {
   return (
     <div className="py-8 max-w-2xl">
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-white">Messages</h1>
+        <h1 className="text-2xl font-bold text-white">{t('messages.title')}</h1>
         {unreadCount > 0 && (
           <span className="rounded-full bg-accent px-2.5 py-0.5 text-xs font-medium text-white">
-            {unreadCount} unread
+            {t('messages.unread', { count: unreadCount })}
           </span>
         )}
       </div>
 
       {loading ? (
-        <p className="text-muted">Loading messages...</p>
+        <p className="text-muted">{t('common.loadingMessages')}</p>
       ) : messages.length === 0 ? (
         <div className="rounded-lg border border-white/5 bg-surface p-8 text-center">
-          <p className="text-muted">No messages yet.</p>
-          <p className="mt-2 text-xs text-muted">
-            Deposit confirmations and bonus notifications will appear here.
-          </p>
+          <p className="text-muted">{t('messages.noMessages')}</p>
+          <p className="mt-2 text-xs text-muted">{t('messages.noMessagesHint')}</p>
         </div>
       ) : (
         <ul className="space-y-3">

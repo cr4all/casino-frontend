@@ -1,3 +1,5 @@
+import { useTranslation } from '@/hooks/useTranslation';
+
 const statusStyles: Record<string, string> = {
   pending: 'bg-yellow-500/15 text-accent-gold border border-accent-gold/30',
   requested: 'bg-yellow-500/15 text-accent-gold border border-accent-gold/30',
@@ -15,11 +17,12 @@ interface StatusBadgeProps {
 }
 
 export function StatusBadge({ status }: StatusBadgeProps) {
+  const { tStatus } = useTranslation();
   const style = statusStyles[status] ?? 'bg-surface text-muted border border-white/10';
 
   return (
     <span className={`inline-block rounded-md px-2 py-0.5 text-xs font-medium capitalize ${style}`}>
-      {status.replace(/_/g, ' ')}
+      {tStatus(status)}
     </span>
   );
 }

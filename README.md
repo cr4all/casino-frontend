@@ -31,6 +31,8 @@ API proxy: `/api` → `http://localhost:8000`
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `VITE_API_URL` | `http://localhost:8000/api/v1` | Backend API base URL |
+| `VITE_TAWK_PROPERTY_ID` | — | tawk.to Property ID (Chat Widget embed) |
+| `VITE_TAWK_WIDGET_ID` | — | tawk.to Widget ID (Chat Widget embed) |
 
 ## Build
 

@@ -4,8 +4,10 @@ import { Button } from '@/components/common/Button';
 import { useAuthStore } from '@/stores/authStore';
 import { useUiStore } from '@/stores/uiStore';
 import { useWalletStore } from '@/stores/walletStore';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export function RegisterModal() {
+  const { t } = useTranslation();
   const activeModal = useUiStore((s) => s.activeModal);
   const closeModal = useUiStore((s) => s.closeModal);
   const openModal = useUiStore((s) => s.openModal);
@@ -43,20 +45,20 @@ export function RegisterModal() {
         currency: 'EUR',
       });
     } catch {
-      setError('Registration failed. Please check your details.');
+      setError(t('auth.registerError'));
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <Modal isOpen={activeModal === 'register'} onClose={closeModal} title="Register">
+    <Modal isOpen={activeModal === 'register'} onClose={closeModal} title={t('auth.registerTitle')}>
       <form onSubmit={handleSubmit} className="space-y-3">
         {error && (
           <p className="rounded-md bg-accent/10 px-3 py-2 text-sm text-accent">{error}</p>
         )}
         <div>
-          <label htmlFor="reg-email" className="mb-1 block text-xs text-muted">Email</label>
+          <label htmlFor="reg-email" className="mb-1 block text-xs text-muted">{t('auth.email')}</label>
           <input
             id="reg-email"
             type="email"
@@ -67,7 +69,7 @@ export function RegisterModal() {
           />
         </div>
         <div>
-          <label htmlFor="reg-nickname" className="mb-1 block text-xs text-muted">Nickname</label>
+          <label htmlFor="reg-nickname" className="mb-1 block text-xs text-muted">{t('auth.nickname')}</label>
           <input
             id="reg-nickname"
             type="text"
@@ -80,7 +82,7 @@ export function RegisterModal() {
         </div>
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <label htmlFor="reg-country" className="mb-1 block text-xs text-muted">Country</label>
+            <label htmlFor="reg-country" className="mb-1 block text-xs text-muted">{t('auth.country')}</label>
             <input
               id="reg-country"
               type="text"
@@ -92,7 +94,7 @@ export function RegisterModal() {
             />
           </div>
           <div>
-            <label htmlFor="reg-currency" className="mb-1 block text-xs text-muted">Currency</label>
+            <label htmlFor="reg-currency" className="mb-1 block text-xs text-muted">{t('auth.currency')}</label>
             <input
               id="reg-currency"
               type="text"
@@ -105,7 +107,7 @@ export function RegisterModal() {
           </div>
         </div>
         <div>
-          <label htmlFor="reg-password" className="mb-1 block text-xs text-muted">Password</label>
+          <label htmlFor="reg-password" className="mb-1 block text-xs text-muted">{t('auth.password')}</label>
           <input
             id="reg-password"
             type="password"
@@ -118,7 +120,7 @@ export function RegisterModal() {
         </div>
         <div>
           <label htmlFor="reg-password-confirm" className="mb-1 block text-xs text-muted">
-            Confirm Password
+            {t('auth.confirmPassword')}
           </label>
           <input
             id="reg-password-confirm"
@@ -130,16 +132,16 @@ export function RegisterModal() {
           />
         </div>
         <Button type="submit" fullWidth disabled={loading}>
-          {loading ? 'Creating account...' : 'Register'}
+          {loading ? t('common.creatingAccount') : t('nav.register')}
         </Button>
         <p className="text-center text-xs text-muted">
-          Already have an account?{' '}
+          {t('auth.hasAccount')}{' '}
           <button
             type="button"
             onClick={() => openModal('login')}
             className="text-accent hover:underline"
           >
-            Login
+            {t('nav.login')}
           </button>
         </p>
       </form>

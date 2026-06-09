@@ -6,9 +6,11 @@ import { LoginModal } from '@/components/auth/LoginModal';
 import { RegisterModal } from '@/components/auth/RegisterModal';
 import { ComingSoonModal } from '@/components/common/Modal';
 import { useAuthInit } from '@/hooks/useAuthInit';
+import { useLanguageInit } from '@/hooks/useLanguageInit';
 
 export function AppLayout() {
   useAuthInit();
+  useLanguageInit();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
