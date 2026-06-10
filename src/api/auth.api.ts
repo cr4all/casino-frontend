@@ -1,6 +1,16 @@
 import api from '@/api/axios';
 import type { ApiResponse, AuthTokens, User } from '@/types';
 
+export interface RegistrationOption {
+  code: string;
+  name: string;
+}
+
+export interface RegisterOptions {
+  currencies: RegistrationOption[];
+  countries: RegistrationOption[];
+}
+
 export interface RegisterPayload {
   email: string;
   password: string;
@@ -17,6 +27,11 @@ export interface LoginPayload {
 }
 
 export const authApi = {
+  getRegisterOptions: async () => {
+    const { data } = await api.get<ApiResponse<RegisterOptions>>('/auth/register-options');
+    return data.data;
+  },
+
   register: async (payload: RegisterPayload) => {
     const { data } = await api.post<ApiResponse<{ user: User; access_token: string; expires_in: number }>>(
       '/auth/register',

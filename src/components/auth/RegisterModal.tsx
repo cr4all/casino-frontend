@@ -1,10 +1,14 @@
-import { useState, type FormEvent } from 'react';
+import { useState, useEffect, type FormEvent } from 'react';
 import { Modal } from '@/components/common/Modal';
 import { Button } from '@/components/common/Button';
 import { useAuthStore } from '@/stores/authStore';
 import { useUiStore } from '@/stores/uiStore';
 import { useWalletStore } from '@/stores/walletStore';
 import { useTranslation } from '@/hooks/useTranslation';
+import { authApi, type RegisterOptions } from '@/api/auth.api';
+
+const selectClassName =
+  'w-full rounded-md border border-white/10 bg-card px-3 py-2 text-sm text-white focus:border-accent focus:outline-none';
 
 export function RegisterModal() {
   const { t } = useTranslation();
@@ -14,19 +18,62 @@ export function RegisterModal() {
   const register = useAuthStore((s) => s.register);
   const fetchBalance = useWalletStore((s) => s.fetchBalance);
 
+  const [options, setOptions] = useState<RegisterOptions | null>(null);
   const [form, setForm] = useState({
     email: '',
     password: '',
     password_confirmation: '',
     nickname: '',
-    country: 'DE',
-    currency: 'EUR',
+    country: '',
+    currency: '',
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    if (activeModal !== 'register') {
+      return;
+    }
+
+    let cancelled = false;
+
+    authApi
+      .getRegisterOptions()
+      .then((data) => {
+        if (cancelled) {
+          return;
+        }
+        setOptions(data);
+        setForm((prev) => ({
+          ...prev,
+          country: prev.country || data.countries[0]?.code || '',
+          currency: prev.currency || data.currencies[0]?.code || '',
+        }));
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setError(t('auth.registerError'));
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [activeModal, t]);
+
   const update = (field: string, value: string) =>
     setForm((prev) => ({ ...prev, [field]: value }));
+
+  const resetForm = () => {
+    setForm({
+      email: '',
+      password: '',
+      password_confirmation: '',
+      nickname: '',
+      country: options?.countries[0]?.code ?? '',
+      currency: options?.currencies[0]?.code ?? '',
+    });
+  };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -36,20 +83,15 @@ export function RegisterModal() {
       await register(form);
       await fetchBalance();
       closeModal();
-      setForm({
-        email: '',
-        password: '',
-        password_confirmation: '',
-        nickname: '',
-        country: 'DE',
-        currency: 'EUR',
-      });
+      resetForm();
     } catch {
       setError(t('auth.registerError'));
     } finally {
       setLoading(false);
     }
   };
+
+  const optionsLoading = activeModal === 'register' && options === null;
 
   return (
     <Modal isOpen={activeModal === 'register'} onClose={closeModal} title={t('auth.registerTitle')}>
@@ -83,27 +125,45 @@ export function RegisterModal() {
         <div className="grid grid-cols-2 gap-3">
           <div>
             <label htmlFor="reg-country" className="mb-1 block text-xs text-muted">{t('auth.country')}</label>
-            <input
+            <select
               id="reg-country"
-              type="text"
               required
-              maxLength={2}
               value={form.country}
-              onChange={(e) => update('country', e.target.value.toUpperCase())}
-              className="w-full rounded-md border border-white/10 bg-card px-3 py-2 text-sm text-white focus:border-accent focus:outline-none"
-            />
+              onChange={(e) => update('country', e.target.value)}
+              disabled={optionsLoading}
+              className={selectClassName}
+            >
+              {optionsLoading ? (
+                <option value="">{t('common.loading')}</option>
+              ) : (
+                options?.countries.map((country) => (
+                  <option key={country.code} value={country.code}>
+                    {country.name}
+                  </option>
+                ))
+              )}
+            </select>
           </div>
           <div>
             <label htmlFor="reg-currency" className="mb-1 block text-xs text-muted">{t('auth.currency')}</label>
-            <input
+            <select
               id="reg-currency"
-              type="text"
               required
-              maxLength={3}
               value={form.currency}
-              onChange={(e) => update('currency', e.target.value.toUpperCase())}
-              className="w-full rounded-md border border-white/10 bg-card px-3 py-2 text-sm text-white focus:border-accent focus:outline-none"
-            />
+              onChange={(e) => update('currency', e.target.value)}
+              disabled={optionsLoading}
+              className={selectClassName}
+            >
+              {optionsLoading ? (
+                <option value="">{t('common.loading')}</option>
+              ) : (
+                options?.currencies.map((currency) => (
+                  <option key={currency.code} value={currency.code}>
+                    {currency.name} ({currency.code})
+                  </option>
+                ))
+              )}
+            </select>
           </div>
         </div>
         <div>
@@ -131,7 +191,7 @@ export function RegisterModal() {
             className="w-full rounded-md border border-white/10 bg-card px-3 py-2 text-sm text-white focus:border-accent focus:outline-none"
           />
         </div>
-        <Button type="submit" fullWidth disabled={loading}>
+        <Button type="submit" fullWidth disabled={loading || optionsLoading}>
           {loading ? t('common.creatingAccount') : t('nav.register')}
         </Button>
         <p className="text-center text-xs text-muted">
