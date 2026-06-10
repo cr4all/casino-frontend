@@ -52,6 +52,154 @@ export function FlagIcon({ language, className = baseClass }: FlagIconProps) {
           />
         </svg>
       );
+    case 'fr':
+      return (
+        <svg className={className} viewBox="0 0 3 2" aria-hidden="true">
+          <rect width="1" height="2" fill="#002395" />
+          <rect width="1" height="2" x="1" fill="#fff" />
+          <rect width="1" height="2" x="2" fill="#ED2939" />
+        </svg>
+      );
+    case 'ru':
+      return (
+        <svg className={className} viewBox="0 0 3 2" aria-hidden="true">
+          <rect width="3" height="2" fill="#fff" />
+          <rect width="3" height="1.333" y="0.667" fill="#0039A6" />
+          <rect width="3" height="0.667" y="1.333" fill="#D52B1E" />
+        </svg>
+      );
+    case 'zh':
+      return (
+        <svg className={className} viewBox="0 0 30 20" aria-hidden="true">
+          <rect width="30" height="20" fill="#DE2910" />
+          <polygon fill="#FFDE00" points="5,2 6.2,5.8 10,5.8 7,8.2 8.2,12 5,9.6 1.8,12 3,8.2 0,5.8 3.8,5.8" />
+        </svg>
+      );
+    case 'ja':
+      return (
+        <svg className={className} viewBox="0 0 30 20" aria-hidden="true">
+          <rect width="30" height="20" fill="#fff" />
+          <circle cx="15" cy="10" r="6" fill="#BC002D" />
+        </svg>
+      );
+    case 'pt':
+      return (
+        <svg className={className} viewBox="0 0 600 400" aria-hidden="true">
+          <rect width="600" height="400" fill="#006600" />
+          <rect width="240" height="400" fill="#FF0000" />
+          <circle cx="240" cy="200" r="80" fill="#FFCC00" />
+          <circle cx="260" cy="200" r="60" fill="#006600" />
+        </svg>
+      );
+    case 'mk':
+      return (
+        <svg className={className} viewBox="0 0 60 30" aria-hidden="true">
+          <rect width="60" height="30" fill="#D20000" />
+          <circle cx="15" cy="15" r="8" fill="#FFE600" />
+          <circle cx="15" cy="15" r="5" fill="#D20000" />
+        </svg>
+      );
+    case 'el':
+      return (
+        <svg className={className} viewBox="0 0 27 18" aria-hidden="true">
+          <rect width="27" height="18" fill="#0D5EAF" />
+          <rect width="27" height="2" y="2" fill="#fff" />
+          <rect width="27" height="2" y="6" fill="#fff" />
+          <rect width="27" height="2" y="10" fill="#fff" />
+          <rect width="27" height="2" y="14" fill="#fff" />
+          <rect width="10" height="10" fill="#0D5EAF" />
+          <rect width="10" height="2" y="2" fill="#fff" />
+          <rect width="10" height="2" y="6" fill="#fff" />
+          <rect width="2" height="10" x="2" fill="#fff" />
+          <rect width="2" height="10" x="6" fill="#fff" />
+        </svg>
+      );
+    case 'it':
+      return (
+        <svg className={className} viewBox="0 0 3 2" aria-hidden="true">
+          <rect width="1" height="2" fill="#009246" />
+          <rect width="1" height="2" x="1" fill="#fff" />
+          <rect width="1" height="2" x="2" fill="#CE2B37" />
+        </svg>
+      );
+    case 'tr':
+      return (
+        <svg className={className} viewBox="0 0 30 20" aria-hidden="true">
+          <rect width="30" height="20" fill="#E30A17" />
+          <circle cx="11" cy="10" r="5" fill="#fff" />
+          <circle cx="12.5" cy="10" r="4" fill="#E30A17" />
+          <polygon fill="#fff" points="17,10 19.5,11 18.5,8.5 20.5,6.5 17.8,6.5 17,4 16.2,6.5 13.5,6.5 15.5,8.5 14.5,11" />
+        </svg>
+      );
+    case 'ko':
+      return (
+        <svg className={className} viewBox="0 0 30 20" aria-hidden="true">
+          <rect width="30" height="20" fill="#fff" />
+          <circle cx="15" cy="10" r="5" fill="#C60C30" />
+          <path fill="#003478" d="M15 5a5 5 0 0 1 0 10 2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 0 0-5z" />
+        </svg>
+      );
+    case 'sr':
+      return (
+        <svg className={className} viewBox="0 0 3 2" aria-hidden="true">
+          <rect width="3" height="0.667" fill="#C6363C" />
+          <rect width="3" height="0.667" y="0.667" fill="#0C4076" />
+          <rect width="3" height="0.667" y="1.333" fill="#fff" />
+        </svg>
+      );
+    case 'hr':
+      return (
+        <svg className={className} viewBox="0 0 60 30" aria-hidden="true">
+          <rect width="60" height="10" fill="#FF0000" />
+          <rect width="60" height="10" y="10" fill="#fff" />
+          <rect width="60" height="10" y="20" fill="#171796" />
+          <rect width="20" height="20" fill="#FF0000" />
+          <rect width="10" height="10" x="5" y="5" fill="#fff" />
+          <rect width="10" height="10" x="15" y="15" fill="#fff" />
+        </svg>
+      );
+    case 'sl':
+      return (
+        <svg className={className} viewBox="0 0 3 2" aria-hidden="true">
+          <rect width="3" height="0.667" fill="#fff" />
+          <rect width="3" height="0.667" y="0.667" fill="#0000FF" />
+          <rect width="3" height="0.667" y="1.333" fill="#FF0000" />
+        </svg>
+      );
+    case 'fil':
+      return (
+        <svg className={className} viewBox="0 0 60 30" aria-hidden="true">
+          <rect width="60" height="15" fill="#0038A8" />
+          <rect width="60" height="15" y="15" fill="#CE1126" />
+          <polygon fill="#fff" points="0,0 30,15 0,30" />
+          <circle cx="10" cy="15" r="4" fill="#FCD116" />
+        </svg>
+      );
+    case 'id':
+      return (
+        <svg className={className} viewBox="0 0 3 2" aria-hidden="true">
+          <rect width="3" height="1" fill="#FF0000" />
+          <rect width="3" height="1" y="1" fill="#fff" />
+        </svg>
+      );
+    case 'hi':
+      return (
+        <svg className={className} viewBox="0 0 3 2" aria-hidden="true">
+          <rect width="3" height="0.667" fill="#FF9933" />
+          <rect width="3" height="0.667" y="0.667" fill="#fff" />
+          <rect width="3" height="0.667" y="1.333" fill="#138808" />
+          <circle cx="1.5" cy="1" r="0.25" fill="#000080" />
+        </svg>
+      );
+    case 'ur':
+      return (
+        <svg className={className} viewBox="0 0 3 2" aria-hidden="true">
+          <rect width="3" height="2" fill="#01411C" />
+          <rect width="0.75" height="2" fill="#fff" />
+          <circle cx="1.1" cy="1" r="0.35" fill="#01411C" />
+          <circle cx="1.2" cy="1" r="0.28" fill="#fff" />
+        </svg>
+      );
     default:
       return null;
   }

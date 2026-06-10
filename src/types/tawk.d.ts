@@ -7,6 +7,7 @@ export interface TawkApi {
   logout?: () => void;
   showWidget?: () => void;
   hideWidget?: () => void;
+  minimize?: () => void;
   toggle?: () => void;
 }
 

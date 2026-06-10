@@ -68,25 +68,26 @@ export function WithdrawPage() {
   };
 
   return (
-    <div className="py-8 max-w-2xl">
-      <div className="mb-6 flex items-center justify-between">
+    <div className="mx-auto max-w-7xl py-8">
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
         <h1 className="text-2xl font-bold text-white">Withdraw</h1>
         <Link to="/deposit" className="text-sm text-accent hover:underline">
           ← Deposit
         </Link>
       </div>
 
-      <p className="mb-4 text-sm text-muted">
-        Available balance:{' '}
-        <span className="font-mono text-accent-gold">
-          {balance?.currency ?? 'EUR'} {balance?.balance ?? '0.0000'}
-        </span>
-      </p>
-
       {loading ? (
         <p className="text-muted">Loading...</p>
       ) : (
-        <>
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,28rem)_minmax(0,1fr)] xl:grid-cols-[minmax(0,32rem)_minmax(0,1fr)]">
+          <div className="space-y-4">
+          <p className="text-sm text-muted">
+            Available balance:{' '}
+            <span className="font-mono text-accent-gold">
+              {balance?.currency ?? 'EUR'} {balance?.balance ?? '0.0000'}
+            </span>
+          </p>
+
           <form onSubmit={handleSubmit} className="rounded-xl border border-white/[0.08] bg-card p-6 space-y-4">
             <div>
               <label htmlFor="withdraw-method" className="mb-1 block text-xs text-muted">Payment Method</label>
@@ -160,8 +161,9 @@ export function WithdrawPage() {
               {submitting ? 'Submitting...' : 'Request Withdrawal'}
             </Button>
           </form>
+          </div>
 
-          <section className="mt-8">
+          <section className="min-w-0">
             <div className="mb-4 flex items-center justify-between gap-4">
               <h2 className="text-lg font-semibold text-white">Recent Withdrawals</h2>
               {withdrawals.length > 0 && (
@@ -203,7 +205,7 @@ export function WithdrawPage() {
               </div>
             )}
           </section>
-        </>
+        </div>
       )}
     </div>
   );

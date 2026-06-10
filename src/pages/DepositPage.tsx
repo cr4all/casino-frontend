@@ -13,6 +13,8 @@ import { useAuthStore } from '@/stores/authStore';
 import { useWalletStore } from '@/stores/walletStore';
 import { Button } from '@/components/common/Button';
 import { StatusBadge } from '@/components/common/StatusBadge';
+import { CryptoAmountInput } from '@/components/deposit/CryptoAmountInput';
+import { CryptoCurrencyPicker } from '@/components/deposit/CryptoCurrencyPicker';
 import { getApiErrorMessage } from '@/utils/apiError';
 
 function CopyButton({ value }: { value: string }) {
@@ -53,6 +55,7 @@ export function DepositPage() {
   const fetchBalance = useWalletStore((s) => s.fetchBalance);
   const [methods, setMethods] = useState<PaymentMethod[]>([]);
   const [cryptoCurrencies, setCryptoCurrencies] = useState<CryptoCurrency[]>([]);
+  const [cryptoLoading, setCryptoLoading] = useState(false);
   const [deposits, setDeposits] = useState<DepositItem[]>([]);
   const [methodId, setMethodId] = useState<number | ''>('');
   const [payCurrency, setPayCurrency] = useState('');
@@ -91,12 +94,14 @@ export function DepositPage() {
       return;
     }
 
+    setCryptoLoading(true);
     paymentApi.getCryptoCurrencies()
       .then((items) => {
         setCryptoCurrencies(items);
         if (items.length > 0) setPayCurrency(items[0].code);
       })
-      .catch(() => setCryptoCurrencies([]));
+      .catch(() => setCryptoCurrencies([]))
+      .finally(() => setCryptoLoading(false));
   }, [isCrypto, methodId]);
 
   useEffect(() => {
@@ -160,8 +165,8 @@ export function DepositPage() {
   const isRedirectPayment = isLocalGateway || Boolean(paymentUrl);
 
   return (
-    <div className="py-8 max-w-2xl">
-      <div className="mb-6 flex items-center justify-between">
+    <div className="mx-auto max-w-7xl py-8">
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
         <h1 className="text-2xl font-bold text-white">{t('deposit.title')}</h1>
         <div className="flex gap-3 text-sm">
           <Link to="/bonus" className="text-accent-purple hover:underline">{t('deposit.bonusesLink')}</Link>
@@ -172,7 +177,8 @@ export function DepositPage() {
       {loading ? (
         <p className="text-muted">{t('common.loadingPaymentMethods')}</p>
       ) : (
-        <>
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,28rem)_minmax(0,1fr)] xl:grid-cols-[minmax(0,32rem)_minmax(0,1fr)]">
+          <div className="space-y-4">
           <form onSubmit={handleSubmit} className="rounded-xl border border-white/[0.08] bg-card p-6 space-y-4">
             <div>
               <label htmlFor="deposit-method" className="mb-1 block text-xs text-muted">{t('deposit.paymentMethod')}</label>
@@ -190,56 +196,67 @@ export function DepositPage() {
               </select>
             </div>
 
-            {isCrypto && (
-              <div>
-                <label htmlFor="deposit-currency" className="mb-1 block text-xs text-muted">{t('deposit.cryptocurrency')}</label>
-                <select
-                  id="deposit-currency"
-                  value={payCurrency}
-                  onChange={(e) => setPayCurrency(e.target.value)}
-                  className="w-full rounded-md border border-white/10 bg-background px-3 py-2 text-sm text-white"
-                  required
-                >
-                  {cryptoCurrencies.length === 0 ? (
-                    <option value="">{t('common.loadingCurrencies')}</option>
-                  ) : (
-                    cryptoCurrencies.map((c) => (
-                      <option key={c.code} value={c.code}>
-                        {c.name} ({c.code})
-                      </option>
-                    ))
-                  )}
-                </select>
+            {isCrypto ? (
+              <div className="space-y-4">
+                <div>
+                  <CryptoCurrencyPicker
+                    currencies={cryptoCurrencies}
+                    value={payCurrency}
+                    onChange={setPayCurrency}
+                    loading={cryptoLoading}
+                    loadingLabel={t('common.loadingCurrencies')}
+                  />
+                </div>
+
+                {selected && (
+                  <p className="text-xs text-muted">
+                    {t('common.minMax', {
+                      min: selected.min_amount,
+                      max: selected.max_amount ?? t('common.noLimit'),
+                    })}
+                    {paymentCurrency && ` · ${t('deposit.paymentCurrency', { currency: paymentCurrency })}`}
+                  </p>
+                )}
+
+                <CryptoAmountInput
+                  value={amount}
+                  onChange={setAmount}
+                  currencyLabel={paymentCurrency}
+                  amountLabel={t('deposit.amount')}
+                  clearLabel={t('common.close')}
+                />
               </div>
-            )}
+            ) : (
+              <>
+                {selected && (
+                  <p className="text-xs text-muted">
+                    {t('common.minMax', {
+                      min: selected.min_amount,
+                      max: selected.max_amount ?? t('common.noLimit'),
+                    })}
+                    {paymentCurrency && ` · ${t('deposit.paymentCurrency', { currency: paymentCurrency })}`}
+                  </p>
+                )}
 
-            {selected && (
-              <p className="text-xs text-muted">
-                {t('common.minMax', {
-                  min: selected.min_amount,
-                  max: selected.max_amount ?? t('common.noLimit'),
-                })}
-                {paymentCurrency && ` · ${t('deposit.paymentCurrency', { currency: paymentCurrency })}`}
-              </p>
+                <div>
+                  <label htmlFor="deposit-amount" className="mb-1 block text-xs text-muted">
+                    {t('deposit.amount')}
+                    {paymentCurrency ? ` (${paymentCurrency})` : ''}
+                  </label>
+                  <input
+                    id="deposit-amount"
+                    type="number"
+                    step="0.0001"
+                    min="0"
+                    value={amount}
+                    onChange={(e) => setAmount(e.target.value)}
+                    required
+                    className="w-full rounded-md border border-white/10 bg-background px-3 py-2 text-sm text-white"
+                    placeholder="100.0000"
+                  />
+                </div>
+              </>
             )}
-
-            <div>
-              <label htmlFor="deposit-amount" className="mb-1 block text-xs text-muted">
-                {t('deposit.amount')}
-                {paymentCurrency ? ` (${paymentCurrency})` : ''}
-              </label>
-              <input
-                id="deposit-amount"
-                type="number"
-                step="0.0001"
-                min="0"
-                value={amount}
-                onChange={(e) => setAmount(e.target.value)}
-                required
-                className="w-full rounded-md border border-white/10 bg-background px-3 py-2 text-sm text-white"
-                placeholder="100.0000"
-              />
-            </div>
 
             {amount && Number(amount) > 0 && (
               <div className="rounded-lg border border-white/10 bg-background/50 p-3 text-sm">
@@ -339,8 +356,9 @@ export function DepositPage() {
               </p>
             </div>
           )}
+          </div>
 
-          <section className="mt-8">
+          <section className="min-w-0">
             <div className="mb-4 flex items-center justify-between gap-4">
               <h2 className="text-lg font-semibold text-white">{t('deposit.recentDeposits')}</h2>
               {deposits.length > 0 && (
@@ -382,7 +400,7 @@ export function DepositPage() {
               </div>
             )}
           </section>
-        </>
+        </div>
       )}
     </div>
   );

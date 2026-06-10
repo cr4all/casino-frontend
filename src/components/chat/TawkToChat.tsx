@@ -5,12 +5,28 @@ import { useAuthStore } from '@/stores/authStore';
 const propertyId = import.meta.env.VITE_TAWK_PROPERTY_ID;
 const widgetId = import.meta.env.VITE_TAWK_WIDGET_ID;
 
+function appendTawkOnLoad(handler: () => void) {
+  window.Tawk_API = window.Tawk_API || {};
+  const previous = window.Tawk_API.onLoad;
+  window.Tawk_API.onLoad = () => {
+    previous?.();
+    handler();
+  };
+}
+
 function loadTawkScript() {
   if (!propertyId || !widgetId) return;
   if (document.getElementById('tawk-to-script')) return;
 
   window.Tawk_API = window.Tawk_API || {};
   window.Tawk_LoadStart = new Date();
+
+  // Collapse greeting preview on load; keep corner chat bubble only.
+  appendTawkOnLoad(() => {
+    const minimize = () => window.Tawk_API?.minimize?.();
+    minimize();
+    window.setTimeout(minimize, 100);
+  });
 
   const script = document.createElement('script');
   script.id = 'tawk-to-script';
@@ -78,10 +94,7 @@ export function TawkToChat() {
         if (window.Tawk_API?.setAttributes) {
           apply();
         } else {
-          window.Tawk_API = window.Tawk_API || {};
-          window.Tawk_API.onLoad = () => {
-            apply();
-          };
+          appendTawkOnLoad(apply);
         }
       } catch {
         syncedRef.current = false;

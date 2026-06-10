@@ -32,9 +32,6 @@ export function LanguageSelector({ variant = 'header' }: LanguageSelectorProps) 
     setOpen(false);
   };
 
-  const triggerLabel =
-    variant === 'header' ? current.code.toUpperCase() : current.label;
-
   return (
     <div ref={containerRef} className={variant === 'profile' ? 'w-full' : 'relative'}>
       {variant === 'profile' && (
@@ -54,7 +51,7 @@ export function LanguageSelector({ variant = 'header' }: LanguageSelectorProps) 
         }
       >
         <FlagIcon language={current.code} />
-        <span className="font-medium">{triggerLabel}</span>
+        <span className="font-medium">{current.label}</span>
         <span className="ml-auto text-[10px] text-muted" aria-hidden="true">
           {open ? '▲' : '▼'}
         </span>
@@ -66,8 +63,8 @@ export function LanguageSelector({ variant = 'header' }: LanguageSelectorProps) 
           aria-label={t('common.language')}
           className={
             variant === 'profile'
-              ? 'mt-1 rounded-md border border-white/10 bg-card py-1 shadow-card'
-              : 'absolute right-0 top-full z-50 mt-1 min-w-[10rem] rounded-lg border border-white/10 bg-card py-1 shadow-card'
+              ? 'scrollbar-dark mt-1 max-h-[22.5rem] overflow-y-auto overscroll-contain rounded-md border border-white/10 bg-card py-1 shadow-card'
+              : 'scrollbar-dark absolute right-0 top-full z-50 mt-1 min-w-[10rem] max-h-[22.5rem] overflow-y-auto overscroll-contain rounded-lg border border-white/10 bg-card py-1 shadow-card'
           }
         >
           {languages.map((lang) => {
@@ -85,9 +82,6 @@ export function LanguageSelector({ variant = 'header' }: LanguageSelectorProps) 
                 >
                   <FlagIcon language={lang.code} />
                   <span className="font-medium">{lang.label}</span>
-                  {variant === 'header' && (
-                    <span className="ml-auto text-[10px] uppercase text-muted">{lang.code}</span>
-                  )}
                 </button>
               </li>
             );
