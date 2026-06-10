@@ -21,14 +21,31 @@ jobs:
 
   deploy:
     needs: build
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: >-
+      github.ref == 'refs/heads/main'
+      && github.event_name == 'push'
+      && vars.DEPLOY_ENABLED == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to server via SSH
-        uses: appleboy/ssh-action@v1
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.DEPLOY_HOST }}
           username: ${{ secrets.DEPLOY_USER }}
           key: ${{ secrets.DEPLOY_SSH_KEY }}
-          port: ${{ secrets.DEPLOY_PORT || '22' }}
-          script: bash /opt/casino/casino-frontend/scripts/deploy-docker.sh
+          port: ${{ secrets.DEPLOY_PORT != '' && secrets.DEPLOY_PORT || 22 }}
+          script_stop: true
+          command_timeout: 30m
+          script: |
+            set -euo pipefail
+            DEPLOY_ROOT="/opt/casino/casino-frontend"
+            COMPOSE_FILE="/opt/casino/casino-backend/docker/docker-compose.prod.yml"
+            if [[ ! -d "$DEPLOY_ROOT" ]]; then
+              echo "Missing $DEPLOY_ROOT — complete one-time setup in casino-backend/docs/deploy-docker.md"
+              exit 1
+            fi
+            cd "$DEPLOY_ROOT"
+            git pull origin main
+            docker compose -f "$COMPOSE_FILE" build frontend
+            docker compose -f "$COMPOSE_FILE" up -d frontend
+            docker compose -f "$COMPOSE_FILE" ps frontend
