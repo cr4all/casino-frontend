@@ -255,4 +255,11 @@ export const en = {
   },
 } as const;
 
-export type TranslationTree = typeof en;
+type DeepStringify<T> = T extends string
+  ? string
+  : T extends Record<string, unknown>
+    ? { [K in keyof T]: DeepStringify<T[K]> }
+    : never;
+
+/** Same keys as `en`, but leaf values may be any locale-specific string. */
+export type TranslationTree = DeepStringify<typeof en>;

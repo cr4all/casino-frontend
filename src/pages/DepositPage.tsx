@@ -290,7 +290,7 @@ export function DepositPage() {
                 </p>
               )}
 
-              {(paymentInfo.pay_amount || paymentInfo.pay_currency) && (
+              {(Boolean(paymentInfo.pay_amount) || Boolean(paymentInfo.pay_currency)) && (
                 <p className="mb-3 text-sm text-white">
                   {t('deposit.sendToAddress', {
                     amount: String(paymentInfo.pay_amount ?? paymentInfo.amount ?? ''),
