@@ -155,7 +155,12 @@ export function BonusPage() {
                         {claimingId === policy.policy_id ? 'Claiming...' : 'Claim Bonus'}
                       </Button>
                     )}
-                    {policy.type !== 'welcome' && (
+                    {policy.type === 'first_deposit' && (
+                      <p className="mt-4 text-xs text-muted">
+                        Applied automatically on your first deposit only.
+                      </p>
+                    )}
+                    {policy.type !== 'welcome' && policy.type !== 'first_deposit' && (
                       <p className="mt-4 text-xs text-muted">
                         Applied automatically on qualifying deposits.
                       </p>
