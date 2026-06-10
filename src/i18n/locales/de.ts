@@ -154,6 +154,13 @@ export const de: TranslationTree = {
     id: 'ID',
     method: 'Methode',
     date: 'Datum',
+    paymentCurrency: 'Zahlungswährung: {{currency}}',
+    estimatedBalance: 'Geschätztes Guthaben: {{amount}} {{currency}}',
+    exchangeRate: 'Kurs: {{rate}}',
+    estimateDisclaimer: 'Der endgültige Gutschriftbetrag wird bei Zahlungsbestätigung festgelegt und kann abweichen.',
+    credited: 'Gutgeschrieben',
+    loadingQuote: 'Schätzung wird berechnet...',
+    quoteFailed: 'Wechselkurs-Schätzung nicht verfügbar.',
   },
   withdraw: {
     title: 'Auszahlung',

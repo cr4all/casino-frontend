@@ -1,6 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
-import { paymentApi, type CryptoCurrency, type DepositItem, type DepositRequest, type PaymentMethod } from '@/api/payment.api';
+import { useTranslation } from '@/hooks/useTranslation';
+import {
+  paymentApi,
+  type CryptoCurrency,
+  type DepositItem,
+  type DepositQuote,
+  type DepositRequest,
+  type PaymentMethod,
+} from '@/api/payment.api';
 import { useAuthStore } from '@/stores/authStore';
 import { useWalletStore } from '@/stores/walletStore';
 import { Button } from '@/components/common/Button';
@@ -9,6 +17,7 @@ import { getApiErrorMessage } from '@/utils/apiError';
 
 function CopyButton({ value }: { value: string }) {
   const [copied, setCopied] = useState(false);
+  const { t } = useTranslation();
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(value);
@@ -22,12 +31,24 @@ function CopyButton({ value }: { value: string }) {
       onClick={handleCopy}
       className="ml-2 rounded px-2 py-0.5 text-xs text-accent hover:bg-accent/10"
     >
-      {copied ? 'Copied' : 'Copy'}
+      {copied ? t('common.copied') : t('common.copy')}
     </button>
   );
 }
 
+function formatDepositAmount(d: DepositItem): string {
+  if (d.credited_amount && d.credited_currency && d.status === 'completed') {
+    if (d.currency !== d.credited_currency) {
+      return `${d.currency} ${d.amount} → ${d.credited_currency} ${d.credited_amount}`;
+    }
+    return `${d.credited_currency} ${d.credited_amount}`;
+  }
+
+  return `${d.currency} ${d.amount}`;
+}
+
 export function DepositPage() {
+  const { t } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const fetchBalance = useWalletStore((s) => s.fetchBalance);
   const [methods, setMethods] = useState<PaymentMethod[]>([]);
@@ -36,6 +57,9 @@ export function DepositPage() {
   const [methodId, setMethodId] = useState<number | ''>('');
   const [payCurrency, setPayCurrency] = useState('');
   const [amount, setAmount] = useState('');
+  const [quote, setQuote] = useState<DepositQuote | null>(null);
+  const [quoteLoading, setQuoteLoading] = useState(false);
+  const [quoteError, setQuoteError] = useState(false);
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
@@ -58,6 +82,7 @@ export function DepositPage() {
   const selected = methods.find((m) => m.id === methodId);
   const isCrypto = selected?.type === 'crypto';
   const isLocalGateway = selected?.type === 'local';
+  const paymentCurrency = selected?.payment_currency ?? selected?.wallet_currency ?? '';
 
   useEffect(() => {
     if (!isCrypto) {
@@ -73,6 +98,30 @@ export function DepositPage() {
       })
       .catch(() => setCryptoCurrencies([]));
   }, [isCrypto, methodId]);
+
+  useEffect(() => {
+    if (!methodId || !amount || Number(amount) <= 0) {
+      setQuote(null);
+      setQuoteError(false);
+      return;
+    }
+
+    setQuoteLoading(true);
+    setQuoteError(false);
+
+    const timer = setTimeout(() => {
+      paymentApi
+        .getDepositQuote(Number(methodId), amount)
+        .then(setQuote)
+        .catch(() => {
+          setQuote(null);
+          setQuoteError(true);
+        })
+        .finally(() => setQuoteLoading(false));
+    }, 400);
+
+    return () => clearTimeout(timer);
+  }, [methodId, amount]);
 
   if (!isAuthenticated) {
     return <Navigate to="/" replace />;
@@ -93,12 +142,13 @@ export function DepositPage() {
         isCrypto ? payCurrency : undefined,
       );
       setLastDeposit(result);
-      setMessage(`Deposit request #${result.deposit_id} submitted. Status: ${result.status}`);
+      setMessage(t('deposit.submitted', { id: result.deposit_id, status: result.status }));
       setAmount('');
+      setQuote(null);
       await fetchBalance();
       await loadDeposits();
     } catch (err) {
-      setError(getApiErrorMessage(err, 'Failed to submit deposit.'));
+      setError(getApiErrorMessage(err, t('deposit.submitFailed')));
     } finally {
       setSubmitting(false);
     }
@@ -112,20 +162,20 @@ export function DepositPage() {
   return (
     <div className="py-8 max-w-2xl">
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-white">Deposit</h1>
+        <h1 className="text-2xl font-bold text-white">{t('deposit.title')}</h1>
         <div className="flex gap-3 text-sm">
-          <Link to="/bonus" className="text-accent-purple hover:underline">Bonuses</Link>
-          <Link to="/withdraw" className="text-accent hover:underline">Withdraw →</Link>
+          <Link to="/bonus" className="text-accent-purple hover:underline">{t('deposit.bonusesLink')}</Link>
+          <Link to="/withdraw" className="text-accent hover:underline">{t('deposit.withdrawLink')}</Link>
         </div>
       </div>
 
       {loading ? (
-        <p className="text-muted">Loading payment methods...</p>
+        <p className="text-muted">{t('common.loadingPaymentMethods')}</p>
       ) : (
         <>
           <form onSubmit={handleSubmit} className="rounded-xl border border-white/[0.08] bg-card p-6 space-y-4">
             <div>
-              <label htmlFor="deposit-method" className="mb-1 block text-xs text-muted">Payment Method</label>
+              <label htmlFor="deposit-method" className="mb-1 block text-xs text-muted">{t('deposit.paymentMethod')}</label>
               <select
                 id="deposit-method"
                 value={methodId}
@@ -142,7 +192,7 @@ export function DepositPage() {
 
             {isCrypto && (
               <div>
-                <label htmlFor="deposit-currency" className="mb-1 block text-xs text-muted">Cryptocurrency</label>
+                <label htmlFor="deposit-currency" className="mb-1 block text-xs text-muted">{t('deposit.cryptocurrency')}</label>
                 <select
                   id="deposit-currency"
                   value={payCurrency}
@@ -151,7 +201,7 @@ export function DepositPage() {
                   required
                 >
                   {cryptoCurrencies.length === 0 ? (
-                    <option value="">Loading currencies...</option>
+                    <option value="">{t('common.loadingCurrencies')}</option>
                   ) : (
                     cryptoCurrencies.map((c) => (
                       <option key={c.code} value={c.code}>
@@ -165,13 +215,19 @@ export function DepositPage() {
 
             {selected && (
               <p className="text-xs text-muted">
-                Min: {selected.min_amount} · Max: {selected.max_amount ?? 'No limit'}
-                {isLocalGateway && ' · Currency: IDR'}
+                {t('common.minMax', {
+                  min: selected.min_amount,
+                  max: selected.max_amount ?? t('common.noLimit'),
+                })}
+                {paymentCurrency && ` · ${t('deposit.paymentCurrency', { currency: paymentCurrency })}`}
               </p>
             )}
 
             <div>
-              <label htmlFor="deposit-amount" className="mb-1 block text-xs text-muted">Amount</label>
+              <label htmlFor="deposit-amount" className="mb-1 block text-xs text-muted">
+                {t('deposit.amount')}
+                {paymentCurrency ? ` (${paymentCurrency})` : ''}
+              </label>
               <input
                 id="deposit-amount"
                 type="number"
@@ -185,25 +241,61 @@ export function DepositPage() {
               />
             </div>
 
+            {amount && Number(amount) > 0 && (
+              <div className="rounded-lg border border-white/10 bg-background/50 p-3 text-sm">
+                {quoteLoading && (
+                  <p className="text-muted">{t('deposit.loadingQuote')}</p>
+                )}
+                {!quoteLoading && quote && (
+                  <>
+                    <p className="font-medium text-accent-gold">
+                      {t('deposit.estimatedBalance', {
+                        amount: quote.credited_amount,
+                        currency: quote.wallet_currency,
+                      })}
+                    </p>
+                    {quote.rate_display && (
+                      <p className="mt-1 text-xs text-muted">
+                        {t('deposit.exchangeRate', { rate: quote.rate_display })}
+                      </p>
+                    )}
+                    <p className="mt-2 text-xs text-muted">{t('deposit.estimateDisclaimer')}</p>
+                  </>
+                )}
+                {!quoteLoading && quoteError && (
+                  <p className="text-xs text-red-400">{t('deposit.quoteFailed')}</p>
+                )}
+              </div>
+            )}
+
             {error && <p className="text-sm text-red-400">{error}</p>}
             {message && <p className="text-sm text-green-400">{message}</p>}
 
             <Button type="submit" variant="gold" disabled={submitting || methods.length === 0}>
-              {submitting ? 'Submitting...' : 'Request Deposit'}
+              {submitting ? t('common.submitting') : t('deposit.requestDeposit')}
             </Button>
           </form>
 
           {lastDeposit?.payment_info && Object.keys(lastDeposit.payment_info).length > 0 && (
             <div className="mt-4 rounded-lg border border-accent-gold/30 bg-accent-gold/5 p-4">
-              <h3 className="mb-2 text-sm font-semibold text-accent-gold">Payment Instructions</h3>
+              <h3 className="mb-2 text-sm font-semibold text-accent-gold">{t('deposit.paymentInstructions')}</h3>
+
+              {lastDeposit.estimated_credit && (
+                <p className="mb-3 text-sm text-white">
+                  {t('deposit.estimatedBalance', {
+                    amount: lastDeposit.estimated_credit.credited_amount,
+                    currency: lastDeposit.estimated_credit.wallet_currency,
+                  })}
+                  <span className="block text-xs text-muted mt-1">{t('deposit.estimateDisclaimer')}</span>
+                </p>
+              )}
 
               {(paymentInfo.pay_amount || paymentInfo.pay_currency) && (
                 <p className="mb-3 text-sm text-white">
-                  Send{' '}
-                  <span className="font-mono font-semibold text-accent-gold">
-                    {String(paymentInfo.pay_amount ?? paymentInfo.amount ?? '')} {String(paymentInfo.pay_currency ?? paymentInfo.currency ?? '').toUpperCase()}
-                  </span>
-                  {' '}to the address below
+                  {t('deposit.sendToAddress', {
+                    amount: String(paymentInfo.pay_amount ?? paymentInfo.amount ?? ''),
+                    currency: String(paymentInfo.pay_currency ?? paymentInfo.currency ?? '').toUpperCase(),
+                  })}
                 </p>
               )}
 
@@ -215,7 +307,7 @@ export function DepositPage() {
                     rel="noopener noreferrer"
                     className="inline-flex rounded-md bg-accent-gold px-4 py-2 text-sm font-semibold text-background hover:bg-accent-gold/90"
                   >
-                    Open Payment Page
+                    {t('deposit.openPaymentPage')}
                   </a>
                 </div>
               )}
@@ -240,43 +332,43 @@ export function DepositPage() {
               </dl>
               <p className="mt-3 text-xs text-muted">
                 {isCryptoPayment
-                  ? 'After blockchain confirmation, your wallet will be credited automatically.'
+                  ? t('deposit.cryptoConfirmHint')
                   : isRedirectPayment
-                    ? 'Complete payment on the SmilePayz page. Your wallet will be credited after payment confirmation.'
-                    : 'After transfer, admin will confirm your deposit and credit your wallet.'}
+                    ? t('deposit.redirectConfirmHint')
+                    : t('deposit.adminConfirmHint')}
               </p>
             </div>
           )}
 
           <section className="mt-8">
             <div className="mb-4 flex items-center justify-between gap-4">
-              <h2 className="text-lg font-semibold text-white">Recent Deposits</h2>
+              <h2 className="text-lg font-semibold text-white">{t('deposit.recentDeposits')}</h2>
               {deposits.length > 0 && (
                 <Link to="/transactions?tab=deposits" className="text-xs text-accent hover:underline">
-                  View all
+                  {t('common.viewAll')}
                 </Link>
               )}
             </div>
             {deposits.length === 0 ? (
-              <p className="text-sm text-muted">No deposit requests yet.</p>
+              <p className="text-sm text-muted">{t('deposit.noDeposits')}</p>
             ) : (
               <div className="overflow-x-auto rounded-xl border border-white/[0.08]">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-white/5 bg-surface text-left">
-                      <th className="px-4 py-3 text-xs text-muted">ID</th>
-                      <th className="px-4 py-3 text-xs text-muted">Amount</th>
-                      <th className="px-4 py-3 text-xs text-muted">Method</th>
+                      <th className="px-4 py-3 text-xs text-muted">{t('deposit.id')}</th>
+                      <th className="px-4 py-3 text-xs text-muted">{t('deposit.amount')}</th>
+                      <th className="px-4 py-3 text-xs text-muted">{t('deposit.method')}</th>
                       <th className="px-4 py-3 text-xs text-muted">Status</th>
-                      <th className="px-4 py-3 text-xs text-muted hidden sm:table-cell">Date</th>
+                      <th className="px-4 py-3 text-xs text-muted hidden sm:table-cell">{t('deposit.date')}</th>
                     </tr>
                   </thead>
                   <tbody>
                     {deposits.slice(0, 5).map((d) => (
                       <tr key={d.id} className="border-b border-white/5 hover:bg-surface/50">
                         <td className="px-4 py-3 text-white">#{d.id}</td>
-                        <td className="px-4 py-3 font-mono text-white">
-                          {d.currency} {d.amount}
+                        <td className="px-4 py-3 font-mono text-white text-xs">
+                          {formatDepositAmount(d)}
                         </td>
                         <td className="px-4 py-3 text-muted">{d.payment_method ?? '—'}</td>
                         <td className="px-4 py-3"><StatusBadge status={d.status} /></td>

@@ -154,6 +154,13 @@ export const sq: TranslationTree = {
     id: 'ID',
     method: 'Metoda',
     date: 'Data',
+    paymentCurrency: 'Monedha e pagesës: {{currency}}',
+    estimatedBalance: 'Balanca e vlerësuar: {{amount}} {{currency}}',
+    exchangeRate: 'Kursi: {{rate}}',
+    estimateDisclaimer: 'Shuma përfundimtare përcaktohet në konfirmimin e pagesës dhe mund të ndryshojë.',
+    credited: 'Kredituar',
+    loadingQuote: 'Duke llogaritur vlerësimin...',
+    quoteFailed: 'Nuk u mor vlerësimi i kursit.',
   },
   withdraw: {
     title: 'Tërheqje',

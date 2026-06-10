@@ -154,6 +154,13 @@ export const es: TranslationTree = {
     id: 'ID',
     method: 'Método',
     date: 'Fecha',
+    paymentCurrency: 'Moneda de pago: {{currency}}',
+    estimatedBalance: 'Saldo estimado: {{amount}} {{currency}}',
+    exchangeRate: 'Tipo de cambio: {{rate}}',
+    estimateDisclaimer: 'El monto final acreditado se determina al confirmar el pago y puede diferir de esta estimación.',
+    credited: 'Acreditado',
+    loadingQuote: 'Calculando estimación...',
+    quoteFailed: 'No se pudo obtener la estimación de cambio.',
   },
   withdraw: {
     title: 'Retiro',

@@ -152,6 +152,13 @@ export const en = {
     id: 'ID',
     method: 'Method',
     date: 'Date',
+    paymentCurrency: 'Payment currency: {{currency}}',
+    estimatedBalance: 'Estimated balance: {{amount}} {{currency}}',
+    exchangeRate: 'Rate: {{rate}}',
+    estimateDisclaimer: 'Final credited amount is determined at payment confirmation and may differ from this estimate.',
+    credited: 'Credited',
+    loadingQuote: 'Calculating estimate...',
+    quoteFailed: 'Unable to fetch exchange estimate.',
   },
   withdraw: {
     title: 'Withdraw',

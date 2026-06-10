@@ -7,6 +7,8 @@ export interface PaymentMethod {
   name: string;
   min_amount: string;
   max_amount: string | null;
+  payment_currency?: string;
+  wallet_currency?: string | null;
 }
 
 export interface CryptoCurrency {
@@ -14,10 +16,23 @@ export interface CryptoCurrency {
   name: string;
 }
 
+export interface DepositQuote {
+  payment_amount: string;
+  payment_currency: string;
+  credited_amount: string;
+  wallet_currency: string;
+  exchange_rate: string;
+  exchange_rate_at?: string;
+  rate_display?: string;
+  is_estimate: boolean;
+}
+
 export interface DepositRequest {
   deposit_id: number;
   status: string;
   amount: string;
+  currency?: string;
+  estimated_credit?: DepositQuote | null;
   payment_info: Record<string, unknown>;
 }
 
@@ -25,6 +40,8 @@ export interface DepositItem {
   id: number;
   amount: string;
   currency: string;
+  credited_amount: string | null;
+  credited_currency: string | null;
   status: string;
   payment_method: string | null;
   created_at: string | null;
@@ -44,6 +61,13 @@ export interface WithdrawalItem {
 export const paymentApi = {
   getMethods: async () => {
     const { data } = await api.get<ApiResponse<PaymentMethod[]>>('/payment/methods');
+    return data.data;
+  },
+
+  getDepositQuote: async (paymentMethodId: number, amount: string) => {
+    const { data } = await api.get<ApiResponse<DepositQuote>>('/payment/deposits/quote', {
+      params: { payment_method_id: paymentMethodId, amount },
+    });
     return data.data;
   },
 
