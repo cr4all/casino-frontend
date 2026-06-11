@@ -44,8 +44,8 @@ jobs:
               echo "Missing $DEPLOY_ROOT — complete one-time setup in casino-backend/docs/deploy-docker.md"
               exit 1
             fi
-            cd "$DEPLOY_ROOT"
-            git pull origin main
-            docker compose -f "$COMPOSE_FILE" build frontend
-            docker compose -f "$COMPOSE_FILE" up -d frontend
-            docker compose -f "$COMPOSE_FILE" ps frontend
+            if [[ ! -x "$DEPLOY_ROOT/scripts/deploy-docker.sh" ]]; then
+              echo "Missing deploy script — run: chmod +x $DEPLOY_ROOT/scripts/deploy-docker.sh"
+              exit 1
+            fi
+            bash "$DEPLOY_ROOT/scripts/deploy-docker.sh"
