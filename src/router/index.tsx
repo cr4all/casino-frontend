@@ -11,6 +11,7 @@ import { NotificationsPage } from '@/pages/NotificationsPage';
 import { BetHistoryPage } from '@/pages/BetHistoryPage';
 import { TransactionsPage } from '@/pages/TransactionsPage';
 import { GamePlayPage } from '@/pages/GamePlayPage';
+import { CookiePolicyPage } from '@/pages/CookiePolicyPage';
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +29,7 @@ export const router = createBrowserRouter([
       { path: 'bets', element: <BetHistoryPage /> },
       { path: 'transactions', element: <TransactionsPage /> },
       { path: 'affiliate', element: <AffiliateDashboardPage /> },
+      { path: 'cookies', element: <CookiePolicyPage /> },
     ],
   },
 ]);

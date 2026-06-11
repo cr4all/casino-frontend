@@ -2,7 +2,12 @@ import { useEffect, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { paymentApi, type PaymentMethod, type WithdrawalItem } from '@/api/payment.api';
 import { useAuthStore } from '@/stores/authStore';
-import { useWalletStore } from '@/stores/walletStore';
+import { DEFAULT_CURRENCY, useWalletStore } from '@/stores/walletStore';
+import { formatBalance } from '@/utils/formatBalance';
+
+function formatPaymentAmount(currency: string, amount: string): string {
+  return `${currency} ${formatBalance(amount)}`;
+}
 import { Button } from '@/components/common/Button';
 import { StatusBadge } from '@/components/common/StatusBadge';
 import { getApiErrorMessage } from '@/utils/apiError';
@@ -84,7 +89,7 @@ export function WithdrawPage() {
           <p className="text-sm text-muted">
             Available balance:{' '}
             <span className="font-mono text-accent-gold">
-              {balance?.currency ?? 'EUR'} {balance?.balance ?? '0.0000'}
+              {balance?.currency ?? DEFAULT_CURRENCY} {formatBalance(balance?.balance)}
             </span>
           </p>
 
@@ -107,7 +112,8 @@ export function WithdrawPage() {
 
             {selected && (
               <p className="text-xs text-muted">
-                Min: {selected.min_amount} · Max: {selected.max_amount ?? 'No limit'}
+                Min: {formatBalance(selected.min_amount)} · Max:{' '}
+                {selected.max_amount ? formatBalance(selected.max_amount) : 'No limit'}
               </p>
             )}
 
@@ -191,7 +197,7 @@ export function WithdrawPage() {
                       <tr key={w.id} className="border-b border-white/5 hover:bg-surface/50">
                         <td className="px-4 py-3 text-white">#{w.id}</td>
                         <td className="px-4 py-3 font-mono text-white">
-                          {w.currency} {w.amount}
+                          {formatPaymentAmount(w.currency, w.amount)}
                         </td>
                         <td className="px-4 py-3 text-muted">{w.payment_method ?? '—'}</td>
                         <td className="px-4 py-3"><StatusBadge status={w.status} /></td>

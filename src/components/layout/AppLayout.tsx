@@ -2,16 +2,21 @@ import { useEffect, useState } from 'react';
 import { Navigate, Outlet, useLocation, useSearchParams } from 'react-router-dom';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Header } from '@/components/layout/Header';
+import { ForgotPasswordModal } from '@/components/auth/ForgotPasswordModal';
 import { LoginModal } from '@/components/auth/LoginModal';
 import { RegisterModal } from '@/components/auth/RegisterModal';
+import { CookieConsentBanner } from '@/components/common/CookieConsentBanner';
+import { CookieSettingsModal } from '@/components/common/CookieSettingsModal';
 import { ComingSoonModal } from '@/components/common/Modal';
 import { useAuthInit } from '@/hooks/useAuthInit';
+import { useIdleLogout } from '@/hooks/useIdleLogout';
 import { useLanguageInit } from '@/hooks/useLanguageInit';
 import { useAuthStore } from '@/stores/authStore';
 import { captureAffiliateReferralFromUrl } from '@/utils/affiliateReferral';
 
 export function AppLayout() {
   useAuthInit();
+  useIdleLogout();
   useLanguageInit();
   const [searchParams] = useSearchParams();
   const location = useLocation();
@@ -33,7 +38,10 @@ export function AppLayout() {
         <Outlet />
         <LoginModal />
         <RegisterModal />
+        <ForgotPasswordModal />
         <ComingSoonModal />
+        <CookieConsentBanner />
+        <CookieSettingsModal />
       </div>
     );
   }
@@ -68,7 +76,10 @@ export function AppLayout() {
 
       <LoginModal />
       <RegisterModal />
+      <ForgotPasswordModal />
       <ComingSoonModal />
+      <CookieConsentBanner />
+      <CookieSettingsModal />
     </div>
   );
 }

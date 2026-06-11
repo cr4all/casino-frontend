@@ -6,6 +6,7 @@ import { useWalletStore } from '@/stores/walletStore';
 import { Button } from '@/components/common/Button';
 import { StatusBadge } from '@/components/common/StatusBadge';
 import { getApiErrorMessage } from '@/utils/apiError';
+import { formatBalance } from '@/utils/formatBalance';
 
 function WageringBar({ required, wagered }: { required: string; wagered: string }) {
   const req = parseFloat(required) || 1;
@@ -66,7 +67,7 @@ export function BonusPage() {
     setMessage(null);
     try {
       const result = await bonusApi.claim(policyId);
-      setMessage(`Bonus claimed: ${result.amount} (${result.status})`);
+      setMessage(`Bonus claimed: ${formatBalance(result.amount)} (${result.status})`);
       await fetchBalance();
       load();
     } catch (err) {
@@ -107,7 +108,7 @@ export function BonusPage() {
                     <div className="flex items-start justify-between gap-2">
                       <div>
                         <h3 className="font-semibold text-white">{bonus.policy_name ?? 'Bonus'}</h3>
-                        <p className="mt-1 text-xl font-bold text-accent-gold">{bonus.amount}</p>
+                        <p className="mt-1 text-xl font-bold text-accent-gold">{formatBalance(bonus.amount)}</p>
                       </div>
                       <StatusBadge status={bonus.status} />
                     </div>
@@ -141,7 +142,7 @@ export function BonusPage() {
                     <p className="mt-2 text-sm text-muted">
                       {policy.amount_type === 'percentage'
                         ? `${policy.amount_value}% match`
-                        : `${policy.amount_value} fixed`}
+                        : `${formatBalance(policy.amount_value)} fixed`}
                       {' · '}
                       {policy.wagering_multiplier}x wagering
                     </p>

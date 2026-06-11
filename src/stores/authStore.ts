@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { createJSONStorage, persist } from 'zustand/middleware';
 import { authApi } from '@/api/auth.api';
 import type { User } from '@/types';
 
@@ -10,12 +10,13 @@ interface AuthState {
   isAuthenticated: boolean;
   setTokens: (access: string, refresh: string) => void;
   setUser: (user: User) => void;
-  login: (email: string, password: string) => Promise<void>;
+  login: (credentials: { email?: string; phone?: string; password: string }) => Promise<void>;
   register: (payload: {
     email: string;
     password: string;
     password_confirmation: string;
     nickname: string;
+    phone: string;
     country: string;
     currency: string;
     affiliate_code?: string;
@@ -36,8 +37,8 @@ export const useAuthStore = create<AuthState>()(
 
       setUser: (user) => set({ user }),
 
-      login: async (email, password) => {
-        const result = await authApi.login({ email, password });
+      login: async (credentials) => {
+        const result = await authApi.login(credentials);
         set({
           accessToken: result.access_token,
           refreshToken: result.refresh_token,
@@ -48,7 +49,7 @@ export const useAuthStore = create<AuthState>()(
 
       register: async (payload) => {
         await authApi.register(payload);
-        await get().login(payload.email, payload.password);
+        await get().login({ email: payload.email, password: payload.password });
       },
 
       logout: () => {
