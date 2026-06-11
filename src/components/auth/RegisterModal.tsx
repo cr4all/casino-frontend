@@ -6,6 +6,7 @@ import { useUiStore } from '@/stores/uiStore';
 import { useWalletStore } from '@/stores/walletStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { authApi, type RegisterOptions } from '@/api/auth.api';
+import { clearStoredAffiliateCode, getStoredAffiliateCode } from '@/utils/affiliateReferral';
 
 const selectClassName =
   'w-full rounded-md border border-white/10 bg-card px-3 py-2 text-sm text-white focus:border-accent focus:outline-none';
@@ -26,6 +27,7 @@ export function RegisterModal() {
     nickname: '',
     country: '',
     currency: '',
+    affiliate_code: '' as string | undefined,
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -36,6 +38,8 @@ export function RegisterModal() {
     }
 
     let cancelled = false;
+
+    const storedCode = getStoredAffiliateCode();
 
     authApi
       .getRegisterOptions()
@@ -48,6 +52,7 @@ export function RegisterModal() {
           ...prev,
           country: prev.country || data.countries[0]?.code || '',
           currency: prev.currency || data.currencies[0]?.code || '',
+          affiliate_code: storedCode ?? prev.affiliate_code,
         }));
       })
       .catch(() => {
@@ -72,6 +77,7 @@ export function RegisterModal() {
       nickname: '',
       country: options?.countries[0]?.code ?? '',
       currency: options?.currencies[0]?.code ?? '',
+      affiliate_code: getStoredAffiliateCode() ?? undefined,
     });
   };
 
@@ -80,7 +86,17 @@ export function RegisterModal() {
     setError('');
     setLoading(true);
     try {
-      await register(form);
+      const payload = {
+        email: form.email,
+        password: form.password,
+        password_confirmation: form.password_confirmation,
+        nickname: form.nickname,
+        country: form.country,
+        currency: form.currency,
+        ...(form.affiliate_code ? { affiliate_code: form.affiliate_code } : {}),
+      };
+      await register(payload);
+      clearStoredAffiliateCode();
       await fetchBalance();
       closeModal();
       resetForm();

@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { AppLayout } from '@/components/layout/AppLayout';
+import { AffiliateDashboardPage } from '@/pages/AffiliateDashboardPage';
 import { HomePage } from '@/pages/HomePage';
 import { CategoryPage } from '@/pages/CategoryPage';
 import { ProfilePage } from '@/pages/ProfilePage';
@@ -26,6 +27,7 @@ export const router = createBrowserRouter([
       { path: 'notifications', element: <NotificationsPage /> },
       { path: 'bets', element: <BetHistoryPage /> },
       { path: 'transactions', element: <TransactionsPage /> },
+      { path: 'affiliate', element: <AffiliateDashboardPage /> },
     ],
   },
 ]);

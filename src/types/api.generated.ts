@@ -4,6 +4,44 @@
  */
 
 export interface paths {
+    "/auth/register-options": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** List supported registration currencies and countries */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Registration options */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: components["schemas"]["RegisterOptionsData"];
+                        };
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/auth/register": {
         parameters: {
             query?: never;
@@ -400,6 +438,46 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/payment/crypto/currencies": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** List available crypto currencies for deposit (NOWPayments) */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Available crypto currencies */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: components["schemas"]["CryptoCurrencyList"];
+                        };
+                    };
+                };
+                401: components["responses"]["Unauthorized"];
+                422: components["responses"]["ValidationError"];
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/payment/deposits": {
         parameters: {
             query?: never;
@@ -451,6 +529,11 @@ export interface paths {
                          * @example 100.0000
                          */
                         amount: string;
+                        /**
+                         * @description Cryptocurrency ticker for crypto payment methods (e.g. btc, usdttrc20). Required when using a crypto payment method.
+                         * @example usdttrc20
+                         */
+                        pay_currency?: string;
                     };
                 };
             };
@@ -1052,15 +1135,37 @@ export interface components {
             total: number;
             last_page: number;
         };
+        RegisterOptionsData: {
+            currencies: components["schemas"]["RegistrationCurrency"][];
+            countries: components["schemas"]["RegistrationCountry"][];
+        };
+        RegistrationCurrency: {
+            /** @example USD */
+            code: string;
+            /** @example US Dollar */
+            name: string;
+        };
+        RegistrationCountry: {
+            /** @example US */
+            code: string;
+            /** @example United States */
+            name: string;
+        };
         RegisterRequest: {
             /** Format: email */
             email: string;
             password: string;
             password_confirmation: string;
             nickname: string;
-            /** @example KR */
+            /**
+             * @description ISO 3166-1 alpha-2 code from GET /auth/register-options
+             * @example US
+             */
             country: string;
-            /** @example KRW */
+            /**
+             * @description ISO 4217 code from GET /auth/register-options
+             * @example USD
+             */
             currency: string;
             affiliate_code?: string | null;
         };
@@ -1155,6 +1260,15 @@ export interface components {
             name: string;
             min_amount: string;
             max_amount?: string | null;
+        };
+        CryptoCurrency: {
+            /** @example btc */
+            code: string;
+            /** @example BTC */
+            name: string;
+        };
+        CryptoCurrencyList: {
+            items: components["schemas"]["CryptoCurrency"][];
         };
         DepositCreated: {
             deposit_id: number;

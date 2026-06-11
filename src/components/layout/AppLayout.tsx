@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Navigate, Outlet, useLocation, useSearchParams } from 'react-router-dom';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Header } from '@/components/layout/Header';
 import { LoginModal } from '@/components/auth/LoginModal';
@@ -7,11 +7,36 @@ import { RegisterModal } from '@/components/auth/RegisterModal';
 import { ComingSoonModal } from '@/components/common/Modal';
 import { useAuthInit } from '@/hooks/useAuthInit';
 import { useLanguageInit } from '@/hooks/useLanguageInit';
+import { useAuthStore } from '@/stores/authStore';
+import { captureAffiliateReferralFromUrl } from '@/utils/affiliateReferral';
 
 export function AppLayout() {
   useAuthInit();
   useLanguageInit();
+  const [searchParams] = useSearchParams();
+  const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const user = useAuthStore((s) => s.user);
+  const isAffiliateUser = user?.role === 'affiliate';
+
+  useEffect(() => {
+    captureAffiliateReferralFromUrl(searchParams);
+  }, [searchParams]);
+
+  if (isAffiliateUser && location.pathname !== '/affiliate') {
+    return <Navigate to="/affiliate" replace />;
+  }
+
+  if (isAffiliateUser) {
+    return (
+      <div className="min-h-screen bg-background p-4 md:p-6">
+        <Outlet />
+        <LoginModal />
+        <RegisterModal />
+        <ComingSoonModal />
+      </div>
+    );
+  }
 
   return (
     <div className="flex min-h-screen bg-background">

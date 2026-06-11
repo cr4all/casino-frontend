@@ -18,6 +18,7 @@ interface AuthState {
     nickname: string;
     country: string;
     currency: string;
+    affiliate_code?: string;
   }) => Promise<void>;
   logout: () => void;
 }

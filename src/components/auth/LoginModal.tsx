@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Modal } from '@/components/common/Modal';
 import { Button } from '@/components/common/Button';
 import { useAuthStore } from '@/stores/authStore';
@@ -8,6 +9,7 @@ import { useTranslation } from '@/hooks/useTranslation';
 
 export function LoginModal() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const activeModal = useUiStore((s) => s.activeModal);
   const closeModal = useUiStore((s) => s.closeModal);
   const openModal = useUiStore((s) => s.openModal);
@@ -25,6 +27,14 @@ export function LoginModal() {
     setLoading(true);
     try {
       await login(email, password);
+      const role = useAuthStore.getState().user?.role;
+      if (role === 'affiliate') {
+        closeModal();
+        setEmail('');
+        setPassword('');
+        navigate('/affiliate');
+        return;
+      }
       await fetchBalance();
       closeModal();
       setEmail('');
