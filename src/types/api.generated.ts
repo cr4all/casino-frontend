@@ -478,6 +478,49 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/payment/deposits/quote": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Estimate wallet credit for a deposit amount (FX preview) */
+        get: {
+            parameters: {
+                query: {
+                    payment_method_id: number;
+                    amount: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Deposit credit estimate */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: components["schemas"]["DepositQuote"];
+                        };
+                    };
+                };
+                401: components["responses"]["Unauthorized"];
+                422: components["responses"]["ValidationError"];
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/payment/deposits": {
         parameters: {
             query?: never;
@@ -751,6 +794,170 @@ export interface paths {
                 422: components["responses"]["ValidationError"];
             };
         };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/affiliate/me": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Get affiliate profile and referral link */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Affiliate profile */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: components["schemas"]["AffiliateMe"];
+                        };
+                    };
+                };
+                401: components["responses"]["Unauthorized"];
+                403: components["responses"]["Forbidden"];
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/affiliate/stats": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Get affiliate dashboard statistics */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Affiliate stats */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: components["schemas"]["AffiliateStats"];
+                        };
+                    };
+                };
+                401: components["responses"]["Unauthorized"];
+                403: components["responses"]["Forbidden"];
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/affiliate/players": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** List referred players */
+        get: {
+            parameters: {
+                query?: {
+                    per_page?: components["parameters"]["PerPage"];
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Paginated referred players */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: components["schemas"]["AffiliatePlayerList"];
+                        };
+                    };
+                };
+                401: components["responses"]["Unauthorized"];
+                403: components["responses"]["Forbidden"];
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/affiliate/commissions": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** List commission history */
+        get: {
+            parameters: {
+                query?: {
+                    per_page?: components["parameters"]["PerPage"];
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Paginated commissions */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: components["schemas"]["AffiliateCommissionList"];
+                        };
+                    };
+                };
+                401: components["responses"]["Unauthorized"];
+                403: components["responses"]["Forbidden"];
+            };
+        };
+        put?: never;
+        post?: never;
         delete?: never;
         options?: never;
         head?: never;
@@ -1180,6 +1387,11 @@ export interface components {
             id: number;
             /** Format: email */
             email: string;
+            /**
+             * @description User role (player, affiliate, admin, operator)
+             * @example player
+             */
+            role?: string;
         };
         RegisterResponseData: {
             user: components["schemas"]["UserSummary"];
@@ -1260,6 +1472,28 @@ export interface components {
             name: string;
             min_amount: string;
             max_amount?: string | null;
+            /**
+             * @description Currency charged by the payment provider (e.g. IDR for SmilePayz)
+             * @example IDR
+             */
+            payment_currency?: string;
+            /**
+             * @description Player wallet (points) currency from registration
+             * @example EUR
+             */
+            wallet_currency?: string | null;
+        };
+        DepositQuote: {
+            payment_amount: string;
+            payment_currency: string;
+            credited_amount: string;
+            wallet_currency: string;
+            exchange_rate: string;
+            /** Format: date-time */
+            exchange_rate_at?: string;
+            rate_display?: string;
+            /** @description True for preview; final credit is determined at payment confirmation */
+            is_estimate: boolean;
         };
         CryptoCurrency: {
             /** @example btc */
@@ -1274,6 +1508,8 @@ export interface components {
             deposit_id: number;
             status: string;
             amount: string;
+            currency?: string;
+            estimated_credit?: components["schemas"]["DepositQuote"] | null;
             payment_info: {
                 [key: string]: unknown;
             };
@@ -1287,6 +1523,9 @@ export interface components {
             id?: number;
             amount?: string;
             currency?: string;
+            /** @description Wallet points credited after confirmation */
+            credited_amount?: string | null;
+            credited_currency?: string | null;
             status?: string;
             payment_method?: string | null;
             /** Format: date-time */
@@ -1391,10 +1630,62 @@ export interface components {
             /** Format: date-time */
             expires_at?: string | null;
         };
+        AffiliateMe: {
+            code: string;
+            /** @enum {string} */
+            commission_model: "cpa" | "revshare";
+            commission_rate: string;
+            cpa_amount?: string | null;
+            /** @enum {string} */
+            status: "active" | "inactive";
+            /** @example ?ref=AFF001 */
+            referral_link: string;
+        };
+        AffiliateStats: {
+            referred_players_count: number;
+            commissions_count: number;
+            total_commission: string;
+            pending_commission: string;
+        };
+        AffiliateReferredPlayer: {
+            player_id: number;
+            nickname?: string | null;
+            /** Format: date-time */
+            registered_at: string;
+        };
+        AffiliatePlayerList: {
+            items: components["schemas"]["AffiliateReferredPlayer"][];
+            pagination: components["schemas"]["Pagination"];
+        };
+        AffiliateCommission: {
+            id: number;
+            /** @enum {string} */
+            type: "cpa" | "revshare";
+            amount: string;
+            reference_type: string;
+            reference_id: string;
+            /** @enum {string} */
+            status: "pending" | "paid";
+            /** Format: date-time */
+            created_at?: string | null;
+        };
+        AffiliateCommissionList: {
+            items: components["schemas"]["AffiliateCommission"][];
+            pagination: components["schemas"]["Pagination"];
+        };
     };
     responses: {
         /** @description Unauthorized */
         Unauthorized: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                "application/json": components["schemas"]["ErrorEnvelope"];
+            };
+        };
+        /** @description Forbidden */
+        Forbidden: {
             headers: {
                 [name: string]: unknown;
             };
