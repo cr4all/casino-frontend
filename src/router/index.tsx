@@ -12,7 +12,6 @@ import { BetHistoryPage } from '@/pages/BetHistoryPage';
 import { TransactionsPage } from '@/pages/TransactionsPage';
 import { GamePlayPage } from '@/pages/GamePlayPage';
 import { CookiePolicyPage } from '@/pages/CookiePolicyPage';
-
 export const router = createBrowserRouter([
   {
     path: '/',

@@ -54,7 +54,16 @@ export const zh: TranslationTree = {
     register: '注册',
     balance: '余额',
     playResponsibly: '18+ · 理性博彩',
+    liveChat: '在线聊天',
+    liveChatLabel: '客服',
   },
+  liveChat: {
+    title: '在线聊天',
+    subtitle: '与客服团队聊天。',
+    consentRequired: '请在设置中启用在线聊天 Cookie。',
+    openSettings: 'Cookie 设置',
+  },
+
   footer: {
     slots: '老虎机',
     liveCasino: '真人娱乐场',

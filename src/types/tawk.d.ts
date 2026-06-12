@@ -9,6 +9,7 @@ export interface TawkApi {
   showWidget?: () => void;
   hideWidget?: () => void;
   minimize?: () => void;
+  maximize?: () => void;
   toggle?: () => void;
 }
 

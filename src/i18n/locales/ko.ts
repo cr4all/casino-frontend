@@ -54,7 +54,16 @@ export const ko: TranslationTree = {
     register: '회원가입',
     balance: '잔액',
     playResponsibly: '18+ · 책임감 있는 게임',
+    liveChat: '라이브 채팅',
+    liveChatLabel: '고객 지원',
   },
+  liveChat: {
+    title: '라이브 채팅',
+    subtitle: '고객 지원팀과 채팅하세요.',
+    consentRequired: '라이브 채팅을 사용하려면 설정에서 라이브 채팅 쿠키를 허용하세요.',
+    openSettings: '쿠키 설정',
+  },
+
   footer: {
     slots: '슬롯',
     liveCasino: '라이브 카지노',

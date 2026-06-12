@@ -54,7 +54,16 @@ export const id: TranslationTree = {
     register: 'Daftar',
     balance: 'Saldo',
     playResponsibly: '18+ · Bermain dengan bijak',
+    liveChat: 'LIVE CHAT',
+    liveChatLabel: 'Support',
   },
+  liveChat: {
+    title: 'Live Chat',
+    subtitle: 'Chat with our support team.',
+    consentRequired: 'Enable live chat cookies in settings to use live chat.',
+    openSettings: 'Cookie settings',
+  },
+
   footer: {
     slots: 'Slot',
     liveCasino: 'Live Casino',

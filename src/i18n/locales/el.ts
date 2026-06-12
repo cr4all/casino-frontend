@@ -54,7 +54,16 @@ export const el: TranslationTree = {
     register: 'Εγγραφή',
     balance: 'Υπόλοιπο',
     playResponsibly: '18+ · Παίξτε υπεύθυνα',
+    liveChat: 'LIVE CHAT',
+    liveChatLabel: 'Support',
   },
+  liveChat: {
+    title: 'Live Chat',
+    subtitle: 'Chat with our support team.',
+    consentRequired: 'Enable live chat cookies in settings to use live chat.',
+    openSettings: 'Cookie settings',
+  },
+
   footer: {
     slots: 'Φρουτάκια',
     liveCasino: 'Live καζίνο',

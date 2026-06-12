@@ -54,7 +54,16 @@ export const hi: TranslationTree = {
     register: 'पंजीकरण',
     balance: 'बैलेंस',
     playResponsibly: '18+ · जिम्मेदारी से खेलें',
+    liveChat: 'LIVE CHAT',
+    liveChatLabel: 'Support',
   },
+  liveChat: {
+    title: 'Live Chat',
+    subtitle: 'Chat with our support team.',
+    consentRequired: 'Enable live chat cookies in settings to use live chat.',
+    openSettings: 'Cookie settings',
+  },
+
   footer: {
     slots: 'स्लॉट',
     liveCasino: 'लाइव कैसीनो',

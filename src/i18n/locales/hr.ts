@@ -54,7 +54,16 @@ export const hr: TranslationTree = {
     register: 'Registracija',
     balance: 'Stanje',
     playResponsibly: '18+ · Igrajte odgovorno',
+    liveChat: 'LIVE CHAT',
+    liveChatLabel: 'Support',
   },
+  liveChat: {
+    title: 'Live Chat',
+    subtitle: 'Chat with our support team.',
+    consentRequired: 'Enable live chat cookies in settings to use live chat.',
+    openSettings: 'Cookie settings',
+  },
+
   footer: {
     slots: 'Slotovi',
     liveCasino: 'Live casino',

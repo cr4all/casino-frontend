@@ -1,24 +1,9 @@
 import { useEffect, useRef } from 'react';
 import { playerApi } from '@/api/wallet.api';
-import { router } from '@/router';
 import { useAuthStore } from '@/stores/authStore';
 import { canLoadChat, useCookieConsentStore } from '@/stores/cookieConsentStore';
-
-const propertyId = import.meta.env.VITE_TAWK_PROPERTY_ID;
-const widgetId = import.meta.env.VITE_TAWK_WIDGET_ID;
-
-const COLLAPSE_RETRY_MS = [0, 100, 300, 600, 1200];
-
-function ensureWidgetCollapsed() {
-  const collapse = () => {
-    window.Tawk_API?.showWidget?.();
-    window.Tawk_API?.minimize?.();
-  };
-
-  for (const delay of COLLAPSE_RETRY_MS) {
-    window.setTimeout(collapse, delay);
-  }
-}
+import { useUiStore } from '@/stores/uiStore';
+import { hideTawkWidget, isTawkConfigured, showTawkWidget } from '@/utils/tawkWidget';
 
 function appendTawkOnLoad(handler: () => void) {
   window.Tawk_API = window.Tawk_API || {};
@@ -29,35 +14,25 @@ function appendTawkOnLoad(handler: () => void) {
   };
 }
 
-function configureTawkBehavior() {
-  window.Tawk_API = window.Tawk_API || {};
-
-  appendTawkOnLoad(() => {
-    ensureWidgetCollapsed();
-  });
-
-  const previousSystemMessage = window.Tawk_API.onChatMessageSystem;
-  window.Tawk_API.onChatMessageSystem = (message) => {
-    previousSystemMessage?.(message);
-    ensureWidgetCollapsed();
-  };
-}
-
 function loadTawkScript() {
-  if (!propertyId || !widgetId) return;
-  if (document.getElementById('tawk-to-script')) {
-    ensureWidgetCollapsed();
-    return;
-  }
+  if (!isTawkConfigured()) return;
+  if (document.getElementById('tawk-to-script')) return;
 
   window.Tawk_API = window.Tawk_API || {};
   window.Tawk_LoadStart = new Date();
-  configureTawkBehavior();
+
+  appendTawkOnLoad(() => {
+    if (useUiStore.getState().liveChatOpen) {
+      showTawkWidget();
+    } else {
+      hideTawkWidget();
+    }
+  });
 
   const script = document.createElement('script');
   script.id = 'tawk-to-script';
   script.async = true;
-  script.src = `https://embed.tawk.to/${propertyId}/${widgetId}`;
+  script.src = `https://embed.tawk.to/${import.meta.env.VITE_TAWK_PROPERTY_ID}/${import.meta.env.VITE_TAWK_WIDGET_ID}`;
   script.charset = 'UTF-8';
   script.setAttribute('crossorigin', '*');
   document.body.appendChild(script);
@@ -91,24 +66,32 @@ export function TawkToChat() {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const level = useCookieConsentStore((s) => s.level);
   const preferences = useCookieConsentStore((s) => s.preferences);
+  const liveChatOpen = useUiStore((s) => s.liveChatOpen);
+  const closeLiveChat = useUiStore((s) => s.closeLiveChat);
   const syncedRef = useRef(false);
   const chatAllowed = canLoadChat(level, preferences);
 
   useEffect(() => {
-    if (!chatAllowed) return;
+    if (!chatAllowed) {
+      hideTawkWidget();
+      closeLiveChat();
+      return;
+    }
     loadTawkScript();
-  }, [chatAllowed]);
+  }, [chatAllowed, closeLiveChat]);
 
   useEffect(() => {
     if (!chatAllowed) return;
 
-    return router.subscribe(() => {
-      ensureWidgetCollapsed();
-    });
-  }, [chatAllowed]);
+    if (liveChatOpen) {
+      showTawkWidget();
+    } else {
+      hideTawkWidget();
+    }
+  }, [chatAllowed, liveChatOpen]);
 
   useEffect(() => {
-    if (!propertyId || !widgetId || !chatAllowed) return;
+    if (!isTawkConfigured() || !chatAllowed) return;
 
     if (!isAuthenticated) {
       syncedRef.current = false;
