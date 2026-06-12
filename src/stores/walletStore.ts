@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { createJSONStorage, persist } from 'zustand/middleware';
+import { persist } from 'zustand/middleware';
 import { walletApi } from '@/api/wallet.api';
 import type { WalletBalance } from '@/types';
 import { formatBalance } from '@/utils/formatBalance';
