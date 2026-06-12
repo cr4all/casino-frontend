@@ -72,7 +72,7 @@ export const id: TranslationTree = {
   hero: {
     welcome: 'Selamat datang di',
     bestExperience: 'Pengalaman terbaik',
-    playNow: 'Main sekarang >',
+    playNow: 'Main sekarang',
     registerPromo: 'Daftar sekarang',
   },
   home: {

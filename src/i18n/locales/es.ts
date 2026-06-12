@@ -72,7 +72,7 @@ export const es: TranslationTree = {
   hero: {
     welcome: 'Bienvenido a',
     bestExperience: 'La mejor experiencia',
-    playNow: 'Jugar ahora >',
+    playNow: 'Jugar ahora',
     registerPromo: 'Regístrate ahora',
   },
   home: {

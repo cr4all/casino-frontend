@@ -72,7 +72,7 @@ export const fil: TranslationTree = {
   hero: {
     welcome: 'Maligayang pagdating sa',
     bestExperience: 'Pinakamahusay na karanasan',
-    playNow: 'Maglaro ngayon >',
+    playNow: 'Maglaro ngayon',
     registerPromo: 'Mag-register ngayon',
   },
   home: {

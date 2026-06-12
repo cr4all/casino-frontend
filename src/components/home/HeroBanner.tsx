@@ -1,10 +1,13 @@
 import { type CSSProperties } from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useAuthStore } from '@/stores/authStore';
 import { useUiStore } from '@/stores/uiStore';
 import { Button } from '@/components/common/Button';
 
 export function HeroBanner() {
   const { t } = useTranslation();
+  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const openModal = useUiStore((s) => s.openModal);
 
   return (
@@ -49,14 +52,25 @@ export function HeroBanner() {
             <br />
             {t('hero.bestExperience')}
           </h1>
-          <Button
-            type="button"
-            variant="gold"
-            onClick={() => openModal('register')}
-            className="mt-5 rounded-lg px-4 py-3 text-sm font-bold normal-case md:text-base"
-          >
-            {t('hero.registerPromo')}
-          </Button>
+          {isAuthenticated ? (
+            <Link to="/category/live">
+              <Button
+                variant="gold"
+                className="mt-5 rounded-lg px-4 py-3 text-sm font-bold normal-case md:text-base"
+              >
+                {t('hero.playNow')}
+              </Button>
+            </Link>
+          ) : (
+            <Button
+              type="button"
+              variant="gold"
+              onClick={() => openModal('register')}
+              className="mt-5 rounded-lg px-4 py-3 text-sm font-bold normal-case md:text-base"
+            >
+              {t('hero.registerPromo')}
+            </Button>
+          )}
         </div>
       </div>
     </section>

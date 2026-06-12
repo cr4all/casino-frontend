@@ -72,7 +72,7 @@ export const ko: TranslationTree = {
   hero: {
     welcome: '환영합니다',
     bestExperience: '최고의 경험',
-    playNow: '지금 플레이 >',
+    playNow: '지금 플레이',
     registerPromo: '지금 가입하기',
   },
   home: {

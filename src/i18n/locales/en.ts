@@ -70,7 +70,7 @@ export const en = {
   hero: {
     welcome: 'Welcome to',
     bestExperience: 'Best Experience',
-    playNow: 'Play Now >',
+    playNow: 'Play Now',
     registerPromo: 'Register Now',
   },
   home: {

@@ -1379,8 +1379,10 @@ export interface components {
             affiliate_code?: string | null;
         };
         LoginRequest: {
-            /** @description Email address or username (use with password for email login) */
+            /** @description Email address (use with password for email login) */
             email?: string;
+            /** @description Username (use with password for username login) */
+            username?: string;
             /** @description Phone number in E.164 format (use with password for phone login) */
             phone?: string;
             password: string;

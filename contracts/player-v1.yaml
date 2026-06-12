@@ -1055,7 +1055,10 @@ components:
       properties:
         email:
           type: string
-          description: Email address or username (use with password for email login)
+          description: Email address (use with password for email login)
+        username:
+          type: string
+          description: Username (use with password for username login)
         phone:
           type: string
           description: Phone number in E.164 format (use with password for phone login)
