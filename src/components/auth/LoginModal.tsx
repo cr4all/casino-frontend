@@ -80,7 +80,7 @@ export function LoginModal() {
     setLoading(true);
     try {
       if (method === 'username') {
-        await login({ email: username.trim(), password });
+        await login({ username: username.trim(), password });
       } else if (method === 'email') {
         await login({ email: email.trim(), password });
       } else {

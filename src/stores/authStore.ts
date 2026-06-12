@@ -10,7 +10,12 @@ interface AuthState {
   isAuthenticated: boolean;
   setTokens: (access: string, refresh: string) => void;
   setUser: (user: User) => void;
-  login: (credentials: { email?: string; phone?: string; password: string }) => Promise<void>;
+  login: (credentials: {
+    email?: string;
+    username?: string;
+    phone?: string;
+    password: string;
+  }) => Promise<void>;
   register: (payload: {
     email: string;
     password: string;

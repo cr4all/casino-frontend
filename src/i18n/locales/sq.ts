@@ -72,7 +72,7 @@ export const sq: TranslationTree = {
   hero: {
     welcome: 'Mirë se vini në',
     bestExperience: 'Përvoja më e mirë',
-    playNow: 'Luaj tani >',
+    playNow: 'Luaj tani',
     registerPromo: 'Regjistrohu tani',
   },
   home: {

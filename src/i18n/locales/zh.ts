@@ -72,7 +72,7 @@ export const zh: TranslationTree = {
   hero: {
     welcome: '欢迎来到',
     bestExperience: '最佳体验',
-    playNow: '立即游戏 >',
+    playNow: '立即游戏',
     registerPromo: '立即注册',
   },
   home: {

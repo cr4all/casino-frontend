@@ -72,7 +72,7 @@ export const ja: TranslationTree = {
   hero: {
     welcome: 'ようこそ',
     bestExperience: '最高の体験',
-    playNow: '今すぐプレイ >',
+    playNow: '今すぐプレイ',
     registerPromo: '今すぐ登録',
   },
   home: {

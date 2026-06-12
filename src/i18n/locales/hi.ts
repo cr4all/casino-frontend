@@ -72,7 +72,7 @@ export const hi: TranslationTree = {
   hero: {
     welcome: 'स्वागत है',
     bestExperience: 'सर्वश्रेष्ठ अनुभव',
-    playNow: 'अभी खेलें >',
+    playNow: 'अभी खेलें',
     registerPromo: 'अभी रजिस्टर करें',
   },
   home: {
