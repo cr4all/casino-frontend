@@ -16,6 +16,7 @@ import { StatusBadge } from '@/components/common/StatusBadge';
 import { CryptoAmountInput } from '@/components/deposit/CryptoAmountInput';
 import { CryptoCurrencyPicker } from '@/components/deposit/CryptoCurrencyPicker';
 import { getApiErrorMessage } from '@/utils/apiError';
+import { formatBalance } from '@/utils/formatBalance';
 
 function CopyButton({ value }: { value: string }) {
   const [copied, setCopied] = useState(false);
@@ -41,12 +42,12 @@ function CopyButton({ value }: { value: string }) {
 function formatDepositAmount(d: DepositItem): string {
   if (d.credited_amount && d.credited_currency && d.status === 'completed') {
     if (d.currency !== d.credited_currency) {
-      return `${d.currency} ${d.amount} → ${d.credited_currency} ${d.credited_amount}`;
+      return `${d.currency} ${formatBalance(d.amount)} → ${d.credited_currency} ${formatBalance(d.credited_amount)}`;
     }
-    return `${d.credited_currency} ${d.credited_amount}`;
+    return `${d.credited_currency} ${formatBalance(d.credited_amount)}`;
   }
 
-  return `${d.currency} ${d.amount}`;
+  return `${d.currency} ${formatBalance(d.amount)}`;
 }
 
 export function DepositPage() {
@@ -196,67 +197,37 @@ export function DepositPage() {
               </select>
             </div>
 
-            {isCrypto ? (
-              <div className="space-y-4">
-                <div>
-                  <CryptoCurrencyPicker
-                    currencies={cryptoCurrencies}
-                    value={payCurrency}
-                    onChange={setPayCurrency}
-                    loading={cryptoLoading}
-                    loadingLabel={t('common.loadingCurrencies')}
-                  />
-                </div>
-
-                {selected && (
-                  <p className="text-xs text-muted">
-                    {t('common.minMax', {
-                      min: selected.min_amount,
-                      max: selected.max_amount ?? t('common.noLimit'),
-                    })}
-                    {paymentCurrency && ` · ${t('deposit.paymentCurrency', { currency: paymentCurrency })}`}
-                  </p>
-                )}
-
-                <CryptoAmountInput
-                  value={amount}
-                  onChange={setAmount}
-                  currencyLabel={paymentCurrency}
-                  amountLabel={t('deposit.amount')}
-                  clearLabel={t('common.close')}
+            <div className="space-y-4">
+              {isCrypto && (
+                <CryptoCurrencyPicker
+                  currencies={cryptoCurrencies}
+                  value={payCurrency}
+                  onChange={setPayCurrency}
+                  loading={cryptoLoading}
+                  loadingLabel={t('common.loadingCurrencies')}
                 />
-              </div>
-            ) : (
-              <>
-                {selected && (
-                  <p className="text-xs text-muted">
-                    {t('common.minMax', {
-                      min: selected.min_amount,
-                      max: selected.max_amount ?? t('common.noLimit'),
-                    })}
-                    {paymentCurrency && ` · ${t('deposit.paymentCurrency', { currency: paymentCurrency })}`}
-                  </p>
-                )}
+              )}
 
-                <div>
-                  <label htmlFor="deposit-amount" className="mb-1 block text-xs text-muted">
-                    {t('deposit.amount')}
-                    {paymentCurrency ? ` (${paymentCurrency})` : ''}
-                  </label>
-                  <input
-                    id="deposit-amount"
-                    type="number"
-                    step="0.0001"
-                    min="0"
-                    value={amount}
-                    onChange={(e) => setAmount(e.target.value)}
-                    required
-                    className="w-full rounded-md border border-white/10 bg-background px-3 py-2 text-sm text-white"
-                    placeholder="100.0000"
-                  />
-                </div>
-              </>
-            )}
+              {selected && (
+                <p className="text-xs text-muted">
+                    {t('common.minMax', {
+                      min: formatBalance(selected.min_amount),
+                      max: selected.max_amount
+                        ? formatBalance(selected.max_amount)
+                        : t('common.noLimit'),
+                    })}
+                  {paymentCurrency && ` · ${t('deposit.paymentCurrency', { currency: paymentCurrency })}`}
+                </p>
+              )}
+
+              <CryptoAmountInput
+                value={amount}
+                onChange={setAmount}
+                currencyLabel={paymentCurrency}
+                amountLabel={t('deposit.amount')}
+                clearLabel={t('common.close')}
+              />
+            </div>
 
             {amount && Number(amount) > 0 && (
               <div className="rounded-lg border border-white/10 bg-background/50 p-3 text-sm">
@@ -267,7 +238,7 @@ export function DepositPage() {
                   <>
                     <p className="font-medium text-accent-gold">
                       {t('deposit.estimatedBalance', {
-                        amount: quote.credited_amount,
+                        amount: formatBalance(quote.credited_amount),
                         currency: quote.wallet_currency,
                       })}
                     </p>
@@ -300,7 +271,7 @@ export function DepositPage() {
               {lastDeposit.estimated_credit && (
                 <p className="mb-3 text-sm text-white">
                   {t('deposit.estimatedBalance', {
-                    amount: lastDeposit.estimated_credit.credited_amount,
+                    amount: formatBalance(lastDeposit.estimated_credit.credited_amount),
                     currency: lastDeposit.estimated_credit.wallet_currency,
                   })}
                   <span className="block text-xs text-muted mt-1">{t('deposit.estimateDisclaimer')}</span>
@@ -310,7 +281,9 @@ export function DepositPage() {
               {(Boolean(paymentInfo.pay_amount) || Boolean(paymentInfo.pay_currency)) && (
                 <p className="mb-3 text-sm text-white">
                   {t('deposit.sendToAddress', {
-                    amount: String(paymentInfo.pay_amount ?? paymentInfo.amount ?? ''),
+                    amount: formatBalance(
+                      String(paymentInfo.pay_amount ?? paymentInfo.amount ?? ''),
+                    ),
                     currency: String(paymentInfo.pay_currency ?? paymentInfo.currency ?? '').toUpperCase(),
                   })}
                 </p>

@@ -16,13 +16,15 @@ export interface RegisterPayload {
   password: string;
   password_confirmation: string;
   nickname: string;
+  phone: string;
   country: string;
   currency: string;
   affiliate_code?: string;
 }
 
 export interface LoginPayload {
-  email: string;
+  email?: string;
+  phone?: string;
   password: string;
 }
 

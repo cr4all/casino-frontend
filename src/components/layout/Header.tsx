@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuthStore } from '@/stores/authStore';
-import { useWalletStore } from '@/stores/walletStore';
+import { DEFAULT_CURRENCY, useWalletStore } from '@/stores/walletStore';
+import { formatBalance } from '@/utils/formatBalance';
 import { useUiStore } from '@/stores/uiStore';
 import { useUnreadNotifications } from '@/hooks/useUnreadNotifications';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -63,7 +64,7 @@ export function Header({ onMenuToggle }: HeaderProps) {
             <div className="flex items-center gap-2 rounded-lg border border-white/10 bg-card px-4 py-2">
               <span className="text-xs text-muted hidden sm:inline">{t('nav.balance')}</span>
               <span className="font-condensed text-sm font-bold tracking-wide text-accent-gold">
-                {balance?.currency ?? 'EUR'} {balance?.balance ?? '0.00'}
+                {balance?.currency ?? DEFAULT_CURRENCY} {formatBalance(balance?.balance)}
               </span>
             </div>
 
@@ -121,14 +122,6 @@ export function Header({ onMenuToggle }: HeaderProps) {
                     className="block px-4 py-2.5 text-sm text-white hover:bg-surface transition-colors"
                   >
                     {t('nav.bonusesLabel')}
-                  </Link>
-                  <Link
-                    to="/bets"
-                    role="menuitem"
-                    onClick={closeUserMenu}
-                    className="block px-4 py-2.5 text-sm text-white hover:bg-surface transition-colors"
-                  >
-                    {t('betHistory.title')}
                   </Link>
                   <Link
                     to="/transactions"

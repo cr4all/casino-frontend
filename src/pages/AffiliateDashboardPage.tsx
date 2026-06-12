@@ -12,6 +12,7 @@ import { StatusBadge } from '@/components/common/StatusBadge';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useAuthStore } from '@/stores/authStore';
 import type { PaginationMeta } from '@/types';
+import { formatBalance } from '@/utils/formatBalance';
 
 function StatCard({ label, value }: { label: string; value: string | number }) {
   return (
@@ -199,7 +200,7 @@ export function AffiliateDashboardPage() {
                     commissions.map((c) => (
                       <tr key={c.id} className="border-b border-white/5">
                         <td className="py-2 pr-4 uppercase">{c.type}</td>
-                        <td className="py-2 pr-4">{c.amount}</td>
+                        <td className="py-2 pr-4">{formatBalance(c.amount)}</td>
                         <td className="py-2 pr-4">
                           <StatusBadge status={c.status} />
                         </td>

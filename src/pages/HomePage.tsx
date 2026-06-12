@@ -9,7 +9,7 @@ import { gameApi } from '@/api/game.api';
 import { useGameVendors } from '@/hooks/useGameVendors';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getVendorBannerUrl } from '@/data/providerBanners';
-import { collectionPath, vendorGradient, vendorPath } from '@/stores/gameStore';
+import { collectionPath, providersPath, vendorGradient, vendorPath } from '@/stores/gameStore';
 import type { Game } from '@/types';
 
 const COLLECTION_SLUGS = ['top', 'popular', 'new'] as const;
@@ -69,7 +69,7 @@ export function HomePage() {
             <section>
               <div className="mb-3 flex items-center justify-between px-0.5">
                 <h2 className="text-sm font-bold tracking-wide text-white">{t('home.browseByProvider')}</h2>
-                <Link to="/category/all" className="text-xs text-accent-gold hover:underline">
+                <Link to={providersPath()} className="text-xs text-accent-gold hover:underline">
                   {t('common.viewAll')}
                 </Link>
               </div>

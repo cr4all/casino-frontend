@@ -1,5 +1,6 @@
 export interface TawkApi {
   onLoad?: () => void;
+  onChatMessageSystem?: (message: unknown) => void;
   setAttributes?: (
     attributes: Record<string, string>,
     callback?: (error: Error | null) => void,

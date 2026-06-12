@@ -1364,6 +1364,8 @@ export interface components {
             password: string;
             password_confirmation: string;
             nickname: string;
+            /** @example +12025550123 */
+            phone: string;
             /**
              * @description ISO 3166-1 alpha-2 code from GET /auth/register-options
              * @example US
@@ -1377,8 +1379,10 @@ export interface components {
             affiliate_code?: string | null;
         };
         LoginRequest: {
-            /** Format: email */
-            email: string;
+            /** @description Email address or username (use with password for email login) */
+            email?: string;
+            /** @description Phone number in E.164 format (use with password for phone login) */
+            phone?: string;
             password: string;
             device_fingerprint?: string | null;
             device_name?: string | null;

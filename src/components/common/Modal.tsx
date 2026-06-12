@@ -6,10 +6,11 @@ interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   title: string;
+  titleIcon?: ReactNode;
   children: ReactNode;
 }
 
-export function Modal({ isOpen, onClose, title, children }: ModalProps) {
+export function Modal({ isOpen, onClose, title, titleIcon, children }: ModalProps) {
   const { t } = useTranslation();
 
   if (!isOpen) return null;
@@ -23,7 +24,10 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
       />
       <div className="relative z-10 w-full max-w-md rounded-xl border border-white/[0.08] bg-card p-6 shadow-card">
         <div className="mb-4 flex items-center justify-between">
-          <h2 className="text-lg font-bold text-white">{title}</h2>
+          <div className="flex items-center gap-2">
+            {titleIcon}
+            <h2 className="text-lg font-bold text-white">{title}</h2>
+          </div>
           <button
             type="button"
             onClick={onClose}

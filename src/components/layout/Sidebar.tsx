@@ -20,7 +20,6 @@ interface StaticNavItem {
 const accountItems: StaticNavItem[] = [
   { id: 'deposit', labelKey: 'nav.deposit', sublabelKey: 'nav.depositLabel', icon: '💳', path: '/deposit', auth: true },
   { id: 'withdraw', labelKey: 'nav.withdraw', sublabelKey: 'nav.withdrawLabel', icon: '💸', path: '/withdraw', auth: true },
-  { id: 'bets', labelKey: 'nav.betHistory', sublabelKey: 'nav.gameBets', icon: '🎰', path: '/bets', auth: true },
   { id: 'transactions', labelKey: 'nav.history', sublabelKey: 'nav.transactions', icon: '📋', path: '/transactions', auth: true },
   { id: 'notices', labelKey: 'nav.notices', sublabelKey: 'nav.noticesLabel', icon: '🔔', path: '/notifications', auth: true },
   { id: 'bonus', labelKey: 'nav.bonuses', sublabelKey: 'nav.bonusesLabel', icon: '🎁', path: '/bonus', auth: true },
