@@ -1332,6 +1332,7 @@ components:
         currency:
           type: string
         estimated_credit:
+          type: object
           nullable: true
           allOf:
             - $ref: '#/components/schemas/DepositQuote'
@@ -1605,7 +1606,7 @@ components:
           type: string
         commission_model:
           type: string
-          enum: [cpa, revshare]
+          enum: [cpa, revshare, hybrid]
         commission_rate:
           type: string
         cpa_amount:
@@ -1663,7 +1664,7 @@ components:
           type: integer
         type:
           type: string
-          enum: [cpa, revshare]
+          enum: [cpa, revshare, hybrid]
         amount:
           type: string
         reference_type:
