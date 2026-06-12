@@ -1015,7 +1015,7 @@ components:
 
     RegisterRequest:
       type: object
-      required: [email, password, password_confirmation, nickname, country, currency]
+      required: [email, password, password_confirmation, nickname, phone, country, currency]
       properties:
         email:
           type: string
@@ -1028,6 +1028,10 @@ components:
         nickname:
           type: string
           maxLength: 50
+        phone:
+          type: string
+          maxLength: 20
+          example: '+12025550123'
         country:
           type: string
           minLength: 2
@@ -1047,11 +1051,14 @@ components:
 
     LoginRequest:
       type: object
-      required: [email, password]
+      required: [password]
       properties:
         email:
           type: string
-          format: email
+          description: Email address or username (use with password for email login)
+        phone:
+          type: string
+          description: Phone number in E.164 format (use with password for phone login)
         password:
           type: string
         device_fingerprint:

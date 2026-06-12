@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
 import { Logo } from '@/components/common/Logo';
+import { useCookieConsentStore } from '@/stores/cookieConsentStore';
 
 export function Footer() {
   const { t } = useTranslation();
+  const openSettings = useCookieConsentStore((s) => s.openSettings);
 
   return (
     <footer className="mt-auto border-t border-white/5 bg-surface">
@@ -23,7 +25,6 @@ export function Footer() {
               <li><Link to="/deposit" className="text-xs text-muted hover:text-white transition-colors">{t('nav.depositLabel')}</Link></li>
               <li><Link to="/withdraw" className="text-xs text-muted hover:text-white transition-colors">{t('nav.withdrawLabel')}</Link></li>
               <li><Link to="/bonus" className="text-xs text-muted hover:text-white transition-colors">{t('nav.bonusesLabel')}</Link></li>
-              <li><Link to="/bets" className="text-xs text-muted hover:text-white transition-colors">{t('betHistory.title')}</Link></li>
               <li><Link to="/transactions" className="text-xs text-muted hover:text-white transition-colors">{t('nav.transactions')}</Link></li>
             </ul>
           </div>
@@ -39,6 +40,20 @@ export function Footer() {
             <ul className="space-y-2">
               <li><span className="text-xs text-muted">{t('footer.terms')}</span></li>
               <li><span className="text-xs text-muted">{t('footer.privacy')}</span></li>
+              <li>
+                <Link to="/cookies" className="text-xs text-muted hover:text-white transition-colors">
+                  {t('cookies.policyLink')}
+                </Link>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={openSettings}
+                  className="text-xs text-muted hover:text-white transition-colors"
+                >
+                  {t('cookies.settings')}
+                </button>
+              </li>
               <li><span className="text-xs text-muted">{t('footer.responsibleGaming')}</span></li>
             </ul>
           </div>

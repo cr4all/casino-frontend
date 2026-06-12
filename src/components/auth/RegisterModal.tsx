@@ -6,6 +6,13 @@ import { useUiStore } from '@/stores/uiStore';
 import { useWalletStore } from '@/stores/walletStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { authApi, type RegisterOptions } from '@/api/auth.api';
+import { PhoneNumberInput } from '@/components/auth/PhoneNumberInput';
+import {
+  buildFullPhoneNumber,
+  formatLocalPhoneNumber,
+  isLocalPhoneValid,
+  parsePhoneNumber,
+} from '@/data/phoneDialCodes';
 import { clearStoredAffiliateCode, getStoredAffiliateCode } from '@/utils/affiliateReferral';
 
 const selectClassName =
@@ -25,10 +32,12 @@ export function RegisterModal() {
     password: '',
     password_confirmation: '',
     nickname: '',
+    phone: '',
     country: '',
     currency: '',
     affiliate_code: '' as string | undefined,
   });
+  const [phoneCountryCode, setPhoneCountryCode] = useState('US');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -48,12 +57,14 @@ export function RegisterModal() {
           return;
         }
         setOptions(data);
+        const defaultCountry = data.countries[0]?.code || 'US';
         setForm((prev) => ({
           ...prev,
-          country: prev.country || data.countries[0]?.code || '',
+          country: prev.country || defaultCountry,
           currency: prev.currency || data.currencies[0]?.code || '',
           affiliate_code: storedCode ?? prev.affiliate_code,
         }));
+        setPhoneCountryCode(defaultCountry);
       })
       .catch(() => {
         if (!cancelled) {
@@ -69,21 +80,54 @@ export function RegisterModal() {
   const update = (field: string, value: string) =>
     setForm((prev) => ({ ...prev, [field]: value }));
 
+  const handleRegistrationCountryChange = (code: string) => {
+    setPhoneCountryCode(code);
+    setForm((prev) => {
+      const { local } = parsePhoneNumber(prev.phone, code);
+      const formatted = formatLocalPhoneNumber(code, local);
+      return {
+        ...prev,
+        country: code,
+        phone: buildFullPhoneNumber(code, formatted),
+      };
+    });
+  };
+
+  const handlePhoneCountryChange = (code: string) => {
+    setPhoneCountryCode(code);
+    setForm((prev) => {
+      const { local } = parsePhoneNumber(prev.phone, code);
+      const formatted = formatLocalPhoneNumber(code, local);
+      return {
+        ...prev,
+        phone: buildFullPhoneNumber(code, formatted),
+      };
+    });
+  };
+
   const resetForm = () => {
     setForm({
       email: '',
       password: '',
       password_confirmation: '',
       nickname: '',
+      phone: '',
       country: options?.countries[0]?.code ?? '',
       currency: options?.currencies[0]?.code ?? '',
       affiliate_code: getStoredAffiliateCode() ?? undefined,
     });
+    setPhoneCountryCode(options?.countries[0]?.code ?? 'US');
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError('');
+    const parsedPhone = parsePhoneNumber(form.phone, phoneCountryCode);
+    if (!isLocalPhoneValid(phoneCountryCode, parsedPhone.local)) {
+      setError(t('auth.phoneInvalid'));
+      return;
+    }
+
     setLoading(true);
     try {
       const payload = {
@@ -91,6 +135,7 @@ export function RegisterModal() {
         password: form.password,
         password_confirmation: form.password_confirmation,
         nickname: form.nickname,
+        phone: form.phone,
         country: form.country,
         currency: form.currency,
         ...(form.affiliate_code ? { affiliate_code: form.affiliate_code } : {}),
@@ -127,9 +172,9 @@ export function RegisterModal() {
           />
         </div>
         <div>
-          <label htmlFor="reg-nickname" className="mb-1 block text-xs text-muted">{t('auth.nickname')}</label>
+          <label htmlFor="reg-username" className="mb-1 block text-xs text-muted">{t('auth.username')}</label>
           <input
-            id="reg-nickname"
+            id="reg-username"
             type="text"
             required
             maxLength={50}
@@ -138,6 +183,15 @@ export function RegisterModal() {
             className="w-full rounded-md border border-white/10 bg-card px-3 py-2 text-sm text-white focus:border-accent focus:outline-none"
           />
         </div>
+        <PhoneNumberInput
+          id="reg-phone"
+          label={t('auth.phone')}
+          value={form.phone}
+          onChange={(phone) => update('phone', phone)}
+          countryCode={phoneCountryCode}
+          onCountryCodeChange={handlePhoneCountryChange}
+          disabled={optionsLoading}
+        />
         <div className="grid grid-cols-2 gap-3">
           <div>
             <label htmlFor="reg-country" className="mb-1 block text-xs text-muted">{t('auth.country')}</label>
@@ -145,7 +199,7 @@ export function RegisterModal() {
               id="reg-country"
               required
               value={form.country}
-              onChange={(e) => update('country', e.target.value)}
+              onChange={(e) => handleRegistrationCountryChange(e.target.value)}
               disabled={optionsLoading}
               className={selectClassName}
             >

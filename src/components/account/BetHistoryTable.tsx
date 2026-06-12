@@ -3,6 +3,7 @@ import { Pagination } from '@/components/common/Pagination';
 import { StatusBadge } from '@/components/common/StatusBadge';
 import { useTranslation } from '@/hooks/useTranslation';
 import type { BetHistoryItem, PaginationMeta } from '@/types';
+import { formatBalance } from '@/utils/formatBalance';
 
 interface BetHistoryTableProps {
   bets: BetHistoryItem[];
@@ -48,17 +49,17 @@ export function BetHistoryTable({ bets, pagination, loading, onPageChange }: Bet
               <tr key={bet.id} className="border-b border-white/5 hover:bg-surface/50">
                 <td className="px-4 py-3 text-white">{bet.game.name}</td>
                 <td className="px-4 py-3 font-mono text-white">
-                  {bet.currency} {bet.bet_amount}
+                  {bet.currency} {formatBalance(bet.bet_amount)}
                 </td>
                 <td className="px-4 py-3 font-mono text-accent-gold">
-                  {bet.currency} {bet.win_amount}
+                  {bet.currency} {formatBalance(bet.win_amount)}
                 </td>
                 <td
                   className={`px-4 py-3 font-mono ${
                     parseFloat(bet.net_amount) >= 0 ? 'text-green-400' : 'text-red-400'
                   }`}
                 >
-                  {bet.net_amount}
+                  {formatBalance(bet.net_amount)}
                 </td>
                 <td className="px-4 py-3">
                   <StatusBadge status={bet.status} />

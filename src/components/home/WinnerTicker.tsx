@@ -1,4 +1,5 @@
 import type { Winner } from '@/types';
+import { formatBalance } from '@/utils/formatBalance';
 
 interface WinnerTickerProps {
   winners: Winner[];
@@ -18,7 +19,7 @@ export function WinnerTicker({ winners }: WinnerTickerProps) {
             <span className="text-accent-gold font-semibold">🏆 {winner.player}</span>
             won
             <span className="font-semibold text-white">
-              {winner.currency} {winner.amount}
+              {winner.currency} {formatBalance(winner.amount)}
             </span>
             on
             <span className="text-accent">{winner.game}</span>

@@ -51,6 +51,10 @@ export function vendorPath(vendorId: number): string {
   return `/category/vendor-${vendorId}`;
 }
 
+export function providersPath(): string {
+  return '/category/providers';
+}
+
 export function typePath(typeSlug: string): string {
   return `/category/type-${typeSlug}`;
 }

@@ -4,18 +4,21 @@ import { GameCard } from '@/components/game/GameCard';
 import { GameCategoryTabs } from '@/components/layout/GameCategoryTabs';
 import { SectionTitle } from '@/components/common/SectionTitle';
 import { PromoBannerGrid } from '@/components/home/PromoBanner';
+import { ProviderCard } from '@/components/provider/ProviderCard';
 import { gameApi } from '@/api/game.api';
 import { useGameTypes } from '@/hooks/useGameTypes';
 import { useGameVendors } from '@/hooks/useGameVendors';
 import { useTranslation } from '@/hooks/useTranslation';
+import { getVendorBannerUrl } from '@/data/providerBanners';
 import { mockPromotions } from '@/data/mockData';
+import { vendorGradient, vendorPath } from '@/stores/gameStore';
 import type { Game } from '@/types';
 
 export function CategoryPage() {
   const { t, tGameType, tCollection, language } = useTranslation();
   const { category = 'all' } = useParams<{ category: string }>();
   const [searchParams, setSearchParams] = useSearchParams();
-  const { vendors } = useGameVendors();
+  const { vendors, loading: vendorsLoading } = useGameVendors();
   const { types } = useGameTypes();
   const [games, setGames] = useState<Game[]>([]);
   const [title, setTitle] = useState('');
@@ -29,7 +32,7 @@ export function CategoryPage() {
   }, [category]);
 
   useEffect(() => {
-    if (category === 'promos') {
+    if (category === 'promos' || category === 'providers') {
       setLoading(false);
       return;
     }
@@ -81,6 +84,35 @@ export function CategoryPage() {
       setSearchParams({});
     }
   };
+
+  if (category === 'providers') {
+    return (
+      <div className="space-y-5">
+        <GameCategoryTabs />
+        <SectionTitle title={t('home.browseByProvider')} showArrows={false} />
+        {vendorsLoading ? (
+          <p className="text-muted">{t('common.loadingGames')}</p>
+        ) : vendors.length === 0 ? (
+          <div className="rounded-xl border border-white/[0.08] bg-card p-8 text-center">
+            <p className="text-muted">{t('category.noProvidersFound')}</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+            {vendors.map((vendor, index) => (
+              <ProviderCard
+                key={vendor.id}
+                name={vendor.name}
+                gameCount={vendor.game_count}
+                imageUrl={getVendorBannerUrl(vendor)}
+                gradient={vendorGradient(index)}
+                path={vendorPath(vendor.id)}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  }
 
   if (category === 'promos') {
     return (
