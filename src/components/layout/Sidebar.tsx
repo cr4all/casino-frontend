@@ -1,12 +1,14 @@
 import { type MouseEvent } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuthStore } from '@/stores/authStore';
+import { canLoadChat, useCookieConsentStore } from '@/stores/cookieConsentStore';
 import { useUiStore } from '@/stores/uiStore';
 import { useUnreadNotifications } from '@/hooks/useUnreadNotifications';
 import { useGameTypes } from '@/hooks/useGameTypes';
 import { useTranslation } from '@/hooks/useTranslation';
 import { typeIcon, typePath } from '@/stores/gameStore';
 import { Logo } from '@/components/common/Logo';
+import { hideTawkWidget } from '@/utils/tawkWidget';
 
 interface StaticNavItem {
   id: string;
@@ -34,30 +36,53 @@ export function Sidebar({ onNavigate }: SidebarProps) {
   const location = useLocation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const openModal = useUiStore((s) => s.openModal);
+  const liveChatOpen = useUiStore((s) => s.liveChatOpen);
+  const openLiveChat = useUiStore((s) => s.openLiveChat);
+  const closeLiveChat = useUiStore((s) => s.closeLiveChat);
+  const level = useCookieConsentStore((s) => s.level);
+  const preferences = useCookieConsentStore((s) => s.preferences);
+  const openCookieSettings = useCookieConsentStore((s) => s.openSettings);
   const unreadCount = useUnreadNotifications();
   const { types } = useGameTypes();
+  const chatAllowed = canLoadChat(level, preferences);
 
   const isPathActive = (path: string) =>
     location.pathname === path || location.pathname.startsWith(`${path}/`);
+
+  const handleNavClick = () => {
+    closeLiveChat();
+    hideTawkWidget();
+    onNavigate?.();
+  };
 
   const handleAuthClick = (item: StaticNavItem, e: MouseEvent<HTMLAnchorElement>) => {
     if (item.auth && !isAuthenticated) {
       e.preventDefault();
       openModal('login');
-      onNavigate?.();
+      handleNavClick();
     }
+  };
+
+  const handleLiveChatClick = () => {
+    if (!chatAllowed) {
+      openCookieSettings();
+      onNavigate?.();
+      return;
+    }
+    openLiveChat();
+    onNavigate?.();
   };
 
   return (
     <aside className="flex h-full w-[220px] shrink-0 flex-col border-r border-white/[0.06] bg-sidebar">
       <div className="px-5 py-6">
-        <Logo height={36} onClick={onNavigate} />
+        <Logo height={36} onClick={handleNavClick} />
       </div>
 
       <nav className="flex flex-1 flex-col gap-0.5 overflow-y-auto px-2">
         <Link
           to="/category/all"
-          onClick={onNavigate}
+          onClick={handleNavClick}
           className={`group relative flex items-center gap-3 rounded-md px-3 py-3 transition-all ${
             location.pathname === '/category/all' || location.pathname === '/'
               ? 'sidebar-active text-accent-gold'
@@ -79,7 +104,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
             <Link
               key={type.id}
               to={path}
-              onClick={onNavigate}
+              onClick={handleNavClick}
               className={`group relative flex items-center gap-3 rounded-md px-3 py-3 transition-all ${
                 active ? 'sidebar-active text-accent-gold' : 'text-white hover:bg-card/60'
               }`}
@@ -107,7 +132,12 @@ export function Sidebar({ onNavigate }: SidebarProps) {
             <Link
               key={item.id}
               to={item.path}
-              onClick={(e) => { handleAuthClick(item, e); onNavigate?.(); }}
+              onClick={(e) => {
+                handleAuthClick(item, e);
+                if (!item.auth || isAuthenticated) {
+                  handleNavClick();
+                }
+              }}
               className={`group relative flex items-center gap-3 rounded-md px-3 py-3 transition-all ${
                 active ? 'sidebar-active text-accent-gold' : 'text-white hover:bg-card/60'
               }`}
@@ -125,6 +155,22 @@ export function Sidebar({ onNavigate }: SidebarProps) {
             </Link>
           );
         })}
+
+        <button
+          type="button"
+          onClick={handleLiveChatClick}
+          className={`group relative flex w-full items-center gap-3 rounded-md px-3 py-3 text-left transition-all ${
+            liveChatOpen ? 'sidebar-active text-accent-gold' : 'text-white hover:bg-card/60'
+          }`}
+        >
+          <span className="text-xl leading-none">💬</span>
+          <div className="min-w-0 flex-1">
+            <p className={`text-xs font-bold tracking-wide ${liveChatOpen ? 'text-accent-gold' : 'text-white'}`}>
+              {t('nav.liveChat')}
+            </p>
+            <p className="text-[10px] text-muted truncate">{t('nav.liveChatLabel')}</p>
+          </div>
+        </button>
       </nav>
 
       <div className="border-t border-white/[0.06] p-4">

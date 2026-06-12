@@ -54,7 +54,16 @@ export const tr: TranslationTree = {
     register: 'Kayıt ol',
     balance: 'Bakiye',
     playResponsibly: '18+ · Sorumlu oynayın',
+    liveChat: 'CANLI SOHBET',
+    liveChatLabel: 'Destek',
   },
+  liveChat: {
+    title: 'Canlı sohbet',
+    subtitle: 'Destek ekibimizle sohbet edin.',
+    consentRequired: 'Canlı sohbet için ayarlardan çerezleri etkinleştirin.',
+    openSettings: 'Çerez ayarları',
+  },
+
   footer: {
     slots: 'Slotlar',
     liveCasino: 'Canlı casino',

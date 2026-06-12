@@ -54,7 +54,16 @@ export const fil: TranslationTree = {
     register: 'Magrehistro',
     balance: 'Balanse',
     playResponsibly: '18+ · Maglaro nang responsable',
+    liveChat: 'LIVE CHAT',
+    liveChatLabel: 'Support',
   },
+  liveChat: {
+    title: 'Live Chat',
+    subtitle: 'Chat with our support team.',
+    consentRequired: 'Enable live chat cookies in settings to use live chat.',
+    openSettings: 'Cookie settings',
+  },
+
   footer: {
     slots: 'Slots',
     liveCasino: 'Live Casino',

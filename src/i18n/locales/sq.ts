@@ -54,7 +54,16 @@ export const sq: TranslationTree = {
     register: 'Regjistrohu',
     balance: 'Balanca',
     playResponsibly: '18+ · Luaj me përgjegjësi',
+    liveChat: 'LIVE CHAT',
+    liveChatLabel: 'Support',
   },
+  liveChat: {
+    title: 'Live Chat',
+    subtitle: 'Chat with our support team.',
+    consentRequired: 'Enable live chat cookies in settings to use live chat.',
+    openSettings: 'Cookie settings',
+  },
+
   footer: {
     slots: 'Slote',
     liveCasino: 'Kazino live',

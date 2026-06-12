@@ -54,7 +54,16 @@ export const fr: TranslationTree = {
     register: 'Inscription',
     balance: 'Solde',
     playResponsibly: '18+ · Jouez responsablement',
+    liveChat: 'CHAT EN DIRECT',
+    liveChatLabel: 'Support',
   },
+  liveChat: {
+    title: 'Chat en direct',
+    subtitle: 'Discutez avec notre équipe d\'assistance.',
+    consentRequired: 'Activez les cookies de chat en direct dans les paramètres.',
+    openSettings: 'Paramètres des cookies',
+  },
+
   footer: {
     slots: 'Machines à sous',
     liveCasino: 'Casino en direct',

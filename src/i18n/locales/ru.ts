@@ -54,7 +54,16 @@ export const ru: TranslationTree = {
     register: 'Регистрация',
     balance: 'Баланс',
     playResponsibly: '18+ · Играйте ответственно',
+    liveChat: 'ОНЛАЙН-ЧАТ',
+    liveChatLabel: 'Поддержка',
   },
+  liveChat: {
+    title: 'Онлайн-чат',
+    subtitle: 'Чат с нашей службой поддержки.',
+    consentRequired: 'Включите cookie онлайн-чата в настройках.',
+    openSettings: 'Настройки cookie',
+  },
+
   footer: {
     slots: 'Слоты',
     liveCasino: 'Live-казино',

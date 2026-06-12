@@ -54,7 +54,16 @@ export const pt: TranslationTree = {
     register: 'Registar',
     balance: 'Saldo',
     playResponsibly: '18+ · Jogue com responsabilidade',
+    liveChat: 'CHAT AO VIVO',
+    liveChatLabel: 'Suporte',
   },
+  liveChat: {
+    title: 'Chat ao vivo',
+    subtitle: 'Converse com nossa equipe de suporte.',
+    consentRequired: 'Ative os cookies de chat ao vivo nas configurações.',
+    openSettings: 'Configurações de cookies',
+  },
+
   footer: {
     slots: 'Slots',
     liveCasino: 'Casino ao vivo',

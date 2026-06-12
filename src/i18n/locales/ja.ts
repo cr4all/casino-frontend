@@ -54,7 +54,16 @@ export const ja: TranslationTree = {
     register: '登録',
     balance: '残高',
     playResponsibly: '18+ · 責任あるプレイ',
+    liveChat: 'ライブチャット',
+    liveChatLabel: 'サポート',
   },
+  liveChat: {
+    title: 'ライブチャット',
+    subtitle: 'サポートチームとチャットできます。',
+    consentRequired: 'ライブチャットを利用するには設定でCookieを有効にしてください。',
+    openSettings: 'Cookie設定',
+  },
+
   footer: {
     slots: 'スロット',
     liveCasino: 'ライブカジノ',

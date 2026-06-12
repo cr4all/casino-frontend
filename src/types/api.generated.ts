@@ -1364,7 +1364,10 @@ export interface components {
             password: string;
             password_confirmation: string;
             nickname: string;
-            /** @example +12025550123 */
+            /**
+             * @description Phone number in E.164 format (country dial code + digits, no spaces)
+             * @example +12025550123
+             */
             phone: string;
             /**
              * @description ISO 3166-1 alpha-2 code from GET /auth/register-options

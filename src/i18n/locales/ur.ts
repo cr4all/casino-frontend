@@ -54,7 +54,16 @@ export const ur: TranslationTree = {
     register: 'رجسٹریشن',
     balance: 'بیلنس',
     playResponsibly: '18+ · ذمہ داری سے کھیلیں',
+    liveChat: 'LIVE CHAT',
+    liveChatLabel: 'Support',
   },
+  liveChat: {
+    title: 'Live Chat',
+    subtitle: 'Chat with our support team.',
+    consentRequired: 'Enable live chat cookies in settings to use live chat.',
+    openSettings: 'Cookie settings',
+  },
+
   footer: {
     slots: 'سلاٹس',
     liveCasino: 'لائیو کیسینو',
