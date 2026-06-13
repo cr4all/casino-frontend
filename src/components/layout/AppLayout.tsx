@@ -12,11 +12,14 @@ import { useAuthInit } from '@/hooks/useAuthInit';
 import { useCloseLiveChatOnNavigate } from '@/hooks/useCloseLiveChatOnNavigate';
 import { useIdleLogout } from '@/hooks/useIdleLogout';
 import { useLanguageInit } from '@/hooks/useLanguageInit';
+import { useSessionPolicy } from '@/hooks/useSessionPolicy';
 import { useWalletSync } from '@/hooks/useWalletSync';
 import { useAuthStore } from '@/stores/authStore';
 import { captureAffiliateReferralFromUrl } from '@/utils/affiliateReferral';
 
 export function AppLayout() {
+  const { loadSessionPolicy } = useSessionPolicy();
+
   useAuthInit();
   useWalletSync();
   useIdleLogout();
@@ -27,6 +30,10 @@ export function AppLayout() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const user = useAuthStore((s) => s.user);
   const isAffiliateUser = user?.role === 'affiliate';
+
+  useEffect(() => {
+    void loadSessionPolicy();
+  }, [loadSessionPolicy]);
 
   useEffect(() => {
     captureAffiliateReferralFromUrl(searchParams);

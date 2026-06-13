@@ -11,6 +11,10 @@ export interface RegisterOptions {
   countries: RegistrationOption[];
 }
 
+export interface SessionPolicy {
+  idle_timeout_minutes: number;
+}
+
 export interface RegisterPayload {
   email: string;
   password: string;
@@ -32,6 +36,11 @@ export interface LoginPayload {
 export const authApi = {
   getRegisterOptions: async () => {
     const { data } = await api.get<ApiResponse<RegisterOptions>>('/auth/register-options');
+    return data.data;
+  },
+
+  getSessionPolicy: async () => {
+    const { data } = await api.get<ApiResponse<SessionPolicy>>('/auth/session-policy');
     return data.data;
   },
 

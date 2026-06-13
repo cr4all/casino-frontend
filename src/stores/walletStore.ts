@@ -3,6 +3,7 @@ import { persist } from 'zustand/middleware';
 import { walletApi } from '@/api/wallet.api';
 import type { WalletBalance } from '@/types';
 import { formatBalance } from '@/utils/formatBalance';
+import { reportUserActivity } from '@/utils/userActivity';
 
 export const DEFAULT_CURRENCY = 'USD';
 
@@ -29,9 +30,16 @@ export const useWalletStore = create<WalletState>()(
       fetchBalance: async () => {
         set({ isLoading: true, error: null });
         try {
+          const previousBalance = get().balance?.balance ?? null;
           const balance = await walletApi.getBalance();
+          const formattedBalance = formatBalance(balance.balance);
+
+          if (previousBalance !== null && previousBalance !== formattedBalance) {
+            reportUserActivity();
+          }
+
           set({
-            balance: { ...balance, balance: formatBalance(balance.balance) },
+            balance: { ...balance, balance: formattedBalance },
             isLoading: false,
           });
         } catch {
@@ -62,6 +70,8 @@ export const useWalletStore = create<WalletState>()(
           },
           error: null,
         });
+
+        reportUserActivity();
       },
 
       clear: () => set({ balance: null, lastLedgerId: null, isLoading: false, error: null }),

@@ -42,6 +42,44 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/auth/session-policy": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Player session policy for client-side idle logout */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Session policy */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: components["schemas"]["SessionPolicyData"];
+                        };
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/auth/register": {
         parameters: {
             query?: never;
@@ -1345,6 +1383,10 @@ export interface components {
         RegisterOptionsData: {
             currencies: components["schemas"]["RegistrationCurrency"][];
             countries: components["schemas"]["RegistrationCountry"][];
+        };
+        SessionPolicyData: {
+            /** @description Minutes of inactivity before automatic logout. 0 disables idle logout. */
+            idle_timeout_minutes: number;
         };
         RegistrationCurrency: {
             /** @example USD */
