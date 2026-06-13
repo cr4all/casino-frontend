@@ -2,12 +2,10 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { gameApi } from '@/api/game.api';
 import { useAuthStore } from '@/stores/authStore';
-import { useGameBalanceSync } from '@/hooks/useGameBalanceSync';
 import { useLanguageInit } from '@/hooks/useLanguageInit';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getApiErrorMessage } from '@/utils/apiError';
 import { fitGameWindow } from '@/utils/gameWindow';
-import { clearGameSession, markGameSessionOpen, touchGameSessionHeartbeat } from '@/utils/gameSession';
 import type { Game } from '@/types';
 
 export function GamePlayPage() {
@@ -20,17 +18,6 @@ export function GamePlayPage() {
   const [loading, setLoading] = useState(true);
 
   useLanguageInit();
-  useGameBalanceSync(Boolean(launchUrl) && isAuthenticated);
-
-  useEffect(() => {
-    markGameSessionOpen();
-    const heartbeatId = window.setInterval(touchGameSessionHeartbeat, 5000);
-
-    return () => {
-      window.clearInterval(heartbeatId);
-      clearGameSession();
-    };
-  }, []);
 
   useEffect(() => {
     fitGameWindow();
