@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { gameApi } from '@/api/game.api';
 import { useAuthStore } from '@/stores/authStore';
 import { useLanguageInit } from '@/hooks/useLanguageInit';
-import { useUiStore } from '@/stores/uiStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getApiErrorMessage } from '@/utils/apiError';
 import { fitGameWindow } from '@/utils/gameWindow';
@@ -13,7 +12,6 @@ export function GamePlayPage() {
   const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
-  const openModal = useUiStore((s) => s.openModal);
   const [game, setGame] = useState<Game | null>(null);
   const [launchUrl, setLaunchUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -51,7 +49,6 @@ export function GamePlayPage() {
       })
       .finally(() => setLoading(false));
   }, [id, isAuthenticated, t]);
-  }, [id, isAuthenticated, navigate, openModal, t]);
 
   if (loading) {
     return (

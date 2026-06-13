@@ -18,7 +18,6 @@ import { captureAffiliateReferralFromUrl } from '@/utils/affiliateReferral';
 export function AppLayout() {
   useAuthInit();
   useWalletSync();
-  useIdleLogout();
   useLanguageInit();
   useCloseLiveChatOnNavigate();
   const [searchParams] = useSearchParams();
