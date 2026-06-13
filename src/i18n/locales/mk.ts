@@ -280,6 +280,8 @@ export const mk: TranslationTree = {
     backToLobby: '← Назад во lobby',
     defaultName: 'Игра',
     launchError: 'Играта не може да се стартува.',
+    closeWindow: 'Затвори',
+    loginRequired: 'Најавете се за да играте.',
   },
   modal: {
     comingSoon: 'Наскоро',

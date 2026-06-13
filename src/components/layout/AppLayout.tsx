@@ -10,7 +10,6 @@ import { CookieSettingsModal } from '@/components/common/CookieSettingsModal';
 import { ComingSoonModal } from '@/components/common/Modal';
 import { useAuthInit } from '@/hooks/useAuthInit';
 import { useCloseLiveChatOnNavigate } from '@/hooks/useCloseLiveChatOnNavigate';
-import { useIdleLogout } from '@/hooks/useIdleLogout';
 import { useLanguageInit } from '@/hooks/useLanguageInit';
 import { useSessionPolicy } from '@/hooks/useSessionPolicy';
 import { useWalletSync } from '@/hooks/useWalletSync';
@@ -22,7 +21,6 @@ export function AppLayout() {
 
   useAuthInit();
   useWalletSync();
-  useIdleLogout();
   useLanguageInit();
   useCloseLiveChatOnNavigate();
   const [searchParams] = useSearchParams();

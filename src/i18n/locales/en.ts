@@ -278,6 +278,8 @@ export const en = {
     backToLobby: '← Back to lobby',
     defaultName: 'Game',
     launchError: 'Failed to launch game.',
+    closeWindow: 'Close',
+    loginRequired: 'Please log in to play.',
   },
   modal: {
     comingSoon: 'Coming Soon',

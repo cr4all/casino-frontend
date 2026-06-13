@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import type { Game } from '@/types';
 import { useAuthStore } from '@/stores/authStore';
 import { useUiStore } from '@/stores/uiStore';
+import { openGameWindow } from '@/utils/openGameWindow';
 
 interface GameCardProps {
   game: Game;
@@ -12,7 +12,6 @@ interface GameCardProps {
 }
 
 export function GameCard({ game, variant = 'slider', isNew = false }: GameCardProps) {
-  const navigate = useNavigate();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const openModal = useUiStore((s) => s.openModal);
   const [imgError, setImgError] = useState(false);
@@ -23,7 +22,7 @@ export function GameCard({ game, variant = 'slider', isNew = false }: GameCardPr
       openModal('login');
       return;
     }
-    navigate(`/games/${game.id}/play`);
+    openGameWindow(game.id);
   };
 
   const showThumbnail = game.thumbnail && !imgError;

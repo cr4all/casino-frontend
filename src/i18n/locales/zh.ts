@@ -280,6 +280,8 @@ export const zh: TranslationTree = {
     backToLobby: '← 返回大厅',
     defaultName: '游戏',
     launchError: '无法启动游戏。',
+    closeWindow: '关闭',
+    loginRequired: '请先登录后再游戏。',
   },
   modal: {
     comingSoon: '即将推出',
