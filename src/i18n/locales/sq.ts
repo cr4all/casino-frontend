@@ -280,6 +280,8 @@ export const sq: TranslationTree = {
     backToLobby: '← Kthehu në lobby',
     defaultName: 'Lojë',
     launchError: 'Loja nuk u nis.',
+    closeWindow: 'Mbyll',
+    loginRequired: 'Hyni për të luajtur.',
   },
   modal: {
     comingSoon: 'Së shpejti',

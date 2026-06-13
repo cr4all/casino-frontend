@@ -12,14 +12,18 @@ import { BetHistoryPage } from '@/pages/BetHistoryPage';
 import { TransactionsPage } from '@/pages/TransactionsPage';
 import { GamePlayPage } from '@/pages/GamePlayPage';
 import { CookiePolicyPage } from '@/pages/CookiePolicyPage';
+
 export const router = createBrowserRouter([
+  {
+    path: '/games/:id/play',
+    element: <GamePlayPage />,
+  },
   {
     path: '/',
     element: <AppLayout />,
     children: [
       { index: true, element: <HomePage /> },
       { path: 'category/:category', element: <CategoryPage /> },
-      { path: 'games/:id/play', element: <GamePlayPage /> },
       { path: 'profile', element: <ProfilePage /> },
       { path: 'deposit', element: <DepositPage /> },
       { path: 'withdraw', element: <WithdrawPage /> },

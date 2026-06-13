@@ -280,6 +280,8 @@ export const ru: TranslationTree = {
     backToLobby: '← В лобби',
     defaultName: 'Игра',
     launchError: 'Не удалось запустить игру.',
+    closeWindow: 'Закрыть',
+    loginRequired: 'Войдите, чтобы играть.',
   },
   modal: {
     comingSoon: 'Скоро',

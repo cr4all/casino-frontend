@@ -280,6 +280,8 @@ export const fil: TranslationTree = {
     backToLobby: '← Bumalik sa lobby',
     defaultName: 'Laro',
     launchError: 'Nabigo ang pagsisimula ng laro.',
+    closeWindow: 'Isara',
+    loginRequired: 'Mag-log in para maglaro.',
   },
   modal: {
     comingSoon: 'Malapit na',

@@ -10,14 +10,14 @@ import { CookieSettingsModal } from '@/components/common/CookieSettingsModal';
 import { ComingSoonModal } from '@/components/common/Modal';
 import { useAuthInit } from '@/hooks/useAuthInit';
 import { useCloseLiveChatOnNavigate } from '@/hooks/useCloseLiveChatOnNavigate';
-import { useIdleLogout } from '@/hooks/useIdleLogout';
+import { useMainWindowBalanceSync } from '@/hooks/useMainWindowBalanceSync';
 import { useLanguageInit } from '@/hooks/useLanguageInit';
 import { useAuthStore } from '@/stores/authStore';
 import { captureAffiliateReferralFromUrl } from '@/utils/affiliateReferral';
 
 export function AppLayout() {
   useAuthInit();
-  useIdleLogout();
+  useMainWindowBalanceSync();
   useLanguageInit();
   useCloseLiveChatOnNavigate();
   const [searchParams] = useSearchParams();

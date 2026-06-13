@@ -280,6 +280,8 @@ export const hr: TranslationTree = {
     backToLobby: '← Natrag u lobby',
     defaultName: 'Igra',
     launchError: 'Igra se ne može pokrenuti.',
+    closeWindow: 'Zatvori',
+    loginRequired: 'Prijavite se za igranje.',
   },
   modal: {
     comingSoon: 'Uskoro',

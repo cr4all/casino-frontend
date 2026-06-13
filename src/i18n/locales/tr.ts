@@ -280,6 +280,8 @@ export const tr: TranslationTree = {
     backToLobby: '← Lobiye dön',
     defaultName: 'Oyun',
     launchError: 'Oyun başlatılamadı.',
+    closeWindow: 'Kapat',
+    loginRequired: 'Oynamak için giriş yapın.',
   },
   modal: {
     comingSoon: 'Yakında',

@@ -280,6 +280,8 @@ export const id: TranslationTree = {
     backToLobby: '← Kembali ke lobby',
     defaultName: 'Permainan',
     launchError: 'Gagal memulai permainan.',
+    closeWindow: 'Tutup',
+    loginRequired: 'Masuk untuk bermain.',
   },
   modal: {
     comingSoon: 'Segera hadir',
