@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { gameApi } from '@/api/game.api';
 import { useAuthStore } from '@/stores/authStore';
-import { useWalletStore } from '@/stores/walletStore';
 import { useUiStore } from '@/stores/uiStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getApiErrorMessage } from '@/utils/apiError';
@@ -15,7 +14,6 @@ export function GamePlayPage() {
   const navigate = useNavigate();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const openModal = useUiStore((s) => s.openModal);
-  const fetchBalance = useWalletStore((s) => s.fetchBalance);
   const [game, setGame] = useState<Game | null>(null);
   const [launchUrl, setLaunchUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -35,13 +33,12 @@ export function GamePlayPage() {
       .then(([gameData, launchResult]) => {
         setGame(gameData);
         setLaunchUrl(launchResult.launch_url);
-        fetchBalance();
       })
       .catch((err) => {
         setError(getApiErrorMessage(err, t('gamePlay.launchError')));
       })
       .finally(() => setLoading(false));
-  }, [id, isAuthenticated, navigate, openModal, fetchBalance, t]);
+  }, [id, isAuthenticated, navigate, openModal, t]);
 
   if (loading) {
     return (

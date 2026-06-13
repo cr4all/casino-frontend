@@ -350,6 +350,48 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/wallet/balance/stream": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Stream wallet balance updates (SSE)
+         * @description Server-Sent Events stream for real-time wallet balance updates.
+         *     Emits `snapshot` on connect and `balance` when the wallet changes.
+         */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description SSE stream */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "text/event-stream": string;
+                    };
+                };
+                401: components["responses"]["Unauthorized"];
+                404: components["responses"]["NotFound"];
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/wallet/transactions": {
         parameters: {
             query?: never;
@@ -1442,6 +1484,11 @@ export interface components {
             balance: string;
             status: string;
         };
+        WalletBalanceEvent: components["schemas"]["WalletBalance"] & {
+            ledger_id?: number | null;
+            /** @example payment.deposit */
+            event_type?: string;
+        };
         WalletTransaction: {
             id: number;
             type: string;
@@ -1642,7 +1689,7 @@ export interface components {
         AffiliateMe: {
             code: string;
             /** @enum {string} */
-            commission_model: "cpa" | "revshare";
+            commission_model: "cpa" | "revshare" | "hybrid";
             commission_rate: string;
             cpa_amount?: string | null;
             /** @enum {string} */
@@ -1669,7 +1716,7 @@ export interface components {
         AffiliateCommission: {
             id: number;
             /** @enum {string} */
-            type: "cpa" | "revshare";
+            type: "cpa" | "revshare" | "hybrid";
             amount: string;
             reference_type: string;
             reference_id: string;

@@ -12,11 +12,13 @@ import { useAuthInit } from '@/hooks/useAuthInit';
 import { useCloseLiveChatOnNavigate } from '@/hooks/useCloseLiveChatOnNavigate';
 import { useIdleLogout } from '@/hooks/useIdleLogout';
 import { useLanguageInit } from '@/hooks/useLanguageInit';
+import { useWalletSync } from '@/hooks/useWalletSync';
 import { useAuthStore } from '@/stores/authStore';
 import { captureAffiliateReferralFromUrl } from '@/utils/affiliateReferral';
 
 export function AppLayout() {
   useAuthInit();
+  useWalletSync();
   useIdleLogout();
   useLanguageInit();
   useCloseLiveChatOnNavigate();
