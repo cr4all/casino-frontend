@@ -6,6 +6,7 @@ import { useLanguageInit } from '@/hooks/useLanguageInit';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getApiErrorMessage } from '@/utils/apiError';
 import { fitGameWindow } from '@/utils/gameWindow';
+import { GAME_FOCUS_CHANNEL } from '@/utils/openGameWindow';
 import type { Game } from '@/types';
 
 export function GamePlayPage() {
@@ -20,6 +21,16 @@ export function GamePlayPage() {
   useLanguageInit();
 
   useEffect(() => {
+    const channel = new BroadcastChannel(GAME_FOCUS_CHANNEL);
+    channel.onmessage = (event: MessageEvent<{ type?: string }>) => {
+      if (event.data?.type === 'focus') {
+        window.focus();
+      }
+    };
+    return () => channel.close();
+  }, []);
+
+  useEffect(() => {
     fitGameWindow();
   }, []);
 
@@ -27,6 +38,10 @@ export function GamePlayPage() {
     if (!launchUrl) return;
     fitGameWindow();
   }, [launchUrl]);
+
+  useEffect(() => {
+    window.focus();
+  }, [id]);
 
   useEffect(() => {
     if (!isAuthenticated) {
