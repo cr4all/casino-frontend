@@ -1,28 +1,52 @@
 import { useEffect, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { gameApi } from '@/api/game.api';
 import { useAuthStore } from '@/stores/authStore';
-import { useUiStore } from '@/stores/uiStore';
+import { useLanguageInit } from '@/hooks/useLanguageInit';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getApiErrorMessage } from '@/utils/apiError';
-import { vendorPath } from '@/stores/gameStore';
+import { fitGameWindow } from '@/utils/gameWindow';
+import { GAME_FOCUS_CHANNEL } from '@/utils/openGameWindow';
 import type { Game } from '@/types';
 
 export function GamePlayPage() {
   const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
-  const openModal = useUiStore((s) => s.openModal);
   const [game, setGame] = useState<Game | null>(null);
   const [launchUrl, setLaunchUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
+  useLanguageInit();
+
+  useEffect(() => {
+    const channel = new BroadcastChannel(GAME_FOCUS_CHANNEL);
+    channel.onmessage = (event: MessageEvent<{ type?: string }>) => {
+      if (event.data?.type === 'focus') {
+        window.focus();
+      }
+    };
+    return () => channel.close();
+  }, []);
+
+  useEffect(() => {
+    fitGameWindow();
+  }, []);
+
+  useEffect(() => {
+    if (!launchUrl) return;
+    fitGameWindow();
+  }, [launchUrl]);
+
+  useEffect(() => {
+    window.focus();
+  }, [id]);
+
   useEffect(() => {
     if (!isAuthenticated) {
-      openModal('login');
-      navigate('/', { replace: true });
+      setLoading(false);
+      setError(t('gamePlay.loginRequired'));
       return;
     }
     if (!id) return;
@@ -33,56 +57,53 @@ export function GamePlayPage() {
       .then(([gameData, launchResult]) => {
         setGame(gameData);
         setLaunchUrl(launchResult.launch_url);
+        document.title = gameData.name;
       })
       .catch((err) => {
         setError(getApiErrorMessage(err, t('gamePlay.launchError')));
       })
       .finally(() => setLoading(false));
-  }, [id, isAuthenticated, navigate, openModal, t]);
+  }, [id, isAuthenticated, t]);
 
   if (loading) {
     return (
-      <div className="flex min-h-[60vh] flex-col items-center justify-center gap-3">
+      <div className="flex h-dvh w-dvw flex-col items-center justify-center gap-3 bg-black">
         <div className="h-8 w-8 animate-spin rounded-full border-2 border-accent-gold border-t-transparent" />
-        <p className="text-muted text-sm">{t('gamePlay.launching')}</p>
+        <p className="text-sm text-muted">{t('gamePlay.launching')}</p>
       </div>
     );
   }
 
   if (error || !launchUrl) {
     return (
-      <div className="rounded-xl border border-white/[0.08] bg-card py-12 text-center">
-        <p className="text-red-400 mb-2">{error ?? t('gamePlay.launchFailed')}</p>
-        <p className="text-muted text-sm mb-6">{t('gamePlay.tryAgain')}</p>
+      <div className="flex h-dvh w-dvw flex-col items-center justify-center gap-4 bg-black px-6 text-center">
+        <p className="text-red-400">{error ?? t('gamePlay.launchFailed')}</p>
+        <p className="text-sm text-muted">{t('gamePlay.tryAgain')}</p>
         <button
           type="button"
-          onClick={() => navigate(-1)}
+          onClick={() => window.close()}
           className="rounded-lg bg-accent-gold px-6 py-2 text-sm font-bold text-background hover:bg-accent-gold/90"
         >
-          {t('gamePlay.goBack')}
+          {t('gamePlay.closeWindow')}
         </button>
       </div>
     );
   }
 
   return (
-    <div className="space-y-3">
-      <div className="flex items-center justify-between gap-4">
-        <div>
-          <Link
-            to={game?.vendor?.id ? vendorPath(game.vendor.id) : '/category/all'}
-            className="text-xs text-muted hover:text-accent-gold"
-          >
-            {t('gamePlay.backToLobby')}
-          </Link>
-          <h1 className="mt-1 text-lg font-bold text-white">{game?.name ?? t('gamePlay.defaultName')}</h1>
-          {game?.vendor?.name && <p className="text-xs text-muted">{game.vendor.name}</p>}
-        </div>
-      </div>
+    <div className="relative h-dvh w-dvw overflow-hidden bg-black">
+      <button
+        type="button"
+        onClick={() => window.close()}
+        aria-label={t('gamePlay.closeWindow')}
+        className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/60 text-lg text-white transition-colors hover:border-accent-gold/50 hover:text-accent-gold"
+      >
+        ×
+      </button>
       <iframe
         src={launchUrl}
         title={game?.name ?? t('gamePlay.defaultName')}
-        className="h-[calc(100vh-180px)] min-h-[480px] w-full rounded-xl border border-white/[0.08] bg-black"
+        className="h-full w-full border-0 bg-black"
         allow="fullscreen; autoplay"
       />
     </div>

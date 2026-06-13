@@ -280,6 +280,8 @@ export const ur: TranslationTree = {
     backToLobby: '← لوبی میں واپس',
     defaultName: 'گیم',
     launchError: 'گیم شروع کرنے میں ناکام۔',
+    closeWindow: 'بند کریں',
+    loginRequired: 'کھیلنے کے لیے لاگ ان کریں۔',
   },
   modal: {
     comingSoon: 'جلد آ رہا ہے',

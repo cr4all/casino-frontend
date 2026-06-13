@@ -280,6 +280,8 @@ export const ja: TranslationTree = {
     backToLobby: '← ロビーに戻る',
     defaultName: 'ゲーム',
     launchError: 'ゲームを起動できませんでした。',
+    closeWindow: '閉じる',
+    loginRequired: 'プレイするにはログインしてください。',
   },
   modal: {
     comingSoon: '近日公開',

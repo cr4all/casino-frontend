@@ -280,6 +280,8 @@ export const ko: TranslationTree = {
     backToLobby: '← 로비로 돌아가기',
     defaultName: '게임',
     launchError: '게임을 시작할 수 없습니다.',
+    closeWindow: '닫기',
+    loginRequired: '게임을 하려면 로그인해 주세요.',
   },
   modal: {
     comingSoon: '곧 출시',

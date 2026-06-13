@@ -280,6 +280,8 @@ export const de: TranslationTree = {
     backToLobby: '← Zurück zur Lobby',
     defaultName: 'Spiel',
     launchError: 'Spiel konnte nicht gestartet werden.',
+    closeWindow: 'Schließen',
+    loginRequired: 'Bitte melden Sie sich an, um zu spielen.',
   },
   modal: {
     comingSoon: 'Demnächst',

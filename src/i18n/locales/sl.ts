@@ -280,6 +280,8 @@ export const sl: TranslationTree = {
     backToLobby: '← Nazaj v lobby',
     defaultName: 'Igra',
     launchError: 'Igre ni mogoče zagnati.',
+    closeWindow: 'Zapri',
+    loginRequired: 'Za igro se prijavite.',
   },
   modal: {
     comingSoon: 'Kmalu',

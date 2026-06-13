@@ -5,6 +5,10 @@ import { canLoadChat, useCookieConsentStore } from '@/stores/cookieConsentStore'
 import { useUiStore } from '@/stores/uiStore';
 import { hideTawkWidget, isTawkConfigured, showTawkWidget } from '@/utils/tawkWidget';
 
+function isGamePlayPath(pathname: string = window.location.pathname): boolean {
+  return /^\/games\/\d+\/play$/.test(pathname);
+}
+
 function appendTawkOnLoad(handler: () => void) {
   window.Tawk_API = window.Tawk_API || {};
   const previous = window.Tawk_API.onLoad;
@@ -63,6 +67,12 @@ function setVisitorAttributes(profile: {
 }
 
 export function TawkToChat() {
+  if (isGamePlayPath()) return null;
+
+  return <TawkToChatInner />;
+}
+
+function TawkToChatInner() {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const level = useCookieConsentStore((s) => s.level);
   const preferences = useCookieConsentStore((s) => s.preferences);

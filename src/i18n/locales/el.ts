@@ -280,6 +280,8 @@ export const el: TranslationTree = {
     backToLobby: '← Επιστροφή στο lobby',
     defaultName: 'Παιχνίδι',
     launchError: 'Αποτυχία εκκίνησης παιχνιδιού.',
+    closeWindow: 'Κλείσιμο',
+    loginRequired: 'Συνδεθείτε για να παίξετε.',
   },
   modal: {
     comingSoon: 'Σύντομα',
