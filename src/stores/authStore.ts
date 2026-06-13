@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { authApi } from '@/api/auth.api';
+import { disconnectEcho } from '@/lib/echo';
 import type { User } from '@/types';
 
 interface AuthState {
@@ -62,6 +63,7 @@ export const useAuthStore = create<AuthState>()(
         if (refreshToken) {
           authApi.logout(refreshToken).catch(() => undefined);
         }
+        disconnectEcho();
         set({
           accessToken: null,
           refreshToken: null,

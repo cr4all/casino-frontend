@@ -19,6 +19,7 @@ echo "Pulling latest code..."
 git pull origin main
 
 echo "Building frontend image..."
+echo "  (VITE_REVERB_* from env — rebuild required when Reverb settings change)"
 "${COMPOSE[@]}" build frontend
 
 echo "Starting frontend..."

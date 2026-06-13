@@ -350,48 +350,6 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/wallet/balance/stream": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Stream wallet balance updates (SSE)
-         * @description Server-Sent Events stream for real-time wallet balance updates.
-         *     Emits `snapshot` on connect and `balance` when the wallet changes.
-         */
-        get: {
-            parameters: {
-                query?: never;
-                header?: never;
-                path?: never;
-                cookie?: never;
-            };
-            requestBody?: never;
-            responses: {
-                /** @description SSE stream */
-                200: {
-                    headers: {
-                        [name: string]: unknown;
-                    };
-                    content: {
-                        "text/event-stream": string;
-                    };
-                };
-                401: components["responses"]["Unauthorized"];
-                404: components["responses"]["NotFound"];
-            };
-        };
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
     "/wallet/transactions": {
         parameters: {
             query?: never;
@@ -1489,6 +1447,7 @@ export interface components {
             /** @example payment.deposit */
             event_type?: string;
         };
+        "x-realtime": unknown;
         WalletTransaction: {
             id: number;
             type: string;
