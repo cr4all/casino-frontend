@@ -1179,6 +1179,40 @@ components:
         status:
           type: string
 
+    WalletBalanceEvent:
+      allOf:
+        - $ref: '#/components/schemas/WalletBalance'
+        - type: object
+          properties:
+            ledger_id:
+              type: integer
+              nullable: true
+            event_type:
+              type: string
+              example: payment.deposit
+
+    x-realtime:
+      walletBalance:
+        summary: Real-time wallet balance (WebSocket)
+        description: |
+          Subscribe via Laravel Reverb (Pusher protocol) for live balance updates.
+          Initial balance should be fetched with `GET /wallet/balance`.
+        connection:
+          url: "ws(s)://{REVERB_HOST}:{REVERB_PORT}/app/{REVERB_APP_KEY}"
+          protocol: websocket
+        auth:
+          method: POST
+          url: /api/broadcasting/auth
+          security:
+            - bearerAuth: []
+          body:
+            channel_name: private-wallet.player.{playerId}
+            socket_id: string
+        channel: private-wallet.player.{playerId}
+        event: balance.updated
+        payload:
+          $ref: '#/components/schemas/WalletBalanceEvent'
+
     WalletTransaction:
       type: object
       required: [id, type, amount, status]
@@ -1617,7 +1651,7 @@ components:
           type: string
         commission_model:
           type: string
-          enum: [cpa, revshare]
+          enum: [cpa, revshare, hybrid]
         commission_rate:
           type: string
         cpa_amount:
@@ -1675,7 +1709,7 @@ components:
           type: integer
         type:
           type: string
-          enum: [cpa, revshare]
+          enum: [cpa, revshare, hybrid]
         amount:
           type: string
         reference_type:

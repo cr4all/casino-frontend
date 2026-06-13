@@ -1,0 +1,75 @@
+import Echo from 'laravel-echo';
+import Pusher from 'pusher-js';
+import { useAuthStore } from '@/stores/authStore';
+
+declare global {
+  interface Window {
+    Pusher: typeof Pusher;
+  }
+}
+
+window.Pusher = Pusher;
+
+let echoInstance: Echo<'reverb'> | null = null;
+
+function broadcastingAuthUrl(): string {
+  const apiUrl = import.meta.env.VITE_API_URL ?? 'http://localhost:8000/api/v1';
+  const apiRoot = apiUrl.replace(/\/api\/v1\/?$/, '/api');
+
+  return `${apiRoot}/broadcasting/auth`;
+}
+
+function createEchoInstance(accessToken: string): Echo<'reverb'> {
+  const scheme = import.meta.env.VITE_REVERB_SCHEME ?? 'http';
+  const port = Number(import.meta.env.VITE_REVERB_PORT ?? 8080);
+
+  return new Echo({
+    broadcaster: 'reverb',
+    key: import.meta.env.VITE_REVERB_APP_KEY ?? 'casino-local-key',
+    wsHost: import.meta.env.VITE_REVERB_HOST ?? 'localhost',
+    wsPort: port,
+    wssPort: port,
+    forceTLS: scheme === 'https',
+    enabledTransports: ['ws', 'wss'],
+    authEndpoint: broadcastingAuthUrl(),
+    auth: {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    },
+  });
+}
+
+export function getEcho(): Echo<'reverb'> | null {
+  const accessToken = useAuthStore.getState().accessToken;
+
+  if (!accessToken) {
+    disconnectEcho();
+    return null;
+  }
+
+  if (!echoInstance) {
+    echoInstance = createEchoInstance(accessToken);
+  }
+
+  return echoInstance;
+}
+
+export function refreshEchoToken(): void {
+  const accessToken = useAuthStore.getState().accessToken;
+
+  if (!accessToken) {
+    disconnectEcho();
+    return;
+  }
+
+  disconnectEcho();
+  echoInstance = createEchoInstance(accessToken);
+}
+
+export function disconnectEcho(): void {
+  if (echoInstance) {
+    echoInstance.disconnect();
+    echoInstance = null;
+  }
+}

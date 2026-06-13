@@ -1442,6 +1442,12 @@ export interface components {
             balance: string;
             status: string;
         };
+        WalletBalanceEvent: components["schemas"]["WalletBalance"] & {
+            ledger_id?: number | null;
+            /** @example payment.deposit */
+            event_type?: string;
+        };
+        "x-realtime": unknown;
         WalletTransaction: {
             id: number;
             type: string;
@@ -1642,7 +1648,7 @@ export interface components {
         AffiliateMe: {
             code: string;
             /** @enum {string} */
-            commission_model: "cpa" | "revshare";
+            commission_model: "cpa" | "revshare" | "hybrid";
             commission_rate: string;
             cpa_amount?: string | null;
             /** @enum {string} */
@@ -1669,7 +1675,7 @@ export interface components {
         AffiliateCommission: {
             id: number;
             /** @enum {string} */
-            type: "cpa" | "revshare";
+            type: "cpa" | "revshare" | "hybrid";
             amount: string;
             reference_type: string;
             reference_id: string;
