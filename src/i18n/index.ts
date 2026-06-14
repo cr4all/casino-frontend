@@ -43,29 +43,33 @@ export type Language =
   | 'hi'
   | 'ur';
 
-export const LANGUAGES: { code: Language; label: string }[] = [
-  { code: 'en', label: 'English' },
-  { code: 'de', label: 'Deutsch' },
-  { code: 'es', label: 'Español' },
-  { code: 'fr', label: 'Français' },
-  { code: 'ru', label: 'Русский' },
-  { code: 'zh', label: '中文' },
-  { code: 'ja', label: '日本語' },
-  { code: 'sq', label: 'Shqip' },
-  { code: 'pt', label: 'Português' },
-  { code: 'mk', label: 'Македонски' },
-  { code: 'el', label: 'Ελληνικά' },
-  { code: 'it', label: 'Italiano' },
-  { code: 'tr', label: 'Türkçe' },
-  { code: 'ko', label: '한국어' },
-  { code: 'sr', label: 'Српски' },
-  { code: 'hr', label: 'Hrvatski' },
-  { code: 'sl', label: 'Slovenščina' },
-  { code: 'fil', label: 'Filipino' },
-  { code: 'id', label: 'Bahasa Indonesia' },
-  { code: 'hi', label: 'हिन्दी' },
-  { code: 'ur', label: 'اردو' },
+export const LANGUAGES: { code: Language; label: string; shortLabel: string }[] = [
+  { code: 'en', label: 'English', shortLabel: 'EN' },
+  { code: 'de', label: 'Deutsch', shortLabel: 'DE' },
+  { code: 'es', label: 'Español', shortLabel: 'ES' },
+  { code: 'fr', label: 'Français', shortLabel: 'FR' },
+  { code: 'ru', label: 'Русский', shortLabel: 'RU' },
+  { code: 'zh', label: '中文', shortLabel: 'ZH' },
+  { code: 'ja', label: '日本語', shortLabel: 'JA' },
+  { code: 'sq', label: 'Shqip', shortLabel: 'SQ' },
+  { code: 'pt', label: 'Português', shortLabel: 'PT' },
+  { code: 'mk', label: 'Македонски', shortLabel: 'MK' },
+  { code: 'el', label: 'Ελληνικά', shortLabel: 'EL' },
+  { code: 'it', label: 'Italiano', shortLabel: 'IT' },
+  { code: 'tr', label: 'Türkçe', shortLabel: 'TR' },
+  { code: 'ko', label: '한국어', shortLabel: 'KO' },
+  { code: 'sr', label: 'Српски', shortLabel: 'SR' },
+  { code: 'hr', label: 'Hrvatski', shortLabel: 'HR' },
+  { code: 'sl', label: 'Slovenščina', shortLabel: 'SL' },
+  { code: 'fil', label: 'Filipino', shortLabel: 'FIL' },
+  { code: 'id', label: 'Bahasa Indonesia', shortLabel: 'ID' },
+  { code: 'hi', label: 'हिन्दी', shortLabel: 'HI' },
+  { code: 'ur', label: 'اردو', shortLabel: 'UR' },
 ];
+
+export function getLanguageShortLabel(code: Language): string {
+  return LANGUAGES.find((lang) => lang.code === code)?.shortLabel ?? code.toUpperCase();
+}
 
 const translations: Record<Language, TranslationTree> = {
   en,
