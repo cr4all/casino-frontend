@@ -1,36 +1,75 @@
 import type { GameVendor } from '@/api/game.api';
 
-const BANNER_BY_KEY: Record<string, string> = {
-  pragmaticplay: '/providers/pragmatic-play.png',
-  booongo: '/providers/booongo.png',
-  playngo: '/providers/playngo.png',
-};
+const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }[] = [
+  { test: (s, n) => s.includes('pragmatic') || n.includes('pragmatic'), url: '/providers/pragmatic-play.png' },
+  { test: (s, n) => s.includes('booongo') || n.includes('booongo'), url: '/providers/booongo.png' },
+  {
+    test: (s, n) =>
+      s.includes('playngo') ||
+      n.includes('playngo') ||
+      s.includes('playgo') ||
+      n.includes('playgo'),
+    url: '/providers/playngo.png',
+  },
+  { test: (s, n) => s.includes('egt') || n.includes('egt'), url: '/providers/egt.png' },
+  { test: (s, n) => s.includes('amusnet') || n.includes('amusnet'), url: '/providers/amusnet.png' },
+  { test: (s, n) => s.includes('amatic') || n.includes('amatic'), url: '/providers/amatic.png' },
+  { test: (s, n) => s.includes('novomatic') || n.includes('novomatic'), url: '/providers/novomatic.png' },
+  { test: (s, n) => s.includes('netent') || n.includes('netent'), url: '/providers/ruby.png' },
+  { test: (s, n) => s.includes('kagaming') || n.includes('kagaming') || s.includes('kagame') || n.includes('kagame'), url: '/providers/ka-game.png' },
+  { test: (s, n) => s.includes('habanero') || n.includes('habanero'), url: '/providers/habanero.png' },
+  { test: (s, n) => s.includes('evoplay') || n.includes('evoplay'), url: '/providers/evoplay.png' },
+  { test: (s, n) => s.includes('hacksaw') || n.includes('hacksaw'), url: '/providers/hacksaw.png' },
+  { test: (s, n) => s.includes('pgsoft') || n.includes('pgsoft'), url: '/providers/pgsoft.png' },
+  { test: (s, n) => s.includes('cq9') || n.includes('cq9'), url: '/providers/cq9.png' },
+  { test: (s, n) => s.includes('jili') || n.includes('jili'), url: '/providers/jili.png' },
+  { test: (s, n) => s.includes('jdb') || n.includes('jdb'), url: '/providers/jdb.png' },
+  { test: (s, n) => s.includes('spribe') || n.includes('spribe'), url: '/providers/spribe.png' },
+  { test: (s, n) => s.includes('aviator') || n.includes('aviator'), url: '/providers/aviator.png' },
+  { test: (s, n) => s.includes('ezugi') || n.includes('ezugi'), url: '/providers/ezugi.png' },
+  { test: (s, n) => s.includes('playson') || n.includes('playson'), url: '/providers/playson.png' },
+  { test: (s, n) => s.includes('microgaming') || n.includes('microgaming'), url: '/providers/micro-gaming.png' },
+  { test: (s, n) => s.includes('nolimit') || n.includes('nolimit'), url: '/providers/nolimitcitiy.png' },
+  { test: (s, n) => s.includes('3oaks') || n.includes('3oaks'), url: '/providers/3oaks.png' },
+  { test: (s, n) => s.includes('bgaming') || n.includes('bgaming'), url: '/providers/bgaming-mini.png' },
+  { test: (s, n) => s.includes('mascot') || n.includes('mascot'), url: '/providers/mascot.png' },
+  { test: (s, n) => s.includes('dreamtech') || n.includes('dreamtech'), url: '/providers/dreamtech.png' },
+  { test: (s, n) => s.includes('dreamgaming') || n.includes('dreamgaming'), url: '/providers/dream-gaming.png' },
+  { test: (s, n) => s.includes('sagaming') || n.includes('sagaming'), url: '/providers/sa-gaming.png' },
+  { test: (s, n) => s.includes('fachai') || n.includes('fachai'), url: '/providers/fachai.png' },
+  { test: (s, n) => s.includes('popok') || n.includes('popok'), url: '/providers/popok.png' },
+  { test: (s, n) => s.includes('popiplay') || n.includes('popiplay'), url: '/providers/popiplay.png' },
+  { test: (s, n) => s.includes('tada') || n.includes('tada'), url: '/providers/tada.png' },
+  { test: (s, n) => s.includes('amigo') || n.includes('amigo'), url: '/providers/amigo.png' },
+  { test: (s, n) => s.includes('inout') || n.includes('inout'), url: '/providers/inout.png' },
+  { test: (s, n) => s.includes('playace') || n.includes('playace'), url: '/providers/playace.png' },
+  { test: (s, n) => s.includes('goldengatex') || n.includes('goldengatex'), url: '/providers/goldengatex.png' },
+  { test: (s, n) => s.includes('yellowbat') || n.includes('yellowbat'), url: '/providers/yellow-bat.png' },
+];
 
 function normalizeVendorKey(value: string): string {
   return value.toLowerCase().replace(/[^a-z0-9]/g, '');
 }
 
-function matchBannerKey(vendor: GameVendor): string | null {
+function matchLocalLogo(vendor: GameVendor): string | null {
   const slugKey = normalizeVendorKey(vendor.slug);
   const nameKey = normalizeVendorKey(vendor.name);
 
-  if (slugKey.includes('pragmatic') || nameKey.includes('pragmatic')) return 'pragmaticplay';
-  if (slugKey.includes('booongo') || nameKey.includes('booongo')) return 'booongo';
-  if (
-    slugKey.includes('playngo') ||
-    nameKey.includes('playngo') ||
-    slugKey.includes('playgo') ||
-    nameKey.includes('playgo')
-  ) {
-    return 'playngo';
+  for (const rule of LOGO_RULES) {
+    if (rule.test(slugKey, nameKey)) {
+      return rule.url;
+    }
   }
 
-  return BANNER_BY_KEY[slugKey] ? slugKey : BANNER_BY_KEY[nameKey] ? nameKey : null;
+  return null;
 }
 
-export function getVendorBannerUrl(vendor: GameVendor): string | null {
+export function getVendorLogoUrl(vendor: GameVendor): string | null {
   if (vendor.logo_url) return vendor.logo_url;
+  return matchLocalLogo(vendor);
+}
 
-  const key = matchBannerKey(vendor);
-  return key ? BANNER_BY_KEY[key] : null;
+/** Wide banner art for provider cards on grid pages. */
+export function getVendorBannerUrl(vendor: GameVendor): string | null {
+  return getVendorLogoUrl(vendor);
 }

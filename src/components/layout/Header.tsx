@@ -8,7 +8,6 @@ import { useUnreadNotifications } from '@/hooks/useUnreadNotifications';
 import { useTranslation } from '@/hooks/useTranslation';
 import { Button } from '@/components/common/Button';
 import { LanguageSelector } from '@/components/common/LanguageSelector';
-import { Logo } from '@/components/common/Logo';
 
 interface HeaderProps {
   onMenuToggle?: () => void;
@@ -50,11 +49,7 @@ export function Header({ onMenuToggle }: HeaderProps) {
         ☰
       </button>
 
-      <div className="flex-1 lg:hidden">
-        <Logo height={28} />
-      </div>
-
-      <div className="hidden flex-1 lg:block" />
+      <div className="flex-1" />
 
       <div className="flex items-center gap-2 md:gap-3">
         <LanguageSelector />
