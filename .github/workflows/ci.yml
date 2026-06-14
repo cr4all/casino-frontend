@@ -38,8 +38,7 @@ jobs:
           command_timeout: 30m
           script: |
             set -euo pipefail
-            DEPLOY_ROOT="/opt/casino/casino-frontend"
-            COMPOSE_FILE="/opt/casino/casino-backend/docker/docker-compose.prod.yml"
+            DEPLOY_ROOT="${{ vars.DEPLOY_ROOT != '' && vars.DEPLOY_ROOT || '/opt/casino/casino-frontend' }}"
             if [[ ! -d "$DEPLOY_ROOT" ]]; then
               echo "Missing $DEPLOY_ROOT — complete one-time setup in casino-backend/docs/deploy-docker.md"
               exit 1
