@@ -7,6 +7,7 @@ import { ru } from './locales/ru';
 import { zh } from './locales/zh';
 import { ja } from './locales/ja';
 import { pt } from './locales/pt';
+import { ptBr } from './locales/pt-br';
 import { mk } from './locales/mk';
 import { el } from './locales/el';
 import { it } from './locales/it';
@@ -30,6 +31,7 @@ export type Language =
   | 'zh'
   | 'ja'
   | 'pt'
+  | 'pt-br'
   | 'mk'
   | 'el'
   | 'it'
@@ -52,7 +54,8 @@ export const LANGUAGES: { code: Language; label: string; shortLabel: string }[] 
   { code: 'zh', label: '中文', shortLabel: 'ZH' },
   { code: 'ja', label: '日本語', shortLabel: 'JA' },
   { code: 'sq', label: 'Shqip', shortLabel: 'SQ' },
-  { code: 'pt', label: 'Português', shortLabel: 'PT' },
+  { code: 'pt', label: 'Português (PT)', shortLabel: 'PT' },
+  { code: 'pt-br', label: 'Português (Brasil)', shortLabel: 'BR' },
   { code: 'mk', label: 'Македонски', shortLabel: 'MK' },
   { code: 'el', label: 'Ελληνικά', shortLabel: 'EL' },
   { code: 'it', label: 'Italiano', shortLabel: 'IT' },
@@ -81,6 +84,7 @@ const translations: Record<Language, TranslationTree> = {
   zh,
   ja,
   pt,
+  'pt-br': ptBr,
   mk,
   el,
   it,
@@ -105,6 +109,7 @@ const LANGUAGE_CODES: Language[] = [
   'zh',
   'ja',
   'pt',
+  'pt-br',
   'mk',
   'el',
   'it',

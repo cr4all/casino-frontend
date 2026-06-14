@@ -91,6 +91,14 @@ export function FlagIcon({ language, className = baseClass }: FlagIconProps) {
           <circle cx="260" cy="200" r="60" fill="#006600" />
         </svg>
       );
+    case 'pt-br':
+      return (
+        <svg className={className} viewBox="0 0 720 504" aria-hidden="true">
+          <rect width="720" height="504" fill="#009B3A" />
+          <polygon fill="#FEDF00" points="360,42 684,252 360,462 36,252" />
+          <circle cx="360" cy="252" r="95" fill="#002776" />
+        </svg>
+      );
     case 'mk':
       return (
         <svg className={className} viewBox="0 0 60 30" aria-hidden="true">
