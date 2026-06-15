@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
-import { playerApi } from '@/api/wallet.api';
 import { useAuthStore } from '@/stores/authStore';
+import { usePlayerStore } from '@/stores/playerStore';
 import { canLoadChat, useCookieConsentStore } from '@/stores/cookieConsentStore';
 import { useUiStore } from '@/stores/uiStore';
 import { hideTawkWidget, isTawkConfigured, showTawkWidget } from '@/utils/tawkWidget';
@@ -74,6 +74,7 @@ export function TawkToChat() {
 
 function TawkToChatInner() {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
+  const profile = usePlayerStore((s) => s.profile);
   const level = useCookieConsentStore((s) => s.level);
   const preferences = useCookieConsentStore((s) => s.preferences);
   const liveChatOpen = useUiStore((s) => s.liveChatOpen);
@@ -109,35 +110,19 @@ function TawkToChatInner() {
       return;
     }
 
-    let cancelled = false;
+    if (!profile) return;
 
-    const syncVisitor = async () => {
-      try {
-        const profile = await playerApi.getMe();
-        if (cancelled) return;
-
-        const apply = () => {
-          if (cancelled) return;
-          setVisitorAttributes(profile);
-          syncedRef.current = true;
-        };
-
-        if (window.Tawk_API?.setAttributes) {
-          apply();
-        } else {
-          appendTawkOnLoad(apply);
-        }
-      } catch {
-        syncedRef.current = false;
-      }
+    const apply = () => {
+      setVisitorAttributes(profile);
+      syncedRef.current = true;
     };
 
-    syncVisitor();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [isAuthenticated, chatAllowed]);
+    if (window.Tawk_API?.setAttributes) {
+      apply();
+    } else {
+      appendTawkOnLoad(apply);
+    }
+  }, [isAuthenticated, chatAllowed, profile]);
 
   return null;
 }

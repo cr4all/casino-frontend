@@ -6,11 +6,12 @@ import { useCookieConsentStore } from '@/stores/cookieConsentStore';
 export function CookieConsentBanner() {
   const { t } = useTranslation();
   const level = useCookieConsentStore((s) => s.level);
+  const hasHydrated = useCookieConsentStore((s) => s.hasHydrated);
   const acceptAll = useCookieConsentStore((s) => s.acceptAll);
   const acceptNecessary = useCookieConsentStore((s) => s.acceptNecessary);
   const openSettings = useCookieConsentStore((s) => s.openSettings);
 
-  if (level !== 'pending') return null;
+  if (!hasHydrated || level !== 'pending') return null;
 
   return (
     <div

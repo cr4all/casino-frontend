@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { playerApi } from '@/api/wallet.api';
 import { useAuthStore } from '@/stores/authStore';
+import { usePlayerStore } from '@/stores/playerStore';
 import {
   LANGUAGES,
   translate,
@@ -25,7 +26,8 @@ export function useTranslation() {
       setLanguage(next);
       if (useAuthStore.getState().isAuthenticated) {
         try {
-          await playerApi.updateProfile({ language: next });
+          const updated = await playerApi.updateProfile({ language: next });
+          usePlayerStore.getState().setProfile(updated);
         } catch {
           // keep local preference even if sync fails
         }

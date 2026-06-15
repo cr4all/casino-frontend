@@ -9,17 +9,11 @@ export function useIdleLogout() {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const user = useAuthStore((s) => s.user);
   const logout = useAuthStore((s) => s.logout);
-  const { idleTimeoutMinutes, isLoaded, loadSessionPolicy } = useSessionPolicy();
+  const { idleTimeoutMinutes, isLoaded } = useSessionPolicy();
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const enabled =
     isAuthenticated && user?.role !== 'affiliate' && isLoaded && idleTimeoutMinutes > 0;
-
-  useEffect(() => {
-    if (!isLoaded) {
-      void loadSessionPolicy();
-    }
-  }, [isLoaded, loadSessionPolicy]);
 
   useEffect(() => {
     if (!enabled) {

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { GameCard } from '@/components/game/GameCard';
 import { GameCategoryTabs } from '@/components/layout/GameCategoryTabs';
@@ -14,21 +14,50 @@ import { mockPromotions } from '@/data/mockData';
 import { vendorGradient, vendorPath } from '@/stores/gameStore';
 import type { Game } from '@/types';
 
+function parseCategoryFilters(category: string) {
+  const vendorMatch = category.match(/^vendor-(\d+)$/);
+  const typeMatch = category.match(/^type-([a-z_]+)$/);
+  const collectionMatch = category.match(/^collection-([a-z]+)$/);
+
+  return {
+    vendorId: vendorMatch ? Number(vendorMatch[1]) : undefined,
+    typeSlug: typeMatch ? typeMatch[1] : undefined,
+    collectionSlug: collectionMatch ? collectionMatch[1] : undefined,
+  };
+}
+
 export function CategoryPage() {
-  const { t, tGameType, tCollection, language } = useTranslation();
+  const { t, tGameType, tCollection } = useTranslation();
   const { category = 'all' } = useParams<{ category: string }>();
   const [searchParams, setSearchParams] = useSearchParams();
   const { vendors, loading: vendorsLoading } = useGameVendors();
   const { types } = useGameTypes();
   const [games, setGames] = useState<Game[]>([]);
-  const [title, setTitle] = useState('');
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [lastPage, setLastPage] = useState(1);
   const [search, setSearch] = useState(searchParams.get('q') ?? '');
 
+  const { vendorId, typeSlug, collectionSlug } = parseCategoryFilters(category);
+
+  const title = useMemo(() => {
+    if (vendorId) {
+      const vendor = vendors.find((v) => v.id === vendorId);
+      return vendor?.name ?? t('category.games');
+    }
+    if (typeSlug) {
+      const type = types.find((tp) => tp.slug === typeSlug);
+      return type ? tGameType(type.slug, type.name) : t('category.games');
+    }
+    if (collectionSlug) {
+      return tCollection(collectionSlug);
+    }
+    return t('category.allGames');
+  }, [vendorId, typeSlug, collectionSlug, vendors, types, t, tGameType, tCollection]);
+
   useEffect(() => {
     setPage(1);
+    setSearch(searchParams.get('q') ?? '');
   }, [category]);
 
   useEffect(() => {
@@ -37,15 +66,8 @@ export function CategoryPage() {
       return;
     }
 
+    let cancelled = false;
     setLoading(true);
-
-    const vendorMatch = category.match(/^vendor-(\d+)$/);
-    const typeMatch = category.match(/^type-([a-z_]+)$/);
-    const collectionMatch = category.match(/^collection-([a-z]+)$/);
-
-    const vendorId = vendorMatch ? Number(vendorMatch[1]) : undefined;
-    const typeSlug = typeMatch ? typeMatch[1] : undefined;
-    const collectionSlug = collectionMatch ? collectionMatch[1] : undefined;
 
     gameApi
       .getGames({
@@ -57,23 +79,25 @@ export function CategoryPage() {
         per_page: 24,
       })
       .then((data) => {
+        if (cancelled) return;
         setGames(data.items);
         setLastPage(data.pagination.last_page);
-
-        if (vendorId) {
-          const vendor = vendors.find((v) => v.id === vendorId);
-          setTitle(vendor?.name ?? t('category.games'));
-        } else if (typeSlug) {
-          const type = types.find((tp) => tp.slug === typeSlug);
-          setTitle(type ? tGameType(type.slug, type.name) : t('category.games'));
-        } else if (collectionSlug) {
-          setTitle(tCollection(collectionSlug));
-        } else {
-          setTitle(t('category.allGames'));
-        }
       })
-      .finally(() => setLoading(false));
-  }, [category, page, search, vendors, types, t, tGameType, tCollection, language]);
+      .catch(() => {
+        if (cancelled) return;
+        setGames([]);
+        setLastPage(1);
+      })
+      .finally(() => {
+        if (!cancelled) {
+          setLoading(false);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [category, vendorId, typeSlug, collectionSlug, page, search]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
