@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { gameApi } from '@/api/game.api';
 import { useAuthStore } from '@/stores/authStore';
-import { useIdleLogout } from '@/hooks/useIdleLogout';
 import { useLanguageInit } from '@/hooks/useLanguageInit';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getApiErrorMessage } from '@/utils/apiError';
@@ -20,7 +19,6 @@ export function GamePlayPage() {
   const [loading, setLoading] = useState(true);
 
   useLanguageInit();
-  useIdleLogout();
 
   useEffect(() => {
     const channel = new BroadcastChannel(GAME_FOCUS_CHANNEL);
