@@ -1,9 +1,10 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { GameCard } from '@/components/game/GameCard';
 import { HeroBanner } from '@/components/home/HeroBanner';
 import { HomeCategoryBar, getTypeSlug, isTypeCategory, type HomeCategory } from '@/components/home/HomeCategoryBar';
 import { ProviderSelect } from '@/components/provider/ProviderSelect';
 import { gameApi } from '@/api/game.api';
+import { useDebouncedValue } from '@/hooks/useDebouncedValue';
 import { useGameVendors } from '@/hooks/useGameVendors';
 import { useTranslation } from '@/hooks/useTranslation';
 import type { Game } from '@/types';
@@ -16,6 +17,10 @@ export function HomePage() {
   const [activeCategory, setActiveCategory] = useState<HomeCategory>('all');
   const [selectedVendorId, setSelectedVendorId] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const debouncedSearch = useDebouncedValue(searchQuery.trim(), 400, [
+    activeCategory,
+    selectedVendorId,
+  ]);
   const [games, setGames] = useState<Game[]>([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
@@ -34,33 +39,31 @@ export function HomePage() {
   }, []);
 
   useEffect(() => {
+    setPage(1);
+  }, [debouncedSearch]);
+
+  useEffect(() => {
     let cancelled = false;
     setLoading(true);
 
     const loadGames = async () => {
       try {
-        if (activeCategory === 'all' || isTypeCategory(activeCategory)) {
-          const typeSlug = getTypeSlug(activeCategory);
-          const data = await gameApi.getGames({
-            vendor: selectedVendorId ?? undefined,
-            type: typeSlug ?? undefined,
-            page,
-            per_page: PER_PAGE,
-          });
-          if (cancelled) return;
-          setGames(data.items);
-          setLastPage(data.pagination.last_page);
-          return;
-        }
+        const typeSlug = isTypeCategory(activeCategory) ? getTypeSlug(activeCategory) : undefined;
+        const collectionSlug =
+          activeCategory !== 'all' && !isTypeCategory(activeCategory) ? activeCategory : undefined;
 
-        const data = await gameApi.getCollection(activeCategory);
+        const data = await gameApi.getGames({
+          vendor: selectedVendorId ?? undefined,
+          type: typeSlug ?? undefined,
+          collection: collectionSlug,
+          search: debouncedSearch || undefined,
+          page,
+          per_page: PER_PAGE,
+        });
+
         if (cancelled) return;
-        let items = data.games ?? [];
-        if (selectedVendorId !== null) {
-          items = items.filter((game) => game.vendor?.id === selectedVendorId);
-        }
-        setGames(items);
-        setLastPage(1);
+        setGames(data.items);
+        setLastPage(data.pagination.last_page);
       } catch {
         if (cancelled) return;
         setGames([]);
@@ -77,15 +80,9 @@ export function HomePage() {
     return () => {
       cancelled = true;
     };
-  }, [activeCategory, selectedVendorId, page]);
+  }, [activeCategory, selectedVendorId, page, debouncedSearch]);
 
-  const filteredGames = useMemo(() => {
-    const query = searchQuery.trim().toLowerCase();
-    if (!query) return games;
-    return games.filter((game) => game.name.toLowerCase().includes(query));
-  }, [games, searchQuery]);
-
-  const isSearching = searchQuery.trim().length > 0;
+  const isSearching = debouncedSearch.length > 0;
 
   return (
     <div className="space-y-5">
@@ -128,17 +125,17 @@ export function HomePage() {
 
       {loading ? (
         <p className="text-muted px-2">{t('common.loadingGames')}</p>
-      ) : filteredGames.length === 0 ? (
+      ) : games.length === 0 ? (
         <div className="rounded-xl border border-white/[0.08] bg-card p-8 text-center">
           <p className="text-muted">{t('category.noGamesFound')}</p>
           {isSearching && (
-            <p className="mt-2 text-xs text-muted">&quot;{searchQuery.trim()}&quot;</p>
+            <p className="mt-2 text-xs text-muted">&quot;{debouncedSearch}&quot;</p>
           )}
         </div>
       ) : (
         <>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
-            {filteredGames.map((game) => (
+            {games.map((game) => (
               <GameCard
                 key={game.id}
                 game={game}
@@ -148,9 +145,7 @@ export function HomePage() {
             ))}
           </div>
 
-          {(activeCategory === 'all' || isTypeCategory(activeCategory)) &&
-            lastPage > 1 &&
-            !isSearching && (
+          {lastPage > 1 && (
             <div className="flex items-center justify-center gap-3 pt-2">
               <button
                 type="button"

@@ -3,12 +3,14 @@ import { Navigate } from 'react-router-dom';
 import { bonusApi, type ActiveBonus, type BonusPolicy } from '@/api/bonus.api';
 import { useAuthStore } from '@/stores/authStore';
 import { useWalletStore } from '@/stores/walletStore';
+import { useTranslation } from '@/hooks/useTranslation';
 import { Button } from '@/components/common/Button';
 import { StatusBadge } from '@/components/common/StatusBadge';
 import { getApiErrorMessage } from '@/utils/apiError';
 import { formatBalance } from '@/utils/formatBalance';
 
 function WageringBar({ required, wagered }: { required: string; wagered: string }) {
+  const { t } = useTranslation();
   const req = parseFloat(required) || 1;
   const wag = parseFloat(wagered) || 0;
   const pct = Math.min(100, (wag / req) * 100);
@@ -16,7 +18,7 @@ function WageringBar({ required, wagered }: { required: string; wagered: string 
   return (
     <div className="mt-2">
       <div className="mb-1 flex justify-between text-xs text-muted">
-        <span>Wagering progress</span>
+        <span>{t('bonus.wageringProgress')}</span>
         <span>{pct.toFixed(0)}%</span>
       </div>
       <div className="h-1.5 overflow-hidden rounded-full bg-background">
@@ -26,13 +28,14 @@ function WageringBar({ required, wagered }: { required: string; wagered: string 
         />
       </div>
       <p className="mt-1 text-xs text-muted">
-        {wagered} / {required}
+        {formatBalance(wagered)} / {formatBalance(required)}
       </p>
     </div>
   );
 }
 
 export function BonusPage() {
+  const { t, tStatus, tBonusType } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const fetchBalance = useWalletStore((s) => s.fetchBalance);
   const [available, setAvailable] = useState<BonusPolicy[]>([]);
@@ -67,11 +70,16 @@ export function BonusPage() {
     setMessage(null);
     try {
       const result = await bonusApi.claim(policyId);
-      setMessage(`Bonus claimed: ${formatBalance(result.amount)} (${result.status})`);
+      setMessage(
+        t('bonus.claimed', {
+          amount: formatBalance(result.amount),
+          status: tStatus(result.status),
+        }),
+      );
       await fetchBalance();
       load();
     } catch (err) {
-      setError(getApiErrorMessage(err, 'Failed to claim bonus.'));
+      setError(getApiErrorMessage(err, t('bonus.claimFailed')));
     } finally {
       setClaimingId(null);
     }
@@ -79,7 +87,7 @@ export function BonusPage() {
 
   return (
     <div className="py-8">
-      <h1 className="mb-6 text-2xl font-bold text-white">Bonuses</h1>
+      <h1 className="mb-6 text-2xl font-bold text-white">{t('bonus.title')}</h1>
 
       {message && (
         <p className="mb-4 rounded-md bg-green-500/10 px-4 py-3 text-sm text-green-400">{message}</p>
@@ -89,14 +97,14 @@ export function BonusPage() {
       )}
 
       {loading ? (
-        <p className="text-muted">Loading bonuses...</p>
+        <p className="text-muted">{t('common.loadingBonuses')}</p>
       ) : (
         <div className="space-y-8">
           <section>
-            <h2 className="mb-4 text-lg font-semibold text-white">Active Bonuses</h2>
+            <h2 className="mb-4 text-lg font-semibold text-white">{t('bonus.activeBonuses')}</h2>
             {active.length === 0 ? (
               <div className="rounded-lg border border-white/5 bg-surface p-6 text-center">
-                <p className="text-muted text-sm">No active bonuses.</p>
+                <p className="text-muted text-sm">{t('bonus.noActive')}</p>
               </div>
             ) : (
               <div className="grid gap-4 sm:grid-cols-2">
@@ -107,7 +115,9 @@ export function BonusPage() {
                   >
                     <div className="flex items-start justify-between gap-2">
                       <div>
-                        <h3 className="font-semibold text-white">{bonus.policy_name ?? 'Bonus'}</h3>
+                        <h3 className="font-semibold text-white">
+                          {bonus.policy_name ?? t('bonus.defaultName')}
+                        </h3>
                         <p className="mt-1 text-xl font-bold text-accent-gold">{formatBalance(bonus.amount)}</p>
                       </div>
                       <StatusBadge status={bonus.status} />
@@ -125,10 +135,10 @@ export function BonusPage() {
           </section>
 
           <section>
-            <h2 className="mb-4 text-lg font-semibold text-white">Available Bonuses</h2>
+            <h2 className="mb-4 text-lg font-semibold text-white">{t('bonus.availableBonuses')}</h2>
             {available.length === 0 ? (
               <div className="rounded-lg border border-white/5 bg-surface p-6 text-center">
-                <p className="text-muted text-sm">No bonuses available at the moment.</p>
+                <p className="text-muted text-sm">{t('bonus.noAvailable')}</p>
               </div>
             ) : (
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -137,14 +147,16 @@ export function BonusPage() {
                     key={policy.policy_id}
                     className="rounded-lg border border-accent/20 bg-gradient-to-br from-card to-surface p-5 shadow-card"
                   >
-                    <span className="text-xs font-medium uppercase text-accent">{policy.type}</span>
+                    <span className="text-xs font-medium uppercase text-accent">
+                      {tBonusType(policy.type)}
+                    </span>
                     <h3 className="mt-1 font-semibold text-white">{policy.name}</h3>
                     <p className="mt-2 text-sm text-muted">
                       {policy.amount_type === 'percentage'
-                        ? `${policy.amount_value}% match`
-                        : `${formatBalance(policy.amount_value)} fixed`}
+                        ? t('bonus.percentMatch', { value: formatBalance(policy.amount_value) })
+                        : t('bonus.fixedMatch', { value: formatBalance(policy.amount_value) })}
                       {' · '}
-                      {policy.wagering_multiplier}x wagering
+                      {t('bonus.wageringMultiplier', { value: policy.wagering_multiplier })}
                     </p>
                     {policy.type === 'welcome' && (
                       <Button
@@ -153,18 +165,16 @@ export function BonusPage() {
                         disabled={claimingId === policy.policy_id}
                         onClick={() => handleClaim(policy.policy_id)}
                       >
-                        {claimingId === policy.policy_id ? 'Claiming...' : 'Claim Bonus'}
+                        {claimingId === policy.policy_id
+                          ? t('common.claiming')
+                          : t('bonus.claimBonus')}
                       </Button>
                     )}
                     {policy.type === 'first_deposit' && (
-                      <p className="mt-4 text-xs text-muted">
-                        Applied automatically on your first deposit only.
-                      </p>
+                      <p className="mt-4 text-xs text-muted">{t('bonus.firstDepositAutoApply')}</p>
                     )}
                     {policy.type !== 'welcome' && policy.type !== 'first_deposit' && (
-                      <p className="mt-4 text-xs text-muted">
-                        Applied automatically on qualifying deposits.
-                      </p>
+                      <p className="mt-4 text-xs text-muted">{t('bonus.autoApply')}</p>
                     )}
                   </div>
                 ))}

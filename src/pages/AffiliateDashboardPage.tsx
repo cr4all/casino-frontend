@@ -24,7 +24,7 @@ function StatCard({ label, value }: { label: string; value: string | number }) {
 }
 
 export function AffiliateDashboardPage() {
-  const { t } = useTranslation();
+  const { t, formatDate } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const user = useAuthStore((s) => s.user);
   const logout = useAuthStore((s) => s.logout);
@@ -158,7 +158,7 @@ export function AffiliateDashboardPage() {
                         <td className="py-2 pr-4">#{p.player_id}</td>
                         <td className="py-2 pr-4">{p.nickname ?? '—'}</td>
                         <td className="py-2">
-                          {p.registered_at ? new Date(p.registered_at).toLocaleString() : '—'}
+                          {formatDate(p.registered_at)}
                         </td>
                       </tr>
                     ))
@@ -208,7 +208,7 @@ export function AffiliateDashboardPage() {
                           {c.reference_type}:{c.reference_id}
                         </td>
                         <td className="py-2">
-                          {c.created_at ? new Date(c.created_at).toLocaleString() : '—'}
+                          {formatDate(c.created_at)}
                         </td>
                       </tr>
                     ))

@@ -51,7 +51,7 @@ function formatDepositAmount(d: DepositItem): string {
 }
 
 export function DepositPage() {
-  const { t } = useTranslation();
+  const { t, tPaymentMethod, tPaymentType, formatDate } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const fetchBalance = useWalletStore((s) => s.fetchBalance);
   const [methods, setMethods] = useState<PaymentMethod[]>([]);
@@ -191,7 +191,7 @@ export function DepositPage() {
               >
                 {methods.map((m) => (
                   <option key={m.id} value={m.id}>
-                    {m.name} ({m.type})
+                    {tPaymentMethod(m.name)} ({tPaymentType(m.type)})
                   </option>
                 ))}
               </select>
@@ -350,7 +350,7 @@ export function DepositPage() {
                       <th className="px-4 py-3 text-xs text-muted">{t('deposit.id')}</th>
                       <th className="px-4 py-3 text-xs text-muted">{t('deposit.amount')}</th>
                       <th className="px-4 py-3 text-xs text-muted">{t('deposit.method')}</th>
-                      <th className="px-4 py-3 text-xs text-muted">Status</th>
+                      <th className="px-4 py-3 text-xs text-muted">{t('transactions.status')}</th>
                       <th className="px-4 py-3 text-xs text-muted hidden sm:table-cell">{t('deposit.date')}</th>
                     </tr>
                   </thead>
@@ -361,10 +361,10 @@ export function DepositPage() {
                         <td className="px-4 py-3 font-mono text-white text-xs">
                           {formatDepositAmount(d)}
                         </td>
-                        <td className="px-4 py-3 text-muted">{d.payment_method ?? '—'}</td>
+                        <td className="px-4 py-3 text-muted">{tPaymentMethod(d.payment_method)}</td>
                         <td className="px-4 py-3"><StatusBadge status={d.status} /></td>
                         <td className="px-4 py-3 text-xs text-muted hidden sm:table-cell">
-                          {d.created_at ? new Date(d.created_at).toLocaleString() : '—'}
+                          {formatDate(d.created_at)}
                         </td>
                       </tr>
                     ))}

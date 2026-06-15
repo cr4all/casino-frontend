@@ -6,6 +6,7 @@ import { SectionTitle } from '@/components/common/SectionTitle';
 import { PromoBannerGrid } from '@/components/home/PromoBanner';
 import { ProviderCard } from '@/components/provider/ProviderCard';
 import { gameApi } from '@/api/game.api';
+import { useDebouncedValue } from '@/hooks/useDebouncedValue';
 import { useGameTypes } from '@/hooks/useGameTypes';
 import { useGameVendors } from '@/hooks/useGameVendors';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -37,6 +38,7 @@ export function CategoryPage() {
   const [page, setPage] = useState(1);
   const [lastPage, setLastPage] = useState(1);
   const [search, setSearch] = useState(searchParams.get('q') ?? '');
+  const debouncedSearch = useDebouncedValue(search.trim(), 400, [category]);
 
   const { vendorId, typeSlug, collectionSlug } = parseCategoryFilters(category);
 
@@ -61,6 +63,22 @@ export function CategoryPage() {
   }, [category]);
 
   useEffect(() => {
+    setPage(1);
+  }, [debouncedSearch]);
+
+  useEffect(() => {
+    const query = debouncedSearch;
+    const current = searchParams.get('q') ?? '';
+    if (query === current) return;
+
+    if (query) {
+      setSearchParams({ q: query }, { replace: true });
+    } else {
+      setSearchParams({}, { replace: true });
+    }
+  }, [debouncedSearch, searchParams, setSearchParams]);
+
+  useEffect(() => {
     if (category === 'promos' || category === 'providers') {
       setLoading(false);
       return;
@@ -74,7 +92,7 @@ export function CategoryPage() {
         vendor: vendorId,
         type: typeSlug,
         collection: collectionSlug,
-        search: search || undefined,
+        search: debouncedSearch || undefined,
         page,
         per_page: 24,
       })
@@ -97,16 +115,10 @@ export function CategoryPage() {
     return () => {
       cancelled = true;
     };
-  }, [category, vendorId, typeSlug, collectionSlug, page, search]);
+  }, [category, vendorId, typeSlug, collectionSlug, page, debouncedSearch]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    setPage(1);
-    if (search) {
-      setSearchParams({ q: search });
-    } else {
-      setSearchParams({});
-    }
   };
 
   if (category === 'providers') {

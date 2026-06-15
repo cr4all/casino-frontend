@@ -157,14 +157,74 @@ export function translate(
   );
 }
 
+function normalizeLookupKey(value: string): string {
+  return value.toLowerCase().trim().replace(/[\s-]+/g, '_');
+}
+
+function gameTypeTranslationKeys(slug: string): string[] {
+  const normalized = normalizeLookupKey(slug);
+  const keys = new Set<string>([normalized]);
+
+  if (normalized.endsWith('s')) keys.add(normalized.slice(0, -1));
+  else keys.add(`${normalized}s`);
+
+  if (normalized.endsWith('_games')) keys.add(normalized.replace(/_games$/, ''));
+  else keys.add(`${normalized}_games`);
+
+  return [...keys];
+}
+
 export function translateGameType(
   language: Language,
   slug: string,
   fallbackName: string,
 ): string {
-  const key = `gameTypes.${slug}`;
-  const translated = translate(language, key);
-  return translated === key ? fallbackName : translated;
+  for (const key of gameTypeTranslationKeys(slug)) {
+    const translated = translate(language, `gameTypes.${key}`);
+    if (translated !== `gameTypes.${key}`) return translated;
+  }
+
+  const fallbackKey = normalizeLookupKey(fallbackName);
+  const translatedFallback = translate(language, `gameTypes.${fallbackKey}`);
+  if (translatedFallback !== `gameTypes.${fallbackKey}`) return translatedFallback;
+
+  return fallbackName;
+}
+
+export function translatePaymentMethod(language: Language, name: string | null | undefined): string {
+  if (!name) return '—';
+
+  const candidates = new Set<string>([
+    normalizeLookupKey(name),
+    normalizeLookupKey(name).replace(/_payment$/, ''),
+  ]);
+
+  for (const key of candidates) {
+    const translated = translate(language, `paymentMethods.${key}`);
+    if (translated !== `paymentMethods.${key}`) return translated;
+  }
+
+  return name;
+}
+
+export function translatePaymentType(language: Language, type: string | null | undefined): string {
+  if (!type) return '';
+
+  const key = normalizeLookupKey(type);
+  const translated = translate(language, `paymentTypes.${key}`);
+  return translated === `paymentTypes.${key}` ? type : translated;
+}
+
+export function translateTxType(language: Language, type: string): string {
+  const key = normalizeLookupKey(type);
+  const translated = translate(language, `txTypes.${key}`);
+  return translated === `txTypes.${key}` ? type : translated;
+}
+
+export function translateBonusType(language: Language, type: string): string {
+  const key = normalizeLookupKey(type);
+  const translated = translate(language, `bonusTypes.${key}`);
+  return translated === `bonusTypes.${key}` ? type.replace(/_/g, ' ') : translated;
 }
 
 export function translateCollectionSlug(language: Language, slug: string): string {
