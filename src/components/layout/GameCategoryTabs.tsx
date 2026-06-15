@@ -12,7 +12,7 @@ export function GameCategoryTabs() {
     { id: 'all', label: t('nav.allGames'), icon: '⭐', path: '/category/all' },
     ...types.map((type) => ({
       id: `type-${type.slug}`,
-      label: tGameType(type.slug, type.name).toUpperCase(),
+      label: tGameType(type.slug, type.name),
       icon: typeIcon(type.icon, type.slug),
       path: typePath(type.slug),
     })),

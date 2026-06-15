@@ -47,11 +47,11 @@ export function LanguageSelector({ variant = 'header' }: LanguageSelectorProps) 
         className={
           variant === 'profile'
             ? 'flex w-full items-center gap-2 rounded-md border border-white/10 bg-card px-3 py-2.5 text-sm text-white hover:border-accent/40 focus:border-accent focus:outline-none'
-            : 'flex h-9 items-center gap-1.5 rounded-lg border border-white/10 bg-card px-2 text-xs text-white hover:border-accent-gold/40 focus:border-accent-gold/40 focus:outline-none'
+            : 'flex h-9 max-w-[9.5rem] items-center gap-1.5 rounded-lg border border-white/10 bg-card px-2 text-xs text-white hover:border-accent-gold/40 focus:border-accent-gold/40 focus:outline-none sm:max-w-none'
         }
       >
         <FlagIcon language={current.code} />
-        <span className="font-semibold tracking-wide">{current.shortLabel}</span>
+        <span className="truncate font-medium">{current.label}</span>
         <span className="ml-0.5 text-[10px] text-muted" aria-hidden="true">
           {open ? '▲' : '▼'}
         </span>
@@ -64,7 +64,7 @@ export function LanguageSelector({ variant = 'header' }: LanguageSelectorProps) 
           className={
             variant === 'profile'
               ? 'scrollbar-dark mt-1 max-h-[22.5rem] overflow-y-auto overscroll-contain rounded-md border border-white/10 bg-card py-1 shadow-card'
-              : 'scrollbar-dark absolute right-0 top-full z-50 mt-1 min-w-[5.5rem] max-h-[22.5rem] overflow-y-auto overscroll-contain rounded-lg border border-white/10 bg-card py-1 shadow-card'
+              : 'scrollbar-dark absolute right-0 top-full z-50 mt-1 min-w-[11rem] max-h-[22.5rem] overflow-y-auto overscroll-contain rounded-lg border border-white/10 bg-card py-1 shadow-card'
           }
         >
           {languages.map((lang) => {
@@ -82,7 +82,7 @@ export function LanguageSelector({ variant = 'header' }: LanguageSelectorProps) 
                   }`}
                 >
                   <FlagIcon language={lang.code} />
-                  <span className="font-semibold tracking-wide">{lang.shortLabel}</span>
+                  <span className="font-medium">{lang.label}</span>
                 </button>
               </li>
             );

@@ -112,7 +112,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
               <span className="text-xl leading-none">{typeIcon(type.icon, type.slug)}</span>
               <div className="min-w-0 flex-1">
                 <p className={`text-xs font-bold tracking-wide truncate ${active ? 'text-accent-gold' : 'text-white'}`}>
-                  {typeName.toUpperCase()}
+                  {typeName}
                 </p>
                 <p className="text-[10px] text-muted">
                   {t('common.gamesCount', { count: type.game_count })}

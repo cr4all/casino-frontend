@@ -143,8 +143,23 @@ export function FlagIcon({ language, className = baseClass }: FlagIconProps) {
       return (
         <svg className={className} viewBox="0 0 30 20" aria-hidden="true">
           <rect width="30" height="20" fill="#fff" />
-          <circle cx="15" cy="10" r="5" fill="#C60C30" />
-          <path fill="#003478" d="M15 5a5 5 0 0 1 0 10 2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 0 0-5z" />
+          <circle cx="15" cy="10" r="5.5" fill="#C60C30" />
+          <path
+            fill="#003478"
+            d="M15 4.5a5.5 5.5 0 0 1 0 11 2.75 2.75 0 0 1 0-5.5 2.75 2.75 0 0 0 0-5.5z"
+          />
+          <g fill="#000" transform="translate(15 3.2) scale(0.22)">
+            <path d="M0-6L1.8-1.8 6 0 1.8 1.8 0 6-1.8 1.8-6 0-1.8-1.8z" />
+          </g>
+          <g fill="#000" transform="translate(22.5 6.5) scale(0.18)">
+            <path d="M0-6L1.8-1.8 6 0 1.8 1.8 0 6-1.8 1.8-6 0-1.8-1.8z" />
+          </g>
+          <g fill="#000" transform="translate(20 14) scale(0.18)">
+            <path d="M0-6L1.8-1.8 6 0 1.8 1.8 0 6-1.8 1.8-6 0-1.8-1.8z" />
+          </g>
+          <g fill="#000" transform="translate(10 14) scale(0.18)">
+            <path d="M0-6L1.8-1.8 6 0 1.8 1.8 0 6-1.8 1.8-6 0-1.8-1.8z" />
+          </g>
         </svg>
       );
     case 'sr':

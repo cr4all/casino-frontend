@@ -5,11 +5,16 @@ import { usePlayerStore } from '@/stores/playerStore';
 import {
   LANGUAGES,
   translate,
+  translateBonusType,
   translateCollectionSlug,
   translateGameType,
+  translatePaymentMethod,
+  translatePaymentType,
   translateStatus,
+  translateTxType,
   type Language,
 } from '@/i18n';
+import { formatDateTime } from '@/utils/formatDateTime';
 import { useLanguageStore } from '@/stores/languageStore';
 
 export function useTranslation() {
@@ -48,6 +53,25 @@ export function useTranslation() {
 
   const tStatus = useCallback((status: string) => translateStatus(language, status), [language]);
 
+  const tPaymentMethod = useCallback(
+    (name: string | null | undefined) => translatePaymentMethod(language, name),
+    [language],
+  );
+
+  const tPaymentType = useCallback(
+    (type: string | null | undefined) => translatePaymentType(language, type),
+    [language],
+  );
+
+  const tTxType = useCallback((type: string) => translateTxType(language, type), [language]);
+
+  const formatDate = useCallback(
+    (value: string | null | undefined) => formatDateTime(value, language),
+    [language],
+  );
+
+  const tBonusType = useCallback((type: string) => translateBonusType(language, type), [language]);
+
   return {
     language,
     languages: LANGUAGES,
@@ -55,6 +79,11 @@ export function useTranslation() {
     tGameType,
     tCollection,
     tStatus,
+    tPaymentMethod,
+    tPaymentType,
+    tTxType,
+    tBonusType,
+    formatDate,
     changeLanguage,
     setLanguage,
   };

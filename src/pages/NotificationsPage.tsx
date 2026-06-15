@@ -5,7 +5,7 @@ import { useAuthStore } from '@/stores/authStore';
 import { useTranslation } from '@/hooks/useTranslation';
 
 export function NotificationsPage() {
-  const { t } = useTranslation();
+  const { t, formatDate } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const [messages, setMessages] = useState<InternalMessage[]>([]);
   const [loading, setLoading] = useState(true);
@@ -53,6 +53,8 @@ export function NotificationsPage() {
                 <button
                   type="button"
                   onClick={() => setExpandedId(isExpanded ? null : msg.id)}
+                  aria-expanded={isExpanded}
+                  aria-label={isExpanded ? t('messages.hideDetails') : t('messages.showDetails')}
                   className={`w-full rounded-lg border p-4 text-left transition-colors ${
                     msg.is_read
                       ? 'border-white/5 bg-surface hover:bg-card'
@@ -68,10 +70,12 @@ export function NotificationsPage() {
                         {msg.subject}
                       </p>
                       <p className="mt-1 text-xs text-muted">
-                        {msg.created_at ? new Date(msg.created_at).toLocaleString() : '—'}
+                        {formatDate(msg.created_at)}
                       </p>
                     </div>
-                    <span className="text-muted text-xs">{isExpanded ? '▲' : '▼'}</span>
+                    <span className="text-muted text-xs" aria-hidden="true">
+                      {isExpanded ? '▲' : '▼'}
+                    </span>
                   </div>
                   {isExpanded && (
                     <p className="mt-3 whitespace-pre-wrap text-sm text-muted border-t border-white/5 pt-3">

@@ -42,6 +42,11 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
     return profileInflight;
   },
 
-  setProfile: (profile) => set({ profile }),
+  setProfile: (profile) =>
+    set((state) => {
+      if (!profile) return { profile: null };
+      if (!state.profile) return { profile };
+      return { profile: { ...state.profile, ...profile } };
+    }),
   clear: () => set({ profile: null, isLoading: false }),
 }));

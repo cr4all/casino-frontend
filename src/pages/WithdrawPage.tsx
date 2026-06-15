@@ -4,15 +4,17 @@ import { paymentApi, type PaymentMethod, type WithdrawalItem } from '@/api/payme
 import { useAuthStore } from '@/stores/authStore';
 import { DEFAULT_CURRENCY, useWalletStore } from '@/stores/walletStore';
 import { formatBalance } from '@/utils/formatBalance';
+import { Button } from '@/components/common/Button';
+import { StatusBadge } from '@/components/common/StatusBadge';
+import { useTranslation } from '@/hooks/useTranslation';
+import { getApiErrorMessage } from '@/utils/apiError';
 
 function formatPaymentAmount(currency: string, amount: string): string {
   return `${currency} ${formatBalance(amount)}`;
 }
-import { Button } from '@/components/common/Button';
-import { StatusBadge } from '@/components/common/StatusBadge';
-import { getApiErrorMessage } from '@/utils/apiError';
 
 export function WithdrawPage() {
+  const { t, tPaymentMethod, tPaymentType, formatDate } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const balance = useWalletStore((s) => s.balance);
   const fetchBalance = useWalletStore((s) => s.fetchBalance);
@@ -59,14 +61,16 @@ export function WithdrawPage() {
         : { account: address || 'default', type: 'bank' };
 
       const result = await paymentApi.createWithdrawal(methodId, amount, destination);
-      setMessage(`Withdrawal request #${result.withdrawal_id} submitted (${result.status}). Awaiting admin review.`);
+      setMessage(
+        t('withdraw.submitted', { id: result.withdrawal_id, status: result.status }),
+      );
       setAmount('');
       setAddress('');
       setNetwork('');
       await fetchBalance();
       await loadWithdrawals();
     } catch (err) {
-      setError(getApiErrorMessage(err, 'Failed to submit withdrawal.'));
+      setError(getApiErrorMessage(err, t('withdraw.submitFailed')));
     } finally {
       setSubmitting(false);
     }
@@ -75,19 +79,19 @@ export function WithdrawPage() {
   return (
     <div className="mx-auto max-w-7xl py-8">
       <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-        <h1 className="text-2xl font-bold text-white">Withdraw</h1>
+        <h1 className="text-2xl font-bold text-white">{t('withdraw.title')}</h1>
         <Link to="/deposit" className="text-sm text-accent hover:underline">
-          ← Deposit
+          {t('withdraw.backToDeposit')}
         </Link>
       </div>
 
       {loading ? (
-        <p className="text-muted">Loading...</p>
+        <p className="text-muted">{t('common.loading')}</p>
       ) : (
         <div className="grid gap-8 lg:grid-cols-[minmax(0,28rem)_minmax(0,1fr)] xl:grid-cols-[minmax(0,32rem)_minmax(0,1fr)]">
           <div className="space-y-4">
           <p className="text-sm text-muted">
-            Available balance:{' '}
+            {t('withdraw.availableBalance')}{' '}
             <span className="font-mono text-accent-gold">
               {balance?.currency ?? DEFAULT_CURRENCY} {formatBalance(balance?.balance)}
             </span>
@@ -95,7 +99,9 @@ export function WithdrawPage() {
 
           <form onSubmit={handleSubmit} className="rounded-xl border border-white/[0.08] bg-card p-6 space-y-4">
             <div>
-              <label htmlFor="withdraw-method" className="mb-1 block text-xs text-muted">Payment Method</label>
+              <label htmlFor="withdraw-method" className="mb-1 block text-xs text-muted">
+                {t('deposit.paymentMethod')}
+              </label>
               <select
                 id="withdraw-method"
                 value={methodId}
@@ -104,7 +110,7 @@ export function WithdrawPage() {
               >
                 {methods.map((m) => (
                   <option key={m.id} value={m.id}>
-                    {m.name} ({m.type})
+                    {tPaymentMethod(m.name)} ({tPaymentType(m.type)})
                   </option>
                 ))}
               </select>
@@ -112,13 +118,19 @@ export function WithdrawPage() {
 
             {selected && (
               <p className="text-xs text-muted">
-                Min: {formatBalance(selected.min_amount)} · Max:{' '}
-                {selected.max_amount ? formatBalance(selected.max_amount) : 'No limit'}
+                {t('common.minMax', {
+                  min: formatBalance(selected.min_amount),
+                  max: selected.max_amount
+                    ? formatBalance(selected.max_amount)
+                    : t('common.noLimit'),
+                })}
               </p>
             )}
 
             <div>
-              <label htmlFor="withdraw-amount" className="mb-1 block text-xs text-muted">Amount</label>
+              <label htmlFor="withdraw-amount" className="mb-1 block text-xs text-muted">
+                {t('deposit.amount')}
+              </label>
               <input
                 id="withdraw-amount"
                 type="number"
@@ -133,7 +145,7 @@ export function WithdrawPage() {
 
             <div>
               <label htmlFor="withdraw-destination" className="mb-1 block text-xs text-muted">
-                {isCrypto ? 'Wallet Address' : 'Destination Account'}
+                {isCrypto ? t('withdraw.walletAddress') : t('withdraw.destinationAccount')}
               </label>
               <input
                 id="withdraw-destination"
@@ -142,20 +154,24 @@ export function WithdrawPage() {
                 onChange={(e) => setAddress(e.target.value)}
                 required
                 className="w-full rounded-md border border-white/10 bg-background px-3 py-2 text-sm text-white"
-                placeholder={isCrypto ? 'TXyz...' : 'Bank account number'}
+                placeholder={
+                  isCrypto ? t('withdraw.addressPlaceholderCrypto') : t('withdraw.addressPlaceholderBank')
+                }
               />
             </div>
 
             {isCrypto && (
               <div>
-                <label htmlFor="withdraw-network" className="mb-1 block text-xs text-muted">Network (optional)</label>
+                <label htmlFor="withdraw-network" className="mb-1 block text-xs text-muted">
+                  {t('withdraw.networkOptional')}
+                </label>
                 <input
                   id="withdraw-network"
                   type="text"
                   value={network}
                   onChange={(e) => setNetwork(e.target.value)}
                   className="w-full rounded-md border border-white/10 bg-background px-3 py-2 text-sm text-white"
-                  placeholder="TRC20, ERC20..."
+                  placeholder={t('withdraw.networkPlaceholder')}
                 />
               </div>
             )}
@@ -164,32 +180,32 @@ export function WithdrawPage() {
             {message && <p className="text-sm text-green-400">{message}</p>}
 
             <Button type="submit" variant="gold" disabled={submitting || methods.length === 0}>
-              {submitting ? 'Submitting...' : 'Request Withdrawal'}
+              {submitting ? t('common.submitting') : t('withdraw.requestWithdrawal')}
             </Button>
           </form>
           </div>
 
           <section className="min-w-0">
             <div className="mb-4 flex items-center justify-between gap-4">
-              <h2 className="text-lg font-semibold text-white">Recent Withdrawals</h2>
+              <h2 className="text-lg font-semibold text-white">{t('withdraw.recentWithdrawals')}</h2>
               {withdrawals.length > 0 && (
                 <Link to="/transactions?tab=withdrawals" className="text-xs text-accent hover:underline">
-                  View all
+                  {t('common.viewAll')}
                 </Link>
               )}
             </div>
             {withdrawals.length === 0 ? (
-              <p className="text-sm text-muted">No withdrawal requests yet.</p>
+              <p className="text-sm text-muted">{t('withdraw.noWithdrawals')}</p>
             ) : (
               <div className="overflow-x-auto rounded-xl border border-white/[0.08]">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-white/5 bg-surface text-left">
-                      <th className="px-4 py-3 text-xs text-muted">ID</th>
-                      <th className="px-4 py-3 text-xs text-muted">Amount</th>
-                      <th className="px-4 py-3 text-xs text-muted">Method</th>
-                      <th className="px-4 py-3 text-xs text-muted">Status</th>
-                      <th className="px-4 py-3 text-xs text-muted hidden sm:table-cell">Date</th>
+                      <th className="px-4 py-3 text-xs text-muted">{t('deposit.id')}</th>
+                      <th className="px-4 py-3 text-xs text-muted">{t('deposit.amount')}</th>
+                      <th className="px-4 py-3 text-xs text-muted">{t('transactions.method')}</th>
+                      <th className="px-4 py-3 text-xs text-muted">{t('transactions.status')}</th>
+                      <th className="px-4 py-3 text-xs text-muted hidden sm:table-cell">{t('transactions.date')}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -199,10 +215,10 @@ export function WithdrawPage() {
                         <td className="px-4 py-3 font-mono text-white">
                           {formatPaymentAmount(w.currency, w.amount)}
                         </td>
-                        <td className="px-4 py-3 text-muted">{w.payment_method ?? '—'}</td>
+                        <td className="px-4 py-3 text-muted">{tPaymentMethod(w.payment_method)}</td>
                         <td className="px-4 py-3"><StatusBadge status={w.status} /></td>
                         <td className="px-4 py-3 text-xs text-muted hidden sm:table-cell">
-                          {w.created_at ? new Date(w.created_at).toLocaleString() : '—'}
+                          {formatDate(w.created_at)}
                         </td>
                       </tr>
                     ))}

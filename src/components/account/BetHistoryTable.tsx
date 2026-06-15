@@ -13,7 +13,7 @@ interface BetHistoryTableProps {
 }
 
 export function BetHistoryTable({ bets, pagination, loading, onPageChange }: BetHistoryTableProps) {
-  const { t } = useTranslation();
+  const { t, formatDate } = useTranslation();
 
   if (loading) {
     return <p className="text-muted">{t('common.loading')}</p>;
@@ -65,7 +65,7 @@ export function BetHistoryTable({ bets, pagination, loading, onPageChange }: Bet
                   <StatusBadge status={bet.status} />
                 </td>
                 <td className="px-4 py-3 text-xs text-muted hidden sm:table-cell">
-                  {bet.played_at ? new Date(bet.played_at).toLocaleString() : '—'}
+                  {formatDate(bet.played_at)}
                 </td>
               </tr>
             ))}

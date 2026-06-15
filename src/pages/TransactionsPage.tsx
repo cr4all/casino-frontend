@@ -23,7 +23,7 @@ const EMPTY_PAGINATION: PaginationMeta = {
 };
 
 export function TransactionsPage() {
-  const { t } = useTranslation();
+  const { t, tTxType, formatDate } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const [searchParams, setSearchParams] = useSearchParams();
   const tabParam = searchParams.get('tab');
@@ -174,7 +174,7 @@ export function TransactionsPage() {
               {transactions.map((tx) => (
                 <tr key={tx.id} className="border-b border-white/5 hover:bg-surface/50">
                   <td className={`px-4 py-3 capitalize font-medium ${typeColors[tx.type] ?? 'text-white'}`}>
-                    {tx.type}
+                    {tTxType(tx.type)}
                   </td>
                   <td className="px-4 py-3 font-mono text-white">{formatBalance(tx.amount)}</td>
                   <td className="px-4 py-3 font-mono text-muted hidden md:table-cell">
@@ -184,7 +184,7 @@ export function TransactionsPage() {
                     {tx.reference_type ? `${tx.reference_type}/${tx.reference_id}` : (tx.description ?? '—')}
                   </td>
                   <td className="px-4 py-3 text-xs text-muted">
-                    {tx.created_at ? new Date(tx.created_at).toLocaleString() : '—'}
+                    {formatDate(tx.created_at)}
                   </td>
                 </tr>
               ))}
@@ -204,15 +204,17 @@ function PaymentTable({
   items: (DepositItem | WithdrawalItem)[];
   amountHeader: string;
 }) {
+  const { t, tPaymentMethod, formatDate } = useTranslation();
+
   return (
     <Table>
       <thead>
         <tr className="border-b border-white/5 bg-surface text-left">
-          <Th>ID</Th>
+          <Th>{t('deposit.id')}</Th>
           <Th>{amountHeader}</Th>
-          <Th>Method</Th>
-          <Th>Status</Th>
-          <Th className="hidden sm:table-cell">Date</Th>
+          <Th>{t('transactions.method')}</Th>
+          <Th>{t('transactions.status')}</Th>
+          <Th className="hidden sm:table-cell">{t('transactions.date')}</Th>
         </tr>
       </thead>
       <tbody>
@@ -222,10 +224,10 @@ function PaymentTable({
             <td className="px-4 py-3 font-mono text-white">
               {item.currency} {formatBalance(item.amount)}
             </td>
-            <td className="px-4 py-3 text-muted">{item.payment_method ?? '—'}</td>
+            <td className="px-4 py-3 text-muted">{tPaymentMethod(item.payment_method)}</td>
             <td className="px-4 py-3"><StatusBadge status={item.status} /></td>
             <td className="px-4 py-3 text-xs text-muted hidden sm:table-cell">
-              {item.created_at ? new Date(item.created_at).toLocaleString() : '—'}
+              {formatDate(item.created_at)}
             </td>
           </tr>
         ))}
