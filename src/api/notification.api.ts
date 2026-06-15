@@ -19,11 +19,26 @@ export interface PaginatedMessages {
   };
 }
 
+const messagesInflight = new Map<string, Promise<PaginatedMessages>>();
+
 export const notificationApi = {
   getMessages: async (page = 1, perPage = 20) => {
-    const { data } = await api.get<ApiResponse<PaginatedMessages>>('/notifications/messages', {
-      params: { page, per_page: perPage },
-    });
-    return data.data;
+    const key = `${page}:${perPage}`;
+    const inflight = messagesInflight.get(key);
+    if (inflight) return inflight;
+
+    const promise = api
+      .get<ApiResponse<PaginatedMessages>>('/notifications/messages', {
+        params: { page, per_page: perPage },
+      })
+      .then(({ data }) => data.data)
+      .finally(() => {
+        if (messagesInflight.get(key) === promise) {
+          messagesInflight.delete(key);
+        }
+      });
+
+    messagesInflight.set(key, promise);
+    return promise;
   },
 };

@@ -19,10 +19,20 @@ export const walletApi = {
   },
 };
 
+let getMeInflight: Promise<PlayerProfile> | null = null;
+
 export const playerApi = {
   getMe: async () => {
-    const { data } = await api.get<ApiResponse<PlayerProfile>>('/player/me');
-    return data.data;
+    if (getMeInflight) return getMeInflight;
+
+    getMeInflight = api
+      .get<ApiResponse<PlayerProfile>>('/player/me')
+      .then(({ data }) => data.data)
+      .finally(() => {
+        getMeInflight = null;
+      });
+
+    return getMeInflight;
   },
 
   updateProfile: async (payload: { nickname?: string; language?: string }) => {

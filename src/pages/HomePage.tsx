@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { GameCard } from '@/components/game/GameCard';
 import { HeroBanner } from '@/components/home/HeroBanner';
 import { HomeCategoryBar, getTypeSlug, isTypeCategory, type HomeCategory } from '@/components/home/HomeCategoryBar';
@@ -21,50 +21,62 @@ export function HomePage() {
   const [page, setPage] = useState(1);
   const [lastPage, setLastPage] = useState(1);
 
-  useEffect(() => {
-    setPage(1);
+  const handleCategoryChange = useCallback((category: HomeCategory) => {
+    setActiveCategory(category);
     setSearchQuery('');
-  }, [activeCategory, selectedVendorId]);
+    setPage(1);
+  }, []);
+
+  const handleVendorChange = useCallback((vendorId: number | null) => {
+    setSelectedVendorId(vendorId);
+    setSearchQuery('');
+    setPage(1);
+  }, []);
 
   useEffect(() => {
+    let cancelled = false;
     setLoading(true);
 
-    if (activeCategory === 'all' || isTypeCategory(activeCategory)) {
-      const typeSlug = getTypeSlug(activeCategory);
-      gameApi
-        .getGames({
-          vendor: selectedVendorId ?? undefined,
-          type: typeSlug ?? undefined,
-          page,
-          per_page: PER_PAGE,
-        })
-        .then((data) => {
+    const loadGames = async () => {
+      try {
+        if (activeCategory === 'all' || isTypeCategory(activeCategory)) {
+          const typeSlug = getTypeSlug(activeCategory);
+          const data = await gameApi.getGames({
+            vendor: selectedVendorId ?? undefined,
+            type: typeSlug ?? undefined,
+            page,
+            per_page: PER_PAGE,
+          });
+          if (cancelled) return;
           setGames(data.items);
           setLastPage(data.pagination.last_page);
-        })
-        .catch(() => {
-          setGames([]);
-          setLastPage(1);
-        })
-        .finally(() => setLoading(false));
-      return;
-    }
+          return;
+        }
 
-    gameApi
-      .getCollection(activeCategory)
-      .then((data) => {
+        const data = await gameApi.getCollection(activeCategory);
+        if (cancelled) return;
         let items = data.games ?? [];
         if (selectedVendorId !== null) {
           items = items.filter((game) => game.vendor?.id === selectedVendorId);
         }
         setGames(items);
         setLastPage(1);
-      })
-      .catch(() => {
+      } catch {
+        if (cancelled) return;
         setGames([]);
         setLastPage(1);
-      })
-      .finally(() => setLoading(false));
+      } finally {
+        if (!cancelled) {
+          setLoading(false);
+        }
+      }
+    };
+
+    void loadGames();
+
+    return () => {
+      cancelled = true;
+    };
   }, [activeCategory, selectedVendorId, page]);
 
   const filteredGames = useMemo(() => {
@@ -79,7 +91,7 @@ export function HomePage() {
     <div className="space-y-5">
       <HeroBanner />
 
-      <HomeCategoryBar active={activeCategory} onChange={setActiveCategory} />
+      <HomeCategoryBar active={activeCategory} onChange={handleCategoryChange} />
 
       <div className="flex flex-col gap-3 sm:flex-row">
         <div className="relative flex-1">
@@ -109,7 +121,7 @@ export function HomePage() {
         <ProviderSelect
           vendors={vendors}
           selectedVendorId={selectedVendorId}
-          onChange={setSelectedVendorId}
+          onChange={handleVendorChange}
           loading={vendorsLoading}
         />
       </div>

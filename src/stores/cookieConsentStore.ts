@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 
-export type CookieConsentLevel = 'pending' | 'necessary' | 'all';
+export type CookieConsentLevel = 'pending' | 'necessary' | 'custom' | 'all';
 
 export interface CookiePreferences {
   analytics: boolean;
@@ -12,15 +12,23 @@ interface CookieConsentState {
   level: CookieConsentLevel;
   preferences: CookiePreferences;
   settingsOpen: boolean;
+  hasHydrated: boolean;
   acceptAll: () => void;
   acceptNecessary: () => void;
   savePreferences: (preferences: CookiePreferences) => void;
   openSettings: () => void;
   closeSettings: () => void;
+  setHasHydrated: (value: boolean) => void;
 }
 
 const ALL_PREFERENCES: CookiePreferences = { analytics: true, chat: true };
 const NECESSARY_PREFERENCES: CookiePreferences = { analytics: false, chat: false };
+
+function deriveLevel(preferences: CookiePreferences): CookieConsentLevel {
+  if (!preferences.analytics && !preferences.chat) return 'necessary';
+  if (preferences.analytics && preferences.chat) return 'all';
+  return 'custom';
+}
 
 export const useCookieConsentStore = create<CookieConsentState>()(
   persist(
@@ -28,6 +36,7 @@ export const useCookieConsentStore = create<CookieConsentState>()(
       level: 'pending',
       preferences: NECESSARY_PREFERENCES,
       settingsOpen: false,
+      hasHydrated: false,
 
       acceptAll: () =>
         set({
@@ -45,13 +54,17 @@ export const useCookieConsentStore = create<CookieConsentState>()(
 
       savePreferences: (preferences) =>
         set({
-          level: preferences.analytics || preferences.chat ? 'all' : 'necessary',
-          preferences,
+          level: deriveLevel(preferences),
+          preferences: {
+            analytics: preferences.analytics,
+            chat: preferences.chat,
+          },
           settingsOpen: false,
         }),
 
       openSettings: () => set({ settingsOpen: true }),
       closeSettings: () => set({ settingsOpen: false }),
+      setHasHydrated: (value) => set({ hasHydrated: value }),
     }),
     {
       name: 'ibets24-cookie-consent',
@@ -60,6 +73,26 @@ export const useCookieConsentStore = create<CookieConsentState>()(
         level: state.level,
         preferences: state.preferences,
       }),
+      merge: (persistedState, currentState) => {
+        const persisted = persistedState as Partial<CookieConsentState> | undefined;
+        const current = currentState as CookieConsentState;
+
+        if (!persisted?.level) {
+          return current;
+        }
+
+        return {
+          ...current,
+          level: persisted.level,
+          preferences: {
+            analytics: persisted.preferences?.analytics ?? false,
+            chat: persisted.preferences?.chat ?? false,
+          },
+        };
+      },
+      onRehydrateStorage: () => () => {
+        useCookieConsentStore.getState().setHasHydrated(true);
+      },
     },
   ),
 );

@@ -9,23 +9,34 @@ interface SessionPolicyState {
   loadSessionPolicy: () => Promise<void>;
 }
 
-export const useSessionPolicyStore = create<SessionPolicyState>((set) => ({
+let sessionPolicyInflight: Promise<void> | null = null;
+
+export const useSessionPolicyStore = create<SessionPolicyState>((set, get) => ({
   idleTimeoutMinutes: DEFAULT_IDLE_TIMEOUT_MINUTES,
   isLoaded: false,
 
   loadSessionPolicy: async () => {
-    try {
-      const policy = await authApi.getSessionPolicy();
-      set({
-        idleTimeoutMinutes: policy.idle_timeout_minutes,
-        isLoaded: true,
-      });
-    } catch {
-      set({
-        idleTimeoutMinutes: DEFAULT_IDLE_TIMEOUT_MINUTES,
-        isLoaded: true,
-      });
-    }
+    if (get().isLoaded) return;
+    if (sessionPolicyInflight) return sessionPolicyInflight;
+
+    sessionPolicyInflight = (async () => {
+      try {
+        const policy = await authApi.getSessionPolicy();
+        set({
+          idleTimeoutMinutes: policy.idle_timeout_minutes,
+          isLoaded: true,
+        });
+      } catch {
+        set({
+          idleTimeoutMinutes: DEFAULT_IDLE_TIMEOUT_MINUTES,
+          isLoaded: true,
+        });
+      } finally {
+        sessionPolicyInflight = null;
+      }
+    })();
+
+    return sessionPolicyInflight;
   },
 }));
 

@@ -12,9 +12,12 @@ import { useAuthInit } from '@/hooks/useAuthInit';
 import { useCloseLiveChatOnNavigate } from '@/hooks/useCloseLiveChatOnNavigate';
 import { useIdleLogout } from '@/hooks/useIdleLogout';
 import { useLanguageInit } from '@/hooks/useLanguageInit';
+import { useNotificationSync } from '@/hooks/useNotificationSync';
+import { usePlayerProfileSync } from '@/hooks/usePlayerProfileSync';
 import { useSessionPolicy } from '@/hooks/useSessionPolicy';
 import { useWalletSync } from '@/hooks/useWalletSync';
 import { useAuthStore } from '@/stores/authStore';
+import { useGameStore } from '@/stores/gameStore';
 import { captureAffiliateReferralFromUrl } from '@/utils/affiliateReferral';
 
 export function AppLayout() {
@@ -22,6 +25,8 @@ export function AppLayout() {
 
   useAuthInit();
   useWalletSync();
+  usePlayerProfileSync();
+  useNotificationSync();
   useIdleLogout();
   useLanguageInit();
   useCloseLiveChatOnNavigate();
@@ -33,6 +38,8 @@ export function AppLayout() {
 
   useEffect(() => {
     void loadSessionPolicy();
+    void useGameStore.getState().fetchTypes();
+    void useGameStore.getState().fetchVendors();
   }, [loadSessionPolicy]);
 
   useEffect(() => {

@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
-import { playerApi } from '@/api/wallet.api';
 import { isLanguage } from '@/i18n';
 import { useAuthStore } from '@/stores/authStore';
 import { useLanguageStore } from '@/stores/languageStore';
+import { usePlayerStore } from '@/stores/playerStore';
 
 export function useLanguageInit() {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
+  const profileLanguage = usePlayerStore((s) => s.profile?.language);
   const setLanguage = useLanguageStore((s) => s.setLanguage);
 
   useEffect(() => {
@@ -14,15 +15,10 @@ export function useLanguageInit() {
   }, []);
 
   useEffect(() => {
-    if (!isAuthenticated) return;
+    if (!isAuthenticated || !profileLanguage || !isLanguage(profileLanguage)) {
+      return;
+    }
 
-    playerApi
-      .getMe()
-      .then((profile) => {
-        if (profile.language && isLanguage(profile.language)) {
-          setLanguage(profile.language);
-        }
-      })
-      .catch(() => undefined);
-  }, [isAuthenticated, setLanguage]);
+    setLanguage(profileLanguage);
+  }, [isAuthenticated, profileLanguage, setLanguage]);
 }

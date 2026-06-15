@@ -19,6 +19,8 @@ interface WalletState {
   clear: () => void;
 }
 
+let balanceInflight: Promise<void> | null = null;
+
 export const useWalletStore = create<WalletState>()(
   persist(
     (set, get) => ({
@@ -28,23 +30,31 @@ export const useWalletStore = create<WalletState>()(
       error: null,
 
       fetchBalance: async () => {
+        if (balanceInflight) return balanceInflight;
+
         set({ isLoading: true, error: null });
-        try {
-          const previousBalance = get().balance?.balance ?? null;
-          const balance = await walletApi.getBalance();
-          const formattedBalance = formatBalance(balance.balance);
+        balanceInflight = (async () => {
+          try {
+            const previousBalance = get().balance?.balance ?? null;
+            const balance = await walletApi.getBalance();
+            const formattedBalance = formatBalance(balance.balance);
 
-          if (previousBalance !== null && previousBalance !== formattedBalance) {
-            reportUserActivity();
+            if (previousBalance !== null && previousBalance !== formattedBalance) {
+              reportUserActivity();
+            }
+
+            set({
+              balance: { ...balance, balance: formattedBalance },
+              isLoading: false,
+            });
+          } catch {
+            set({ isLoading: false, error: 'Failed to load balance' });
+          } finally {
+            balanceInflight = null;
           }
+        })();
 
-          set({
-            balance: { ...balance, balance: formattedBalance },
-            isLoading: false,
-          });
-        } catch {
-          set({ isLoading: false, error: 'Failed to load balance' });
-        }
+        return balanceInflight;
       },
 
       applyBalanceUpdate: (update) => {

@@ -2,16 +2,18 @@ import { useEffect, useState, type FormEvent } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { playerApi } from '@/api/wallet.api';
 import { useAuthStore } from '@/stores/authStore';
+import { usePlayerStore } from '@/stores/playerStore';
 import { DEFAULT_CURRENCY } from '@/stores/walletStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { Button } from '@/components/common/Button';
 import { LanguageSelector } from '@/components/common/LanguageSelector';
-import type { PlayerProfile } from '@/types';
 
 export function ProfilePage() {
   const { t } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
-  const [profile, setProfile] = useState<PlayerProfile | null>(null);
+  const profile = usePlayerStore((s) => s.profile);
+  const fetchProfile = usePlayerStore((s) => s.fetchProfile);
+  const setProfile = usePlayerStore((s) => s.setProfile);
   const [nickname, setNickname] = useState('');
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -19,14 +21,19 @@ export function ProfilePage() {
 
   useEffect(() => {
     if (!isAuthenticated) return;
-    playerApi
-      .getMe()
+
+    if (profile) {
+      setNickname(profile.nickname ?? '');
+      setLoading(false);
+      return;
+    }
+
+    fetchProfile()
       .then((data) => {
-        setProfile(data);
-        setNickname(data.nickname ?? '');
+        if (data) setNickname(data.nickname ?? '');
       })
       .finally(() => setLoading(false));
-  }, [isAuthenticated]);
+  }, [isAuthenticated, profile, fetchProfile]);
 
   if (!isAuthenticated) {
     return <Navigate to="/" replace />;

@@ -12,6 +12,9 @@ interface GameStore {
   fetchTypes: () => Promise<GameType[]>;
 }
 
+let vendorsInflight: Promise<GameVendor[]> | null = null;
+let typesInflight: Promise<GameType[]> | null = null;
+
 export const useGameStore = create<GameStore>((set, get) => ({
   vendors: [],
   types: [],
@@ -22,28 +25,46 @@ export const useGameStore = create<GameStore>((set, get) => ({
 
   fetchVendors: async () => {
     if (get().vendorsFetched) return get().vendors;
+    if (vendorsInflight) return vendorsInflight;
+
     set({ loadingVendors: true });
-    try {
-      const vendors = await gameApi.getVendors();
-      set({ vendors, vendorsFetched: true, loadingVendors: false });
-      return vendors;
-    } catch {
-      set({ loadingVendors: false });
-      return [];
-    }
+    vendorsInflight = gameApi
+      .getVendors()
+      .then((vendors) => {
+        set({ vendors, vendorsFetched: true, loadingVendors: false });
+        return vendors;
+      })
+      .catch(() => {
+        set({ loadingVendors: false });
+        return [] as GameVendor[];
+      })
+      .finally(() => {
+        vendorsInflight = null;
+      });
+
+    return vendorsInflight;
   },
 
   fetchTypes: async () => {
     if (get().typesFetched) return get().types;
+    if (typesInflight) return typesInflight;
+
     set({ loadingTypes: true });
-    try {
-      const types = await gameApi.getTypes();
-      set({ types, typesFetched: true, loadingTypes: false });
-      return types;
-    } catch {
-      set({ loadingTypes: false });
-      return [];
-    }
+    typesInflight = gameApi
+      .getTypes()
+      .then((types) => {
+        set({ types, typesFetched: true, loadingTypes: false });
+        return types;
+      })
+      .catch(() => {
+        set({ loadingTypes: false });
+        return [] as GameType[];
+      })
+      .finally(() => {
+        typesInflight = null;
+      });
+
+    return typesInflight;
   },
 }));
 
