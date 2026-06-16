@@ -20,6 +20,7 @@ export const ptBr: TranslationTree = {
     search: 'Pesquisar',
     previous: 'Anterior',
     next: 'Próximo',
+    showMore: 'Mostrar mais',
     ok: 'OK',
     close: 'Fechar',
     copy: 'Copiar',

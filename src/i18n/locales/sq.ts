@@ -20,6 +20,7 @@ export const sq: TranslationTree = {
     search: 'Kërko',
     previous: 'Prapa',
     next: 'Tjetra',
+    showMore: 'Shfaq më shumë',
     ok: 'OK',
     close: 'Mbyll',
     copy: 'Kopjo',

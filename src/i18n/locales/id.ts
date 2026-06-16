@@ -20,6 +20,7 @@ export const id: TranslationTree = {
     search: 'Cari',
     previous: 'Sebelumnya',
     next: 'Berikutnya',
+    showMore: 'Tampilkan lebih banyak',
     ok: 'OK',
     close: 'Tutup',
     copy: 'Salin',

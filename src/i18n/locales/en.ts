@@ -18,6 +18,7 @@ export const en = {
     search: 'Search',
     previous: 'Previous',
     next: 'Next',
+    showMore: 'Show more',
     ok: 'OK',
     close: 'Close',
     copy: 'Copy',

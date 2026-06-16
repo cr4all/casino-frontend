@@ -20,6 +20,7 @@ export const ur: TranslationTree = {
     search: 'تلاش',
     previous: 'پچھلا',
     next: 'اگلا',
+    showMore: 'مزید دکھائیں',
     ok: 'OK',
     close: 'بند کریں',
     copy: 'کاپی',

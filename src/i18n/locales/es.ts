@@ -20,6 +20,7 @@ export const es: TranslationTree = {
     search: 'Buscar',
     previous: 'Anterior',
     next: 'Siguiente',
+    showMore: 'Mostrar más',
     ok: 'OK',
     close: 'Cerrar',
     copy: 'Copiar',

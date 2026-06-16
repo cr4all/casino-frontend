@@ -20,6 +20,7 @@ export const fil: TranslationTree = {
     search: 'Maghanap',
     previous: 'Nakaraan',
     next: 'Susunod',
+    showMore: 'Magpakita ng higit pa',
     ok: 'OK',
     close: 'Isara',
     copy: 'Kopya',

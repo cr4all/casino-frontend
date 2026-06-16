@@ -1,10 +1,12 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { GameCard } from '@/components/game/GameCard';
 import { GameCategoryTabs } from '@/components/layout/GameCategoryTabs';
 import { SectionTitle } from '@/components/common/SectionTitle';
 import { PromoBannerGrid } from '@/components/home/PromoBanner';
 import { ProviderCard } from '@/components/provider/ProviderCard';
+import { ProviderSelect } from '@/components/provider/ProviderSelect';
+import { ShowMoreButton } from '@/components/common/ShowMoreButton';
 import { gameApi } from '@/api/game.api';
 import { useDebouncedValue } from '@/hooks/useDebouncedValue';
 import { useGameTypes } from '@/hooks/useGameTypes';
@@ -35,12 +37,15 @@ export function CategoryPage() {
   const { types } = useGameTypes();
   const [games, setGames] = useState<Game[]>([]);
   const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [page, setPage] = useState(1);
   const [lastPage, setLastPage] = useState(1);
   const [search, setSearch] = useState(searchParams.get('q') ?? '');
-  const debouncedSearch = useDebouncedValue(search.trim(), 400, [category]);
+  const [selectedVendorId, setSelectedVendorId] = useState<number | null>(null);
+  const debouncedSearch = useDebouncedValue(search.trim(), 400, [category, selectedVendorId]);
 
   const { vendorId, typeSlug, collectionSlug } = parseCategoryFilters(category);
+  const effectiveVendorId = selectedVendorId ?? vendorId;
 
   const title = useMemo(() => {
     if (vendorId) {
@@ -60,7 +65,14 @@ export function CategoryPage() {
   useEffect(() => {
     setPage(1);
     setSearch(searchParams.get('q') ?? '');
+    setSelectedVendorId(null);
   }, [category]);
+
+  const handleVendorChange = useCallback((vendorId: number | null) => {
+    setSelectedVendorId(vendorId);
+    setSearch('');
+    setPage(1);
+  }, []);
 
   useEffect(() => {
     setPage(1);
@@ -85,11 +97,17 @@ export function CategoryPage() {
     }
 
     let cancelled = false;
-    setLoading(true);
+    const isFirstPage = page === 1;
+
+    if (isFirstPage) {
+      setLoading(true);
+    } else {
+      setLoadingMore(true);
+    }
 
     gameApi
       .getGames({
-        vendor: vendorId,
+        vendor: effectiveVendorId,
         type: typeSlug,
         collection: collectionSlug,
         search: debouncedSearch || undefined,
@@ -98,27 +116,38 @@ export function CategoryPage() {
       })
       .then((data) => {
         if (cancelled) return;
-        setGames(data.items);
         setLastPage(data.pagination.last_page);
+        if (isFirstPage) {
+          setGames(data.items);
+        } else {
+          setGames((prev) => [...prev, ...data.items]);
+        }
       })
       .catch(() => {
         if (cancelled) return;
-        setGames([]);
-        setLastPage(1);
+        if (isFirstPage) {
+          setGames([]);
+          setLastPage(1);
+        }
       })
       .finally(() => {
         if (!cancelled) {
-          setLoading(false);
+          if (isFirstPage) {
+            setLoading(false);
+          } else {
+            setLoadingMore(false);
+          }
         }
       });
 
     return () => {
       cancelled = true;
     };
-  }, [category, vendorId, typeSlug, collectionSlug, page, debouncedSearch]);
+  }, [category, effectiveVendorId, typeSlug, collectionSlug, page, debouncedSearch]);
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleShowMore = () => {
+    if (loadingMore || page >= lastPage) return;
+    setPage((p) => p + 1);
   };
 
   if (category === 'providers') {
@@ -167,23 +196,39 @@ export function CategoryPage() {
     <div className="space-y-5">
       <GameCategoryTabs />
 
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <SectionTitle title={title} showArrows={false} />
-        <form onSubmit={handleSearch} className="flex gap-2">
+      <SectionTitle title={title} showArrows={false} />
+
+      <div className="flex flex-col gap-3 sm:flex-row">
+        <div className="relative flex-1">
+          <svg
+            className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
           <input
             type="search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder={t('category.searchPlaceholder')}
-            className="w-full sm:w-56 rounded-lg border border-white/10 bg-card px-3 py-2 text-sm text-white placeholder:text-muted focus:border-accent-gold focus:outline-none"
+            className="w-full rounded-xl border border-white/10 bg-card py-3 pl-10 pr-4 text-sm text-white placeholder:text-muted focus:border-accent-gold focus:outline-none"
           />
-          <button
-            type="submit"
-            className="shrink-0 rounded-lg bg-accent-gold px-4 py-2 text-sm font-bold text-background hover:bg-accent-gold/90"
-          >
-            {t('common.search')}
-          </button>
-        </form>
+        </div>
+
+        <ProviderSelect
+          vendors={vendors}
+          selectedVendorId={effectiveVendorId ?? null}
+          onChange={handleVendorChange}
+          loading={vendorsLoading}
+        />
       </div>
 
       {loading ? (
@@ -200,29 +245,11 @@ export function CategoryPage() {
             ))}
           </div>
 
-          {lastPage > 1 && (
-            <div className="flex items-center justify-center gap-3 pt-4">
-              <button
-                type="button"
-                disabled={page <= 1}
-                onClick={() => setPage((p) => p - 1)}
-                className="rounded-lg border border-white/10 bg-card px-4 py-2 text-sm text-white disabled:opacity-40 hover:border-accent-gold/30"
-              >
-                {t('common.previous')}
-              </button>
-              <span className="text-sm text-muted">
-                {t('common.pageOf', { page, last: lastPage })}
-              </span>
-              <button
-                type="button"
-                disabled={page >= lastPage}
-                onClick={() => setPage((p) => p + 1)}
-                className="rounded-lg border border-white/10 bg-card px-4 py-2 text-sm text-white disabled:opacity-40 hover:border-accent-gold/30"
-              >
-                {t('common.next')}
-              </button>
-            </div>
-          )}
+          <ShowMoreButton
+            visible={page < lastPage}
+            loading={loadingMore}
+            onClick={handleShowMore}
+          />
         </>
       )}
     </div>

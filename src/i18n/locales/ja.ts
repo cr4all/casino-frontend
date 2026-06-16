@@ -20,6 +20,7 @@ export const ja: TranslationTree = {
     search: '検索',
     previous: '前へ',
     next: '次へ',
+    showMore: 'もっと見る',
     ok: 'OK',
     close: '閉じる',
     copy: 'コピー',
