@@ -20,6 +20,7 @@ export const ru: TranslationTree = {
     search: 'Поиск',
     previous: 'Назад',
     next: 'Далее',
+    showMore: 'Показать ещё',
     ok: 'OK',
     close: 'Закрыть',
     copy: 'Копировать',

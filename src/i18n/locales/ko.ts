@@ -20,6 +20,7 @@ export const ko: TranslationTree = {
     search: '검색',
     previous: '이전',
     next: '다음',
+    showMore: '더 보기',
     ok: '확인',
     close: '닫기',
     copy: '복사',

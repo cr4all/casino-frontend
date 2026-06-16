@@ -3,6 +3,7 @@ import { GameCard } from '@/components/game/GameCard';
 import { HeroBanner } from '@/components/home/HeroBanner';
 import { HomeCategoryBar, getTypeSlug, isTypeCategory, type HomeCategory } from '@/components/home/HomeCategoryBar';
 import { ProviderSelect } from '@/components/provider/ProviderSelect';
+import { ShowMoreButton } from '@/components/common/ShowMoreButton';
 import { gameApi } from '@/api/game.api';
 import { useDebouncedValue } from '@/hooks/useDebouncedValue';
 import { useGameVendors } from '@/hooks/useGameVendors';
@@ -23,6 +24,7 @@ export function HomePage() {
   ]);
   const [games, setGames] = useState<Game[]>([]);
   const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [page, setPage] = useState(1);
   const [lastPage, setLastPage] = useState(1);
 
@@ -44,7 +46,13 @@ export function HomePage() {
 
   useEffect(() => {
     let cancelled = false;
-    setLoading(true);
+    const isFirstPage = page === 1;
+
+    if (isFirstPage) {
+      setLoading(true);
+    } else {
+      setLoadingMore(true);
+    }
 
     const loadGames = async () => {
       try {
@@ -62,15 +70,26 @@ export function HomePage() {
         });
 
         if (cancelled) return;
-        setGames(data.items);
+
         setLastPage(data.pagination.last_page);
+        if (isFirstPage) {
+          setGames(data.items);
+        } else {
+          setGames((prev) => [...prev, ...data.items]);
+        }
       } catch {
         if (cancelled) return;
-        setGames([]);
-        setLastPage(1);
+        if (isFirstPage) {
+          setGames([]);
+          setLastPage(1);
+        }
       } finally {
         if (!cancelled) {
-          setLoading(false);
+          if (isFirstPage) {
+            setLoading(false);
+          } else {
+            setLoadingMore(false);
+          }
         }
       }
     };
@@ -81,6 +100,11 @@ export function HomePage() {
       cancelled = true;
     };
   }, [activeCategory, selectedVendorId, page, debouncedSearch]);
+
+  const handleShowMore = () => {
+    if (loadingMore || page >= lastPage) return;
+    setPage((p) => p + 1);
+  };
 
   const isSearching = debouncedSearch.length > 0;
 
@@ -145,29 +169,11 @@ export function HomePage() {
             ))}
           </div>
 
-          {lastPage > 1 && (
-            <div className="flex items-center justify-center gap-3 pt-2">
-              <button
-                type="button"
-                disabled={page <= 1}
-                onClick={() => setPage((p) => p - 1)}
-                className="rounded-lg border border-white/10 bg-card px-4 py-2 text-sm text-white disabled:opacity-40 hover:border-accent-gold/30"
-              >
-                {t('common.previous')}
-              </button>
-              <span className="text-sm text-muted">
-                {t('common.pageOf', { page, last: lastPage })}
-              </span>
-              <button
-                type="button"
-                disabled={page >= lastPage}
-                onClick={() => setPage((p) => p + 1)}
-                className="rounded-lg border border-white/10 bg-card px-4 py-2 text-sm text-white disabled:opacity-40 hover:border-accent-gold/30"
-              >
-                {t('common.next')}
-              </button>
-            </div>
-          )}
+          <ShowMoreButton
+            visible={page < lastPage}
+            loading={loadingMore}
+            onClick={handleShowMore}
+          />
         </>
       )}
     </div>

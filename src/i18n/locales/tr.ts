@@ -20,6 +20,7 @@ export const tr: TranslationTree = {
     search: 'Ara',
     previous: 'Önceki',
     next: 'Sonraki',
+    showMore: 'Daha fazla göster',
     ok: 'Tamam',
     close: 'Kapat',
     copy: 'Kopyala',

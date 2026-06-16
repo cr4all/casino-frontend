@@ -20,6 +20,7 @@ export const mk: TranslationTree = {
     search: 'Пребарај',
     previous: 'Претходно',
     next: 'Следно',
+    showMore: 'Прикажи повеќе',
     ok: 'OK',
     close: 'Затвори',
     copy: 'Копирај',

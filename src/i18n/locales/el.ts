@@ -20,6 +20,7 @@ export const el: TranslationTree = {
     search: 'Αναζήτηση',
     previous: 'Προηγούμενο',
     next: 'Επόμενο',
+    showMore: 'Εμφάνιση περισσότερων',
     ok: 'OK',
     close: 'Κλείσιμο',
     copy: 'Αντιγραφή',

@@ -20,6 +20,7 @@ export const zh: TranslationTree = {
     search: '搜索',
     previous: '上一页',
     next: '下一页',
+    showMore: '显示更多',
     ok: '确定',
     close: '关闭',
     copy: '复制',
