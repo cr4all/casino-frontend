@@ -33,6 +33,19 @@ export interface LoginPayload {
   password: string;
 }
 
+export interface PasswordRecoveryRequestPayload {
+  email?: string;
+  phone?: string;
+}
+
+export interface PasswordRecoveryResetPayload {
+  email?: string;
+  phone?: string;
+  code: string;
+  password: string;
+  password_confirmation: string;
+}
+
 export const authApi = {
   getRegisterOptions: async () => {
     const { data } = await api.get<ApiResponse<RegisterOptions>>('/auth/register-options');
@@ -66,5 +79,15 @@ export const authApi = {
       refresh_token: refreshToken,
     });
     return data.data;
+  },
+
+  requestPasswordRecovery: async (payload: PasswordRecoveryRequestPayload) => {
+    const { data } = await api.post<ApiResponse<null>>('/auth/password-recovery/request', payload);
+    return data;
+  },
+
+  resetPasswordWithCode: async (payload: PasswordRecoveryResetPayload) => {
+    const { data } = await api.post<ApiResponse<null>>('/auth/password-recovery/reset', payload);
+    return data;
   },
 };
