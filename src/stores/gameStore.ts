@@ -91,6 +91,7 @@ export function typeIcon(icon: string | null | undefined, slug: string): string 
   if (slug.includes('mini')) return '🍒';
   if (slug.includes('table')) return '🃏';
   if (slug.includes('crash')) return '🚀';
+  if (slug.includes('fish')) return '🐟';
   return '🎮';
 }
 

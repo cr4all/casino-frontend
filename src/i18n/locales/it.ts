@@ -120,6 +120,9 @@ export const it: TranslationTree = {
     mini_game: 'Mini giochi',
     table_game: 'Giochi da tavolo',
     crash_games: 'Giochi crash',
+    fishing: 'Giochi di pesca',
+    fish_game: 'Giochi di pesca',
+    fish_games: 'Giochi di pesca',
   },
   paymentMethods: {
   crypto: 'Criptovaluta',

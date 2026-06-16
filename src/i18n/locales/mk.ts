@@ -120,6 +120,9 @@ export const mk: TranslationTree = {
     mini_game: 'Мини игри',
     table_game: 'Игри на маса',
     crash_games: 'Crash игри',
+    fishing: 'Риболовни игри',
+    fish_game: 'Риболовни игри',
+    fish_games: 'Риболовни игри',
   },
   paymentMethods: {
   crypto: 'Криптовалута',

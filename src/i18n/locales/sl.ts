@@ -120,6 +120,9 @@ export const sl: TranslationTree = {
     mini_game: 'Mini igre',
     table_game: 'Namizne igre',
     crash_games: 'Crash igre',
+    fishing: 'Ribolovačke igre',
+    fish_game: 'Ribolovačke igre',
+    fish_games: 'Ribolovačke igre',
   },
   paymentMethods: {
   crypto: 'Kriptovaluta',

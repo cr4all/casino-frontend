@@ -117,6 +117,9 @@ export const en = {
     table_game: 'Table Games',
     crash: 'Crash Games',
     crash_games: 'Crash Games',
+    fishing: 'Fish Games',
+    fish_game: 'Fish Games',
+    fish_games: 'Fish Games',
   },
   paymentMethods: {
     crypto: 'Cryptocurrency',

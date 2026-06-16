@@ -120,6 +120,9 @@ export const ja: TranslationTree = {
     mini_game: 'ミニゲーム',
     table_game: 'テーブルゲーム',
     crash_games: 'クラッシュゲーム',
+    fishing: 'フィッシングゲーム',
+    fish_game: 'フィッシングゲーム',
+    fish_games: 'フィッシングゲーム',
   },
   paymentMethods: {
   crypto: '暗号資産',

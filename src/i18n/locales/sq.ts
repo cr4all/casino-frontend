@@ -120,6 +120,9 @@ export const sq: TranslationTree = {
     mini_game: 'Mini lojëra',
     table_game: 'Lojëra tavoline',
     crash_games: 'Lojëra crash',
+    fishing: 'Lojëra peshkimi',
+    fish_game: 'Lojëra peshkimi',
+    fish_games: 'Lojëra peshkimi',
   },
   paymentMethods: {
   crypto: 'Kriptovalutë',

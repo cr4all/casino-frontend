@@ -120,6 +120,9 @@ export const tr: TranslationTree = {
     mini_game: 'Mini oyunlar',
     table_game: 'Masa oyunları',
     crash_games: 'Crash oyunları',
+    fishing: 'Balık oyunları',
+    fish_game: 'Balık oyunları',
+    fish_games: 'Balık oyunları',
   },
   paymentMethods: {
   crypto: 'Kripto para',

@@ -120,6 +120,9 @@ export const zh: TranslationTree = {
     mini_game: '迷你游戏',
     table_game: '桌面游戏',
     crash_games: 'Crash 游戏',
+    fishing: '捕鱼游戏',
+    fish_game: '捕鱼游戏',
+    fish_games: '捕鱼游戏',
   },
   paymentMethods: {
   crypto: '加密货币',

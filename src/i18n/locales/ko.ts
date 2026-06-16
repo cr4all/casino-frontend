@@ -120,6 +120,9 @@ export const ko: TranslationTree = {
     mini_game: '미니 게임',
     table_game: '테이블 게임',
     crash_games: '크래시 게임',
+    fishing: '낚시 게임',
+    fish_game: '낚시 게임',
+    fish_games: '낚시 게임',
   },
   paymentMethods: {
   crypto: '암호화폐',
