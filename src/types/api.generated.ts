@@ -1645,6 +1645,7 @@ export interface components {
             slug: string;
             name: string;
             logo_url?: string | null;
+            sort_order: number;
             game_count: number;
         };
         GameType: {
