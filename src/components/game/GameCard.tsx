@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import type { Game } from '@/types';
 import { useAuthStore } from '@/stores/authStore';
 import { useUiStore } from '@/stores/uiStore';
+import { getGameThumbnailCandidates } from '@/data/gameThumbnails';
 import { openGameWindow } from '@/utils/openGameWindow';
 
 interface GameCardProps {
@@ -14,8 +15,15 @@ interface GameCardProps {
 export function GameCard({ game, variant = 'slider', isNew = false }: GameCardProps) {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const openModal = useUiStore((s) => s.openModal);
-  const [imgError, setImgError] = useState(false);
+  const thumbnailCandidates = useMemo(() => getGameThumbnailCandidates(game), [game]);
+  const [candidateIndex, setCandidateIndex] = useState(0);
+  const [thumbnailFailed, setThumbnailFailed] = useState(false);
   const widthClass = variant === 'slider' ? 'w-[170px] shrink-0' : 'w-full';
+
+  useEffect(() => {
+    setCandidateIndex(0);
+    setThumbnailFailed(false);
+  }, [game.id, thumbnailCandidates]);
 
   const handleClick = () => {
     if (!isAuthenticated) {
@@ -25,7 +33,17 @@ export function GameCard({ game, variant = 'slider', isNew = false }: GameCardPr
     openGameWindow(game.id);
   };
 
-  const showThumbnail = game.thumbnail && !imgError;
+  const thumbnailSrc = thumbnailCandidates[candidateIndex] ?? null;
+  const showThumbnail = thumbnailSrc !== null && !thumbnailFailed;
+
+  const handleImageError = () => {
+    if (candidateIndex + 1 < thumbnailCandidates.length) {
+      setCandidateIndex((index) => index + 1);
+      return;
+    }
+
+    setThumbnailFailed(true);
+  };
 
   return (
     <motion.button
@@ -42,10 +60,10 @@ export function GameCard({ game, variant = 'slider', isNew = false }: GameCardPr
       >
         {showThumbnail ? (
           <img
-            src={game.thumbnail!}
+            src={thumbnailSrc}
             alt={game.name}
             loading="lazy"
-            onError={() => setImgError(true)}
+            onError={handleImageError}
             className="absolute inset-0 h-full w-full object-cover"
           />
         ) : (
