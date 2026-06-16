@@ -39,4 +39,13 @@ export const playerApi = {
     const { data } = await api.patch<ApiResponse<PlayerProfile>>('/player/profile', payload);
     return data.data;
   },
+
+  changePassword: async (payload: {
+    current_password: string;
+    password: string;
+    password_confirmation: string;
+  }) => {
+    const { data } = await api.put<ApiResponse<null>>('/player/password', payload);
+    return data;
+  },
 };

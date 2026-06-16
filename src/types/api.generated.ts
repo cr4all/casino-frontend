@@ -260,6 +260,102 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/auth/password-recovery/request": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Request a password recovery verification code
+         * @description Sends a numeric verification code by email or SMS when an active player account exists.
+         *     Provide exactly one of `email` or `phone` (E.164). Always returns success to avoid enumeration.
+         */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["PasswordRecoveryRequestBody"];
+                };
+            };
+            responses: {
+                /** @description Request accepted */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: Record<string, never> | null;
+                            /** @example If an account exists for this email, a verification code has been sent. */
+                            message?: string;
+                        };
+                    };
+                };
+                422: components["responses"]["ValidationError"];
+                429: components["responses"]["TooManyRequests"];
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/auth/password-recovery/reset": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Reset password using email or phone verification code */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["PasswordRecoveryResetBody"];
+                };
+            };
+            responses: {
+                /** @description Password reset successful */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: Record<string, never> | null;
+                            /** @example Password has been reset successfully. */
+                            message?: string;
+                        };
+                    };
+                };
+                422: components["responses"]["ValidationError"];
+                429: components["responses"]["TooManyRequests"];
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/player/me": {
         parameters: {
             query?: never;
@@ -346,6 +442,52 @@ export interface paths {
                 404: components["responses"]["NotFound"];
             };
         };
+        trace?: never;
+    };
+    "/player/password": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        /** Change player password */
+        put: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["ChangePlayerPasswordBody"];
+                };
+            };
+            responses: {
+                /** @description Password updated */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: Record<string, never> | null;
+                            /** @example Password updated successfully. */
+                            message?: string;
+                        };
+                    };
+                };
+                401: components["responses"]["Unauthorized"];
+                422: components["responses"]["ValidationError"];
+            };
+        };
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
         trace?: never;
     };
     "/wallet/balance": {
@@ -1434,6 +1576,36 @@ export interface components {
             device_fingerprint?: string | null;
             device_name?: string | null;
         };
+        /** @description Exactly one of email or phone is required. */
+        PasswordRecoveryRequestBody: {
+            /**
+             * Format: email
+             * @example player@example.com
+             */
+            email?: string;
+            /**
+             * @description Phone number in E.164 format
+             * @example +12025550123
+             */
+            phone?: string;
+        };
+        /** @description Exactly one of email or phone is required (same channel used for the code request). */
+        PasswordRecoveryResetBody: {
+            /**
+             * Format: email
+             * @example player@example.com
+             */
+            email?: string;
+            /** @example +12025550123 */
+            phone?: string;
+            /**
+             * @description Six-digit verification code sent by email or SMS
+             * @example 123456
+             */
+            code: string;
+            password: string;
+            password_confirmation: string;
+        };
         UserSummary: {
             id: number;
             /** Format: email */
@@ -1466,15 +1638,40 @@ export interface components {
             /** Format: email */
             email?: string | null;
             nickname?: string | null;
+            /**
+             * @description Phone number in E.164 format
+             * @example +12025550123
+             */
+            phone?: string | null;
+            /**
+             * @description ISO 3166-1 alpha-2 country code
+             * @example SG
+             */
             country?: string | null;
+            /**
+             * @description Human-readable country name resolved from platform config
+             * @example Singapore
+             */
+            country_name?: string | null;
             currency?: string | null;
+            /** @example en */
+            language?: string | null;
+            /**
+             * @description Player account status
+             * @example active
+             */
             status?: string | null;
+            /**
+             * @description KYC verification status
+             * @example pending
+             */
             kyc_status?: string | null;
         };
-        PlayerProfileUpdate: {
-            id?: number;
-            nickname?: string | null;
-            language?: string | null;
+        PlayerProfileUpdate: components["schemas"]["PlayerMe"];
+        ChangePlayerPasswordBody: {
+            current_password: string;
+            password: string;
+            password_confirmation: string;
         };
         WalletBalance: {
             wallet_id: number;
@@ -1489,7 +1686,6 @@ export interface components {
             /** @example payment.deposit */
             event_type?: string;
         };
-        "x-realtime": unknown;
         WalletTransaction: {
             id: number;
             type: string;
@@ -1691,7 +1887,7 @@ export interface components {
         AffiliateMe: {
             code: string;
             /** @enum {string} */
-            commission_model: "cpa" | "revshare" | "hybrid";
+            commission_model: "cpa" | "revshare";
             commission_rate: string;
             cpa_amount?: string | null;
             /** @enum {string} */
@@ -1718,7 +1914,7 @@ export interface components {
         AffiliateCommission: {
             id: number;
             /** @enum {string} */
-            type: "cpa" | "revshare" | "hybrid";
+            type: "cpa" | "revshare";
             amount: string;
             reference_type: string;
             reference_id: string;
@@ -1762,6 +1958,15 @@ export interface components {
         };
         /** @description Validation error */
         ValidationError: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                "application/json": components["schemas"]["ErrorEnvelope"];
+            };
+        };
+        /** @description Too many requests */
+        TooManyRequests: {
             headers: {
                 [name: string]: unknown;
             };

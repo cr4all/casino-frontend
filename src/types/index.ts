@@ -24,7 +24,9 @@ export interface PlayerProfile {
   user_id: number;
   email: string;
   nickname: string | null;
+  phone: string | null;
   country: string | null;
+  country_name: string | null;
   currency: string | null;
   language: string | null;
   status: string;
