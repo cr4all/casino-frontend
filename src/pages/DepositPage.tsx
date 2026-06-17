@@ -60,6 +60,7 @@ export function DepositPage() {
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [lastDeposit, setLastDeposit] = useState<DepositRequest | null>(null);
+  const [localCountry, setLocalCountry] = useState('');
 
   const loadDeposits = () =>
     paymentApi.getDeposits().then((data) => setDeposits(data.items));
@@ -77,7 +78,23 @@ export function DepositPage() {
   const selected = methods.find((m) => m.id === methodId);
   const isCrypto = selected?.type === 'crypto';
   const isLocalGateway = selected?.type === 'local';
-  const paymentCurrency = selected?.payment_currency ?? selected?.wallet_currency ?? '';
+  const selectedLocalCountry = selected?.supported_countries?.find((c) => c.code === localCountry);
+  const paymentCurrency = isLocalGateway
+    ? (selectedLocalCountry?.currency ?? '')
+    : (selected?.payment_currency ?? selected?.wallet_currency ?? '');
+  const effectiveMinAmount = isLocalGateway && selectedLocalCountry
+    ? selectedLocalCountry.min_amount
+    : selected?.min_amount;
+  const localCountryRequired = isLocalGateway && !localCountry;
+
+  useEffect(() => {
+    if (!isLocalGateway || !selected) {
+      setLocalCountry('');
+      return;
+    }
+
+    setLocalCountry(selected.default_country ?? '');
+  }, [isLocalGateway, selected?.id, selected?.default_country]);
 
   useEffect(() => {
     if (!isCrypto) {
@@ -103,12 +120,18 @@ export function DepositPage() {
       return;
     }
 
+    if (isLocalGateway && !localCountry) {
+      setQuote(null);
+      setQuoteError(false);
+      return;
+    }
+
     setQuoteLoading(true);
     setQuoteError(false);
 
     const timer = setTimeout(() => {
       paymentApi
-        .getDepositQuote(Number(methodId), amount)
+        .getDepositQuote(Number(methodId), amount, isLocalGateway ? localCountry : undefined)
         .then(setQuote)
         .catch(() => {
           setQuote(null);
@@ -118,7 +141,7 @@ export function DepositPage() {
     }, 400);
 
     return () => clearTimeout(timer);
-  }, [methodId, amount]);
+  }, [methodId, amount, isLocalGateway, localCountry]);
 
   if (!isAuthenticated) {
     return <Navigate to="/" replace />;
@@ -128,6 +151,7 @@ export function DepositPage() {
     e.preventDefault();
     if (!methodId || !amount) return;
     if (isCrypto && !payCurrency) return;
+    if (localCountryRequired) return;
     setSubmitting(true);
     setError(null);
     setMessage(null);
@@ -136,7 +160,10 @@ export function DepositPage() {
       const result = await paymentApi.createDeposit(
         methodId,
         amount,
-        isCrypto ? payCurrency : undefined,
+        {
+          payCurrency: isCrypto ? payCurrency : undefined,
+          localCountry: isLocalGateway ? localCountry : undefined,
+        },
       );
       setLastDeposit(result);
       setMessage(t('deposit.submitted', { id: result.deposit_id, status: result.status }));
@@ -197,6 +224,30 @@ export function DepositPage() {
               </select>
             </div>
 
+            {isLocalGateway && selected?.supported_countries && (
+              <div>
+                <label htmlFor="deposit-local-country" className="mb-1 block text-xs text-muted">
+                  {t('deposit.localCountryLabel')}
+                </label>
+                <select
+                  id="deposit-local-country"
+                  value={localCountry}
+                  onChange={(e) => setLocalCountry(e.target.value)}
+                  className="w-full rounded-md border border-white/10 bg-background px-3 py-2 text-sm text-white"
+                >
+                  <option value="">{t('deposit.selectLocalCountry')}</option>
+                  {selected.supported_countries.map((country) => (
+                    <option key={country.code} value={country.code}>
+                      {t('deposit.localCountryOption', {
+                        name: country.name,
+                        currency: country.currency,
+                      })}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
+
             <div className="space-y-4">
               {isCrypto && (
                 <CryptoCurrencyPicker
@@ -211,7 +262,7 @@ export function DepositPage() {
               {selected && (
                 <p className="text-xs text-muted">
                     {t('common.minMax', {
-                      min: formatBalance(selected.min_amount),
+                      min: formatBalance(effectiveMinAmount ?? selected.min_amount),
                       max: selected.max_amount
                         ? formatBalance(selected.max_amount)
                         : t('common.noLimit'),
@@ -256,10 +307,18 @@ export function DepositPage() {
               </div>
             )}
 
+            {localCountryRequired && (
+              <p className="text-sm text-amber-400">{t('deposit.selectLocalCountry')}</p>
+            )}
+
             {error && <p className="text-sm text-red-400">{error}</p>}
             {message && <p className="text-sm text-green-400">{message}</p>}
 
-            <Button type="submit" variant="gold" disabled={submitting || methods.length === 0}>
+            <Button
+              type="submit"
+              variant="gold"
+              disabled={submitting || methods.length === 0 || localCountryRequired}
+            >
               {submitting ? t('common.submitting') : t('deposit.requestDeposit')}
             </Button>
           </form>

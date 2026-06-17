@@ -133,6 +133,7 @@ export const en = {
     crypto: 'Cryptocurrency',
     bank: 'Bank Transfer',
     redirect: 'Online Payment',
+    local: 'Local Payment',
   },
   txTypes: {
     deposit: 'Deposit',
@@ -220,6 +221,9 @@ export const en = {
     bonusesLink: 'Bonuses',
     withdrawLink: 'Withdraw →',
     paymentMethod: 'Payment Method',
+    localCountryLabel: 'Payment country',
+    selectLocalCountry: 'Select a payment country to continue.',
+    localCountryOption: '{{name}} ({{currency}})',
     cryptocurrency: 'Cryptocurrency',
     currency: 'Currency',
     searchCurrency: 'Type a currency',

@@ -136,6 +136,7 @@ export const ko: TranslationTree = {
   crypto: '암호화폐',
   bank: '계좌 이체',
   redirect: '온라인 결제',
+  local: '현지 결제',
   },
   txTypes: {
   deposit: '입금',
@@ -222,6 +223,9 @@ export const ko: TranslationTree = {
     bonusesLink: '보너스',
     withdrawLink: '출금 →',
     paymentMethod: '결제 방법',
+    localCountryLabel: '결제 국가',
+    selectLocalCountry: '결제 국가를 선택해 주세요.',
+    localCountryOption: '{{name}} ({{currency}})',
     cryptocurrency: '암호화폐',
     currency: '통화',
     searchCurrency: '통화 입력',

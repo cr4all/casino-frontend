@@ -1725,16 +1725,26 @@ export interface components {
             name: string;
             min_amount: string;
             max_amount?: string | null;
-            /**
-             * @description Currency charged by the payment provider (e.g. IDR for SmilePayz)
-             * @example IDR
-             */
-            payment_currency?: string;
-            /**
-             * @description Player wallet (points) currency from registration
-             * @example EUR
-             */
+            /** @description Currency charged by the payment provider. Null for Smilepayz local payment until a country is selected. */
+            payment_currency?: string | null;
+            /** @description Player wallet (points) currency from registration */
             wallet_currency?: string | null;
+            /** @description Smilepayz-supported countries for local payment methods */
+            supported_countries?: components["schemas"]["SmilePayzSupportedCountry"][];
+            /** @description Player profile country when supported by Smilepayz */
+            default_country?: string | null;
+        };
+        SmilePayzSupportedCountry: {
+            /** @example ID */
+            code: string;
+            /** @example Indonesia */
+            name: string;
+            /** @example IDR */
+            currency: string;
+            /** @example indonesia */
+            region: string;
+            /** @example 10000.0000 */
+            min_amount: string;
         };
         DepositQuote: {
             payment_amount: string;

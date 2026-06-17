@@ -1,14 +1,24 @@
 import api from '@/api/axios';
 import type { ApiResponse, PaginationMeta } from '@/types';
 
+export interface SmilePayzSupportedCountry {
+  code: string;
+  name: string;
+  currency: string;
+  region: string;
+  min_amount: string;
+}
+
 export interface PaymentMethod {
   id: number;
   type: string;
   name: string;
   min_amount: string;
   max_amount: string | null;
-  payment_currency?: string;
+  payment_currency?: string | null;
   wallet_currency?: string | null;
+  supported_countries?: SmilePayzSupportedCountry[];
+  default_country?: string | null;
 }
 
 export interface CryptoCurrency {
@@ -65,9 +75,13 @@ export const paymentApi = {
     return data.data;
   },
 
-  getDepositQuote: async (paymentMethodId: number, amount: string) => {
+  getDepositQuote: async (paymentMethodId: number, amount: string, localCountry?: string) => {
     const { data } = await api.get<ApiResponse<DepositQuote>>('/payment/deposits/quote', {
-      params: { payment_method_id: paymentMethodId, amount },
+      params: {
+        payment_method_id: paymentMethodId,
+        amount,
+        ...(localCountry ? { local_country: localCountry } : {}),
+      },
     });
     return data.data;
   },
@@ -79,11 +93,16 @@ export const paymentApi = {
     return data.data.items;
   },
 
-  createDeposit: async (paymentMethodId: number, amount: string, payCurrency?: string) => {
+  createDeposit: async (
+    paymentMethodId: number,
+    amount: string,
+    options?: { payCurrency?: string; localCountry?: string },
+  ) => {
     const { data } = await api.post<ApiResponse<DepositRequest>>('/payment/deposits', {
       payment_method_id: paymentMethodId,
       amount,
-      ...(payCurrency ? { pay_currency: payCurrency } : {}),
+      ...(options?.payCurrency ? { pay_currency: options.payCurrency } : {}),
+      ...(options?.localCountry ? { local_country: options.localCountry } : {}),
     });
     return data.data;
   },
