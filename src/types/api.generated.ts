@@ -671,6 +671,8 @@ export interface paths {
                 query: {
                     payment_method_id: number;
                     amount: string;
+                    /** @description ISO 3166-1 alpha-2 country code for Smilepayz local payment. Required when the payment method type is local. */
+                    local_country?: string;
                 };
                 header?: never;
                 path?: never;
@@ -757,6 +759,11 @@ export interface paths {
                          * @example usdttrc20
                          */
                         pay_currency?: string;
+                        /**
+                         * @description ISO 3166-1 alpha-2 country code for Smilepayz local payment. Required when the payment method type is local.
+                         * @example ID
+                         */
+                        local_country?: string;
                     };
                 };
             };
@@ -1725,13 +1732,22 @@ export interface components {
             name: string;
             min_amount: string;
             max_amount?: string | null;
-            /** @description Currency charged by the payment provider. Null for Smilepayz local payment until a country is selected. */
+            /**
+             * @description Currency charged by the payment provider. Null for Smilepayz local payment until a country is selected.
+             * @example IDR
+             */
             payment_currency?: string | null;
-            /** @description Player wallet (points) currency from registration */
+            /**
+             * @description Player wallet (points) currency from registration
+             * @example EUR
+             */
             wallet_currency?: string | null;
             /** @description Smilepayz-supported countries for local payment methods */
             supported_countries?: components["schemas"]["SmilePayzSupportedCountry"][];
-            /** @description Player profile country when supported by Smilepayz */
+            /**
+             * @description Player profile country when supported by Smilepayz
+             * @example ID
+             */
             default_country?: string | null;
         };
         SmilePayzSupportedCountry: {
