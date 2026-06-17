@@ -229,6 +229,8 @@ export const en = {
     requestDeposit: 'Request Deposit',
     paymentInstructions: 'Payment Instructions',
     sendToAddress: 'Send {{amount}} {{currency}} to the address below',
+    sendToAddressFiatEstimate: 'Send approximately {{fiatAmount}} {{fiatCurrency}} worth of {{crypto}} to the address below',
+    sendToAddressFiatDisclaimer: 'The exact crypto amount may vary with exchange rates at transfer time.',
     openPaymentPage: 'Open Payment Page',
     cryptoConfirmHint: 'After blockchain confirmation, your wallet will be credited automatically.',
     redirectConfirmHint: 'Complete payment on the SmilePayz page. Your wallet will be credited after payment confirmation.',

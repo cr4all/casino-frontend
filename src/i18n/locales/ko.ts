@@ -231,6 +231,8 @@ export const ko: TranslationTree = {
     requestDeposit: '입금 요청',
     paymentInstructions: '결제 안내',
     sendToAddress: '아래 주소로 {{amount}} {{currency}}를 보내세요',
+    sendToAddressFiatEstimate: '아래 주소로 약 {{fiatAmount}} {{fiatCurrency}} 상당의 {{crypto}}를 보내세요',
+    sendToAddressFiatDisclaimer: '실제 암호화폐 수량은 전송 시점 환율에 따라 달라질 수 있습니다.',
     openPaymentPage: '결제 페이지 열기',
     cryptoConfirmHint: '블록체인 확인 후 지갑에 자동 입금됩니다.',
     redirectConfirmHint: 'SmilePayz에서 결제를 완료하세요. 확인 후 입금됩니다.',

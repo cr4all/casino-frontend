@@ -71,8 +71,10 @@ export const paymentApi = {
     return data.data;
   },
 
-  getCryptoCurrencies: async () => {
-    const { data } = await api.get<ApiResponse<{ items: CryptoCurrency[] }>>('/payment/crypto/currencies');
+  getCryptoCurrencies: async (paymentMethodId?: number) => {
+    const { data } = await api.get<ApiResponse<{ items: CryptoCurrency[] }>>('/payment/crypto/currencies', {
+      params: paymentMethodId ? { payment_method_id: paymentMethodId } : undefined,
+    });
     return data.data.items;
   },
 

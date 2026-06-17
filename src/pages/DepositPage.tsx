@@ -16,6 +16,7 @@ import { StatusBadge } from '@/components/common/StatusBadge';
 import { CryptoAmountInput } from '@/components/deposit/CryptoAmountInput';
 import { CryptoCurrencyPicker } from '@/components/deposit/CryptoCurrencyPicker';
 import { getApiErrorMessage } from '@/utils/apiError';
+import { formatCryptoCurrencyLabel } from '@/utils/cryptoIcon';
 import { formatBalance } from '@/utils/formatBalance';
 
 function CopyButton({ value }: { value: string }) {
@@ -96,7 +97,7 @@ export function DepositPage() {
     }
 
     setCryptoLoading(true);
-    paymentApi.getCryptoCurrencies()
+    paymentApi.getCryptoCurrencies(Number(methodId))
       .then((items) => {
         setCryptoCurrencies(items);
         if (items.length > 0) setPayCurrency(items[0].code);
@@ -164,6 +165,15 @@ export function DepositPage() {
   const isCryptoPayment = isCrypto || Boolean(paymentInfo.pay_address || paymentInfo.address);
   const paymentUrl = typeof paymentInfo.payment_url === 'string' ? paymentInfo.payment_url : null;
   const isRedirectPayment = isLocalGateway || Boolean(paymentUrl);
+  const payCurrencyCode = String(paymentInfo.pay_currency ?? paymentInfo.currency ?? '');
+  const payAmountRaw = paymentInfo.pay_amount != null && paymentInfo.pay_amount !== ''
+    ? String(paymentInfo.pay_amount)
+    : '';
+  const hasCryptoPayAmount = payAmountRaw !== '' && Number(payAmountRaw) > 0;
+  const showFiatCryptoEstimate = !hasCryptoPayAmount
+    && payCurrencyCode !== ''
+    && lastDeposit?.amount != null
+    && lastDeposit.amount !== '';
 
   return (
     <div className="mx-auto max-w-7xl py-8">
@@ -278,15 +288,28 @@ export function DepositPage() {
                 </p>
               )}
 
-              {(Boolean(paymentInfo.pay_amount) || Boolean(paymentInfo.pay_currency)) && (
-                <p className="mb-3 text-sm text-white">
-                  {t('deposit.sendToAddress', {
-                    amount: formatBalance(
-                      String(paymentInfo.pay_amount ?? paymentInfo.amount ?? ''),
-                    ),
-                    currency: String(paymentInfo.pay_currency ?? paymentInfo.currency ?? '').toUpperCase(),
-                  })}
-                </p>
+              {(hasCryptoPayAmount || showFiatCryptoEstimate) && (
+                <div className="mb-3 text-sm text-white">
+                  {hasCryptoPayAmount ? (
+                    <p>
+                      {t('deposit.sendToAddress', {
+                        amount: formatBalance(payAmountRaw),
+                        currency: payCurrencyCode.toUpperCase(),
+                      })}
+                    </p>
+                  ) : (
+                    <>
+                      <p>
+                        {t('deposit.sendToAddressFiatEstimate', {
+                          fiatAmount: formatBalance(lastDeposit.amount),
+                          fiatCurrency: String(lastDeposit.currency ?? '').toUpperCase(),
+                          crypto: formatCryptoCurrencyLabel(payCurrencyCode),
+                        })}
+                      </p>
+                      <p className="mt-1 text-xs text-muted">{t('deposit.sendToAddressFiatDisclaimer')}</p>
+                    </>
+                  )}
+                </div>
               )}
 
               {paymentUrl && (
