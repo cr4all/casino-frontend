@@ -136,6 +136,7 @@ export const hi: TranslationTree = {
   crypto: 'क्रिप्टो',
   bank: 'बैंक ट्रांसफर',
   redirect: 'ऑनलाइन भुगतान',
+  local: 'स्थानीय भुगतान',
   },
   txTypes: {
   deposit: 'जमा',
@@ -222,6 +223,9 @@ export const hi: TranslationTree = {
     bonusesLink: 'बोनस',
     withdrawLink: 'निकासी →',
     paymentMethod: 'भुगतान विधि',
+    localCountryLabel: 'भुगतान देश',
+    selectLocalCountry: 'भुगतान देश चुनें।',
+    localCountryOption: '{{name}} ({{currency}})',
     cryptocurrency: 'क्रिप्टोकरेंसी',
     currency: 'मुद्रा',
     searchCurrency: 'मुद्रा टाइप करें',

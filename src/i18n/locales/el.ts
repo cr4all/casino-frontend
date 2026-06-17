@@ -136,6 +136,7 @@ export const el: TranslationTree = {
   crypto: 'Κρυπτονόμισμα',
   bank: 'Τραπεζική μεταφορά',
   redirect: 'Online πληρωμή',
+  local: 'Τοπική πληρωμή',
   },
   txTypes: {
   deposit: 'Κατάθεση',
@@ -222,6 +223,9 @@ export const el: TranslationTree = {
     bonusesLink: 'Μπόνους',
     withdrawLink: 'Ανάληψη →',
     paymentMethod: 'Μέθοδος πληρωμής',
+    localCountryLabel: 'Χώρα πληρωμής',
+    selectLocalCountry: 'Επιλέξτε χώρα πληρωμής.',
+    localCountryOption: '{{name}} ({{currency}})',
     cryptocurrency: 'Κρυπτονόμισμα',
     currency: 'Νόμισμα',
     searchCurrency: 'Πληκτρολογήστε νόμισμα',

@@ -136,6 +136,7 @@ export const ur: TranslationTree = {
   crypto: 'کرپٹو',
   bank: 'بینک ٹرانسفر',
   redirect: 'آن لائن ادائیگی',
+  local: 'مقامی ادائیگی',
   },
   txTypes: {
   deposit: 'جمع',
@@ -222,6 +223,9 @@ export const ur: TranslationTree = {
     bonusesLink: 'بونس',
     withdrawLink: 'نکاسی →',
     paymentMethod: 'ادائیگی کا طریقہ',
+    localCountryLabel: 'ادائیگی کا ملک',
+    selectLocalCountry: 'ادائیگی کا ملک منتخب کریں۔',
+    localCountryOption: '{{name}} ({{currency}})',
     cryptocurrency: 'کرپٹو کرنسی',
     currency: 'کرنسی',
     searchCurrency: 'کرنسی درج کریں',

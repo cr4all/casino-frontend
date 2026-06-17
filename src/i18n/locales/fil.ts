@@ -136,6 +136,7 @@ export const fil: TranslationTree = {
   crypto: 'Cryptocurrency',
   bank: 'Bank transfer',
   redirect: 'Online payment',
+  local: 'Lokal na pagbabayad',
   },
   txTypes: {
   deposit: 'Deposito',
@@ -222,6 +223,9 @@ export const fil: TranslationTree = {
     bonusesLink: 'Bonus',
     withdrawLink: 'Withdraw →',
     paymentMethod: 'Paraan ng Pagbabayad',
+    localCountryLabel: 'Bansa ng pagbabayad',
+    selectLocalCountry: 'Pumili ng bansa ng pagbabayad.',
+    localCountryOption: '{{name}} ({{currency}})',
     cryptocurrency: 'Cryptocurrency',
     currency: 'Currency',
     searchCurrency: 'Mag-type ng currency',

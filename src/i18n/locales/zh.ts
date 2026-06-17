@@ -136,6 +136,7 @@ export const zh: TranslationTree = {
   crypto: '加密货币',
   bank: '银行转账',
   redirect: '在线支付',
+  local: '本地支付',
   },
   txTypes: {
   deposit: '存款',
@@ -222,6 +223,9 @@ export const zh: TranslationTree = {
     bonusesLink: '奖金',
     withdrawLink: '提款 →',
     paymentMethod: '支付方式',
+    localCountryLabel: '支付国家',
+    selectLocalCountry: '请选择支付国家。',
+    localCountryOption: '{{name}} ({{currency}})',
     cryptocurrency: '加密货币',
     currency: '货币',
     searchCurrency: '输入货币',

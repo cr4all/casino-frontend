@@ -136,6 +136,7 @@ export const ja: TranslationTree = {
   crypto: '暗号資産',
   bank: '銀行振込',
   redirect: 'オンライン決済',
+  local: 'ローカル決済',
   },
   txTypes: {
   deposit: '入金',
@@ -222,6 +223,9 @@ export const ja: TranslationTree = {
     bonusesLink: 'ボーナス',
     withdrawLink: '出金 →',
     paymentMethod: '支払い方法',
+    localCountryLabel: '決済国',
+    selectLocalCountry: '決済国を選択してください。',
+    localCountryOption: '{{name}} ({{currency}})',
     cryptocurrency: '暗号資産',
     currency: '通貨',
     searchCurrency: '通貨を入力',

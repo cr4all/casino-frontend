@@ -136,6 +136,7 @@ export const mk: TranslationTree = {
   crypto: 'Криптовалута',
   bank: 'Банкарски трансфер',
   redirect: 'Онлајн плаќање',
+  local: 'Локална уплата',
   },
   txTypes: {
   deposit: 'Депозит',
@@ -222,6 +223,9 @@ export const mk: TranslationTree = {
     bonusesLink: 'Бонуси',
     withdrawLink: 'Подигнување →',
     paymentMethod: 'Метод на плаќање',
+    localCountryLabel: 'Држава за уплата',
+    selectLocalCountry: 'Изберете држава за уплата.',
+    localCountryOption: '{{name}} ({{currency}})',
     cryptocurrency: 'Криптовалута',
     currency: 'Валута',
     searchCurrency: 'Внесете валута',

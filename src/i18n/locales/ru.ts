@@ -136,6 +136,7 @@ export const ru: TranslationTree = {
   crypto: 'Криптовалюта',
   bank: 'Банковский перевод',
   redirect: 'Онлайн-платёж',
+  local: 'Локальный платёж',
   },
   txTypes: {
   deposit: 'Депозит',
@@ -222,6 +223,9 @@ export const ru: TranslationTree = {
     bonusesLink: 'Бонусы',
     withdrawLink: 'Вывод →',
     paymentMethod: 'Способ оплаты',
+    localCountryLabel: 'Страна платежа',
+    selectLocalCountry: 'Выберите страну платежа.',
+    localCountryOption: '{{name}} ({{currency}})',
     cryptocurrency: 'Криптовалюта',
     currency: 'Валюта',
     searchCurrency: 'Введите валюту',

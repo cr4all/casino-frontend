@@ -136,6 +136,7 @@ export const tr: TranslationTree = {
   crypto: 'Kripto para',
   bank: 'Banka havalesi',
   redirect: 'Online ödeme',
+  local: 'Yerel ödeme',
   },
   txTypes: {
   deposit: 'Yatırım',
@@ -222,6 +223,9 @@ export const tr: TranslationTree = {
     bonusesLink: 'Bonuslar',
     withdrawLink: 'Çekim →',
     paymentMethod: 'Ödeme yöntemi',
+    localCountryLabel: 'Ödeme ülkesi',
+    selectLocalCountry: 'Ödeme ülkesi seçin.',
+    localCountryOption: '{{name}} ({{currency}})',
     cryptocurrency: 'Kripto para',
     currency: 'Para birimi',
     searchCurrency: 'Para birimi yazın',

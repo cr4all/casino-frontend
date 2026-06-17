@@ -136,6 +136,7 @@ export const sq: TranslationTree = {
   crypto: 'Kriptovalutë',
   bank: 'Transfer bankar',
   redirect: 'Pagesë online',
+  local: 'Pagesë lokale',
   },
   txTypes: {
   deposit: 'Depozitë',
@@ -222,6 +223,9 @@ export const sq: TranslationTree = {
     bonusesLink: 'Bonuset',
     withdrawLink: 'Tërheqje →',
     paymentMethod: 'Metoda e pagesës',
+    localCountryLabel: 'Vendi i pagesës',
+    selectLocalCountry: 'Zgjidhni vendin e pagesës.',
+    localCountryOption: '{{name}} ({{currency}})',
     cryptocurrency: 'Kriptomonedhë',
     currency: 'Monedha',
     searchCurrency: 'Shkruani monedhën',

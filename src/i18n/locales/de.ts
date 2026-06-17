@@ -136,6 +136,7 @@ export const de: TranslationTree = {
   crypto: 'Kryptowährung',
   bank: 'Banküberweisung',
   redirect: 'Online-Zahlung',
+  local: 'Lokale Zahlung',
   },
   txTypes: {
   deposit: 'Einzahlung',
@@ -222,6 +223,9 @@ export const de: TranslationTree = {
     bonusesLink: 'Boni',
     withdrawLink: 'Auszahlung →',
     paymentMethod: 'Zahlungsmethode',
+    localCountryLabel: 'Zahlungsland',
+    selectLocalCountry: 'Bitte wählen Sie ein Zahlungsland aus.',
+    localCountryOption: '{{name}} ({{currency}})',
     cryptocurrency: 'Kryptowährung',
     currency: 'Währung',
     searchCurrency: 'Währung eingeben',

@@ -136,6 +136,7 @@ export const fr: TranslationTree = {
   crypto: 'Cryptomonnaie',
   bank: 'Virement bancaire',
   redirect: 'Paiement en ligne',
+  local: 'Paiement local',
   },
   txTypes: {
   deposit: 'Dépôt',
@@ -222,6 +223,9 @@ export const fr: TranslationTree = {
     bonusesLink: 'Bonus',
     withdrawLink: 'Retrait →',
     paymentMethod: 'Méthode de paiement',
+    localCountryLabel: 'Pays de paiement',
+    selectLocalCountry: 'Sélectionnez un pays de paiement.',
+    localCountryOption: '{{name}} ({{currency}})',
     cryptocurrency: 'Cryptomonnaie',
     currency: 'Devise',
     searchCurrency: 'Saisir une devise',

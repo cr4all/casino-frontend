@@ -136,6 +136,7 @@ export const id: TranslationTree = {
   crypto: 'Kripto',
   bank: 'Transfer bank',
   redirect: 'Pembayaran online',
+  local: 'Pembayaran lokal',
   },
   txTypes: {
   deposit: 'Deposit',
@@ -222,6 +223,9 @@ export const id: TranslationTree = {
     bonusesLink: 'Bonus',
     withdrawLink: 'Penarikan →',
     paymentMethod: 'Metode Pembayaran',
+    localCountryLabel: 'Negara pembayaran',
+    selectLocalCountry: 'Pilih negara pembayaran.',
+    localCountryOption: '{{name}} ({{currency}})',
     cryptocurrency: 'Kripto',
     currency: 'Mata uang',
     searchCurrency: 'Ketik mata uang',
