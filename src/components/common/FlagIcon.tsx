@@ -1,5 +1,6 @@
 import { useId } from 'react';
 import type { Language } from '@/i18n';
+import { CountryFlag } from '@/components/common/CountryFlag';
 
 interface FlagIconProps {
   language: Language;
@@ -8,7 +9,26 @@ interface FlagIconProps {
 
 const baseClass = 'h-4 w-5 shrink-0 rounded-[2px] ring-1 ring-white/15';
 
+/** ISO 3166-1 alpha-2 codes for languages without an inline SVG flag. */
+const FLAG_COUNTRY_CODES: Partial<Record<Language, string>> = {
+  ar: 'sa',
+  cs: 'cz',
+  da: 'dk',
+  et: 'ee',
+  fi: 'fi',
+  hu: 'hu',
+  lv: 'lv',
+  no: 'no',
+  pl: 'pl',
+  sk: 'sk',
+};
+
 export function FlagIcon({ language, className = baseClass }: FlagIconProps) {
+  const countryCode = FLAG_COUNTRY_CODES[language];
+  if (countryCode) {
+    return <CountryFlag countryCode={countryCode} className={className} />;
+  }
+
   const ukClipId = useId();
 
   switch (language) {

@@ -1,73 +1,103 @@
 import { en, type TranslationTree } from './locales/en';
+import { ar } from './locales/ar';
+import { cs } from './locales/cs';
+import { da } from './locales/da';
 import { de } from './locales/de';
+import { el } from './locales/el';
 import { es } from './locales/es';
-import { sq } from './locales/sq';
+import { et } from './locales/et';
+import { fi } from './locales/fi';
+import { fil } from './locales/fil';
 import { fr } from './locales/fr';
-import { ru } from './locales/ru';
-import { zh } from './locales/zh';
+import { hi } from './locales/hi';
+import { hr } from './locales/hr';
+import { hu } from './locales/hu';
+import { id } from './locales/id';
+import { it } from './locales/it';
 import { ja } from './locales/ja';
+import { ko } from './locales/ko';
+import { lv } from './locales/lv';
+import { mk } from './locales/mk';
+import { no } from './locales/no';
+import { pl } from './locales/pl';
 import { pt } from './locales/pt';
 import { ptBr } from './locales/pt-br';
-import { mk } from './locales/mk';
-import { el } from './locales/el';
-import { it } from './locales/it';
-import { tr } from './locales/tr';
-import { ko } from './locales/ko';
-import { sr } from './locales/sr';
-import { hr } from './locales/hr';
+import { ru } from './locales/ru';
+import { sk } from './locales/sk';
 import { sl } from './locales/sl';
-import { fil } from './locales/fil';
-import { id } from './locales/id';
-import { hi } from './locales/hi';
+import { sq } from './locales/sq';
+import { sr } from './locales/sr';
+import { tr } from './locales/tr';
 import { ur } from './locales/ur';
+import { zh } from './locales/zh';
 
 export type Language =
   | 'en'
+  | 'ar'
+  | 'cs'
+  | 'da'
   | 'de'
+  | 'el'
   | 'es'
-  | 'sq'
+  | 'et'
+  | 'fi'
+  | 'fil'
   | 'fr'
-  | 'ru'
-  | 'zh'
+  | 'hi'
+  | 'hr'
+  | 'hu'
+  | 'id'
+  | 'it'
   | 'ja'
+  | 'ko'
+  | 'lv'
+  | 'mk'
+  | 'no'
+  | 'pl'
   | 'pt'
   | 'pt-br'
-  | 'mk'
-  | 'el'
-  | 'it'
-  | 'tr'
-  | 'ko'
-  | 'sr'
-  | 'hr'
+  | 'ru'
+  | 'sk'
   | 'sl'
-  | 'fil'
-  | 'id'
-  | 'hi'
-  | 'ur';
+  | 'sq'
+  | 'sr'
+  | 'tr'
+  | 'ur'
+  | 'zh';
 
 export const LANGUAGES: { code: Language; label: string; shortLabel: string }[] = [
   { code: 'en', label: 'English', shortLabel: 'EN' },
+  { code: 'ar', label: 'العربية', shortLabel: 'AR' },
+  { code: 'cs', label: 'Čeština', shortLabel: 'CS' },
+  { code: 'da', label: 'Dansk', shortLabel: 'DA' },
   { code: 'de', label: 'Deutsch', shortLabel: 'DE' },
+  { code: 'el', label: 'Ελληνικά', shortLabel: 'EL' },
   { code: 'es', label: 'Español', shortLabel: 'ES' },
+  { code: 'et', label: 'Eesti', shortLabel: 'ET' },
+  { code: 'fi', label: 'Suomi', shortLabel: 'FI' },
+  { code: 'fil', label: 'Filipino', shortLabel: 'FIL' },
   { code: 'fr', label: 'Français', shortLabel: 'FR' },
-  { code: 'ru', label: 'Русский', shortLabel: 'RU' },
-  { code: 'zh', label: '中文', shortLabel: 'ZH' },
+  { code: 'hi', label: 'हिन्दी', shortLabel: 'HI' },
+  { code: 'hr', label: 'Hrvatski', shortLabel: 'HR' },
+  { code: 'hu', label: 'Magyar', shortLabel: 'HU' },
+  { code: 'id', label: 'Bahasa Indonesia', shortLabel: 'ID' },
+  { code: 'it', label: 'Italiano', shortLabel: 'IT' },
   { code: 'ja', label: '日本語', shortLabel: 'JA' },
-  { code: 'sq', label: 'Shqip', shortLabel: 'SQ' },
+  { code: 'ko', label: '한국어', shortLabel: 'KO' },
+  { code: 'lv', label: 'Latviešu', shortLabel: 'LV' },
+  { code: 'mk', label: 'Македонски', shortLabel: 'MK' },
+  { code: 'no', label: 'Norsk', shortLabel: 'NO' },
+  { code: 'pl', label: 'Polski', shortLabel: 'PL' },
   { code: 'pt', label: 'Português (PT)', shortLabel: 'PT' },
   { code: 'pt-br', label: 'Português (Brasil)', shortLabel: 'BR' },
-  { code: 'mk', label: 'Македонски', shortLabel: 'MK' },
-  { code: 'el', label: 'Ελληνικά', shortLabel: 'EL' },
-  { code: 'it', label: 'Italiano', shortLabel: 'IT' },
-  { code: 'tr', label: 'Türkçe', shortLabel: 'TR' },
-  { code: 'ko', label: '한국어', shortLabel: 'KO' },
-  { code: 'sr', label: 'Српски', shortLabel: 'SR' },
-  { code: 'hr', label: 'Hrvatski', shortLabel: 'HR' },
+  { code: 'ru', label: 'Русский', shortLabel: 'RU' },
+  { code: 'sk', label: 'Slovenčina', shortLabel: 'SK' },
   { code: 'sl', label: 'Slovenščina', shortLabel: 'SL' },
-  { code: 'fil', label: 'Filipino', shortLabel: 'FIL' },
-  { code: 'id', label: 'Bahasa Indonesia', shortLabel: 'ID' },
-  { code: 'hi', label: 'हिन्दी', shortLabel: 'HI' },
+  { code: 'sq', label: 'Shqip', shortLabel: 'SQ' },
+  { code: 'sr', label: 'Српски', shortLabel: 'SR' },
+  { code: 'tr', label: 'Türkçe', shortLabel: 'TR' },
   { code: 'ur', label: 'اردو', shortLabel: 'UR' },
+  { code: 'zh', label: '中文', shortLabel: 'ZH' },
 ];
 
 export function getLanguageShortLabel(code: Language): string {
@@ -76,52 +106,72 @@ export function getLanguageShortLabel(code: Language): string {
 
 const translations: Record<Language, TranslationTree> = {
   en,
+  ar,
+  cs,
+  da,
   de,
+  el,
   es,
-  sq,
+  et,
+  fi,
+  fil,
   fr,
-  ru,
-  zh,
+  hi,
+  hr,
+  hu,
+  id,
+  it,
   ja,
+  ko,
+  lv,
+  mk,
+  no,
+  pl,
   pt,
   'pt-br': ptBr,
-  mk,
-  el,
-  it,
-  tr,
-  ko,
-  sr,
-  hr,
+  ru,
+  sk,
   sl,
-  fil,
-  id,
-  hi,
+  sq,
+  sr,
+  tr,
   ur,
+  zh,
 };
 
 const LANGUAGE_CODES: Language[] = [
   'en',
+  'ar',
+  'cs',
+  'da',
   'de',
+  'el',
   'es',
-  'sq',
+  'et',
+  'fi',
+  'fil',
   'fr',
-  'ru',
-  'zh',
+  'hi',
+  'hr',
+  'hu',
+  'id',
+  'it',
   'ja',
+  'ko',
+  'lv',
+  'mk',
+  'no',
+  'pl',
   'pt',
   'pt-br',
-  'mk',
-  'el',
-  'it',
-  'tr',
-  'ko',
-  'sr',
-  'hr',
+  'ru',
+  'sk',
   'sl',
-  'fil',
-  'id',
-  'hi',
+  'sq',
+  'sr',
+  'tr',
   'ur',
+  'zh',
 ];
 
 export function isLanguage(value: string): value is Language {
