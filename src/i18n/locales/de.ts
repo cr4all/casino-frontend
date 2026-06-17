@@ -231,6 +231,8 @@ export const de: TranslationTree = {
     requestDeposit: 'Einzahlung anfordern',
     paymentInstructions: 'Zahlungsanweisungen',
     sendToAddress: 'Sende {{amount}} {{currency}} an die Adresse unten',
+    sendToAddressFiatEstimate: 'Sende ungefähr {{fiatAmount}} {{fiatCurrency}} im Wert von {{crypto}} an die Adresse unten',
+    sendToAddressFiatDisclaimer: 'Der genaue Krypto-Betrag kann je nach Wechselkurs zum Überweisungszeitpunkt variieren.',
     openPaymentPage: 'Zahlungsseite öffnen',
     cryptoConfirmHint: 'Nach Blockchain-Bestätigung wird Ihr Wallet automatisch gutgeschrieben.',
     redirectConfirmHint: 'Zahlung auf der SmilePayz-Seite abschließen. Gutschrift nach Bestätigung.',

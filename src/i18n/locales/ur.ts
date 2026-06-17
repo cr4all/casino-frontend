@@ -231,6 +231,8 @@ export const ur: TranslationTree = {
     requestDeposit: 'جمع کی درخواست',
     paymentInstructions: 'ادائیگی کی ہدایات',
     sendToAddress: 'نیچے دیے پتے پر {{amount}} {{currency}} بھیجیں',
+    sendToAddressFiatEstimate: 'نیچے دیے پتے پر تقریباً {{fiatAmount}} {{fiatCurrency}} مالیت کے {{crypto}} بھیجیں',
+    sendToAddressFiatDisclaimer: 'درست کرپٹو رقم منتقلی کے وقت شرح مبادلہ کے مطابق مختلف ہو سکتی ہے۔',
     openPaymentPage: 'ادائیگی کا صفحہ کھولیں',
     cryptoConfirmHint: 'بلاک چین تصدیق کے بعد والیٹ خود بخود کریڈٹ ہو جائے گا۔',
     redirectConfirmHint: 'SmilePayz پر ادائیگی مکمل کریں۔ تصدیق کے بعد کریڈٹ۔',

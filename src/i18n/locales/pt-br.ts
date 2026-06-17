@@ -231,6 +231,8 @@ export const ptBr: TranslationTree = {
     requestDeposit: 'Solicitar depósito',
     paymentInstructions: 'Instruções de pagamento',
     sendToAddress: 'Envie {{amount}} {{currency}} ao endereço abaixo',
+    sendToAddressFiatEstimate: 'Envie aproximadamente {{fiatAmount}} {{fiatCurrency}} em {{crypto}} ao endereço abaixo',
+    sendToAddressFiatDisclaimer: 'O valor exato em cripto pode variar conforme a taxa de câmbio no momento da transferência.',
     openPaymentPage: 'Abrir página de pagamento',
     cryptoConfirmHint: 'Após confirmação na blockchain, a carteira será creditada automaticamente.',
     redirectConfirmHint: 'Complete o pagamento em SmilePayz. Crédito após confirmação.',

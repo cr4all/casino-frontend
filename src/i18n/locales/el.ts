@@ -231,6 +231,8 @@ export const el: TranslationTree = {
     requestDeposit: 'Αίτημα κατάθεσης',
     paymentInstructions: 'Οδηγίες πληρωμής',
     sendToAddress: 'Στείλτε {{amount}} {{currency}} στη διεύθυνση παρακάτω',
+    sendToAddressFiatEstimate: 'Στείλτε περίπου {{fiatAmount}} {{fiatCurrency}} αξίας {{crypto}} στη διεύθυνση παρακάτω',
+    sendToAddressFiatDisclaimer: 'Το ακριβές ποσό κρυπτονομίσματος μπορεί να διαφέρει ανάλογα με τις ισοτιμίες κατά τη στιγμή της μεταφοράς.',
     openPaymentPage: 'Άνοιγμα σελίδας πληρωμής',
     cryptoConfirmHint: 'Μετά την επιβεβαίωση blockchain, το πορτοφόλι θα πιστωθεί αυτόματα.',
     redirectConfirmHint: 'Ολοκληρώστε την πληρωμή στο SmilePayz. Πίστωση μετά την επιβεβαίωση.',

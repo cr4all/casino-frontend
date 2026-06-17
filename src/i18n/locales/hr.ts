@@ -231,6 +231,8 @@ export const hr: TranslationTree = {
     requestDeposit: 'Zatraži depozit',
     paymentInstructions: 'Upute za plaćanje',
     sendToAddress: 'Pošaljite {{amount}} {{currency}} na adresu ispod',
+    sendToAddressFiatEstimate: 'Pošaljite otprilike {{fiatAmount}} {{fiatCurrency}} vrijednosti {{crypto}} na adresu ispod',
+    sendToAddressFiatDisclaimer: 'Točan iznos kripta može varirati ovisno o tečajevima u trenutku prijenosa.',
     openPaymentPage: 'Otvori stranicu za plaćanje',
     cryptoConfirmHint: 'Nakon blockchain potvrde, novčanik se automatski kreditira.',
     redirectConfirmHint: 'Završite plaćanje na SmilePayz. Kredit nakon potvrde.',

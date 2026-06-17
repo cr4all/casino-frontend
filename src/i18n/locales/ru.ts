@@ -231,6 +231,8 @@ export const ru: TranslationTree = {
     requestDeposit: 'Запросить депозит',
     paymentInstructions: 'Инструкции по оплате',
     sendToAddress: 'Отправьте {{amount}} {{currency}} на адрес ниже',
+    sendToAddressFiatEstimate: 'Отправьте примерно {{fiatAmount}} {{fiatCurrency}} в {{crypto}} на адрес ниже',
+    sendToAddressFiatDisclaimer: 'Точная сумма в криптовалюте может отличаться в зависимости от курса на момент перевода.',
     openPaymentPage: 'Открыть страницу оплаты',
     cryptoConfirmHint: 'После подтверждения в блокчейне кошелёк будет зачислен автоматически.',
     redirectConfirmHint: 'Завершите оплату на SmilePayz. Зачисление после подтверждения.',

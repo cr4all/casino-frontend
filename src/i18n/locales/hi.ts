@@ -231,6 +231,8 @@ export const hi: TranslationTree = {
     requestDeposit: 'जमा का अनुरोध',
     paymentInstructions: 'भुगतान निर्देश',
     sendToAddress: 'नीचे दिए पते पर {{amount}} {{currency}} भेजें',
+    sendToAddressFiatEstimate: 'नीचे दिए पते पर लगभग {{fiatAmount}} {{fiatCurrency}} मूल्य के {{crypto}} भेजें',
+    sendToAddressFiatDisclaimer: 'सटीक क्रिप्टो राशि ट्रांसफर के समय विनिमय दर के अनुसार भिन्न हो सकती है।',
     openPaymentPage: 'भुगतान पृष्ठ खोलें',
     cryptoConfirmHint: 'ब्लॉकचेन पुष्टि के बाद वॉलेट स्वचालित क्रेडिट होगा।',
     redirectConfirmHint: 'SmilePayz पर भुगतान पूरा करें। पुष्टि के बाद क्रेडिट।',

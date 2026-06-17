@@ -231,6 +231,8 @@ export const sq: TranslationTree = {
     requestDeposit: 'Kërko depozitë',
     paymentInstructions: 'Udhëzimet e pagesës',
     sendToAddress: 'Dërgo {{amount}} {{currency}} te adresa më poshtë',
+    sendToAddressFiatEstimate: 'Dërgo rreth {{fiatAmount}} {{fiatCurrency}} vlerë në {{crypto}} te adresa më poshtë',
+    sendToAddressFiatDisclaimer: 'Shuma e saktë e kriptos mund të ndryshojë sipas kursit në momentin e transferimit.',
     openPaymentPage: 'Hap faqen e pagesës',
     cryptoConfirmHint: 'Pas konfirmimit në blockchain, portofoli do të kreditohet automatikisht.',
     redirectConfirmHint: 'Përfundoni pagesën në SmilePayz. Kreditohet pas konfirmimit.',

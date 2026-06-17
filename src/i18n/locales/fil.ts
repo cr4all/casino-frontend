@@ -231,6 +231,8 @@ export const fil: TranslationTree = {
     requestDeposit: 'Humiling ng Deposito',
     paymentInstructions: 'Mga Tagubilin sa Pagbabayad',
     sendToAddress: 'Ipadala ang {{amount}} {{currency}} sa address sa ibaba',
+    sendToAddressFiatEstimate: 'Ipadala ang humigit-kumulang {{fiatAmount}} {{fiatCurrency}} na halaga ng {{crypto}} sa address sa ibaba',
+    sendToAddressFiatDisclaimer: 'Maaaring mag-iba ang eksaktong halaga ng crypto depende sa exchange rate sa oras ng transfer.',
     openPaymentPage: 'Buksan ang Pahina ng Pagbabayad',
     cryptoConfirmHint: 'Pagkatapos ng blockchain confirmation, awtomatikong ma-credit ang wallet.',
     redirectConfirmHint: 'Kumpletuhin ang pagbabayad sa SmilePayz. Credit pagkatapos ng kumpirmasyon.',

@@ -231,6 +231,8 @@ export const id: TranslationTree = {
     requestDeposit: 'Ajukan Deposit',
     paymentInstructions: 'Instruksi Pembayaran',
     sendToAddress: 'Kirim {{amount}} {{currency}} ke alamat di bawah',
+    sendToAddressFiatEstimate: 'Kirim sekitar {{fiatAmount}} {{fiatCurrency}} senilai {{crypto}} ke alamat di bawah',
+    sendToAddressFiatDisclaimer: 'Jumlah kripto yang tepat dapat bervariasi tergantung nilai tukar saat transfer.',
     openPaymentPage: 'Buka Halaman Pembayaran',
     cryptoConfirmHint: 'Setelah konfirmasi blockchain, dompet akan dikreditkan otomatis.',
     redirectConfirmHint: 'Selesaikan pembayaran di SmilePayz. Kredit setelah konfirmasi.',

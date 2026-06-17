@@ -231,6 +231,8 @@ export const ja: TranslationTree = {
     requestDeposit: '入金を申請',
     paymentInstructions: '支払い手順',
     sendToAddress: '以下のアドレスに {{amount}} {{currency}} を送金してください',
+    sendToAddressFiatEstimate: '以下のアドレスに約 {{fiatAmount}} {{fiatCurrency}} 相当の {{crypto}} を送金してください',
+    sendToAddressFiatDisclaimer: '送金時の為替レートにより、実際の暗号通貨数量は変動する場合があります。',
     openPaymentPage: '支払いページを開く',
     cryptoConfirmHint: 'ブロックチェーン確認後、ウォレットに自動反映されます。',
     redirectConfirmHint: 'SmilePayzで支払いを完了してください。確認後に反映されます。',

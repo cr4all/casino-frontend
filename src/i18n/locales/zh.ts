@@ -231,6 +231,8 @@ export const zh: TranslationTree = {
     requestDeposit: '申请存款',
     paymentInstructions: '支付说明',
     sendToAddress: '向以下地址发送 {{amount}} {{currency}}',
+    sendToAddressFiatEstimate: '向以下地址发送约 {{fiatAmount}} {{fiatCurrency}} 等值的 {{crypto}}',
+    sendToAddressFiatDisclaimer: '实际加密货币数量可能会因转账时的汇率而有所不同。',
     openPaymentPage: '打开支付页面',
     cryptoConfirmHint: '区块链确认后，钱包将自动入账。',
     redirectConfirmHint: '在 SmilePayz 完成支付，确认后入账。',

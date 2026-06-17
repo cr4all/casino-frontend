@@ -231,6 +231,8 @@ export const tr: TranslationTree = {
     requestDeposit: 'Yatırım talep et',
     paymentInstructions: 'Ödeme talimatları',
     sendToAddress: 'Aşağıdaki adrese {{amount}} {{currency}} gönderin',
+    sendToAddressFiatEstimate: 'Aşağıdaki adrese yaklaşık {{fiatAmount}} {{fiatCurrency}} değerinde {{crypto}} gönderin',
+    sendToAddressFiatDisclaimer: 'Kesin kripto tutarı, transfer anındaki döviz kuruna göre değişebilir.',
     openPaymentPage: 'Ödeme sayfasını aç',
     cryptoConfirmHint: 'Blockchain onayından sonra cüzdan otomatik yüklenir.',
     redirectConfirmHint: 'SmilePayz’de ödemeyi tamamlayın. Onay sonrası yüklenir.',
