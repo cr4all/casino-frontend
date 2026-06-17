@@ -330,6 +330,8 @@ export const el: TranslationTree = {
     date: 'Ημερομηνία',
     method: 'Μέθοδος',
     status: 'Κατάσταση',
+    requestedAmount: 'Requested',
+    receivedAmount: 'Received',
   },
   gamePlay: {
     launching: 'Εκκίνηση παιχνιδιού...',

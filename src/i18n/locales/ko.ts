@@ -332,6 +332,8 @@ export const ko: TranslationTree = {
     date: '날짜',
     method: '결제 수단',
     status: '상태',
+    requestedAmount: '신청 금액',
+    receivedAmount: '실제 입금액',
   },
   gamePlay: {
     launching: '게임 시작 중...',

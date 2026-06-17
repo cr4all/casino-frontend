@@ -330,6 +330,8 @@ export const hi: TranslationTree = {
     date: 'तारीख',
     method: 'विधि',
     status: 'स्थिति',
+    requestedAmount: 'Requested',
+    receivedAmount: 'Received',
   },
   gamePlay: {
     launching: 'गेम शुरू हो रहा है...',

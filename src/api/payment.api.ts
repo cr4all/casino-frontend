@@ -39,6 +39,7 @@ export interface DepositRequest {
 export interface DepositItem {
   id: number;
   amount: string;
+  received_amount: string | null;
   currency: string;
   credited_amount: string | null;
   credited_currency: string | null;

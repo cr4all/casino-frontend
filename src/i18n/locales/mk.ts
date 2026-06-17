@@ -330,6 +330,8 @@ export const mk: TranslationTree = {
     date: 'Датум',
     method: 'Метод',
     status: 'Статус',
+    requestedAmount: 'Requested',
+    receivedAmount: 'Received',
   },
   gamePlay: {
     launching: 'Се стартува игра...',

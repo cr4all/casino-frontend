@@ -330,6 +330,8 @@ export const sq: TranslationTree = {
     date: 'Data',
     method: 'Metoda',
     status: 'Statusi',
+    requestedAmount: 'Requested',
+    receivedAmount: 'Received',
   },
   gamePlay: {
     launching: 'Duke nisur lojën...',

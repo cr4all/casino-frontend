@@ -330,6 +330,8 @@ export const ru: TranslationTree = {
     date: 'Дата',
     method: 'Метод',
     status: 'Статус',
+    requestedAmount: 'Requested',
+    receivedAmount: 'Received',
   },
   gamePlay: {
     launching: 'Запуск игры...',

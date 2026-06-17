@@ -330,6 +330,8 @@ export const fil: TranslationTree = {
     date: 'Petsa',
     method: 'Paraan',
     status: 'Status',
+    requestedAmount: 'Requested',
+    receivedAmount: 'Received',
   },
   gamePlay: {
     launching: 'Sinisimulan ang laro...',

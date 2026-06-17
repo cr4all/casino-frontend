@@ -330,6 +330,8 @@ export const ur: TranslationTree = {
     date: 'تاریخ',
     method: 'طریقہ',
     status: 'حالت',
+    requestedAmount: 'Requested',
+    receivedAmount: 'Received',
   },
   gamePlay: {
     launching: 'گیم شروع ہو رہی ہے...',

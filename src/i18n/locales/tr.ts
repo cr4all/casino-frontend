@@ -330,6 +330,8 @@ export const tr: TranslationTree = {
     date: 'Tarih',
     method: 'Yöntem',
     status: 'Durum',
+    requestedAmount: 'Requested',
+    receivedAmount: 'Received',
   },
   gamePlay: {
     launching: 'Oyun başlatılıyor...',

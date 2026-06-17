@@ -330,6 +330,8 @@ export const de: TranslationTree = {
     date: 'Datum',
     method: 'Methode',
     status: 'Status',
+    requestedAmount: 'Requested',
+    receivedAmount: 'Received',
   },
   gamePlay: {
     launching: 'Spiel wird gestartet...',

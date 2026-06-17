@@ -330,6 +330,8 @@ export const ja: TranslationTree = {
     date: '日付',
     method: '方法',
     status: 'ステータス',
+    requestedAmount: 'Requested',
+    receivedAmount: 'Received',
   },
   gamePlay: {
     launching: 'ゲームを起動中...',

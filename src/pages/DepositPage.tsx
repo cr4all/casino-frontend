@@ -18,6 +18,7 @@ import { CryptoCurrencyPicker } from '@/components/deposit/CryptoCurrencyPicker'
 import { getApiErrorMessage } from '@/utils/apiError';
 import { formatCryptoCurrencyLabel } from '@/utils/cryptoIcon';
 import { formatBalance } from '@/utils/formatBalance';
+import { formatDepositCurrencyAmount, formatDepositReceivedAmount } from '@/utils/formatDepositDisplay';
 
 function CopyButton({ value }: { value: string }) {
   const [copied, setCopied] = useState(false);
@@ -38,17 +39,6 @@ function CopyButton({ value }: { value: string }) {
       {copied ? t('common.copied') : t('common.copy')}
     </button>
   );
-}
-
-function formatDepositAmount(d: DepositItem): string {
-  if (d.credited_amount && d.credited_currency && d.status === 'completed') {
-    if (d.currency !== d.credited_currency) {
-      return `${d.currency} ${formatBalance(d.amount)} → ${d.credited_currency} ${formatBalance(d.credited_amount)}`;
-    }
-    return `${d.credited_currency} ${formatBalance(d.credited_amount)}`;
-  }
-
-  return `${d.currency} ${formatBalance(d.amount)}`;
 }
 
 export function DepositPage() {
@@ -371,7 +361,8 @@ export function DepositPage() {
                   <thead>
                     <tr className="border-b border-white/5 bg-surface text-left">
                       <th className="px-4 py-3 text-xs text-muted">{t('deposit.id')}</th>
-                      <th className="px-4 py-3 text-xs text-muted">{t('deposit.amount')}</th>
+                      <th className="px-4 py-3 text-xs text-muted">{t('transactions.requestedAmount')}</th>
+                      <th className="px-4 py-3 text-xs text-muted">{t('transactions.receivedAmount')}</th>
                       <th className="px-4 py-3 text-xs text-muted">{t('deposit.method')}</th>
                       <th className="px-4 py-3 text-xs text-muted">{t('transactions.status')}</th>
                       <th className="px-4 py-3 text-xs text-muted hidden sm:table-cell">{t('deposit.date')}</th>
@@ -382,7 +373,10 @@ export function DepositPage() {
                       <tr key={d.id} className="border-b border-white/5 hover:bg-surface/50">
                         <td className="px-4 py-3 text-white">#{d.id}</td>
                         <td className="px-4 py-3 font-mono text-white text-xs">
-                          {formatDepositAmount(d)}
+                          {formatDepositCurrencyAmount(d.currency, d.amount)}
+                        </td>
+                        <td className="px-4 py-3 font-mono text-white text-xs">
+                          {formatDepositReceivedAmount(d) ?? '—'}
                         </td>
                         <td className="px-4 py-3 text-muted">{tPaymentMethod(d.payment_method)}</td>
                         <td className="px-4 py-3"><StatusBadge status={d.status} /></td>

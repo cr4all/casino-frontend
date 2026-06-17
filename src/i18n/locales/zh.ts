@@ -330,6 +330,8 @@ export const zh: TranslationTree = {
     date: '日期',
     method: '方式',
     status: '状态',
+    requestedAmount: 'Requested',
+    receivedAmount: 'Received',
   },
   gamePlay: {
     launching: '正在启动游戏...',

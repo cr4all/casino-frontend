@@ -330,6 +330,8 @@ export const en = {
     date: 'Date',
     method: 'Method',
     status: 'Status',
+    requestedAmount: 'Requested',
+    receivedAmount: 'Received',
   },
   gamePlay: {
     launching: 'Launching game...',

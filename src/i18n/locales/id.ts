@@ -330,6 +330,8 @@ export const id: TranslationTree = {
     date: 'Tanggal',
     method: 'Metode',
     status: 'Status',
+    requestedAmount: 'Requested',
+    receivedAmount: 'Received',
   },
   gamePlay: {
     launching: 'Memulai permainan...',

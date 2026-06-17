@@ -10,6 +10,7 @@ import { useAuthStore } from '@/stores/authStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import type { BetHistoryItem, PaginationMeta, Transaction } from '@/types';
 import { formatBalance } from '@/utils/formatBalance';
+import { formatDepositCurrencyAmount, formatDepositReceivedAmount } from '@/utils/formatDepositDisplay';
 
 type Tab = 'bets' | 'deposits' | 'withdrawals' | 'wallet';
 
@@ -140,7 +141,7 @@ export function TransactionsPage() {
           />
         ) : (
           <>
-            <PaymentTable items={deposits} amountHeader={t('transactions.amount')} />
+            <DepositHistoryTable deposits={deposits} />
             <Pagination pagination={pagination} onPageChange={setPage} />
           </>
         )
@@ -194,6 +195,47 @@ export function TransactionsPage() {
         </>
       )}
     </div>
+  );
+}
+
+function DepositHistoryTable({ deposits }: { deposits: DepositItem[] }) {
+  const { t, tPaymentMethod, formatDate } = useTranslation();
+
+  return (
+    <Table>
+      <thead>
+        <tr className="border-b border-white/5 bg-surface text-left">
+          <Th>{t('deposit.id')}</Th>
+          <Th>{t('transactions.requestedAmount')}</Th>
+          <Th>{t('transactions.receivedAmount')}</Th>
+          <Th>{t('transactions.method')}</Th>
+          <Th>{t('transactions.status')}</Th>
+          <Th className="hidden sm:table-cell">{t('transactions.date')}</Th>
+        </tr>
+      </thead>
+      <tbody>
+        {deposits.map((item) => {
+          const received = formatDepositReceivedAmount(item);
+
+          return (
+            <tr key={item.id} className="border-b border-white/5 hover:bg-surface/50">
+              <td className="px-4 py-3 text-white">#{item.id}</td>
+              <td className="px-4 py-3 font-mono text-white">
+                {formatDepositCurrencyAmount(item.currency, item.amount)}
+              </td>
+              <td className="px-4 py-3 font-mono text-white">
+                {received ?? '—'}
+              </td>
+              <td className="px-4 py-3 text-muted">{tPaymentMethod(item.payment_method)}</td>
+              <td className="px-4 py-3"><StatusBadge status={item.status} /></td>
+              <td className="px-4 py-3 text-xs text-muted hidden sm:table-cell">
+                {formatDate(item.created_at)}
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </Table>
   );
 }
 

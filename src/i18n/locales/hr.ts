@@ -330,6 +330,8 @@ export const hr: TranslationTree = {
     date: 'Datum',
     method: 'Način',
     status: 'Status',
+    requestedAmount: 'Requested',
+    receivedAmount: 'Received',
   },
   gamePlay: {
     launching: 'Pokretanje igre...',
