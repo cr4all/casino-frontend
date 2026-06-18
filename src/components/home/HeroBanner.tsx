@@ -5,18 +5,34 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useAuthStore } from '@/stores/authStore';
 import { typePath } from '@/stores/gameStore';
+import { useUiStore } from '@/stores/uiStore';
 import { Button } from '@/components/common/Button';
 import { FirstDepositBonusText, firstDepositBannerAriaLabel } from '@/components/home/FirstDepositBonusText';
 import { HeroBannerText } from '@/components/home/HeroBannerText';
 
-function HeroCtaButton({ to }: { to: string }) {
+function HeroCtaButton({ playTo }: { playTo: string }) {
   const { t } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
+  const openModal = useUiStore((s) => s.openModal);
+
+  if (!isAuthenticated) {
+    return (
+      <button
+        type="button"
+        onClick={() => openModal('register')}
+        className="hero-banner-text__cta-link border-0 bg-transparent p-0"
+      >
+        <Button variant="gold" className="hero-banner-text__cta">
+          {t('hero.registerPromo')}
+        </Button>
+      </button>
+    );
+  }
 
   return (
-    <Link to={to} className="hero-banner-text__cta-link">
+    <Link to={playTo} className="hero-banner-text__cta-link">
       <Button variant="gold" className="hero-banner-text__cta">
-        {isAuthenticated ? t('hero.playNow') : t('hero.registerPromo')}
+        {t('hero.playNow')}
       </Button>
     </Link>
   );
@@ -81,7 +97,7 @@ function WelcomeHeroSlide() {
           heroLine="IBETS24"
           subtitleLine={t('hero.welcomeTagline')}
         />
-        <HeroCtaButton to="/deposit" />
+        <HeroCtaButton playTo="/category/all" />
       </HeroSlideContent>
     </div>
   );
@@ -104,7 +120,7 @@ function PromoHeroSlide({ imageSrc, line1, line1Accent, line2, to }: PromoHeroSl
 
       <HeroSlideContent>
         <HeroBannerText topLine={line1} titleLine={line1Accent} heroLine={line2} />
-        <HeroCtaButton to={to} />
+        <HeroCtaButton playTo={to} />
       </HeroSlideContent>
     </div>
   );
