@@ -115,8 +115,8 @@ export function AffiliateDashboardPage() {
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               <StatCard label={t('affiliate.referredPlayers')} value={stats.referred_players_count} />
               <StatCard label={t('affiliate.commissions')} value={stats.commissions_count} />
-              <StatCard label={t('affiliate.totalCommission')} value={stats.total_commission} />
-              <StatCard label={t('affiliate.pendingCommission')} value={stats.pending_commission} />
+              <StatCard label={t('affiliate.totalCommission')} value={formatBalance(stats.total_commission)} />
+              <StatCard label={t('affiliate.pendingCommission')} value={formatBalance(stats.pending_commission)} />
             </div>
           )}
 
