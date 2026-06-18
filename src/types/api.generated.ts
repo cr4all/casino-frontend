@@ -579,14 +579,14 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/payment/methods": {
+    "/payment/countries": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        /** List active payment methods */
+        /** List countries available for deposit and withdrawal */
         get: {
             parameters: {
                 query?: never;
@@ -596,14 +596,14 @@ export interface paths {
             };
             requestBody?: never;
             responses: {
-                /** @description Payment methods */
+                /** @description Payment countries */
                 200: {
                     headers: {
                         [name: string]: unknown;
                     };
                     content: {
                         "application/json": components["schemas"]["SuccessEnvelope"] & {
-                            data?: components["schemas"]["PaymentMethod"][];
+                            data?: components["schemas"]["PaymentCountryList"];
                         };
                     };
                 };
@@ -618,31 +618,75 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/payment/crypto/currencies": {
+    "/payment/deposit-options": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        /** List available crypto currencies for deposit (NOWPayments) */
+        /** List deposit payment options for a country */
         get: {
             parameters: {
-                query?: never;
+                query: {
+                    country: string;
+                };
                 header?: never;
                 path?: never;
                 cookie?: never;
             };
             requestBody?: never;
             responses: {
-                /** @description Available crypto currencies */
+                /** @description Deposit options */
                 200: {
                     headers: {
                         [name: string]: unknown;
                     };
                     content: {
                         "application/json": components["schemas"]["SuccessEnvelope"] & {
-                            data?: components["schemas"]["CryptoCurrencyList"];
+                            data?: components["schemas"]["PaymentOptionList"];
+                        };
+                    };
+                };
+                401: components["responses"]["Unauthorized"];
+                422: components["responses"]["ValidationError"];
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/payment/withdraw-options": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** List withdrawal payment options for a country */
+        get: {
+            parameters: {
+                query: {
+                    country: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Withdrawal options */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: components["schemas"]["PaymentOptionList"];
                         };
                     };
                 };
@@ -669,10 +713,9 @@ export interface paths {
         get: {
             parameters: {
                 query: {
-                    payment_method_id: number;
+                    option_key: string;
                     amount: string;
-                    /** @description ISO 3166-1 alpha-2 country code for Smilepayz local payment. Required when the payment method type is local. */
-                    local_country?: string;
+                    country: string;
                 };
                 header?: never;
                 path?: never;
@@ -748,22 +791,21 @@ export interface paths {
             requestBody: {
                 content: {
                     "application/json": {
-                        payment_method_id: number;
+                        /**
+                         * @description Selected payment option key from deposit-options response
+                         * @example local:4:ID:QRIS
+                         */
+                        option_key: string;
                         /**
                          * @description Decimal amount with up to 4 decimal places
                          * @example 100.0000
                          */
                         amount: string;
                         /**
-                         * @description Cryptocurrency ticker for crypto payment methods (e.g. btc, usdttrc20). Required when using a crypto payment method.
-                         * @example usdttrc20
-                         */
-                        pay_currency?: string;
-                        /**
-                         * @description ISO 3166-1 alpha-2 country code for Smilepayz local payment. Required when the payment method type is local.
+                         * @description ISO 3166-1 alpha-2 country code
                          * @example ID
                          */
-                        local_country?: string;
+                        country: string;
                     };
                 };
             };
@@ -834,9 +876,16 @@ export interface paths {
             requestBody: {
                 content: {
                     "application/json": {
-                        payment_method_id: number;
+                        /**
+                         * @description Selected payment option key from withdraw-options response
+                         * @example crypto:2:btc
+                         */
+                        option_key: string;
                         /** @example 50.0000 */
                         amount: string;
+                        /** @example US */
+                        country: string;
+                        /** @description Destination fields (address, account, network, etc.) based on option destination_fields */
                         destination: {
                             [key: string]: unknown;
                         };
@@ -1726,41 +1775,54 @@ export interface components {
             items: components["schemas"]["BetHistoryItem"][];
             pagination: components["schemas"]["Pagination"];
         };
-        PaymentMethod: {
-            id: number;
-            type: string;
-            name: string;
-            min_amount: string;
-            max_amount?: string | null;
-            /**
-             * @description Currency charged by the payment provider. Null for Smilepayz local payment until a country is selected.
-             * @example IDR
-             */
-            payment_currency?: string | null;
-            /**
-             * @description Player wallet (points) currency from registration
-             * @example EUR
-             */
-            wallet_currency?: string | null;
-            /** @description Smilepayz-supported countries for local payment methods */
-            supported_countries?: components["schemas"]["SmilePayzSupportedCountry"][];
-            /**
-             * @description Player profile country when supported by Smilepayz
-             * @example ID
-             */
-            default_country?: string | null;
-        };
-        SmilePayzSupportedCountry: {
+        PaymentCountry: {
             /** @example ID */
             code: string;
             /** @example Indonesia */
             name: string;
-            /** @example IDR */
-            currency: string;
-            /** @example indonesia */
-            region: string;
-            /** @example 10000.0000 */
+        };
+        PaymentCountryList: {
+            countries: components["schemas"]["PaymentCountry"][];
+            /** @example ID */
+            default_country?: string | null;
+        };
+        PaymentDestinationField: {
+            /** @example address */
+            name: string;
+            /** @example Wallet address */
+            label: string;
+            required: boolean;
+        };
+        PaymentOption: {
+            /** @example local:4:PH:GCASH */
+            key: string;
+            payment_method_id: number;
+            /** @enum {string} */
+            kind: "local" | "crypto" | "manual";
+            /** @example smilepayz */
+            provider?: string | null;
+            /** @example GCash */
+            label: string;
+            description?: string | null;
+            logo_url?: string | null;
+            /** @example gcash */
+            logo_key?: string | null;
+            /** @example PHP */
+            payment_currency: string;
+            /** @example 100.0000 */
             min_amount: string;
+            max_amount?: string | null;
+            /** @example PH */
+            local_country?: string | null;
+            /** @example GCASH */
+            local_payment_method?: string | null;
+            /** @example btc */
+            pay_currency?: string | null;
+            destination_fields: components["schemas"]["PaymentDestinationField"][];
+        };
+        PaymentOptionList: {
+            country: components["schemas"]["PaymentCountry"];
+            items: components["schemas"]["PaymentOption"][];
         };
         DepositQuote: {
             payment_amount: string;
@@ -1773,15 +1835,6 @@ export interface components {
             rate_display?: string;
             /** @description True for preview; final credit is determined at payment confirmation */
             is_estimate: boolean;
-        };
-        CryptoCurrency: {
-            /** @example btc */
-            code: string;
-            /** @example BTC */
-            name: string;
-        };
-        CryptoCurrencyList: {
-            items: components["schemas"]["CryptoCurrency"][];
         };
         DepositCreated: {
             deposit_id: number;
@@ -1801,6 +1854,8 @@ export interface components {
         DepositItem: {
             id?: number;
             amount?: string;
+            /** @description Actual amount received from the payment provider (payment currency) */
+            received_amount?: string | null;
             currency?: string;
             /** @description Wallet points credited after confirmation */
             credited_amount?: string | null;

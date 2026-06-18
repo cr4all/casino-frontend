@@ -1,29 +1,43 @@
 import api from '@/api/axios';
 import type { ApiResponse, PaginationMeta } from '@/types';
 
-export interface SmilePayzSupportedCountry {
+export interface PaymentCountry {
   code: string;
   name: string;
-  currency: string;
-  region: string;
-  min_amount: string;
 }
 
-export interface PaymentMethod {
-  id: number;
-  type: string;
+export interface PaymentCountryList {
+  countries: PaymentCountry[];
+  default_country: string | null;
+}
+
+export interface PaymentDestinationField {
   name: string;
+  label: string;
+  required: boolean;
+}
+
+export interface PaymentOption {
+  key: string;
+  payment_method_id: number;
+  kind: 'local' | 'crypto' | 'manual';
+  provider: string | null;
+  label: string;
+  description: string | null;
+  logo_url: string | null;
+  logo_key: string | null;
+  payment_currency: string;
   min_amount: string;
   max_amount: string | null;
-  payment_currency?: string | null;
-  wallet_currency?: string | null;
-  supported_countries?: SmilePayzSupportedCountry[];
-  default_country?: string | null;
+  local_country: string | null;
+  local_payment_method: string | null;
+  pay_currency: string | null;
+  destination_fields: PaymentDestinationField[];
 }
 
-export interface CryptoCurrency {
-  code: string;
-  name: string;
+export interface PaymentOptionList {
+  country: PaymentCountry;
+  items: PaymentOption[];
 }
 
 export interface DepositQuote {
@@ -70,39 +84,37 @@ export interface WithdrawalItem {
 }
 
 export const paymentApi = {
-  getMethods: async () => {
-    const { data } = await api.get<ApiResponse<PaymentMethod[]>>('/payment/methods');
+  getCountries: async () => {
+    const { data } = await api.get<ApiResponse<PaymentCountryList>>('/payment/countries');
     return data.data;
   },
 
-  getDepositQuote: async (paymentMethodId: number, amount: string, localCountry?: string) => {
+  getDepositOptions: async (country: string) => {
+    const { data } = await api.get<ApiResponse<PaymentOptionList>>('/payment/deposit-options', {
+      params: { country },
+    });
+    return data.data;
+  },
+
+  getWithdrawOptions: async (country: string) => {
+    const { data } = await api.get<ApiResponse<PaymentOptionList>>('/payment/withdraw-options', {
+      params: { country },
+    });
+    return data.data;
+  },
+
+  getDepositQuote: async (optionKey: string, amount: string, country: string) => {
     const { data } = await api.get<ApiResponse<DepositQuote>>('/payment/deposits/quote', {
-      params: {
-        payment_method_id: paymentMethodId,
-        amount,
-        ...(localCountry ? { local_country: localCountry } : {}),
-      },
+      params: { option_key: optionKey, amount, country },
     });
     return data.data;
   },
 
-  getCryptoCurrencies: async (paymentMethodId?: number) => {
-    const { data } = await api.get<ApiResponse<{ items: CryptoCurrency[] }>>('/payment/crypto/currencies', {
-      params: paymentMethodId ? { payment_method_id: paymentMethodId } : undefined,
-    });
-    return data.data.items;
-  },
-
-  createDeposit: async (
-    paymentMethodId: number,
-    amount: string,
-    options?: { payCurrency?: string; localCountry?: string },
-  ) => {
+  createDeposit: async (optionKey: string, amount: string, country: string) => {
     const { data } = await api.post<ApiResponse<DepositRequest>>('/payment/deposits', {
-      payment_method_id: paymentMethodId,
+      option_key: optionKey,
       amount,
-      ...(options?.payCurrency ? { pay_currency: options.payCurrency } : {}),
-      ...(options?.localCountry ? { local_country: options.localCountry } : {}),
+      country,
     });
     return data.data;
   },
@@ -115,10 +127,15 @@ export const paymentApi = {
     return data.data;
   },
 
-  createWithdrawal: async (paymentMethodId: number, amount: string, destination: Record<string, string>) => {
+  createWithdrawal: async (
+    optionKey: string,
+    amount: string,
+    country: string,
+    destination: Record<string, string>,
+  ) => {
     const { data } = await api.post<ApiResponse<{ withdrawal_id: number; status: string; amount: string }>>(
       '/payment/withdrawals',
-      { payment_method_id: paymentMethodId, amount, destination },
+      { option_key: optionKey, amount, country, destination },
     );
     return data.data;
   },

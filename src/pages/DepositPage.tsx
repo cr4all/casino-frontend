@@ -4,18 +4,19 @@ import QRCode from 'react-qr-code';
 import { useTranslation } from '@/hooks/useTranslation';
 import {
   paymentApi,
-  type CryptoCurrency,
   type DepositItem,
   type DepositQuote,
   type DepositRequest,
-  type PaymentMethod,
+  type PaymentCountry,
+  type PaymentOption,
 } from '@/api/payment.api';
 import { useAuthStore } from '@/stores/authStore';
 import { useWalletStore } from '@/stores/walletStore';
 import { Button } from '@/components/common/Button';
 import { StatusBadge } from '@/components/common/StatusBadge';
 import { CryptoAmountInput } from '@/components/deposit/CryptoAmountInput';
-import { CryptoCurrencyPicker } from '@/components/deposit/CryptoCurrencyPicker';
+import { PaymentCountrySelect } from '@/components/payment/PaymentCountrySelect';
+import { PaymentOptionGrid, PaymentOptionSummary } from '@/components/payment/PaymentOptionGrid';
 import { getApiErrorMessage } from '@/utils/apiError';
 import { formatCryptoCurrencyLabel } from '@/utils/cryptoIcon';
 import { formatBalance } from '@/utils/formatBalance';
@@ -43,15 +44,17 @@ function CopyButton({ value }: { value: string }) {
 }
 
 export function DepositPage() {
-  const { t, tPaymentMethod, tPaymentType, formatDate } = useTranslation();
+  const { t, tPaymentMethod, formatDate } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const fetchBalance = useWalletStore((s) => s.fetchBalance);
-  const [methods, setMethods] = useState<PaymentMethod[]>([]);
-  const [cryptoCurrencies, setCryptoCurrencies] = useState<CryptoCurrency[]>([]);
-  const [cryptoLoading, setCryptoLoading] = useState(false);
+  const [countries, setCountries] = useState<PaymentCountry[]>([]);
+  const [country, setCountry] = useState('');
+  const [options, setOptions] = useState<PaymentOption[]>([]);
+  const [optionsLoading, setOptionsLoading] = useState(false);
   const [deposits, setDeposits] = useState<DepositItem[]>([]);
-  const [methodId, setMethodId] = useState<number | ''>('');
-  const [payCurrency, setPayCurrency] = useState('');
+  const [step, setStep] = useState<1 | 2>(1);
+  const [confirmedOption, setConfirmedOption] = useState<PaymentOption | null>(null);
+  const [optionKey, setOptionKey] = useState('');
   const [amount, setAmount] = useState('');
   const [quote, setQuote] = useState<DepositQuote | null>(null);
   const [quoteLoading, setQuoteLoading] = useState(false);
@@ -61,67 +64,72 @@ export function DepositPage() {
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [lastDeposit, setLastDeposit] = useState<DepositRequest | null>(null);
-  const [localCountry, setLocalCountry] = useState('');
 
   const loadDeposits = () =>
     paymentApi.getDeposits().then((data) => setDeposits(data.items));
 
+  const resetToStep1 = () => {
+    setStep(1);
+    setConfirmedOption(null);
+    setOptionKey('');
+    setAmount('');
+    setQuote(null);
+    setQuoteError(false);
+    setError(null);
+  };
+
+  const handleCountryChange = (code: string) => {
+    setCountry(code);
+    resetToStep1();
+    setMessage(null);
+    setLastDeposit(null);
+  };
+
+  const handleOptionSelect = (option: PaymentOption) => {
+    setConfirmedOption(option);
+    setOptionKey(option.key);
+    setAmount('');
+    setQuote(null);
+    setQuoteError(false);
+    setError(null);
+    setMessage(null);
+    setStep(2);
+  };
+
+  const handleBackToMethods = () => {
+    setStep(1);
+    setAmount('');
+    setQuote(null);
+    setQuoteError(false);
+    setError(null);
+  };
+
   useEffect(() => {
     if (!isAuthenticated) return;
-    Promise.all([paymentApi.getMethods(), loadDeposits()])
+    Promise.all([paymentApi.getCountries(), loadDeposits()])
       .then(([data]) => {
-        setMethods(data);
-        if (data.length > 0) setMethodId(data[0].id);
+        setCountries(data.countries);
+        const initial = data.default_country ?? data.countries[0]?.code ?? '';
+        setCountry(initial);
       })
       .finally(() => setLoading(false));
   }, [isAuthenticated]);
 
-  const selected = methods.find((m) => m.id === methodId);
-  const isCrypto = selected?.type === 'crypto';
-  const isLocalGateway = selected?.type === 'local';
-  const selectedLocalCountry = selected?.supported_countries?.find((c) => c.code === localCountry);
-  const paymentCurrency = isLocalGateway
-    ? (selectedLocalCountry?.currency ?? '')
-    : (selected?.payment_currency ?? selected?.wallet_currency ?? '');
-  const effectiveMinAmount = isLocalGateway && selectedLocalCountry
-    ? selectedLocalCountry.min_amount
-    : selected?.min_amount;
-  const localCountryRequired = isLocalGateway && !localCountry;
-
   useEffect(() => {
-    if (!isLocalGateway || !selected) {
-      setLocalCountry('');
+    if (!country) {
+      setOptions([]);
       return;
     }
 
-    setLocalCountry(selected.default_country ?? '');
-  }, [isLocalGateway, selected?.id, selected?.default_country]);
+    setOptionsLoading(true);
+    paymentApi.getDepositOptions(country)
+      .then((data) => setOptions(data.items))
+      .catch(() => setOptions([]))
+      .finally(() => setOptionsLoading(false));
+  }, [country]);
 
   useEffect(() => {
-    if (!isCrypto) {
-      setCryptoCurrencies([]);
-      setPayCurrency('');
-      return;
-    }
-
-    setCryptoLoading(true);
-    paymentApi.getCryptoCurrencies(Number(methodId))
-      .then((items) => {
-        setCryptoCurrencies(items);
-        if (items.length > 0) setPayCurrency(items[0].code);
-      })
-      .catch(() => setCryptoCurrencies([]))
-      .finally(() => setCryptoLoading(false));
-  }, [isCrypto, methodId]);
-
-  useEffect(() => {
-    if (!methodId || !amount || Number(amount) <= 0) {
-      setQuote(null);
-      setQuoteError(false);
-      return;
-    }
-
-    if (isLocalGateway && !localCountry) {
+    if (step !== 2 || !optionKey || !amount || Number(amount) <= 0 || !country) {
       setQuote(null);
       setQuoteError(false);
       return;
@@ -132,7 +140,7 @@ export function DepositPage() {
 
     const timer = setTimeout(() => {
       paymentApi
-        .getDepositQuote(Number(methodId), amount, isLocalGateway ? localCountry : undefined)
+        .getDepositQuote(optionKey, amount, country)
         .then(setQuote)
         .catch(() => {
           setQuote(null);
@@ -142,7 +150,7 @@ export function DepositPage() {
     }, 400);
 
     return () => clearTimeout(timer);
-  }, [methodId, amount, isLocalGateway, localCountry]);
+  }, [step, optionKey, amount, country]);
 
   if (!isAuthenticated) {
     return <Navigate to="/" replace />;
@@ -150,22 +158,13 @@ export function DepositPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!methodId || !amount) return;
-    if (isCrypto && !payCurrency) return;
-    if (localCountryRequired) return;
+    if (!optionKey || !amount || !country) return;
     setSubmitting(true);
     setError(null);
     setMessage(null);
     setLastDeposit(null);
     try {
-      const result = await paymentApi.createDeposit(
-        methodId,
-        amount,
-        {
-          payCurrency: isCrypto ? payCurrency : undefined,
-          localCountry: isLocalGateway ? localCountry : undefined,
-        },
-      );
+      const result = await paymentApi.createDeposit(optionKey, amount, country);
       setLastDeposit(result);
       setMessage(t('deposit.submitted', { id: result.deposit_id, status: result.status }));
       setAmount('');
@@ -180,11 +179,11 @@ export function DepositPage() {
   };
 
   const paymentInfo = lastDeposit?.payment_info ?? {};
-  const isCryptoPayment = isCrypto || Boolean(paymentInfo.pay_address || paymentInfo.address);
+  const isCryptoPayment = confirmedOption?.kind === 'crypto' || Boolean(paymentInfo.pay_address || paymentInfo.address);
   const paymentUrl = typeof paymentInfo.payment_url === 'string' ? paymentInfo.payment_url : null;
   const qrString = typeof paymentInfo.qr_string === 'string' ? paymentInfo.qr_string : null;
   const isRedirectPayment = Boolean(paymentUrl);
-  const payCurrencyCode = String(paymentInfo.pay_currency ?? paymentInfo.currency ?? '');
+  const payCurrencyCode = String(paymentInfo.pay_currency ?? paymentInfo.currency ?? confirmedOption?.pay_currency ?? '');
   const payAmountRaw = paymentInfo.pay_amount != null && paymentInfo.pay_amount !== ''
     ? String(paymentInfo.pay_amount)
     : '';
@@ -195,135 +194,100 @@ export function DepositPage() {
     && lastDeposit.amount !== '';
 
   return (
-    <div className="mx-auto max-w-7xl py-8">
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-        <h1 className="text-2xl font-bold text-white">{t('deposit.title')}</h1>
-        <div className="flex gap-3 text-sm">
-          <Link to="/bonus" className="text-accent-purple hover:underline">{t('deposit.bonusesLink')}</Link>
-          <Link to="/withdraw" className="text-accent hover:underline">{t('deposit.withdrawLink')}</Link>
-        </div>
-      </div>
-
+    <div className="mx-auto max-w-7xl py-4 sm:py-8">
       {loading ? (
-        <p className="text-muted">{t('common.loadingPaymentMethods')}</p>
+        <div className="mx-auto w-full max-w-2xl space-y-6">
+          <h1 className="text-center text-2xl font-bold text-white">{t('deposit.title')}</h1>
+          <p className="text-center text-muted">{t('common.loadingPaymentMethods')}</p>
+        </div>
       ) : (
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,28rem)_minmax(0,1fr)] xl:grid-cols-[minmax(0,32rem)_minmax(0,1fr)]">
+        <div className="flex flex-col gap-8">
+          <div className="mx-auto w-full max-w-2xl min-w-0 space-y-6">
+          <h1 className="text-center text-2xl font-bold text-white">{t('deposit.title')}</h1>
           <div className="space-y-4">
-          <form onSubmit={handleSubmit} className="rounded-xl border border-white/[0.08] bg-card p-6 space-y-4">
-            <div>
-              <label htmlFor="deposit-method" className="mb-1 block text-xs text-muted">{t('deposit.paymentMethod')}</label>
-              <select
-                id="deposit-method"
-                value={methodId}
-                onChange={(e) => setMethodId(Number(e.target.value))}
-                className="w-full rounded-md border border-white/10 bg-background px-3 py-2 text-sm text-white"
-              >
-                {methods.map((m) => (
-                  <option key={m.id} value={m.id}>
-                    {tPaymentMethod(m.name)} ({tPaymentType(m.type)})
-                  </option>
-                ))}
-              </select>
-            </div>
+          {step === 1 ? (
+            <div className="rounded-xl border border-white/[0.08] bg-card p-4 space-y-4 sm:p-6">
+              <PaymentCountrySelect
+                countries={countries}
+                value={country}
+                onChange={handleCountryChange}
+                label={t('deposit.selectCountry')}
+              />
 
-            {isLocalGateway && selected?.supported_countries && (
               <div>
-                <label htmlFor="deposit-local-country" className="mb-1 block text-xs text-muted">
-                  {t('deposit.localCountryLabel')}
-                </label>
-                <select
-                  id="deposit-local-country"
-                  value={localCountry}
-                  onChange={(e) => setLocalCountry(e.target.value)}
-                  className="w-full rounded-md border border-white/10 bg-background px-3 py-2 text-sm text-white"
-                >
-                  <option value="">{t('deposit.selectLocalCountry')}</option>
-                  {selected.supported_countries.map((country) => (
-                    <option key={country.code} value={country.code}>
-                      {t('deposit.localCountryOption', {
-                        name: country.name,
-                        currency: country.currency,
-                      })}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            )}
-
-            <div className="space-y-4">
-              {isCrypto && (
-                <CryptoCurrencyPicker
-                  currencies={cryptoCurrencies}
-                  value={payCurrency}
-                  onChange={setPayCurrency}
-                  loading={cryptoLoading}
-                  loadingLabel={t('common.loadingCurrencies')}
+                <p className="mb-2 text-xs text-muted">{t('deposit.selectPaymentOption')}</p>
+                <PaymentOptionGrid
+                  options={options}
+                  value={optionKey}
+                  onChange={setOptionKey}
+                  onSelect={handleOptionSelect}
+                  variant="list"
+                  loading={optionsLoading}
+                  loadingLabel={t('common.loadingPaymentMethods')}
+                  emptyLabel={t('deposit.noOptionsForCountry')}
                 />
-              )}
+              </div>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="rounded-xl border border-white/[0.08] bg-card p-4 space-y-4 sm:p-6">
+              <Button
+                type="button"
+                variant="secondary"
+                onClick={handleBackToMethods}
+                className="w-fit px-3 py-1.5 text-xs"
+              >
+                {t('deposit.backToMethods')}
+              </Button>
 
-              {selected && (
-                <p className="text-xs text-muted">
-                    {t('common.minMax', {
-                      min: formatBalance(effectiveMinAmount ?? selected.min_amount),
-                      max: selected.max_amount
-                        ? formatBalance(selected.max_amount)
-                        : t('common.noLimit'),
-                    })}
-                  {paymentCurrency && ` · ${t('deposit.paymentCurrency', { currency: paymentCurrency })}`}
-                </p>
-              )}
+              {confirmedOption && <PaymentOptionSummary option={confirmedOption} />}
 
               <CryptoAmountInput
                 value={amount}
                 onChange={setAmount}
-                currencyLabel={paymentCurrency}
+                currencyLabel={confirmedOption?.payment_currency ?? ''}
                 amountLabel={t('deposit.amount')}
                 clearLabel={t('common.close')}
               />
-            </div>
 
-            {amount && Number(amount) > 0 && (
-              <div className="rounded-lg border border-white/10 bg-background/50 p-3 text-sm">
-                {quoteLoading && (
-                  <p className="text-muted">{t('deposit.loadingQuote')}</p>
-                )}
-                {!quoteLoading && quote && (
-                  <>
-                    <p className="font-medium text-accent-gold">
-                      {t('deposit.estimatedBalance', {
-                        amount: formatBalance(quote.credited_amount),
-                        currency: quote.wallet_currency,
-                      })}
-                    </p>
-                    {quote.rate_display && (
-                      <p className="mt-1 text-xs text-muted">
-                        {t('deposit.exchangeRate', { rate: quote.rate_display })}
+              {amount && Number(amount) > 0 && (
+                <div className="rounded-lg border border-white/10 bg-background/50 p-3 text-sm">
+                  {quoteLoading && (
+                    <p className="text-muted">{t('deposit.loadingQuote')}</p>
+                  )}
+                  {!quoteLoading && quote && (
+                    <>
+                      <p className="font-medium text-accent-gold">
+                        {t('deposit.estimatedBalance', {
+                          amount: formatBalance(quote.credited_amount),
+                          currency: quote.wallet_currency,
+                        })}
                       </p>
-                    )}
-                    <p className="mt-2 text-xs text-muted">{t('deposit.estimateDisclaimer')}</p>
-                  </>
-                )}
-                {!quoteLoading && quoteError && (
-                  <p className="text-xs text-red-400">{t('deposit.quoteFailed')}</p>
-                )}
-              </div>
-            )}
+                      {quote.rate_display && (
+                        <p className="mt-1 text-xs text-muted">
+                          {t('deposit.exchangeRate', { rate: quote.rate_display })}
+                        </p>
+                      )}
+                      <p className="mt-2 text-xs text-muted">{t('deposit.estimateDisclaimer')}</p>
+                    </>
+                  )}
+                  {!quoteLoading && quoteError && (
+                    <p className="text-xs text-red-400">{t('deposit.quoteFailed')}</p>
+                  )}
+                </div>
+              )}
 
-            {localCountryRequired && (
-              <p className="text-sm text-amber-400">{t('deposit.selectLocalCountry')}</p>
-            )}
+              {error && <p className="text-sm text-red-400">{error}</p>}
+              {message && <p className="text-sm text-green-400">{message}</p>}
 
-            {error && <p className="text-sm text-red-400">{error}</p>}
-            {message && <p className="text-sm text-green-400">{message}</p>}
-
-            <Button
-              type="submit"
-              variant="gold"
-              disabled={submitting || methods.length === 0 || localCountryRequired}
-            >
-              {submitting ? t('common.submitting') : t('deposit.requestDeposit')}
-            </Button>
-          </form>
+              <Button
+                type="submit"
+                variant="gold"
+                disabled={submitting || !confirmedOption || !amount}
+              >
+                {submitting ? t('common.submitting') : t('deposit.requestDeposit')}
+              </Button>
+            </form>
+          )}
 
           {lastDeposit?.payment_info && Object.keys(lastDeposit.payment_info).length > 0 && (
             <div className="mt-4 rounded-lg border border-accent-gold/30 bg-accent-gold/5 p-4">
@@ -378,8 +342,8 @@ export function DepositPage() {
 
               {qrString && (
                 <div className="mb-3 flex flex-col items-center gap-2">
-                  <div className="rounded-lg bg-white p-3">
-                    <QRCode value={qrString} size={200} />
+                  <div className="w-full max-w-[200px] rounded-lg bg-white p-3">
+                    <QRCode value={qrString} size={256} className="h-auto w-full" />
                   </div>
                   <CopyButton value={qrString} />
                 </div>
@@ -405,12 +369,13 @@ export function DepositPage() {
               <p className="mt-3 text-xs text-muted">
                 {isCryptoPayment
                   ? t('deposit.cryptoConfirmHint')
-                  : isRedirectPayment || qrString || isLocalGateway
+                  : isRedirectPayment || qrString || confirmedOption?.kind === 'local'
                     ? t('deposit.redirectConfirmHint')
                     : t('deposit.adminConfirmHint')}
               </p>
             </div>
           )}
+          </div>
           </div>
 
           <section className="min-w-0">
@@ -426,30 +391,30 @@ export function DepositPage() {
               <p className="text-sm text-muted">{t('deposit.noDeposits')}</p>
             ) : (
               <div className="overflow-x-auto rounded-xl border border-white/[0.08]">
-                <table className="w-full text-sm">
+                <table className="w-full min-w-[36rem] text-sm">
                   <thead>
                     <tr className="border-b border-white/5 bg-surface text-left">
-                      <th className="px-4 py-3 text-xs text-muted">{t('deposit.id')}</th>
-                      <th className="px-4 py-3 text-xs text-muted">{t('transactions.requestedAmount')}</th>
-                      <th className="px-4 py-3 text-xs text-muted">{t('transactions.receivedAmount')}</th>
-                      <th className="px-4 py-3 text-xs text-muted">{t('deposit.method')}</th>
-                      <th className="px-4 py-3 text-xs text-muted">{t('transactions.status')}</th>
-                      <th className="px-4 py-3 text-xs text-muted hidden sm:table-cell">{t('deposit.date')}</th>
+                      <th className="px-3 py-3 text-xs text-muted sm:px-4">{t('deposit.id')}</th>
+                      <th className="px-3 py-3 text-xs text-muted sm:px-4">{t('transactions.requestedAmount')}</th>
+                      <th className="hidden px-3 py-3 text-xs text-muted sm:table-cell sm:px-4">{t('transactions.receivedAmount')}</th>
+                      <th className="hidden px-3 py-3 text-xs text-muted sm:table-cell sm:px-4">{t('deposit.method')}</th>
+                      <th className="px-3 py-3 text-xs text-muted sm:px-4">{t('transactions.status')}</th>
+                      <th className="hidden px-3 py-3 text-xs text-muted md:table-cell sm:px-4">{t('deposit.date')}</th>
                     </tr>
                   </thead>
                   <tbody>
                     {deposits.slice(0, 5).map((d) => (
                       <tr key={d.id} className="border-b border-white/5 hover:bg-surface/50">
-                        <td className="px-4 py-3 text-white">#{d.id}</td>
-                        <td className="px-4 py-3 font-mono text-white text-xs">
+                        <td className="px-3 py-3 text-white sm:px-4">#{d.id}</td>
+                        <td className="px-3 py-3 font-mono text-xs text-white sm:px-4">
                           {formatDepositCurrencyAmount(d.currency, d.amount)}
                         </td>
-                        <td className="px-4 py-3 font-mono text-white text-xs">
+                        <td className="hidden px-3 py-3 font-mono text-xs text-white sm:table-cell sm:px-4">
                           {formatDepositReceivedAmount(d) ?? '—'}
                         </td>
-                        <td className="px-4 py-3 text-muted">{tPaymentMethod(d.payment_method)}</td>
-                        <td className="px-4 py-3"><StatusBadge status={d.status} /></td>
-                        <td className="px-4 py-3 text-xs text-muted hidden sm:table-cell">
+                        <td className="hidden px-3 py-3 text-muted sm:table-cell sm:px-4">{tPaymentMethod(d.payment_method)}</td>
+                        <td className="px-3 py-3 sm:px-4"><StatusBadge status={d.status} /></td>
+                        <td className="hidden px-3 py-3 text-xs text-muted md:table-cell sm:px-4">
                           {formatDate(d.created_at)}
                         </td>
                       </tr>
