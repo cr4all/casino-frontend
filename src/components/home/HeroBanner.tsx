@@ -135,7 +135,6 @@ function FirstDepositHeroSlide({ backgroundSrc }: { backgroundSrc: string }) {
 
 export function HeroBanner() {
   const { t } = useTranslation();
-  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
 
   return (
     <section className="hero-slider" aria-label="Promotions">

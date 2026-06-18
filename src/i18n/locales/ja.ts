@@ -1,7 +1,7 @@
 import { affiliateI18n } from './affiliate.i18n';
-import type { TranslationTree } from './en';
+import type { LocaleTree } from './en';
 
-export const ja: TranslationTree = {
+export const ja: LocaleTree = {
   common: {
     loading: '読み込み中...',
     loadingGames: 'ゲームを読み込み中...',

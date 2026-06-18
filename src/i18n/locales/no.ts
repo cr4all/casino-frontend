@@ -1,7 +1,7 @@
 import { affiliateI18n } from './affiliate.i18n';
-import type { TranslationTree } from './en';
+import type { LocaleTree } from './en';
 
-export const no: TranslationTree = {
+export const no: LocaleTree = {
   common: {
     loading: 'Laster...',
     loadingGames: 'Laster spill...',

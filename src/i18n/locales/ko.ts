@@ -1,7 +1,7 @@
 import { affiliateI18n } from './affiliate.i18n';
-import type { TranslationTree } from './en';
+import type { LocaleTree } from './en';
 
-export const ko: TranslationTree = {
+export const ko: LocaleTree = {
   common: {
     loading: '로딩 중...',
     loadingGames: '게임 로딩 중...',

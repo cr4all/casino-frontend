@@ -1,4 +1,4 @@
-import { en, type TranslationTree } from './locales/en';
+import { en, type LocaleTree, type TranslationTree } from './locales/en';
 import { ar } from './locales/ar';
 import { cs } from './locales/cs';
 import { da } from './locales/da';
@@ -104,7 +104,7 @@ export function getLanguageShortLabel(code: Language): string {
   return LANGUAGES.find((lang) => lang.code === code)?.shortLabel ?? code.toUpperCase();
 }
 
-const translations: Record<Language, TranslationTree> = {
+const translations: Record<Language, LocaleTree> = {
   en,
   ar,
   cs,
@@ -178,7 +178,7 @@ export function isLanguage(value: string): value is Language {
   return LANGUAGE_CODES.includes(value as Language);
 }
 
-function getNestedValue(tree: TranslationTree, key: string): string | undefined {
+function getNestedValue(tree: LocaleTree | TranslationTree, key: string): string | undefined {
   const parts = key.split('.');
   let current: unknown = tree;
   for (const part of parts) {

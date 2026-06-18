@@ -459,3 +459,12 @@ type DeepStringify<T> = T extends string
 
 /** Same keys as `en`, but leaf values may be any locale-specific string. */
 export type TranslationTree = DeepStringify<typeof en>;
+
+type DeepPartial<T> = T extends string
+  ? string | undefined
+  : T extends Record<string, unknown>
+    ? { [K in keyof T]?: DeepPartial<T[K]> }
+    : never;
+
+/** Locale packs may omit keys; `translate()` falls back to English. */
+export type LocaleTree = DeepPartial<TranslationTree>;

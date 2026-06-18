@@ -1,7 +1,7 @@
 import { affiliateI18n } from './affiliate.i18n';
-import type { TranslationTree } from './en';
+import type { LocaleTree } from './en';
 
-export const hu: TranslationTree = {
+export const hu: LocaleTree = {
   common: {
     loading: 'Betöltés...',
     loadingGames: 'Játékok betöltése...',

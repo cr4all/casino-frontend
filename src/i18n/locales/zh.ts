@@ -1,7 +1,7 @@
 import { affiliateI18n } from './affiliate.i18n';
-import type { TranslationTree } from './en';
+import type { LocaleTree } from './en';
 
-export const zh: TranslationTree = {
+export const zh: LocaleTree = {
   common: {
     loading: '加载中...',
     loadingGames: '正在加载游戏...',
