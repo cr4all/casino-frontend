@@ -1,18 +1,23 @@
-import { useState, type FormEvent } from 'react';
+import { useEffect, useState, type FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Modal } from '@/components/common/Modal';
 import { Button } from '@/components/common/Button';
+import { CopyableInput } from '@/components/auth/CopyableInput';
+import { PasswordInput } from '@/components/auth/PasswordInput';
 import { PhoneNumberInput } from '@/components/auth/PhoneNumberInput';
 import { useAuthStore } from '@/stores/authStore';
 import { useUiStore } from '@/stores/uiStore';
 import { useWalletStore } from '@/stores/walletStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { isLocalPhoneValid, parsePhoneNumber } from '@/data/phoneDialCodes';
+import {
+  clearRememberedLogin,
+  loadRememberedLogin,
+  saveRememberedLogin,
+  type RememberedLoginMethod,
+} from '@/utils/loginRemember';
 
-type LoginMethod = 'username' | 'phone' | 'email';
-
-const inputClassName =
-  'w-full rounded-md border border-white/10 bg-card px-3 py-2.5 text-sm text-white placeholder:text-muted focus:border-accent focus:outline-none';
+type LoginMethod = RememberedLoginMethod;
 
 const tabButtonClassName = (active: boolean) =>
   `flex flex-1 items-center justify-center gap-1 rounded-md px-2 py-2 text-[11px] font-bold tracking-wide transition-colors sm:gap-1.5 sm:px-3 sm:text-xs ${
@@ -34,16 +39,46 @@ export function LoginModal() {
   const [phone, setPhone] = useState('');
   const [phoneCountryCode, setPhoneCountryCode] = useState('US');
   const [password, setPassword] = useState('');
+  const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    if (activeModal !== 'login') return;
+
+    const remembered = loadRememberedLogin();
+    if (!remembered) {
+      setRememberMe(false);
+      return;
+    }
+
+    setRememberMe(true);
+    setMethod(remembered.method);
+    setUsername(remembered.username ?? '');
+    setEmail(remembered.email ?? '');
+    setPhone(remembered.phone ?? '');
+    setPhoneCountryCode(remembered.phoneCountryCode ?? 'US');
+  }, [activeModal]);
+
   const resetForm = () => {
-    setUsername('');
-    setEmail('');
-    setPhone('');
-    setPhoneCountryCode('US');
     setPassword('');
     setError('');
+  };
+
+  const persistRememberedLogin = () => {
+    if (!rememberMe) {
+      clearRememberedLogin();
+      return;
+    }
+
+    saveRememberedLogin({
+      remember: true,
+      method,
+      username: method === 'username' ? username.trim() : undefined,
+      email: method === 'email' ? email.trim() : undefined,
+      phone: method === 'phone' ? phone : undefined,
+      phoneCountryCode: method === 'phone' ? phoneCountryCode : undefined,
+    });
   };
 
   const completeLogin = async () => {
@@ -86,6 +121,7 @@ export function LoginModal() {
       } else {
         await login({ phone, password });
       }
+      persistRememberedLogin();
       await completeLogin();
     } catch {
       setError(getErrorMessage());
@@ -134,21 +170,17 @@ export function LoginModal() {
         )}
 
         {method === 'username' && (
-          <div>
-            <label htmlFor="login-username" className="mb-1 block text-xs text-muted">
-              {t('auth.username')}
-            </label>
-            <input
-              id="login-username"
-              type="text"
-              required
-              autoComplete="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className={inputClassName}
-              placeholder={t('auth.loginUsernamePlaceholder')}
-            />
-          </div>
+          <CopyableInput
+            id="login-username"
+            label={t('auth.username')}
+            type="text"
+            required
+            autoComplete="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder={t('auth.loginUsernamePlaceholder')}
+            copyAriaLabel={t('common.copy')}
+          />
         )}
 
         {method === 'phone' && (
@@ -163,46 +195,47 @@ export function LoginModal() {
         )}
 
         {method === 'email' && (
-          <div>
-            <label htmlFor="login-email" className="mb-1 block text-xs text-muted">
-              {t('auth.email')}
-            </label>
-            <input
-              id="login-email"
-              type="email"
-              required
-              autoComplete="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className={inputClassName}
-              placeholder={t('auth.loginEmailPlaceholder')}
-            />
-          </div>
+          <CopyableInput
+            id="login-email"
+            label={t('auth.email')}
+            type="email"
+            required
+            autoComplete="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder={t('auth.loginEmailPlaceholder')}
+            copyAriaLabel={t('common.copy')}
+          />
         )}
 
-        <div>
-          <label htmlFor="login-password" className="mb-1 block text-xs text-muted">
-            {t('auth.password')}
-          </label>
-          <input
-            id="login-password"
-            type="password"
-            required
-            autoComplete="current-password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className={inputClassName}
-            placeholder="••••••••"
-          />
-        </div>
+        <PasswordInput
+          id="login-password"
+          label={t('auth.password')}
+          required
+          autoComplete="current-password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="••••••••"
+        />
 
-        <button
-          type="button"
-          onClick={() => openModal('forgotPassword')}
-          className="block w-full text-right text-xs text-accent hover:underline"
-        >
-          {t('auth.forgotPassword')}
-        </button>
+        <div className="flex items-center justify-between gap-3">
+          <label className="flex cursor-pointer items-center gap-2 text-xs text-muted">
+            <input
+              type="checkbox"
+              checked={rememberMe}
+              onChange={(e) => setRememberMe(e.target.checked)}
+              className="h-4 w-4 rounded border-white/20 bg-card text-accent-gold focus:ring-accent-gold/40"
+            />
+            {t('auth.rememberMe')}
+          </label>
+          <button
+            type="button"
+            onClick={() => openModal('forgotPassword')}
+            className="text-xs text-accent hover:underline"
+          >
+            {t('auth.forgotPassword')}
+          </button>
+        </div>
 
         <Button type="submit" fullWidth disabled={loading}>
           {loading ? t('common.loggingIn') : t('nav.login')}

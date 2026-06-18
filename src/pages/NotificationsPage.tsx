@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { notificationApi, type InternalMessage } from '@/api/notification.api';
 import { useAuthStore } from '@/stores/authStore';
+import { useNotificationStore } from '@/stores/notificationStore';
 import { useTranslation } from '@/hooks/useTranslation';
 
 export function NotificationsPage() {
@@ -10,20 +11,48 @@ export function NotificationsPage() {
   const [messages, setMessages] = useState<InternalMessage[]>([]);
   const [loading, setLoading] = useState(true);
   const [expandedId, setExpandedId] = useState<number | null>(null);
+  const markMessageRead = useNotificationStore((s) => s.markMessageRead);
+  const setUnreadCount = useNotificationStore((s) => s.setUnreadCount);
 
   useEffect(() => {
     if (!isAuthenticated) return;
     notificationApi
       .getMessages()
-      .then((data) => setMessages(data.items))
+      .then((data) => {
+        setMessages(data.items);
+        setUnreadCount(data.items.filter((m) => !m.is_read).length);
+      })
       .finally(() => setLoading(false));
-  }, [isAuthenticated]);
+  }, [isAuthenticated, setUnreadCount]);
 
   if (!isAuthenticated) {
     return <Navigate to="/" replace />;
   }
 
   const unreadCount = messages.filter((m) => !m.is_read).length;
+
+  const handleMessageToggle = async (msg: InternalMessage) => {
+    const isExpanded = expandedId === msg.id;
+
+    if (isExpanded) {
+      setExpandedId(null);
+      return;
+    }
+
+    setExpandedId(msg.id);
+
+    if (!msg.is_read) {
+      try {
+        await notificationApi.markAsRead(msg.id);
+        setMessages((prev) =>
+          prev.map((item) => (item.id === msg.id ? { ...item, is_read: true } : item)),
+        );
+        markMessageRead();
+      } catch {
+        // Keep unread state if the server did not confirm the read.
+      }
+    }
+  };
 
   return (
     <div className="py-8 max-w-2xl">
@@ -52,7 +81,7 @@ export function NotificationsPage() {
               <li key={msg.id}>
                 <button
                   type="button"
-                  onClick={() => setExpandedId(isExpanded ? null : msg.id)}
+                  onClick={() => void handleMessageToggle(msg)}
                   aria-expanded={isExpanded}
                   aria-label={isExpanded ? t('messages.hideDetails') : t('messages.showDetails')}
                   className={`w-full rounded-lg border p-4 text-left transition-colors ${

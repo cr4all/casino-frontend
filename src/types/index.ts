@@ -23,8 +23,10 @@ export interface PlayerProfile {
   id: number;
   user_id: number;
   email: string;
+  email_verified?: boolean;
   nickname: string | null;
   phone: string | null;
+  phone_verified?: boolean;
   country: string | null;
   country_name: string | null;
   currency: string | null;

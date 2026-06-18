@@ -7,20 +7,44 @@ import { DEFAULT_CURRENCY } from '@/stores/walletStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { Button } from '@/components/common/Button';
 import { StatusBadge } from '@/components/common/StatusBadge';
+import { AccountVerificationModal } from '@/components/profile/AccountVerificationModal';
+import { VerificationIndicator } from '@/components/profile/VerificationIndicator';
 import { formatCountryLabel } from '@/utils/formatCountryLabel';
 import { getApiErrorMessage } from '@/utils/apiError';
+import type { PlayerProfile } from '@/types';
 
 function ProfileField({
   label,
   children,
+  variant = 'default',
 }: {
   label: string;
   children: ReactNode;
+  variant?: 'default' | 'featured' | 'compact';
 }) {
+  const shellClass =
+    variant === 'featured'
+      ? 'rounded-xl border border-white/10 bg-card/50 px-5 py-4'
+      : variant === 'compact'
+        ? 'rounded-lg border border-white/5 bg-card/30 px-3 py-2.5'
+        : 'rounded-lg border border-white/5 bg-card/40 px-4 py-3';
+
+  const labelClass =
+    variant === 'featured'
+      ? 'text-xs font-semibold uppercase tracking-wider text-muted'
+      : 'text-[10px] font-medium uppercase tracking-wider text-muted';
+
+  const valueClass =
+    variant === 'featured'
+      ? 'mt-2 text-base font-medium leading-relaxed text-white'
+      : variant === 'compact'
+        ? 'mt-1 text-xs text-white'
+        : 'mt-1 text-sm text-white';
+
   return (
-    <div className="rounded-lg border border-white/5 bg-card/40 px-4 py-3">
-      <p className="text-[11px] font-medium uppercase tracking-wider text-muted">{label}</p>
-      <div className="mt-1 text-sm text-white">{children}</div>
+    <div className={shellClass}>
+      <p className={labelClass}>{label}</p>
+      <div className={valueClass}>{children}</div>
     </div>
   );
 }
@@ -33,7 +57,9 @@ export function ProfilePage() {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const profile = usePlayerStore((s) => s.profile);
   const fetchProfile = usePlayerStore((s) => s.fetchProfile);
+  const setProfile = usePlayerStore((s) => s.setProfile);
   const [loading, setLoading] = useState(true);
+  const [verifyChannel, setVerifyChannel] = useState<'email' | 'phone' | null>(null);
   const [saving, setSaving] = useState(false);
   const [passwordMessageKey, setPasswordMessageKey] = useState<'success' | 'error' | ''>('');
   const [passwordError, setPasswordError] = useState('');
@@ -88,8 +114,20 @@ export function ProfilePage() {
 
   const countryLabel = formatCountryLabel(profile?.country, profile?.country_name);
 
+  const handleVerified = (updated: PlayerProfile) => {
+    setProfile(updated);
+  };
+
   return (
     <div className="mx-auto max-w-4xl py-8">
+      <AccountVerificationModal
+        channel={verifyChannel}
+        destination={
+          verifyChannel === 'email' ? profile?.email ?? '' : profile?.phone ?? ''
+        }
+        onClose={() => setVerifyChannel(null)}
+        onVerified={handleVerified}
+      />
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-white">{t('profile.title')}</h1>
         <p className="mt-1 text-sm text-muted">{profile?.email ?? '—'}</p>
@@ -99,28 +137,57 @@ export function ProfilePage() {
         <div className="space-y-6 lg:col-span-2">
           <section className="rounded-xl border border-white/10 bg-surface/90 p-6 shadow-card">
             <h2 className="mb-4 text-sm font-semibold text-white">{t('profile.accountDetails')}</h2>
-            <div className="grid gap-3 sm:grid-cols-2">
-              <ProfileField label={t('auth.username')}>
-                <span>{profile?.nickname ?? '—'}</span>
+            <div className="space-y-3">
+              <ProfileField variant="featured" label={t('profile.email')}>
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                  <span className="break-all">{profile?.email ?? '—'}</span>
+                  {profile?.email && (
+                    <VerificationIndicator
+                      verified={profile.email_verified ?? false}
+                      onVerify={
+                        profile.email_verified ? undefined : () => setVerifyChannel('email')
+                      }
+                    />
+                  )}
+                </div>
               </ProfileField>
-              <ProfileField label={t('profile.email')}>
-                <span className="break-all">{profile?.email ?? '—'}</span>
+
+              <ProfileField variant="featured" label={t('profile.phone')}>
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                  <span>{profile?.phone ?? '—'}</span>
+                  {profile?.phone && (
+                    <VerificationIndicator
+                      verified={profile.phone_verified ?? false}
+                      onVerify={
+                        profile.phone_verified ? undefined : () => setVerifyChannel('phone')
+                      }
+                    />
+                  )}
+                </div>
               </ProfileField>
-              <ProfileField label={t('profile.phone')}>
-                <span>{profile?.phone ?? '—'}</span>
-              </ProfileField>
-              <ProfileField label={t('profile.country')}>
-                <span>{countryLabel}</span>
-              </ProfileField>
-              <ProfileField label={t('profile.currency')}>
-                <span>{profile?.currency ?? DEFAULT_CURRENCY}</span>
-              </ProfileField>
-              <ProfileField label={t('profile.status')}>
-                {profile?.status ? <StatusBadge status={profile.status} /> : '—'}
-              </ProfileField>
-              <ProfileField label={t('profile.kycStatus')}>
-                {profile?.kyc_status ? <StatusBadge status={profile.kyc_status} /> : '—'}
-              </ProfileField>
+
+              <div className="space-y-3">
+                <div className="grid gap-3 sm:grid-cols-3">
+                  <ProfileField variant="compact" label={t('auth.username')}>
+                    <span className="truncate">{profile?.nickname ?? '—'}</span>
+                  </ProfileField>
+                  <ProfileField variant="compact" label={t('profile.country')}>
+                    <span className="truncate">{countryLabel}</span>
+                  </ProfileField>
+                  <ProfileField variant="compact" label={t('profile.currency')}>
+                    <span>{profile?.currency ?? DEFAULT_CURRENCY}</span>
+                  </ProfileField>
+                </div>
+
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <ProfileField variant="compact" label={t('profile.status')}>
+                    {profile?.status ? <StatusBadge status={profile.status} /> : '—'}
+                  </ProfileField>
+                  <ProfileField variant="compact" label={t('profile.kycStatus')}>
+                    {profile?.kyc_status ? <StatusBadge status={profile.kyc_status} /> : '—'}
+                  </ProfileField>
+                </div>
+              </div>
             </div>
           </section>
 

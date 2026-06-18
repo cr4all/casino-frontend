@@ -68,9 +68,14 @@ function dedupeRequest<T>(key: string, request: () => Promise<T>): Promise<T> {
 const dedupeRequestInflight = new Map<string, Promise<unknown>>();
 
 export const gameApi = {
-  getVendors: async () => {
-    const { data } = await api.get<ApiResponse<GameVendor[]>>('/games/vendors');
-    return data.data;
+  getVendors: async (type?: string) => {
+    const key = requestKey('vendors', { type });
+    return dedupeRequest(key, async () => {
+      const { data } = await api.get<ApiResponse<GameVendor[]>>('/games/vendors', {
+        params: type ? { type } : undefined,
+      });
+      return data.data;
+    });
   },
 
   getTypes: async () => {

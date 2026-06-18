@@ -1,70 +1,98 @@
+import { type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
+import { PaymentMethodsMarquee } from '@/components/layout/PaymentMethodsMarquee';
 import { Logo } from '@/components/common/Logo';
 import { useCookieConsentStore } from '@/stores/cookieConsentStore';
+import { useUiStore } from '@/stores/uiStore';
+import { typePath } from '@/stores/gameStore';
+
+const SUPPORT_EMAIL = 'support@ibets24.com';
+
+interface FooterLinkListProps {
+  title: string;
+  children: ReactNode;
+}
+
+function FooterLinkList({ title, children }: FooterLinkListProps) {
+  return (
+    <div className="site-footer__col">
+      <h2 className="site-footer__heading">{title}</h2>
+      <nav className="site-footer__col-nav" aria-label={title}>
+        {children}
+      </nav>
+    </div>
+  );
+}
 
 export function Footer() {
   const { t } = useTranslation();
   const openSettings = useCookieConsentStore((s) => s.openSettings);
+  const openLiveChat = useUiStore((s) => s.openLiveChat);
 
   return (
-    <footer className="mt-auto border-t border-white/5 bg-surface">
-      <div className="mx-auto max-w-7xl px-4 py-10 md:px-6">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-          <div>
-            <Logo height={28} className="mb-3" />
-            <ul className="space-y-2">
-              <li><Link to="/category/slots" className="text-xs text-muted hover:text-white transition-colors">{t('footer.slots')}</Link></li>
-              <li><Link to="/category/live" className="text-xs text-muted hover:text-white transition-colors">{t('footer.liveCasino')}</Link></li>
-              <li><Link to="/category/jackpots" className="text-xs text-muted hover:text-white transition-colors">{t('footer.jackpots')}</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="mb-3 text-sm font-semibold text-white">{t('footer.account')}</h4>
-            <ul className="space-y-2">
-              <li><Link to="/deposit" className="text-xs text-muted hover:text-white transition-colors">{t('nav.depositLabel')}</Link></li>
-              <li><Link to="/withdraw" className="text-xs text-muted hover:text-white transition-colors">{t('nav.withdrawLabel')}</Link></li>
-              <li><Link to="/bonus" className="text-xs text-muted hover:text-white transition-colors">{t('nav.bonusesLabel')}</Link></li>
-              <li><Link to="/transactions" className="text-xs text-muted hover:text-white transition-colors">{t('nav.transactions')}</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="mb-3 text-sm font-semibold text-white">{t('footer.support')}</h4>
-            <ul className="space-y-2">
-              <li><Link to="/notifications" className="text-xs text-muted hover:text-white transition-colors">{t('footer.messages')}</Link></li>
-              <li><a href="mailto:support@ibets24.com" className="text-xs text-muted hover:text-white transition-colors">support@ibets24.com</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="mb-3 text-sm font-semibold text-white">{t('footer.legal')}</h4>
-            <ul className="space-y-2">
-              <li><span className="text-xs text-muted">{t('footer.terms')}</span></li>
-              <li><span className="text-xs text-muted">{t('footer.privacy')}</span></li>
-              <li>
-                <Link to="/cookies" className="text-xs text-muted hover:text-white transition-colors">
-                  {t('cookies.policyLink')}
+    <footer className="site-footer mt-auto">
+      <div className="site-footer__columns">
+        <div className="site-footer__inner">
+          <div className="site-footer__grid">
+            <div className="site-footer__col">
+              <Logo height={36} className="mb-4" />
+              <nav className="site-footer__col-nav" aria-label={t('footer.slots')}>
+                <Link to={typePath('slot')} className="site-footer__col-link">
+                  {t('footer.slots')}
                 </Link>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  onClick={openSettings}
-                  className="text-xs text-muted hover:text-white transition-colors"
-                >
-                  {t('cookies.settings')}
-                </button>
-              </li>
-              <li><span className="text-xs text-muted">{t('footer.responsibleGaming')}</span></li>
-            </ul>
+                <Link to={typePath('live_casino')} className="site-footer__col-link">
+                  {t('footer.liveCasino')}
+                </Link>
+                <Link to="/category/jackpots" className="site-footer__col-link">
+                  {t('footer.jackpots')}
+                </Link>
+              </nav>
+            </div>
+
+            <FooterLinkList title={t('footer.account')}>
+              <Link to="/deposit" className="site-footer__col-link">{t('nav.depositLabel')}</Link>
+              <Link to="/withdraw" className="site-footer__col-link">{t('nav.withdrawLabel')}</Link>
+              <Link to="/bonus" className="site-footer__col-link">{t('nav.bonusesLabel')}</Link>
+              <Link to="/transactions" className="site-footer__col-link">{t('nav.transactions')}</Link>
+            </FooterLinkList>
+
+            <FooterLinkList title={t('footer.support')}>
+              <button type="button" onClick={openLiveChat} className="site-footer__col-link">
+                {t('footer.messages')}
+              </button>
+              <Link to="/faq" className="site-footer__col-link">{t('footer.faq')}</Link>
+              <Link to="/contact" className="site-footer__col-link">{t('footer.contact')}</Link>
+              <a href={`mailto:${SUPPORT_EMAIL}`} className="site-footer__col-link site-footer__email">
+                {SUPPORT_EMAIL}
+              </a>
+            </FooterLinkList>
+
+            <FooterLinkList title={t('footer.legal')}>
+              <Link to="/about" className="site-footer__col-link">{t('footer.about')}</Link>
+              <Link to="/terms" className="site-footer__col-link">{t('footer.terms')}</Link>
+              <Link to="/privacy" className="site-footer__col-link">{t('footer.privacy')}</Link>
+              <Link to="/responsible-gaming" className="site-footer__col-link">
+                {t('footer.responsibleGaming')}
+              </Link>
+              <Link to="/aml" className="site-footer__col-link">{t('footer.aml')}</Link>
+              <Link to="/cookies" className="site-footer__col-link">{t('cookies.policyLink')}</Link>
+              <button type="button" onClick={openSettings} className="site-footer__col-link">
+                {t('cookies.settings')}
+              </button>
+            </FooterLinkList>
           </div>
-        </div>
-        <div className="mt-8 border-t border-white/5 pt-6 text-center">
-          <p className="text-xs text-muted">{t('footer.disclaimer')}</p>
-          <p className="mt-2 text-xs text-muted/60">
-            {t('footer.copyright', { year: new Date().getFullYear() })}
-          </p>
         </div>
       </div>
+
+      <div className="site-footer__dark">
+        <p className="site-footer__disclaimer">{t('footer.disclaimer')}</p>
+        <p className="site-footer__copyright">
+          {t('footer.copyright', { year: new Date().getFullYear() })}
+        </p>
+      </div>
+
+      <PaymentMethodsMarquee />
     </footer>
   );
 }

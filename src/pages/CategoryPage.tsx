@@ -7,9 +7,11 @@ import { PromoBannerGrid } from '@/components/home/PromoBanner';
 import { ProviderCard } from '@/components/provider/ProviderCard';
 import { ProviderSelect } from '@/components/provider/ProviderSelect';
 import { ShowMoreButton } from '@/components/common/ShowMoreButton';
+import { LiveBetFeed } from '@/components/bets/LiveBetFeed';
 import { gameApi } from '@/api/game.api';
 import { useDebouncedValue } from '@/hooks/useDebouncedValue';
 import { useGameTypes } from '@/hooks/useGameTypes';
+import { useProvidersForCategory } from '@/hooks/useProvidersForCategory';
 import { useGameVendors } from '@/hooks/useGameVendors';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getVendorBannerUrl } from '@/data/providerBanners';
@@ -46,6 +48,11 @@ export function CategoryPage() {
 
   const { vendorId, typeSlug, collectionSlug } = parseCategoryFilters(category);
   const effectiveVendorId = selectedVendorId ?? vendorId;
+  const { vendors: filteredVendors, loading: filteredVendorsLoading } = useProvidersForCategory(
+    typeSlug ?? null,
+  );
+  const providerVendors = typeSlug ? filteredVendors : vendors;
+  const providerVendorsLoading = typeSlug ? filteredVendorsLoading : vendorsLoading;
 
   const title = useMemo(() => {
     if (vendorId) {
@@ -67,6 +74,15 @@ export function CategoryPage() {
     setSearch(searchParams.get('q') ?? '');
     setSelectedVendorId(null);
   }, [category]);
+
+  useEffect(() => {
+    if (
+      selectedVendorId !== null &&
+      !providerVendors.some((vendor) => vendor.id === selectedVendorId)
+    ) {
+      setSelectedVendorId(null);
+    }
+  }, [providerVendors, selectedVendorId]);
 
   const handleVendorChange = useCallback((vendorId: number | null) => {
     setSelectedVendorId(vendorId);
@@ -224,10 +240,10 @@ export function CategoryPage() {
         </div>
 
         <ProviderSelect
-          vendors={vendors}
+          vendors={providerVendors}
           selectedVendorId={effectiveVendorId ?? null}
           onChange={handleVendorChange}
-          loading={vendorsLoading}
+          loading={providerVendorsLoading}
         />
       </div>
 
@@ -250,6 +266,8 @@ export function CategoryPage() {
             loading={loadingMore}
             onClick={handleShowMore}
           />
+
+          <LiveBetFeed games={games} />
         </>
       )}
     </div>

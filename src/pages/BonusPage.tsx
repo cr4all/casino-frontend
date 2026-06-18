@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { bonusApi, type ActiveBonus, type BonusPolicy } from '@/api/bonus.api';
 import { useAuthStore } from '@/stores/authStore';
+import { useNotificationStore } from '@/stores/notificationStore';
 import { useWalletStore } from '@/stores/walletStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { Button } from '@/components/common/Button';
@@ -77,6 +78,7 @@ export function BonusPage() {
         }),
       );
       await fetchBalance();
+      void useNotificationStore.getState().fetchUnreadCount();
       load();
     } catch (err) {
       setError(getApiErrorMessage(err, t('bonus.claimFailed')));
