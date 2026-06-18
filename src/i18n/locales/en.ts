@@ -127,7 +127,6 @@ export const en = {
     crypto_payment: 'Crypto Payment',
     bank: 'Bank Transfer',
     bank_transfer: 'Bank Transfer',
-    smilepayz: 'SmilePayz',
   },
   paymentTypes: {
     crypto: 'Cryptocurrency',
@@ -237,7 +236,7 @@ export const en = {
     sendToAddressFiatDisclaimer: 'The exact crypto amount may vary with exchange rates at transfer time.',
     openPaymentPage: 'Open Payment Page',
     cryptoConfirmHint: 'After blockchain confirmation, your wallet will be credited automatically.',
-    redirectConfirmHint: 'Complete payment on the SmilePayz page. Your wallet will be credited after payment confirmation.',
+    redirectConfirmHint: 'Complete payment on the payment page. Your wallet will be credited after payment confirmation.',
     adminConfirmHint: 'After transfer, admin will confirm your deposit and credit your wallet.',
     recentDeposits: 'Recent Deposits',
     noDeposits: 'No deposit requests yet.',

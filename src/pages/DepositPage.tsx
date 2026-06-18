@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
+import QRCode from 'react-qr-code';
 import { useTranslation } from '@/hooks/useTranslation';
 import {
   paymentApi,
@@ -181,7 +182,8 @@ export function DepositPage() {
   const paymentInfo = lastDeposit?.payment_info ?? {};
   const isCryptoPayment = isCrypto || Boolean(paymentInfo.pay_address || paymentInfo.address);
   const paymentUrl = typeof paymentInfo.payment_url === 'string' ? paymentInfo.payment_url : null;
-  const isRedirectPayment = isLocalGateway || Boolean(paymentUrl);
+  const qrString = typeof paymentInfo.qr_string === 'string' ? paymentInfo.qr_string : null;
+  const isRedirectPayment = Boolean(paymentUrl);
   const payCurrencyCode = String(paymentInfo.pay_currency ?? paymentInfo.currency ?? '');
   const payAmountRaw = paymentInfo.pay_amount != null && paymentInfo.pay_amount !== ''
     ? String(paymentInfo.pay_amount)
@@ -374,19 +376,27 @@ export function DepositPage() {
                 </div>
               )}
 
+              {qrString && (
+                <div className="mb-3 flex flex-col items-center gap-2">
+                  <div className="rounded-lg bg-white p-3">
+                    <QRCode value={qrString} size={200} />
+                  </div>
+                  <CopyButton value={qrString} />
+                </div>
+              )}
+
               <dl className="space-y-2">
                 {Object.entries(lastDeposit.payment_info).map(([key, value]) => {
-                  if (key === 'payment_url') return null;
+                  if (key === 'payment_url' || key === 'qr_string') return null;
                   const display = typeof value === 'object' ? JSON.stringify(value) : String(value);
                   const isAddress = key === 'address' || key === 'pay_address';
-                  const isQr = key === 'qr_string';
 
                   return (
                     <div key={key}>
                       <dt className="text-xs capitalize text-muted">{key.replace(/_/g, ' ')}</dt>
                       <dd className="text-sm text-white break-all">
                         {display}
-                        {(isAddress || isQr) && display && <CopyButton value={display} />}
+                        {isAddress && display && <CopyButton value={display} />}
                       </dd>
                     </div>
                   );
@@ -395,7 +405,7 @@ export function DepositPage() {
               <p className="mt-3 text-xs text-muted">
                 {isCryptoPayment
                   ? t('deposit.cryptoConfirmHint')
-                  : isRedirectPayment
+                  : isRedirectPayment || qrString || isLocalGateway
                     ? t('deposit.redirectConfirmHint')
                     : t('deposit.adminConfirmHint')}
               </p>
