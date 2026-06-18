@@ -36,6 +36,7 @@ const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }
   { test: (s, n) => s.includes('dreamtech') || n.includes('dreamtech'), url: '/providers/dreamtech.png' },
   { test: (s, n) => s.includes('dreamgaming') || n.includes('dreamgaming'), url: '/providers/dream-gaming.png' },
   { test: (s, n) => s.includes('sagaming') || n.includes('sagaming'), url: '/providers/sa-gaming.png' },
+  { test: (s, n) => s.includes('simpleplay') || n.includes('simpleplay'), url: '/providers/simpleplay.png' },
   { test: (s, n) => s.includes('fachai') || n.includes('fachai'), url: '/providers/fachai.png' },
   { test: (s, n) => s.includes('popok') || n.includes('popok'), url: '/providers/popok.png' },
   { test: (s, n) => s.includes('popiplay') || n.includes('popiplay'), url: '/providers/popiplay.png' },
