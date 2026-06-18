@@ -8,7 +8,9 @@ import { useGameTypes } from '@/hooks/useGameTypes';
 import { useTranslation } from '@/hooks/useTranslation';
 import { typeIcon, typePath } from '@/stores/gameStore';
 import { Logo } from '@/components/common/Logo';
-import { hideTawkWidget } from '@/utils/tawkWidget';
+import { hideTawkWidget, showTawkWidget } from '@/utils/tawkWidget';
+import { useLiveChatConfig } from '@/hooks/useLiveChat';
+import { useLiveChatStore } from '@/stores/liveChatStore';
 
 interface StaticNavItem {
   id: string;
@@ -45,6 +47,8 @@ export function Sidebar({ onNavigate }: SidebarProps) {
   const unreadCount = useUnreadNotifications();
   const { types } = useGameTypes();
   const chatAllowed = canLoadChat(level, preferences);
+  const { nativeEnabled } = useLiveChatConfig();
+  const liveChatUnreadCount = useLiveChatStore((s) => s.unreadCount);
 
   const isPathActive = (path: string) =>
     location.pathname === path || location.pathname.startsWith(`${path}/`);
@@ -70,13 +74,16 @@ export function Sidebar({ onNavigate }: SidebarProps) {
       return;
     }
     openLiveChat();
+    if (!nativeEnabled) {
+      showTawkWidget();
+    }
     onNavigate?.();
   };
 
   return (
     <aside className="flex h-full w-[220px] shrink-0 flex-col border-r border-white/[0.06] bg-sidebar">
-      <div className="px-5 py-6">
-        <Logo height={36} onClick={handleNavClick} />
+      <div className="px-4 py-5">
+        <Logo fill onClick={handleNavClick} />
       </div>
 
       <nav className="flex flex-1 flex-col gap-0.5 overflow-y-auto px-2">
@@ -142,7 +149,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
                 active ? 'sidebar-active text-accent-gold' : 'text-white hover:bg-card/60'
               }`}
             >
-              <span className="relative text-xl leading-none">{item.icon}</span>
+              <span className="text-xl leading-none">{item.icon}</span>
               <div className="min-w-0 flex-1">
                 <p className={`text-xs font-bold tracking-wide ${active ? 'text-accent-gold' : 'text-white'}`}>
                   {t(item.labelKey)}
@@ -150,7 +157,9 @@ export function Sidebar({ onNavigate }: SidebarProps) {
                 <p className="text-[10px] text-muted truncate">{t(item.sublabelKey)}</p>
               </div>
               {showBadge && (
-                <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-red-500" />
+                <span className="flex h-5 min-w-5 shrink-0 items-center justify-center rounded-full bg-accent-gold px-1.5 text-[10px] font-bold leading-none text-background">
+                  {unreadCount > 99 ? '99+' : unreadCount}
+                </span>
               )}
             </Link>
           );
@@ -170,6 +179,11 @@ export function Sidebar({ onNavigate }: SidebarProps) {
             </p>
             <p className="text-[10px] text-muted truncate">{t('nav.liveChatLabel')}</p>
           </div>
+          {nativeEnabled && !liveChatOpen && liveChatUnreadCount > 0 && (
+            <span className="flex h-5 min-w-5 shrink-0 items-center justify-center rounded-full bg-accent-gold px-1.5 text-[10px] font-bold leading-none text-background">
+              {liveChatUnreadCount > 99 ? '99+' : liveChatUnreadCount}
+            </span>
+          )}
         </button>
       </nav>
 

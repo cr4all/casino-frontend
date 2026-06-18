@@ -1,6 +1,7 @@
-import type { TranslationTree } from './en';
+import { affiliateI18n } from './affiliate.i18n';
+import type { LocaleTree } from './en';
 
-export const de: TranslationTree = {
+export const de: LocaleTree = {
   common: {
     loading: 'Wird geladen...',
     loadingGames: 'Spiele werden geladen...',
@@ -76,14 +77,41 @@ export const de: TranslationTree = {
     terms: 'AGB',
     privacy: 'Datenschutz',
     responsibleGaming: 'Verantwortungsvolles Spielen',
+    about: 'Über uns',
+    faq: 'FAQ',
+    contact: 'Kontakt',
+    aml: 'AML-Richtlinie',
     disclaimer: '18+ | Spiel verantwortungsvoll. Glücksspiel kann süchtig machen.',
     copyright: '© {{year}} iBets24. Alle Rechte vorbehalten.',
+  },  liveBetFeed: {
+    title: 'Live-Wetten',
+    game: 'Spiel',
+    user: 'Benutzer',
+    time: 'Zeit',
+    betAmount: 'Wetteinsatz',
+    multiplier: 'Multiplikator',
+    payout: 'Auszahlung',
+    hidden: 'Verborgen',
+  },
+
+  legal: {
+    backHome: '← Zur Startseite',
   },
   hero: {
-    welcome: 'Willkommen bei',
-    bestExperience: 'Bestes Erlebnis',
+    welcomeTagline: 'Das weltweit größte Sportwetten- und Online-Casino',
     playNow: 'Jetzt spielen',
     registerPromo: 'Jetzt registrieren',
+    pragmaticLine1: 'Spielen',
+    pragmaticAccent: 'Pragmatic Slots',
+    pragmaticLine2: 'Premium-Erlebnis',
+    liveCasinoLine1: 'Spielen',
+    liveCasinoAccent: 'Live Casino',
+    liveCasinoLine2: 'Premium-Erlebnis',
+    firstDepositRegister: 'JETZT REGISTRIEREN',
+    firstDepositTitle: 'ERSTE EINZAHLUNG',
+    firstDepositBonus: '100% BONUS',
+    firstDepositUpTo: 'BIS ZU $250 USD',
+    firstDepositFreeSpins: '+ 50 FREISPIELE',
   },
   home: {
     topGames: 'Top-Spiele',
@@ -394,27 +422,5 @@ export const de: TranslationTree = {
     suspended: 'suspended',
     closed: 'closed',
   },
-  affiliate: {
-    title: 'Affiliate Dashboard',
-    portal: 'Affiliate Portal',
-    logout: 'Logout',
-    referralLink: 'Referral Link',
-    referredPlayers: 'Referred Players',
-    totalCommission: 'Total Commission',
-    pendingCommission: 'Pending Commission',
-    commissions: 'Commissions',
-    commissionHistory: 'Commission History',
-    player: 'Player',
-    nickname: 'Nickname',
-    registeredAt: 'Registered',
-    type: 'Type',
-    amount: 'Amount',
-    status: 'Status',
-    date: 'Datum',
-    reference: 'Reference',
-    noPlayers: 'No referred players yet.',
-    noCommissions: 'No commissions yet.',
-    loadError: 'Failed to load affiliate data.',
-    playersOnly: 'This area is for affiliate accounts only.',
-  },
+  affiliate: affiliateI18n,
 };

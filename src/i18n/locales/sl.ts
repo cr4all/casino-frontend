@@ -1,6 +1,7 @@
-import type { TranslationTree } from './en';
+import { affiliateI18n } from './affiliate.i18n';
+import type { LocaleTree } from './en';
 
-export const sl: TranslationTree = {
+export const sl: LocaleTree = {
   common: {
     loading: 'Nalaganje...',
     loadingGames: 'Nalaganje iger...',
@@ -76,14 +77,41 @@ export const sl: TranslationTree = {
     terms: 'Pogoji uporabe',
     privacy: 'Politika zasebnosti',
     responsibleGaming: 'Odgovorno igranje',
+    about: 'O nas',
+    faq: 'FAQ',
+    contact: 'Kontaktirajte nas',
+    aml: 'AML politika',
     disclaimer: '18+ | Igrajte odgovorno. Igre na srečo lahko povzročijo odvisnost.',
     copyright: '© {{year}} iBets24. Vse pravice pridržane.',
+  },  liveBetFeed: {
+    title: 'Stave v živo',
+    game: 'Igra',
+    user: 'Uporabnik',
+    time: 'Čas',
+    betAmount: 'Znesek stave',
+    multiplier: 'Množitelj',
+    payout: 'Izplačilo',
+    hidden: 'Skrito',
+  },
+
+  legal: {
+    backHome: '← Back to home',
   },
   hero: {
-    welcome: 'Dobrodošli v',
-    bestExperience: 'Najboljša izkušnja',
+    welcomeTagline: 'Največja stavna platforma in spletna igralnica na svetu',
     playNow: 'Igraj zdaj',
     registerPromo: 'Registriraj se zdaj',
+    pragmaticLine1: 'Igraj',
+    pragmaticAccent: 'Pragmatic Slots',
+    pragmaticLine2: 'Premium izkušnja',
+    liveCasinoLine1: 'Igraj',
+    liveCasinoAccent: 'Live Casino',
+    liveCasinoLine2: 'Premium izkušnja',
+    firstDepositRegister: 'REGISTRIRAJ SE',
+    firstDepositTitle: 'PRVI DEPOZIT',
+    firstDepositBonus: '100% BONUS',
+    firstDepositUpTo: 'DO $250 USD',
+    firstDepositFreeSpins: '+ 50 BREZPLAČNIH SPINOV',
   },
   home: {
     topGames: 'Top igre',
@@ -394,27 +422,5 @@ export const sl: TranslationTree = {
     suspended: 'suspended',
     closed: 'closed',
   },
-  affiliate: {
-    title: 'Affiliate Dashboard',
-    portal: 'Affiliate Portal',
-    logout: 'Logout',
-    referralLink: 'Referral Link',
-    referredPlayers: 'Referred Players',
-    totalCommission: 'Total Commission',
-    pendingCommission: 'Pending Commission',
-    commissions: 'Commissions',
-    commissionHistory: 'Commission History',
-    player: 'Player',
-    nickname: 'Nickname',
-    registeredAt: 'Registered',
-    type: 'Type',
-    amount: 'Amount',
-    status: 'Status',
-    date: 'Datum',
-    reference: 'Reference',
-    noPlayers: 'No referred players yet.',
-    noCommissions: 'No commissions yet.',
-    loadError: 'Failed to load affiliate data.',
-    playersOnly: 'This area is for affiliate accounts only.',
-  },
+  affiliate: affiliateI18n,
 };

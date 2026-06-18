@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 24" fill="none" aria-hidden="true">
+  <circle cx="12" cy="12" r="10" fill="#26A17B"/>
+  <path fill="#fff" d="M8.4 7h7.2v1.75H11v8.45H9.7V8.75H8.4V7zm5.35 0H15v10.2h-1.3V7h-1.05z"/>
+  <text x="28" y="17" fill="#26A17B" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="600">tether</text>
+</svg>

@@ -21,6 +21,10 @@ export interface PaginatedMessages {
 
 const messagesInflight = new Map<string, Promise<PaginatedMessages>>();
 
+function clearMessagesCache() {
+  messagesInflight.clear();
+}
+
 export const notificationApi = {
   getMessages: async (page = 1, perPage = 20) => {
     const key = `${page}:${perPage}`;
@@ -40,5 +44,13 @@ export const notificationApi = {
 
     messagesInflight.set(key, promise);
     return promise;
+  },
+
+  markAsRead: async (messageId: number) => {
+    const { data } = await api.post<ApiResponse<{ id: number; is_read: boolean }>>(
+      `/notifications/messages/${messageId}/read`,
+    );
+    clearMessagesCache();
+    return data.data;
   },
 };

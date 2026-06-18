@@ -1,6 +1,7 @@
-import type { TranslationTree } from './en';
+import { affiliateI18n } from './affiliate.i18n';
+import type { LocaleTree } from './en';
 
-export const no: TranslationTree = {
+export const no: LocaleTree = {
   common: {
     loading: 'Laster...',
     loadingGames: 'Laster spill...',
@@ -75,14 +76,41 @@ export const no: TranslationTree = {
     terms: 'Vilkår og betingelser',
     privacy: 'Personvernerklæring',
     responsibleGaming: 'Ansvarlig spilling',
+    about: 'Om oss',
+    faq: 'FAQ',
+    contact: 'Kontakt oss',
+    aml: 'AML-policy',
     disclaimer: '18+ | Spill ansvarlig. Gambling kan være avhengighetsskapende.',
     copyright: '© {{year}} iBets24. Alle rettigheter forbeholdt.',
+  },  liveBetFeed: {
+    title: 'Live bets',
+    game: 'Spill',
+    user: 'Bruker',
+    time: 'Tid',
+    betAmount: 'Innsats',
+    multiplier: 'Multiplikator',
+    payout: 'Utbetaling',
+    hidden: 'Skjult',
+  },
+
+  legal: {
+    backHome: '← Tilbake til forsiden',
   },
   hero: {
-    welcome: 'Velkommen til',
-    bestExperience: 'Beste opplevelse',
+    welcomeTagline: 'Verdens største sportsbook og nettcasino',
     playNow: 'Spill nå',
     registerPromo: 'Registrer deg nå',
+    pragmaticLine1: 'Spill',
+    pragmaticAccent: 'Pragmatic Slots',
+    pragmaticLine2: 'Premiumopplevelse',
+    liveCasinoLine1: 'Spill',
+    liveCasinoAccent: 'Live Casino',
+    liveCasinoLine2: 'Premiumopplevelse',
+    firstDepositRegister: 'REGISTRER NÅ',
+    firstDepositTitle: 'FØRSTE INNSKUDD',
+    firstDepositBonus: '100% BONUS',
+    firstDepositUpTo: 'OPPTIL $250 USD',
+    firstDepositFreeSpins: '+ 50 GRATIS SPINS',
   },
   home: {
     topGames: 'Topp spill',
@@ -399,27 +427,5 @@ export const no: TranslationTree = {
     suspended: 'suspendert',
     closed: 'lukket',
   },
-  affiliate: {
-    title: 'Partnerdashbord',
-    portal: 'Partnerportal',
-    logout: 'Logg ut',
-    referralLink: 'Henvisningslenke',
-    referredPlayers: 'Henviste spillere',
-    totalCommission: 'Total provisjon',
-    pendingCommission: 'Ventende provisjon',
-    commissions: 'Provisjoner',
-    commissionHistory: 'Provisjonshistorikk',
-    player: 'Spiller',
-    nickname: 'Kallenavn',
-    registeredAt: 'Registrert',
-    type: 'Type',
-    amount: 'Beløp',
-    status: 'Status',
-    date: 'Dato',
-    reference: 'Referanse',
-    noPlayers: 'Ingen henviste spillere ennå.',
-    noCommissions: 'Ingen provisjoner ennå.',
-    loadError: 'Kunne ikke laste partnerdata.',
-    playersOnly: 'Dette området er kun for partnerkontoer.',
-  },
+  affiliate: affiliateI18n,
 };

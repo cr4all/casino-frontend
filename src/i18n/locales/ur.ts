@@ -1,6 +1,7 @@
-import type { TranslationTree } from './en';
+import { affiliateI18n } from './affiliate.i18n';
+import type { LocaleTree } from './en';
 
-export const ur: TranslationTree = {
+export const ur: LocaleTree = {
   common: {
     loading: 'لوڈ ہو رہا ہے...',
     loadingGames: 'گیمز لوڈ ہو رہی ہیں...',
@@ -76,14 +77,41 @@ export const ur: TranslationTree = {
     terms: 'شرائط و ضوابط',
     privacy: 'رازداری کی پالیسی',
     responsibleGaming: 'ذمہ دار گیمنگ',
+    about: 'ہمارے بارے میں',
+    faq: 'FAQ',
+    contact: 'ہم سے رابطہ کریں',
+    aml: 'AML پالیسی',
     disclaimer: '18+ | ذمہ داری سے کھیلیں۔ جوئے کی لت لگ سکتی ہے۔',
     copyright: '© {{year}} iBets24. تمام حقوق محفوظ ہیں۔',
+  },  liveBetFeed: {
+    title: 'لائیو بیٹس',
+    game: 'گیم',
+    user: 'صارف',
+    time: 'وقت',
+    betAmount: 'بیٹ کی رقم',
+    multiplier: 'ضرب',
+    payout: 'ادائیگی',
+    hidden: 'پوشیدہ',
+  },
+
+  legal: {
+    backHome: '← Back to home',
   },
   hero: {
-    welcome: 'خوش آمدید',
-    bestExperience: 'بہترین تجربہ',
+    welcomeTagline: 'دنیا کی سب سے بڑی اسپورٹس بک اور آن لائن کیسینو',
     playNow: 'ابھی کھیلیں',
     registerPromo: 'ابھی رجسٹر کریں',
+    pragmaticLine1: 'کھیلیں',
+    pragmaticAccent: 'Pragmatic Slots',
+    pragmaticLine2: 'پریمیم تجربہ',
+    liveCasinoLine1: 'کھیلیں',
+    liveCasinoAccent: 'لائیو کیسینو',
+    liveCasinoLine2: 'پریمیم تجربہ',
+    firstDepositRegister: 'ابھی رجسٹر کریں',
+    firstDepositTitle: 'پہلی جمع',
+    firstDepositBonus: '100% بونس',
+    firstDepositUpTo: '$250 USD تک',
+    firstDepositFreeSpins: '+ 50 مفت اسپن',
   },
   home: {
     topGames: 'ٹاپ گیمز',
@@ -394,27 +422,5 @@ export const ur: TranslationTree = {
     suspended: 'suspended',
     closed: 'closed',
   },
-  affiliate: {
-    title: 'Affiliate Dashboard',
-    portal: 'Affiliate Portal',
-    logout: 'Logout',
-    referralLink: 'Referral Link',
-    referredPlayers: 'Referred Players',
-    totalCommission: 'Total Commission',
-    pendingCommission: 'Pending Commission',
-    commissions: 'Commissions',
-    commissionHistory: 'Commission History',
-    player: 'Player',
-    nickname: 'Nickname',
-    registeredAt: 'Registered',
-    type: 'Type',
-    amount: 'Amount',
-    status: 'حالت',
-    date: 'تاریخ',
-    reference: 'Reference',
-    noPlayers: 'No referred players yet.',
-    noCommissions: 'No commissions yet.',
-    loadError: 'Failed to load affiliate data.',
-    playersOnly: 'This area is for affiliate accounts only.',
-  },
+  affiliate: affiliateI18n,
 };

@@ -1,6 +1,7 @@
-import type { TranslationTree } from './en';
+import { affiliateI18n } from './affiliate.i18n';
+import type { LocaleTree } from './en';
 
-export const pl: TranslationTree = {
+export const pl: LocaleTree = {
   common: {
     loading: 'Ładowanie...',
     loadingGames: 'Ładowanie gier...',
@@ -75,14 +76,41 @@ export const pl: TranslationTree = {
     terms: 'Regulamin',
     privacy: 'Polityka prywatności',
     responsibleGaming: 'Odpowiedzialna gra',
+    about: 'O nas',
+    faq: 'FAQ',
+    contact: 'Kontakt',
+    aml: 'Polityka AML',
     disclaimer: '18+ | Graj odpowiedzialnie. Hazard może uzależniać.',
     copyright: '© {{year}} iBets24. Wszelkie prawa zastrzeżone.',
+  },  liveBetFeed: {
+    title: 'Zakłady na żywo',
+    game: 'Gra',
+    user: 'Użytkownik',
+    time: 'Czas',
+    betAmount: 'Kwota zakładu',
+    multiplier: 'Mnożnik',
+    payout: 'Wypłata',
+    hidden: 'Ukryty',
+  },
+
+  legal: {
+    backHome: '← Powrót do strony głównej',
   },
   hero: {
-    welcome: 'Witamy w',
-    bestExperience: 'Najlepsze wrażenia',
+    welcomeTagline: 'Największy bukmacher i kasyno online na świecie',
     playNow: 'Graj teraz',
     registerPromo: 'Zarejestruj się teraz',
+    pragmaticLine1: 'Graj',
+    pragmaticAccent: 'Pragmatic Slots',
+    pragmaticLine2: 'Doświadczenie premium',
+    liveCasinoLine1: 'Graj',
+    liveCasinoAccent: 'Live Casino',
+    liveCasinoLine2: 'Doświadczenie premium',
+    firstDepositRegister: 'ZAREJESTRUJ SIĘ',
+    firstDepositTitle: 'PIERWSZA WPŁATA',
+    firstDepositBonus: '100% BONUS',
+    firstDepositUpTo: 'DO $250 USD',
+    firstDepositFreeSpins: '+ 50 DARMOWYCH SPINÓW',
   },
   home: {
     topGames: 'Najlepsze gry',
@@ -399,27 +427,5 @@ export const pl: TranslationTree = {
     suspended: 'zawieszony',
     closed: 'zamknięty',
   },
-  affiliate: {
-    title: 'Panel partnerski',
-    portal: 'Portal partnerski',
-    logout: 'Wyloguj',
-    referralLink: 'Link polecający',
-    referredPlayers: 'Polecani gracze',
-    totalCommission: 'Łączna prowizja',
-    pendingCommission: 'Oczekująca prowizja',
-    commissions: 'Prowizje',
-    commissionHistory: 'Historia prowizji',
-    player: 'Gracz',
-    nickname: 'Pseudonim',
-    registeredAt: 'Zarejestrowany',
-    type: 'Typ',
-    amount: 'Kwota',
-    status: 'Status',
-    date: 'Data',
-    reference: 'Referencja',
-    noPlayers: 'Brak poleconych graczy.',
-    noCommissions: 'Brak prowizji.',
-    loadError: 'Nie udało się załadować danych partnerskich.',
-    playersOnly: 'Ten obszar jest przeznaczony wyłącznie dla kont partnerskich.',
-  },
+  affiliate: affiliateI18n,
 };

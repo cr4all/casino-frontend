@@ -1,6 +1,7 @@
-import type { TranslationTree } from './en';
+import { affiliateI18n } from './affiliate.i18n';
+import type { LocaleTree } from './en';
 
-export const fr: TranslationTree = {
+export const fr: LocaleTree = {
   common: {
     loading: 'Chargement...',
     loadingGames: 'Chargement des jeux...',
@@ -76,14 +77,41 @@ export const fr: TranslationTree = {
     terms: 'Conditions générales',
     privacy: 'Politique de confidentialité',
     responsibleGaming: 'Jeu responsable',
+    about: 'À propos de nous',
+    faq: 'FAQ',
+    contact: 'Contactez-nous',
+    aml: 'Politique AML',
     disclaimer: '18+ | Jouez responsablement. Le jeu peut créer une dépendance.',
     copyright: '© {{year}} iBets24. Tous droits réservés.',
+  },  liveBetFeed: {
+    title: 'Paris en direct',
+    game: 'Jeu',
+    user: 'Utilisateur',
+    time: 'Heure',
+    betAmount: 'Montant du pari',
+    multiplier: 'Multiplicateur',
+    payout: 'Gain',
+    hidden: 'Masqué',
+  },
+
+  legal: {
+    backHome: '← Retour à l\'accueil',
   },
   hero: {
-    welcome: 'Bienvenue sur',
-    bestExperience: 'La meilleure expérience',
+    welcomeTagline: 'Le plus grand site de paris sportifs et casino en ligne au monde',
     playNow: 'Jouer maintenant',
     registerPromo: 'S\'inscrire maintenant',
+    pragmaticLine1: 'Jouez',
+    pragmaticAccent: 'Pragmatic Slots',
+    pragmaticLine2: 'Expérience premium',
+    liveCasinoLine1: 'Jouez',
+    liveCasinoAccent: 'Casino en direct',
+    liveCasinoLine2: 'Expérience premium',
+    firstDepositRegister: 'INSCRIVEZ-VOUS',
+    firstDepositTitle: 'PREMIER DÉPÔT',
+    firstDepositBonus: '100% DE BONUS',
+    firstDepositUpTo: 'JUSQU\'À $250 USD',
+    firstDepositFreeSpins: '+ 50 TOURS GRATUITS',
   },
   home: {
     topGames: 'Jeux populaires',
@@ -394,27 +422,5 @@ export const fr: TranslationTree = {
     suspended: 'suspended',
     closed: 'closed',
   },
-  affiliate: {
-    title: 'Affiliate Dashboard',
-    portal: 'Affiliate Portal',
-    logout: 'Logout',
-    referralLink: 'Referral Link',
-    referredPlayers: 'Referred Players',
-    totalCommission: 'Total Commission',
-    pendingCommission: 'Pending Commission',
-    commissions: 'Commissions',
-    commissionHistory: 'Commission History',
-    player: 'Player',
-    nickname: 'Nickname',
-    registeredAt: 'Registered',
-    type: 'Type',
-    amount: 'Amount',
-    status: 'Statut',
-    date: 'Date',
-    reference: 'Reference',
-    noPlayers: 'No referred players yet.',
-    noCommissions: 'No commissions yet.',
-    loadError: 'Failed to load affiliate data.',
-    playersOnly: 'This area is for affiliate accounts only.',
-  },
+  affiliate: affiliateI18n,
 };

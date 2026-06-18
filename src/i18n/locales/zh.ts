@@ -1,6 +1,7 @@
-import type { TranslationTree } from './en';
+import { affiliateI18n } from './affiliate.i18n';
+import type { LocaleTree } from './en';
 
-export const zh: TranslationTree = {
+export const zh: LocaleTree = {
   common: {
     loading: '加载中...',
     loadingGames: '正在加载游戏...',
@@ -76,14 +77,41 @@ export const zh: TranslationTree = {
     terms: '条款与条件',
     privacy: '隐私政策',
     responsibleGaming: '负责任博彩',
+    about: '关于我们',
+    faq: '常见问题',
+    contact: '联系我们',
+    aml: 'AML 政策',
     disclaimer: '18+ | 理性博彩。赌博可能成瘾。',
     copyright: '© {{year}} iBets24. 保留所有权利。',
+  },  liveBetFeed: {
+    title: '实时投注',
+    game: '游戏',
+    user: '用户',
+    time: '时间',
+    betAmount: '投注金额',
+    multiplier: '倍数',
+    payout: '派彩',
+    hidden: '隐藏',
+  },
+
+  legal: {
+    backHome: '← 返回首页',
   },
   hero: {
-    welcome: '欢迎来到',
-    bestExperience: '最佳体验',
+    welcomeTagline: '全球最大的体育博彩和在线赌场',
     playNow: '立即游戏',
     registerPromo: '立即注册',
+    pragmaticLine1: '畅玩',
+    pragmaticAccent: 'Pragmatic 老虎机',
+    pragmaticLine2: '尊享体验',
+    liveCasinoLine1: '畅玩',
+    liveCasinoAccent: '真人娱乐场',
+    liveCasinoLine2: '尊享体验',
+    firstDepositRegister: '立即注册',
+    firstDepositTitle: '首次存款',
+    firstDepositBonus: '100% 奖金',
+    firstDepositUpTo: '最高 $250 USD',
+    firstDepositFreeSpins: '+ 50 免费旋转',
   },
   home: {
     topGames: '热门游戏',
@@ -394,27 +422,5 @@ export const zh: TranslationTree = {
     suspended: 'suspended',
     closed: 'closed',
   },
-  affiliate: {
-    title: 'Affiliate Dashboard',
-    portal: 'Affiliate Portal',
-    logout: 'Logout',
-    referralLink: 'Referral Link',
-    referredPlayers: 'Referred Players',
-    totalCommission: 'Total Commission',
-    pendingCommission: 'Pending Commission',
-    commissions: 'Commissions',
-    commissionHistory: 'Commission History',
-    player: 'Player',
-    nickname: 'Nickname',
-    registeredAt: 'Registered',
-    type: 'Type',
-    amount: 'Amount',
-    status: '状态',
-    date: '日期',
-    reference: 'Reference',
-    noPlayers: 'No referred players yet.',
-    noCommissions: 'No commissions yet.',
-    loadError: 'Failed to load affiliate data.',
-    playersOnly: 'This area is for affiliate accounts only.',
-  },
+  affiliate: affiliateI18n,
 };

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { PaymentOption } from '@/api/payment.api';
 import { CryptoIcon } from '@/components/deposit/CryptoIcon';
 import { useTranslation } from '@/hooks/useTranslation';
-import { formatBalance } from '@/utils/formatBalance';
+import { formatPaymentLimit } from '@/utils/formatBalance';
 
 export function PaymentOptionLogo({ option, className }: { option: PaymentOption; className?: string }) {
   const [imgError, setImgError] = useState(false);
@@ -17,7 +17,7 @@ export function PaymentOptionLogo({ option, className }: { option: PaymentOption
       <img
         src={`/payment-logos/${option.logo_key}.svg`}
         alt=""
-        className={`${logoClass} rounded-md object-contain bg-white/5 p-1`}
+        className={`${logoClass} shrink-0 rounded-lg border border-white/10 bg-white object-contain p-1.5`}
         onError={() => setImgError(true)}
       />
     );
@@ -38,8 +38,8 @@ function PaymentOptionMinMax({ option }: { option: PaymentOption }) {
   return (
     <p className="text-xs text-muted sm:shrink-0 sm:text-right">
       {t('common.minMax', {
-        min: formatBalance(option.min_amount),
-        max: option.max_amount ? formatBalance(option.max_amount) : t('common.noLimit'),
+        min: formatPaymentLimit(option.min_amount),
+        max: option.max_amount ? formatPaymentLimit(option.max_amount) : t('common.noLimit'),
       })}
     </p>
   );

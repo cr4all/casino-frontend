@@ -1,6 +1,7 @@
-import type { TranslationTree } from './en';
+import { affiliateI18n } from './affiliate.i18n';
+import type { LocaleTree } from './en';
 
-export const tr: TranslationTree = {
+export const tr: LocaleTree = {
   common: {
     loading: 'Yükleniyor...',
     loadingGames: 'Oyunlar yükleniyor...',
@@ -76,14 +77,41 @@ export const tr: TranslationTree = {
     terms: 'Şartlar ve koşullar',
     privacy: 'Gizlilik politikası',
     responsibleGaming: 'Sorumlu oyun',
+    about: 'Hakkımızda',
+    faq: 'SSS',
+    contact: 'Bize ulaşın',
+    aml: 'AML Politikası',
     disclaimer: '18+ | Sorumlu oynayın. Kumar bağımlılık yapabilir.',
     copyright: '© {{year}} iBets24. Tüm hakları saklıdır.',
+  },  liveBetFeed: {
+    title: 'Canlı bahisler',
+    game: 'Oyun',
+    user: 'Kullanıcı',
+    time: 'Zaman',
+    betAmount: 'Bahis tutarı',
+    multiplier: 'Çarpan',
+    payout: 'Ödeme',
+    hidden: 'Gizli',
+  },
+
+  legal: {
+    backHome: '← Ana sayfaya dön',
   },
   hero: {
-    welcome: 'Hoş geldiniz',
-    bestExperience: 'En iyi deneyim',
+    welcomeTagline: 'Dünyanın en büyük spor bahisleri ve online casino sitesi',
     playNow: 'Hemen oyna',
     registerPromo: 'Şimdi kayıt ol',
+    pragmaticLine1: 'Oyna',
+    pragmaticAccent: 'Pragmatic Slots',
+    pragmaticLine2: 'Premium deneyim',
+    liveCasinoLine1: 'Oyna',
+    liveCasinoAccent: 'Canlı Casino',
+    liveCasinoLine2: 'Premium deneyim',
+    firstDepositRegister: 'HEMEN KAYIT OL',
+    firstDepositTitle: 'İLK YATIRIM',
+    firstDepositBonus: '100% BONUS',
+    firstDepositUpTo: '$250 USD\'YE KADAR',
+    firstDepositFreeSpins: '+ 50 ÜCRETSİZ SPIN',
   },
   home: {
     topGames: 'En iyi oyunlar',
@@ -394,27 +422,5 @@ export const tr: TranslationTree = {
     suspended: 'suspended',
     closed: 'closed',
   },
-  affiliate: {
-    title: 'Affiliate Dashboard',
-    portal: 'Affiliate Portal',
-    logout: 'Logout',
-    referralLink: 'Referral Link',
-    referredPlayers: 'Referred Players',
-    totalCommission: 'Total Commission',
-    pendingCommission: 'Pending Commission',
-    commissions: 'Commissions',
-    commissionHistory: 'Commission History',
-    player: 'Player',
-    nickname: 'Nickname',
-    registeredAt: 'Registered',
-    type: 'Type',
-    amount: 'Amount',
-    status: 'Durum',
-    date: 'Tarih',
-    reference: 'Reference',
-    noPlayers: 'No referred players yet.',
-    noCommissions: 'No commissions yet.',
-    loadError: 'Failed to load affiliate data.',
-    playersOnly: 'This area is for affiliate accounts only.',
-  },
+  affiliate: affiliateI18n,
 };

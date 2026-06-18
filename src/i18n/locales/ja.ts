@@ -1,6 +1,7 @@
-import type { TranslationTree } from './en';
+import { affiliateI18n } from './affiliate.i18n';
+import type { LocaleTree } from './en';
 
-export const ja: TranslationTree = {
+export const ja: LocaleTree = {
   common: {
     loading: '読み込み中...',
     loadingGames: 'ゲームを読み込み中...',
@@ -76,14 +77,41 @@ export const ja: TranslationTree = {
     terms: '利用規約',
     privacy: 'プライバシーポリシー',
     responsibleGaming: '責任あるゲーム',
+    about: '会社概要',
+    faq: 'よくある質問',
+    contact: 'お問い合わせ',
+    aml: 'AMLポリシー',
     disclaimer: '18+ | 責任あるプレイ。ギャンブルは依存症の原因となることがあります。',
     copyright: '© {{year}} iBets24. All rights reserved.',
+  },  liveBetFeed: {
+    title: 'ライブベット',
+    game: 'ゲーム',
+    user: 'ユーザー',
+    time: '時間',
+    betAmount: 'ベット額',
+    multiplier: '倍率',
+    payout: '払戻金',
+    hidden: '非表示',
+  },
+
+  legal: {
+    backHome: '← ホームに戻る',
   },
   hero: {
-    welcome: 'ようこそ',
-    bestExperience: '最高の体験',
+    welcomeTagline: '世界最大のスポーツブック＆オンラインカジノ',
     playNow: '今すぐプレイ',
     registerPromo: '今すぐ登録',
+    pragmaticLine1: 'プレイ',
+    pragmaticAccent: 'Pragmatic スロット',
+    pragmaticLine2: 'プレミアム体験',
+    liveCasinoLine1: 'プレイ',
+    liveCasinoAccent: 'ライブカジノ',
+    liveCasinoLine2: 'プレミアム体験',
+    firstDepositRegister: '今すぐ登録',
+    firstDepositTitle: '初回入金',
+    firstDepositBonus: '100% ボーナス',
+    firstDepositUpTo: '最大 $250 USD',
+    firstDepositFreeSpins: '+ 50 フリースピン',
   },
   home: {
     topGames: 'トップゲーム',
@@ -394,27 +422,5 @@ export const ja: TranslationTree = {
     suspended: 'suspended',
     closed: 'closed',
   },
-  affiliate: {
-    title: 'Affiliate Dashboard',
-    portal: 'Affiliate Portal',
-    logout: 'Logout',
-    referralLink: 'Referral Link',
-    referredPlayers: 'Referred Players',
-    totalCommission: 'Total Commission',
-    pendingCommission: 'Pending Commission',
-    commissions: 'Commissions',
-    commissionHistory: 'Commission History',
-    player: 'Player',
-    nickname: 'Nickname',
-    registeredAt: 'Registered',
-    type: 'Type',
-    amount: 'Amount',
-    status: 'ステータス',
-    date: '日付',
-    reference: 'Reference',
-    noPlayers: 'No referred players yet.',
-    noCommissions: 'No commissions yet.',
-    loadError: 'Failed to load affiliate data.',
-    playersOnly: 'This area is for affiliate accounts only.',
-  },
+  affiliate: affiliateI18n,
 };

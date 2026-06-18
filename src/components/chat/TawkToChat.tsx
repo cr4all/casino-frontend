@@ -3,6 +3,7 @@ import { useAuthStore } from '@/stores/authStore';
 import { usePlayerStore } from '@/stores/playerStore';
 import { canLoadChat, useCookieConsentStore } from '@/stores/cookieConsentStore';
 import { useUiStore } from '@/stores/uiStore';
+import { useLiveChatConfig } from '@/hooks/useLiveChat';
 import { hideTawkWidget, isTawkConfigured, showTawkWidget } from '@/utils/tawkWidget';
 
 function isGamePlayPath(pathname: string = window.location.pathname): boolean {
@@ -73,6 +74,7 @@ export function TawkToChat() {
 }
 
 function TawkToChatInner() {
+  const { nativeEnabled, loading: configLoading } = useLiveChatConfig();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const profile = usePlayerStore((s) => s.profile);
   const level = useCookieConsentStore((s) => s.level);
@@ -83,26 +85,31 @@ function TawkToChatInner() {
   const chatAllowed = canLoadChat(level, preferences);
 
   useEffect(() => {
+    if (nativeEnabled || configLoading) {
+      hideTawkWidget();
+      return;
+    }
+
     if (!chatAllowed) {
       hideTawkWidget();
       closeLiveChat();
       return;
     }
     loadTawkScript();
-  }, [chatAllowed, closeLiveChat]);
+  }, [chatAllowed, closeLiveChat, configLoading, nativeEnabled]);
 
   useEffect(() => {
-    if (!chatAllowed) return;
+    if (nativeEnabled || configLoading || !chatAllowed) return;
 
     if (liveChatOpen) {
       showTawkWidget();
     } else {
       hideTawkWidget();
     }
-  }, [chatAllowed, liveChatOpen]);
+  }, [chatAllowed, configLoading, liveChatOpen, nativeEnabled]);
 
   useEffect(() => {
-    if (!isTawkConfigured() || !chatAllowed) return;
+    if (nativeEnabled || configLoading || !isTawkConfigured() || !chatAllowed) return;
 
     if (!isAuthenticated) {
       syncedRef.current = false;
@@ -122,7 +129,7 @@ function TawkToChatInner() {
     } else {
       appendTawkOnLoad(apply);
     }
-  }, [isAuthenticated, chatAllowed, profile]);
+  }, [isAuthenticated, chatAllowed, configLoading, nativeEnabled, profile]);
 
   return null;
 }

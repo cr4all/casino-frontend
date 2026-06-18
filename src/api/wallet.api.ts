@@ -48,4 +48,28 @@ export const playerApi = {
     const { data } = await api.put<ApiResponse<null>>('/player/password', payload);
     return data;
   },
+
+  requestEmailVerification: async () => {
+    const { data } = await api.post<ApiResponse<null>>('/player/verify/email/request');
+    return data;
+  },
+
+  confirmEmailVerification: async (code: string) => {
+    const { data } = await api.post<ApiResponse<PlayerProfile>>('/player/verify/email/confirm', {
+      code,
+    });
+    return data.data;
+  },
+
+  requestPhoneVerification: async () => {
+    const { data } = await api.post<ApiResponse<null>>('/player/verify/phone/request');
+    return data;
+  },
+
+  confirmPhoneVerification: async (code: string) => {
+    const { data } = await api.post<ApiResponse<PlayerProfile>>('/player/verify/phone/confirm', {
+      code,
+    });
+    return data.data;
+  },
 };

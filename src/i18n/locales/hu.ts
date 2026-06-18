@@ -1,6 +1,7 @@
-import type { TranslationTree } from './en';
+import { affiliateI18n } from './affiliate.i18n';
+import type { LocaleTree } from './en';
 
-export const hu: TranslationTree = {
+export const hu: LocaleTree = {
   common: {
     loading: 'Betöltés...',
     loadingGames: 'Játékok betöltése...',
@@ -75,14 +76,41 @@ export const hu: TranslationTree = {
     terms: 'Általános szerződési feltételek',
     privacy: 'Adatvédelmi irányelvek',
     responsibleGaming: 'Felelős játék',
+    about: 'Rólunk',
+    faq: 'GYIK',
+    contact: 'Kapcsolat',
+    aml: 'AML szabályzat',
     disclaimer: '18+ | Játsszon felelősségteljesen. A szerencsejáték függőséget okozhat.',
     copyright: '© {{year}} iBets24. Minden jog fenntartva.',
+  },  liveBetFeed: {
+    title: 'Élő fogadások',
+    game: 'Játék',
+    user: 'Felhasználó',
+    time: 'Idő',
+    betAmount: 'Tét összege',
+    multiplier: 'Szorzó',
+    payout: 'Kifizetés',
+    hidden: 'Rejtett',
+  },
+
+  legal: {
+    backHome: '← Vissza a főoldalra',
   },
   hero: {
-    welcome: 'Üdvözöljük az',
-    bestExperience: 'Legjobb élmény',
+    welcomeTagline: 'A világ legnagyobb sportfogadó és online kaszinó',
     playNow: 'Játék most',
     registerPromo: 'Regisztráljon most',
+    pragmaticLine1: 'Játssz',
+    pragmaticAccent: 'Pragmatic Slots',
+    pragmaticLine2: 'Prémium élmény',
+    liveCasinoLine1: 'Játssz',
+    liveCasinoAccent: 'Live Casino',
+    liveCasinoLine2: 'Prémium élmény',
+    firstDepositRegister: 'REGISZTRÁLJ MOST',
+    firstDepositTitle: 'ELSŐ BEFIZETÉS',
+    firstDepositBonus: '100% BÓNUSZ',
+    firstDepositUpTo: 'AKÁR $250 USD',
+    firstDepositFreeSpins: '+ 50 INGYENES PÖRGETÉS',
   },
   home: {
     topGames: 'Legjobb játékok',
@@ -399,27 +427,5 @@ export const hu: TranslationTree = {
     suspended: 'felfüggesztve',
     closed: 'lezárva',
   },
-  affiliate: {
-    title: 'Partner irányítópult',
-    portal: 'Partner portál',
-    logout: 'Kijelentkezés',
-    referralLink: 'Ajánlói link',
-    referredPlayers: 'Ajánlott játékosok',
-    totalCommission: 'Összes jutalék',
-    pendingCommission: 'Függőben lévő jutalék',
-    commissions: 'Jutalékok',
-    commissionHistory: 'Jutalék előzmények',
-    player: 'Játékos',
-    nickname: 'Becenév',
-    registeredAt: 'Regisztrálva',
-    type: 'Típus',
-    amount: 'Összeg',
-    status: 'Állapot',
-    date: 'Dátum',
-    reference: 'Hivatkozás',
-    noPlayers: 'Még nincsenek ajánlott játékosok.',
-    noCommissions: 'Még nincsenek jutalékok.',
-    loadError: 'A partner adatok betöltése sikertelen.',
-    playersOnly: 'Ez a terület csak partner fiókok számára érhető el.',
-  },
+  affiliate: affiliateI18n,
 };

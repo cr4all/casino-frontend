@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Navigate, Outlet, useLocation, useSearchParams } from 'react-router-dom';
 import { Sidebar } from '@/components/layout/Sidebar';
+import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
 import { ForgotPasswordModal } from '@/components/auth/ForgotPasswordModal';
 import { LoginModal } from '@/components/auth/LoginModal';
@@ -12,6 +13,7 @@ import { useAuthInit } from '@/hooks/useAuthInit';
 import { useCloseLiveChatOnNavigate } from '@/hooks/useCloseLiveChatOnNavigate';
 import { useIdleLogout } from '@/hooks/useIdleLogout';
 import { useLanguageInit } from '@/hooks/useLanguageInit';
+import { useLiveChatSync } from '@/hooks/useLiveChatSync';
 import { useNotificationSync } from '@/hooks/useNotificationSync';
 import { usePlayerProfileSync } from '@/hooks/usePlayerProfileSync';
 import { useSessionPolicy } from '@/hooks/useSessionPolicy';
@@ -27,6 +29,7 @@ export function AppLayout() {
   useWalletSync();
   usePlayerProfileSync();
   useNotificationSync();
+  useLiveChatSync();
   useIdleLogout();
   useLanguageInit();
   useCloseLiveChatOnNavigate();
@@ -46,14 +49,17 @@ export function AppLayout() {
     captureAffiliateReferralFromUrl(searchParams);
   }, [searchParams]);
 
-  if (isAffiliateUser && location.pathname !== '/affiliate') {
+  if (isAffiliateUser && !location.pathname.startsWith('/affiliate')) {
     return <Navigate to="/affiliate" replace />;
   }
 
   if (isAffiliateUser) {
     return (
-      <div className="min-h-screen bg-background p-4 md:p-6">
-        <Outlet />
+      <div className="min-h-screen bg-background p-4 md:p-6 flex flex-col">
+        <div className="flex-1">
+          <Outlet />
+        </div>
+        <Footer />
         <LoginModal />
         <RegisterModal />
         <ForgotPasswordModal />
@@ -90,6 +96,7 @@ export function AppLayout() {
         <main className="flex-1 overflow-x-hidden p-4 md:p-6">
           <Outlet />
         </main>
+        <Footer />
       </div>
 
       <LoginModal />

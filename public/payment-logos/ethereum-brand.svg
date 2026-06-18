@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 24" fill="none" aria-hidden="true">
+  <circle cx="12" cy="12" r="10" fill="#627EEA"/>
+  <path fill="#fff" d="M12 5.8 8.2 12l3.8 2.1V5.8zm0 0 3.8 6.2L12 14V5.8zM8.2 13.2 12 20.2v-4.9l-3.8-2.1zm7.6 0L12 15.3v4.9l3.8-7z"/>
+  <text x="28" y="17" fill="#627EEA" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="600">Ethereum</text>
+</svg>

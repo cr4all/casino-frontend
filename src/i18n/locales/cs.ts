@@ -1,6 +1,7 @@
-import type { TranslationTree } from './en';
+import { affiliateI18n } from './affiliate.i18n';
+import type { LocaleTree } from './en';
 
-export const cs: TranslationTree = {
+export const cs: LocaleTree = {
   common: {
     loading: 'Načítání...',
     loadingGames: 'Načítání her...',
@@ -75,14 +76,41 @@ export const cs: TranslationTree = {
     terms: 'Obchodní podmínky',
     privacy: 'Zásady ochrany soukromí',
     responsibleGaming: 'Zodpovědné hraní',
+    about: 'O nás',
+    faq: 'Často kladené dotazy',
+    contact: 'Kontakt',
+    aml: 'AML politika',
     disclaimer: '18+ | Hrajte zodpovědně. Hazard může být návykový.',
     copyright: '© {{year}} iBets24. Všechna práva vyhrazena.',
+  },  liveBetFeed: {
+    title: 'Živé sázky',
+    game: 'Hra',
+    user: 'Uživatel',
+    time: 'Čas',
+    betAmount: 'Výše sázky',
+    multiplier: 'Násobitel',
+    payout: 'Výplata',
+    hidden: 'Skrytý',
+  },
+
+  legal: {
+    backHome: '← Zpět na domovskou stránku',
   },
   hero: {
-    welcome: 'Vítejte v',
-    bestExperience: 'Nejlepší zážitek',
+    welcomeTagline: 'Největší sázková kancelář a online kasino na světě',
     playNow: 'Hrát nyní',
     registerPromo: 'Registrovat se',
+    pragmaticLine1: 'Hrajte',
+    pragmaticAccent: 'Pragmatic Slots',
+    pragmaticLine2: 'Prémiový zážitek',
+    liveCasinoLine1: 'Hrajte',
+    liveCasinoAccent: 'Live Casino',
+    liveCasinoLine2: 'Prémiový zážitek',
+    firstDepositRegister: 'REGISTROVAT SE',
+    firstDepositTitle: 'PRVNÍ VKLAD',
+    firstDepositBonus: '100% BONUS',
+    firstDepositUpTo: 'AŽ $250 USD',
+    firstDepositFreeSpins: '+ 50 VOLNÝCH SPINŮ',
   },
   home: {
     topGames: 'Nejlepší hry',
@@ -399,27 +427,5 @@ export const cs: TranslationTree = {
     suspended: 'pozastaveno',
     closed: 'uzavřeno',
   },
-  affiliate: {
-    title: 'Affiliate panel',
-    portal: 'Affiliate portál',
-    logout: 'Odhlásit se',
-    referralLink: 'Referral odkaz',
-    referredPlayers: 'Doporučení hráči',
-    totalCommission: 'Celková provize',
-    pendingCommission: 'Čekající provize',
-    commissions: 'Provize',
-    commissionHistory: 'Historie provizí',
-    player: 'Hráč',
-    nickname: 'Přezdívka',
-    registeredAt: 'Registrace',
-    type: 'Typ',
-    amount: 'Částka',
-    status: 'Stav',
-    date: 'Datum',
-    reference: 'Reference',
-    noPlayers: 'Zatím žádní doporučení hráči.',
-    noCommissions: 'Zatím žádné provize.',
-    loadError: 'Nepodařilo se načíst affiliate data.',
-    playersOnly: 'Tato oblast je určena pouze pro affiliate účty.',
-  },
+  affiliate: affiliateI18n,
 };

@@ -4,9 +4,10 @@ import { HeroBanner } from '@/components/home/HeroBanner';
 import { HomeCategoryBar, getTypeSlug, isTypeCategory, type HomeCategory } from '@/components/home/HomeCategoryBar';
 import { ProviderSelect } from '@/components/provider/ProviderSelect';
 import { ShowMoreButton } from '@/components/common/ShowMoreButton';
+import { LiveBetFeed } from '@/components/bets/LiveBetFeed';
 import { gameApi } from '@/api/game.api';
 import { useDebouncedValue } from '@/hooks/useDebouncedValue';
-import { useGameVendors } from '@/hooks/useGameVendors';
+import { useProvidersForCategory } from '@/hooks/useProvidersForCategory';
 import { useTranslation } from '@/hooks/useTranslation';
 import type { Game } from '@/types';
 
@@ -14,8 +15,9 @@ const PER_PAGE = 24;
 
 export function HomePage() {
   const { t } = useTranslation();
-  const { vendors, loading: vendorsLoading } = useGameVendors();
   const [activeCategory, setActiveCategory] = useState<HomeCategory>('all');
+  const providerTypeSlug = isTypeCategory(activeCategory) ? getTypeSlug(activeCategory) : null;
+  const { vendors, loading: vendorsLoading } = useProvidersForCategory(providerTypeSlug);
   const [selectedVendorId, setSelectedVendorId] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const debouncedSearch = useDebouncedValue(searchQuery.trim(), 400, [
@@ -43,6 +45,12 @@ export function HomePage() {
   useEffect(() => {
     setPage(1);
   }, [debouncedSearch]);
+
+  useEffect(() => {
+    if (selectedVendorId !== null && !vendors.some((vendor) => vendor.id === selectedVendorId)) {
+      setSelectedVendorId(null);
+    }
+  }, [vendors, selectedVendorId]);
 
   useEffect(() => {
     let cancelled = false;
@@ -174,6 +182,8 @@ export function HomePage() {
             loading={loadingMore}
             onClick={handleShowMore}
           />
+
+          <LiveBetFeed games={games} />
         </>
       )}
     </div>
