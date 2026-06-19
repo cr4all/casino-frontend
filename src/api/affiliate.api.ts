@@ -8,6 +8,11 @@ export interface AffiliateMe {
   cpa_amount: string | null;
   status: string;
   referral_link: string;
+  is_sub_affiliate: boolean;
+  can_manage_sub_affiliates: boolean;
+  parent_code: string | null;
+  email: string | null;
+  email_verified: boolean;
 }
 
 export interface AffiliateStats {
@@ -15,6 +20,10 @@ export interface AffiliateStats {
   commissions_count: number;
   total_commission: string;
   pending_commission: string;
+  sub_affiliates_count?: number;
+  downline_players_count?: number;
+  override_commission?: string;
+  pending_override_commission?: string;
 }
 
 export interface AffiliateReferredPlayer {
@@ -25,12 +34,41 @@ export interface AffiliateReferredPlayer {
 
 export interface AffiliateCommission {
   id: number;
+  player_id: number;
   type: string;
   amount: string;
   reference_type: string;
   reference_id: string;
   status: string;
   created_at: string | null;
+}
+
+export interface AffiliateSubAffiliate {
+  id: number;
+  code: string;
+  commission_model: string;
+  commission_rate: string;
+  cpa_amount: string | null;
+  status: string;
+  referred_players_count: number;
+  created_at: string | null;
+}
+
+export interface CreateSubAffiliatePayload {
+  code: string;
+  email: string;
+  password: string;
+  commission_model: string;
+  commission_rate?: number;
+  cpa_amount?: number;
+  status?: string;
+}
+
+export interface UpdateSubAffiliatePayload {
+  commission_model?: string;
+  commission_rate?: number;
+  cpa_amount?: number | null;
+  status?: string;
 }
 
 interface Paginated<T> {
@@ -63,5 +101,38 @@ export const affiliateApi = {
       { params: { page } },
     );
     return data.data;
+  },
+
+  getSubAffiliates: async (page = 1) => {
+    const { data } = await api.get<ApiResponse<Paginated<AffiliateSubAffiliate>>>(
+      '/affiliate/sub-affiliates',
+      { params: { page } },
+    );
+    return data.data;
+  },
+
+  createSubAffiliate: async (payload: CreateSubAffiliatePayload) => {
+    const { data } = await api.post<ApiResponse<AffiliateSubAffiliate>>(
+      '/affiliate/sub-affiliates',
+      payload,
+    );
+    return data.data;
+  },
+
+  updateSubAffiliate: async (id: number, payload: UpdateSubAffiliatePayload) => {
+    const { data } = await api.patch<ApiResponse<AffiliateSubAffiliate>>(
+      `/affiliate/sub-affiliates/${id}`,
+      payload,
+    );
+    return data.data;
+  },
+
+  changePassword: async (payload: {
+    current_password: string;
+    password: string;
+    password_confirmation: string;
+  }) => {
+    const { data } = await api.put<ApiResponse<null>>('/affiliate/password', payload);
+    return data;
   },
 };
