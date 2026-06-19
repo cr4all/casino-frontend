@@ -17,15 +17,13 @@ function HeroCtaButton({ playTo }: { playTo: string }) {
 
   if (!isAuthenticated) {
     return (
-      <button
-        type="button"
+      <Button
+        variant="gold"
+        className="hero-banner-text__cta-link hero-banner-text__cta"
         onClick={() => openModal('register')}
-        className="hero-banner-text__cta-link border-0 bg-transparent p-0"
       >
-        <Button variant="gold" className="hero-banner-text__cta">
-          {t('hero.registerPromo')}
-        </Button>
-      </button>
+        {t('hero.registerPromo')}
+      </Button>
     );
   }
 
