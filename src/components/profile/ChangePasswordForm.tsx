@@ -13,7 +13,7 @@ const inputClassName =
   'w-full rounded-md border border-white/10 bg-card px-3 py-2.5 text-sm text-white focus:border-accent focus:outline-none';
 
 type ChangePasswordFormProps = {
-  onChangePassword: (payload: ChangePasswordPayload) => Promise<void>;
+  onChangePassword: (payload: ChangePasswordPayload) => Promise<unknown>;
   onSuccess?: () => void;
 };
 
