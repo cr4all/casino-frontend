@@ -1,5 +1,3 @@
-import { affiliateI18n } from './affiliate.i18n';
-
 export const en = {
   common: {
     loading: 'Loading...',
@@ -448,7 +446,29 @@ export const en = {
     suspended: 'suspended',
     closed: 'closed',
   },
-  affiliate: affiliateI18n,
+  affiliate: {
+    title: 'Affiliate Dashboard',
+    portal: 'Affiliate Portal',
+    logout: 'Logout',
+    referralLink: 'Referral Link',
+    referredPlayers: 'Referred Players',
+    totalCommission: 'Total Commission',
+    pendingCommission: 'Pending Commission',
+    commissions: 'Commissions',
+    commissionHistory: 'Commission History',
+    player: 'Player',
+    nickname: 'Nickname',
+    registeredAt: 'Registered',
+    type: 'Type',
+    amount: 'Amount',
+    status: 'Status',
+    date: 'Date',
+    reference: 'Reference',
+    noPlayers: 'No referred players yet.',
+    noCommissions: 'No commissions yet.',
+    loadError: 'Failed to load affiliate data.',
+    playersOnly: 'This area is for affiliate accounts only.',
+  },
 } as const;
 
 type DeepStringify<T> = T extends string

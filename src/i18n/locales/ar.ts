@@ -1,4 +1,3 @@
-import { affiliateI18n } from './affiliate.i18n';
 import type { LocaleTree } from './en';
 
 export const ar: LocaleTree = {
@@ -427,5 +426,27 @@ export const ar: LocaleTree = {
     suspended: 'معلّق',
     closed: 'مغلق',
   },
-  affiliate: affiliateI18n,
+  affiliate: {
+    title: 'لوحة الشركاء',
+    portal: 'بوابة الشركاء',
+    logout: 'تسجيل الخروج',
+    referralLink: 'رابط الإحالة',
+    referredPlayers: 'اللاعبون المُحالون',
+    totalCommission: 'إجمالي العمولة',
+    pendingCommission: 'العمولة المعلّقة',
+    commissions: 'العمولات',
+    commissionHistory: 'سجل العمولات',
+    player: 'اللاعب',
+    nickname: 'الاسم المستعار',
+    registeredAt: 'تاريخ التسجيل',
+    type: 'النوع',
+    amount: 'المبلغ',
+    status: 'الحالة',
+    date: 'التاريخ',
+    reference: 'المرجع',
+    noPlayers: 'لا يوجد لاعبون مُحالون بعد.',
+    noCommissions: 'لا توجد عمولات بعد.',
+    loadError: 'فشل تحميل بيانات الشركاء.',
+    playersOnly: 'هذه المنطقة مخصصة لحسابات الشركاء فقط.',
+  },
 };

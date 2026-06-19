@@ -1,4 +1,3 @@
-import { affiliateI18n } from './affiliate.i18n';
 import type { LocaleTree } from './en';
 
 export const es: LocaleTree = {
@@ -422,5 +421,27 @@ export const es: LocaleTree = {
     suspended: 'suspended',
     closed: 'closed',
   },
-  affiliate: affiliateI18n,
+  affiliate: {
+    title: 'Affiliate Dashboard',
+    portal: 'Affiliate Portal',
+    logout: 'Logout',
+    referralLink: 'Referral Link',
+    referredPlayers: 'Referred Players',
+    totalCommission: 'Total Commission',
+    pendingCommission: 'Pending Commission',
+    commissions: 'Commissions',
+    commissionHistory: 'Commission History',
+    player: 'Player',
+    nickname: 'Nickname',
+    registeredAt: 'Registered',
+    type: 'Type',
+    amount: 'Amount',
+    status: 'Estado',
+    date: 'Fecha',
+    reference: 'Reference',
+    noPlayers: 'No referred players yet.',
+    noCommissions: 'No commissions yet.',
+    loadError: 'Failed to load affiliate data.',
+    playersOnly: 'This area is for affiliate accounts only.',
+  },
 };

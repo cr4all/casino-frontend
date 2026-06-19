@@ -1,4 +1,3 @@
-import { affiliateI18n } from './affiliate.i18n';
 import type { LocaleTree } from './en';
 
 export const pl: LocaleTree = {
@@ -427,5 +426,27 @@ export const pl: LocaleTree = {
     suspended: 'zawieszony',
     closed: 'zamknięty',
   },
-  affiliate: affiliateI18n,
+  affiliate: {
+    title: 'Panel partnerski',
+    portal: 'Portal partnerski',
+    logout: 'Wyloguj',
+    referralLink: 'Link polecający',
+    referredPlayers: 'Polecani gracze',
+    totalCommission: 'Łączna prowizja',
+    pendingCommission: 'Oczekująca prowizja',
+    commissions: 'Prowizje',
+    commissionHistory: 'Historia prowizji',
+    player: 'Gracz',
+    nickname: 'Pseudonim',
+    registeredAt: 'Zarejestrowany',
+    type: 'Typ',
+    amount: 'Kwota',
+    status: 'Status',
+    date: 'Data',
+    reference: 'Referencja',
+    noPlayers: 'Brak poleconych graczy.',
+    noCommissions: 'Brak prowizji.',
+    loadError: 'Nie udało się załadować danych partnerskich.',
+    playersOnly: 'Ten obszar jest przeznaczony wyłącznie dla kont partnerskich.',
+  },
 };
