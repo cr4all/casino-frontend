@@ -104,6 +104,16 @@ export const ko: LocaleTree = {
   legal: {
     backHome: '← 홈으로',
   },
+  notFound: {
+    code: '404',
+    title: '페이지를 찾을 수 없습니다',
+    description:
+      '요청한 페이지가 존재하지 않거나 링크가 변경되었을 수 있습니다. URL을 확인하거나 홈으로 돌아가세요.',
+    pathHint: '요청 경로:',
+    backHome: '홈으로',
+    browseGames: '게임 둘러보기',
+    helpText: '도움이 필요하신가요?',
+  },
   hero: {
     welcomeTagline: '세계 최대 규모의 스포츠북 및 온라인 카지노',
     playNow: '지금 플레이',
@@ -208,6 +218,8 @@ export const ko: LocaleTree = {
     forgotPasswordRequestError: '인증 코드를 보낼 수 없습니다. 다시 시도해 주세요.',
     forgotPasswordResetError: '비밀번호를 재설정할 수 없습니다. 코드를 확인하고 다시 시도해 주세요.',
     loginErrorPhone: '전화번호 또는 비밀번호가 올바르지 않습니다.',
+    rememberMe: '로그인 상태 유지',
+    affiliatePortalLoginTitle: '어필리에이트 포털 로그인',
     registerTitle: '회원가입',
     email: '이메일',
     password: '비밀번호',

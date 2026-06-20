@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { gameApi } from '@/api/game.api';
 import { useAuthStore } from '@/stores/authStore';
 import { useLanguageInit } from '@/hooks/useLanguageInit';
+import { useScrollToTopOnNavigate } from '@/hooks/useScrollToTopOnNavigate';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getApiErrorMessage } from '@/utils/apiError';
 import { fitGameWindow } from '@/utils/gameWindow';
@@ -19,6 +20,7 @@ export function GamePlayPage() {
   const [loading, setLoading] = useState(true);
 
   useLanguageInit();
+  useScrollToTopOnNavigate();
 
   useEffect(() => {
     const channel = new BroadcastChannel(GAME_FOCUS_CHANNEL);

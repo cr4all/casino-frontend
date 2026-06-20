@@ -199,6 +199,8 @@ export const sr: LocaleTree = {
     forgotPasswordRequestError: 'Unable to send verification code. Please try again.',
     forgotPasswordResetError: 'Unable to reset password. Check the code and try again.',
     loginErrorPhone: 'Nevažeći telefon ili lozinka.',
+    rememberMe: 'Zapamti me',
+    affiliatePortalLoginTitle: 'Prijava na affiliate portal',
     registerTitle: 'Registracija',
     email: 'Email',
     password: 'Lozinka',

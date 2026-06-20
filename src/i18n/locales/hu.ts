@@ -199,6 +199,8 @@ export const hu: LocaleTree = {
     forgotPasswordRequestError: 'Nem sikerült elküldeni az ellenőrző kódot. Kérjük, próbálja újra.',
     forgotPasswordResetError: 'Nem sikerült visszaállítani a jelszót. Ellenőrizze a kódot, és próbálja újra.',
     loginErrorPhone: 'Érvénytelen telefonszám vagy jelszó.',
+    rememberMe: 'Emlékezz rám',
+    affiliatePortalLoginTitle: 'Affiliate portál bejelentkezés',
     registerTitle: 'Regisztráció',
     email: 'E-mail',
     password: 'Jelszó',

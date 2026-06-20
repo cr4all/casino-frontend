@@ -199,6 +199,8 @@ export const et: LocaleTree = {
     forgotPasswordRequestError: 'Kinnituskoodi saatmine ebaõnnestus. Proovi uuesti.',
     forgotPasswordResetError: 'Parooli lähtestamine ebaõnnestus. Kontrolli koodi ja proovi uuesti.',
     loginErrorPhone: 'Vale telefoninumber või parool.',
+    rememberMe: 'Jäta mind meelde',
+    affiliatePortalLoginTitle: 'Partnerportaali sisselogimine',
     registerTitle: 'Registreeru',
     email: 'E-post',
     password: 'Parool',

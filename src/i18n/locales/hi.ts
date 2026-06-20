@@ -199,6 +199,8 @@ export const hi: LocaleTree = {
     forgotPasswordRequestError: 'Unable to send verification code. Please try again.',
     forgotPasswordResetError: 'Unable to reset password. Check the code and try again.',
     loginErrorPhone: 'अमान्य फ़ोन नंबर या पासवर्ड।',
+    rememberMe: 'मुझे याद रखें',
+    affiliatePortalLoginTitle: 'एफ़िलिएट पोर्टल लॉगिन',
     registerTitle: 'पंजीकरण',
     email: 'ईमेल',
     password: 'पासवर्ड',

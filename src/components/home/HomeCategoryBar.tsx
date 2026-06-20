@@ -1,6 +1,6 @@
 import { useGameTypes } from '@/hooks/useGameTypes';
 import { useTranslation } from '@/hooks/useTranslation';
-import { typeIcon } from '@/stores/gameStore';
+import { GameTypeIcon } from '@/components/common/GameTypeIcon';
 
 export type HomeCategory = 'all' | 'top' | 'popular' | 'new' | `type-${string}`;
 
@@ -38,9 +38,10 @@ export function HomeCategoryBar({ active, onChange }: HomeCategoryBarProps) {
     return tCollection(id);
   };
 
-  const typeCategories: { id: HomeCategory; icon: string }[] = types.map((type) => ({
+  const typeCategories: { id: HomeCategory; slug: string; icon: string | null }[] = types.map((type) => ({
     id: `type-${type.slug}` as HomeCategory,
-    icon: typeIcon(type.icon, type.slug),
+    slug: type.slug,
+    icon: type.icon,
   }));
 
   const categories = [...COLLECTION_CATEGORIES, ...typeCategories];
@@ -55,8 +56,10 @@ export function HomeCategoryBar({ active, onChange }: HomeCategoryBarProps) {
 
   return (
     <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
-      {categories.map(({ id, icon }) => {
+      {categories.map((category) => {
+        const { id } = category;
         const isActive = active === id;
+        const isType = 'slug' in category;
         return (
           <button
             key={id}
@@ -68,7 +71,15 @@ export function HomeCategoryBar({ active, onChange }: HomeCategoryBarProps) {
                 : 'border-white/10 bg-card text-muted hover:border-white/20 hover:text-white'
             }`}
           >
-            <span className="text-xl leading-none sm:text-2xl">{icon}</span>
+            {isType ? (
+              <GameTypeIcon
+                slug={(category as { slug: string; icon: string | null }).slug}
+                icon={(category as { slug: string; icon: string | null }).icon}
+                className="h-7 w-7 object-contain sm:h-8 sm:w-8"
+              />
+            ) : (
+              <span className="text-xl leading-none sm:text-2xl">{(category as { icon: string }).icon}</span>
+            )}
             <span className="text-center text-[10px] font-bold uppercase leading-tight tracking-wide sm:text-xs">
               {labelFor(id)}
             </span>

@@ -199,6 +199,8 @@ export const ptBr: LocaleTree = {
     forgotPasswordRequestError: 'Unable to send verification code. Please try again.',
     forgotPasswordResetError: 'Unable to reset password. Check the code and try again.',
     loginErrorPhone: 'Telefone ou senha inválidos.',
+    rememberMe: 'Lembrar-me',
+    affiliatePortalLoginTitle: 'Login do portal de afiliados',
     registerTitle: 'Cadastrar',
     email: 'E-mail',
     password: 'Senha',

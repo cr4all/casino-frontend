@@ -84,15 +84,16 @@ export function collectionPath(slug: string): string {
   return `/category/collection-${slug}`;
 }
 
-export function typeIcon(icon: string | null | undefined, slug: string): string {
-  if (icon) return icon;
-  if (slug.includes('live')) return '🎰';
-  if (slug.includes('slot')) return '🎲';
-  if (slug.includes('mini')) return '🍒';
-  if (slug.includes('table')) return '🃏';
-  if (slug.includes('crash')) return '🚀';
-  if (slug.includes('fish')) return '🐟';
-  return '🎮';
+export function typeIconSrc(icon: string | null | undefined, slug: string): string {
+  const key = resolveTypeIconKey(icon, slug);
+  return `/game-type-icons/${key}.svg`;
+}
+
+function resolveTypeIconKey(icon: string | null | undefined, slug: string): string {
+  if (icon && /^[a-z0-9_]+$/.test(icon)) {
+    return icon;
+  }
+  return slug;
 }
 
 export function vendorGradient(index: number): string {

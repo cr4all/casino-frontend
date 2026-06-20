@@ -6,8 +6,10 @@ import { useUiStore } from '@/stores/uiStore';
 import { useUnreadNotifications } from '@/hooks/useUnreadNotifications';
 import { useGameTypes } from '@/hooks/useGameTypes';
 import { useTranslation } from '@/hooks/useTranslation';
-import { typeIcon, typePath } from '@/stores/gameStore';
+import { GameTypeIcon } from '@/components/common/GameTypeIcon';
+import { typePath } from '@/stores/gameStore';
 import { Logo } from '@/components/common/Logo';
+import { NavIcon, sidebarGameIconClassName, sidebarIconClassName, type NavIconName } from '@/components/common/NavIcon';
 import { hideTawkWidget, showTawkWidget } from '@/utils/tawkWidget';
 import { useLiveChatConfig } from '@/hooks/useLiveChat';
 import { useLiveChatStore } from '@/stores/liveChatStore';
@@ -16,17 +18,17 @@ interface StaticNavItem {
   id: string;
   labelKey: string;
   sublabelKey: string;
-  icon: string;
+  icon: NavIconName;
   path: string;
   auth?: boolean;
 }
 
 const accountItems: StaticNavItem[] = [
-  { id: 'deposit', labelKey: 'nav.deposit', sublabelKey: 'nav.depositLabel', icon: '💳', path: '/deposit', auth: true },
-  { id: 'withdraw', labelKey: 'nav.withdraw', sublabelKey: 'nav.withdrawLabel', icon: '💸', path: '/withdraw', auth: true },
-  { id: 'transactions', labelKey: 'nav.history', sublabelKey: 'nav.transactions', icon: '📋', path: '/transactions', auth: true },
-  { id: 'notices', labelKey: 'nav.notices', sublabelKey: 'nav.noticesLabel', icon: '🔔', path: '/notifications', auth: true },
-  { id: 'bonus', labelKey: 'nav.bonuses', sublabelKey: 'nav.bonusesLabel', icon: '🎁', path: '/bonus', auth: true },
+  { id: 'deposit', labelKey: 'nav.deposit', sublabelKey: 'nav.depositLabel', icon: 'deposit', path: '/deposit', auth: true },
+  { id: 'withdraw', labelKey: 'nav.withdraw', sublabelKey: 'nav.withdrawLabel', icon: 'withdraw', path: '/withdraw', auth: true },
+  { id: 'transactions', labelKey: 'nav.history', sublabelKey: 'nav.transactions', icon: 'transactions', path: '/transactions', auth: true },
+  { id: 'notices', labelKey: 'nav.notices', sublabelKey: 'nav.noticesLabel', icon: 'notices', path: '/notifications', auth: true },
+  { id: 'bonus', labelKey: 'nav.bonuses', sublabelKey: 'nav.bonusesLabel', icon: 'bonus', path: '/bonus', auth: true },
 ];
 
 interface SidebarProps {
@@ -96,7 +98,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
               : 'text-white hover:bg-card/60'
           }`}
         >
-          <span className="text-xl leading-none">🏠</span>
+          <NavIcon name="home" className={sidebarIconClassName} />
           <div>
             <p className="text-xs font-bold tracking-wide">{t('nav.allGames')}</p>
             <p className="text-[10px] text-muted">{t('nav.browseAll')}</p>
@@ -116,7 +118,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
                 active ? 'sidebar-active text-accent-gold' : 'text-white hover:bg-card/60'
               }`}
             >
-              <span className="text-xl leading-none">{typeIcon(type.icon, type.slug)}</span>
+              <GameTypeIcon slug={type.slug} icon={type.icon} className={sidebarGameIconClassName} />
               <div className="min-w-0 flex-1">
                 <p className={`text-xs font-bold tracking-wide truncate ${active ? 'text-accent-gold' : 'text-white'}`}>
                   {typeName}
@@ -149,7 +151,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
                 active ? 'sidebar-active text-accent-gold' : 'text-white hover:bg-card/60'
               }`}
             >
-              <span className="text-xl leading-none">{item.icon}</span>
+              <NavIcon name={item.icon} className={sidebarIconClassName} />
               <div className="min-w-0 flex-1">
                 <p className={`text-xs font-bold tracking-wide ${active ? 'text-accent-gold' : 'text-white'}`}>
                   {t(item.labelKey)}
@@ -172,7 +174,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
             liveChatOpen ? 'sidebar-active text-accent-gold' : 'text-white hover:bg-card/60'
           }`}
         >
-          <span className="text-xl leading-none">💬</span>
+          <NavIcon name="liveChat" className={sidebarIconClassName} />
           <div className="min-w-0 flex-1">
             <p className={`text-xs font-bold tracking-wide ${liveChatOpen ? 'text-accent-gold' : 'text-white'}`}>
               {t('nav.liveChat')}

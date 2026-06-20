@@ -206,6 +206,7 @@ export const en = {
     forgotPasswordResetError: 'Unable to reset password. Check the code and try again.',
     loginErrorPhone: 'Invalid phone number or password.',
     rememberMe: 'Remember me',
+    affiliatePortalLoginTitle: 'Affiliate Portal Login',
     showPassword: 'Show password',
     hidePassword: 'Hide password',
     registerTitle: 'Register',
@@ -447,6 +448,16 @@ export const en = {
     verified: 'verified',
     suspended: 'suspended',
     closed: 'closed',
+  },
+  notFound: {
+    code: '404',
+    title: 'Page not found',
+    description:
+      'The page you’re looking for doesn’t exist, or the link may be outdated. Check the URL or head back to the lobby.',
+    pathHint: 'Requested path:',
+    backHome: 'Back to home',
+    browseGames: 'Browse games',
+    helpText: 'Need help?',
   },
   affiliate: affiliateI18n,
 } as const;

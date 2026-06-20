@@ -199,6 +199,8 @@ export const mk: LocaleTree = {
     forgotPasswordRequestError: 'Unable to send verification code. Please try again.',
     forgotPasswordResetError: 'Unable to reset password. Check the code and try again.',
     loginErrorPhone: 'Невалиден телефон или лозинка.',
+    rememberMe: 'Запомни ме',
+    affiliatePortalLoginTitle: 'Најава на affiliate портал',
     registerTitle: 'Регистрација',
     email: 'Е-пошта',
     password: 'Лозинка',

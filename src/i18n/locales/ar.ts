@@ -199,6 +199,8 @@ export const ar: LocaleTree = {
     forgotPasswordRequestError: 'تعذّر إرسال رمز التحقق. يرجى المحاولة مرة أخرى.',
     forgotPasswordResetError: 'تعذّرت إعادة تعيين كلمة المرور. تحقق من الرمز وحاول مرة أخرى.',
     loginErrorPhone: 'رقم الهاتف أو كلمة المرور غير صحيحة.',
+    rememberMe: 'تذكرني',
+    affiliatePortalLoginTitle: 'تسجيل الدخول إلى بوابة الشركاء',
     registerTitle: 'التسجيل',
     email: 'البريد الإلكتروني',
     password: 'كلمة المرور',

@@ -39,38 +39,39 @@ export function Header({ onMenuToggle }: HeaderProps) {
   const closeUserMenu = () => setUserMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-30 flex h-14 items-center justify-between gap-4 border-b border-white/[0.06] bg-background/95 px-4 backdrop-blur-md md:px-6">
+    <header className="sticky top-0 z-30 flex h-14 min-w-0 items-center gap-2 border-b border-white/[0.06] bg-background/95 px-3 backdrop-blur-md sm:px-4 md:px-6">
       <button
         type="button"
         onClick={onMenuToggle}
-        className="flex h-9 w-9 items-center justify-center rounded-md border border-white/10 text-white lg:hidden"
+        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-white/10 text-white lg:hidden"
         aria-label={t('common.openMenu')}
       >
         ☰
       </button>
 
-      <div className="flex-1" />
+      <div className="min-w-0 flex-1" />
 
-      <div className="flex items-center gap-2 md:gap-3">
+      <div className="flex min-w-0 shrink-0 items-center gap-1.5 sm:gap-2 md:gap-3">
         <LanguageSelector />
 
         {isAuthenticated ? (
           <>
-            <div className="flex items-center gap-2 rounded-lg border border-white/10 bg-card px-4 py-2">
-              <span className="text-xs text-muted hidden sm:inline">{t('nav.balance')}</span>
-              <span className="font-condensed text-sm font-bold tracking-wide text-accent-gold">
-                {balance?.currency ?? DEFAULT_CURRENCY} {formatBalance(balance?.balance)}
+            <div className="flex h-9 max-w-[7.5rem] shrink-0 items-center rounded-lg border border-white/10 bg-card px-2 sm:max-w-none sm:px-4 sm:py-2 sm:h-auto">
+              <span className="mr-2 hidden text-xs text-muted sm:inline">{t('nav.balance')}</span>
+              <span className="font-condensed truncate whitespace-nowrap text-xs font-bold tracking-wide text-accent-gold sm:text-sm">
+                {balance?.currency ?? DEFAULT_CURRENCY}{' '}
+                {formatBalance(balance?.balance)}
               </span>
             </div>
 
-            <div ref={userMenuRef} className="relative">
+            <div ref={userMenuRef} className="relative shrink-0">
               <button
                 type="button"
                 onClick={() => setUserMenuOpen((open) => !open)}
                 aria-label={t('nav.profile')}
                 aria-expanded={userMenuOpen}
                 aria-haspopup="menu"
-                className={`flex h-10 w-10 items-center justify-center rounded-lg border bg-card text-white transition-colors ${
+                className={`flex h-9 w-9 items-center justify-center rounded-lg border bg-card text-white transition-colors sm:h-10 sm:w-10 ${
                   userMenuOpen
                     ? 'border-accent-gold/50 text-accent-gold'
                     : 'border-white/10 hover:border-accent-gold/40'

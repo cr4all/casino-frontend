@@ -199,6 +199,8 @@ export const zh: LocaleTree = {
     forgotPasswordRequestError: 'Unable to send verification code. Please try again.',
     forgotPasswordResetError: 'Unable to reset password. Check the code and try again.',
     loginErrorPhone: '手机号或密码错误。',
+    rememberMe: '记住我',
+    affiliatePortalLoginTitle: '联盟门户登录',
     registerTitle: '注册',
     email: '电子邮箱',
     password: '密码',

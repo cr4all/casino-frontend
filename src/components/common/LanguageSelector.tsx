@@ -47,12 +47,12 @@ export function LanguageSelector({ variant = 'header' }: LanguageSelectorProps) 
         className={
           variant === 'profile'
             ? 'flex w-full items-center gap-2 rounded-md border border-white/10 bg-card px-3 py-2.5 text-sm text-white hover:border-accent/40 focus:border-accent focus:outline-none'
-            : 'flex h-9 max-w-[9.5rem] items-center gap-1.5 rounded-lg border border-white/10 bg-card px-2 text-xs text-white hover:border-accent-gold/40 focus:border-accent-gold/40 focus:outline-none sm:max-w-none'
+            : 'flex h-9 shrink-0 items-center gap-1 rounded-lg border border-white/10 bg-card px-1.5 text-xs text-white hover:border-accent-gold/40 focus:border-accent-gold/40 focus:outline-none sm:gap-1.5 sm:px-2'
         }
       >
         <FlagIcon language={current.code} />
-        <span className="truncate font-medium">{current.label}</span>
-        <span className="ml-0.5 text-[10px] text-muted" aria-hidden="true">
+        <span className="hidden truncate font-medium sm:inline">{current.label}</span>
+        <span className="text-[10px] text-muted sm:ml-0.5" aria-hidden="true">
           {open ? '▲' : '▼'}
         </span>
       </button>

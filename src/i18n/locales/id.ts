@@ -199,6 +199,8 @@ export const id: LocaleTree = {
     forgotPasswordRequestError: 'Unable to send verification code. Please try again.',
     forgotPasswordResetError: 'Unable to reset password. Check the code and try again.',
     loginErrorPhone: 'Nomor telepon atau kata sandi tidak valid.',
+    rememberMe: 'Ingat saya',
+    affiliatePortalLoginTitle: 'Login portal afiliasi',
     registerTitle: 'Daftar',
     email: 'Email',
     password: 'Kata sandi',
