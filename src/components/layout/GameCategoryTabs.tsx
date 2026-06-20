@@ -50,7 +50,7 @@ export function GameCategoryTabs() {
                   : 'border border-transparent text-muted hover:text-white hover:bg-surface'
               }`}
             >
-              {tab.slug ? (
+              {'slug' in tab ? (
                 <GameTypeIcon slug={tab.slug} icon={tab.icon} className="h-5 w-5 object-contain" />
               ) : (
                 <span>⭐</span>
