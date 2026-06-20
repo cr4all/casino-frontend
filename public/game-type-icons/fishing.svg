@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="fish-g" x1="4" y1="8" x2="28" y2="24" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE082"/>
+      <stop offset="1" stop-color="#FF9800"/>
+    </linearGradient>
+  </defs>
+  <path d="M4 22c3-1 6-1.5 10-1.5s7 .5 10 1.5" stroke="url(#fish-g)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <path d="M6 24c2.5-.8 5-1.2 10-1.2s7.5.4 10 1.2" stroke="url(#fish-g)" stroke-width="1.2" stroke-linecap="round" opacity="0.35"/>
+  <path d="M6 14c2 3 5 5 10 5s8-2 10-5c-2-1.5-5-2.5-10-2.5S8 12.5 6 14z" fill="url(#fish-g)" opacity="0.35"/>
+  <path d="M6 14c2 3 5 5 10 5s8-2 10-5c-2-1.5-5-2.5-10-2.5S8 12.5 6 14z" stroke="url(#fish-g)" stroke-width="1.5"/>
+  <path d="M24 11l4-2v6l-4-2" fill="url(#fish-g)"/>
+  <circle cx="11" cy="13" r="1.2" fill="#1a1a2e"/>
+  <path d="M14 16c1.5.5 3 .5 4.5 0" stroke="#1a1a2e" stroke-width="1" stroke-linecap="round"/>
+</svg>

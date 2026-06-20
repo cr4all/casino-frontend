@@ -13,6 +13,7 @@ import { TransactionsPage } from '@/pages/TransactionsPage';
 import { GamePlayPage } from '@/pages/GamePlayPage';
 import { CookiePolicyPage } from '@/pages/CookiePolicyPage';
 import { LegalDocumentPage } from '@/pages/legal/LegalDocumentPage';
+import { NotFoundPage } from '@/pages/NotFoundPage';
 
 export const router = createBrowserRouter([
   {
@@ -41,6 +42,7 @@ export const router = createBrowserRouter([
       { path: 'faq', element: <LegalDocumentPage pageId="faq" /> },
       { path: 'contact', element: <LegalDocumentPage pageId="contact" /> },
       { path: 'aml', element: <LegalDocumentPage pageId="aml" /> },
+      { path: '*', element: <NotFoundPage /> },
     ],
   },
 ]);

@@ -1,4 +1,8 @@
-@import 'tailwindcss';
+@import 'tailwindcss' source(none);
+@source "./**/*";
+@source "../index.html";
+@source not "../scripts/**";
+@source not "../public/**";
 @import 'swiper/css';
 @import 'swiper/css/navigation';
 @import 'swiper/css/pagination';
@@ -854,25 +858,63 @@ body {
   gap: 0.75rem;
 }
 
+.payment-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+}
+
+.payment-marquee-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.payment-marquee-track--animate {
+  animation: payment-marquee-scroll 90s linear infinite;
+}
+
+.payment-marquee-track--animate:hover {
+  animation-play-state: paused;
+}
+
+@keyframes payment-marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 .payment-marquee-card {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 104px;
-  height: 48px;
-  padding: 0.5rem 1rem;
+  width: 7.5rem;
+  height: 3rem;
+  padding: 0.375rem 0.5rem;
   background: #ffffff;
   border: 1px solid #e8eaed;
   border-radius: 6px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
+.payment-marquee-logo-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.75rem;
+  height: 1.875rem;
+}
+
 .payment-marquee-logo {
   display: block;
-  height: 22px;
-  width: auto;
-  max-width: 96px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  object-position: center;
 }
 
 /* Live bet feed — auto-updating fake bet history */

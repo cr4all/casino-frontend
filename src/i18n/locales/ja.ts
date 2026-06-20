@@ -198,6 +198,8 @@ export const ja: LocaleTree = {
     forgotPasswordRequestError: 'Unable to send verification code. Please try again.',
     forgotPasswordResetError: 'Unable to reset password. Check the code and try again.',
     loginErrorPhone: '電話番号またはパスワードが正しくありません。',
+    rememberMe: 'ログイン状態を保持',
+    affiliatePortalLoginTitle: 'アフィリエイトポータルログイン',
     registerTitle: '登録',
     email: 'メール',
     password: 'パスワード',

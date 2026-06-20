@@ -198,6 +198,8 @@ export const tr: LocaleTree = {
     forgotPasswordRequestError: 'Unable to send verification code. Please try again.',
     forgotPasswordResetError: 'Unable to reset password. Check the code and try again.',
     loginErrorPhone: 'Geçersiz telefon numarası veya şifre.',
+    rememberMe: 'Beni hatırla',
+    affiliatePortalLoginTitle: 'Affiliate portal girişi',
     registerTitle: 'Kayıt ol',
     email: 'E-posta',
     password: 'Şifre',

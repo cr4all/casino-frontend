@@ -198,6 +198,8 @@ export const no: LocaleTree = {
     forgotPasswordRequestError: 'Kunne ikke sende bekreftelseskode. Prøv igjen.',
     forgotPasswordResetError: 'Kunne ikke tilbakestille passord. Sjekk koden og prøv igjen.',
     loginErrorPhone: 'Ugyldig telefonnummer eller passord.',
+    rememberMe: 'Husk meg',
+    affiliatePortalLoginTitle: 'Affiliate-portal innlogging',
     registerTitle: 'Registrer',
     email: 'E-post',
     password: 'Passord',

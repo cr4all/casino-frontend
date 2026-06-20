@@ -198,6 +198,8 @@ export const fr: LocaleTree = {
     forgotPasswordRequestError: 'Unable to send verification code. Please try again.',
     forgotPasswordResetError: 'Unable to reset password. Check the code and try again.',
     loginErrorPhone: 'Numéro de téléphone ou mot de passe incorrect.',
+    rememberMe: 'Se souvenir de moi',
+    affiliatePortalLoginTitle: 'Connexion au portail affilié',
     registerTitle: 'Inscription',
     email: 'E-mail',
     password: 'Mot de passe',

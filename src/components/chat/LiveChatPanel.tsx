@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState, type FormEvent } from 'react';
+import { Fragment, useEffect, useLayoutEffect, useRef, useState, type FormEvent, type KeyboardEvent } from 'react';
 import { useAuthStore } from '@/stores/authStore';
 import { useLiveChat, useLiveChatConfig } from '@/hooks/useLiveChat';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useUiStore } from '@/stores/uiStore';
+import { formatChatDateLabel, getChatDateKey } from '@/utils/formatDateTime';
 
 function formatTime(value: string | null): string {
   if (!value) return '';
@@ -10,8 +11,41 @@ function formatTime(value: string | null): string {
   return date.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
 }
 
+function ChatDateSeparator({ label }: { label: string }) {
+  return (
+    <div className="flex justify-center py-1">
+      <span className="select-none rounded-full bg-black/30 px-3 py-1 text-xs font-medium capitalize text-white/80">
+        {label}
+      </span>
+    </div>
+  );
+}
+
+function ChatMessageBubble({
+  body,
+  time,
+  isOwn,
+}: {
+  body: string;
+  time: string;
+  isOwn: boolean;
+}) {
+  return (
+    <div
+      className={`max-w-[75%] rounded-2xl px-3 py-1.5 text-sm leading-snug ${
+        isOwn ? 'bg-accent-gold/15 text-white' : 'bg-card/80 text-white'
+      }`}
+    >
+      <span className="whitespace-pre-wrap break-words">{body}</span>
+      <span className="relative top-[3px] float-right ml-2.5 select-none text-[11px] leading-none text-white/45">
+        {time}
+      </span>
+    </div>
+  );
+}
+
 export function LiveChatPanel() {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
   const { nativeEnabled } = useLiveChatConfig();
   const liveChatOpen = useUiStore((s) => s.liveChatOpen);
   const closeLiveChat = useUiStore((s) => s.closeLiveChat);
@@ -20,6 +54,18 @@ export function LiveChatPanel() {
   const { messages, loading, sending, error, sendMessage } = useLiveChat(liveChatOpen);
   const [draft, setDraft] = useState('');
   const scrollRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
+
+  const adjustInputHeight = () => {
+    const el = inputRef.current;
+    if (!el) return;
+    el.style.height = '0px';
+    el.style.height = `${el.scrollHeight}px`;
+  };
+
+  useLayoutEffect(() => {
+    adjustInputHeight();
+  }, [draft, liveChatOpen]);
 
   useEffect(() => {
     if (!liveChatOpen) return;
@@ -28,8 +74,9 @@ export function LiveChatPanel() {
 
   if (!nativeEnabled || !liveChatOpen) return null;
 
-  const handleSubmit = async (event: FormEvent) => {
-    event.preventDefault();
+  const submitDraft = async () => {
+    if (!draft.trim() || sending) return;
+
     if (!isAuthenticated) {
       openModal('login');
       return;
@@ -38,6 +85,21 @@ export function LiveChatPanel() {
     const ok = await sendMessage(draft);
     if (ok) {
       setDraft('');
+      if (inputRef.current) {
+        inputRef.current.style.height = 'auto';
+      }
+    }
+  };
+
+  const handleSubmit = async (event: FormEvent) => {
+    event.preventDefault();
+    await submitDraft();
+  };
+
+  const handleInputKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
+      void submitDraft();
     }
   };
 
@@ -58,7 +120,7 @@ export function LiveChatPanel() {
         </button>
       </div>
 
-      <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto px-4 py-4">
+      <div ref={scrollRef} className="scrollbar-dark flex-1 space-y-3 overflow-y-auto overscroll-contain px-4 py-4">
         {!isAuthenticated ? (
           <div className="rounded-lg border border-white/10 bg-card/40 p-4 text-sm text-muted">
             {t('liveChat.loginRequired')}
@@ -68,19 +130,30 @@ export function LiveChatPanel() {
         ) : messages.length === 0 ? (
           <p className="text-sm text-muted">{t('liveChat.empty')}</p>
         ) : (
-          messages.map((message) => (
-            <div
-              key={message.id}
-              className={`max-w-[85%] rounded-xl px-3 py-2 text-sm leading-relaxed ${
-                message.sender_type === 'admin'
-                  ? 'ml-auto bg-accent-gold/15 text-white'
-                  : 'bg-card/80 text-white'
-              }`}
-            >
-              <p className="whitespace-pre-wrap break-words">{message.body}</p>
-              <p className="mt-1 text-[10px] text-muted">{formatTime(message.created_at)}</p>
-            </div>
-          ))
+          messages.map((message, index) => {
+            const isOwn = message.sender_type === 'player';
+            const dateKey = getChatDateKey(message.created_at);
+            const prevDateKey =
+              index > 0 ? getChatDateKey(messages[index - 1]?.created_at) : null;
+            const showDateSeparator = Boolean(dateKey && dateKey !== prevDateKey);
+
+            return (
+              <Fragment key={message.id}>
+                {showDateSeparator && (
+                  <ChatDateSeparator
+                    label={formatChatDateLabel(message.created_at, language)}
+                  />
+                )}
+                <div className={`flex ${isOwn ? 'justify-end' : 'justify-start'}`}>
+                  <ChatMessageBubble
+                    body={message.body}
+                    time={formatTime(message.created_at)}
+                    isOwn={isOwn}
+                  />
+                </div>
+              </Fragment>
+            );
+          })
         )}
       </div>
 
@@ -90,19 +163,21 @@ export function LiveChatPanel() {
             {error === 'send_failed' ? t('liveChat.sendFailed') : t('liveChat.loadFailed')}
           </p>
         )}
-        <div className="flex gap-2">
+        <div className="flex items-end gap-2">
           <textarea
+            ref={inputRef}
             value={draft}
             onChange={(event) => setDraft(event.target.value)}
+            onKeyDown={handleInputKeyDown}
             placeholder={t('liveChat.placeholder')}
             maxLength={2000}
-            rows={3}
-            className="min-h-[72px] flex-1 resize-none rounded-lg border border-white/10 bg-background px-3 py-2 text-sm text-white outline-none focus:border-accent-gold/50"
+            rows={1}
+            className="min-h-10 flex-1 resize-none overflow-hidden rounded-lg border border-white/10 bg-background px-3 py-2 text-sm leading-5 text-white outline-none focus:border-accent-gold/50"
           />
           <button
             type="submit"
             disabled={sending || !draft.trim()}
-            className="self-end rounded-lg bg-accent-gold px-4 py-2 text-sm font-semibold text-black transition enabled:hover:brightness-110 disabled:opacity-50"
+            className="h-10 shrink-0 rounded-lg bg-accent-gold px-4 text-sm font-semibold text-black transition enabled:hover:brightness-110 disabled:opacity-50"
           >
             {t('liveChat.send')}
           </button>

@@ -198,6 +198,8 @@ export const ur: LocaleTree = {
     forgotPasswordRequestError: 'Unable to send verification code. Please try again.',
     forgotPasswordResetError: 'Unable to reset password. Check the code and try again.',
     loginErrorPhone: 'غلط فون نمبر یا پاس ورڈ۔',
+    rememberMe: 'مجھے یاد رکھیں',
+    affiliatePortalLoginTitle: 'ایفیلیئیٹ پورٹل لاگ ان',
     registerTitle: 'رجسٹریشن',
     email: 'ای میل',
     password: 'پاس ورڈ',

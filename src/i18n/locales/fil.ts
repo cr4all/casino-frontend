@@ -198,6 +198,8 @@ export const fil: LocaleTree = {
     forgotPasswordRequestError: 'Unable to send verification code. Please try again.',
     forgotPasswordResetError: 'Unable to reset password. Check the code and try again.',
     loginErrorPhone: 'Hindi wastong telepono o password.',
+    rememberMe: 'Tandaan ako',
+    affiliatePortalLoginTitle: 'Pag-login sa affiliate portal',
     registerTitle: 'Magrehistro',
     email: 'Email',
     password: 'Password',

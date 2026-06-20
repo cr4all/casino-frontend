@@ -198,6 +198,8 @@ export const cs: LocaleTree = {
     forgotPasswordRequestError: 'Nepodařilo se odeslat ověřovací kód. Zkuste to znovu.',
     forgotPasswordResetError: 'Nepodařilo se obnovit heslo. Zkontrolujte kód a zkuste to znovu.',
     loginErrorPhone: 'Neplatné telefonní číslo nebo heslo.',
+    rememberMe: 'Zapamatovat si mě',
+    affiliatePortalLoginTitle: 'Přihlášení do partnerského portálu',
     registerTitle: 'Registrace',
     email: 'E-mail',
     password: 'Heslo',

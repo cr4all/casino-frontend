@@ -198,6 +198,8 @@ export const sk: LocaleTree = {
     forgotPasswordRequestError: 'Nepodarilo sa odoslať overovací kód. Skúste to znova.',
     forgotPasswordResetError: 'Nepodarilo sa obnoviť heslo. Skontrolujte kód a skúste to znova.',
     loginErrorPhone: 'Neplatné telefónne číslo alebo heslo.',
+    rememberMe: 'Zapamätať si ma',
+    affiliatePortalLoginTitle: 'Prihlásenie do partnerského portálu',
     registerTitle: 'Registrácia',
     email: 'E-mail',
     password: 'Heslo',

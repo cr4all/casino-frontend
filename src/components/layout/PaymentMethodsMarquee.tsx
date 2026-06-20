@@ -3,18 +3,16 @@ import { PAYMENT_MARQUEE_LOGOS, TRUST_BADGES } from '@/data/paymentMarqueeLogos'
 function PaymentCard({ logo }: { logo: (typeof PAYMENT_MARQUEE_LOGOS)[number] }) {
   return (
     <div className="payment-marquee-card">
-      <img
-        src={logo.src}
-        alt={logo.label}
-        className="payment-marquee-logo"
-        style={logo.width ? { width: logo.width } : undefined}
-        loading="lazy"
-      />
+      <div className="payment-marquee-logo-frame">
+        <img src={logo.src} alt={logo.label} className="payment-marquee-logo" loading="lazy" />
+      </div>
     </div>
   );
 }
 
 export function PaymentMethodsMarquee() {
+  const items = [...PAYMENT_MARQUEE_LOGOS, ...PAYMENT_MARQUEE_LOGOS];
+
   return (
     <section className="payment-footer" aria-label="Payment methods and trust badges">
       <div className="payment-footer__inner">
@@ -31,10 +29,12 @@ export function PaymentMethodsMarquee() {
           ))}
         </div>
 
-        <div className="payment-methods-grid">
-          {PAYMENT_MARQUEE_LOGOS.map((logo) => (
-            <PaymentCard key={logo.id} logo={logo} />
-          ))}
+        <div className="payment-marquee">
+          <div className="payment-marquee-track payment-marquee-track--animate">
+            {items.map((logo, index) => (
+              <PaymentCard key={`${logo.id}-${index}`} logo={logo} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

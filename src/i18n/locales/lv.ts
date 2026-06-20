@@ -198,6 +198,8 @@ export const lv: LocaleTree = {
     forgotPasswordRequestError: 'Neizdevās nosūtīt verifikācijas kodu. Lūdzu, mēģiniet vēlreiz.',
     forgotPasswordResetError: 'Neizdevās atjaunot paroli. Pārbaudiet kodu un mēģiniet vēlreiz.',
     loginErrorPhone: 'Nederīgs tālruņa numurs vai parole.',
+    rememberMe: 'Atcerēties mani',
+    affiliatePortalLoginTitle: 'Partneru portāla pieteikšanās',
     registerTitle: 'Reģistrēties',
     email: 'E-pasts',
     password: 'Parole',

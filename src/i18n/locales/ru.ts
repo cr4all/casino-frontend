@@ -198,6 +198,8 @@ export const ru: LocaleTree = {
     forgotPasswordRequestError: 'Unable to send verification code. Please try again.',
     forgotPasswordResetError: 'Unable to reset password. Check the code and try again.',
     loginErrorPhone: 'Неверный телефон или пароль.',
+    rememberMe: 'Запомнить меня',
+    affiliatePortalLoginTitle: 'Вход в партнёрский портал',
     registerTitle: 'Регистрация',
     email: 'Эл. почта',
     password: 'Пароль',

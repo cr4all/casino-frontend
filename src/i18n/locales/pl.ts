@@ -198,6 +198,8 @@ export const pl: LocaleTree = {
     forgotPasswordRequestError: 'Nie udało się wysłać kodu weryfikacyjnego. Spróbuj ponownie.',
     forgotPasswordResetError: 'Nie udało się zresetować hasła. Sprawdź kod i spróbuj ponownie.',
     loginErrorPhone: 'Nieprawidłowy numer telefonu lub hasło.',
+    rememberMe: 'Zapamiętaj mnie',
+    affiliatePortalLoginTitle: 'Logowanie do portalu partnerskiego',
     registerTitle: 'Rejestracja',
     email: 'E-mail',
     password: 'Hasło',

@@ -1,7 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useGameTypes } from '@/hooks/useGameTypes';
 import { useTranslation } from '@/hooks/useTranslation';
-import { typePath, typeIcon } from '@/stores/gameStore';
+import { GameTypeIcon } from '@/components/common/GameTypeIcon';
+import { typePath } from '@/stores/gameStore';
 
 export function GameCategoryTabs() {
   const { t, tGameType } = useTranslation();
@@ -9,11 +10,12 @@ export function GameCategoryTabs() {
   const { types, loading } = useGameTypes();
 
   const tabs = [
-    { id: 'all', label: t('nav.allGames'), icon: '⭐', path: '/category/all' },
+    { id: 'all', label: t('nav.allGames'), path: '/category/all' },
     ...types.map((type) => ({
       id: `type-${type.slug}`,
       label: tGameType(type.slug, type.name),
-      icon: typeIcon(type.icon, type.slug),
+      slug: type.slug,
+      icon: type.icon,
       path: typePath(type.slug),
     })),
   ];
@@ -48,7 +50,11 @@ export function GameCategoryTabs() {
                   : 'border border-transparent text-muted hover:text-white hover:bg-surface'
               }`}
             >
-              <span>{tab.icon}</span>
+              {'slug' in tab ? (
+                <GameTypeIcon slug={tab.slug} icon={tab.icon} className="h-5 w-5 object-contain" />
+              ) : (
+                <span>⭐</span>
+              )}
               {tab.label}
             </Link>
           );

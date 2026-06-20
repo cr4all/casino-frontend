@@ -198,6 +198,8 @@ export const sq: LocaleTree = {
     forgotPasswordRequestError: 'Unable to send verification code. Please try again.',
     forgotPasswordResetError: 'Unable to reset password. Check the code and try again.',
     loginErrorPhone: 'Numri i telefonit ose fjalëkalimi është i pavlefshëm.',
+    rememberMe: 'Më kujto',
+    affiliatePortalLoginTitle: 'Hyrje në portalin e affiliate',
     registerTitle: 'Regjistrohu',
     email: 'Email',
     password: 'Fjalëkalimi',

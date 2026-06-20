@@ -198,6 +198,8 @@ export const fi: LocaleTree = {
     forgotPasswordRequestError: 'Vahvistuskoodin lähetys epäonnistui. Yritä uudelleen.',
     forgotPasswordResetError: 'Salasanan nollaus epäonnistui. Tarkista koodi ja yritä uudelleen.',
     loginErrorPhone: 'Virheellinen puhelinnumero tai salasana.',
+    rememberMe: 'Muista minut',
+    affiliatePortalLoginTitle: 'Kumppaniportaalin kirjautuminen',
     registerTitle: 'Rekisteröidy',
     email: 'Sähköposti',
     password: 'Salasana',

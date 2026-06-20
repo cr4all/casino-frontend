@@ -1,6 +1,10 @@
 import type { GameVendor } from '@/api/game.api';
 
 const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }[] = [
+  {
+    test: (s, n) => s.includes('pragmaticlive') || n.includes('pragmaticlive'),
+    url: '/providers/pragmatic-live.png',
+  },
   { test: (s, n) => s.includes('pragmatic') || n.includes('pragmatic'), url: '/providers/pragmatic-play.png' },
   { test: (s, n) => s.includes('booongo') || n.includes('booongo'), url: '/providers/booongo.png' },
   {
@@ -15,19 +19,32 @@ const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }
   { test: (s, n) => s.includes('amusnet') || n.includes('amusnet'), url: '/providers/amusnet.png' },
   { test: (s, n) => s.includes('amatic') || n.includes('amatic'), url: '/providers/amatic.png' },
   { test: (s, n) => s.includes('novomatic') || n.includes('novomatic'), url: '/providers/novomatic.png' },
+  { test: (s, n) => s.includes('ruby') || n.includes('ruby'), url: '/providers/ruby.png' },
   { test: (s, n) => s.includes('netent') || n.includes('netent'), url: '/providers/ruby.png' },
-  { test: (s, n) => s.includes('kagaming') || n.includes('kagaming') || s.includes('kagame') || n.includes('kagame'), url: '/providers/ka-game.png' },
+  {
+    test: (s, n) =>
+      s.includes('kagaming') || n.includes('kagaming') || s.includes('kagame') || n.includes('kagame'),
+    url: '/providers/ka-game.png',
+  },
   { test: (s, n) => s.includes('habanero') || n.includes('habanero'), url: '/providers/habanero.png' },
   { test: (s, n) => s.includes('evoplay') || n.includes('evoplay'), url: '/providers/evoplay.png' },
   { test: (s, n) => s.includes('hacksaw') || n.includes('hacksaw'), url: '/providers/hacksaw.png' },
   { test: (s, n) => s.includes('pgsoft') || n.includes('pgsoft'), url: '/providers/pgsoft.png' },
   { test: (s, n) => s.includes('cq9') || n.includes('cq9'), url: '/providers/cq9.png' },
   { test: (s, n) => s.includes('jili') || n.includes('jili'), url: '/providers/jili.png' },
+  {
+    test: (s, n) => s.includes('jdbfish') || n.includes('jdbfish') || s === 'jdb-fishing' || n.includes('jdbfish'),
+    url: '/providers/jdb-fishing.png',
+  },
   { test: (s, n) => s.includes('jdb') || n.includes('jdb'), url: '/providers/jdb.png' },
   { test: (s, n) => s.includes('spribe') || n.includes('spribe'), url: '/providers/spribe.png' },
   { test: (s, n) => s.includes('aviator') || n.includes('aviator'), url: '/providers/aviator.png' },
   { test: (s, n) => s.includes('ezugi') || n.includes('ezugi'), url: '/providers/ezugi.png' },
   { test: (s, n) => s.includes('playson') || n.includes('playson'), url: '/providers/playson.png' },
+  {
+    test: (s, n) => s.includes('microgaminggrand') || n.includes('microgaminggrand'),
+    url: '/providers/microgaming-grand.png',
+  },
   { test: (s, n) => s.includes('microgaming') || n.includes('microgaming'), url: '/providers/micro-gaming.png' },
   { test: (s, n) => s.includes('nolimit') || n.includes('nolimit'), url: '/providers/nolimitcitiy.png' },
   { test: (s, n) => s.includes('3oaks') || n.includes('3oaks'), url: '/providers/3oaks.png' },
@@ -46,10 +63,25 @@ const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }
   { test: (s, n) => s.includes('playace') || n.includes('playace'), url: '/providers/playace.png' },
   { test: (s, n) => s.includes('goldengatex') || n.includes('goldengatex'), url: '/providers/goldengatex.png' },
   { test: (s, n) => s.includes('yellowbat') || n.includes('yellowbat'), url: '/providers/yellow-bat.png' },
+  { test: (s, n) => s === 'wg' || n === 'wg', url: '/providers/wg.png' },
+  { test: (s, n) => s.includes('atg') || n.includes('atg'), url: '/providers/atg.png' },
+  {
+    test: (s, n) => s.includes('fungamingfish') || n.includes('fungamingfish'),
+    url: '/providers/fungaming-fishing.png',
+  },
+  {
+    test: (s, n) => s.includes('jinjibaoxi') || n.includes('jinjibaoxi'),
+    url: '/providers/jin-ji-bao-xi.png',
+  },
+  { test: (s, n) => s.includes('poker') || n.includes('poker'), url: '/providers/poker.png' },
 ];
 
 function normalizeVendorKey(value: string): string {
   return value.toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
+function slugLogoUrl(slug: string): string {
+  return `/providers/${slug}.png`;
 }
 
 function matchLocalLogo(vendor: GameVendor): string | null {
@@ -62,12 +94,20 @@ function matchLocalLogo(vendor: GameVendor): string | null {
     }
   }
 
+  // Vendor slugs come from Laravel Str::slug(name) — matches public/providers/{slug}.png
+  if (vendor.slug && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(vendor.slug)) {
+    return slugLogoUrl(vendor.slug);
+  }
+
   return null;
 }
 
 export function getVendorLogoUrl(vendor: GameVendor): string | null {
-  if (vendor.logo_url) return vendor.logo_url;
-  return matchLocalLogo(vendor);
+  const local = matchLocalLogo(vendor);
+  if (local) return local;
+
+  const remote = vendor.logo_url?.trim();
+  return remote || null;
 }
 
 /** Wide banner art for provider cards on grid pages. */

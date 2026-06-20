@@ -11,6 +11,7 @@ import { CookieSettingsModal } from '@/components/common/CookieSettingsModal';
 import { ComingSoonModal } from '@/components/common/Modal';
 import { useAuthInit } from '@/hooks/useAuthInit';
 import { useCloseLiveChatOnNavigate } from '@/hooks/useCloseLiveChatOnNavigate';
+import { useScrollToTopOnNavigate } from '@/hooks/useScrollToTopOnNavigate';
 import { useIdleLogout } from '@/hooks/useIdleLogout';
 import { useLanguageInit } from '@/hooks/useLanguageInit';
 import { useLiveChatSync } from '@/hooks/useLiveChatSync';
@@ -33,6 +34,7 @@ export function AppLayout() {
   useIdleLogout();
   useLanguageInit();
   useCloseLiveChatOnNavigate();
+  useScrollToTopOnNavigate();
   const [searchParams] = useSearchParams();
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
