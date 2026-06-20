@@ -34,16 +34,23 @@ export function PaymentOptionLogo({ option, className }: { option: PaymentOption
 
 function PaymentOptionMinMax({ option }: { option: PaymentOption }) {
   const { t } = useTranslation();
+  const currencySuffix = option.kind === 'local' && option.payment_currency
+    ? ` ${option.payment_currency}`
+    : '';
 
   return (
     <p className="text-xs text-muted sm:shrink-0 sm:text-right">
       {t('common.minMax', {
-        min: formatPaymentLimit(option.min_amount),
-        max: option.max_amount ? formatPaymentLimit(option.max_amount) : t('common.noLimit'),
+        min: `${formatPaymentLimit(option.min_amount)}${currencySuffix}`,
+        max: option.max_amount
+          ? `${formatPaymentLimit(option.max_amount)}${currencySuffix}`
+          : t('common.noLimit'),
       })}
     </p>
   );
 }
+
+export { PaymentOptionMinMax };
 
 export function PaymentOptionSummary({
   option,

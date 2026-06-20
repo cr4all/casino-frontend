@@ -16,7 +16,7 @@ import { Button } from '@/components/common/Button';
 import { StatusBadge } from '@/components/common/StatusBadge';
 import { CryptoAmountInput } from '@/components/deposit/CryptoAmountInput';
 import { PaymentCountrySelect } from '@/components/payment/PaymentCountrySelect';
-import { PaymentOptionGrid, PaymentOptionSummary } from '@/components/payment/PaymentOptionGrid';
+import { PaymentOptionGrid, PaymentOptionMinMax, PaymentOptionSummary } from '@/components/payment/PaymentOptionGrid';
 import { getApiErrorMessage } from '@/utils/apiError';
 import { formatCryptoCurrencyLabel } from '@/utils/cryptoIcon';
 import { formatBalance } from '@/utils/formatBalance';
@@ -248,6 +248,10 @@ export function DepositPage() {
                 amountLabel={t('deposit.amount')}
                 clearLabel={t('common.close')}
               />
+
+              {confirmedOption && (
+                <PaymentOptionMinMax option={confirmedOption} />
+              )}
 
               {amount && Number(amount) > 0 && (
                 <div className="rounded-lg border border-white/10 bg-background/50 p-3 text-sm">
