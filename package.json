@@ -8,6 +8,10 @@
     "build": "npm run generate:api && tsc -b && vite build",
     "preview": "vite preview",
     "generate:api": "openapi-typescript contracts/player-v1.yaml -o src/types/api.generated.ts",
+    "i18n:extract": "npx --yes tsx scripts/extract-i18n-phrases.mjs",
+    "i18n:locales": "npx --yes tsx scripts/generate-i18n-locales.mjs",
+    "i18n:locales:force": "npx --yes tsx scripts/generate-i18n-locales.mjs --force",
+    "i18n:rebuild": "npx --yes tsx scripts/rebuild-i18n-from-maps.mjs",
     "sync:contract": "echo Update contracts/player-v1.yaml from https://github.com/cr4all/casino-api-contract tags"
   },
   "dependencies": {
@@ -29,6 +33,7 @@
     "@types/node": "^22.15.0",
     "@types/react": "^19.1.4",
     "@types/react-dom": "^19.1.5",
+    "@vitalets/google-translate-api": "^9.2.1",
     "@vitejs/plugin-react": "^4.5.0",
     "openapi-typescript": "^7.8.0",
     "sharp": "^0.35.1",

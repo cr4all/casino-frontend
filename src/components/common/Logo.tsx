@@ -1,10 +1,18 @@
 import { type CSSProperties, useId } from 'react';
 import { Link } from 'react-router-dom';
+import {
+  LOGO_FONT_FAMILY,
+  LOGO_FONT_SIZE,
+  LOGO_FONT_WEIGHT,
+  LOGO_LETTER_SPACING,
+  LOGO_TEXT_X,
+  LOGO_TEXT_Y,
+  LOGO_VIEWBOX,
+} from '@/components/common/brandMark';
 
 interface LogoProps {
   className?: string;
   height?: number;
-  /** Fill the container width (best for wide sidebar logos). */
   fill?: boolean;
   onClick?: () => void;
 }
@@ -21,7 +29,7 @@ function LogoMark({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 240 52"
+      viewBox={LOGO_VIEWBOX}
       fill="none"
       className={className}
       style={style}
@@ -36,16 +44,14 @@ function LogoMark({
         </linearGradient>
       </defs>
 
-      <rect x="6" y="5" width="7.5" height="7.5" rx="1.5" fill="#FFB300" />
-
       <text
-        x="4"
-        y="40"
-        fontFamily="Montserrat, 'Arial Black', Arial, sans-serif"
-        fontSize="36"
-        fontWeight="800"
+        x={LOGO_TEXT_X}
+        y={LOGO_TEXT_Y}
+        fontFamily={LOGO_FONT_FAMILY}
+        fontSize={LOGO_FONT_SIZE}
+        fontWeight={LOGO_FONT_WEIGHT}
         fontStyle="italic"
-        letterSpacing="0.02em"
+        letterSpacing={LOGO_LETTER_SPACING}
       >
         <tspan fill="#FFFFFF">IBETS</tspan>
         <tspan fill={`url(#${gradientId})`}>24</tspan>
