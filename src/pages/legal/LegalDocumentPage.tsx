@@ -13,7 +13,7 @@ export function LegalDocumentPage({ pageId }: LegalDocumentPageProps) {
   const content = getLegalPageContent(language, pageId);
 
   return (
-    <div className="mx-auto max-w-3xl py-8">
+    <div key={language} className="mx-auto max-w-3xl py-8">
       <h1 className="mb-3 text-2xl font-bold text-white">{content.title}</h1>
       <p className="mb-8 text-sm leading-relaxed text-muted">{content.intro}</p>
 

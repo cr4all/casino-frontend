@@ -94,14 +94,6 @@ export function GamePlayPage() {
 
   return (
     <div className="relative h-dvh w-dvw overflow-hidden bg-black">
-      <button
-        type="button"
-        onClick={() => window.close()}
-        aria-label={t('gamePlay.closeWindow')}
-        className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/60 text-lg text-white transition-colors hover:border-accent-gold/50 hover:text-accent-gold"
-      >
-        ×
-      </button>
       <iframe
         src={launchUrl}
         title={game?.name ?? t('gamePlay.defaultName')}

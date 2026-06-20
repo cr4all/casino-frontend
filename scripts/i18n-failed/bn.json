@@ -1,0 +1,15 @@
+{
+  "404": "404",
+  "{{name}} ({{currency}})": "{{name}} ({{currency}})",
+  "player@example.com": "player@example.com",
+  "TRC20, ERC20...": "TRC20, ERC20...",
+  "XXXX XXXX": "XXXX XXXX",
+  "No limit": "No limit",
+  "TXyz...": "TXyz...",
+  "Bet": "Bet",
+  "Win": "Win",
+  "Net": "Net",
+  "CPA": "CPA",
+  "OK": "OK",
+  "ID": "ID"
+}

@@ -2,6 +2,7 @@ import { useEffect, useState, type FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Modal } from '@/components/common/Modal';
 import { Button } from '@/components/common/Button';
+import { Checkbox } from '@/components/common/Checkbox';
 import { CopyableInput } from '@/components/auth/CopyableInput';
 import { PasswordInput } from '@/components/auth/PasswordInput';
 import { PhoneNumberInput } from '@/components/auth/PhoneNumberInput';
@@ -219,15 +220,12 @@ export function LoginModal() {
         />
 
         <div className="flex items-center justify-between gap-3">
-          <label className="flex cursor-pointer items-center gap-2 text-xs text-muted">
-            <input
-              type="checkbox"
-              checked={rememberMe}
-              onChange={(e) => setRememberMe(e.target.checked)}
-              className="h-4 w-4 rounded border-white/20 bg-card text-accent-gold focus:ring-accent-gold/40"
-            />
-            {t('auth.rememberMe')}
-          </label>
+          <Checkbox
+            id="login-remember-me"
+            checked={rememberMe}
+            onChange={(e) => setRememberMe(e.target.checked)}
+            label={t('auth.rememberMe')}
+          />
           <button
             type="button"
             onClick={() => openModal('forgotPassword')}

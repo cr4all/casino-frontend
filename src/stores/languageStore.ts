@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { Language } from '@/i18n';
 
-const RTL_LANGUAGES = new Set<Language>(['ar', 'ur']);
+const RTL_LANGUAGES = new Set<Language>(['ar', 'fa', 'he', 'ur']);
 
 function applyDocumentLanguage(language: Language): void {
   document.documentElement.lang = language;
