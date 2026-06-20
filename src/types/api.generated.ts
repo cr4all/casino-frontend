@@ -1200,6 +1200,168 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/affiliate/sub-affiliates": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** List sub-affiliates (top-level affiliates only) */
+        get: {
+            parameters: {
+                query?: {
+                    per_page?: components["parameters"]["PerPage"];
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Paginated sub-affiliates */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: components["schemas"]["AffiliateSubAffiliateList"];
+                        };
+                    };
+                };
+                401: components["responses"]["Unauthorized"];
+                403: components["responses"]["Forbidden"];
+            };
+        };
+        put?: never;
+        /** Create a sub-affiliate */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["CreateSubAffiliateRequest"];
+                };
+            };
+            responses: {
+                /** @description Sub-affiliate created */
+                201: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: components["schemas"]["AffiliateSubAffiliate"];
+                        };
+                    };
+                };
+                401: components["responses"]["Unauthorized"];
+                403: components["responses"]["Forbidden"];
+                422: components["responses"]["ValidationError"];
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/affiliate/sub-affiliates/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        /** Update a sub-affiliate */
+        patch: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: number;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["UpdateSubAffiliateRequest"];
+                };
+            };
+            responses: {
+                /** @description Sub-affiliate updated */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: components["schemas"]["AffiliateSubAffiliate"];
+                        };
+                    };
+                };
+                401: components["responses"]["Unauthorized"];
+                403: components["responses"]["Forbidden"];
+                404: components["responses"]["NotFound"];
+                422: components["responses"]["ValidationError"];
+            };
+        };
+        trace?: never;
+    };
+    "/affiliate/password": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        /** Change password with current password */
+        put: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["ChangePlayerPasswordBody"];
+                };
+            };
+            responses: {
+                /** @description Password updated */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"];
+                    };
+                };
+                401: components["responses"]["Unauthorized"];
+                403: components["responses"]["Forbidden"];
+                422: components["responses"]["ValidationError"];
+            };
+        };
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/notifications/messages": {
         parameters: {
             query?: never;
@@ -1968,19 +2130,29 @@ export interface components {
         AffiliateMe: {
             code: string;
             /** @enum {string} */
-            commission_model: "cpa" | "revshare";
+            commission_model: "cpa" | "revshare" | "hybrid";
             commission_rate: string;
             cpa_amount?: string | null;
             /** @enum {string} */
             status: "active" | "inactive";
             /** @example ?ref=AFF001 */
             referral_link: string;
+            is_sub_affiliate: boolean;
+            can_manage_sub_affiliates: boolean;
+            parent_code?: string | null;
+            /** Format: email */
+            email?: string | null;
+            email_verified?: boolean;
         };
         AffiliateStats: {
             referred_players_count: number;
             commissions_count: number;
             total_commission: string;
             pending_commission: string;
+            sub_affiliates_count?: number;
+            downline_players_count?: number;
+            override_commission?: string;
+            pending_override_commission?: string;
         };
         AffiliateReferredPlayer: {
             player_id: number;
@@ -1994,8 +2166,9 @@ export interface components {
         };
         AffiliateCommission: {
             id: number;
+            player_id: number;
             /** @enum {string} */
-            type: "cpa" | "revshare";
+            type: "cpa" | "revshare" | "override";
             amount: string;
             reference_type: string;
             reference_id: string;
@@ -2007,6 +2180,43 @@ export interface components {
         AffiliateCommissionList: {
             items: components["schemas"]["AffiliateCommission"][];
             pagination: components["schemas"]["Pagination"];
+        };
+        AffiliateSubAffiliate: {
+            id: number;
+            code: string;
+            /** @enum {string} */
+            commission_model: "cpa" | "revshare" | "hybrid";
+            commission_rate: string;
+            cpa_amount?: string | null;
+            /** @enum {string} */
+            status: "active" | "inactive";
+            referred_players_count: number;
+            /** Format: date-time */
+            created_at?: string | null;
+        };
+        AffiliateSubAffiliateList: {
+            items: components["schemas"]["AffiliateSubAffiliate"][];
+            pagination: components["schemas"]["Pagination"];
+        };
+        CreateSubAffiliateRequest: {
+            code: string;
+            /** Format: email */
+            email: string;
+            password: string;
+            /** @enum {string} */
+            commission_model: "cpa" | "revshare" | "hybrid";
+            commission_rate?: number;
+            cpa_amount?: number;
+            /** @enum {string} */
+            status?: "active" | "inactive";
+        };
+        UpdateSubAffiliateRequest: {
+            /** @enum {string} */
+            commission_model?: "cpa" | "revshare" | "hybrid";
+            commission_rate?: number;
+            cpa_amount?: number | null;
+            /** @enum {string} */
+            status?: "active" | "inactive";
         };
     };
     responses: {

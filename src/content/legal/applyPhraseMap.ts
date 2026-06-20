@@ -1,17 +1,16 @@
 import type { LegalContentBundle } from './types';
+import { applyPhraseMapToValues } from '../../i18n/phraseMapUtils';
 
 export function applyPhraseMap(
   bundle: LegalContentBundle,
   phraseMap: Record<string, string>,
 ): LegalContentBundle {
-  const sortedEntries = Object.entries(phraseMap).sort((a, b) => b[0].length - a[0].length);
-  const json = JSON.stringify(bundle);
+  const filteredMap = Object.fromEntries(
+    Object.entries(phraseMap).filter(
+      ([english, localized]) =>
+        english && localized && english !== localized && english !== './types',
+    ),
+  );
 
-  let translated = json;
-  for (const [english, localized] of sortedEntries) {
-    if (!english || english === localized) continue;
-    translated = translated.split(english).join(localized);
-  }
-
-  return JSON.parse(translated) as LegalContentBundle;
+  return applyPhraseMapToValues(bundle, filteredMap);
 }
