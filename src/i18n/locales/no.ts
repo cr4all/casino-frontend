@@ -1,4 +1,3 @@
-import { affiliateI18n } from './affiliate.i18n';
 import type { LocaleTree } from './en';
 
 export const no: LocaleTree = {
@@ -429,5 +428,27 @@ export const no: LocaleTree = {
     suspended: 'suspendert',
     closed: 'lukket',
   },
-  affiliate: affiliateI18n,
+  affiliate: {
+    title: 'Partnerdashbord',
+    portal: 'Partnerportal',
+    logout: 'Logg ut',
+    referralLink: 'Henvisningslenke',
+    referredPlayers: 'Henviste spillere',
+    totalCommission: 'Total provisjon',
+    pendingCommission: 'Ventende provisjon',
+    commissions: 'Provisjoner',
+    commissionHistory: 'Provisjonshistorikk',
+    player: 'Spiller',
+    nickname: 'Kallenavn',
+    registeredAt: 'Registrert',
+    type: 'Type',
+    amount: 'Beløp',
+    status: 'Status',
+    date: 'Dato',
+    reference: 'Referanse',
+    noPlayers: 'Ingen henviste spillere ennå.',
+    noCommissions: 'Ingen provisjoner ennå.',
+    loadError: 'Kunne ikke laste partnerdata.',
+    playersOnly: 'Dette området er kun for partnerkontoer.',
+  },
 };

@@ -1,4 +1,3 @@
-import { affiliateI18n } from './affiliate.i18n';
 import type { LocaleTree } from './en';
 
 export const sk: LocaleTree = {
@@ -429,5 +428,27 @@ export const sk: LocaleTree = {
     suspended: 'pozastavený',
     closed: 'uzavretý',
   },
-  affiliate: affiliateI18n,
+  affiliate: {
+    title: 'Partnerský panel',
+    portal: 'Partnerský portál',
+    logout: 'Odhlásiť sa',
+    referralLink: 'Odporúčací odkaz',
+    referredPlayers: 'Odporúčaní hráči',
+    totalCommission: 'Celková provízia',
+    pendingCommission: 'Čakajúca provízia',
+    commissions: 'Provízie',
+    commissionHistory: 'História provízií',
+    player: 'Hráč',
+    nickname: 'Prezývka',
+    registeredAt: 'Registrovaný',
+    type: 'Typ',
+    amount: 'Suma',
+    status: 'Stav',
+    date: 'Dátum',
+    reference: 'Referencia',
+    noPlayers: 'Zatiaľ žiadni odporúčaní hráči.',
+    noCommissions: 'Zatiaľ žiadne provízie.',
+    loadError: 'Nepodarilo sa načítať partnerské údaje.',
+    playersOnly: 'Táto oblasť je určená len pre partnerské účty.',
+  },
 };

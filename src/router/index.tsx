@@ -1,16 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { AppLayout } from '@/components/layout/AppLayout';
-import { AffiliateLayout } from '@/components/affiliate/AffiliateLayout';
-import { AffiliateDashboardPage } from '@/pages/affiliate/AffiliateDashboardPage';
-import { AffiliateTrackingPage } from '@/pages/affiliate/AffiliateTrackingPage';
-import { AffiliateMarketingPage } from '@/pages/affiliate/AffiliateMarketingPage';
-import { AffiliateStatisticsPage } from '@/pages/affiliate/AffiliateStatisticsPage';
-import { AffiliatePlayersPage } from '@/pages/affiliate/AffiliatePlayersPage';
-import { AffiliateEarningsPage } from '@/pages/affiliate/AffiliateEarningsPage';
-import { AffiliatePaymentsPage } from '@/pages/affiliate/AffiliatePaymentsPage';
-import { AffiliateInvoicesPage } from '@/pages/affiliate/AffiliateInvoicesPage';
-import { AffiliateReferralsPage } from '@/pages/affiliate/AffiliateReferralsPage';
-import { AffiliateSupportPage } from '@/pages/affiliate/AffiliateSupportPage';
+import { AffiliateDashboardPage } from '@/pages/AffiliateDashboardPage';
 import { HomePage } from '@/pages/HomePage';
 import { CategoryPage } from '@/pages/CategoryPage';
 import { ProfilePage } from '@/pages/ProfilePage';
@@ -43,22 +33,7 @@ export const router = createBrowserRouter([
       { path: 'notifications', element: <NotificationsPage /> },
       { path: 'bets', element: <BetHistoryPage /> },
       { path: 'transactions', element: <TransactionsPage /> },
-      {
-        path: 'affiliate',
-        element: <AffiliateLayout />,
-        children: [
-          { index: true, element: <AffiliateDashboardPage /> },
-          { path: 'tracking', element: <AffiliateTrackingPage /> },
-          { path: 'marketing', element: <AffiliateMarketingPage /> },
-          { path: 'statistics', element: <AffiliateStatisticsPage /> },
-          { path: 'players', element: <AffiliatePlayersPage /> },
-          { path: 'earnings', element: <AffiliateEarningsPage /> },
-          { path: 'payments', element: <AffiliatePaymentsPage /> },
-          { path: 'invoices', element: <AffiliateInvoicesPage /> },
-          { path: 'referrals', element: <AffiliateReferralsPage /> },
-          { path: 'support', element: <AffiliateSupportPage /> },
-        ],
-      },
+      { path: 'affiliate', element: <AffiliateDashboardPage /> },
       { path: 'cookies', element: <CookiePolicyPage /> },
       { path: 'about', element: <LegalDocumentPage pageId="about" /> },
       { path: 'terms', element: <LegalDocumentPage pageId="terms" /> },

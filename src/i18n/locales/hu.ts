@@ -1,4 +1,3 @@
-import { affiliateI18n } from './affiliate.i18n';
 import type { LocaleTree } from './en';
 
 export const hu: LocaleTree = {
@@ -429,5 +428,27 @@ export const hu: LocaleTree = {
     suspended: 'felfüggesztve',
     closed: 'lezárva',
   },
-  affiliate: affiliateI18n,
+  affiliate: {
+    title: 'Partner irányítópult',
+    portal: 'Partner portál',
+    logout: 'Kijelentkezés',
+    referralLink: 'Ajánlói link',
+    referredPlayers: 'Ajánlott játékosok',
+    totalCommission: 'Összes jutalék',
+    pendingCommission: 'Függőben lévő jutalék',
+    commissions: 'Jutalékok',
+    commissionHistory: 'Jutalék előzmények',
+    player: 'Játékos',
+    nickname: 'Becenév',
+    registeredAt: 'Regisztrálva',
+    type: 'Típus',
+    amount: 'Összeg',
+    status: 'Állapot',
+    date: 'Dátum',
+    reference: 'Hivatkozás',
+    noPlayers: 'Még nincsenek ajánlott játékosok.',
+    noCommissions: 'Még nincsenek jutalékok.',
+    loadError: 'A partner adatok betöltése sikertelen.',
+    playersOnly: 'Ez a terület csak partner fiókok számára érhető el.',
+  },
 };

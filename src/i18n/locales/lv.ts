@@ -1,4 +1,3 @@
-import { affiliateI18n } from './affiliate.i18n';
 import type { LocaleTree } from './en';
 
 export const lv: LocaleTree = {
@@ -429,5 +428,27 @@ export const lv: LocaleTree = {
     suspended: 'apturēts',
     closed: 'slēgts',
   },
-  affiliate: affiliateI18n,
+  affiliate: {
+    title: 'Partneru informācijas panelis',
+    portal: 'Partneru portāls',
+    logout: 'Iziet',
+    referralLink: 'Ieteikuma saite',
+    referredPlayers: 'Ieteiktie spēlētāji',
+    totalCommission: 'Kopējā komisija',
+    pendingCommission: 'Gaidošā komisija',
+    commissions: 'Komisijas',
+    commissionHistory: 'Komisiju vēsture',
+    player: 'Spēlētājs',
+    nickname: 'Segvārds',
+    registeredAt: 'Reģistrēts',
+    type: 'Tips',
+    amount: 'Summa',
+    status: 'Statuss',
+    date: 'Datums',
+    reference: 'Atsauce',
+    noPlayers: 'Vēl nav ieteikto spēlētāju.',
+    noCommissions: 'Vēl nav komisiju.',
+    loadError: 'Neizdevās ielādēt partneru datus.',
+    playersOnly: 'Šī zona ir paredzēta tikai partneru kontiem.',
+  },
 };

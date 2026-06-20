@@ -1,4 +1,3 @@
-import { affiliateI18n } from './affiliate.i18n';
 import type { LocaleTree } from './en';
 
 export const et: LocaleTree = {
@@ -429,5 +428,27 @@ export const et: LocaleTree = {
     suspended: 'peatatud',
     closed: 'suletud',
   },
-  affiliate: affiliateI18n,
+  affiliate: {
+    title: 'Partneri juhtpaneel',
+    portal: 'Partneri portaal',
+    logout: 'Logi välja',
+    referralLink: 'Soovituslink',
+    referredPlayers: 'Soovitatud mängijad',
+    totalCommission: 'Kogukomisjon',
+    pendingCommission: 'Ootel komisjon',
+    commissions: 'Komisjonid',
+    commissionHistory: 'Komisjonide ajalugu',
+    player: 'Mängija',
+    nickname: 'Hüüdnimi',
+    registeredAt: 'Registreeritud',
+    type: 'Tüüp',
+    amount: 'Summa',
+    status: 'Olek',
+    date: 'Kuupäev',
+    reference: 'Viide',
+    noPlayers: 'Soovitatud mängijaid pole veel.',
+    noCommissions: 'Komisjone pole veel.',
+    loadError: 'Partneri andmete laadimine ebaõnnestus.',
+    playersOnly: 'See ala on ainult partnerikontodele.',
+  },
 };

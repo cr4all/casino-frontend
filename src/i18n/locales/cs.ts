@@ -1,4 +1,3 @@
-import { affiliateI18n } from './affiliate.i18n';
 import type { LocaleTree } from './en';
 
 export const cs: LocaleTree = {
@@ -429,5 +428,27 @@ export const cs: LocaleTree = {
     suspended: 'pozastaveno',
     closed: 'uzavřeno',
   },
-  affiliate: affiliateI18n,
+  affiliate: {
+    title: 'Affiliate panel',
+    portal: 'Affiliate portál',
+    logout: 'Odhlásit se',
+    referralLink: 'Referral odkaz',
+    referredPlayers: 'Doporučení hráči',
+    totalCommission: 'Celková provize',
+    pendingCommission: 'Čekající provize',
+    commissions: 'Provize',
+    commissionHistory: 'Historie provizí',
+    player: 'Hráč',
+    nickname: 'Přezdívka',
+    registeredAt: 'Registrace',
+    type: 'Typ',
+    amount: 'Částka',
+    status: 'Stav',
+    date: 'Datum',
+    reference: 'Reference',
+    noPlayers: 'Zatím žádní doporučení hráči.',
+    noCommissions: 'Zatím žádné provize.',
+    loadError: 'Nepodařilo se načíst affiliate data.',
+    playersOnly: 'Tato oblast je určena pouze pro affiliate účty.',
+  },
 };

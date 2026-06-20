@@ -1,16 +1,15 @@
-import { useEffect, useState, type FormEvent, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { playerApi } from '@/api/wallet.api';
 import { useAuthStore } from '@/stores/authStore';
 import { usePlayerStore } from '@/stores/playerStore';
 import { DEFAULT_CURRENCY } from '@/stores/walletStore';
 import { useTranslation } from '@/hooks/useTranslation';
-import { Button } from '@/components/common/Button';
 import { StatusBadge } from '@/components/common/StatusBadge';
 import { AccountVerificationModal } from '@/components/profile/AccountVerificationModal';
+import { ChangePasswordForm } from '@/components/profile/ChangePasswordForm';
 import { VerificationIndicator } from '@/components/profile/VerificationIndicator';
 import { formatCountryLabel } from '@/utils/formatCountryLabel';
-import { getApiErrorMessage } from '@/utils/apiError';
 import type { PlayerProfile } from '@/types';
 
 function ProfileField({
@@ -49,9 +48,6 @@ function ProfileField({
   );
 }
 
-const inputClassName =
-  'w-full rounded-md border border-white/10 bg-card px-3 py-2.5 text-sm text-white focus:border-accent focus:outline-none';
-
 export function ProfilePage() {
   const { t } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
@@ -60,12 +56,6 @@ export function ProfilePage() {
   const setProfile = usePlayerStore((s) => s.setProfile);
   const [loading, setLoading] = useState(true);
   const [verifyChannel, setVerifyChannel] = useState<'email' | 'phone' | null>(null);
-  const [saving, setSaving] = useState(false);
-  const [passwordMessageKey, setPasswordMessageKey] = useState<'success' | 'error' | ''>('');
-  const [passwordError, setPasswordError] = useState('');
-  const [currentPassword, setCurrentPassword] = useState('');
-  const [newPassword, setNewPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
 
   useEffect(() => {
     if (!isAuthenticated) return;
@@ -81,30 +71,6 @@ export function ProfilePage() {
   if (!isAuthenticated) {
     return <Navigate to="/" replace />;
   }
-
-  const handlePasswordSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    setSaving(true);
-    setPasswordMessageKey('');
-    setPasswordError('');
-
-    try {
-      await playerApi.changePassword({
-        current_password: currentPassword,
-        password: newPassword,
-        password_confirmation: confirmPassword,
-      });
-      setCurrentPassword('');
-      setNewPassword('');
-      setConfirmPassword('');
-      setPasswordMessageKey('success');
-    } catch (err) {
-      setPasswordMessageKey('error');
-      setPasswordError(getApiErrorMessage(err, t('profile.passwordUpdateFailed')));
-    } finally {
-      setSaving(false);
-    }
-  };
 
   if (loading) {
     return (
@@ -193,61 +159,7 @@ export function ProfilePage() {
 
           <section className="rounded-xl border border-white/10 bg-surface/90 p-6 shadow-card">
             <h2 className="mb-4 text-sm font-semibold text-white">{t('profile.changePassword')}</h2>
-            <form onSubmit={handlePasswordSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="current-password" className="mb-1 block text-xs font-medium text-muted">
-                  {t('profile.currentPassword')}
-                </label>
-                <input
-                  id="current-password"
-                  type="password"
-                  required
-                  autoComplete="current-password"
-                  value={currentPassword}
-                  onChange={(e) => setCurrentPassword(e.target.value)}
-                  className={inputClassName}
-                />
-              </div>
-              <div>
-                <label htmlFor="new-password" className="mb-1 block text-xs font-medium text-muted">
-                  {t('profile.newPassword')}
-                </label>
-                <input
-                  id="new-password"
-                  type="password"
-                  required
-                  minLength={8}
-                  autoComplete="new-password"
-                  value={newPassword}
-                  onChange={(e) => setNewPassword(e.target.value)}
-                  className={inputClassName}
-                />
-              </div>
-              <div>
-                <label htmlFor="confirm-new-password" className="mb-1 block text-xs font-medium text-muted">
-                  {t('profile.confirmNewPassword')}
-                </label>
-                <input
-                  id="confirm-new-password"
-                  type="password"
-                  required
-                  minLength={8}
-                  autoComplete="new-password"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  className={inputClassName}
-                />
-              </div>
-              {passwordMessageKey === 'success' && (
-                <p className="text-sm text-accent-gold">{t('profile.passwordUpdateSuccess')}</p>
-              )}
-              {passwordMessageKey === 'error' && (
-                <p className="text-sm text-red-400">{passwordError}</p>
-              )}
-              <Button type="submit" disabled={saving}>
-                {saving ? t('common.saving') : t('profile.changePassword')}
-              </Button>
-            </form>
+            <ChangePasswordForm onChangePassword={playerApi.changePassword} />
           </section>
         </div>
 

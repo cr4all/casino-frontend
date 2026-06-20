@@ -1,4 +1,3 @@
-import { affiliateI18n } from './affiliate.i18n';
 import type { LocaleTree } from './en';
 
 export const fi: LocaleTree = {
@@ -429,5 +428,27 @@ export const fi: LocaleTree = {
     suspended: 'keskeytetty',
     closed: 'suljettu',
   },
-  affiliate: affiliateI18n,
+  affiliate: {
+    title: 'Kumppanipaneeli',
+    portal: 'Kumppaniportaali',
+    logout: 'Kirjaudu ulos',
+    referralLink: 'Suosittelulinkki',
+    referredPlayers: 'Suositellut pelaajat',
+    totalCommission: 'Kokonaisprovisio',
+    pendingCommission: 'Odottava provisio',
+    commissions: 'Provisiot',
+    commissionHistory: 'Provisiohistoria',
+    player: 'Pelaaja',
+    nickname: 'Lempinimi',
+    registeredAt: 'Rekisteröity',
+    type: 'Tyyppi',
+    amount: 'Summa',
+    status: 'Tila',
+    date: 'Päivämäärä',
+    reference: 'Viite',
+    noPlayers: 'Ei suositeltuja pelaajia vielä.',
+    noCommissions: 'Ei provisioita vielä.',
+    loadError: 'Kumppanitietojen lataus epäonnistui.',
+    playersOnly: 'Tämä alue on vain kumppanitileille.',
+  },
 };

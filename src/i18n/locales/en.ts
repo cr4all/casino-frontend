@@ -1,5 +1,3 @@
-import { affiliateI18n } from './affiliate.i18n';
-
 export const en = {
   common: {
     loading: 'Loading...',
@@ -31,6 +29,7 @@ export const en = {
     minMax: 'Min: {{min}} · Max: {{max}}',
     currencyIdr: '· Currency: IDR',
     pageOf: 'Page {{page}} of {{last}}',
+    actions: 'Actions',
     openMenu: 'Open menu',
     language: 'Language',
   },
