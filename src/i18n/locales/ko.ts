@@ -356,6 +356,7 @@ export const ko: LocaleTree = {
     freeSpinClaimed: '무료 스핀 {{count}}회를 받았습니다 ({{status}})',
     freeSpinWinnings: '당첨금: {{amount}}',
     depositRequired: '이 보너스를 받으려면 최소 1회 입금이 필요합니다.',
+    firstDepositAfterValidFromRequired: '프로모션 시작일 이후 첫 충전을 완료한 플레이어만 이 보너스를 받을 수 있습니다.',
     depositCta: '입금하러 가기',
     alreadyClaimed: '이미 받은 보너스입니다.',
     providerNotSupported: '아직 지원되지 않는 프리스핀 프로바이더입니다.',

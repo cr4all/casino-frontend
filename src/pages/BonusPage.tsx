@@ -147,13 +147,10 @@ export function BonusPage() {
       );
     }
 
-    if (policy.claim_blocked_reason === 'deposit_after_valid_from_required') {
+    if (policy.claim_blocked_reason === 'first_deposit_after_valid_from_required') {
       return (
         <p className="mt-4 text-xs text-muted">
-          {t('bonus.depositAfterValidFromRequired')}{' '}
-          <Link to="/deposit" className="text-accent underline">
-            {t('bonus.depositCta')}
-          </Link>
+          {t('bonus.firstDepositAfterValidFromRequired')}
         </p>
       );
     }
