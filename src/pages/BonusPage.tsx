@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { bonusApi, type ActiveBonus, type BonusPolicy } from '@/api/bonus.api';
 import { useAuthStore } from '@/stores/authStore';
+import { useBonusStore } from '@/stores/bonusStore';
 import { useNotificationStore } from '@/stores/notificationStore';
 import { useWalletStore } from '@/stores/walletStore';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -9,6 +10,7 @@ import { Button } from '@/components/common/Button';
 import { StatusBadge } from '@/components/common/StatusBadge';
 import { getApiErrorMessage } from '@/utils/apiError';
 import { formatBalance } from '@/utils/formatBalance';
+import { countClaimableFreeSpinBonuses, collectBonusProviderSlugs } from '@/utils/bonusAvailability';
 
 function WageringBar({ required, wagered }: { required: string; wagered: string }) {
   const { t } = useTranslation();
@@ -51,6 +53,9 @@ export function BonusPage() {
   const { t, tStatus, tBonusType } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const fetchBalance = useWalletStore((s) => s.fetchBalance);
+  const setClaimableFreeSpinCount = useBonusStore((s) => s.setClaimableFreeSpinCount);
+  const setBonusProviderSlugs = useBonusStore((s) => s.setBonusProviderSlugs);
+  const fetchBonusState = useBonusStore((s) => s.fetchBonusState);
   const [available, setAvailable] = useState<BonusPolicy[]>([]);
   const [active, setActive] = useState<ActiveBonus[]>([]);
   const [loading, setLoading] = useState(true);
@@ -64,6 +69,8 @@ export function BonusPage() {
       .then(([avail, act]) => {
         setAvailable(avail);
         setActive(act);
+        setClaimableFreeSpinCount(countClaimableFreeSpinBonuses(avail));
+        setBonusProviderSlugs(collectBonusProviderSlugs(avail, act));
       })
       .finally(() => setLoading(false));
   };
@@ -100,6 +107,7 @@ export function BonusPage() {
       }
       await fetchBalance();
       void useNotificationStore.getState().fetchUnreadCount();
+      void fetchBonusState();
       load();
     } catch (err) {
       setError(getApiErrorMessage(err, t('bonus.claimFailed')));

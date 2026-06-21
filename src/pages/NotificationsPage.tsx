@@ -4,6 +4,7 @@ import { notificationApi, type InternalMessage } from '@/api/notification.api';
 import { useAuthStore } from '@/stores/authStore';
 import { useNotificationStore } from '@/stores/notificationStore';
 import { useTranslation } from '@/hooks/useTranslation';
+import { formatNotificationText } from '@/utils/formatBalance';
 
 export function NotificationsPage() {
   const { t, formatDate } = useTranslation();
@@ -96,7 +97,7 @@ export function NotificationsPage() {
                         {!msg.is_read && (
                           <span className="mr-2 inline-block h-2 w-2 rounded-full bg-accent" />
                         )}
-                        {msg.subject}
+                        {formatNotificationText(msg.subject)}
                       </p>
                       <p className="mt-1 text-xs text-muted">
                         {formatDate(msg.created_at)}
@@ -108,7 +109,7 @@ export function NotificationsPage() {
                   </div>
                   {isExpanded && (
                     <p className="mt-3 whitespace-pre-wrap text-sm text-muted border-t border-white/5 pt-3">
-                      {msg.body}
+                      {formatNotificationText(msg.body)}
                     </p>
                   )}
                 </button>

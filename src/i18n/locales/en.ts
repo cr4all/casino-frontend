@@ -417,6 +417,10 @@ export const en = {
     closeWindow: 'Close',
     loginRequired: 'Please log in to play.',
   },
+  gameCard: {
+    newBadge: 'New',
+    bonusBadge: 'Bonus',
+  },
   modal: {
     comingSoon: 'Coming Soon',
   },
