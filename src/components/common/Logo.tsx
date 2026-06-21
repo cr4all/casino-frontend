@@ -47,7 +47,7 @@ function LogoMark({
       <text
         x={LOGO_TEXT_X}
         y={LOGO_TEXT_Y}
-        textAnchor="middle"
+        textAnchor="start"
         fontFamily={LOGO_FONT_FAMILY}
         fontSize={LOGO_FONT_SIZE}
         fontWeight={LOGO_FONT_WEIGHT}
