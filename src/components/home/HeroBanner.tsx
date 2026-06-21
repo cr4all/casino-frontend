@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { useTranslation } from '@/hooks/useTranslation';
+import { isRtlLanguage } from '@/stores/languageStore';
 import { useAuthStore } from '@/stores/authStore';
 import { typePath } from '@/stores/gameStore';
 import { useUiStore } from '@/stores/uiStore';
@@ -148,11 +149,14 @@ function FirstDepositHeroSlide({ backgroundSrc }: { backgroundSrc: string }) {
 }
 
 export function HeroBanner() {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
+  const isRtl = isRtlLanguage(language);
 
   return (
     <section className="hero-slider" aria-label="Promotions">
       <Swiper
+        key={language}
+        dir={isRtl ? 'rtl' : 'ltr'}
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         pagination={{ clickable: true }}

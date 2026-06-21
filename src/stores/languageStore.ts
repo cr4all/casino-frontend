@@ -4,6 +4,10 @@ import type { Language } from '@/i18n';
 
 const RTL_LANGUAGES = new Set<Language>(['ar', 'fa', 'he', 'ur']);
 
+export function isRtlLanguage(language: Language): boolean {
+  return RTL_LANGUAGES.has(language);
+}
+
 function applyDocumentLanguage(language: Language): void {
   document.documentElement.lang = language;
   document.documentElement.dir = RTL_LANGUAGES.has(language) ? 'rtl' : 'ltr';
