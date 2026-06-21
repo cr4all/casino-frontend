@@ -115,11 +115,7 @@ export function BonusPage() {
           <p className="mt-2 text-sm text-muted">
             {t('bonus.freeSpinCount', { count: policy.spin_count ?? 0 })}
           </p>
-          {policy.provider_name && (
-            <p className="mt-1 text-xs text-muted">
-              {t('bonus.freeSpinProvider', { provider: policy.provider_name })}
-            </p>
-          )}
+          
         </>
       );
     }

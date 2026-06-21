@@ -354,7 +354,7 @@ export const en = {
     first_deposit: 'First Deposit',
     reload: 'Reload',
     cashback: 'Cashback',
-    free_spin: 'Free Spin(FTD)',
+    free_spin: 'Free Spin',
   },
   messages: {
     title: 'Messages',
