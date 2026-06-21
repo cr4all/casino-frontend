@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { bonusApi, type ActiveBonus, type BonusPolicy } from '@/api/bonus.api';
 import { useAuthStore } from '@/stores/authStore';
 import { useNotificationStore } from '@/stores/notificationStore';
@@ -35,6 +35,18 @@ function WageringBar({ required, wagered }: { required: string; wagered: string 
   );
 }
 
+function canShowClaimButton(policy: BonusPolicy): boolean {
+  if (policy.type === 'welcome') {
+    return policy.claimable;
+  }
+
+  if (policy.type === 'free_spin') {
+    return policy.claimable;
+  }
+
+  return false;
+}
+
 export function BonusPage() {
   const { t, tStatus, tBonusType } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
@@ -65,18 +77,27 @@ export function BonusPage() {
     return <Navigate to="/" replace />;
   }
 
-  const handleClaim = async (policyId: number) => {
-    setClaimingId(policyId);
+  const handleClaim = async (policy: BonusPolicy) => {
+    setClaimingId(policy.policy_id);
     setError(null);
     setMessage(null);
     try {
-      const result = await bonusApi.claim(policyId);
-      setMessage(
-        t('bonus.claimed', {
-          amount: formatBalance(result.amount),
-          status: tStatus(result.status),
-        }),
-      );
+      const result = await bonusApi.claim(policy.policy_id);
+      if (policy.type === 'free_spin' && result.spin_count != null) {
+        setMessage(
+          t('bonus.freeSpinClaimed', {
+            count: result.spin_count,
+            status: tStatus(result.status),
+          }),
+        );
+      } else {
+        setMessage(
+          t('bonus.claimed', {
+            amount: formatBalance(result.amount),
+            status: tStatus(result.status),
+          }),
+        );
+      }
       await fetchBalance();
       void useNotificationStore.getState().fetchUnreadCount();
       load();
@@ -85,6 +106,60 @@ export function BonusPage() {
     } finally {
       setClaimingId(null);
     }
+  };
+
+  const renderPolicyDetails = (policy: BonusPolicy) => {
+    if (policy.type === 'free_spin') {
+      return (
+        <>
+          <p className="mt-2 text-sm text-muted">
+            {t('bonus.freeSpinCount', { count: policy.spin_count ?? 0 })}
+          </p>
+          {policy.provider_name && (
+            <p className="mt-1 text-xs text-muted">
+              {t('bonus.freeSpinProvider', { provider: policy.provider_name })}
+            </p>
+          )}
+        </>
+      );
+    }
+
+    return (
+      <p className="mt-2 text-sm text-muted">
+        {policy.amount_type === 'percentage'
+          ? t('bonus.percentMatch', { value: formatBalance(policy.amount_value) })
+          : t('bonus.fixedMatch', { value: formatBalance(policy.amount_value) })}
+        {' · '}
+        {t('bonus.wageringMultiplier', { value: policy.wagering_multiplier })}
+      </p>
+    );
+  };
+
+  const renderClaimBlockedMessage = (policy: BonusPolicy) => {
+    if (policy.type !== 'free_spin' || !policy.claim_blocked_reason) {
+      return null;
+    }
+
+    if (policy.claim_blocked_reason === 'deposit_required') {
+      return (
+        <p className="mt-4 text-xs text-muted">
+          {t('bonus.depositRequired')}{' '}
+          <Link to="/deposit" className="text-accent underline">
+            {t('bonus.depositCta')}
+          </Link>
+        </p>
+      );
+    }
+
+    if (policy.claim_blocked_reason === 'already_claimed') {
+      return <p className="mt-4 text-xs text-muted">{t('bonus.alreadyClaimed')}</p>;
+    }
+
+    if (policy.claim_blocked_reason === 'provider_not_supported') {
+      return <p className="mt-4 text-xs text-muted">{t('bonus.providerNotSupported')}</p>;
+    }
+
+    return null;
   };
 
   return (
@@ -120,7 +195,13 @@ export function BonusPage() {
                         <h3 className="font-semibold text-white">
                           {bonus.policy_name ?? t('bonus.defaultName')}
                         </h3>
-                        <p className="mt-1 text-xl font-bold text-accent-gold">{formatBalance(bonus.amount)}</p>
+                        {bonus.type === 'free_spin' && bonus.spin_count != null ? (
+                          <p className="mt-1 text-xl font-bold text-accent-gold">
+                            {t('bonus.freeSpinCount', { count: bonus.spin_count })}
+                          </p>
+                        ) : (
+                          <p className="mt-1 text-xl font-bold text-accent-gold">{formatBalance(bonus.amount)}</p>
+                        )}
                       </div>
                       <StatusBadge status={bonus.status} />
                     </div>
@@ -153,29 +234,27 @@ export function BonusPage() {
                       {tBonusType(policy.type)}
                     </span>
                     <h3 className="mt-1 font-semibold text-white">{policy.name}</h3>
-                    <p className="mt-2 text-sm text-muted">
-                      {policy.amount_type === 'percentage'
-                        ? t('bonus.percentMatch', { value: formatBalance(policy.amount_value) })
-                        : t('bonus.fixedMatch', { value: formatBalance(policy.amount_value) })}
-                      {' · '}
-                      {t('bonus.wageringMultiplier', { value: policy.wagering_multiplier })}
-                    </p>
-                    {policy.type === 'welcome' && (
+                    {renderPolicyDetails(policy)}
+                    {canShowClaimButton(policy) && (
                       <Button
                         variant="primary"
                         className="mt-4 w-full text-xs"
                         disabled={claimingId === policy.policy_id}
-                        onClick={() => handleClaim(policy.policy_id)}
+                        onClick={() => handleClaim(policy)}
                       >
                         {claimingId === policy.policy_id
                           ? t('common.claiming')
                           : t('bonus.claimBonus')}
                       </Button>
                     )}
+                    {renderClaimBlockedMessage(policy)}
                     {policy.type === 'first_deposit' && (
                       <p className="mt-4 text-xs text-muted">{t('bonus.firstDepositAutoApply')}</p>
                     )}
-                    {policy.type !== 'welcome' && policy.type !== 'first_deposit' && (
+                    {policy.type !== 'welcome'
+                      && policy.type !== 'first_deposit'
+                      && policy.type !== 'free_spin'
+                      && (
                       <p className="mt-4 text-xs text-muted">{t('bonus.autoApply')}</p>
                     )}
                   </div>
