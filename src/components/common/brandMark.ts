@@ -2,8 +2,10 @@
 export const LOGO_FONT_FAMILY = "Montserrat, 'Arial Black', Arial, sans-serif";
 export const LOGO_FONT_SIZE = 36;
 export const LOGO_FONT_WEIGHT = 800;
-export const LOGO_VIEWBOX = '0 0 200 52';
-export const LOGO_TEXT_X = 2;
+export const LOGO_VIEWBOX_WIDTH = 162;
+export const LOGO_VIEWBOX_HEIGHT = 52;
+export const LOGO_VIEWBOX = `0 0 ${LOGO_VIEWBOX_WIDTH} ${LOGO_VIEWBOX_HEIGHT}`;
+export const LOGO_TEXT_X = LOGO_VIEWBOX_WIDTH / 2;
 export const LOGO_TEXT_Y = 40;
 export const LOGO_LETTER_SPACING = '-0.08em';
 
