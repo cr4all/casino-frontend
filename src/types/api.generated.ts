@@ -1929,6 +1929,8 @@ export interface components {
             win_amount: string;
             net_amount: string;
             status: string;
+            /** @enum {string} */
+            funding_source: "cash" | "free_spin";
             currency: string;
             /** Format: date-time */
             played_at?: string | null;

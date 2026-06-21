@@ -196,9 +196,19 @@ export function BonusPage() {
                           {bonus.policy_name ?? t('bonus.defaultName')}
                         </h3>
                         {bonus.type === 'free_spin' && bonus.spin_count != null ? (
-                          <p className="mt-1 text-xl font-bold text-accent-gold">
-                            {t('bonus.freeSpinCount', { count: bonus.spin_count })}
-                          </p>
+                          <>
+                            <p className="mt-1 text-xl font-bold text-accent-gold">
+                              {t('bonus.freeSpinUsage', {
+                                used: bonus.spins_used ?? 0,
+                                total: bonus.spin_count,
+                              })}
+                            </p>
+                            {parseFloat(bonus.amount) > 0 && (
+                              <p className="mt-1 text-sm text-muted">
+                                {t('bonus.freeSpinWinnings', { amount: formatBalance(bonus.amount) })}
+                              </p>
+                            )}
+                          </>
                         ) : (
                           <p className="mt-1 text-xl font-bold text-accent-gold">{formatBalance(bonus.amount)}</p>
                         )}

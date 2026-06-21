@@ -31,6 +31,8 @@ export interface ActiveBonus {
     wagered: string;
   } | null;
   spin_count?: number | null;
+  spins_used?: number | null;
+  spins_remaining?: number | null;
   provider_slug?: string | null;
   provider_bonus_id?: number | null;
 }
@@ -40,6 +42,7 @@ export interface ClaimBonusResult {
   amount: string;
   status: string;
   spin_count?: number | null;
+  spins_used?: number | null;
   provider_bonus_id?: number | null;
 }
 
