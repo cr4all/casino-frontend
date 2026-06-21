@@ -47,6 +47,7 @@ function LogoMark({
       <text
         x={LOGO_TEXT_X}
         y={LOGO_TEXT_Y}
+        textAnchor="start"
         fontFamily={LOGO_FONT_FAMILY}
         fontSize={LOGO_FONT_SIZE}
         fontWeight={LOGO_FONT_WEIGHT}
@@ -74,7 +75,7 @@ export function Logo({ className = '', height = 32, fill = false, onClick }: Log
       <LogoMark
         gradientId={gradientId}
         className={sizeClass}
-        style={fill ? undefined : { height, width: 'auto' }}
+        style={fill ? undefined : { height, width: 'auto', maxWidth: '100%' }}
       />
     </Link>
   );

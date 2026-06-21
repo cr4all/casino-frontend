@@ -30,18 +30,27 @@ const VISIBLE_USERS = [
   'MoonGambler',
 ];
 
-/** Realistic total bet amounts between $10 and $100 (USD). Lower-mid values appear more often. */
-const BET_STAKES = [
-  10, 10, 10, 12, 12, 15, 15, 20, 20, 20, 25, 25, 30, 40, 40, 50, 50, 50, 60, 75, 80, 100,
+/** Preset bet levels between $5 and $20 — amounts players can actually select in-game. */
+const BETTABLE_STAKES = [5, 7.5, 10, 12.5, 15, 17.5, 20] as const;
+
+/** Weighted toward common whole-dollar presets; half-dollar totals appear less often. */
+const BET_STAKES: number[] = [
+  5, 5, 5, 5,
+  10, 10, 10, 10,
+  15, 15, 15,
+  20, 20, 20,
+  7.5, 7.5,
+  12.5, 12.5,
+  17.5,
 ];
 
-const STAKES_BY_TYPE: Record<string, number[]> = {
+const STAKES_BY_TYPE: Record<string, readonly number[]> = {
   slot: BET_STAKES,
-  live_casino: [10, 25, 25, 50, 50, 75, 100, 100],
-  table: [10, 15, 20, 25, 50, 50, 75, 100],
-  crash: [10, 10, 20, 25, 50, 50, 100],
-  mini_game: [10, 12, 15, 20, 25, 50],
-  fishing: [10, 15, 20, 25, 40, 50, 100],
+  live_casino: BETTABLE_STAKES,
+  table: BETTABLE_STAKES,
+  crash: [5, 5, 10, 10, 15, 15, 20, 20],
+  mini_game: BETTABLE_STAKES,
+  fishing: BETTABLE_STAKES,
 };
 
 const DEFAULT_STAKES = BET_STAKES;
@@ -55,7 +64,7 @@ function randomBetween(min: number, max: number): number {
   return min + Math.random() * (max - min);
 }
 
-function pickRandom<T>(items: T[]): T {
+function pickRandom<T>(items: readonly T[]): T {
   return items[Math.floor(Math.random() * items.length)];
 }
 
@@ -63,7 +72,7 @@ function roundMoney(value: number): number {
   return Math.round(value * 100) / 100;
 }
 
-function stakesForGame(game: Game): number[] {
+function stakesForGame(game: Game): readonly number[] {
   const slug = game.type?.slug ?? 'slot';
   return STAKES_BY_TYPE[slug] ?? DEFAULT_STAKES;
 }
