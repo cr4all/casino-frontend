@@ -2072,7 +2072,7 @@ export interface components {
             wagering_multiplier: number;
             claimable: boolean;
             /** @enum {string|null} */
-            claim_blocked_reason?: "deposit_required" | "already_claimed" | "provider_not_supported" | null;
+            claim_blocked_reason?: "deposit_required" | "first_deposit_after_valid_from_required" | "already_claimed" | "provider_not_supported" | null;
             spin_count?: number | null;
             provider_slug?: string | null;
             provider_name?: string | null;

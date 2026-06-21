@@ -36,7 +36,6 @@ function LogoMark({
       xmlns="http://www.w3.org/2000/svg"
       viewBox={LOGO_VIEWBOX}
       fill="none"
-      dir="ltr"
       {...(width != null ? { width } : {})}
       {...(height != null ? { height } : {})}
       className={className}
