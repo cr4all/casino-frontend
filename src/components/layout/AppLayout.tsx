@@ -10,6 +10,7 @@ import { CookieConsentBanner } from '@/components/common/CookieConsentBanner';
 import { CookieSettingsModal } from '@/components/common/CookieSettingsModal';
 import { ComingSoonModal } from '@/components/common/Modal';
 import { useAuthInit } from '@/hooks/useAuthInit';
+import { prefetchDeviceContext } from '@/lib/deviceContext';
 import { useCloseLiveChatOnNavigate } from '@/hooks/useCloseLiveChatOnNavigate';
 import { useScrollToTopOnNavigate } from '@/hooks/useScrollToTopOnNavigate';
 import { useIdleLogout } from '@/hooks/useIdleLogout';
@@ -26,6 +27,10 @@ import { captureAffiliateReferralFromUrl } from '@/utils/affiliateReferral';
 
 export function AppLayout() {
   const { loadSessionPolicy } = useSessionPolicy();
+
+  useEffect(() => {
+    prefetchDeviceContext();
+  }, []);
 
   useAuthInit();
   useWalletSync();

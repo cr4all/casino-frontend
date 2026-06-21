@@ -806,6 +806,7 @@ export interface paths {
                          * @example ID
                          */
                         country: string;
+                        risk_context?: components["schemas"]["ClientRiskContext"];
                     };
                 };
             };
@@ -889,6 +890,7 @@ export interface paths {
                         destination: {
                             [key: string]: unknown;
                         };
+                        risk_context?: components["schemas"]["ClientRiskContext"];
                     };
                 };
             };
@@ -1761,6 +1763,27 @@ export interface components {
             /** @example United States */
             name: string;
         };
+        /**
+         * @description Device signals collected client-side for anti-fraud (AFS).
+         *     Server adds ip and country; do not send those from the client.
+         */
+        ClientRiskContext: {
+            /** @description FingerprintJS visitorId (32 hex chars) */
+            fingerprint?: string | null;
+            /** @description FingerprintJS version, e.g. v4.2.0 */
+            fingerprint_version?: string | null;
+            user_agent?: string | null;
+            /** @description Native app device id (use instead of fingerprint on mobile) */
+            device_id?: string | null;
+            /** @example en-US */
+            browser_language?: string | null;
+            /** @example America/New_York */
+            timezone?: string | null;
+            /** @example Win32 */
+            platform?: string | null;
+            /** @example 1920x1080 */
+            screen_resolution?: string | null;
+        };
         RegisterRequest: {
             /** Format: email */
             email: string;
@@ -1783,6 +1806,7 @@ export interface components {
              */
             currency: string;
             affiliate_code?: string | null;
+            risk_context?: components["schemas"]["ClientRiskContext"];
         };
         LoginRequest: {
             /** @description Email address (use with password for email login) */
@@ -1794,6 +1818,7 @@ export interface components {
             password: string;
             device_fingerprint?: string | null;
             device_name?: string | null;
+            risk_context?: components["schemas"]["ClientRiskContext"];
         };
         /** @description Exactly one of email or phone is required. */
         PasswordRecoveryRequestBody: {
@@ -1830,7 +1855,7 @@ export interface components {
             /** Format: email */
             email: string;
             /**
-             * @description User role (player, affiliate, admin, operator)
+             * @description User role (player, affiliate, admin, sales, support)
              * @example player
              */
             role?: string;
@@ -2088,6 +2113,8 @@ export interface components {
                 wagered?: string;
             } | null;
             spin_count?: number | null;
+            spins_used?: number | null;
+            spins_remaining?: number | null;
             provider_slug?: string | null;
             provider_bonus_id?: number | null;
         };

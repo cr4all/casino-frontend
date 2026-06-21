@@ -1,4 +1,5 @@
 import api from '@/api/axios';
+import { getDeviceContext } from '@/lib/deviceContext';
 import type { ApiResponse, PaginationMeta } from '@/types';
 
 export interface PaymentCountry {
@@ -111,10 +112,12 @@ export const paymentApi = {
   },
 
   createDeposit: async (optionKey: string, amount: string, country: string) => {
+    const risk_context = await getDeviceContext();
     const { data } = await api.post<ApiResponse<DepositRequest>>('/payment/deposits', {
       option_key: optionKey,
       amount,
       country,
+      risk_context,
     });
     return data.data;
   },
@@ -133,9 +136,10 @@ export const paymentApi = {
     country: string,
     destination: Record<string, string>,
   ) => {
+    const risk_context = await getDeviceContext();
     const { data } = await api.post<ApiResponse<{ withdrawal_id: number; status: string; amount: string }>>(
       '/payment/withdrawals',
-      { option_key: optionKey, amount, country, destination },
+      { option_key: optionKey, amount, country, destination, risk_context },
     );
     return data.data;
   },
