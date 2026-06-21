@@ -1590,6 +1590,7 @@ export interface paths {
                     status?: "bet" | "settled" | "cancelled";
                     from?: string;
                     to?: string;
+                    funding_source?: "cash" | "free_spin";
                 };
                 header?: never;
                 path?: never;
@@ -1929,8 +1930,13 @@ export interface components {
             win_amount: string;
             net_amount: string;
             status: string;
-            /** @enum {string} */
+            /**
+             * @description Spin funding source — cash wallet or free spin bonus.
+             * @enum {string}
+             */
             funding_source: "cash" | "free_spin";
+            /** @description Human-readable spin type label (e.g. Cash Spin, Free Spin). */
+            spin_type?: string;
             currency: string;
             /** Format: date-time */
             played_at?: string | null;
@@ -1973,8 +1979,15 @@ export interface components {
             logo_key?: string | null;
             /** @example PHP */
             payment_currency: string;
-            /** @example 100.0000 */
+            /**
+             * @description Minimum deposit amount in payment_currency. For local deposit options this value is converted from the player's wallet currency, normalized for display, and expressed in the regional payment currency (e.g. IDR, PHP).
+             * @example 10000.0000
+             */
             min_amount: string;
+            /**
+             * @description Maximum deposit amount in payment_currency, or null when no limit applies. For local deposit options this value is converted from the player's wallet currency, normalized for display, and expressed in the regional payment currency.
+             * @example 150000000.0000
+             */
             max_amount?: string | null;
             /** @example PH */
             local_country?: string | null;
@@ -2057,21 +2070,34 @@ export interface components {
             amount_type: string;
             amount_value: string;
             wagering_multiplier: number;
+            claimable: boolean;
+            /** @enum {string|null} */
+            claim_blocked_reason?: "deposit_required" | "first_deposit_after_valid_from_required" | "already_claimed" | "provider_not_supported" | null;
+            spin_count?: number | null;
+            provider_slug?: string | null;
+            provider_name?: string | null;
         };
         ActiveBonus: {
             id?: number;
             policy_name?: string | null;
+            type?: string | null;
             amount?: string;
             status?: string;
             wagering?: {
                 required?: string;
                 wagered?: string;
             } | null;
+            spin_count?: number | null;
+            provider_slug?: string | null;
+            provider_bonus_id?: number | null;
         };
         BonusClaimed: {
             bonus_id: number;
             amount: string;
             status: string;
+            spin_count?: number | null;
+            spins_used?: number | null;
+            provider_bonus_id?: number | null;
         };
         InternalMessage: {
             id?: number;

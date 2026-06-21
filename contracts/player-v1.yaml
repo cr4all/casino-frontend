@@ -1981,16 +1981,12 @@ components:
         spin_count:
           type: integer
           nullable: true
+        spins_used:
+          type: integer
+          nullable: true
         provider_bonus_id:
           type: integer
           nullable: true
-      properties:
-        bonus_id:
-          type: integer
-        amount:
-          type: string
-        status:
-          type: string
 
     InternalMessage:
       type: object
