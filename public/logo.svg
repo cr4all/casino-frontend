@@ -8,9 +8,9 @@
   </defs>
 
   <text
-    x="81"
+    x="0"
     y="40"
-    text-anchor="middle"
+    text-anchor="start"
     font-family="Montserrat, 'Arial Black', Arial, sans-serif"
     font-size="36"
     font-weight="800"
