@@ -50,8 +50,8 @@ export function Header({ onMenuToggle }: HeaderProps) {
         ☰
       </button>
 
-      <div className="col-start-2 flex min-w-0 items-center justify-center px-1 lg:hidden">
-        <Logo height={36} className="max-w-full shrink min-w-0" />
+      <div className="col-start-2 flex min-w-0 items-center justify-center px-1 lg:hidden" dir="ltr">
+        <Logo height={36} className="max-w-full" />
       </div>
 
       <div className="col-start-3 flex min-w-0 shrink-0 items-center justify-end gap-1.5 sm:gap-2 md:gap-3 lg:col-start-2">

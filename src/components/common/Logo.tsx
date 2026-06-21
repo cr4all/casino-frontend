@@ -8,6 +8,7 @@ import {
   LOGO_TEXT_X,
   LOGO_TEXT_Y,
   LOGO_VIEWBOX,
+  logoWidthForHeight,
 } from '@/components/common/brandMark';
 
 interface LogoProps {
@@ -21,16 +22,23 @@ function LogoMark({
   className,
   style,
   gradientId,
+  width,
+  height,
 }: {
   className?: string;
   style?: CSSProperties;
   gradientId: string;
+  width?: number;
+  height?: number;
 }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox={LOGO_VIEWBOX}
       fill="none"
+      dir="ltr"
+      {...(width != null ? { width } : {})}
+      {...(height != null ? { height } : {})}
       className={className}
       style={style}
       role="img"
@@ -63,19 +71,23 @@ function LogoMark({
 
 export function Logo({ className = '', height = 32, fill = false, onClick }: LogoProps) {
   const gradientId = useId().replace(/:/g, '');
-  const sizeClass = fill ? 'h-auto w-full max-h-16' : 'h-auto w-auto';
+  const width = logoWidthForHeight(height);
+  const sizeClass = fill ? 'h-auto w-full max-h-16' : 'block max-w-full';
 
   return (
     <Link
       to="/"
       onClick={onClick}
-      className={`inline-flex items-center ${fill ? 'block w-full' : ''} ${className}`}
+      dir="ltr"
+      className={`inline-flex shrink-0 items-center ${fill ? 'block w-full' : ''} ${className}`}
       aria-label="IBETS24"
     >
       <LogoMark
         gradientId={gradientId}
+        width={fill ? undefined : width}
+        height={fill ? undefined : height}
         className={sizeClass}
-        style={fill ? undefined : { height, width: 'auto', maxWidth: '100%' }}
+        style={fill ? undefined : { height, width, maxWidth: '100%' }}
       />
     </Link>
   );
