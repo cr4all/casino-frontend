@@ -8,6 +8,7 @@ import { useUnreadNotifications } from '@/hooks/useUnreadNotifications';
 import { useTranslation } from '@/hooks/useTranslation';
 import { Button } from '@/components/common/Button';
 import { LanguageSelector } from '@/components/common/LanguageSelector';
+import { Logo } from '@/components/common/Logo';
 
 interface HeaderProps {
   onMenuToggle?: () => void;
@@ -39,19 +40,21 @@ export function Header({ onMenuToggle }: HeaderProps) {
   const closeUserMenu = () => setUserMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-30 flex h-14 min-w-0 items-center gap-2 border-b border-white/[0.06] bg-background/95 px-3 backdrop-blur-md sm:px-4 md:px-6">
+    <header className="sticky top-0 z-30 grid h-14 min-w-0 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-x-2 border-b border-white/[0.06] bg-background/95 px-3 backdrop-blur-md sm:px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_auto]">
       <button
         type="button"
         onClick={onMenuToggle}
-        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-white/10 text-white lg:hidden"
+        className="col-start-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-white/10 text-white lg:hidden"
         aria-label={t('common.openMenu')}
       >
         ☰
       </button>
 
-      <div className="min-w-0 flex-1" />
+      <div className="col-start-2 flex min-w-0 items-center justify-center px-1 lg:hidden">
+        <Logo height={36} className="max-w-full shrink min-w-0" />
+      </div>
 
-      <div className="flex min-w-0 shrink-0 items-center gap-1.5 sm:gap-2 md:gap-3">
+      <div className="col-start-3 flex min-w-0 shrink-0 items-center justify-end gap-1.5 sm:gap-2 md:gap-3 lg:col-start-2">
         <LanguageSelector />
 
         {isAuthenticated ? (
