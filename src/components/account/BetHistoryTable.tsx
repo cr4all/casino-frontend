@@ -40,6 +40,7 @@ export function BetHistoryTable({ bets, pagination, loading, onPageChange }: Bet
               <th className="px-4 py-3 text-xs font-medium text-muted">{t('betHistory.bet')}</th>
               <th className="px-4 py-3 text-xs font-medium text-muted">{t('betHistory.win')}</th>
               <th className="px-4 py-3 text-xs font-medium text-muted">{t('betHistory.net')}</th>
+              <th className="px-4 py-3 text-xs font-medium text-muted">{t('betHistory.spinType')}</th>
               <th className="px-4 py-3 text-xs font-medium text-muted">{t('betHistory.status')}</th>
               <th className="px-4 py-3 text-xs font-medium text-muted hidden sm:table-cell">{t('betHistory.date')}</th>
             </tr>
@@ -60,6 +61,19 @@ export function BetHistoryTable({ bets, pagination, loading, onPageChange }: Bet
                   }`}
                 >
                   {formatBalance(bet.net_amount)}
+                </td>
+                <td className="px-4 py-3">
+                  <span
+                    className={`inline-flex rounded-full px-2 py-0.5 text-xs font-medium ${
+                      bet.funding_source === 'free_spin'
+                        ? 'bg-accent-purple/15 text-accent-purple'
+                        : 'bg-white/5 text-muted'
+                    }`}
+                  >
+                    {bet.funding_source === 'free_spin'
+                      ? t('betHistory.fundingFreeSpin')
+                      : t('betHistory.fundingCash')}
+                  </span>
                 </td>
                 <td className="px-4 py-3">
                   <StatusBadge status={bet.status} />

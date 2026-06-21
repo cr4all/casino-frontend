@@ -1590,6 +1590,7 @@ export interface paths {
                     status?: "bet" | "settled" | "cancelled";
                     from?: string;
                     to?: string;
+                    funding_source?: "cash" | "free_spin";
                 };
                 header?: never;
                 path?: never;
@@ -1929,6 +1930,13 @@ export interface components {
             win_amount: string;
             net_amount: string;
             status: string;
+            /**
+             * @description Spin funding source — cash wallet or free spin bonus.
+             * @enum {string}
+             */
+            funding_source: "cash" | "free_spin";
+            /** @description Human-readable spin type label (e.g. Cash Spin, Free Spin). */
+            spin_type?: string;
             currency: string;
             /** Format: date-time */
             played_at?: string | null;
@@ -2088,6 +2096,7 @@ export interface components {
             amount: string;
             status: string;
             spin_count?: number | null;
+            spins_used?: number | null;
             provider_bonus_id?: number | null;
         };
         InternalMessage: {

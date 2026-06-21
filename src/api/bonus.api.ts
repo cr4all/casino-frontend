@@ -3,6 +3,7 @@ import type { ApiResponse } from '@/types';
 
 export type BonusClaimBlockedReason =
   | 'deposit_required'
+  | 'first_deposit_after_valid_from_required'
   | 'already_claimed'
   | 'provider_not_supported';
 
@@ -31,6 +32,8 @@ export interface ActiveBonus {
     wagered: string;
   } | null;
   spin_count?: number | null;
+  spins_used?: number | null;
+  spins_remaining?: number | null;
   provider_slug?: string | null;
   provider_bonus_id?: number | null;
 }
@@ -40,6 +43,7 @@ export interface ClaimBonusResult {
   amount: string;
   status: string;
   spin_count?: number | null;
+  spins_used?: number | null;
   provider_bonus_id?: number | null;
 }
 
