@@ -1,6 +1,11 @@
 import api from '@/api/axios';
 import type { ApiResponse } from '@/types';
 
+export type BonusClaimBlockedReason =
+  | 'deposit_required'
+  | 'already_claimed'
+  | 'provider_not_supported';
+
 export interface BonusPolicy {
   policy_id: number;
   name: string;
@@ -8,23 +13,34 @@ export interface BonusPolicy {
   amount_type: string;
   amount_value: string;
   wagering_multiplier: number;
+  claimable: boolean;
+  claim_blocked_reason?: BonusClaimBlockedReason | null;
+  spin_count?: number | null;
+  provider_slug?: string | null;
+  provider_name?: string | null;
 }
 
 export interface ActiveBonus {
   id: number;
   policy_name: string | null;
+  type?: string | null;
   amount: string;
   status: string;
   wagering: {
     required: string;
     wagered: string;
   } | null;
+  spin_count?: number | null;
+  provider_slug?: string | null;
+  provider_bonus_id?: number | null;
 }
 
 export interface ClaimBonusResult {
   bonus_id: number;
   amount: string;
   status: string;
+  spin_count?: number | null;
+  provider_bonus_id?: number | null;
 }
 
 export const bonusApi = {
