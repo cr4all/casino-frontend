@@ -54,6 +54,7 @@ import { vi } from './locales/vi';
 import { zh } from './locales/zh';
 import { zhTw } from './locales/zh-tw';
 import { applyPhraseMapToValues, mergePhraseMaps } from './phraseMapUtils';
+import { PRIORITY_LANGUAGE_CODES } from './priorityLanguages';
 
 const LANGUAGE_DEFINITIONS = [
   { code: 'en', label: 'English', shortLabel: 'EN' },
@@ -115,9 +116,21 @@ const LANGUAGE_DEFINITIONS = [
 
 export type Language = (typeof LANGUAGE_DEFINITIONS)[number]['code'];
 
-export const LANGUAGES: { code: Language; label: string; shortLabel: string }[] = [
-  ...LANGUAGE_DEFINITIONS,
-];
+function buildLanguageList(): { code: Language; label: string; shortLabel: string }[] {
+  const byCode = new Map(LANGUAGE_DEFINITIONS.map((lang) => [lang.code, lang]));
+  const prioritySet = new Set<string>(PRIORITY_LANGUAGE_CODES);
+
+  const priority = PRIORITY_LANGUAGE_CODES.flatMap((code) => {
+    const lang = byCode.get(code);
+    return lang ? [lang] : [];
+  });
+
+  const rest = LANGUAGE_DEFINITIONS.filter((lang) => !prioritySet.has(lang.code));
+
+  return [...priority, ...rest];
+}
+
+export const LANGUAGES = buildLanguageList();
 
 export function getLanguageShortLabel(code: Language): string {
   return LANGUAGES.find((lang) => lang.code === code)?.shortLabel ?? code.toUpperCase();

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { subscribeWalletBalance } from '@/api/walletRealtime';
-import { disconnectEcho } from '@/lib/echo';
+import { disconnectEcho, refreshEchoToken } from '@/lib/echo';
 import { useAuthStore } from '@/stores/authStore';
 import { useWalletStore } from '@/stores/walletStore';
 
@@ -19,6 +19,7 @@ export function useWalletSync() {
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const wsFailuresRef = useRef(0);
   const isPlayingRef = useRef(false);
+  const activePlayerIdRef = useRef<number | null>(null);
 
   const enabled = isAuthenticated && user?.role !== 'affiliate';
 
@@ -56,6 +57,7 @@ export function useWalletSync() {
 
   useEffect(() => {
     if (!enabled) {
+      activePlayerIdRef.current = null;
       disconnectEcho();
       stopPolling();
       return;
@@ -65,6 +67,7 @@ export function useWalletSync() {
     let unsubscribe: (() => void) | undefined;
 
     const connectWebSocket = (resolvedPlayerId: number) => {
+      activePlayerIdRef.current = resolvedPlayerId;
       unsubscribe?.();
 
       unsubscribe = subscribeWalletBalance({
@@ -110,15 +113,21 @@ export function useWalletSync() {
     void bootstrap();
 
     const handleVisibility = () => {
-      if (document.visibilityState === 'visible') {
-        void fetchBalance();
+      if (document.visibilityState !== 'visible' || activePlayerIdRef.current === null) {
+        return;
       }
+
+      refreshEchoToken();
+      wsFailuresRef.current = 0;
+      connectWebSocket(activePlayerIdRef.current);
+      void fetchBalance();
     };
 
     document.addEventListener('visibilitychange', handleVisibility);
 
     return () => {
       cancelled = true;
+      activePlayerIdRef.current = null;
       unsubscribe?.();
       disconnectEcho();
       stopPolling();
