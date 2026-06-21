@@ -1,4 +1,5 @@
 import axios, { type AxiosError, type InternalAxiosRequestConfig } from 'axios';
+import { refreshEchoToken } from '@/lib/echo';
 import { useAuthStore } from '@/stores/authStore';
 
 const api = axios.create({
@@ -73,6 +74,7 @@ api.interceptors.response.use(
       const newRefreshToken = data.data.refresh_token as string;
 
       useAuthStore.getState().setTokens(newAccessToken, newRefreshToken);
+      refreshEchoToken();
       processQueue(null, newAccessToken);
       originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;
       return api(originalRequest);
