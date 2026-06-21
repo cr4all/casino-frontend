@@ -75,6 +75,7 @@ export interface BetHistoryItem {
   net_amount: string;
   status: string;
   funding_source: 'cash' | 'free_spin';
+  spin_type?: string;
   currency: string;
   played_at: string | null;
 }

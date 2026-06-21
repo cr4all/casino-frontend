@@ -147,6 +147,17 @@ export function BonusPage() {
       );
     }
 
+    if (policy.claim_blocked_reason === 'deposit_after_valid_from_required') {
+      return (
+        <p className="mt-4 text-xs text-muted">
+          {t('bonus.depositAfterValidFromRequired')}{' '}
+          <Link to="/deposit" className="text-accent underline">
+            {t('bonus.depositCta')}
+          </Link>
+        </p>
+      );
+    }
+
     if (policy.claim_blocked_reason === 'already_claimed') {
       return <p className="mt-4 text-xs text-muted">{t('bonus.alreadyClaimed')}</p>;
     }

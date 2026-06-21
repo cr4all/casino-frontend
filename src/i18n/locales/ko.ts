@@ -387,9 +387,10 @@ export const ko: LocaleTree = {
     net: '순이익',
     status: '상태',
     date: '날짜',
-    fundingSource: '자금',
-    fundingCash: '실잔액',
-    fundingFreeSpin: '프리 스핀',
+    spinType: '스핀 형태',
+    fundingSource: '스핀 형태',
+    fundingCash: 'Cash 스핀',
+    fundingFreeSpin: '프리스핀',
   },
   transactions: {
     title: '거래 내역',

@@ -3,6 +3,7 @@ import type { ApiResponse } from '@/types';
 
 export type BonusClaimBlockedReason =
   | 'deposit_required'
+  | 'deposit_after_valid_from_required'
   | 'already_claimed'
   | 'provider_not_supported';
 
