@@ -58,11 +58,12 @@ const gameNames = [
 export const mockGames: Game[] = gameNames.map((g, i) => ({
   id: i + 1,
   name: g.name,
-  hall_name: g.provider,
   thumbnail: null,
   game_code: `mock-${i + 1}`,
-  provider: g.provider,
-  category: g.category,
+  provider: {
+    slug: g.provider.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+    name: g.provider,
+  },
   gradient: gradients[i % gradients.length],
   isNew: i < 4,
 }));

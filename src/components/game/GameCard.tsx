@@ -3,7 +3,10 @@ import { motion } from 'framer-motion';
 import type { Game } from '@/types';
 import { useAuthStore } from '@/stores/authStore';
 import { useUiStore } from '@/stores/uiStore';
+import { useBonusProviderSlugs } from '@/hooks/useBonusProviderSlugs';
+import { useTranslation } from '@/hooks/useTranslation';
 import { getGameThumbnailCandidates } from '@/data/gameThumbnails';
+import { gameHasProviderBonus } from '@/utils/bonusAvailability';
 import { openGameWindow } from '@/utils/openGameWindow';
 
 interface GameCardProps {
@@ -13,8 +16,10 @@ interface GameCardProps {
 }
 
 export function GameCard({ game, variant = 'slider', isNew = false }: GameCardProps) {
+  const { t } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const openModal = useUiStore((s) => s.openModal);
+  const bonusProviderSlugs = useBonusProviderSlugs();
   const thumbnailCandidates = useMemo(() => getGameThumbnailCandidates(game), [game]);
   const [candidateIndex, setCandidateIndex] = useState(0);
   const [thumbnailFailed, setThumbnailFailed] = useState(false);
@@ -35,6 +40,7 @@ export function GameCard({ game, variant = 'slider', isNew = false }: GameCardPr
 
   const thumbnailSrc = thumbnailCandidates[candidateIndex] ?? null;
   const showThumbnail = thumbnailSrc !== null && !thumbnailFailed;
+  const showBonusBadge = isAuthenticated && gameHasProviderBonus(game.provider?.slug, bonusProviderSlugs);
 
   const handleImageError = () => {
     if (candidateIndex + 1 < thumbnailCandidates.length) {
@@ -74,7 +80,12 @@ export function GameCard({ game, variant = 'slider', isNew = false }: GameCardPr
         )}
         {(isNew || game.isNew) && (
           <span className="absolute left-2 top-2 z-10 rounded bg-accent-gold px-1.5 py-0.5 text-[9px] font-bold uppercase text-background">
-            New
+            {t('gameCard.newBadge')}
+          </span>
+        )}
+        {showBonusBadge && (
+          <span className="absolute right-2 top-2 z-10 rounded bg-accent-gold px-1.5 py-0.5 text-[9px] font-bold uppercase text-background">
+            {t('gameCard.bonusBadge')}
           </span>
         )}
       </div>

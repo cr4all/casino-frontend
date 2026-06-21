@@ -16,6 +16,7 @@ import { useIdleLogout } from '@/hooks/useIdleLogout';
 import { useLanguageInit } from '@/hooks/useLanguageInit';
 import { useLiveChatSync } from '@/hooks/useLiveChatSync';
 import { useNotificationSync } from '@/hooks/useNotificationSync';
+import { useBonusSync } from '@/hooks/useBonusSync';
 import { usePlayerProfileSync } from '@/hooks/usePlayerProfileSync';
 import { useSessionPolicy } from '@/hooks/useSessionPolicy';
 import { useWalletSync } from '@/hooks/useWalletSync';
@@ -30,6 +31,7 @@ export function AppLayout() {
   useWalletSync();
   usePlayerProfileSync();
   useNotificationSync();
+  useBonusSync();
   useLiveChatSync();
   useIdleLogout();
   useLanguageInit();

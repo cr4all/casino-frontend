@@ -105,6 +105,7 @@ export interface Game {
   game_code: string;
   symbol?: string | null;
   vendor?: { id: number; slug: string; name: string } | null;
+  provider?: { slug: string; name: string } | null;
   type?: { id: number; slug: string; name: string } | null;
   gradient?: string;
   isNew?: boolean;

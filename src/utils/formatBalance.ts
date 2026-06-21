@@ -34,3 +34,11 @@ export function formatPaymentLimit(value: string | number | null | undefined): s
     minimumFractionDigits: 0,
   }).format(Math.round(num));
 }
+
+/** Normalizes decimal amounts in notification copy (e.g. 100.0000 → 100.00). */
+export function formatNotificationText(text: string): string {
+  return text.replace(
+    /\b(\d{1,3}(?:,\d{3})*|\d+)\.\d+\b/g,
+    (match) => formatBalance(match),
+  );
+}

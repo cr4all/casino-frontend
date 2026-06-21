@@ -427,6 +427,10 @@ export const ko: LocaleTree = {
     closeWindow: '닫기',
     loginRequired: '게임을 하려면 로그인해 주세요.',
   },
+  gameCard: {
+    newBadge: 'New',
+    bonusBadge: 'Bonus',
+  },
   modal: {
     comingSoon: '곧 출시',
   },

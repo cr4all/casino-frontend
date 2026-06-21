@@ -4,6 +4,7 @@ import { useAuthStore } from '@/stores/authStore';
 import { canLoadChat, useCookieConsentStore } from '@/stores/cookieConsentStore';
 import { useUiStore } from '@/stores/uiStore';
 import { useUnreadNotifications } from '@/hooks/useUnreadNotifications';
+import { useClaimableFreeSpinCount } from '@/hooks/useClaimableFreeSpinCount';
 import { useGameTypes } from '@/hooks/useGameTypes';
 import { useTranslation } from '@/hooks/useTranslation';
 import { GameTypeIcon } from '@/components/common/GameTypeIcon';
@@ -47,6 +48,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
   const preferences = useCookieConsentStore((s) => s.preferences);
   const openCookieSettings = useCookieConsentStore((s) => s.openSettings);
   const unreadCount = useUnreadNotifications();
+  const claimableFreeSpinCount = useClaimableFreeSpinCount();
   const { types } = useGameTypes();
   const chatAllowed = canLoadChat(level, preferences);
   const { nativeEnabled } = useLiveChatConfig();
@@ -135,7 +137,10 @@ export function Sidebar({ onNavigate }: SidebarProps) {
 
         {accountItems.map((item) => {
           const active = isPathActive(item.path);
-          const showBadge = item.id === 'notices' && unreadCount > 0;
+          const showBadge =
+            (item.id === 'notices' && unreadCount > 0)
+            || (item.id === 'bonus' && claimableFreeSpinCount > 0);
+          const badgeCount = item.id === 'notices' ? unreadCount : claimableFreeSpinCount;
 
           return (
             <Link
@@ -160,7 +165,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
               </div>
               {showBadge && (
                 <span className="flex h-5 min-w-5 shrink-0 items-center justify-center rounded-full bg-accent-gold px-1.5 text-[10px] font-bold leading-none text-background">
-                  {unreadCount > 99 ? '99+' : unreadCount}
+                  {badgeCount > 99 ? '99+' : badgeCount}
                 </span>
               )}
             </Link>
