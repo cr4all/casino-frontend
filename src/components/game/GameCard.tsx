@@ -84,8 +84,10 @@ export function GameCard({ game, variant = 'slider', isNew = false }: GameCardPr
           </span>
         )}
         {showBonusBadge && (
-          <span className="absolute right-2 top-2 z-10 rounded bg-accent-gold px-1.5 py-0.5 text-[9px] font-bold uppercase text-background">
-            {t('gameCard.bonusBadge')}
+          <span className="pointer-events-none absolute right-0 top-0 z-10 block h-[4.25rem] w-[4.25rem] overflow-hidden">
+            <span className="absolute right-[-1.65rem] top-[1.15rem] w-[7.25rem] rotate-45 bg-gradient-to-r from-accent-gold to-amber-500 py-1.5 text-center text-[11px] font-extrabold uppercase tracking-wider text-background shadow-[0_2px_8px_rgba(0,0,0,0.35)]">
+              {t('gameCard.bonusBadge')}
+            </span>
           </span>
         )}
       </div>
