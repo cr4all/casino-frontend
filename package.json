@@ -12,7 +12,8 @@
     "i18n:locales": "npx --yes tsx scripts/generate-i18n-locales.mjs",
     "i18n:locales:force": "npx --yes tsx scripts/generate-i18n-locales.mjs --force",
     "i18n:rebuild": "npx --yes tsx scripts/rebuild-i18n-from-maps.mjs",
-    "sync:contract": "echo Update contracts/player-v1.yaml from https://github.com/cr4all/casino-api-contract tags"
+    "sync:contract": "echo Update contracts/player-v1.yaml from https://github.com/cr4all/casino-api-contract tags",
+    "test": "vitest run"
   },
   "dependencies": {
     "@fingerprintjs/fingerprintjs": "^5.2.0",
@@ -40,6 +41,7 @@
     "sharp": "^0.35.1",
     "tailwindcss": "^4.1.8",
     "typescript": "^5.8.3",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "vitest": "^3.2.4"
   }
 }

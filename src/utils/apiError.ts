@@ -57,3 +57,39 @@ export function getApiErrorMessage(err: unknown, fallback = 'Something went wron
 
   return fallback;
 }
+
+export function getApiErrorCode(err: unknown): string | undefined {
+  const apiErr = err as { response?: { data?: unknown } };
+  const data = apiErr.response?.data;
+
+  if (!data || typeof data !== 'object') {
+    return undefined;
+  }
+
+  const record = data as Record<string, unknown>;
+
+  if (record.error && typeof record.error === 'object') {
+    const error = record.error as { code?: string };
+    return typeof error.code === 'string' ? error.code : undefined;
+  }
+
+  return undefined;
+}
+
+export function getAuthApiErrorMessage(
+  err: unknown,
+  fallback: string,
+  t: (key: string) => string,
+): string {
+  const code = getApiErrorCode(err);
+
+  if (code === 'RISK_BLOCKED') {
+    return t('auth.riskBlocked');
+  }
+
+  if (code === 'RISK_CHALLENGE') {
+    return t('auth.riskChallenge');
+  }
+
+  return getApiErrorMessage(err, fallback);
+}

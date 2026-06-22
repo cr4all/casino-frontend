@@ -225,6 +225,8 @@ export const en = {
     currency: 'Currency',
     confirmPassword: 'Confirm Password',
     loginError: 'Invalid email, username, or password.',
+    riskBlocked: 'This action was blocked for security reasons.',
+    riskChallenge: 'Additional verification is required before you can continue.',
     registerError: 'Registration failed. Please check your details.',
     noAccount: "Don't have an account?",
     hasAccount: 'Already have an account?',

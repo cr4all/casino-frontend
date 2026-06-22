@@ -11,6 +11,7 @@ import { useUiStore } from '@/stores/uiStore';
 import { useWalletStore } from '@/stores/walletStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { isLocalPhoneValid, parsePhoneNumber } from '@/data/phoneDialCodes';
+import { getAuthApiErrorMessage } from '@/utils/apiError';
 import {
   clearRememberedLogin,
   loadRememberedLogin,
@@ -124,8 +125,8 @@ export function LoginModal() {
       }
       persistRememberedLogin();
       await completeLogin();
-    } catch {
-      setError(getErrorMessage());
+    } catch (err) {
+      setError(getAuthApiErrorMessage(err, getErrorMessage(), t));
     } finally {
       setLoading(false);
     }

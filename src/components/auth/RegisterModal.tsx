@@ -13,6 +13,7 @@ import {
   isLocalPhoneValid,
   parsePhoneNumber,
 } from '@/data/phoneDialCodes';
+import { getAuthApiErrorMessage } from '@/utils/apiError';
 import { clearStoredAffiliateCode, getStoredAffiliateCode } from '@/utils/affiliateReferral';
 
 const selectClassName =
@@ -145,8 +146,8 @@ export function RegisterModal() {
       await fetchBalance();
       closeModal();
       resetForm();
-    } catch {
-      setError(t('auth.registerError'));
+    } catch (err) {
+      setError(getAuthApiErrorMessage(err, t('auth.registerError'), t));
     } finally {
       setLoading(false);
     }
