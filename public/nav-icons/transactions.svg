@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="transactions-bg" x1="6" y1="4" x2="42" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E2740"/><stop offset="1" stop-color="#0E1424"/>
+    </linearGradient>
+    <linearGradient id="transactions-gold" x1="10" y1="8" x2="38" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE082"/><stop offset="0.5" stop-color="#FFB300"/><stop offset="1" stop-color="#F57C00"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="44" height="44" rx="11" fill="url(#transactions-bg)"/>
+  <rect x="2" y="2" width="44" height="44" rx="11" stroke="#FFB300" stroke-opacity="0.25" stroke-width="1"/>
+  <rect x="14" y="10" width="16" height="6" rx="2" fill="url(#transactions-gold)"/>
+  <rect x="12" y="16" width="20" height="22" rx="3" fill="url(#transactions-gold)"/>
+  <path d="M16 22h12M16 27h12M16 32h8" stroke="#0E1424" stroke-width="2" stroke-linecap="round" opacity="0.45"/>
+</svg>

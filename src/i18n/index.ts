@@ -1,10 +1,13 @@
 import { en, type LocaleTree, type TranslationTree } from './locales/en';
+import { af } from './locales/af';
+import { am } from './locales/am';
 import { ar } from './locales/ar';
 import { az } from './locales/az';
 import { be } from './locales/be';
 import { bg } from './locales/bg';
 import { bn } from './locales/bn';
 import { cs } from './locales/cs';
+import { cy } from './locales/cy';
 import { da } from './locales/da';
 import { de } from './locales/de';
 import { el } from './locales/el';
@@ -14,36 +17,54 @@ import { fa } from './locales/fa';
 import { fi } from './locales/fi';
 import { fil } from './locales/fil';
 import { fr } from './locales/fr';
+import { ga } from './locales/ga';
+import { gu } from './locales/gu';
+import { ha } from './locales/ha';
 import { he } from './locales/he';
 import { hi } from './locales/hi';
 import { hr } from './locales/hr';
 import { hu } from './locales/hu';
 import { hy } from './locales/hy';
 import { id } from './locales/id';
+import { ig } from './locales/ig';
+import { is } from './locales/is';
 import { it } from './locales/it';
 import { ja } from './locales/ja';
 import { ka } from './locales/ka';
 import { kk } from './locales/kk';
 import { km } from './locales/km';
+import { kn } from './locales/kn';
 import { ko } from './locales/ko';
+import { lb } from './locales/lb';
+import { lo } from './locales/lo';
 import { lt } from './locales/lt';
 import { lv } from './locales/lv';
 import { mk } from './locales/mk';
+import { ml } from './locales/ml';
 import { mn } from './locales/mn';
+import { mr } from './locales/mr';
 import { ms } from './locales/ms';
+import { mt } from './locales/mt';
+import { my } from './locales/my';
+import { ne } from './locales/ne';
 import { nl } from './locales/nl';
 import { no } from './locales/no';
+import { pa } from './locales/pa';
 import { pl } from './locales/pl';
 import { pt } from './locales/pt';
 import { ptBr } from './locales/pt-br';
 import { ro } from './locales/ro';
 import { ru } from './locales/ru';
+import { si } from './locales/si';
 import { sk } from './locales/sk';
 import { sl } from './locales/sl';
+import { so } from './locales/so';
 import { sq } from './locales/sq';
 import { sr } from './locales/sr';
 import { sv } from './locales/sv';
 import { sw } from './locales/sw';
+import { ta } from './locales/ta';
+import { te } from './locales/te';
 import { tg } from './locales/tg';
 import { th } from './locales/th';
 import { tr } from './locales/tr';
@@ -51,19 +72,24 @@ import { uk } from './locales/uk';
 import { ur } from './locales/ur';
 import { uz } from './locales/uz';
 import { vi } from './locales/vi';
+import { yo } from './locales/yo';
 import { zh } from './locales/zh';
+import { zu } from './locales/zu';
 import { zhTw } from './locales/zh-tw';
 import { applyPhraseMapToValues, mergePhraseMaps } from './phraseMapUtils';
 import { PRIORITY_LANGUAGE_CODES } from './priorityLanguages';
 
 const LANGUAGE_DEFINITIONS = [
   { code: 'en', label: 'English', shortLabel: 'EN' },
+  { code: 'af', label: 'Afrikaans', shortLabel: 'AF' },
+  { code: 'am', label: 'አማርኛ', shortLabel: 'AM' },
   { code: 'ar', label: 'العربية', shortLabel: 'AR' },
   { code: 'az', label: 'Azərbaycan', shortLabel: 'AZ' },
   { code: 'be', label: 'Беларуская', shortLabel: 'BY' },
   { code: 'bg', label: 'Български', shortLabel: 'BG' },
   { code: 'bn', label: 'বাংলা', shortLabel: 'BN' },
   { code: 'cs', label: 'Čeština', shortLabel: 'CS' },
+  { code: 'cy', label: 'Cymraeg', shortLabel: 'CY' },
   { code: 'da', label: 'Dansk', shortLabel: 'DA' },
   { code: 'de', label: 'Deutsch', shortLabel: 'DE' },
   { code: 'el', label: 'Ελληνικά', shortLabel: 'EL' },
@@ -73,36 +99,54 @@ const LANGUAGE_DEFINITIONS = [
   { code: 'fi', label: 'Suomi', shortLabel: 'FI' },
   { code: 'fil', label: 'Filipino', shortLabel: 'FIL' },
   { code: 'fr', label: 'Français', shortLabel: 'FR' },
+  { code: 'ga', label: 'Gaeilge', shortLabel: 'GA' },
+  { code: 'gu', label: 'ગુજરાતી', shortLabel: 'GU' },
+  { code: 'ha', label: 'Hausa', shortLabel: 'HA' },
   { code: 'he', label: 'עברית', shortLabel: 'HE' },
   { code: 'hi', label: 'हिन्दी', shortLabel: 'HI' },
   { code: 'hr', label: 'Hrvatski', shortLabel: 'HR' },
   { code: 'hu', label: 'Magyar', shortLabel: 'HU' },
   { code: 'hy', label: 'Հայերեն', shortLabel: 'HY' },
   { code: 'id', label: 'Bahasa Indonesia', shortLabel: 'ID' },
+  { code: 'ig', label: 'Igbo', shortLabel: 'IG' },
+  { code: 'is', label: 'Íslenska', shortLabel: 'IS' },
   { code: 'it', label: 'Italiano', shortLabel: 'IT' },
   { code: 'ja', label: '日本語', shortLabel: 'JA' },
   { code: 'ka', label: 'ქართული', shortLabel: 'KA' },
   { code: 'kk', label: 'Қазақша', shortLabel: 'KK' },
   { code: 'km', label: 'ភាសាខ្មែរ', shortLabel: 'KM' },
+  { code: 'kn', label: 'ಕನ್ನಡ', shortLabel: 'KN' },
   { code: 'ko', label: '한국어', shortLabel: 'KO' },
+  { code: 'lb', label: 'Lëtzebuergesch', shortLabel: 'LB' },
+  { code: 'lo', label: 'ລາວ', shortLabel: 'LO' },
   { code: 'lt', label: 'Lietuvių', shortLabel: 'LT' },
   { code: 'lv', label: 'Latviešu', shortLabel: 'LV' },
   { code: 'mk', label: 'Македонски', shortLabel: 'MK' },
+  { code: 'ml', label: 'മലയാളം', shortLabel: 'ML' },
   { code: 'mn', label: 'Монгол', shortLabel: 'MN' },
+  { code: 'mr', label: 'मराठी', shortLabel: 'MR' },
   { code: 'ms', label: 'Bahasa Melayu', shortLabel: 'MS' },
+  { code: 'mt', label: 'Malti', shortLabel: 'MT' },
+  { code: 'my', label: 'မြန်မာ', shortLabel: 'MY' },
+  { code: 'ne', label: 'नेपाली', shortLabel: 'NE' },
   { code: 'nl', label: 'Nederlands', shortLabel: 'NL' },
   { code: 'no', label: 'Norsk', shortLabel: 'NO' },
+  { code: 'pa', label: 'ਪੰਜਾਬੀ', shortLabel: 'PA' },
   { code: 'pl', label: 'Polski', shortLabel: 'PL' },
   { code: 'pt', label: 'Português (PT)', shortLabel: 'PT' },
   { code: 'pt-br', label: 'Português (Brasil)', shortLabel: 'BR' },
   { code: 'ro', label: 'Română', shortLabel: 'RO' },
   { code: 'ru', label: 'Русский', shortLabel: 'RU' },
+  { code: 'si', label: 'සිංහල', shortLabel: 'SI' },
   { code: 'sk', label: 'Slovenčina', shortLabel: 'SK' },
   { code: 'sl', label: 'Slovenščina', shortLabel: 'SL' },
+  { code: 'so', label: 'Soomaali', shortLabel: 'SO' },
   { code: 'sq', label: 'Shqip', shortLabel: 'SQ' },
   { code: 'sr', label: 'Српски', shortLabel: 'SR' },
   { code: 'sv', label: 'Svenska', shortLabel: 'SV' },
   { code: 'sw', label: 'Kiswahili', shortLabel: 'SW' },
+  { code: 'ta', label: 'தமிழ்', shortLabel: 'TA' },
+  { code: 'te', label: 'తెలుగు', shortLabel: 'TE' },
   { code: 'tg', label: 'Тоҷикӣ', shortLabel: 'TG' },
   { code: 'th', label: 'ไทย', shortLabel: 'TH' },
   { code: 'tr', label: 'Türkçe', shortLabel: 'TR' },
@@ -110,8 +154,10 @@ const LANGUAGE_DEFINITIONS = [
   { code: 'ur', label: 'اردو', shortLabel: 'UR' },
   { code: 'uz', label: 'Oʻzbekcha', shortLabel: 'UZ' },
   { code: 'vi', label: 'Tiếng Việt', shortLabel: 'VI' },
+  { code: 'yo', label: 'Yorùbá', shortLabel: 'YO' },
   { code: 'zh', label: '中文 (简体)', shortLabel: 'ZH' },
   { code: 'zh-tw', label: '中文 (繁體)', shortLabel: 'TW' },
+  { code: 'zu', label: 'isiZulu', shortLabel: 'ZU' },
 ] as const;
 
 export type Language = (typeof LANGUAGE_DEFINITIONS)[number]['code'];
@@ -138,12 +184,15 @@ export function getLanguageShortLabel(code: Language): string {
 
 const translations: Record<Language, LocaleTree> = {
   en,
+  af,
+  am,
   ar,
   az,
   be,
   bg,
   bn,
   cs,
+  cy,
   da,
   de,
   el,
@@ -153,36 +202,54 @@ const translations: Record<Language, LocaleTree> = {
   fi,
   fil,
   fr,
+  ga,
+  gu,
+  ha,
   he,
   hi,
   hr,
   hu,
   hy,
   id,
+  ig,
+  is,
   it,
   ja,
   ka,
   kk,
   km,
+  kn,
   ko,
+  lb,
+  lo,
   lt,
   lv,
   mk,
+  ml,
   mn,
+  mr,
   ms,
+  mt,
+  my,
+  ne,
   nl,
   no,
+  pa,
   pl,
   pt,
   'pt-br': ptBr,
   ro,
   ru,
+  si,
   sk,
   sl,
+  so,
   sq,
   sr,
   sv,
   sw,
+  ta,
+  te,
   tg,
   th,
   tr,
@@ -190,8 +257,10 @@ const translations: Record<Language, LocaleTree> = {
   ur,
   uz,
   vi,
+  yo,
   zh,
   'zh-tw': zhTw,
+  zu,
 };
 
 const i18nPhraseMaps = import.meta.glob('./phraseMaps/*.json', {
