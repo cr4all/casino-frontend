@@ -8,6 +8,7 @@ interface ImportMetaEnv {
   readonly VITE_REVERB_SCHEME?: string;
   readonly VITE_TAWK_PROPERTY_ID?: string;
   readonly VITE_TAWK_WIDGET_ID?: string;
+  readonly VITE_TURNSTILE_SITE_KEY?: string;
 }
 
 interface ImportMeta {
