@@ -1,15 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" role="img" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" role="img" aria-hidden="true">
   <defs>
-    <linearGradient id="fish-g" x1="4" y1="8" x2="28" y2="24" gradientUnits="userSpaceOnUse">
+    <linearGradient id="fish-bg" x1="6" y1="4" x2="42" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E2740"/>
+      <stop offset="1" stop-color="#0E1424"/>
+    </linearGradient>
+    <linearGradient id="fish-gold" x1="10" y1="8" x2="38" y2="40" gradientUnits="userSpaceOnUse">
       <stop stop-color="#FFE082"/>
-      <stop offset="1" stop-color="#FF9800"/>
+      <stop offset="0.5" stop-color="#FFB300"/>
+      <stop offset="1" stop-color="#F57C00"/>
     </linearGradient>
   </defs>
-  <path d="M4 22c3-1 6-1.5 10-1.5s7 .5 10 1.5" stroke="url(#fish-g)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-  <path d="M6 24c2.5-.8 5-1.2 10-1.2s7.5.4 10 1.2" stroke="url(#fish-g)" stroke-width="1.2" stroke-linecap="round" opacity="0.35"/>
-  <path d="M6 14c2 3 5 5 10 5s8-2 10-5c-2-1.5-5-2.5-10-2.5S8 12.5 6 14z" fill="url(#fish-g)" opacity="0.35"/>
-  <path d="M6 14c2 3 5 5 10 5s8-2 10-5c-2-1.5-5-2.5-10-2.5S8 12.5 6 14z" stroke="url(#fish-g)" stroke-width="1.5"/>
-  <path d="M24 11l4-2v6l-4-2" fill="url(#fish-g)"/>
-  <circle cx="11" cy="13" r="1.2" fill="#1a1a2e"/>
-  <path d="M14 16c1.5.5 3 .5 4.5 0" stroke="#1a1a2e" stroke-width="1" stroke-linecap="round"/>
+  <rect x="2" y="2" width="44" height="44" rx="11" fill="url(#fish-bg)"/>
+  <rect x="2" y="2" width="44" height="44" rx="11" stroke="#FFB300" stroke-opacity="0.25" stroke-width="1"/>
+  <path d="M8 28c3-2 7-3 12-3s9 1 12 3c-2 2-6 3-12 3s-10-1-12-3z" fill="url(#fish-gold)" opacity="0.25"/>
+  <path d="M10 24c2.5 4 6.5 6.5 12 6.5s9.5-2.5 12-6.5c-2.5-2-6.5-3.5-12-3.5S12.5 22 10 24z" fill="url(#fish-gold)"/>
+  <path d="M32 18l8-3v6l-8-3v-3z" fill="url(#fish-gold)"/>
+  <circle cx="16" cy="23" r="2" fill="#0E1424"/>
+  <circle cx="16.8" cy="22.2" r="0.7" fill="#FFFFFF"/>
+  <path d="M18 27c2 1 4 1 6 0" stroke="#0E1424" stroke-width="1.2" stroke-linecap="round"/>
+  <circle cx="24" cy="24" r="10" fill="none" stroke="#FFB300" stroke-width="1.5" opacity="0.7"/>
+  <path d="M24 14v4M24 30v4M14 24h4M30 24h4" stroke="#FFB300" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  <circle cx="24" cy="24" r="2" fill="#FFB300"/>
 </svg>

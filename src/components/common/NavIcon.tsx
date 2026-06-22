@@ -90,8 +90,43 @@ export function NavIcon({ name, className = 'h-5 w-5', ...props }: NavIconProps)
   );
 }
 
+const NAV_ICON_FILES: Record<NavIconName, string> = {
+  home: 'home',
+  deposit: 'deposit',
+  withdraw: 'withdraw',
+  transactions: 'transactions',
+  notices: 'notices',
+  bonus: 'bonus',
+  liveChat: 'live_chat',
+};
+
+export function navIconSrc(name: NavIconName): string {
+  return `/nav-icons/${NAV_ICON_FILES[name]}.svg`;
+}
+
+interface NavBadgeIconProps {
+  name: NavIconName;
+  className?: string;
+}
+
+export function NavBadgeIcon({ name, className = sidebarBadgeIconClassName }: NavBadgeIconProps) {
+  return (
+    <img
+      src={navIconSrc(name)}
+      alt=""
+      className={className}
+      loading="lazy"
+      aria-hidden="true"
+    />
+  );
+}
+
 export const sidebarIconClassName =
   'h-5 w-5 shrink-0 opacity-75 transition-opacity group-hover:opacity-100 [.sidebar-active_&]:opacity-100';
 
-/** Sidebar game-type `<img>` icons: white when idle, original gold SVG when `.sidebar-active`. */
-export const sidebarGameIconClassName = `${sidebarIconClassName} object-contain brightness-0 invert transition-[filter,opacity] [.sidebar-active_&]:brightness-100 [.sidebar-active_&]:invert-0`;
+/** Sidebar badge icons — full-color gold SVGs (nav + game types). */
+export const sidebarBadgeIconClassName =
+  'h-6 w-6 shrink-0 rounded-[6px] object-contain opacity-80 transition-opacity group-hover:opacity-100 [.sidebar-active_&]:opacity-100';
+
+/** @deprecated Use sidebarBadgeIconClassName */
+export const sidebarGameIconClassName = sidebarBadgeIconClassName;

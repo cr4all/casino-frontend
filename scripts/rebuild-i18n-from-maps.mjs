@@ -10,8 +10,9 @@ const phraseMapsDir = join(root, 'src/i18n/phraseMaps');
 const overridesDir = join(root, 'src/i18n/overrides');
 
 const NEW_1XBET_LOCALES = [
-  'az', 'be', 'bg', 'bn', 'fa', 'he', 'hy', 'ka', 'kk', 'km', 'lt', 'mn', 'ms', 'nl',
-  'ro', 'sv', 'sw', 'tg', 'th', 'uk', 'uz', 'vi', 'zh-tw',
+  'af', 'am', 'az', 'be', 'bg', 'bn', 'cy', 'fa', 'ga', 'gu', 'ha', 'he', 'hy', 'ig', 'is',
+  'ka', 'kk', 'km', 'kn', 'lb', 'lo', 'lt', 'ml', 'mn', 'mr', 'ms', 'mt', 'my', 'ne', 'nl',
+  'pa', 'ro', 'si', 'so', 'sv', 'sw', 'ta', 'te', 'tg', 'th', 'uk', 'uz', 'vi', 'yo', 'zh-tw', 'zu',
 ];
 
 const EXPORT_NAMES = {

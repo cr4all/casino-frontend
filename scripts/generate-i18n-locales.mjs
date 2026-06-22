@@ -11,12 +11,15 @@ const overridesDir = join(root, 'src/i18n/overrides');
 const phrasesPath = join(root, 'scripts/i18n-phrases.json');
 
 const LANG_TARGETS = {
+  af: 'af',
+  am: 'am',
   ar: 'ar',
   az: 'az',
   be: 'be',
   bg: 'bg',
   bn: 'bn',
   cs: 'cs',
+  cy: 'cy',
   da: 'da',
   de: 'de',
   el: 'el',
@@ -26,36 +29,54 @@ const LANG_TARGETS = {
   fi: 'fi',
   fil: 'tl',
   fr: 'fr',
+  ga: 'ga',
+  gu: 'gu',
+  ha: 'ha',
   he: 'he',
   hi: 'hi',
   hr: 'hr',
   hu: 'hu',
   hy: 'hy',
   id: 'id',
+  ig: 'ig',
+  is: 'is',
   it: 'it',
   ja: 'ja',
   ka: 'ka',
   kk: 'kk',
   km: 'km',
+  kn: 'kn',
   ko: 'ko',
+  lb: 'lb',
+  lo: 'lo',
   lt: 'lt',
   lv: 'lv',
   mk: 'mk',
+  ml: 'ml',
   mn: 'mn',
+  mr: 'mr',
   ms: 'ms',
+  mt: 'mt',
+  my: 'my',
+  ne: 'ne',
   nl: 'nl',
   no: 'no',
+  pa: 'pa',
   pl: 'pl',
   pt: 'pt',
   'pt-br': 'pt',
   ro: 'ro',
   ru: 'ru',
+  si: 'si',
   sk: 'sk',
   sl: 'sl',
+  so: 'so',
   sq: 'sq',
   sr: 'sr',
   sv: 'sv',
   sw: 'sw',
+  ta: 'ta',
+  te: 'te',
   tg: 'tg',
   th: 'th',
   tr: 'tr',
@@ -63,8 +84,10 @@ const LANG_TARGETS = {
   ur: 'ur',
   uz: 'uz',
   vi: 'vi',
+  yo: 'yo',
   zh: 'zh-CN',
   'zh-tw': 'zh-TW',
+  zu: 'zu',
 };
 
 const EXPORT_NAMES = {
@@ -73,29 +96,52 @@ const EXPORT_NAMES = {
 };
 
 const NEW_1XBET_LOCALES = [
+  'af',
+  'am',
   'az',
   'be',
   'bg',
   'bn',
+  'cy',
   'fa',
+  'ga',
+  'gu',
+  'ha',
   'he',
   'hy',
+  'ig',
+  'is',
   'ka',
   'kk',
   'km',
+  'kn',
+  'lb',
+  'lo',
   'lt',
+  'ml',
   'mn',
+  'mr',
   'ms',
+  'mt',
+  'my',
+  'ne',
   'nl',
+  'pa',
   'ro',
+  'si',
+  'so',
   'sv',
   'sw',
+  'ta',
+  'te',
   'tg',
   'th',
   'uk',
   'uz',
   'vi',
+  'yo',
   'zh-tw',
+  'zu',
 ];
 
 function collectStrings(node, set) {
@@ -152,7 +198,7 @@ async function translatePhrase(text, targetLang) {
 async function translatePhraseGoogle(text, targetLang) {
   try {
     const { translate: googleTranslate } = await import('@vitalets/google-translate-api');
-    const result = await googleTranslate(text, { from: 'en', to: targetLang });
+    const result = await googleTranslate(text, { from: 'en', to: targetLang, requestOptions: { timeout: 5000 } });
     const translated = result?.text?.trim();
     if (!translated || translated === text) return null;
     return translated;
@@ -162,13 +208,22 @@ async function translatePhraseGoogle(text, targetLang) {
 }
 
 async function translateText(text, targetLang) {
-  const google = await translatePhraseGoogle(text, targetLang);
-  if (google) return google;
   const memory = await translatePhrase(text, targetLang);
-  return memory ?? text;
+  if (memory && memory !== text) return memory;
+  const google = await translatePhraseGoogle(text, targetLang);
+  return google ?? text;
+}
+
+function isLocaleStub(langCode) {
+  const filePath = join(localesDir, `${langCode}.ts`);
+  if (!existsSync(filePath)) return true;
+  const content = readFileSync(filePath, 'utf8');
+  return /LocaleTree\s*=\s*en\s*;/.test(content);
 }
 
 function localeNeedsTranslation(langCode) {
+  if (isLocaleStub(langCode)) return true;
+
   const filePath = join(localesDir, `${langCode}.ts`);
   if (!existsSync(filePath)) return true;
   const content = readFileSync(filePath, 'utf8');
@@ -185,7 +240,7 @@ async function buildPhraseMap(langCode, targetLang, phrases, force) {
     map = JSON.parse(readFileSync(mapPath, 'utf8'));
   } else {
     map = {};
-    const concurrency = 3;
+    const concurrency = 20;
     for (let i = 0; i < phrases.length; i += concurrency) {
       const batch = phrases.slice(i, i + concurrency);
       const translated = await Promise.all(
@@ -194,8 +249,14 @@ async function buildPhraseMap(langCode, targetLang, phrases, force) {
       batch.forEach((phrase, index) => {
         map[phrase] = translated[index];
       });
+      if (i > 0 && i % 100 === 0) {
+        writeFileSync(mapPath, JSON.stringify(map, null, 2));
+      }
       if (i + concurrency < phrases.length) {
-        await new Promise((r) => setTimeout(r, 400));
+        await new Promise((r) => setTimeout(r, 120));
+      }
+      if ((i / concurrency) % 5 === 0 && i > 0) {
+        console.log(`  ${langCode}: ${Math.min(i + concurrency, phrases.length)}/${phrases.length}`);
       }
     }
 
@@ -218,28 +279,25 @@ export const ${exportName}: LocaleTree = ${body};
 
 async function processLanguage(langCode, phrases, force) {
   const targetLang = LANG_TARGETS[langCode] ?? langCode;
-  const needsLocale = force ? localeNeedsTranslation(langCode) : localeNeedsTranslation(langCode);
+  const needsLocale = localeNeedsTranslation(langCode);
+  const mapPath = join(phraseMapsDir, `${langCode}.json`);
 
   if (!needsLocale && !force) {
     console.log(`skip ${langCode} (already translated)`);
     return;
   }
 
-  if (!needsLocale && force) {
-    console.log(`skip ${langCode} (locale already translated, phrase map only if missing)`);
-    const mapPath = join(phraseMapsDir, `${langCode}.json`);
-    if (existsSync(mapPath)) return;
+  if (!needsLocale && force && existsSync(mapPath)) {
+    console.log(`skip ${langCode} (already complete)`);
+    return;
   }
 
   console.log(`locale ${langCode}: translating ${phrases.length} phrases -> ${targetLang}`);
-  const map = await buildPhraseMap(langCode, targetLang, phrases, force);
-  if (needsLocale) {
-    const localized = applyPhraseMap(en, map);
-    writeLocaleFile(langCode, localized);
-    console.log(`locale ${langCode}: written`);
-  } else {
-    console.log(`locale ${langCode}: phrase map saved`);
-  }
+  const map = await buildPhraseMap(langCode, targetLang, phrases, force || needsLocale);
+  const localized = applyPhraseMap(en, map);
+  writeLocaleFile(langCode, localized);
+  const translatedCount = Object.entries(map).filter(([a, b]) => a !== b).length;
+  console.log(`locale ${langCode}: written (${translatedCount} translated phrases)`);
 }
 
 const args = process.argv.slice(2).filter((arg) => !arg.startsWith('--'));
