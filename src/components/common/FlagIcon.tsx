@@ -14,6 +14,9 @@ const FLAG_COUNTRY_CODES: Partial<Record<Language, string>> = {
   af: 'za',
   am: 'et',
   ar: 'sa',
+  'ar-ma': 'ma',
+  'ar-dz': 'dz',
+  'ar-tn': 'tn',
   az: 'az',
   be: 'by',
   bg: 'bg',
@@ -163,6 +166,16 @@ export function FlagIcon({ language, className = baseClass }: FlagIconProps) {
           <rect width="720" height="504" fill="#009B3A" />
           <polygon fill="#FEDF00" points="360,42 684,252 360,462 36,252" />
           <circle cx="360" cy="252" r="95" fill="#002776" />
+        </svg>
+      );
+    case 'nl-be':
+    case 'fr-be':
+    case 'de-be':
+      return (
+        <svg className={className} viewBox="0 0 3 2" aria-hidden="true">
+          <rect width="1" height="2" fill="#000" />
+          <rect width="1" height="2" x="1" fill="#FDDA24" />
+          <rect width="1" height="2" x="2" fill="#EF3340" />
         </svg>
       );
     case 'mk':

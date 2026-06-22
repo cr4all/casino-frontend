@@ -16,6 +16,12 @@ const NEW_1XBET_LOCALES = [
 ];
 
 const EXPORT_NAMES = {
+  'ar-ma': 'arMa',
+  'ar-dz': 'arDz',
+  'ar-tn': 'arTn',
+  'de-be': 'deBe',
+  'fr-be': 'frBe',
+  'nl-be': 'nlBe',
   'pt-br': 'ptBr',
   'zh-tw': 'zhTw',
 };

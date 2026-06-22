@@ -10,6 +10,7 @@ export interface LiveBetEntry {
   multiplier: number;
   payout: number;
   isWin: boolean;
+  isMegaWin: boolean;
 }
 
 const VISIBLE_USERS = [
@@ -55,6 +56,15 @@ const STAKES_BY_TYPE: Record<string, readonly number[]> = {
 
 const DEFAULT_STAKES = BET_STAKES;
 
+/** ~6% of feed entries surface a headline mega win ($1,000+ payout). */
+const MEGA_WIN_CHANCE = 0.06;
+
+const MEGA_WIN_BETS = [10, 15, 17.5, 20, 20, 20] as const;
+
+const MEGA_WIN_MIN_PAYOUT = 1000;
+
+const MEGA_WIN_MAX_PAYOUT = 10000;
+
 /** Slot-style win multipliers — mostly small wins, occasional medium hits. */
 const WIN_MULTIPLIERS = [
   1.2, 1.4, 1.5, 1.6, 1.8, 2, 2.2, 2.5, 3, 3.5, 4, 5, 6, 8, 10, 12, 15, 20, 25, 50,
@@ -79,6 +89,16 @@ function stakesForGame(game: Game): readonly number[] {
 
 function pickBetAmount(game: Game): number {
   return pickRandom(stakesForGame(game));
+}
+
+function pickMegaWinOutcome(): { betAmount: number; multiplier: number; payout: number } {
+  const betAmount = pickRandom(MEGA_WIN_BETS);
+  const minMultiplier = Math.ceil(MEGA_WIN_MIN_PAYOUT / betAmount);
+  const maxMultiplier = Math.floor(MEGA_WIN_MAX_PAYOUT / betAmount);
+  const multiplier = roundMoney(randomBetween(minMultiplier, maxMultiplier));
+  const payout = roundMoney(betAmount * multiplier);
+
+  return { betAmount, multiplier, payout };
 }
 
 function pickMultiplier(isCrash: boolean): number {
@@ -119,13 +139,26 @@ export function createLiveBetEntry(games: Game[]): LiveBetEntry | null {
   if (games.length === 0) return null;
 
   const game = pickRandom(games);
-  const userHidden = Math.random() < 0.32;
+  const isMegaWin = Math.random() < MEGA_WIN_CHANCE;
+  const userHidden = isMegaWin ? Math.random() < 0.15 : Math.random() < 0.32;
   const username = userHidden ? '' : pickRandom(VISIBLE_USERS);
-  const betAmount = pickBetAmount(game);
   const isCrash = game.type?.slug === 'crash';
 
-  const multiplier = pickMultiplier(isCrash);
-  const payout = multiplier > 0 ? roundMoney(betAmount * multiplier) : 0;
+  let betAmount: number;
+  let multiplier: number;
+  let payout: number;
+
+  if (isMegaWin) {
+    const mega = pickMegaWinOutcome();
+    betAmount = mega.betAmount;
+    multiplier = mega.multiplier;
+    payout = mega.payout;
+  } else {
+    betAmount = pickBetAmount(game);
+    multiplier = pickMultiplier(isCrash);
+    payout = multiplier > 0 ? roundMoney(betAmount * multiplier) : 0;
+  }
+
   const isWin = multiplier >= 1;
 
   return {
@@ -138,6 +171,7 @@ export function createLiveBetEntry(games: Game[]): LiveBetEntry | null {
     multiplier,
     payout,
     isWin,
+    isMegaWin,
   };
 }
 

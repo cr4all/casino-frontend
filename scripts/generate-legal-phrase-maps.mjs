@@ -12,6 +12,7 @@ const LANG_TARGETS = {
   cs: 'cs',
   da: 'da',
   de: 'de',
+  'de-be': 'de',
   el: 'el',
   es: 'es',
   et: 'et',
