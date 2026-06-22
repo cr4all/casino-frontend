@@ -2,6 +2,9 @@ import { en, type LocaleTree, type TranslationTree } from './locales/en';
 import { af } from './locales/af';
 import { am } from './locales/am';
 import { ar } from './locales/ar';
+import { arDz } from './locales/ar-dz';
+import { arMa } from './locales/ar-ma';
+import { arTn } from './locales/ar-tn';
 import { az } from './locales/az';
 import { be } from './locales/be';
 import { bg } from './locales/bg';
@@ -10,6 +13,7 @@ import { cs } from './locales/cs';
 import { cy } from './locales/cy';
 import { da } from './locales/da';
 import { de } from './locales/de';
+import { deBe } from './locales/de-be';
 import { el } from './locales/el';
 import { es } from './locales/es';
 import { et } from './locales/et';
@@ -17,6 +21,7 @@ import { fa } from './locales/fa';
 import { fi } from './locales/fi';
 import { fil } from './locales/fil';
 import { fr } from './locales/fr';
+import { frBe } from './locales/fr-be';
 import { ga } from './locales/ga';
 import { gu } from './locales/gu';
 import { ha } from './locales/ha';
@@ -48,6 +53,7 @@ import { mt } from './locales/mt';
 import { my } from './locales/my';
 import { ne } from './locales/ne';
 import { nl } from './locales/nl';
+import { nlBe } from './locales/nl-be';
 import { no } from './locales/no';
 import { pa } from './locales/pa';
 import { pl } from './locales/pl';
@@ -84,6 +90,9 @@ const LANGUAGE_DEFINITIONS = [
   { code: 'af', label: 'Afrikaans', shortLabel: 'AF' },
   { code: 'am', label: 'አማርኛ', shortLabel: 'AM' },
   { code: 'ar', label: 'العربية', shortLabel: 'AR' },
+  { code: 'ar-ma', label: 'الدارجة المغربية', shortLabel: 'MA' },
+  { code: 'ar-dz', label: 'الدارجة الجزائرية', shortLabel: 'DZ' },
+  { code: 'ar-tn', label: 'الدارجة التونسية', shortLabel: 'TN' },
   { code: 'az', label: 'Azərbaycan', shortLabel: 'AZ' },
   { code: 'be', label: 'Беларуская', shortLabel: 'BY' },
   { code: 'bg', label: 'Български', shortLabel: 'BG' },
@@ -92,6 +101,7 @@ const LANGUAGE_DEFINITIONS = [
   { code: 'cy', label: 'Cymraeg', shortLabel: 'CY' },
   { code: 'da', label: 'Dansk', shortLabel: 'DA' },
   { code: 'de', label: 'Deutsch', shortLabel: 'DE' },
+  { code: 'de-be', label: 'Deutsch (Belgien)', shortLabel: 'DE-BE' },
   { code: 'el', label: 'Ελληνικά', shortLabel: 'EL' },
   { code: 'es', label: 'Español', shortLabel: 'ES' },
   { code: 'et', label: 'Eesti', shortLabel: 'ET' },
@@ -99,6 +109,7 @@ const LANGUAGE_DEFINITIONS = [
   { code: 'fi', label: 'Suomi', shortLabel: 'FI' },
   { code: 'fil', label: 'Filipino', shortLabel: 'FIL' },
   { code: 'fr', label: 'Français', shortLabel: 'FR' },
+  { code: 'fr-be', label: 'Français (Belgique)', shortLabel: 'FR-BE' },
   { code: 'ga', label: 'Gaeilge', shortLabel: 'GA' },
   { code: 'gu', label: 'ગુજરાતી', shortLabel: 'GU' },
   { code: 'ha', label: 'Hausa', shortLabel: 'HA' },
@@ -130,6 +141,7 @@ const LANGUAGE_DEFINITIONS = [
   { code: 'my', label: 'မြန်မာ', shortLabel: 'MY' },
   { code: 'ne', label: 'नेपाली', shortLabel: 'NE' },
   { code: 'nl', label: 'Nederlands', shortLabel: 'NL' },
+  { code: 'nl-be', label: 'Nederlands (België)', shortLabel: 'BE' },
   { code: 'no', label: 'Norsk', shortLabel: 'NO' },
   { code: 'pa', label: 'ਪੰਜਾਬੀ', shortLabel: 'PA' },
   { code: 'pl', label: 'Polski', shortLabel: 'PL' },
@@ -187,6 +199,9 @@ const translations: Record<Language, LocaleTree> = {
   af,
   am,
   ar,
+  'ar-ma': arMa,
+  'ar-dz': arDz,
+  'ar-tn': arTn,
   az,
   be,
   bg,
@@ -195,6 +210,7 @@ const translations: Record<Language, LocaleTree> = {
   cy,
   da,
   de,
+  'de-be': deBe,
   el,
   es,
   et,
@@ -202,6 +218,7 @@ const translations: Record<Language, LocaleTree> = {
   fi,
   fil,
   fr,
+  'fr-be': frBe,
   ga,
   gu,
   ha,
@@ -233,6 +250,7 @@ const translations: Record<Language, LocaleTree> = {
   my,
   ne,
   nl,
+  'nl-be': nlBe,
   no,
   pa,
   pl,

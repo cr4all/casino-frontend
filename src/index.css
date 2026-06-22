@@ -1084,6 +1084,35 @@ body {
   color: #4ade80;
 }
 
+.live-bet-feed__row--mega {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 193, 7, 0.14) 0%,
+    rgba(255, 193, 7, 0.04) 55%,
+    transparent 100%
+  );
+}
+
+.live-bet-feed__row--mega:first-child {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 193, 7, 0.22) 0%,
+    rgba(255, 193, 7, 0.08) 55%,
+    rgba(255, 193, 7, 0.03) 100%
+  );
+}
+
+.live-bet-feed__multiplier--mega {
+  font-weight: 700;
+  color: #ffc107;
+}
+
+.live-bet-feed__payout--mega {
+  font-weight: 700;
+  color: #ffc107;
+  text-shadow: 0 0 12px rgba(255, 193, 7, 0.35);
+}
+
 .live-bet-feed__payout--loss {
   color: rgba(255, 255, 255, 0.45);
 }

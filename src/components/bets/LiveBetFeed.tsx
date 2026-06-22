@@ -49,7 +49,7 @@ function LiveBetRow({ entry, hiddenLabel }: { entry: LiveBetEntry; hiddenLabel: 
       initial={{ opacity: 0, y: -14 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, ease: 'easeOut' }}
-      className="live-bet-feed__row"
+      className={entry.isMegaWin ? 'live-bet-feed__row live-bet-feed__row--mega' : 'live-bet-feed__row'}
     >
       <td className="live-bet-feed__cell live-bet-feed__cell--game">
         <div className="live-bet-feed__game">
@@ -72,14 +72,18 @@ function LiveBetRow({ entry, hiddenLabel }: { entry: LiveBetEntry; hiddenLabel: 
         <span className="live-bet-feed__money">{formatUsd(entry.betAmount)}</span>
       </td>
       <td className="live-bet-feed__cell live-bet-feed__cell--multiplier">
-        {formatMultiplier(entry.multiplier)}
+        <span className={entry.isMegaWin ? 'live-bet-feed__multiplier live-bet-feed__multiplier--mega' : undefined}>
+          {formatMultiplier(entry.multiplier)}
+        </span>
       </td>
       <td className="live-bet-feed__cell live-bet-feed__cell--payout">
         <span
           className={
-            entry.isWin
-              ? 'live-bet-feed__payout live-bet-feed__payout--win'
-              : 'live-bet-feed__payout live-bet-feed__payout--loss'
+            entry.isMegaWin
+              ? 'live-bet-feed__payout live-bet-feed__payout--mega'
+              : entry.isWin
+                ? 'live-bet-feed__payout live-bet-feed__payout--win'
+                : 'live-bet-feed__payout live-bet-feed__payout--loss'
           }
         >
           {entry.isWin ? formatUsd(entry.payout) : `-${formatUsd(entry.betAmount)}`}

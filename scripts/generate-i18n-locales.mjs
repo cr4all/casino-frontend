@@ -14,6 +14,9 @@ const LANG_TARGETS = {
   af: 'af',
   am: 'am',
   ar: 'ar',
+  'ar-ma': 'ar',
+  'ar-dz': 'ar',
+  'ar-tn': 'ar',
   az: 'az',
   be: 'be',
   bg: 'bg',
@@ -22,6 +25,7 @@ const LANG_TARGETS = {
   cy: 'cy',
   da: 'da',
   de: 'de',
+  'de-be': 'de',
   el: 'el',
   es: 'es',
   et: 'et',
@@ -29,6 +33,7 @@ const LANG_TARGETS = {
   fi: 'fi',
   fil: 'tl',
   fr: 'fr',
+  'fr-be': 'fr',
   ga: 'ga',
   gu: 'gu',
   ha: 'ha',
@@ -60,6 +65,7 @@ const LANG_TARGETS = {
   my: 'my',
   ne: 'ne',
   nl: 'nl',
+  'nl-be': 'nl',
   no: 'no',
   pa: 'pa',
   pl: 'pl',
@@ -91,6 +97,12 @@ const LANG_TARGETS = {
 };
 
 const EXPORT_NAMES = {
+  'ar-ma': 'arMa',
+  'ar-dz': 'arDz',
+  'ar-tn': 'arTn',
+  'de-be': 'deBe',
+  'fr-be': 'frBe',
+  'nl-be': 'nlBe',
   'pt-br': 'ptBr',
   'zh-tw': 'zhTw',
 };

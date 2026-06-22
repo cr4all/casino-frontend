@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { Language } from '@/i18n';
 
-const RTL_LANGUAGES = new Set<Language>(['ar', 'fa', 'he', 'ur']);
+const RTL_LANGUAGES = new Set<Language>(['ar', 'ar-ma', 'ar-dz', 'ar-tn', 'fa', 'he', 'ur']);
 
 export function isRtlLanguage(language: Language): boolean {
   return RTL_LANGUAGES.has(language);
