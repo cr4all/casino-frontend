@@ -11,7 +11,9 @@ import { useUiStore } from '@/stores/uiStore';
 import { useWalletStore } from '@/stores/walletStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { isLocalPhoneValid, parsePhoneNumber } from '@/data/phoneDialCodes';
-import { getAuthApiErrorMessage } from '@/utils/apiError';
+import { getAuthApiErrorMessage, isRiskChallengeError } from '@/utils/apiError';
+import { RiskChallengePanel } from '@/components/risk/RiskChallengePanel';
+import { useRiskChallenge } from '@/hooks/useRiskChallenge';
 import {
   clearRememberedLogin,
   loadRememberedLogin,
@@ -43,7 +45,15 @@ export function LoginModal() {
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState('');
+  const [challengeError, setChallengeError] = useState('');
   const [loading, setLoading] = useState(false);
+  const {
+    challengeRequired,
+    setChallengeRequired,
+    resetChallenge,
+    registerWidgetReset,
+    resetWidget,
+  } = useRiskChallenge();
 
   useEffect(() => {
     if (activeModal !== 'login') return;
@@ -65,6 +75,8 @@ export function LoginModal() {
   const resetForm = () => {
     setPassword('');
     setError('');
+    setChallengeError('');
+    resetChallenge();
   };
 
   const persistRememberedLogin = () => {
@@ -102,6 +114,37 @@ export function LoginModal() {
     return t('auth.loginErrorUsername');
   };
 
+  const performLogin = async (turnstileToken?: string) => {
+    if (method === 'username') {
+      await login({ username: username.trim(), password, turnstileToken });
+    } else if (method === 'email') {
+      await login({ email: email.trim(), password, turnstileToken });
+    } else {
+      await login({ phone, password, turnstileToken });
+    }
+  };
+
+  const handleTurnstileSuccess = async (token: string) => {
+    setChallengeError('');
+    setLoading(true);
+    try {
+      await performLogin(token);
+      persistRememberedLogin();
+      resetChallenge();
+      await completeLogin();
+    } catch (err) {
+      if (isRiskChallengeError(err)) {
+        resetWidget();
+        setChallengeError(t('risk.challengeFailed'));
+        return;
+      }
+      resetChallenge();
+      setError(getAuthApiErrorMessage(err, getErrorMessage(), t));
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError('');
@@ -116,16 +159,16 @@ export function LoginModal() {
 
     setLoading(true);
     try {
-      if (method === 'username') {
-        await login({ username: username.trim(), password });
-      } else if (method === 'email') {
-        await login({ email: email.trim(), password });
-      } else {
-        await login({ phone, password });
-      }
+      await performLogin();
       persistRememberedLogin();
+      resetChallenge();
       await completeLogin();
     } catch (err) {
+      if (isRiskChallengeError(err)) {
+        setChallengeRequired(true);
+        setError('');
+        return;
+      }
       setError(getAuthApiErrorMessage(err, getErrorMessage(), t));
     } finally {
       setLoading(false);
@@ -135,6 +178,8 @@ export function LoginModal() {
   const switchMethod = (next: LoginMethod) => {
     setMethod(next);
     setError('');
+    setChallengeError('');
+    resetChallenge();
   };
 
   return (
@@ -169,6 +214,15 @@ export function LoginModal() {
       <form onSubmit={handleSubmit} className="space-y-4">
         {error && (
           <p className="rounded-md bg-accent/10 px-3 py-2 text-sm text-accent">{error}</p>
+        )}
+
+        {challengeRequired && (
+          <RiskChallengePanel
+            onSuccess={handleTurnstileSuccess}
+            onError={() => setChallengeError(t('risk.challengeFailed'))}
+            onRegisterReset={registerWidgetReset}
+            error={challengeError}
+          />
         )}
 
         {method === 'username' && (
@@ -236,7 +290,7 @@ export function LoginModal() {
           </button>
         </div>
 
-        <Button type="submit" fullWidth disabled={loading}>
+        <Button type="submit" fullWidth disabled={loading || challengeRequired}>
           {loading ? t('common.loggingIn') : t('nav.login')}
         </Button>
 

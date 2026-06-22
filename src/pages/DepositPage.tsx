@@ -17,7 +17,9 @@ import { StatusBadge } from '@/components/common/StatusBadge';
 import { CryptoAmountInput } from '@/components/deposit/CryptoAmountInput';
 import { PaymentCountrySelect } from '@/components/payment/PaymentCountrySelect';
 import { PaymentOptionGrid, PaymentOptionMinMax, PaymentOptionSummary } from '@/components/payment/PaymentOptionGrid';
-import { getApiErrorMessage } from '@/utils/apiError';
+import { getApiErrorMessage, isRiskChallengeError } from '@/utils/apiError';
+import { RiskChallengePanel } from '@/components/risk/RiskChallengePanel';
+import { useRiskChallenge } from '@/hooks/useRiskChallenge';
 import { formatCryptoCurrencyLabel } from '@/utils/cryptoIcon';
 import { formatBalance } from '@/utils/formatBalance';
 import { formatDepositCurrencyAmount, formatDepositReceivedAmount } from '@/utils/formatDepositDisplay';
@@ -63,7 +65,15 @@ export function DepositPage() {
   const [submitting, setSubmitting] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [challengeError, setChallengeError] = useState<string | null>(null);
   const [lastDeposit, setLastDeposit] = useState<DepositRequest | null>(null);
+  const {
+    challengeRequired,
+    setChallengeRequired,
+    resetChallenge,
+    registerWidgetReset,
+    resetWidget,
+  } = useRiskChallenge();
 
   const loadDeposits = () =>
     paymentApi.getDeposits().then((data) => setDeposits(data.items));
@@ -76,6 +86,8 @@ export function DepositPage() {
     setQuote(null);
     setQuoteError(false);
     setError(null);
+    setChallengeError(null);
+    resetChallenge();
   };
 
   const handleCountryChange = (code: string) => {
@@ -156,22 +168,52 @@ export function DepositPage() {
     return <Navigate to="/" replace />;
   }
 
+  const performDeposit = async (turnstileToken?: string) => {
+    if (!optionKey || !amount || !country) return;
+    const result = await paymentApi.createDeposit(optionKey, amount, country, turnstileToken);
+    setLastDeposit(result);
+    setMessage(t('deposit.submitted', { id: result.deposit_id, status: result.status }));
+    setAmount('');
+    setQuote(null);
+    resetChallenge();
+    await fetchBalance();
+    await loadDeposits();
+  };
+
+  const handleTurnstileSuccess = async (token: string) => {
+    setChallengeError(null);
+    setSubmitting(true);
+    try {
+      await performDeposit(token);
+    } catch (err) {
+      if (isRiskChallengeError(err)) {
+        resetWidget();
+        setChallengeError(t('risk.challengeFailed'));
+        return;
+      }
+      resetChallenge();
+      setError(getApiErrorMessage(err, t('deposit.submitFailed')));
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!optionKey || !amount || !country) return;
     setSubmitting(true);
     setError(null);
+    setChallengeError(null);
     setMessage(null);
     setLastDeposit(null);
     try {
-      const result = await paymentApi.createDeposit(optionKey, amount, country);
-      setLastDeposit(result);
-      setMessage(t('deposit.submitted', { id: result.deposit_id, status: result.status }));
-      setAmount('');
-      setQuote(null);
-      await fetchBalance();
-      await loadDeposits();
+      await performDeposit();
     } catch (err) {
+      if (isRiskChallengeError(err)) {
+        setChallengeRequired(true);
+        setError(null);
+        return;
+      }
       setError(getApiErrorMessage(err, t('deposit.submitFailed')));
     } finally {
       setSubmitting(false);
@@ -281,12 +323,20 @@ export function DepositPage() {
               )}
 
               {error && <p className="text-sm text-red-400">{error}</p>}
+              {challengeRequired && (
+                <RiskChallengePanel
+                  onSuccess={handleTurnstileSuccess}
+                  onError={() => setChallengeError(t('risk.challengeFailed'))}
+                  onRegisterReset={registerWidgetReset}
+                  error={challengeError ?? undefined}
+                />
+              )}
               {message && <p className="text-sm text-green-400">{message}</p>}
 
               <Button
                 type="submit"
                 variant="gold"
-                disabled={submitting || !confirmedOption || !amount}
+                disabled={submitting || challengeRequired || !confirmedOption || !amount}
               >
                 {submitting ? t('common.submitting') : t('deposit.requestDeposit')}
               </Button>

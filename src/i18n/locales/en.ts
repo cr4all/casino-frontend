@@ -267,6 +267,11 @@ export const en = {
     updateFailed: 'Failed to update profile.',
     language: 'Language',
   },
+  risk: {
+    challengeTitle: 'Verify you are human',
+    challengeHint: 'Complete the security check below to continue.',
+    challengeFailed: 'Verification failed. Please try again.',
+  },
   deposit: {
     title: 'Deposit',
     bonusesLink: 'Bonuses',

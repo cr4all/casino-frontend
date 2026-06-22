@@ -8,6 +8,7 @@ export interface ClientRiskContext {
   timezone?: string | null;
   platform?: string | null;
   screen_resolution?: string | null;
+  turnstile_token?: string | null;
 }
 
 let cached: ClientRiskContext | null = null;
@@ -72,4 +73,17 @@ export async function getDeviceContext(): Promise<ClientRiskContext> {
   cached = context;
 
   return context;
+}
+
+export async function buildRiskContext(turnstileToken?: string): Promise<ClientRiskContext> {
+  const base = await getDeviceContext();
+
+  if (!turnstileToken) {
+    return base;
+  }
+
+  return {
+    ...base,
+    turnstile_token: turnstileToken,
+  };
 }

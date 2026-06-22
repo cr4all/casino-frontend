@@ -14,7 +14,9 @@ import { StatusBadge } from '@/components/common/StatusBadge';
 import { PaymentCountrySelect } from '@/components/payment/PaymentCountrySelect';
 import { PaymentOptionGrid, PaymentOptionSummary } from '@/components/payment/PaymentOptionGrid';
 import { useTranslation } from '@/hooks/useTranslation';
-import { getApiErrorMessage } from '@/utils/apiError';
+import { getApiErrorMessage, isRiskChallengeError } from '@/utils/apiError';
+import { RiskChallengePanel } from '@/components/risk/RiskChallengePanel';
+import { useRiskChallenge } from '@/hooks/useRiskChallenge';
 
 function formatPaymentAmount(currency: string, amount: string): string {
   return `${currency} ${formatBalance(amount)}`;
@@ -39,6 +41,14 @@ export function WithdrawPage() {
   const [submitting, setSubmitting] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [challengeError, setChallengeError] = useState<string | null>(null);
+  const {
+    challengeRequired,
+    setChallengeRequired,
+    resetChallenge,
+    registerWidgetReset,
+    resetWidget,
+  } = useRiskChallenge();
 
   const loadWithdrawals = () =>
     paymentApi.getWithdrawals().then((data) => setWithdrawals(data.items));
@@ -50,6 +60,8 @@ export function WithdrawPage() {
     setAmount('');
     setDestinationValues({});
     setError(null);
+    setChallengeError(null);
+    resetChallenge();
   };
 
   const handleCountryChange = (code: string) => {
@@ -124,27 +136,58 @@ export function WithdrawPage() {
     (field) => field.required && !destinationValues[field.name]?.trim(),
   ) ?? false;
 
+  const performWithdrawal = async (turnstileToken?: string) => {
+    if (!optionKey || !amount || !country || missingRequiredDestination) return;
+    const result = await paymentApi.createWithdrawal(
+      optionKey,
+      amount,
+      country,
+      destinationValues,
+      turnstileToken,
+    );
+    setMessage(
+      t('withdraw.submitted', { id: result.withdrawal_id, status: result.status }),
+    );
+    setAmount('');
+    setDestinationValues({});
+    resetChallenge();
+    await fetchBalance();
+    await loadWithdrawals();
+  };
+
+  const handleTurnstileSuccess = async (token: string) => {
+    setChallengeError(null);
+    setSubmitting(true);
+    try {
+      await performWithdrawal(token);
+    } catch (err) {
+      if (isRiskChallengeError(err)) {
+        resetWidget();
+        setChallengeError(t('risk.challengeFailed'));
+        return;
+      }
+      resetChallenge();
+      setError(getApiErrorMessage(err, t('withdraw.submitFailed')));
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!optionKey || !amount || !country || missingRequiredDestination) return;
     setSubmitting(true);
     setError(null);
+    setChallengeError(null);
     setMessage(null);
     try {
-      const result = await paymentApi.createWithdrawal(
-        optionKey,
-        amount,
-        country,
-        destinationValues,
-      );
-      setMessage(
-        t('withdraw.submitted', { id: result.withdrawal_id, status: result.status }),
-      );
-      setAmount('');
-      setDestinationValues({});
-      await fetchBalance();
-      await loadWithdrawals();
+      await performWithdrawal();
     } catch (err) {
+      if (isRiskChallengeError(err)) {
+        setChallengeRequired(true);
+        setError(null);
+        return;
+      }
       setError(getApiErrorMessage(err, t('withdraw.submitFailed')));
     } finally {
       setSubmitting(false);
@@ -240,12 +283,20 @@ export function WithdrawPage() {
               ))}
 
               {error && <p className="text-sm text-red-400">{error}</p>}
+              {challengeRequired && (
+                <RiskChallengePanel
+                  onSuccess={handleTurnstileSuccess}
+                  onError={() => setChallengeError(t('risk.challengeFailed'))}
+                  onRegisterReset={registerWidgetReset}
+                  error={challengeError ?? undefined}
+                />
+              )}
               {message && <p className="text-sm text-green-400">{message}</p>}
 
               <Button
                 type="submit"
                 variant="gold"
-                disabled={submitting || !confirmedOption || !country || missingRequiredDestination}
+                disabled={submitting || challengeRequired || !confirmedOption || !country || missingRequiredDestination}
               >
                 {submitting ? t('common.submitting') : t('withdraw.requestWithdrawal')}
               </Button>

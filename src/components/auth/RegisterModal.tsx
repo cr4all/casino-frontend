@@ -13,7 +13,9 @@ import {
   isLocalPhoneValid,
   parsePhoneNumber,
 } from '@/data/phoneDialCodes';
-import { getAuthApiErrorMessage } from '@/utils/apiError';
+import { getAuthApiErrorMessage, isRiskChallengeError } from '@/utils/apiError';
+import { RiskChallengePanel } from '@/components/risk/RiskChallengePanel';
+import { useRiskChallenge } from '@/hooks/useRiskChallenge';
 import { clearStoredAffiliateCode, getStoredAffiliateCode } from '@/utils/affiliateReferral';
 
 const selectClassName =
@@ -40,7 +42,15 @@ export function RegisterModal() {
   });
   const [phoneCountryCode, setPhoneCountryCode] = useState('US');
   const [error, setError] = useState('');
+  const [challengeError, setChallengeError] = useState('');
   const [loading, setLoading] = useState(false);
+  const {
+    challengeRequired,
+    setChallengeRequired,
+    resetChallenge,
+    registerWidgetReset,
+    resetWidget,
+  } = useRiskChallenge();
 
   useEffect(() => {
     if (activeModal !== 'register') {
@@ -118,6 +128,46 @@ export function RegisterModal() {
       affiliate_code: getStoredAffiliateCode() ?? undefined,
     });
     setPhoneCountryCode(options?.countries[0]?.code ?? 'US');
+    setChallengeError('');
+    resetChallenge();
+  };
+
+  const buildRegisterPayload = (turnstileToken?: string) => ({
+    email: form.email,
+    password: form.password,
+    password_confirmation: form.password_confirmation,
+    nickname: form.nickname,
+    phone: form.phone,
+    country: form.country,
+    currency: form.currency,
+    ...(form.affiliate_code ? { affiliate_code: form.affiliate_code } : {}),
+    ...(turnstileToken ? { turnstileToken } : {}),
+  });
+
+  const performRegister = async (turnstileToken?: string) => {
+    await register(buildRegisterPayload(turnstileToken));
+    clearStoredAffiliateCode();
+    await fetchBalance();
+    closeModal();
+    resetForm();
+  };
+
+  const handleTurnstileSuccess = async (token: string) => {
+    setChallengeError('');
+    setLoading(true);
+    try {
+      await performRegister(token);
+    } catch (err) {
+      if (isRiskChallengeError(err)) {
+        resetWidget();
+        setChallengeError(t('risk.challengeFailed'));
+        return;
+      }
+      resetChallenge();
+      setError(getAuthApiErrorMessage(err, t('auth.registerError'), t));
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleSubmit = async (e: FormEvent) => {
@@ -131,22 +181,13 @@ export function RegisterModal() {
 
     setLoading(true);
     try {
-      const payload = {
-        email: form.email,
-        password: form.password,
-        password_confirmation: form.password_confirmation,
-        nickname: form.nickname,
-        phone: form.phone,
-        country: form.country,
-        currency: form.currency,
-        ...(form.affiliate_code ? { affiliate_code: form.affiliate_code } : {}),
-      };
-      await register(payload);
-      clearStoredAffiliateCode();
-      await fetchBalance();
-      closeModal();
-      resetForm();
+      await performRegister();
     } catch (err) {
+      if (isRiskChallengeError(err)) {
+        setChallengeRequired(true);
+        setError('');
+        return;
+      }
       setError(getAuthApiErrorMessage(err, t('auth.registerError'), t));
     } finally {
       setLoading(false);
@@ -160,6 +201,14 @@ export function RegisterModal() {
       <form onSubmit={handleSubmit} className="space-y-3">
         {error && (
           <p className="rounded-md bg-accent/10 px-3 py-2 text-sm text-accent">{error}</p>
+        )}
+        {challengeRequired && (
+          <RiskChallengePanel
+            onSuccess={handleTurnstileSuccess}
+            onError={() => setChallengeError(t('risk.challengeFailed'))}
+            onRegisterReset={registerWidgetReset}
+            error={challengeError}
+          />
         )}
         <div>
           <label htmlFor="reg-email" className="mb-1 block text-xs text-muted">{t('auth.email')}</label>
@@ -262,7 +311,7 @@ export function RegisterModal() {
             className="w-full rounded-md border border-white/10 bg-card px-3 py-2 text-sm text-white focus:border-accent focus:outline-none"
           />
         </div>
-        <Button type="submit" fullWidth disabled={loading || optionsLoading}>
+        <Button type="submit" fullWidth disabled={loading || optionsLoading || challengeRequired}>
           {loading ? t('common.creatingAccount') : t('nav.register')}
         </Button>
         <p className="text-center text-xs text-muted">

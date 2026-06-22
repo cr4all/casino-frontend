@@ -1,5 +1,5 @@
 import api from '@/api/axios';
-import { getDeviceContext, type ClientRiskContext } from '@/lib/deviceContext';
+import { buildRiskContext, type ClientRiskContext } from '@/lib/deviceContext';
 import type { ApiResponse, AuthTokens, User } from '@/types';
 
 export type { ClientRiskContext };
@@ -27,6 +27,7 @@ export interface RegisterPayload {
   country: string;
   currency: string;
   affiliate_code?: string;
+  turnstileToken?: string;
   risk_context?: ClientRiskContext;
 }
 
@@ -35,6 +36,7 @@ export interface LoginPayload {
   username?: string;
   phone?: string;
   password: string;
+  turnstileToken?: string;
   risk_context?: ClientRiskContext;
 }
 
@@ -63,18 +65,20 @@ export const authApi = {
   },
 
   register: async (payload: RegisterPayload) => {
-    const risk_context = await getDeviceContext();
+    const { turnstileToken, ...body } = payload;
+    const risk_context = await buildRiskContext(turnstileToken);
     const { data } = await api.post<ApiResponse<{ user: User; access_token: string; expires_in: number }>>(
       '/auth/register',
-      { ...payload, risk_context },
+      { ...body, risk_context },
     );
     return data.data;
   },
 
   login: async (payload: LoginPayload) => {
-    const risk_context = await getDeviceContext();
+    const { turnstileToken, ...body } = payload;
+    const risk_context = await buildRiskContext(turnstileToken);
     const { data } = await api.post<ApiResponse<AuthTokens>>('/auth/login', {
-      ...payload,
+      ...body,
       risk_context,
     });
     return data.data;

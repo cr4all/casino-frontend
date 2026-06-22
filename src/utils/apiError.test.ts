@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getApiErrorCode, getAuthApiErrorMessage } from './apiError';
+import { getApiErrorCode, getAuthApiErrorMessage, isRiskChallengeError } from './apiError';
 
 const t = (key: string): string => {
   const messages: Record<string, string> = {
@@ -78,5 +78,23 @@ describe('getAuthApiErrorMessage', () => {
     expect(getAuthApiErrorMessage({}, 'Invalid username or password.', t)).toBe(
       'Invalid username or password.',
     );
+  });
+});
+
+describe('isRiskChallengeError', () => {
+  it('returns true for RISK_CHALLENGE', () => {
+    const err = {
+      response: {
+        data: {
+          error: { code: 'RISK_CHALLENGE', message: 'Additional verification is required.' },
+        },
+      },
+    };
+
+    expect(isRiskChallengeError(err)).toBe(true);
+  });
+
+  it('returns false for other errors', () => {
+    expect(isRiskChallengeError({})).toBe(false);
   });
 });

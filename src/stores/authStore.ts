@@ -16,6 +16,7 @@ interface AuthState {
     username?: string;
     phone?: string;
     password: string;
+    turnstileToken?: string;
   }) => Promise<void>;
   register: (payload: {
     email: string;
@@ -26,6 +27,7 @@ interface AuthState {
     country: string;
     currency: string;
     affiliate_code?: string;
+    turnstileToken?: string;
   }) => Promise<void>;
   logout: () => void;
 }
@@ -54,8 +56,12 @@ export const useAuthStore = create<AuthState>()(
       },
 
       register: async (payload) => {
-        await authApi.register(payload);
-        await get().login({ email: payload.email, password: payload.password });
+        const { turnstileToken, ...registerPayload } = payload;
+        await authApi.register({ ...registerPayload, turnstileToken });
+        await get().login({
+          email: payload.email,
+          password: payload.password,
+        });
       },
 
       logout: () => {

@@ -1783,6 +1783,11 @@ export interface components {
             platform?: string | null;
             /** @example 1920x1080 */
             screen_resolution?: string | null;
+            /**
+             * @description Cloudflare Turnstile response token (retry after RISK_CHALLENGE only).
+             *     Verified server-side; never forwarded to AFS.
+             */
+            turnstile_token?: string | null;
         };
         RegisterRequest: {
             /** Format: email */

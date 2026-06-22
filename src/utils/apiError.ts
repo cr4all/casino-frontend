@@ -76,6 +76,10 @@ export function getApiErrorCode(err: unknown): string | undefined {
   return undefined;
 }
 
+export function isRiskChallengeError(err: unknown): boolean {
+  return getApiErrorCode(err) === 'RISK_CHALLENGE';
+}
+
 export function getAuthApiErrorMessage(
   err: unknown,
   fallback: string,
