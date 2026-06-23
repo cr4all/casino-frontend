@@ -9,6 +9,7 @@ import {
   type CreateSubAffiliatePayload,
 } from '@/api/affiliate.api';
 import { Button } from '@/components/common/Button';
+import { LanguageSelector } from '@/components/common/LanguageSelector';
 import { Modal } from '@/components/common/Modal';
 import { ChangePasswordForm } from '@/components/profile/ChangePasswordForm';
 import { StatusBadge } from '@/components/common/StatusBadge';
@@ -202,9 +203,10 @@ export function AffiliateDashboardPage() {
       <Modal
         isOpen={showPasswordDialog}
         onClose={() => setShowPasswordDialog(false)}
-        title={t('profile.changePassword')}
+        title={t('affiliate.changePassword')}
       >
         <ChangePasswordForm
+          translationNamespace="affiliate"
           onChangePassword={affiliateApi.changePassword}
           onSuccess={() => setTimeout(() => setShowPasswordDialog(false), 1500)}
         />
@@ -223,9 +225,10 @@ export function AffiliateDashboardPage() {
             </p>
           )}
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap items-center gap-2">
+          <LanguageSelector />
           <Button variant="secondary" onClick={() => setShowPasswordDialog(true)}>
-            {t('profile.changePassword')}
+            {t('affiliate.changePassword')}
           </Button>
           <Button variant="secondary" onClick={() => logout()}>
             {t('affiliate.logout')}

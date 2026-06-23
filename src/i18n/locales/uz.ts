@@ -33,7 +33,9 @@ export const uz: LocaleTree = {
     "pageOf": "{{last}} sahifadan {{page}}-sahifa",
     "actions": "Amallar",
     "openMenu": "Menyuni ochish",
-    "language": "Til"
+    "language": "Til",
+    "yes": "Yes",
+    "no": "No"
   },
   "nav": {
     "allGames": "BARCHA O'YINLAR",
@@ -226,6 +228,8 @@ export const uz: LocaleTree = {
     "currency": "Valyuta",
     "confirmPassword": "Parolni tasdiqlang",
     "loginError": "Noto'g'ri elektron pochta, foydalanuvchi nomi yoki parol.",
+    "riskBlocked": "This action was blocked for security reasons.",
+    "riskChallenge": "Additional verification is required before you can continue.",
     "registerError": "Ro'yxatdan o'tish muvaffaqiyatsiz. Ma'lumotlaringizni tekshiring.",
     "noAccount": "Hisobingiz yo'qmi?",
     "hasAccount": "Allaqachon hisobingiz bormi?",
@@ -264,7 +268,19 @@ export const uz: LocaleTree = {
     "saveChanges": "O'zgarishlarni saqlash",
     "updateSuccess": "Profil muvaffaqiyatli yangilandi.",
     "updateFailed": "Profilni yangilab bo'lmadi.",
-    "language": "Til"
+    "language": "Til",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
+    "verificationSendConfirm": "Send verification code to {{destination}}?"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
   },
   "deposit": {
     "title": "Depozit",
@@ -322,7 +338,18 @@ export const uz: LocaleTree = {
     "recentWithdrawals": "So'nggi yechib olishlar",
     "noWithdrawals": "Hali yechib olish so'rovlari yo'q.",
     "submitted": "Yechib olish so'rovi №{{id}} yuborildi ({{status}}). Administrator tekshiruvi kutilmoqda.",
-    "submitFailed": "Yechib olish so'rovini yuborib bo'lmadi."
+    "submitFailed": "Yechib olish so'rovini yuborib bo'lmadi.",
+    "verificationRequiredTitle": "Verification Required",
+    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
+    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
+    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
+    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
+    "limitAlertTitle": "Withdrawal Limit",
+    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
+    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
+    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
+    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
+    "goToProfile": "Go to Profile"
   },
   "bonus": {
     "title": "Bonuslar",
@@ -339,13 +366,25 @@ export const uz: LocaleTree = {
     "autoApply": "Mos depozitlarda avtomatik qo'llaniladi.",
     "firstDepositAutoApply": "Faqat birinchi depozitingizda avtomatik qo'llaniladi.",
     "claimed": "Bonus olindi: {{amount}} ({{status}})",
-    "claimFailed": "Bonusni olib bo'lmadi."
+    "claimFailed": "Bonusni olib bo'lmadi.",
+    "freeSpinCount": "{{count}} Free Spins",
+    "freeSpinUsage": "{{used}} / {{total}} spins used",
+    "freeSpinProvider": "Provider: {{provider}}",
+    "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
+    "freeSpinWinnings": "Winnings: {{amount}}",
+    "depositRequired": "Make at least one deposit to claim this bonus.",
+    "firstDepositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositCta": "Go to deposit",
+    "alreadyClaimed": "You have already claimed this bonus.",
+    "providerNotSupported": "This free spin provider is not supported yet."
   },
   "bonusTypes": {
     "welcome": "Xush kelibsiz",
     "first_deposit": "Birinchi depozit",
     "reload": "Yangilash",
-    "cashback": "Keshbek"
+    "cashback": "Keshbek",
+    "free_spin": "Free Spin"
   },
   "messages": {
     "title": "Xabarlar",
@@ -366,7 +405,11 @@ export const uz: LocaleTree = {
     "win": "Yutuq",
     "net": "Sof",
     "status": "Holat",
-    "date": "Sana"
+    "date": "Sana",
+    "spinType": "Spin Type",
+    "fundingSource": "Spin Type",
+    "fundingCash": "Cash Spin",
+    "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
     "title": "Tranzaksiyalar tarixi",
@@ -401,6 +444,10 @@ export const uz: LocaleTree = {
     "launchError": "O'yinni ishga tushirib bo'lmadi.",
     "closeWindow": "Yopish",
     "loginRequired": "O'ynash uchun tizimga kiring."
+  },
+  "gameCard": {
+    "newBadge": "New",
+    "bonusBadge": "Mukofot"
   },
   "modal": {
     "comingSoon": "Tez orada"

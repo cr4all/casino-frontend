@@ -33,7 +33,9 @@ export const th: LocaleTree = {
     "pageOf": "หน้า {{page}} จาก {{last}}",
     "actions": "การดำเนินการ",
     "openMenu": "เปิดเมนู",
-    "language": "ภาษา"
+    "language": "ภาษา",
+    "yes": "Yes",
+    "no": "No"
   },
   "nav": {
     "allGames": "เกมทั้งหมด",
@@ -226,6 +228,8 @@ export const th: LocaleTree = {
     "currency": "สกุลเงิน",
     "confirmPassword": "ยืนยันรหัสผ่าน",
     "loginError": "อีเมล ชื่อผู้ใช้ หรือรหัสผ่านไม่ถูกต้อง",
+    "riskBlocked": "This action was blocked for security reasons.",
+    "riskChallenge": "Additional verification is required before you can continue.",
     "registerError": "ลงทะเบียนไม่สำเร็จ โปรดตรวจสอบข้อมูลของคุณ",
     "noAccount": "ยังไม่มีบัญชี?",
     "hasAccount": "มีบัญชีอยู่แล้ว?",
@@ -264,7 +268,19 @@ export const th: LocaleTree = {
     "saveChanges": "บันทึกการเปลี่ยนแปลง",
     "updateSuccess": "อัปเดตโปรไฟล์สำเร็จ",
     "updateFailed": "อัปเดตโปรไฟล์ไม่สำเร็จ",
-    "language": "ภาษา"
+    "language": "ภาษา",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
+    "verificationSendConfirm": "Send verification code to {{destination}}?"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
   },
   "deposit": {
     "title": "ฝากเงิน",
@@ -322,7 +338,18 @@ export const th: LocaleTree = {
     "recentWithdrawals": "การถอนเงินล่าสุด",
     "noWithdrawals": "ยังไม่มีคำขอถอนเงิน",
     "submitted": "ส่งคำขอถอนเงิน #{{id}} แล้ว ({{status}}) รอการตรวจสอบจากผู้ดูแล",
-    "submitFailed": "ส่งคำขอถอนเงินไม่สำเร็จ"
+    "submitFailed": "ส่งคำขอถอนเงินไม่สำเร็จ",
+    "verificationRequiredTitle": "Verification Required",
+    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
+    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
+    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
+    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
+    "limitAlertTitle": "Withdrawal Limit",
+    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
+    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
+    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
+    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
+    "goToProfile": "Go to Profile"
   },
   "bonus": {
     "title": "โบนัส",
@@ -339,13 +366,25 @@ export const th: LocaleTree = {
     "autoApply": "ใช้โดยอัตโนมัติเมื่อฝากเงินตามเงื่อนไข",
     "firstDepositAutoApply": "ใช้โดยอัตโนมัติเฉพาะการฝากครั้งแรกของคุณเท่านั้น",
     "claimed": "รับโบนัสแล้ว: {{amount}} ({{status}})",
-    "claimFailed": "รับโบนัสไม่สำเร็จ"
+    "claimFailed": "รับโบนัสไม่สำเร็จ",
+    "freeSpinCount": "{{count}} Free Spins",
+    "freeSpinUsage": "{{used}} / {{total}} spins used",
+    "freeSpinProvider": "Provider: {{provider}}",
+    "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
+    "freeSpinWinnings": "Winnings: {{amount}}",
+    "depositRequired": "Make at least one deposit to claim this bonus.",
+    "firstDepositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositCta": "Go to deposit",
+    "alreadyClaimed": "You have already claimed this bonus.",
+    "providerNotSupported": "This free spin provider is not supported yet."
   },
   "bonusTypes": {
     "welcome": "ยินดีต้อนรับ",
     "first_deposit": "ฝากครั้งแรก",
     "reload": "โหลดใหม่",
-    "cashback": "เงินคืน"
+    "cashback": "เงินคืน",
+    "free_spin": "Free Spin"
   },
   "messages": {
     "title": "ข้อความ",
@@ -366,7 +405,11 @@ export const th: LocaleTree = {
     "win": "ชนะ",
     "net": "สุทธิ",
     "status": "สถานะ",
-    "date": "วันที่"
+    "date": "วันที่",
+    "spinType": "Spin Type",
+    "fundingSource": "Spin Type",
+    "fundingCash": "Cash Spin",
+    "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
     "title": "ประวัติธุรกรรม",
@@ -401,6 +444,10 @@ export const th: LocaleTree = {
     "launchError": "เปิดเกมไม่สำเร็จ",
     "closeWindow": "ปิด",
     "loginRequired": "โปรดเข้าสู่ระบบเพื่อเล่น"
+  },
+  "gameCard": {
+    "newBadge": "New",
+    "bonusBadge": "โบนัส"
   },
   "modal": {
     "comingSoon": "เร็ว ๆ นี้"

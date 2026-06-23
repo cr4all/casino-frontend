@@ -33,7 +33,9 @@ export const km: LocaleTree = {
     "pageOf": "ទំព័រ {{page}} នៃ {{last}}",
     "actions": "សកម្មភាព",
     "openMenu": "បើក​ម៉ឺនុយ",
-    "language": "ភាសា"
+    "language": "ភាសា",
+    "yes": "Yes",
+    "no": "No"
   },
   "nav": {
     "allGames": "ហ្គេមទាំងអស់",
@@ -226,6 +228,8 @@ export const km: LocaleTree = {
     "currency": "រូបិយវត្ថុ",
     "confirmPassword": "បញ្ជាក់លេខសម្ងាត់",
     "loginError": "អ៊ីមែល ឈ្មោះប្រើប្រាស់ ឬពាក្យសម្ងាត់មិនត្រឹមត្រូវ។",
+    "riskBlocked": "This action was blocked for security reasons.",
+    "riskChallenge": "Additional verification is required before you can continue.",
     "registerError": "ការចុះឈ្មោះបរាជ័យ។ សូមពិនិត្យព័ត៌មានរបស់អ្នក។",
     "noAccount": "មិនមានគណនីទេ?",
     "hasAccount": "មានគណនីរួចហើយទេ?",
@@ -264,7 +268,19 @@ export const km: LocaleTree = {
     "saveChanges": "រក្សាទុកការផ្លាស់ប្តូរ",
     "updateSuccess": "ប្រវត្តិរូបត្រូវបានធ្វើបច្ចុប្បន្នភាពដោយជោគជ័យ។",
     "updateFailed": "បរាជ័យក្នុងការអាប់ដេតប្រវត្តិរូប។",
-    "language": "ភាសា"
+    "language": "ភាសា",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
+    "verificationSendConfirm": "Send verification code to {{destination}}?"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
   },
   "deposit": {
     "title": "កក់ប្រាក់",
@@ -322,7 +338,18 @@ export const km: LocaleTree = {
     "recentWithdrawals": "ការដកប្រាក់ថ្មីៗ",
     "noWithdrawals": "មិនមានសំណើការដកប្រាក់នៅឡើយទេ។",
     "submitted": "សំណើការដកប្រាក់ #{{id}} បានដាក់ស្នើ ({{status}})។ កំពុងរង់ចាំការត្រួតពិនិត្យពីអ្នកគ្រប់គ្រង។",
-    "submitFailed": "បរាជ័យក្នុងការដាក់ស្នើការដកប្រាក់។"
+    "submitFailed": "បរាជ័យក្នុងការដាក់ស្នើការដកប្រាក់។",
+    "verificationRequiredTitle": "Verification Required",
+    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
+    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
+    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
+    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
+    "limitAlertTitle": "Withdrawal Limit",
+    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
+    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
+    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
+    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
+    "goToProfile": "Go to Profile"
   },
   "bonus": {
     "title": "ប្រាក់រង្វាន់",
@@ -339,13 +366,25 @@ export const km: LocaleTree = {
     "autoApply": "អនុវត្តដោយស្វ័យប្រវត្តិនៅលើប្រាក់ដាក់ទំរូងដែលមានលក្ខខណ្ឌ។",
     "firstDepositAutoApply": "អនុវត្តដោយស្វ័យប្រវត្តិលើការដាក់ទុនដំបូងរបស់អ្នកតែប៉ុណ្ណោះ។",
     "claimed": "បានទាមទារប្រាក់បន្ថែម: {{amount}} ({{status}})",
-    "claimFailed": "បរាជ័យក្នុងការទាមទារប្រាក់រង្វាន់។"
+    "claimFailed": "បរាជ័យក្នុងការទាមទារប្រាក់រង្វាន់។",
+    "freeSpinCount": "{{count}} Free Spins",
+    "freeSpinUsage": "{{used}} / {{total}} spins used",
+    "freeSpinProvider": "Provider: {{provider}}",
+    "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
+    "freeSpinWinnings": "Winnings: {{amount}}",
+    "depositRequired": "Make at least one deposit to claim this bonus.",
+    "firstDepositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositCta": "Go to deposit",
+    "alreadyClaimed": "You have already claimed this bonus.",
+    "providerNotSupported": "This free spin provider is not supported yet."
   },
   "bonusTypes": {
     "welcome": "សូមស្វាគមន៍",
     "first_deposit": "ការដាក់ប្រាក់ដំបូង",
     "reload": "ផ្ទុកឡើងម្ដងទៀត",
-    "cashback": "ប្រាក់ត្រឡប់"
+    "cashback": "ប្រាក់ត្រឡប់",
+    "free_spin": "Free Spin"
   },
   "messages": {
     "title": "សារ",
@@ -366,7 +405,11 @@ export const km: LocaleTree = {
     "win": "ឈ្នះ",
     "net": "បំណែកសុទ្ធ",
     "status": "ស្ថានភាព",
-    "date": "កាលបរិច្ឆេទ"
+    "date": "កាលបរិច្ឆេទ",
+    "spinType": "Spin Type",
+    "fundingSource": "Spin Type",
+    "fundingCash": "Cash Spin",
+    "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
     "title": "ប្រវត្តិប្រតិបត្តិការ",
@@ -401,6 +444,10 @@ export const km: LocaleTree = {
     "launchError": "បរាជ័យក្នុងការចាប់ផ្តើមហ្គេម។",
     "closeWindow": "បិទ",
     "loginRequired": "សូមចូលខ account ដើម្បីលេង។"
+  },
+  "gameCard": {
+    "newBadge": "New",
+    "bonusBadge": "ប្រាក់រង្វាន់"
   },
   "modal": {
     "comingSoon": "រៀបចំមុន"

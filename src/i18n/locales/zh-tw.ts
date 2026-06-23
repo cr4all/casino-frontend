@@ -33,7 +33,9 @@ export const zhTw: LocaleTree = {
     "pageOf": "第 {{page}} 頁，共 {{last}} 頁",
     "actions": "操作",
     "openMenu": "開啟選單",
-    "language": "語言"
+    "language": "語言",
+    "yes": "Yes",
+    "no": "No"
   },
   "nav": {
     "allGames": "全部遊戲",
@@ -226,6 +228,8 @@ export const zhTw: LocaleTree = {
     "currency": "幣別",
     "confirmPassword": "確認密碼",
     "loginError": "電子郵件、使用者名稱或密碼無效。",
+    "riskBlocked": "This action was blocked for security reasons.",
+    "riskChallenge": "Additional verification is required before you can continue.",
     "registerError": "註冊失敗，請檢查您的資料。",
     "noAccount": "還沒有帳戶嗎？",
     "hasAccount": "已經有帳戶了嗎？",
@@ -264,7 +268,19 @@ export const zhTw: LocaleTree = {
     "saveChanges": "儲存變更",
     "updateSuccess": "個人資料已成功更新。",
     "updateFailed": "個人資料更新失敗。",
-    "language": "語言"
+    "language": "語言",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
+    "verificationSendConfirm": "Send verification code to {{destination}}?"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
   },
   "deposit": {
     "title": "存款",
@@ -322,7 +338,18 @@ export const zhTw: LocaleTree = {
     "recentWithdrawals": "近期提款",
     "noWithdrawals": "尚無提款申請。",
     "submitted": "提款申請 #{{id}} 已提交（{{status}}），等待管理員審核。",
-    "submitFailed": "提款申請提交失敗。"
+    "submitFailed": "提款申請提交失敗。",
+    "verificationRequiredTitle": "Verification Required",
+    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
+    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
+    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
+    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
+    "limitAlertTitle": "Withdrawal Limit",
+    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
+    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
+    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
+    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
+    "goToProfile": "Go to Profile"
   },
   "bonus": {
     "title": "獎金",
@@ -339,13 +366,25 @@ export const zhTw: LocaleTree = {
     "autoApply": "符合資格的存款將自動套用。",
     "firstDepositAutoApply": "僅在首次存款時自動套用。",
     "claimed": "已領取獎金：{{amount}}（{{status}}）",
-    "claimFailed": "領取獎金失敗。"
+    "claimFailed": "領取獎金失敗。",
+    "freeSpinCount": "{{count}} Free Spins",
+    "freeSpinUsage": "{{used}} / {{total}} spins used",
+    "freeSpinProvider": "Provider: {{provider}}",
+    "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
+    "freeSpinWinnings": "Winnings: {{amount}}",
+    "depositRequired": "Make at least one deposit to claim this bonus.",
+    "firstDepositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositCta": "Go to deposit",
+    "alreadyClaimed": "You have already claimed this bonus.",
+    "providerNotSupported": "This free spin provider is not supported yet."
   },
   "bonusTypes": {
     "welcome": "歡迎",
     "first_deposit": "首次存款",
     "reload": "重新載入",
-    "cashback": "返水"
+    "cashback": "返水",
+    "free_spin": "Free Spin"
   },
   "messages": {
     "title": "訊息",
@@ -366,7 +405,11 @@ export const zhTw: LocaleTree = {
     "win": "贏額",
     "net": "淨額",
     "status": "狀態",
-    "date": "日期"
+    "date": "日期",
+    "spinType": "Spin Type",
+    "fundingSource": "Spin Type",
+    "fundingCash": "Cash Spin",
+    "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
     "title": "交易紀錄",
@@ -401,6 +444,10 @@ export const zhTw: LocaleTree = {
     "launchError": "啟動遊戲失敗。",
     "closeWindow": "關閉",
     "loginRequired": "請登入後再遊玩。"
+  },
+  "gameCard": {
+    "newBadge": "New",
+    "bonusBadge": "獎金"
   },
   "modal": {
     "comingSoon": "即將推出"

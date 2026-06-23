@@ -33,7 +33,9 @@ export const az: LocaleTree = {
     "pageOf": "Səhifə {{page}} / {{last}}",
     "actions": "Fəaliyyətlər",
     "openMenu": "Menyu açın",
-    "language": "Dil"
+    "language": "Dil",
+    "yes": "Yes",
+    "no": "No"
   },
   "nav": {
     "allGames": "BÜTÜN OYUNLAR",
@@ -226,6 +228,8 @@ export const az: LocaleTree = {
     "currency": "Valyuta",
     "confirmPassword": "Parolu təsdiqləyin",
     "loginError": "Etibarsız e-poçt, istifadəçi adı və ya parol.",
+    "riskBlocked": "This action was blocked for security reasons.",
+    "riskChallenge": "Additional verification is required before you can continue.",
     "registerError": "Qeydiyyat uğursuz oldu. Zəhmət olmasa məlumatlarınızı yoxlayın.",
     "noAccount": "Hesabınız yoxdur?",
     "hasAccount": "Artıq hesabınız var?",
@@ -264,7 +268,19 @@ export const az: LocaleTree = {
     "saveChanges": "Dəyişiklikləri Saxla",
     "updateSuccess": "Profil uğurla yeniləndi.",
     "updateFailed": "Profil yenilənə bilmədi.",
-    "language": "Dil"
+    "language": "Dil",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Şəxsiyyəti təsdiqləyin (KYC)",
+    "kycLoading": "Təsdiqləmə yüklənir...",
+    "kycFailed": "KYC təsdiqləməsini başlatmaq mümkün olmadı. Daha sonra yenidən cəhd edin.",
+    "kycHint": "Yuxarıdakı formada addımları tamamlayın. Statusunuz SumSub rəyindən sonra yenilənəcək.",
+    "verificationSendConfirm": "Təsdiqləmə kodu {{hedef}} ünvanına göndərilsin?"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
   },
   "deposit": {
     "title": "Depozit",
@@ -322,7 +338,18 @@ export const az: LocaleTree = {
     "recentWithdrawals": "Son çıxarışlar",
     "noWithdrawals": "Hələ çıxarış sorğusu yoxdur.",
     "submitted": "Çıxarış sorğusu #{{id}} göndərildi ({{status}}). Admin yoxlaması gözlənilir.",
-    "submitFailed": "Çıxarış sorğusu göndərilə bilmədi."
+    "submitFailed": "Çıxarış sorğusu göndərilə bilmədi.",
+    "verificationRequiredTitle": "Təsdiqləmə tələb olunur",
+    "verificationRequiredMessage": "Geri götürməzdən əvvəl e-poçtunuzu, telefon nömrənizi təsdiqləməli və KYC-ni tamamlamalısınız.",
+    "verificationRequiredBanner": "Çıxarılmalar üçün hesabın təsdiqlənməsi tələb olunur. E-poçtunuzu, telefonunuzu təsdiqləyin və KYC-nizi profilinizdə tamamlayın.",
+    "verificationLimitBanner": "Maksimum məxaric məbləğiniz cari təsdiqləmə səviyyənizə əsasən {{amount}} təşkil edir.",
+    "verificationLimitExceeded": "Məbləğ {{amount}} təsdiqləmə limitinizi keçir.",
+    "limitAlertTitle": "Geri Çəkilmə Limiti",
+    "limitAlertEmailOnly": "E-poçtunuzu yalnız təsdiqlədiyinizə görə {{amount}} məbləğinə qədər geri götürə bilərsiniz. Daha çoxunu çıxarmaq üçün profilinizdə Telefon və ya KYC təsdiqləməsini tamamlayın.",
+    "limitAlertPhoneOnly": "Telefonunuzu yalnız təsdiqlədiyinizə görə {{amount}} məbləğinə qədər geri götürə bilərsiniz. Daha çoxunu çıxarmaq üçün profilinizdə E-poçt və ya KYC təsdiqləməsini tamamlayın.",
+    "limitAlertEmailAndPhone": "Təsdiqlənmiş e-poçt və telefonunuz olduğuna görə KYC deyil, {{amount}} məbləğinə qədər geri götürə bilərsiniz. Limitsiz məbləğləri çıxarmaq üçün profilinizdə KYC təsdiqləməsini tamamlayın.",
+    "limitAlertGeneric": "Cari təsdiqləmə səviyyənizə əsasən {{amount}} məbləğinə qədər geri çəkə bilərsiniz. Limitinizi artırmaq üçün profilinizdə əlavə təsdiqləməni tamamlayın.",
+    "goToProfile": "Profilə keç"
   },
   "bonus": {
     "title": "Bonuslar",
@@ -339,13 +366,25 @@ export const az: LocaleTree = {
     "autoApply": "Uyğun depozitlərdə avtomatik tətbiq olunur.",
     "firstDepositAutoApply": "Yalnız ilk depozitinizdə avtomatik tətbiq olunur.",
     "claimed": "Bonus alındı: {{amount}} ({{status}})",
-    "claimFailed": "Bonus alına bilmədi."
+    "claimFailed": "Bonus alına bilmədi.",
+    "freeSpinCount": "{{count}} Free Spins",
+    "freeSpinUsage": "{{used}} / {{total}} spins used",
+    "freeSpinProvider": "Provider: {{provider}}",
+    "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
+    "freeSpinWinnings": "Winnings: {{amount}}",
+    "depositRequired": "Make at least one deposit to claim this bonus.",
+    "firstDepositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositCta": "Go to deposit",
+    "alreadyClaimed": "You have already claimed this bonus.",
+    "providerNotSupported": "This free spin provider is not supported yet."
   },
   "bonusTypes": {
     "welcome": "Salam Aleykum",
     "first_deposit": "İlk Depozit",
     "reload": "Yenilə",
-    "cashback": "Kassa aparatı"
+    "cashback": "Kassa aparatı",
+    "free_spin": "Free Spin"
   },
   "messages": {
     "title": "Mesajlar",
@@ -366,7 +405,11 @@ export const az: LocaleTree = {
     "win": "qalib gəlmək",
     "net": "Xalis",
     "status": "Statusu",
-    "date": "Tarixi"
+    "date": "Tarixi",
+    "spinType": "Spin Type",
+    "fundingSource": "Spin Type",
+    "fundingCash": "Cash Spin",
+    "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
     "title": "Əməliyyat tarixçəsi",
@@ -401,6 +444,10 @@ export const az: LocaleTree = {
     "launchError": "Oyun başladıla bilmədi.",
     "closeWindow": "Bağla",
     "loginRequired": "Oynamaq üçün daxil olun."
+  },
+  "gameCard": {
+    "newBadge": "New",
+    "bonusBadge": "Bonus"
   },
   "modal": {
     "comingSoon": "Tezliklə"

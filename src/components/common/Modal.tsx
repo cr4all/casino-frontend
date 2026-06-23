@@ -7,10 +7,16 @@ interface ModalProps {
   onClose: () => void;
   title: string;
   titleIcon?: ReactNode;
+  size?: 'md' | 'xl';
   children: ReactNode;
 }
 
-export function Modal({ isOpen, onClose, title, titleIcon, children }: ModalProps) {
+const panelSizeClass: Record<NonNullable<ModalProps['size']>, string> = {
+  md: 'max-w-md',
+  xl: 'max-w-3xl',
+};
+
+export function Modal({ isOpen, onClose, title, titleIcon, size = 'md', children }: ModalProps) {
   const { t } = useTranslation();
 
   if (!isOpen) return null;
@@ -22,7 +28,7 @@ export function Modal({ isOpen, onClose, title, titleIcon, children }: ModalProp
         onClick={onClose}
         aria-hidden
       />
-      <div className="relative z-10 w-full max-w-md rounded-xl border border-white/[0.08] bg-card p-6 shadow-card">
+      <div className={`relative z-10 w-full ${panelSizeClass[size]} rounded-xl border border-white/[0.08] bg-card p-6 shadow-card`}>
         <div className="mb-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             {titleIcon}

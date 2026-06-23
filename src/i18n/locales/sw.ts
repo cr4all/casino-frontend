@@ -33,7 +33,9 @@ export const sw: LocaleTree = {
     "pageOf": "Ukurasa {{page}} wa {{last}}",
     "actions": "Vitendo",
     "openMenu": "Fungua menyu",
-    "language": "Lugha"
+    "language": "Lugha",
+    "yes": "Yes",
+    "no": "No"
   },
   "nav": {
     "allGames": "MICHEZO YOTE",
@@ -226,6 +228,8 @@ export const sw: LocaleTree = {
     "currency": "Sarafu",
     "confirmPassword": "Thibitisha nenosiri",
     "loginError": "Barua pepe, jina la mtumiaji, au nenosiri si sahihi.",
+    "riskBlocked": "This action was blocked for security reasons.",
+    "riskChallenge": "Additional verification is required before you can continue.",
     "registerError": "Usajili umeshindwa. Tafadhali angalia maelezo yako.",
     "noAccount": "Huna akaunti?",
     "hasAccount": "Tayari una akaunti?",
@@ -264,7 +268,19 @@ export const sw: LocaleTree = {
     "saveChanges": "Hifadhi mabadiliko",
     "updateSuccess": "Wasifu umesasishwa.",
     "updateFailed": "Imeshindwa kusasisha wasifu.",
-    "language": "Lugha"
+    "language": "Lugha",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
+    "verificationSendConfirm": "Send verification code to {{destination}}?"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
   },
   "deposit": {
     "title": "Amana",
@@ -322,7 +338,18 @@ export const sw: LocaleTree = {
     "recentWithdrawals": "Utoaji wa hivi karibuni",
     "noWithdrawals": "Hakuna maombi ya kutoa bado.",
     "submitted": "Ombi la kutoa #{{id}} limewasilishwa ({{status}}). Inasubiri ukaguzi wa msimamizi.",
-    "submitFailed": "Imeshindwa kuwasilisha ombi la kutoa."
+    "submitFailed": "Imeshindwa kuwasilisha ombi la kutoa.",
+    "verificationRequiredTitle": "Verification Required",
+    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
+    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
+    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
+    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
+    "limitAlertTitle": "Withdrawal Limit",
+    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
+    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
+    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
+    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
+    "goToProfile": "Go to Profile"
   },
   "bonus": {
     "title": "Bonasi",
@@ -339,13 +366,25 @@ export const sw: LocaleTree = {
     "autoApply": "Inatumika kiotomatiki kwenye amana zinazostahili.",
     "firstDepositAutoApply": "Inatumika kiotomatiki kwenye amana yako ya kwanza pekee.",
     "claimed": "Bonasi imedaiwa: {{amount}} ({{status}})",
-    "claimFailed": "Imeshindwa kudai bonasi."
+    "claimFailed": "Imeshindwa kudai bonasi.",
+    "freeSpinCount": "{{count}} Free Spins",
+    "freeSpinUsage": "{{used}} / {{total}} spins used",
+    "freeSpinProvider": "Provider: {{provider}}",
+    "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
+    "freeSpinWinnings": "Winnings: {{amount}}",
+    "depositRequired": "Make at least one deposit to claim this bonus.",
+    "firstDepositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositCta": "Go to deposit",
+    "alreadyClaimed": "You have already claimed this bonus.",
+    "providerNotSupported": "This free spin provider is not supported yet."
   },
   "bonusTypes": {
     "welcome": "Karibu",
     "first_deposit": "Amana ya kwanza",
     "reload": "Pakia upya",
-    "cashback": "Cashback"
+    "cashback": "Cashback",
+    "free_spin": "Free Spin"
   },
   "messages": {
     "title": "Ujumbe",
@@ -366,7 +405,11 @@ export const sw: LocaleTree = {
     "win": "Ushindi",
     "net": "Wavu",
     "status": "Hali",
-    "date": "Tarehe"
+    "date": "Tarehe",
+    "spinType": "Spin Type",
+    "fundingSource": "Spin Type",
+    "fundingCash": "Cash Spin",
+    "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
     "title": "Historia ya miamala",
@@ -401,6 +444,10 @@ export const sw: LocaleTree = {
     "launchError": "Imeshindwa kuanzisha mchezo.",
     "closeWindow": "Funga",
     "loginRequired": "Tafadhali ingia ili kucheza."
+  },
+  "gameCard": {
+    "newBadge": "New",
+    "bonusBadge": "Bonasi"
   },
   "modal": {
     "comingSoon": "Inakuja hivi karibuni"

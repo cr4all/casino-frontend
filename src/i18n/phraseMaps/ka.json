@@ -350,7 +350,7 @@
   "active": "active",
   "closed": "closed",
   "Player": "Player",
-  "Hybrid": "Hybrid",
+  "Hybrid": "ჰიბრიდი",
   "Close": "Close",
   "games": "games",
   "Login": "Login",
@@ -375,7 +375,7 @@
   "Bet": "Bet",
   "Win": "Win",
   "Net": "Net",
-  "CPA": "CPA",
+  "CPA": "ცპა",
   "OK": "OK",
   "ID": "ID"
 }

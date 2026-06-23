@@ -80,6 +80,32 @@ export function isRiskChallengeError(err: unknown): boolean {
   return getApiErrorCode(err) === 'RISK_CHALLENGE';
 }
 
+export function isWithdrawalVerificationRequiredError(err: unknown): boolean {
+  return getApiErrorCode(err) === 'WITHDRAWAL_VERIFICATION_REQUIRED';
+}
+
+export function isWithdrawalLimitExceededError(err: unknown): boolean {
+  return getApiErrorCode(err) === 'WITHDRAWAL_LIMIT_EXCEEDED';
+}
+
+export function getApiErrorDetails(err: unknown): Record<string, unknown> | undefined {
+  const apiErr = err as { response?: { data?: unknown } };
+  const data = apiErr.response?.data;
+
+  if (!data || typeof data !== 'object') {
+    return undefined;
+  }
+
+  const record = data as Record<string, unknown>;
+
+  if (record.error && typeof record.error === 'object') {
+    const error = record.error as { details?: Record<string, unknown> };
+    return error.details;
+  }
+
+  return undefined;
+}
+
 export function getAuthApiErrorMessage(
   err: unknown,
   fallback: string,

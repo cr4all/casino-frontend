@@ -7,6 +7,7 @@ import { DEFAULT_CURRENCY } from '@/stores/walletStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { StatusBadge } from '@/components/common/StatusBadge';
 import { AccountVerificationModal } from '@/components/profile/AccountVerificationModal';
+import { KycVerificationModal } from '@/components/profile/KycVerificationModal';
 import { ChangePasswordForm } from '@/components/profile/ChangePasswordForm';
 import { VerificationIndicator } from '@/components/profile/VerificationIndicator';
 import { formatCountryLabel } from '@/utils/formatCountryLabel';
@@ -56,6 +57,7 @@ export function ProfilePage() {
   const setProfile = usePlayerStore((s) => s.setProfile);
   const [loading, setLoading] = useState(true);
   const [verifyChannel, setVerifyChannel] = useState<'email' | 'phone' | null>(null);
+  const [kycModalOpen, setKycModalOpen] = useState(false);
 
   useEffect(() => {
     if (!isAuthenticated) return;
@@ -79,6 +81,7 @@ export function ProfilePage() {
   }
 
   const countryLabel = formatCountryLabel(profile?.country, profile?.country_name);
+  const kycVerified = profile?.kyc_status === 'verified';
 
   const handleVerified = (updated: PlayerProfile) => {
     setProfile(updated);
@@ -93,6 +96,15 @@ export function ProfilePage() {
         }
         onClose={() => setVerifyChannel(null)}
         onVerified={handleVerified}
+      />
+      <KycVerificationModal
+        isOpen={kycModalOpen}
+        profile={profile}
+        onClose={() => {
+          setKycModalOpen(false);
+          void fetchProfile(true);
+        }}
+        onUpdated={handleVerified}
       />
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-white">{t('profile.title')}</h1>
@@ -132,25 +144,35 @@ export function ProfilePage() {
                 </div>
               </ProfileField>
 
+              <ProfileField variant="featured" label={t('profile.kyc')}>
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                  <VerificationIndicator
+                    verified={kycVerified}
+                    onVerify={
+                      kycVerified
+                        ? undefined
+                        : () => setKycModalOpen(true)
+                    }
+                  />
+                </div>
+              </ProfileField>
+
               <div className="space-y-3">
-                <div className="grid gap-3 sm:grid-cols-3">
+                <div className="grid gap-3 sm:grid-cols-2">
                   <ProfileField variant="compact" label={t('auth.username')}>
                     <span className="truncate">{profile?.nickname ?? '—'}</span>
                   </ProfileField>
+                  <ProfileField variant="compact" label={t('profile.status')}>
+                    {profile?.status ? <StatusBadge status={profile.status} /> : '—'}
+                  </ProfileField>
+                </div>
+
+                <div className="grid gap-3 sm:grid-cols-2">
                   <ProfileField variant="compact" label={t('profile.country')}>
                     <span className="truncate">{countryLabel}</span>
                   </ProfileField>
                   <ProfileField variant="compact" label={t('profile.currency')}>
                     <span>{profile?.currency ?? DEFAULT_CURRENCY}</span>
-                  </ProfileField>
-                </div>
-
-                <div className="grid gap-3 sm:grid-cols-2">
-                  <ProfileField variant="compact" label={t('profile.status')}>
-                    {profile?.status ? <StatusBadge status={profile.status} /> : '—'}
-                  </ProfileField>
-                  <ProfileField variant="compact" label={t('profile.kycStatus')}>
-                    {profile?.kyc_status ? <StatusBadge status={profile.kyc_status} /> : '—'}
                   </ProfileField>
                 </div>
               </div>

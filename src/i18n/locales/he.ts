@@ -33,7 +33,9 @@ export const he: LocaleTree = {
     "pageOf": "עמוד {{page}} מתוך {{last}}",
     "actions": "פעולות",
     "openMenu": "פתח תפריט",
-    "language": "שפה"
+    "language": "שפה",
+    "yes": "Yes",
+    "no": "No"
   },
   "nav": {
     "allGames": "כל המשחקים",
@@ -226,6 +228,8 @@ export const he: LocaleTree = {
     "currency": "מטבע",
     "confirmPassword": "אשר סיסמה",
     "loginError": "אימייל, שם משתמש או סיסמה לא תקינים.",
+    "riskBlocked": "This action was blocked for security reasons.",
+    "riskChallenge": "Additional verification is required before you can continue.",
     "registerError": "ההרשמה נכשלה. אנא בדוק את הפרטים שלך.",
     "noAccount": "אין לך חשבון?",
     "hasAccount": "כבר יש לך חשבון?",
@@ -264,7 +268,19 @@ export const he: LocaleTree = {
     "saveChanges": "שמור שינויים",
     "updateSuccess": "הפרופיל עודכן בהצלחה.",
     "updateFailed": "עדכון הפרופיל נכשל.",
-    "language": "שפה"
+    "language": "שפה",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
+    "verificationSendConfirm": "Send verification code to {{destination}}?"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
   },
   "deposit": {
     "title": "הפקדה",
@@ -322,7 +338,18 @@ export const he: LocaleTree = {
     "recentWithdrawals": "משיכות אחרונות",
     "noWithdrawals": "אין בקשות משיכה עדיין.",
     "submitted": "בקשת משיכה #{{id}} נשלחה ({{status}}). ממתין לבדיקת מנהל.",
-    "submitFailed": "שליחת בקשת המשיכה נכשלה."
+    "submitFailed": "שליחת בקשת המשיכה נכשלה.",
+    "verificationRequiredTitle": "Verification Required",
+    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
+    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
+    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
+    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
+    "limitAlertTitle": "Withdrawal Limit",
+    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
+    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
+    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
+    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
+    "goToProfile": "Go to Profile"
   },
   "bonus": {
     "title": "בונוסים",
@@ -339,13 +366,25 @@ export const he: LocaleTree = {
     "autoApply": "מוחל אוטומטית על הפקדות מתאימות.",
     "firstDepositAutoApply": "מוחל אוטומטית בהפקדה הראשונה שלך בלבד.",
     "claimed": "בונוס התקבל: {{amount}} ({{status}})",
-    "claimFailed": "מימוש הבונוס נכשל."
+    "claimFailed": "מימוש הבונוס נכשל.",
+    "freeSpinCount": "{{count}} Free Spins",
+    "freeSpinUsage": "{{used}} / {{total}} spins used",
+    "freeSpinProvider": "Provider: {{provider}}",
+    "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
+    "freeSpinWinnings": "Winnings: {{amount}}",
+    "depositRequired": "Make at least one deposit to claim this bonus.",
+    "firstDepositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositCta": "Go to deposit",
+    "alreadyClaimed": "You have already claimed this bonus.",
+    "providerNotSupported": "This free spin provider is not supported yet."
   },
   "bonusTypes": {
     "welcome": "ברוכים הבאים",
     "first_deposit": "הפקדה ראשונה",
     "reload": "רענן",
-    "cashback": "החזר כספי"
+    "cashback": "החזר כספי",
+    "free_spin": "Free Spin"
   },
   "messages": {
     "title": "הודעות",
@@ -366,7 +405,11 @@ export const he: LocaleTree = {
     "win": "זכייה",
     "net": "נטו",
     "status": "סטטוס",
-    "date": "תאריך"
+    "date": "תאריך",
+    "spinType": "Spin Type",
+    "fundingSource": "Spin Type",
+    "fundingCash": "Cash Spin",
+    "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
     "title": "היסטוריית עסקאות",
@@ -401,6 +444,10 @@ export const he: LocaleTree = {
     "launchError": "הפעלת המשחק נכשלה.",
     "closeWindow": "סגור",
     "loginRequired": "אנא התחבר כדי לשחק."
+  },
+  "gameCard": {
+    "newBadge": "New",
+    "bonusBadge": "בונוס"
   },
   "modal": {
     "comingSoon": "בקרוב"

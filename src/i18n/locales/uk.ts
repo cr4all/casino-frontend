@@ -33,7 +33,9 @@ export const uk: LocaleTree = {
     "pageOf": "Сторінка {{page}} з {{last}}",
     "actions": "Дії",
     "openMenu": "Відкрити меню",
-    "language": "Мова"
+    "language": "Мова",
+    "yes": "Yes",
+    "no": "No"
   },
   "nav": {
     "allGames": "УСІ ІГРИ",
@@ -226,6 +228,8 @@ export const uk: LocaleTree = {
     "currency": "Валюта",
     "confirmPassword": "Підтвердити пароль",
     "loginError": "Недійсна електронна пошта, ім'я користувача або пароль.",
+    "riskBlocked": "This action was blocked for security reasons.",
+    "riskChallenge": "Additional verification is required before you can continue.",
     "registerError": "Реєстрація не вдалася. Перевірте свої дані.",
     "noAccount": "Немає акаунта?",
     "hasAccount": "Уже маєте акаунт?",
@@ -264,7 +268,19 @@ export const uk: LocaleTree = {
     "saveChanges": "Зберегти зміни",
     "updateSuccess": "Профіль успішно оновлено.",
     "updateFailed": "Не вдалося оновити профіль.",
-    "language": "Мова"
+    "language": "Мова",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
+    "verificationSendConfirm": "Send verification code to {{destination}}?"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
   },
   "deposit": {
     "title": "Депозит",
@@ -322,7 +338,18 @@ export const uk: LocaleTree = {
     "recentWithdrawals": "Останні виведення",
     "noWithdrawals": "Запитів на виведення ще немає.",
     "submitted": "Запит на виведення №{{id}} надіслано ({{status}}). Очікує перевірки адміністратора.",
-    "submitFailed": "Не вдалося надіслати запит на виведення."
+    "submitFailed": "Не вдалося надіслати запит на виведення.",
+    "verificationRequiredTitle": "Verification Required",
+    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
+    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
+    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
+    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
+    "limitAlertTitle": "Withdrawal Limit",
+    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
+    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
+    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
+    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
+    "goToProfile": "Go to Profile"
   },
   "bonus": {
     "title": "Бонуси",
@@ -339,13 +366,25 @@ export const uk: LocaleTree = {
     "autoApply": "Застосовується автоматично на відповідні депозити.",
     "firstDepositAutoApply": "Застосовується автоматично лише на ваш перший депозит.",
     "claimed": "Бонус отримано: {{amount}} ({{status}})",
-    "claimFailed": "Не вдалося отримати бонус."
+    "claimFailed": "Не вдалося отримати бонус.",
+    "freeSpinCount": "{{count}} Free Spins",
+    "freeSpinUsage": "{{used}} / {{total}} spins used",
+    "freeSpinProvider": "Provider: {{provider}}",
+    "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
+    "freeSpinWinnings": "Winnings: {{amount}}",
+    "depositRequired": "Make at least one deposit to claim this bonus.",
+    "firstDepositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositCta": "Go to deposit",
+    "alreadyClaimed": "You have already claimed this bonus.",
+    "providerNotSupported": "This free spin provider is not supported yet."
   },
   "bonusTypes": {
     "welcome": "Ласкаво просимо",
     "first_deposit": "Перший депозит",
     "reload": "Оновити",
-    "cashback": "Кешбек"
+    "cashback": "Кешбек",
+    "free_spin": "Free Spin"
   },
   "messages": {
     "title": "Повідомлення",
@@ -366,7 +405,11 @@ export const uk: LocaleTree = {
     "win": "Виграш",
     "net": "Нетто",
     "status": "Статус",
-    "date": "Дата"
+    "date": "Дата",
+    "spinType": "Spin Type",
+    "fundingSource": "Spin Type",
+    "fundingCash": "Cash Spin",
+    "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
     "title": "Історія транзакцій",
@@ -401,6 +444,10 @@ export const uk: LocaleTree = {
     "launchError": "Не вдалося запустити гру.",
     "closeWindow": "Закрити",
     "loginRequired": "Увійдіть, щоб грати."
+  },
+  "gameCard": {
+    "newBadge": "New",
+    "bonusBadge": "Бонус"
   },
   "modal": {
     "comingSoon": "Незабаром"

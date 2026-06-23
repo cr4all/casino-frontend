@@ -33,7 +33,9 @@ export const vi: LocaleTree = {
     "pageOf": "Trang {{page}} / {{last}}",
     "actions": "Thao tác",
     "openMenu": "Mở menu",
-    "language": "Ngôn ngữ"
+    "language": "Ngôn ngữ",
+    "yes": "Yes",
+    "no": "No"
   },
   "nav": {
     "allGames": "TẤT CẢ GAME",
@@ -226,6 +228,8 @@ export const vi: LocaleTree = {
     "currency": "Tiền tệ",
     "confirmPassword": "Xác nhận mật khẩu",
     "loginError": "Email, tên đăng nhập hoặc mật khẩu không hợp lệ.",
+    "riskBlocked": "This action was blocked for security reasons.",
+    "riskChallenge": "Additional verification is required before you can continue.",
     "registerError": "Đăng ký thất bại. Vui lòng kiểm tra thông tin của bạn.",
     "noAccount": "Chưa có tài khoản?",
     "hasAccount": "Đã có tài khoản?",
@@ -264,7 +268,19 @@ export const vi: LocaleTree = {
     "saveChanges": "Lưu thay đổi",
     "updateSuccess": "Cập nhật hồ sơ thành công.",
     "updateFailed": "Cập nhật hồ sơ thất bại.",
-    "language": "Ngôn ngữ"
+    "language": "Ngôn ngữ",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
+    "verificationSendConfirm": "Send verification code to {{destination}}?"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
   },
   "deposit": {
     "title": "Nạp tiền",
@@ -322,7 +338,18 @@ export const vi: LocaleTree = {
     "recentWithdrawals": "Rút tiền gần đây",
     "noWithdrawals": "Chưa có yêu cầu rút tiền.",
     "submitted": "Yêu cầu rút tiền #{{id}} đã gửi ({{status}}). Đang chờ quản trị viên duyệt.",
-    "submitFailed": "Gửi yêu cầu rút tiền thất bại."
+    "submitFailed": "Gửi yêu cầu rút tiền thất bại.",
+    "verificationRequiredTitle": "Verification Required",
+    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
+    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
+    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
+    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
+    "limitAlertTitle": "Withdrawal Limit",
+    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
+    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
+    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
+    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
+    "goToProfile": "Go to Profile"
   },
   "bonus": {
     "title": "Thưởng",
@@ -339,13 +366,25 @@ export const vi: LocaleTree = {
     "autoApply": "Áp dụng tự động cho các lần nạp đủ điều kiện.",
     "firstDepositAutoApply": "Chỉ áp dụng tự động cho lần nạp tiền đầu tiên.",
     "claimed": "Đã nhận thưởng: {{amount}} ({{status}})",
-    "claimFailed": "Nhận thưởng thất bại."
+    "claimFailed": "Nhận thưởng thất bại.",
+    "freeSpinCount": "{{count}} Free Spins",
+    "freeSpinUsage": "{{used}} / {{total}} spins used",
+    "freeSpinProvider": "Provider: {{provider}}",
+    "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
+    "freeSpinWinnings": "Winnings: {{amount}}",
+    "depositRequired": "Make at least one deposit to claim this bonus.",
+    "firstDepositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositCta": "Go to deposit",
+    "alreadyClaimed": "You have already claimed this bonus.",
+    "providerNotSupported": "This free spin provider is not supported yet."
   },
   "bonusTypes": {
     "welcome": "Chào mừng",
     "first_deposit": "Nạp lần đầu",
     "reload": "Tải lại",
-    "cashback": "Hoàn tiền"
+    "cashback": "Hoàn tiền",
+    "free_spin": "Free Spin"
   },
   "messages": {
     "title": "Tin nhắn",
@@ -366,7 +405,11 @@ export const vi: LocaleTree = {
     "win": "Thắng",
     "net": "Ròng",
     "status": "Trạng thái",
-    "date": "Ngày"
+    "date": "Ngày",
+    "spinType": "Spin Type",
+    "fundingSource": "Spin Type",
+    "fundingCash": "Cash Spin",
+    "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
     "title": "Lịch sử giao dịch",
@@ -401,6 +444,10 @@ export const vi: LocaleTree = {
     "launchError": "Khởi chạy game thất bại.",
     "closeWindow": "Đóng",
     "loginRequired": "Vui lòng đăng nhập để chơi."
+  },
+  "gameCard": {
+    "newBadge": "New",
+    "bonusBadge": "Thưởng"
   },
   "modal": {
     "comingSoon": "Sắp ra mắt"

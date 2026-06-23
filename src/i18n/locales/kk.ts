@@ -33,7 +33,9 @@ export const kk: LocaleTree = {
     "pageOf": "{{last}} бетінен {{page}}",
     "actions": "Әрекеттер",
     "openMenu": "Мәзірді ашу",
-    "language": "Тіл"
+    "language": "Тіл",
+    "yes": "Yes",
+    "no": "No"
   },
   "nav": {
     "allGames": "БАРЛЫҚ ОЙЫНДАР",
@@ -226,6 +228,8 @@ export const kk: LocaleTree = {
     "currency": "Валюта",
     "confirmPassword": "Құпиясөзді растау",
     "loginError": "Электрондық пошта, пайдаланушы аты немесе құпия сөзі жарамсыз.",
+    "riskBlocked": "This action was blocked for security reasons.",
+    "riskChallenge": "Additional verification is required before you can continue.",
     "registerError": "Тіркеу сәтсіз аяқталды. Мәліметтеріңізді тексеріңіз.",
     "noAccount": "Есептік жазбаңыз жоқ па?",
     "hasAccount": "Тіркелгіңіз бұрыннан бар ма?",
@@ -264,7 +268,19 @@ export const kk: LocaleTree = {
     "saveChanges": "өзгертулерді сақтау",
     "updateSuccess": "Профиль сәтті жаңартылды",
     "updateFailed": "Профильді жаңарту сәтсіз аяқталды.",
-    "language": "Тіл"
+    "language": "Тіл",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
+    "verificationSendConfirm": "Send verification code to {{destination}}?"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
   },
   "deposit": {
     "title": "Депозит",
@@ -322,7 +338,18 @@ export const kk: LocaleTree = {
     "recentWithdrawals": "Соңғы шығарылымдар",
     "noWithdrawals": "Әзірге қайтарып алу сұраулары жоқ.",
     "submitted": "№{{id}} сұрау жіберілді ({{status}}). Әкімшінің шолуын күтуде.",
-    "submitFailed": "Шығарып алуды жіберу сәтсіз аяқталды."
+    "submitFailed": "Шығарып алуды жіберу сәтсіз аяқталды.",
+    "verificationRequiredTitle": "Verification Required",
+    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
+    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
+    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
+    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
+    "limitAlertTitle": "Withdrawal Limit",
+    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
+    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
+    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
+    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
+    "goToProfile": "Go to Profile"
   },
   "bonus": {
     "title": "Бонустар",
@@ -339,13 +366,25 @@ export const kk: LocaleTree = {
     "autoApply": "Біліктілік депозиттеріне автоматты түрде қолданылады.",
     "firstDepositAutoApply": "Алғашқы депозитіңізде ғана автоматты түрде қолданылады.",
     "claimed": "Бонус талап етілді: {{amount}} ({{status}})",
-    "claimFailed": "Бонус талап етілмеді."
+    "claimFailed": "Бонус талап етілмеді.",
+    "freeSpinCount": "{{count}} Free Spins",
+    "freeSpinUsage": "{{used}} / {{total}} spins used",
+    "freeSpinProvider": "Provider: {{provider}}",
+    "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
+    "freeSpinWinnings": "Winnings: {{amount}}",
+    "depositRequired": "Make at least one deposit to claim this bonus.",
+    "firstDepositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositCta": "Go to deposit",
+    "alreadyClaimed": "You have already claimed this bonus.",
+    "providerNotSupported": "This free spin provider is not supported yet."
   },
   "bonusTypes": {
     "welcome": "Қош келдіңіз",
     "first_deposit": "Алғашқы депозит",
     "reload": "Жаңарту",
-    "cashback": "Кэшбэк"
+    "cashback": "Кэшбэк",
+    "free_spin": "Free Spin"
   },
   "messages": {
     "title": "Хабарламалар",
@@ -366,7 +405,11 @@ export const kk: LocaleTree = {
     "win": "Жеңіс",
     "net": "Пайда",
     "status": "Мәртебе",
-    "date": "Күн"
+    "date": "Күн",
+    "spinType": "Spin Type",
+    "fundingSource": "Spin Type",
+    "fundingCash": "Cash Spin",
+    "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
     "title": "Транзакция тарихы",
@@ -401,6 +444,10 @@ export const kk: LocaleTree = {
     "launchError": "Ойынды іске қосу сәтсіз аяқталды.",
     "closeWindow": "Жабу",
     "loginRequired": "Ойнату үшін кіріңіз."
+  },
+  "gameCard": {
+    "newBadge": "New",
+    "bonusBadge": "Бонус"
   },
   "modal": {
     "comingSoon": "Жақында шығады"
