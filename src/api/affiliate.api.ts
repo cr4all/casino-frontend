@@ -43,6 +43,34 @@ export interface AffiliateCommission {
   created_at: string | null;
 }
 
+export type PlayerStatisticsPeriod = 'today' | 'week' | '30days' | 'month';
+
+export interface PlayerStatisticsMetrics {
+  total_bet: string;
+  total_win: string;
+  deposits: string;
+  withdrawals: string;
+  cash_turnover: string;
+  bonus_turnover: string;
+  ggr: string;
+  bonus_cost: string;
+  affiliate_cost: string;
+  ngr: string;
+}
+
+export interface AffiliatePlayerStatistics {
+  player_id: number;
+  nickname: string | null;
+  registered_at: string;
+  stats: PlayerStatisticsMetrics;
+}
+
+export interface AffiliatePlayerStatisticsList {
+  period: PlayerStatisticsPeriod;
+  items: AffiliatePlayerStatistics[];
+  pagination: PaginationMeta;
+}
+
 export interface AffiliateSubAffiliate {
   id: number;
   code: string;
@@ -99,6 +127,14 @@ export const affiliateApi = {
     const { data } = await api.get<ApiResponse<Paginated<AffiliateCommission>>>(
       '/affiliate/commissions',
       { params: { page } },
+    );
+    return data.data;
+  },
+
+  getPlayerStatistics: async (period: PlayerStatisticsPeriod = 'week', page = 1) => {
+    const { data } = await api.get<ApiResponse<AffiliatePlayerStatisticsList>>(
+      '/affiliate/player-statistics',
+      { params: { period, page } },
     );
     return data.data;
   },

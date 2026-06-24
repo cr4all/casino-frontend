@@ -2,12 +2,14 @@ import { useEffect, useState, type FormEvent } from 'react';
 import { Navigate } from 'react-router-dom';
 import {
   affiliateApi,
-  type AffiliateCommission,
   type AffiliateMe,
+  type AffiliatePlayerStatistics,
   type AffiliateStats,
   type AffiliateSubAffiliate,
   type CreateSubAffiliatePayload,
+  type PlayerStatisticsPeriod,
 } from '@/api/affiliate.api';
+import { AffiliatePlayerStatisticsTable } from '@/components/affiliate/AffiliatePlayerStatisticsTable';
 import { Button } from '@/components/common/Button';
 import { LanguageSelector } from '@/components/common/LanguageSelector';
 import { Modal } from '@/components/common/Modal';
@@ -66,22 +68,19 @@ function buildReferralUrl(code: string): string {
   return `${window.location.origin}${window.location.pathname}?ref=${code}`;
 }
 
-function formatReferredPlayerId(playerId: number | null | undefined): string {
-  if (playerId == null) return '—';
-  return `P-${playerId}`;
-}
-
 export function AffiliateDashboardPage() {
-  const { t, formatDate } = useTranslation();
+  const { t } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const user = useAuthStore((s) => s.user);
   const logout = useAuthStore((s) => s.logout);
 
   const [me, setMe] = useState<AffiliateMe | null>(null);
   const [stats, setStats] = useState<AffiliateStats | null>(null);
-  const [commissions, setCommissions] = useState<AffiliateCommission[]>([]);
+  const [playerStats, setPlayerStats] = useState<AffiliatePlayerStatistics[]>([]);
+  const [playerStatsPeriod, setPlayerStatsPeriod] = useState<PlayerStatisticsPeriod>('week');
+  const [playerStatsPagination, setPlayerStatsPagination] = useState<PaginationMeta | null>(null);
+  const [playerStatsLoading, setPlayerStatsLoading] = useState(false);
   const [subAffiliates, setSubAffiliates] = useState<AffiliateSubAffiliate[]>([]);
-  const [commissionsPagination, setCommissionsPagination] = useState<PaginationMeta | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
@@ -104,19 +103,32 @@ export function AffiliateDashboardPage() {
     ? getAllowedSubAffiliateCommissionModels(me.commission_model)
     : [];
 
+  const loadPlayerStatistics = async (period: PlayerStatisticsPeriod, page = 1) => {
+    setPlayerStatsLoading(true);
+    try {
+      const data = await affiliateApi.getPlayerStatistics(period, page);
+      setPlayerStats(data.items);
+      setPlayerStatsPagination(data.pagination);
+    } catch {
+      setError(t('affiliate.loadError'));
+    } finally {
+      setPlayerStatsLoading(false);
+    }
+  };
+
   const load = async () => {
     setLoading(true);
     setError(null);
     try {
-      const [meData, statsData, commissionsData] = await Promise.all([
+      const [meData, statsData, playerStatsData] = await Promise.all([
         affiliateApi.getMe(),
         affiliateApi.getStats(),
-        affiliateApi.getCommissions(),
+        affiliateApi.getPlayerStatistics(playerStatsPeriod),
       ]);
       setMe(meData);
       setStats(statsData);
-      setCommissions(commissionsData.items);
-      setCommissionsPagination(commissionsData.pagination);
+      setPlayerStats(playerStatsData.items);
+      setPlayerStatsPagination(playerStatsData.pagination);
 
       if (meData.can_manage_sub_affiliates) {
         const subData = await affiliateApi.getSubAffiliates();
@@ -134,6 +146,11 @@ export function AffiliateDashboardPage() {
       load();
     }
   }, [isAuthenticated, user?.role]);
+
+  const handlePlayerStatsPeriodChange = (period: PlayerStatisticsPeriod) => {
+    setPlayerStatsPeriod(period);
+    void loadPlayerStatistics(period);
+  };
 
   if (!isAuthenticated) {
     return <Navigate to="/" replace />;
@@ -156,11 +173,6 @@ export function AffiliateDashboardPage() {
     await navigator.clipboard.writeText(buildReferralUrl(sub.code));
     setCopiedSubId(sub.id);
     setTimeout(() => setCopiedSubId(null), 2000);
-  };
-
-  const formatCommissionType = (type: string) => {
-    if (type === 'override') return t('affiliate.typeOverride');
-    return type;
   };
 
   const handleCreateSubAffiliate = async (e: FormEvent) => {
@@ -479,57 +491,13 @@ export function AffiliateDashboardPage() {
             </section>
           )}
 
-          <section className="rounded-lg border border-white/10 bg-card p-4">
-            <h2 className="mb-3 text-sm font-semibold text-white">{t('affiliate.commissionHistory')}</h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-sm">
-                <thead>
-                  <tr className="border-b border-white/10 text-xs text-muted">
-                    <th className="pb-2 pr-4">{t('affiliate.type')}</th>
-                    <th className="pb-2 pr-4">{t('affiliate.player')}</th>
-                    <th className="pb-2 pr-4">{t('affiliate.amount')}</th>
-                    <th className="pb-2 pr-4">{t('affiliate.status')}</th>
-                    <th className="pb-2 pr-4">{t('affiliate.reference')}</th>
-                    <th className="pb-2">{t('affiliate.date')}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {commissions.length === 0 ? (
-                    <tr>
-                      <td colSpan={6} className="py-4 text-muted">
-                        {t('affiliate.noCommissions')}
-                      </td>
-                    </tr>
-                  ) : (
-                    commissions.map((c) => (
-                      <tr key={c.id} className="border-b border-white/5">
-                        <td className="py-2 pr-4 uppercase">{formatCommissionType(c.type)}</td>
-                        <td className="py-2 pr-4 font-mono text-xs">
-                          {formatReferredPlayerId(c.player_id)}
-                        </td>
-                        <td className="py-2 pr-4">{formatBalance(c.amount)}</td>
-                        <td className="py-2 pr-4">
-                          <StatusBadge status={c.status} />
-                        </td>
-                        <td className="py-2 pr-4 text-xs text-muted">
-                          {c.reference_type}:{c.reference_id}
-                        </td>
-                        <td className="py-2">{formatDate(c.created_at)}</td>
-                      </tr>
-                    ))
-                  )}
-                </tbody>
-              </table>
-            </div>
-            {commissionsPagination && commissionsPagination.last_page > 1 && (
-              <p className="mt-2 text-xs text-muted">
-                {t('common.pageOf', {
-                  page: commissionsPagination.current_page,
-                  last: commissionsPagination.last_page,
-                })}
-              </p>
-            )}
-          </section>
+          <AffiliatePlayerStatisticsTable
+            items={playerStats}
+            pagination={playerStatsPagination}
+            period={playerStatsPeriod}
+            loading={playerStatsLoading}
+            onPeriodChange={handlePlayerStatsPeriodChange}
+          />
         </>
       )}
     </div>

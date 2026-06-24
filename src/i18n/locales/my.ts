@@ -34,8 +34,8 @@ export const my: LocaleTree = {
     "actions": "Actions",
     "openMenu": "Open menu",
     "language": "Language",
-    "yes": "Yes",
-    "no": "No"
+    "yes": "ကျင်းပပါတယ်",
+    "no": "မရှိ"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -270,12 +270,12 @@ export const my: LocaleTree = {
     "updateFailed": "Failed to update profile.",
     "language": "Language",
     "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "kycComingSoon": "KYC အတည်ပြုချက်ကို မကြာမီ ရရှိပါမည် ။ ကျေးဇူးပြု ၍ နောက်မှ ပြန်စစ်ပါ ။",
+    "verificationTitleKyc": "ဝိသေသလက္ခဏာကို အတည်ပြုပါ (KYC)",
+    "kycLoading": "အတည်ပြုချက်ကို ဖွင့်နေသည်...",
+    "kycFailed": "KYC အတည်ပြုခြင်းကို စတင် ၍ မရနိုင်ပါ ။ နောက်မှ ထပ်မံကြိုးစားပါ ။",
+    "kycHint": "အထက်ပါပုံစံအတိုင်း အဆင့်များကို ဖြည့်ပါ ။ SumSub ပြန်လည်သုံးသပ်ပြီးနောက် သင့်အခြေအနေကို အပ်ဒိတ်လုပ်ပါမည် ။",
+    "verificationSendConfirm": "အတည်ပြုကုဒ်ကို {{destination}} သို့ ပေးပို့ပါသလား ။"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -339,17 +339,17 @@ export const my: LocaleTree = {
     "noWithdrawals": "No withdrawal requests yet.",
     "submitted": "Withdrawal request #{{id}} submitted ({{status}}). Awaiting admin review.",
     "submitFailed": "Failed to submit withdrawal.",
-    "verificationRequiredTitle": "Verification Required",
-    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
-    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
-    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
-    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
-    "limitAlertTitle": "Withdrawal Limit",
-    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
-    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
-    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
-    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
-    "goToProfile": "Go to Profile"
+    "verificationRequiredTitle": "အတည်ပြုရန် လိုအပ်ပါသည်",
+    "verificationRequiredMessage": "သင် ၏ အီးမေးလ် ၊ ဖုန်းနံပါတ်နှင့် KYC ကိုမထုတ်ယူမီအတည်ပြုရမည် ။",
+    "verificationRequiredBanner": "ထုတ်ယူမှုများသည် အကောင့်အတည်ပြုခြင်း လိုအပ်ပါသည် ။ သင် ၏ ပရိုဖိုင်တွင် သင် ၏ အီးမေးလ် ၊ ဖုန်းနှင့် KYC ပြည့်စုံကြောင်း အတည်ပြုပါ ။",
+    "verificationLimitBanner": "သင် ၏ လက်ရှိစိစစ်အတည်ပြုမှုအဆင့်ပေါ် မူတည် ၍ သင် ၏ အများဆုံးထုတ်ယူမှုပမာဏသည် {{amount}} ဖြစ်ပါသည် ။",
+    "verificationLimitExceeded": "ပမာဏသည် သင် ၏ {{amount}} ၏ အတည်ပြုကန့်သတ်ချက်ကို ကျော်လွန်သွားပါသည် ။",
+    "limitAlertTitle": "ထုတ်ယူခွင့်ကန့်သတ်ချက်",
+    "limitAlertEmailOnly": "သင် ၏ အီးမေးလ်ကိုသာ အတည်ပြုပြီးဖြစ်သောကြောင့် {{amount}} အထိ ထုတ်ယူနိုင်ပါသည် ။ ထပ်မံထုတ်ယူရန် သင့်ပရိုဖိုင်တွင် ဖုန်း သို့မဟုတ် KYC အတည်ပြုချက်ကို ဖြည့်စွက်ပါ ။",
+    "limitAlertPhoneOnly": "သင် ၏ ဖုန်းကိုသာ အတည်ပြုပြီးဖြစ်သောကြောင့် {{amount}} အထိ ထုတ်ယူနိုင်ပါသည် ။ ထပ်မံထုတ်ယူရန် သင့်ပရိုဖိုင်တွင် အီးမေးလ် သို့မဟုတ် KYC အတည်ပြုချက်ကို ဖြည့်စွက်ပါ ။",
+    "limitAlertEmailAndPhone": "သင်သည် အီးမေးလ်နှင့် ဖုန်းကို အတည်ပြုထားသော်လည်း KYC မဟုတ်သောကြောင့် {{amount}} အထိ ထုတ်ယူနိုင်ပါသည် ။ အကန့်အသတ်မရှိ ငွေပမာဏထုတ်ယူရန် ၊ သင့်ပရိုဖိုင်တွင် KYC အတည်ပြုချက်ကို ဖြည့်စွက်ပါ ။",
+    "limitAlertGeneric": "သင် ၏ လက်ရှိစိစစ်အတည်ပြုအဆင့်ပေါ် မူတည် ၍ {{amount}} အထိ ထုတ်ယူနိုင်ပါသည် ။ သင် ၏ အကန့်အသတ်ကို တိုးမြှင့်ရန် သင် ၏ ပရိုဖိုင်တွင် ထပ်ဆောင်းအတည်ပြုချက်ကို ဖြည့်စွက်ပါ ။",
+    "goToProfile": "ပရိုဖိုင်သို့သွားပါ"
   },
   "bonus": {
     "title": "Bonuses",

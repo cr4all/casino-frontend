@@ -327,14 +327,14 @@ export const hu: LocaleTree = {
     "verificationRequiredTitle": "Verification Required",
     "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
     "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
-    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
-    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
-    "limitAlertTitle": "Withdrawal Limit",
-    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
-    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
-    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
-    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
-    "goToProfile": "Go to Profile"
+    "verificationLimitBanner": "A maximális kifizetési összeg {{amount}} az aktuális ellenőrzési szinted alapján.",
+    "verificationLimitExceeded": "Az összeg meghaladja a (z) {{amount}} összegű ellenőrzési korlátodat.",
+    "limitAlertTitle": "KÉSZPÉNZFELVÉTELI LIMIT:",
+    "limitAlertEmailOnly": "Mivel csak az e-mail-címedet igazoltad, akár {{amount}} összeget is kivehetsz. Ha többet szeretne visszavonni, kérjük, végezze el a Telefonszám vagy a KYC igazolását a profiljában.",
+    "limitAlertPhoneOnly": "Mivel csak a telefonodat igazoltad, akár {{amount}} összeget is kivehetsz. Ha többet szeretne visszavonni, kérjük, végezze el az e-mail-cím vagy a KYC-igazolást a profiljában.",
+    "limitAlertEmailAndPhone": "Mivel igazoltad az e-mail-címedet és a telefonszámodat, de a KYC-t nem, akár {{amount}} összeget is kivehetsz. Korlátlan összegek kifizetéséhez végezd el a KYC-igazolást a profilodban.",
+    "limitAlertGeneric": "Legfeljebb {{amount}} összeget vonhatsz le az aktuális igazolási szinted alapján. Végezz el további igazolást a profilodban a korlátod növeléséhez.",
+    "goToProfile": "Ugrás a profilhoz"
   },
   "bonus": {
     "title": "Bónuszok",

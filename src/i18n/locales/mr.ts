@@ -34,8 +34,8 @@ export const mr: LocaleTree = {
     "actions": "Actions",
     "openMenu": "Open menu",
     "language": "Language",
-    "yes": "Yes",
-    "no": "No"
+    "yes": "होय",
+    "no": "नाही"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -269,13 +269,13 @@ export const mr: LocaleTree = {
     "updateSuccess": "प्रोफाइल यशस्वीरित्या अपडेट केले.",
     "updateFailed": "प्रोफाइल अपडेट करण्यात अयशस्वी.",
     "language": "Language",
-    "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "kyc": "केवायसी (KYC)",
+    "kycComingSoon": "केवायसी पडताळणी लवकरच उपलब्ध होईल. कृपया नंतर पुन्हा तपासा.",
+    "verificationTitleKyc": "ओळखीची पडताळणी करा (केवायसी)",
+    "kycLoading": "पडताळणी लोड करत आहे...",
+    "kycFailed": "केवायसी पडताळणी सुरू करू शकत नाही. कृपया नंतर पुन्हा प्रयत्न करा.",
+    "kycHint": "उपरोक्त फॉर्ममध्ये पायऱ्या पूर्ण करा. SumSub पुनरावलोकनानंतर तुमची स्थिती अपडेट होईल.",
+    "verificationSendConfirm": "पडताळणी कोड {{destination}} वर पाठवायचा?"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -339,17 +339,17 @@ export const mr: LocaleTree = {
     "noWithdrawals": "अद्याप माघार घेण्याच्या विनंत्या नाहीत.",
     "submitted": "Withdrawal request #{{id}} submitted ({{status}}). Awaiting admin review.",
     "submitFailed": "पैसे काढणे सबमिट करण्यात अयशस्वी.",
-    "verificationRequiredTitle": "Verification Required",
-    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
-    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
-    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
-    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
-    "limitAlertTitle": "Withdrawal Limit",
-    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
-    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
-    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
-    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
-    "goToProfile": "Go to Profile"
+    "verificationRequiredTitle": "पडताळणी आवश्यक आहे",
+    "verificationRequiredMessage": "तुम्ही पैसे काढू शकण्यापूर्वी तुम्ही तुमचा ईमेल, फोन नंबर आणि केवायसी पूर्ण केल्याची पडताळणी करणे आवश्यक आहे.",
+    "verificationRequiredBanner": "पैसे काढण्यासाठी खात्याची पडताळणी आवश्यक आहे. कृपया तुमच्या प्रोफाइलमध्ये तुमचा ईमेल, फोन आणि केवायसी पूर्ण करा याची पडताळणी करा.",
+    "verificationLimitBanner": "तुमची जास्तीत जास्त पैसे काढण्याची रक्कम तुमच्या सध्याच्या पडताळणी स्तरावर आधारित {{amount}} आहे.",
+    "verificationLimitExceeded": "रक्कम तुमच्या {{amount}} च्या पडताळणी मर्यादेपेक्षा जास्त आहे.",
+    "limitAlertTitle": "पैसे काढण्याची मर्यादा",
+    "limitAlertEmailOnly": "तुम्ही फक्त तुमच्या ईमेलची पडताळणी केली असल्यामुळे, तुम्ही {{amount}} पर्यंत पैसे काढू शकता. अधिक पैसे काढण्यासाठी, कृपया तुमच्या प्रोफाइलमध्ये फोन किंवा केवायसी पडताळणी पूर्ण करा.",
+    "limitAlertPhoneOnly": "तुम्ही फक्त तुमच्या फोनची पडताळणी केली असल्यामुळे, तुम्ही {{amount}} पर्यंत पैसे काढू शकता. अधिक पैसे काढण्यासाठी, कृपया तुमच्या प्रोफाइलमध्ये ईमेल किंवा केवायसी पडताळणी पूर्ण करा.",
+    "limitAlertEmailAndPhone": "तुम्ही ईमेल आणि फोनची पडताळणी केली आहे परंतु केवायसी नाही, म्हणून तुम्ही {{amount}} पर्यंत पैसे काढू शकता. अमर्यादित रक्कम काढण्यासाठी, कृपया तुमच्या प्रोफाइलमध्ये केवायसी पडताळणी पूर्ण करा.",
+    "limitAlertGeneric": "तुम्ही तुमच्या सध्याच्या पडताळणी पातळीनुसार {{amount}} पर्यंत पैसे काढू शकता. तुमची मर्यादा वाढवण्यासाठी तुमच्या प्रोफाइलमध्ये अतिरिक्त पडताळणी पूर्ण करा.",
+    "goToProfile": "प्रोफाइलवर जा"
   },
   "bonus": {
     "title": "Bonuses",

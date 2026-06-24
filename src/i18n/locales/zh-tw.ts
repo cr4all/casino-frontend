@@ -34,8 +34,8 @@ export const zhTw: LocaleTree = {
     "actions": "操作",
     "openMenu": "開啟選單",
     "language": "語言",
-    "yes": "Yes",
-    "no": "No"
+    "yes": "是",
+    "no": "否"
   },
   "nav": {
     "allGames": "全部遊戲",
@@ -270,12 +270,12 @@ export const zhTw: LocaleTree = {
     "updateFailed": "個人資料更新失敗。",
     "language": "語言",
     "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "kycComingSoon": "KYC驗證即將推出。請稍後再回來查看。",
+    "verificationTitleKyc": "驗證身分(KYC)",
+    "kycLoading": "正在載入驗證…",
+    "kycFailed": "無法啟動KYC驗證。請稍後再試。",
+    "kycHint": "完成上表中的步驟。您的狀態將在SumSub審核後更新。",
+    "verificationSendConfirm": "要將驗證碼發送到{{destination}}嗎？"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -339,17 +339,17 @@ export const zhTw: LocaleTree = {
     "noWithdrawals": "尚無提款申請。",
     "submitted": "提款申請 #{{id}} 已提交（{{status}}），等待管理員審核。",
     "submitFailed": "提款申請提交失敗。",
-    "verificationRequiredTitle": "Verification Required",
-    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
-    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
-    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
-    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
-    "limitAlertTitle": "Withdrawal Limit",
-    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
-    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
-    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
-    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
-    "goToProfile": "Go to Profile"
+    "verificationRequiredTitle": "需要驗證",
+    "verificationRequiredMessage": "您必須先驗證電子郵件地址、電話號碼並完成KYC驗證，才能提款。",
+    "verificationRequiredBanner": "提款需要驗證帳戶。請驗證你的電郵、電話，並在個人資料中填寫KYC。",
+    "verificationLimitBanner": "根據您目前的驗證等級，您的最高提款金額為{{amount}}。",
+    "verificationLimitExceeded": "金額超過您的驗證限制{{amount}}。",
+    "limitAlertTitle": "提款限額",
+    "limitAlertEmailOnly": "由於你只驗證了電郵，因此最多可以提取{{amount}}。如要提領更多款項，請在基本資料中完成電話或KYC驗證。",
+    "limitAlertPhoneOnly": "由於你只驗證了手機號碼，因此最多可提取{{amount}}。如要提領更多款項，請在基本資料中完成電子郵件或KYC驗證。",
+    "limitAlertEmailAndPhone": "由於你已驗證電郵和電話，但並非KYC ，因此最多可提取{{amount}}。如要提取無限金額，請在基本資料中完成KYC驗證。",
+    "limitAlertGeneric": "根據你目前的驗證等級，你最多可以提取{{amount}}。請在個人資料中完成額外驗證，以提高上限。",
+    "goToProfile": "前往簡介"
   },
   "bonus": {
     "title": "獎金",

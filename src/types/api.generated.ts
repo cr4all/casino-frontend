@@ -1160,6 +1160,49 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/affiliate/player-statistics": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** List per-player statistics for referred players */
+        get: {
+            parameters: {
+                query?: {
+                    period?: "today" | "week" | "30days" | "month";
+                    per_page?: components["parameters"]["PerPage"];
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Paginated player statistics */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: components["schemas"]["AffiliatePlayerStatisticsList"];
+                        };
+                    };
+                };
+                401: components["responses"]["Unauthorized"];
+                403: components["responses"]["Forbidden"];
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/affiliate/commissions": {
         parameters: {
             query?: never;
@@ -1167,7 +1210,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** List commission history */
+        /** List commission history (legacy; not used in affiliate portal UI) */
         get: {
             parameters: {
                 query?: {
@@ -1745,7 +1788,6 @@ export interface components {
         };
         RegisterOptionsData: {
             currencies: components["schemas"]["RegistrationCurrency"][];
-            countries: components["schemas"]["RegistrationCountry"][];
         };
         SessionPolicyData: {
             /** @description Minutes of inactivity before automatic logout. 0 disables idle logout. */
@@ -1801,7 +1843,7 @@ export interface components {
              */
             phone: string;
             /**
-             * @description ISO 3166-1 alpha-2 code from GET /auth/register-options
+             * @description ISO 3166-1 alpha-2 code matching the phone country picker selection
              * @example US
              */
             country: string;
@@ -2239,6 +2281,31 @@ export interface components {
         };
         AffiliateCommissionList: {
             items: components["schemas"]["AffiliateCommission"][];
+            pagination: components["schemas"]["Pagination"];
+        };
+        PlayerStatisticsMetrics: {
+            total_bet: string;
+            total_win: string;
+            deposits: string;
+            withdrawals: string;
+            cash_turnover: string;
+            bonus_turnover: string;
+            ggr: string;
+            bonus_cost: string;
+            affiliate_cost: string;
+            ngr: string;
+        };
+        AffiliatePlayerStatistics: {
+            player_id: number;
+            nickname?: string | null;
+            /** Format: date-time */
+            registered_at: string;
+            stats: components["schemas"]["PlayerStatisticsMetrics"];
+        };
+        AffiliatePlayerStatisticsList: {
+            /** @enum {string} */
+            period: "today" | "week" | "30days" | "month";
+            items: components["schemas"]["AffiliatePlayerStatistics"][];
             pagination: components["schemas"]["Pagination"];
         };
         AffiliateSubAffiliate: {

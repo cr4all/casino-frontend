@@ -34,8 +34,8 @@ export const km: LocaleTree = {
     "actions": "សកម្មភាព",
     "openMenu": "បើក​ម៉ឺនុយ",
     "language": "ភាសា",
-    "yes": "Yes",
-    "no": "No"
+    "yes": "បាទ/ចាស",
+    "no": "មិនដឹង"
   },
   "nav": {
     "allGames": "ហ្គេមទាំងអស់",
@@ -270,12 +270,12 @@ export const km: LocaleTree = {
     "updateFailed": "បរាជ័យក្នុងការអាប់ដេតប្រវត្តិរូប។",
     "language": "ភាសា",
     "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "kycComingSoon": "ការផ្ទៀងផ្ទាត់ KYC នឹងមានក្នុងពេលឆាប់ៗនេះ ។ សូមពិនិត្យឡើងវិញនៅពេលក្រោយ ។",
+    "verificationTitleKyc": "ផ្ទៀងផ្ទាត់អត្តសញ្ញាណ (KYC)",
+    "kycLoading": "កំពុង ផ្ទុក ការ ផ្ទៀងផ្ទាត់...",
+    "kycFailed": "មិនអាច ចាប់ផ្ដើម ការ ផ្ទៀងផ្ទាត់ KYC បានទេ & # 160; ។ សូមព្យាយាមម្តងទៀតនៅពេលក្រោយ ។",
+    "kycHint": "បំពេញជំហានដូចបានរៀបរាប់ខាងលើ ។ ស្ថានភាពរបស់អ្នកនឹងត្រូវបានធ្វើបច្ចុប្បន្នភាពបន្ទាប់ពី SumSub ពិនិត្យឡើងវិញ ។",
+    "verificationSendConfirm": "ផ្ញើកូដផ្ទៀងផ្ទាត់ទៅ {{destination}}?"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -339,17 +339,17 @@ export const km: LocaleTree = {
     "noWithdrawals": "មិនមានសំណើការដកប្រាក់នៅឡើយទេ។",
     "submitted": "សំណើការដកប្រាក់ #{{id}} បានដាក់ស្នើ ({{status}})។ កំពុងរង់ចាំការត្រួតពិនិត្យពីអ្នកគ្រប់គ្រង។",
     "submitFailed": "បរាជ័យក្នុងការដាក់ស្នើការដកប្រាក់។",
-    "verificationRequiredTitle": "Verification Required",
-    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
-    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
-    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
-    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
-    "limitAlertTitle": "Withdrawal Limit",
-    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
-    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
-    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
-    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
-    "goToProfile": "Go to Profile"
+    "verificationRequiredTitle": "ទាមទារការផ្ទៀងផ្ទាត់",
+    "verificationRequiredMessage": "អ្នកត្រូវតែផ្ទៀងផ្ទាត់អ៊ីមែល លេខទូរស័ព្ទ និងបំពេញ KYC របស់អ្នក មុនពេលអ្នកអាចដកប្រាក់បាន ។",
+    "verificationRequiredBanner": "ការដកប្រាក់តម្រូវឱ្យមានការផ្ទៀងផ្ទាត់គណនី ។ សូមផ្ទៀងផ្ទាត់អ៊ីមែល ទូរស័ព្ទ និងបំពេញ KYC នៅក្នុងប្រវត្តិរូបរបស់អ្នក ។",
+    "verificationLimitBanner": "ចំនួនទឹកប្រាក់ដកអតិបរមារបស់អ្នកគឺ {{amount}} ដោយផ្អែកលើកម្រិតផ្ទៀងផ្ទាត់បច្ចុប្បន្នរបស់អ្នក ។",
+    "verificationLimitExceeded": "ចំនួនទឹកប្រាក់លើសពីដែនកំណត់នៃការផ្ទៀងផ្ទាត់របស់អ្នកចំនួន {{amount}} ។",
+    "limitAlertTitle": "ដែនកំណត់ដកប្រាក់",
+    "limitAlertEmailOnly": "ដោយសារតែអ្នកបានផ្ទៀងផ្ទាត់តែអ៊ីមែលរបស់អ្នក អ្នកអាចដកប្រាក់រហូតដល់ {{amount}} ។ ដើម្បីដកប្រាក់បន្ថែម សូមបំពេញការផ្ទៀងផ្ទាត់ទូរស័ព្ទ ឬ KYC នៅក្នុងប្រវត្តិរូបរបស់អ្នក ។",
+    "limitAlertPhoneOnly": "ដោយសារតែអ្នកបានផ្ទៀងផ្ទាត់តែទូរស័ព្ទរបស់អ្នក អ្នកអាចដកប្រាក់រហូតដល់ {{amount}} ។ ដើម្បីដកប្រាក់បន្ថែម សូមបំពេញការផ្ទៀងផ្ទាត់អ៊ីមែល ឬ KYC នៅក្នុងប្រវត្តិរូបរបស់អ្នក ។",
+    "limitAlertEmailAndPhone": "ដោយសារអ្នកបានផ្ទៀងផ្ទាត់អ៊ីមែល និងទូរសព្ទ ប៉ុន្តែមិនមែន KYC អ្នកអាចដកប្រាក់រហូតដល់ {{amount}} ។ ដើម្បីដកចំនួនទឹកប្រាក់ដែលគ្មានដែនកំណត់ សូមបំពេញការផ្ទៀងផ្ទាត់ KYC នៅក្នុងប្រវត្តិរូបរបស់អ្នក ។",
+    "limitAlertGeneric": "អ្នកអាចដកប្រាក់រហូតដល់ {{amount}} ដោយផ្អែកលើកម្រិតផ្ទៀងផ្ទាត់បច្ចុប្បន្នរបស់អ្នក ។ បំពេញការផ្ទៀងផ្ទាត់បន្ថែមនៅក្នុងប្រវត្តិរូបរបស់អ្នក ដើម្បីបង្កើនដែនកំណត់របស់អ្នក ។",
+    "goToProfile": "ចូលទៅកាន់ប្រូហ្វាល"
   },
   "bonus": {
     "title": "ប្រាក់រង្វាន់",

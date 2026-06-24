@@ -34,8 +34,8 @@ export const mt: LocaleTree = {
     "actions": "Actions",
     "openMenu": "Open menu",
     "language": "Language",
-    "yes": "Yes",
-    "no": "No"
+    "yes": "Iva",
+    "no": "Le"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -270,12 +270,12 @@ export const mt: LocaleTree = {
     "updateFailed": "Failed to update profile.",
     "language": "Language",
     "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "kycComingSoon": "Il-verifika tal-KYC se tkun disponibbli dalwaqt. Jekk jogħġbok erġa' ċċekkja iktar tard.",
+    "verificationTitleKyc": "Ivverifika l-identità (KYC)",
+    "kycLoading": "Qed itella' l-verifika...",
+    "kycFailed": "Ma nistgħux nibdew il-verifika tal-KYC. Jekk jogħġbok erġa' pprova iktar tard.",
+    "kycHint": "Imla l-passi fil-formola t' hawn fuq. L-istatus tiegħek se jinbidel wara r-review ta' SumSub.",
+    "verificationSendConfirm": "Trid tibgħat kodiċi ta' verifika lil {{destination}}?"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -339,17 +339,17 @@ export const mt: LocaleTree = {
     "noWithdrawals": "No withdrawal requests yet.",
     "submitted": "Withdrawal request #{{id}} submitted ({{status}}). Awaiting admin review.",
     "submitFailed": "Failed to submit withdrawal.",
-    "verificationRequiredTitle": "Verification Required",
-    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
-    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
-    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
-    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
-    "limitAlertTitle": "Withdrawal Limit",
-    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
-    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
-    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
-    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
-    "goToProfile": "Go to Profile"
+    "verificationRequiredTitle": "Verifika meħtieġa",
+    "verificationRequiredMessage": "Trid tivverifika l-email, in-numru tat-telefown u tlesti l-KYC tiegħek qabel ma tkun tista' tirtira.",
+    "verificationRequiredBanner": "L-irtirar jeħtieġ verifika tal-kont. Jekk jogħġbok ivverifika l-email, it-telefown u lesti l-KYC tiegħek fil-profil tiegħek.",
+    "verificationLimitBanner": "L-ammont massimu tal-irtirar tiegħek huwa {{amount}} skont il-livell ta' verifika attwali tiegħek.",
+    "verificationLimitExceeded": "L-ammont jaqbeż il-limitu ta' verifika tiegħek ta' {{amount}}.",
+    "limitAlertTitle": "Limitu tal-irtirar",
+    "limitAlertEmailOnly": "Minħabba li vverifikajt l-email tiegħek biss, tista' tirtira sa {{amount}}. Biex tirtira iktar, jekk jogħġbok imla l-verifika tat-Telefown jew tal-KYC fil-profil tiegħek.",
+    "limitAlertPhoneOnly": "Minħabba li vverifikajt biss il-mowbajl tiegħek, tista' tirtira sa {{amount}}. Biex tiġbed iktar, jekk jogħġbok imla l-verifika tal-Email jew tal-KYC mill-profil tiegħek.",
+    "limitAlertEmailAndPhone": "Minħabba li vverifikajt l-email u t-telefown iżda mhux il-KYC, tista' tirtira sa {{amount}}. Biex tiġbed ammonti illimitati, jekk jogħġbok lesti l-verifika tal-KYC fil-profil tiegħek.",
+    "limitAlertGeneric": "Tista' tirtira sa {{amount}} skont il-livell ta' verifika attwali tiegħek. Lesti l-verifika addizzjonali fil-profil tiegħek biex iżżid il-limitu tiegħek.",
+    "goToProfile": "Iftaħ Profil"
   },
   "bonus": {
     "title": "Bonuses",

@@ -34,8 +34,8 @@ export const kk: LocaleTree = {
     "actions": "Әрекеттер",
     "openMenu": "Мәзірді ашу",
     "language": "Тіл",
-    "yes": "Yes",
-    "no": "No"
+    "yes": "Иә",
+    "no": "Жоқ"
   },
   "nav": {
     "allGames": "БАРЛЫҚ ОЙЫНДАР",
@@ -270,12 +270,12 @@ export const kk: LocaleTree = {
     "updateFailed": "Профильді жаңарту сәтсіз аяқталды.",
     "language": "Тіл",
     "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "kycComingSoon": "KYC тексеру жақын арада қол жетімді болады. Кейінірек қайта тексеріңіз.",
+    "verificationTitleKyc": "Жеке басын растау (KYC)",
+    "kycLoading": "Тексеру жүктелуде...",
+    "kycFailed": "KYC тексеруін іске қосу мүмкін емес. Кейінірек қайталап көріңіз.",
+    "kycHint": "Жоғарыдағы нысандағы қадамдарды аяқтаңыз. Сіздің мәртебеңіз SumSub шолуынан кейін жаңартылады.",
+    "verificationSendConfirm": "Тексеру кодын {{destination}} мекенжайына жіберу керек пе?"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -339,17 +339,17 @@ export const kk: LocaleTree = {
     "noWithdrawals": "Әзірге қайтарып алу сұраулары жоқ.",
     "submitted": "№{{id}} сұрау жіберілді ({{status}}). Әкімшінің шолуын күтуде.",
     "submitFailed": "Шығарып алуды жіберу сәтсіз аяқталды.",
-    "verificationRequiredTitle": "Verification Required",
-    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
-    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
-    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
-    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
-    "limitAlertTitle": "Withdrawal Limit",
-    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
-    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
-    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
-    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
-    "goToProfile": "Go to Profile"
+    "verificationRequiredTitle": "Тексеру қажет",
+    "verificationRequiredMessage": "Шығарып алудан бұрын электрондық поштаңызды, телефон нөміріңізді және KYC-ді толтыруыңыз керек.",
+    "verificationRequiredBanner": "Шығару шотты тексеруді талап етеді. Электрондық поштаңызды, телефоныңызды тексеріп, профиліңізде KYC толтырыңыз.",
+    "verificationLimitBanner": "Сіздің максималды алу сомаңыз ағымдағы тексеру деңгейіңізге байланысты {{amount}} құрайды.",
+    "verificationLimitExceeded": "Сома {{amount}} тексеру шегінен асады.",
+    "limitAlertTitle": "Шығару шегі",
+    "limitAlertEmailOnly": "Электрондық поштаңызды тек тексергендіктен, {{amount}} дейін алуға болады. Толығырақ алу үшін профиліңізде Телефон немесе KYC тексеруін аяқтаңыз.",
+    "limitAlertPhoneOnly": "Сіз тек телефоныңызды растағандықтан, {{amount}} дейін ақша ала аласыз. Тағы ақша алу үшін профиліңізде электрондық пошта немесе KYC растауын толтырыңыз.",
+    "limitAlertEmailAndPhone": "Электрондық пошта мен телефонды тексергендіктен, бірақ KYC емес, {{amount}} дейін алуға болады. Шексіз сомаларды алып тастау үшін профиліңізде KYC тексеруін аяқтаңыз.",
+    "limitAlertGeneric": "Ағымдағы тексеру деңгейіңізге байланысты {{amount}} дейін алуға болады. Шекті ұлғайту үшін профиліңізде қосымша тексеруді аяқтаңыз.",
+    "goToProfile": "Сіздің профильға өтіңіз"
   },
   "bonus": {
     "title": "Бонустар",

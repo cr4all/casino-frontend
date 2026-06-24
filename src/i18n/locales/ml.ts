@@ -34,8 +34,8 @@ export const ml: LocaleTree = {
     "actions": "Actions",
     "openMenu": "Open menu",
     "language": "Language",
-    "yes": "Yes",
-    "no": "No"
+    "yes": "അതെ",
+    "no": "അല്ല"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -269,13 +269,13 @@ export const ml: LocaleTree = {
     "updateSuccess": "Profile updated successfully.",
     "updateFailed": "Failed to update profile.",
     "language": "Language",
-    "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "kyc": "കെ.വൈ.സി.",
+    "kycComingSoon": "KYC പരിശോധന ഉടൻ ലഭ്യമാകും. പിന്നീട് വീണ്ടും പരിശോധിക്കുക.",
+    "verificationTitleKyc": "ഐഡന്റിറ്റി പരിശോധിക്കുക (KYC)",
+    "kycLoading": "സ്ഥിരീകരണം ലോഡുചെയ്യുന്നു...",
+    "kycFailed": "KYC വെരിഫിക്കേഷൻ ആരംഭിക്കാൻ കഴിയുന്നില്ല. ദയവായി പിന്നീട് വീണ്ടും ശ്രമിക്കുക.",
+    "kycHint": "മുകളിലുള്ള ഫോമിലെ സ്റ്റെപ്പുകൾ പൂർത്തിയാക്കുക. SumSub അവലോകനത്തിന് ശേഷം നിങ്ങളുടെ സ്റ്റാറ്റസ് അപ്‌ഡേറ്റ് ചെയ്യും.",
+    "verificationSendConfirm": "സ്ഥിരീകരണ കോഡ് {{destination}} ലേക്ക് അയയ്ക്കണോ?"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -339,17 +339,17 @@ export const ml: LocaleTree = {
     "noWithdrawals": "No withdrawal requests yet.",
     "submitted": "Withdrawal request #{{id}} submitted ({{status}}). Awaiting admin review.",
     "submitFailed": "Failed to submit withdrawal.",
-    "verificationRequiredTitle": "Verification Required",
-    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
-    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
-    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
-    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
-    "limitAlertTitle": "Withdrawal Limit",
-    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
-    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
-    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
-    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
-    "goToProfile": "Go to Profile"
+    "verificationRequiredTitle": "സ്ഥിരീകരണം ആവശ്യമാണ്",
+    "verificationRequiredMessage": "പിൻവലിക്കുന്നതിന് മുമ്പ് നിങ്ങളുടെ ഇമെയിൽ, ഫോൺ നമ്പർ എന്നിവ പരിശോധിക്കുകയും KYC പൂർത്തിയാക്കുകയും വേണം.",
+    "verificationRequiredBanner": "പിൻവലിക്കലുകൾക്ക് അക്കൗണ്ട് വെരിഫിക്കേഷൻ ആവശ്യമാണ്. നിങ്ങളുടെ ഇമെയിൽ, ഫോൺ എന്നിവ പരിശോധിച്ച് നിങ്ങളുടെ പ്രൊഫൈലിൽ KYC പൂർത്തിയാക്കുക.",
+    "verificationLimitBanner": "നിങ്ങളുടെ നിലവിലെ വെരിഫിക്കേഷൻ ലെവലിനെ അടിസ്ഥാനമാക്കി നിങ്ങളുടെ പരമാവധി പിൻവലിക്കൽ തുക {{amount}} ആണ്.",
+    "verificationLimitExceeded": "തുക നിങ്ങളുടെ {{amount}} പരിശോധനാ പരിധി കവിഞ്ഞു.",
+    "limitAlertTitle": "ATM പിൻവലിക്കൽ പരിധി",
+    "limitAlertEmailOnly": "നിങ്ങൾ നിങ്ങളുടെ ഇമെയിൽ മാത്രമേ പരിശോധിച്ചിട്ടുള്ളൂ എന്നതിനാൽ, നിങ്ങൾക്ക് {{amount}} വരെ പിൻവലിക്കാൻ കഴിയും. കൂടുതൽ പിൻവലിക്കാൻ, നിങ്ങളുടെ പ്രൊഫൈലിൽ ഫോൺ അല്ലെങ്കിൽ KYC വെരിഫിക്കേഷൻ പൂർത്തിയാക്കുക.",
+    "limitAlertPhoneOnly": "നിങ്ങൾ നിങ്ങളുടെ ഫോൺ മാത്രമേ പരിശോധിച്ചിട്ടുള്ളൂ എന്നതിനാൽ, നിങ്ങൾക്ക് {{amount}} വരെ പിൻവലിക്കാൻ കഴിയും. കൂടുതൽ പിൻവലിക്കാൻ, നിങ്ങളുടെ പ്രൊഫൈലിൽ ഇമെയിൽ അല്ലെങ്കിൽ KYC വെരിഫിക്കേഷൻ പൂർത്തിയാക്കുക.",
+    "limitAlertEmailAndPhone": "നിങ്ങൾ ഇമെയിലും ഫോണും പരിശോധിച്ചിട്ടുണ്ടെങ്കിലും KYC അല്ലാത്തതിനാൽ, നിങ്ങൾക്ക് {{amount}} വരെ പിൻവലിക്കാൻ കഴിയും. പരിധിയില്ലാത്ത തുക പിൻവലിക്കാൻ, നിങ്ങളുടെ പ്രൊഫൈലിൽ KYC പരിശോധന പൂർത്തിയാക്കുക.",
+    "limitAlertGeneric": "നിങ്ങളുടെ നിലവിലെ സ്ഥിരീകരണ നിലയെ അടിസ്ഥാനമാക്കി നിങ്ങൾക്ക് {{amount}} വരെ പിൻവലിക്കാം. നിങ്ങളുടെ പരിധി വർദ്ധിപ്പിക്കുന്നതിന് നിങ്ങളുടെ പ്രൊഫൈലിൽ അധിക പരിശോധന പൂർത്തിയാക്കുക.",
+    "goToProfile": "പ്രൊഫൈലിലേക്ക് പോകുക"
   },
   "bonus": {
     "title": "Bonuses",

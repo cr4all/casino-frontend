@@ -36,7 +36,6 @@ export function RegisterModal() {
     password_confirmation: '',
     nickname: '',
     phone: '',
-    country: '',
     currency: '',
     affiliate_code: '' as string | undefined,
   });
@@ -68,14 +67,11 @@ export function RegisterModal() {
           return;
         }
         setOptions(data);
-        const defaultCountry = data.countries[0]?.code || 'US';
         setForm((prev) => ({
           ...prev,
-          country: prev.country || defaultCountry,
           currency: prev.currency || data.currencies[0]?.code || '',
           affiliate_code: storedCode ?? prev.affiliate_code,
         }));
-        setPhoneCountryCode(defaultCountry);
       })
       .catch(() => {
         if (!cancelled) {
@@ -90,19 +86,6 @@ export function RegisterModal() {
 
   const update = (field: string, value: string) =>
     setForm((prev) => ({ ...prev, [field]: value }));
-
-  const handleRegistrationCountryChange = (code: string) => {
-    setPhoneCountryCode(code);
-    setForm((prev) => {
-      const { local } = parsePhoneNumber(prev.phone, code);
-      const formatted = formatLocalPhoneNumber(code, local);
-      return {
-        ...prev,
-        country: code,
-        phone: buildFullPhoneNumber(code, formatted),
-      };
-    });
-  };
 
   const handlePhoneCountryChange = (code: string) => {
     setPhoneCountryCode(code);
@@ -123,11 +106,10 @@ export function RegisterModal() {
       password_confirmation: '',
       nickname: '',
       phone: '',
-      country: options?.countries[0]?.code ?? '',
       currency: options?.currencies[0]?.code ?? '',
       affiliate_code: getStoredAffiliateCode() ?? undefined,
     });
-    setPhoneCountryCode(options?.countries[0]?.code ?? 'US');
+    setPhoneCountryCode('US');
     setChallengeError('');
     resetChallenge();
   };
@@ -138,7 +120,7 @@ export function RegisterModal() {
     password_confirmation: form.password_confirmation,
     nickname: form.nickname,
     phone: form.phone,
-    country: form.country,
+    country: phoneCountryCode,
     currency: form.currency,
     ...(form.affiliate_code ? { affiliate_code: form.affiliate_code } : {}),
     ...(turnstileToken ? { turnstileToken } : {}),
@@ -234,49 +216,26 @@ export function RegisterModal() {
           onCountryCodeChange={handlePhoneCountryChange}
           disabled={optionsLoading}
         />
-        <div className="grid grid-cols-2 gap-3">
-          <div>
-            <label htmlFor="reg-country" className="mb-1 block text-xs text-muted">{t('auth.country')}</label>
-            <select
-              id="reg-country"
-              required
-              value={form.country}
-              onChange={(e) => handleRegistrationCountryChange(e.target.value)}
-              disabled={optionsLoading}
-              className={selectClassName}
-            >
-              {optionsLoading ? (
-                <option value="">{t('common.loading')}</option>
-              ) : (
-                options?.countries.map((country) => (
-                  <option key={country.code} value={country.code}>
-                    {country.name}
-                  </option>
-                ))
-              )}
-            </select>
-          </div>
-          <div>
-            <label htmlFor="reg-currency" className="mb-1 block text-xs text-muted">{t('auth.currency')}</label>
-            <select
-              id="reg-currency"
-              required
-              value={form.currency}
-              onChange={(e) => update('currency', e.target.value)}
-              disabled={optionsLoading}
-              className={selectClassName}
-            >
-              {optionsLoading ? (
-                <option value="">{t('common.loading')}</option>
-              ) : (
-                options?.currencies.map((currency) => (
-                  <option key={currency.code} value={currency.code}>
-                    {currency.name} ({currency.code})
-                  </option>
-                ))
-              )}
-            </select>
-          </div>
+        <div>
+          <label htmlFor="reg-currency" className="mb-1 block text-xs text-muted">{t('auth.currency')}</label>
+          <select
+            id="reg-currency"
+            required
+            value={form.currency}
+            onChange={(e) => update('currency', e.target.value)}
+            disabled={optionsLoading}
+            className={selectClassName}
+          >
+            {optionsLoading ? (
+              <option value="">{t('common.loading')}</option>
+            ) : (
+              options?.currencies.map((currency) => (
+                <option key={currency.code} value={currency.code}>
+                  {currency.name} ({currency.code})
+                </option>
+              ))
+            )}
+          </select>
         </div>
         <div>
           <label htmlFor="reg-password" className="mb-1 block text-xs text-muted">{t('auth.password')}</label>

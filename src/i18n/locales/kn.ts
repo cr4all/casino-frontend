@@ -34,8 +34,8 @@ export const kn: LocaleTree = {
     "actions": "Actions",
     "openMenu": "Open menu",
     "language": "Language",
-    "yes": "Yes",
-    "no": "No"
+    "yes": "ಹೌದು",
+    "no": "ಇಲ್ಲ"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -269,13 +269,13 @@ export const kn: LocaleTree = {
     "updateSuccess": "Profile updated successfully.",
     "updateFailed": "Failed to update profile.",
     "language": "Language",
-    "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "kyc": "ಕೆವೈಸಿ",
+    "kycComingSoon": "KYC ಪರಿಶೀಲನೆ ಶೀಘ್ರದಲ್ಲೇ ಲಭ್ಯವಿರುತ್ತದೆ. ದಯವಿಟ್ಟು ನಂತರ ಮತ್ತೆ ಪರಿಶೀಲಿಸಿ.",
+    "verificationTitleKyc": "ಗುರುತನ್ನು ಪರಿಶೀಲಿಸಿ (KYC)",
+    "kycLoading": "ಪರಿಶೀಲನೆಯನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...",
+    "kycFailed": "KYC ಪರಿಶೀಲನೆಯನ್ನು ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ದಯವಿಟ್ಟು ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+    "kycHint": "ಮೇಲಿನ ನಮೂನೆಯಲ್ಲಿನ ಹಂತಗಳನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ. SumSub ಪರಿಶೀಲನೆಯ ನಂತರ ನಿಮ್ಮ ಸ್ಥಿತಿಯನ್ನು ನವೀಕರಿಸಲಾಗುತ್ತದೆ.",
+    "verificationSendConfirm": "{{destination}} ಗೆ ಪರಿಶೀಲನಾ ಕೋಡ್ ಕಳುಹಿಸುವುದೇ?"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -339,17 +339,17 @@ export const kn: LocaleTree = {
     "noWithdrawals": "No withdrawal requests yet.",
     "submitted": "Withdrawal request #{{id}} submitted ({{status}}). Awaiting admin review.",
     "submitFailed": "Failed to submit withdrawal.",
-    "verificationRequiredTitle": "Verification Required",
-    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
-    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
-    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
-    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
-    "limitAlertTitle": "Withdrawal Limit",
-    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
-    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
-    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
-    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
-    "goToProfile": "Go to Profile"
+    "verificationRequiredTitle": "ಪರಿಶೀಲನೆ ಅಗತ್ಯವಿದೆ",
+    "verificationRequiredMessage": "ನೀವು ಹಿಂಪಡೆಯುವ ಮೊದಲು ನಿಮ್ಮ ಇಮೇಲ್, ಫೋನ್ ಸಂಖ್ಯೆ ಮತ್ತು ಸಂಪೂರ್ಣ KYC ಅನ್ನು ಪರಿಶೀಲಿಸಬೇಕು.",
+    "verificationRequiredBanner": "ಹಿಂತೆಗೆದುಕೊಳ್ಳುವಿಕೆಗೆ ಖಾತೆ ಪರಿಶೀಲನೆಯ ಅಗತ್ಯವಿದೆ. ದಯವಿಟ್ಟು ನಿಮ್ಮ ಇಮೇಲ್, ಫೋನ್ ಅನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತು ನಿಮ್ಮ ಪ್ರೊಫೈಲ್‌ನಲ್ಲಿ KYC ಅನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ.",
+    "verificationLimitBanner": "ನಿಮ್ಮ ಪ್ರಸ್ತುತ ಪರಿಶೀಲನಾ ಮಟ್ಟವನ್ನು ಆಧರಿಸಿ ನಿಮ್ಮ ಗರಿಷ್ಠ ವಾಪಸಾತಿ ಮೊತ್ತ {{amount}} ಆಗಿದೆ.",
+    "verificationLimitExceeded": "ಮೊತ್ತವು ನಿಮ್ಮ {{amount}} ಪರಿಶೀಲನೆ ಮಿತಿಯನ್ನು ಮೀರಿದೆ.",
+    "limitAlertTitle": "ಹಿಂತೆಗೆದುಕೊಳ್ಳುವ ಮಿತಿ",
+    "limitAlertEmailOnly": "ನಿಮ್ಮ ಇಮೇಲ್ ಅನ್ನು ಮಾತ್ರ ನೀವು ಪರಿಶೀಲಿಸಿರುವುದರಿಂದ, ನೀವು {{amount}} ವರೆಗೆ ಹಿಂತೆಗೆದುಕೊಳ್ಳಬಹುದು. ಇನ್ನಷ್ಟು ಹಿಂಪಡೆಯಲು, ದಯವಿಟ್ಟು ನಿಮ್ಮ ಪ್ರೊಫೈಲ್‌ನಲ್ಲಿ ಫೋನ್ ಅಥವಾ KYC ಪರಿಶೀಲನೆಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ.",
+    "limitAlertPhoneOnly": "ನಿಮ್ಮ ಫೋನ್ ಅನ್ನು ಮಾತ್ರ ನೀವು ಪರಿಶೀಲಿಸಿರುವುದರಿಂದ, ನೀವು {{amount}} ವರೆಗೆ ಹಿಂಪಡೆಯಬಹುದು. ಇನ್ನಷ್ಟು ಹಿಂಪಡೆಯಲು, ದಯವಿಟ್ಟು ನಿಮ್ಮ ಪ್ರೊಫೈಲ್‌ನಲ್ಲಿ ಇಮೇಲ್ ಅಥವಾ KYC ಪರಿಶೀಲನೆಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ.",
+    "limitAlertEmailAndPhone": "ನೀವು ಇಮೇಲ್ ಮತ್ತು ಫೋನ್ ಅನ್ನು ಪರಿಶೀಲಿಸಿದ್ದೀರಿ ಆದರೆ KYC ಅಲ್ಲದ ಕಾರಣ, ನೀವು {{amount}} ವರೆಗೆ ಹಿಂಪಡೆಯಬಹುದು. ಅನಿಯಮಿತ ಮೊತ್ತವನ್ನು ಹಿಂಪಡೆಯಲು, ದಯವಿಟ್ಟು ನಿಮ್ಮ ಪ್ರೊಫೈಲ್‌ನಲ್ಲಿ KYC ಪರಿಶೀಲನೆಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ.",
+    "limitAlertGeneric": "ನಿಮ್ಮ ಪ್ರಸ್ತುತ ಪರಿಶೀಲನಾ ಮಟ್ಟವನ್ನು ಆಧರಿಸಿ ನೀವು {{amount}} ವರೆಗೆ ಹಿಂಪಡೆಯಬಹುದು. ನಿಮ್ಮ ಮಿತಿಯನ್ನು ಹೆಚ್ಚಿಸಲು ನಿಮ್ಮ ಪ್ರೊಫೈಲ್‌ನಲ್ಲಿ ಹೆಚ್ಚುವರಿ ಪರಿಶೀಲನೆಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ.",
+    "goToProfile": "ಪ್ರೊಫೈಲ್‌ಗೆ ಹೋಗಿ"
   },
   "bonus": {
     "title": "Bonuses",

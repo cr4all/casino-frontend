@@ -34,8 +34,8 @@ export const mn: LocaleTree = {
     "actions": "Үйлдлүүд",
     "openMenu": "Цэс нээх",
     "language": "Хэл",
-    "yes": "Yes",
-    "no": "No"
+    "yes": "Тийм",
+    "no": "Үгүй"
   },
   "nav": {
     "allGames": "БҮХ ТОГЛООМ",
@@ -270,12 +270,12 @@ export const mn: LocaleTree = {
     "updateFailed": "Профайл шинэчлэх амжилтгүй.",
     "language": "Хэл",
     "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "kycComingSoon": "KYC-ийн баталгаажуулалт удахгүй гарна. Дараа дахин шалгана уу.",
+    "verificationTitleKyc": "Таних тэмдэг (KYC) баталгаажуулах",
+    "kycLoading": "Баталгаажуулалтыг ачаалж байна...",
+    "kycFailed": "KYC баталгаажуулалтыг эхлүүлж чадсангүй. Дараа дахин оролдоно уу.",
+    "kycHint": "Дээрх маягтыг бөглөнө үү. SumSub хяналт хийсний дараа таны статус шинэчлэх болно.",
+    "verificationSendConfirm": "Баталгаажуулах кодыг {{destination}} руу илгээх үү?"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -339,17 +339,17 @@ export const mn: LocaleTree = {
     "noWithdrawals": "Одоогоор татах хүсэлт байхгүй.",
     "submitted": "Татах хүсэлт #{{id}} илгээгдлээ ({{status}}). Админы шалгалтыг хүлээж байна.",
     "submitFailed": "Татах хүсэлт илгээх амжилтгүй.",
-    "verificationRequiredTitle": "Verification Required",
-    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
-    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
-    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
-    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
-    "limitAlertTitle": "Withdrawal Limit",
-    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
-    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
-    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
-    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
-    "goToProfile": "Go to Profile"
+    "verificationRequiredTitle": "Баталгаажуулах Шаардлагатай",
+    "verificationRequiredMessage": "Та авахаасаа өмнө имэйл, утасны дугаараа баталгаажуулах, KYC-г бөглөх ёстой.",
+    "verificationRequiredBanner": "Зарлага нь дансны баталгаажуулалтыг шаарддаг. KYC-ийг имэйл, утсаа, мөн бүрэн гүйцэд баталгаажуулна уу.",
+    "verificationLimitBanner": "Таны хүчингүй болгох дээд хэмжээ нь таны одоогийн баталгаажуулалтын түвшинд суурилагдсан {{amount}}} байна.",
+    "verificationLimitExceeded": "Таны баталгаажуулах хязгаараас давсан дүн {{amount}}.",
+    "limitAlertTitle": "Зарлагын Хязгаар",
+    "limitAlertEmailOnly": "Та имэйлээ зөвхөн баталгаажуулсан тул та {amount}} хүртэл татан авч болно. Илүү ихийг буцаахын тулд Утас эсвэл KYC баталгаажуулалтыг профайлдаа бөглөнө үү.",
+    "limitAlertPhoneOnly": "Та утсаа зөвхөн баталгаажуулсан тул та {amount}} хүртэл татан авч болно. Илүү ихийг буцаахын тулд имэйл эсвэл KYC баталгаажуулалтаа дуусгана уу.",
+    "limitAlertEmailAndPhone": "Та имэйл, утасны дугаарыг баталгаажуулсан боловч KYC биш учраас та {amount}} хүртэл татан авч болно. Хязгааргүй дүнг авахын тулд KYC баталгаажуулалтаа профайлдаа бөглөнө үү.",
+    "limitAlertGeneric": "Та одоогийн баталгаажуулалтын түвшингээ үндэслэн {{amount}} хүртэл татан авч болно. Профайлдаа нэмэлт баталгаажуулалт хийж, хязгаараа нэмэгдүүлнэ.",
+    "goToProfile": "Профайл руу орох"
   },
   "bonus": {
     "title": "Bonus-ууд",

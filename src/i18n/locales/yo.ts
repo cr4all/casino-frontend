@@ -274,8 +274,8 @@ export const yo: LocaleTree = {
     "verificationTitleKyc": "Verify identity (KYC)",
     "kycLoading": "Loading verification...",
     "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "kycHint": "Pari àwọn ìgbésẹ̀ náà nínú fọ́mù tí ó wà lókè yìí. Ipò rẹ yóò ṣe àtúnṣe lẹ́yìn àyẹ̀wò SumSub.",
+    "verificationSendConfirm": "Fi kọ́ọ̀dì ìdánimọ̀ ránṣẹ́ sí {{destination}}?"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -339,17 +339,17 @@ export const yo: LocaleTree = {
     "noWithdrawals": "No withdrawal requests yet.",
     "submitted": "Withdrawal request #{{id}} submitted ({{status}}). Awaiting admin review.",
     "submitFailed": "Failed to submit withdrawal.",
-    "verificationRequiredTitle": "Verification Required",
-    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
-    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
-    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
-    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
-    "limitAlertTitle": "Withdrawal Limit",
-    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
-    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
-    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
-    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
-    "goToProfile": "Go to Profile"
+    "verificationRequiredTitle": "A nílò ìjẹ́rìísí",
+    "verificationRequiredMessage": "O gbọ́dọ̀ fìdí imeeli rẹ múlẹ̀, nọ́ńbà ẹ̀rọ ìbánisọ̀rọ̀ rẹ, kí o sì parí KYC kí o tó lè yọ̀ǹda ara rẹ.",
+    "verificationRequiredBanner": "Yiyọ kuro nilo ijẹrisi akọọlẹ. Jọ̀wọ́ fìdí imeeli rẹ múlẹ̀, ẹ̀rọ ìbánisọ̀rọ̀, kí o sì parí KYC nínú fáìlì rẹ.",
+    "verificationLimitBanner": "Iye ìfàsílẹ̀ tí ó pọ̀ jù rẹ ni {{iye}} tí ó dá lórí ìpele ìdánimọ̀ rẹ tí ó wà nísinsìnyí.",
+    "verificationLimitExceeded": "Iye náà ju iye àyẹ̀wò rẹ lọ {{iye}}.",
+    "limitAlertTitle": "Ìdènà ìfẹ̀yìntì",
+    "limitAlertEmailOnly": "Nítorí pé o ṣẹ̀ṣẹ̀ fìdí ẹ̀rọ-ìbánisọ̀rọ̀ rẹ múlẹ̀, o lè yọ̀ǹda ara rẹ sí {{iye}}. Láti yọ̀ǹda púpọ̀ sí i, jọ̀wọ́ parí Ìdánilójú Ẹ̀rọ-ìbánisọ̀rọ̀ tàbí KYC nínú àkójọpọ̀ rẹ.",
+    "limitAlertPhoneOnly": "Nítorí pé o ṣẹ̀ṣẹ̀ fìdí ẹ̀rọ ìbánisọ̀rọ̀ rẹ múlẹ̀, o lè yọ̀ǹda ara rẹ sí {{iye}}. Láti yọ̀ǹda púpọ̀ sí i, jọ̀wọ́ parí Imeeli tàbí ìjẹ́rìí KYC nínú àkójọpọ̀ rẹ.",
+    "limitAlertEmailAndPhone": "Nítorí pé o ti jẹ́rìí nípa ẹ̀rọ-ìbánisọ̀rọ̀ àti ẹ̀rọ-ìbánisọ̀rọ̀ ṣùgbọ́n kì í ṣe KYC, o lè yọ̀ǹda ara rẹ sí {{iye}}. Láti yọ iye àìlópin kúrò, jọ̀wọ́ parí ìjẹ́rìí KYC nínú àkójọpọ̀ rẹ.",
+    "limitAlertGeneric": "O lè yọ̀ǹda ara rẹ sí {{iye}} lórí ìpìlẹ̀ ìpele ìdánimọ̀ rẹ. Pari àyẹ̀wò àfikún nínú àkójọpọ̀ rẹ láti fi kún ààlà rẹ.",
+    "goToProfile": "Lọ si Profaili"
   },
   "bonus": {
     "title": "Bonuses",

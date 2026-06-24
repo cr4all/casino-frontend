@@ -347,9 +347,9 @@ export const tg: LocaleTree = {
     "limitAlertTitle": "Withdrawal Limit",
     "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
     "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
-    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
-    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
-    "goToProfile": "Go to Profile"
+    "limitAlertEmailAndPhone": "Азбаски шумо почтаи электронӣ ва телефонро тасдиқ кардаед, аммо на KYC, шумо метавонед то {{amount}} бозпас гиред. Барои бозпас гирифтани маблағи номаҳдуд, лутфан тафтиши KYC-ро дар профили худ анҷом диҳед.",
+    "limitAlertGeneric": "Шумо метавонед то {{amount}} бар асоси сатҳи санҷиши кунунии худ бозпас гиред. Барои зиёд кардани маҳдудияти худ дар профили худ санҷиши иловагиро анҷом диҳед.",
+    "goToProfile": "Ба профил гузаред"
   },
   "bonus": {
     "title": "Бонусҳо",

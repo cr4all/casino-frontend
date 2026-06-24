@@ -34,8 +34,8 @@ export const nl: LocaleTree = {
     "actions": "Acties",
     "openMenu": "Menu openen",
     "language": "Taal",
-    "yes": "Yes",
-    "no": "No"
+    "yes": "Ja",
+    "no": "Nee"
   },
   "nav": {
     "allGames": "ALLE SPELLEN",
@@ -270,12 +270,12 @@ export const nl: LocaleTree = {
     "updateFailed": "Profiel bijwerken mislukt.",
     "language": "Taal",
     "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "kycComingSoon": "KYC-verificatie is binnenkort beschikbaar. Probeer het later nog eens.",
+    "verificationTitleKyc": "Identiteit verifiëren (KYC)",
+    "kycLoading": "Verificatie laden...",
+    "kycFailed": "Kan KYC-verificatie niet starten. Probeer het later opnieuw.",
+    "kycHint": "Voltooi de stappen in het bovenstaande formulier. Je status wordt bijgewerkt na de SumSub-beoordeling.",
+    "verificationSendConfirm": "Verificatiecode verzenden naar {{destination}}?"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -339,17 +339,17 @@ export const nl: LocaleTree = {
     "noWithdrawals": "Nog geen opnameverzoeken.",
     "submitted": "Opnameverzoek #{{id}} ingediend ({{status}}). Wacht op beoordeling door beheerder.",
     "submitFailed": "Opname indienen mislukt.",
-    "verificationRequiredTitle": "Verification Required",
-    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
-    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
-    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
-    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
-    "limitAlertTitle": "Withdrawal Limit",
-    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
-    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
-    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
-    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
-    "goToProfile": "Go to Profile"
+    "verificationRequiredTitle": "Verificatiecode Vereist",
+    "verificationRequiredMessage": "U moet uw e-mailadres, telefoonnummer en volledige KYC verifiëren voordat u kunt intrekken.",
+    "verificationRequiredBanner": "Voor opnames is accountverificatie vereist. Verifieer je e-mailadres, telefoonnummer en voltooi KYC in je profiel.",
+    "verificationLimitBanner": "Je maximale opnamebedrag is {{amount}} op basis van je huidige verificatieniveau.",
+    "verificationLimitExceeded": "Het bedrag overschrijdt je verificatielimiet van {{amount}}.",
+    "limitAlertTitle": "Opnamelimiet",
+    "limitAlertEmailOnly": "Omdat je alleen je e-mailadres hebt geverifieerd, kun je maximaal {{amount}} opnemen. Voltooi de telefoon- of KYC-verificatie in je profiel om meer op te nemen.",
+    "limitAlertPhoneOnly": "Omdat je alleen je telefoon hebt geverifieerd, kun je tot {{amount}} opnemen. Voltooi de e-mail- of KYC-verificatie in je profiel om meer op te nemen.",
+    "limitAlertEmailAndPhone": "Omdat je e-mail en telefoon hebt geverifieerd, maar niet KYC, kun je maximaal {{amount}} opnemen. Voltooi de KYC-verificatie in je profiel om onbeperkte bedragen op te nemen.",
+    "limitAlertGeneric": "Je kunt tot {{amount}} opnemen op basis van je huidige verificatieniveau. Voltooi extra verificatie in je profiel om je limiet te verhogen.",
+    "goToProfile": "Naar Profiel"
   },
   "bonus": {
     "title": "Bonussen",

@@ -34,8 +34,8 @@ export const is: LocaleTree = {
     "actions": "Actions",
     "openMenu": "Open menu",
     "language": "Language",
-    "yes": "Yes",
-    "no": "No"
+    "yes": "Já",
+    "no": "Nei"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -270,12 +270,12 @@ export const is: LocaleTree = {
     "updateFailed": "Ekki tókst að uppfæra notandalýsingu.",
     "language": "Language",
     "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "kycComingSoon": "Staðfesting KYC verður tiltæk fljótlega. Líttu aftur við síðar.",
+    "verificationTitleKyc": "Staðfesta auðkenni (KYC)",
+    "kycLoading": "Hleð inn staðfestingu...",
+    "kycFailed": "Ekki tókst að hefja staðfestingu á KYC. Reyndu aftur síðar.",
+    "kycHint": "Ljúktu skrefunum á eyðublaðinu hér að ofan. Staða þín verður uppfærð eftir yfirferð á SumSub.",
+    "verificationSendConfirm": "Senda staðfestingarkóða á {{destination}}?"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -339,17 +339,17 @@ export const is: LocaleTree = {
     "noWithdrawals": "Engar úttektarbeiðnir enn.",
     "submitted": "Úttektarbeiðni #{{id}} send ({{status}}). Beðið eftir umsögn stjórnanda.",
     "submitFailed": "Ekki tókst að senda inn úttekt.",
-    "verificationRequiredTitle": "Verification Required",
-    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
-    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
-    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
-    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
-    "limitAlertTitle": "Withdrawal Limit",
-    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
-    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
-    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
-    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
-    "goToProfile": "Go to Profile"
+    "verificationRequiredTitle": "Sannprófun er nauðsynleg",
+    "verificationRequiredMessage": "Þú verður að staðfesta netfang þitt, símanúmer og ljúka við KYC áður en þú getur tekið út.",
+    "verificationRequiredBanner": "Úttektir krefjast staðfestingar á aðgangi. Vinsamlegast staðfestu netfang þitt, síma og ljúktu við KYC í notandalýsingunni þinni.",
+    "verificationLimitBanner": "Hámarksfjárhæð úttektar hjá þér er {{amount}} miðað við núverandi vottunarstig.",
+    "verificationLimitExceeded": "Upphæðin fer yfir sannprófunarmörk þín sem eru {{amount}}.",
+    "limitAlertTitle": "Úttektarmörk",
+    "limitAlertEmailOnly": "Þú getur tekið út allt að {{amount}} vegna þess að þú hefur aðeins staðfest netfangið þitt. Vinsamlegast ljúktu við staðfestingu á síma eða KYC í notandalýsingunni þinni til að taka meira út.",
+    "limitAlertPhoneOnly": "Þar sem þú hefur aðeins staðfest símann þinn getur þú tekið út allt að {{amount}}. Vinsamlegast ljúktu við staðfestingartölvupóst eða KYC í notandalýsingunni þinni til að taka meira út.",
+    "limitAlertEmailAndPhone": "Þar sem þú ert með staðfest netfang og síma en ekki KYC getur þú tekið út allt að {{amount}}. Vinsamlegast ljúktu við staðfestingu KYC í notandalýsingunni þinni til að taka út ótakmarkaðar fjárhæðir.",
+    "limitAlertGeneric": "Þú getur tekið út allt að {{amount}} miðað við núverandi vottunarstig þitt. Ljúktu viðbótarstaðfestingu í notandalýsingunni þinni til að auka hámarkið hjá þér.",
+    "goToProfile": "Opna notandalýsingu"
   },
   "bonus": {
     "title": "Bonuses",
