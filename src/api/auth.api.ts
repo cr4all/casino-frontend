@@ -11,7 +11,6 @@ export interface RegistrationOption {
 
 export interface RegisterOptions {
   currencies: RegistrationOption[];
-  countries: RegistrationOption[];
 }
 
 export interface SessionPolicy {
