@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import QRCode from 'react-qr-code';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -15,14 +15,24 @@ import { useWalletStore } from '@/stores/walletStore';
 import { Button } from '@/components/common/Button';
 import { StatusBadge } from '@/components/common/StatusBadge';
 import { CryptoAmountInput } from '@/components/deposit/CryptoAmountInput';
+import { DepositStepIndicator } from '@/components/deposit/DepositStepIndicator';
+import { PaymentKindGrid } from '@/components/deposit/PaymentKindGrid';
 import { PaymentCountrySelect } from '@/components/payment/PaymentCountrySelect';
 import { PaymentOptionGrid, PaymentOptionMinMax, PaymentOptionSummary } from '@/components/payment/PaymentOptionGrid';
 import { getApiErrorMessage, isRiskChallengeError } from '@/utils/apiError';
 import { RiskChallengePanel } from '@/components/risk/RiskChallengePanel';
 import { useRiskChallenge } from '@/hooks/useRiskChallenge';
 import { formatCryptoCurrencyLabel } from '@/utils/cryptoIcon';
+import {
+  filterCryptoOptions,
+  groupOptionsByKind,
+  sortCryptoOptionsPopularFirst,
+  type PaymentKind,
+} from '@/utils/depositOptions';
 import { formatBalance } from '@/utils/formatBalance';
 import { formatDepositCurrencyAmount, formatDepositReceivedAmount } from '@/utils/formatDepositDisplay';
+
+type DepositStep = 1 | 2 | 3;
 
 function CopyButton({ value }: { value: string }) {
   const [copied, setCopied] = useState(false);
@@ -50,13 +60,16 @@ export function DepositPage() {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const fetchBalance = useWalletStore((s) => s.fetchBalance);
   const [countries, setCountries] = useState<PaymentCountry[]>([]);
+  const [defaultCountry, setDefaultCountry] = useState('');
   const [country, setCountry] = useState('');
   const [options, setOptions] = useState<PaymentOption[]>([]);
   const [optionsLoading, setOptionsLoading] = useState(false);
   const [deposits, setDeposits] = useState<DepositItem[]>([]);
-  const [step, setStep] = useState<1 | 2>(1);
+  const [step, setStep] = useState<DepositStep>(1);
+  const [selectedKind, setSelectedKind] = useState<PaymentKind | null>(null);
   const [confirmedOption, setConfirmedOption] = useState<PaymentOption | null>(null);
   const [optionKey, setOptionKey] = useState('');
+  const [cryptoSearch, setCryptoSearch] = useState('');
   const [amount, setAmount] = useState('');
   const [quote, setQuote] = useState<DepositQuote | null>(null);
   const [quoteLoading, setQuoteLoading] = useState(false);
@@ -75,26 +88,73 @@ export function DepositPage() {
     resetWidget,
   } = useRiskChallenge();
 
+  const effectiveCountry = selectedKind === 'local' ? country : defaultCountry;
+
+  const optionsCountry = step === 1 || selectedKind !== 'local' ? defaultCountry : country;
+
+  const groupedOptions = useMemo(() => groupOptionsByKind(options), [options]);
+
+  const step2Options = useMemo(() => {
+    if (!selectedKind || selectedKind === 'manual') return [];
+
+    const kindOptions = groupedOptions[selectedKind];
+    if (selectedKind === 'crypto') {
+      const filtered = filterCryptoOptions(kindOptions, cryptoSearch);
+      return sortCryptoOptionsPopularFirst(filtered);
+    }
+    return kindOptions;
+  }, [groupedOptions, selectedKind, cryptoSearch]);
+
   const loadDeposits = () =>
     paymentApi.getDeposits().then((data) => setDeposits(data.items));
 
   const resetToStep1 = () => {
     setStep(1);
+    setSelectedKind(null);
     setConfirmedOption(null);
     setOptionKey('');
+    setCryptoSearch('');
     setAmount('');
     setQuote(null);
     setQuoteError(false);
     setError(null);
     setChallengeError(null);
+    setCountry(defaultCountry);
     resetChallenge();
   };
 
-  const handleCountryChange = (code: string) => {
-    setCountry(code);
-    resetToStep1();
+  const handleKindSelect = (kind: PaymentKind) => {
+    setError(null);
     setMessage(null);
-    setLastDeposit(null);
+
+    if (kind === 'manual') {
+      const manualOption = groupedOptions.manual[0];
+      if (!manualOption) return;
+      setSelectedKind('manual');
+      setConfirmedOption(manualOption);
+      setOptionKey(manualOption.key);
+      setAmount('');
+      setQuote(null);
+      setQuoteError(false);
+      setStep(3);
+      return;
+    }
+
+    setSelectedKind(kind);
+    setConfirmedOption(null);
+    setOptionKey('');
+    setCryptoSearch('');
+    if (kind === 'local') {
+      setCountry(defaultCountry);
+    }
+    setStep(2);
+  };
+
+  const handleLocalCountryChange = (code: string) => {
+    setCountry(code);
+    setConfirmedOption(null);
+    setOptionKey('');
+    setError(null);
   };
 
   const handleOptionSelect = (option: PaymentOption) => {
@@ -105,15 +165,33 @@ export function DepositPage() {
     setQuoteError(false);
     setError(null);
     setMessage(null);
-    setStep(2);
+    setStep(3);
   };
 
-  const handleBackToMethods = () => {
+  const handleBackFromStep2 = () => {
     setStep(1);
+    setSelectedKind(null);
+    setConfirmedOption(null);
+    setOptionKey('');
+    setCryptoSearch('');
+    setCountry(defaultCountry);
+    setError(null);
+  };
+
+  const handleBackFromStep3 = () => {
     setAmount('');
     setQuote(null);
     setQuoteError(false);
     setError(null);
+
+    if (selectedKind === 'manual') {
+      resetToStep1();
+      return;
+    }
+
+    setConfirmedOption(null);
+    setOptionKey('');
+    setStep(2);
   };
 
   useEffect(() => {
@@ -122,26 +200,27 @@ export function DepositPage() {
       .then(([data]) => {
         setCountries(data.countries);
         const initial = data.default_country ?? data.countries[0]?.code ?? '';
+        setDefaultCountry(initial);
         setCountry(initial);
       })
       .finally(() => setLoading(false));
   }, [isAuthenticated]);
 
   useEffect(() => {
-    if (!country) {
+    if (!optionsCountry) {
       setOptions([]);
       return;
     }
 
     setOptionsLoading(true);
-    paymentApi.getDepositOptions(country)
+    paymentApi.getDepositOptions(optionsCountry)
       .then((data) => setOptions(data.items))
       .catch(() => setOptions([]))
       .finally(() => setOptionsLoading(false));
-  }, [country]);
+  }, [optionsCountry]);
 
   useEffect(() => {
-    if (step !== 2 || !optionKey || !amount || Number(amount) <= 0 || !country) {
+    if (step !== 3 || !optionKey || !amount || Number(amount) <= 0 || !effectiveCountry) {
       setQuote(null);
       setQuoteError(false);
       return;
@@ -152,7 +231,7 @@ export function DepositPage() {
 
     const timer = setTimeout(() => {
       paymentApi
-        .getDepositQuote(optionKey, amount, country)
+        .getDepositQuote(optionKey, amount, effectiveCountry)
         .then(setQuote)
         .catch(() => {
           setQuote(null);
@@ -162,15 +241,15 @@ export function DepositPage() {
     }, 400);
 
     return () => clearTimeout(timer);
-  }, [step, optionKey, amount, country]);
+  }, [step, optionKey, amount, effectiveCountry]);
 
   if (!isAuthenticated) {
     return <Navigate to="/" replace />;
   }
 
   const performDeposit = async (turnstileToken?: string) => {
-    if (!optionKey || !amount || !country) return;
-    const result = await paymentApi.createDeposit(optionKey, amount, country, turnstileToken);
+    if (!optionKey || !amount || !effectiveCountry) return;
+    const result = await paymentApi.createDeposit(optionKey, amount, effectiveCountry, turnstileToken);
     setLastDeposit(result);
     setMessage(t('deposit.submitted', { id: result.deposit_id, status: result.status }));
     setAmount('');
@@ -200,7 +279,7 @@ export function DepositPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!optionKey || !amount || !country) return;
+    if (!optionKey || !amount || !effectiveCountry) return;
     setSubmitting(true);
     setError(null);
     setChallengeError(null);
@@ -235,6 +314,18 @@ export function DepositPage() {
     && lastDeposit?.amount != null
     && lastDeposit.amount !== '';
 
+  const kindCounts: Record<PaymentKind, number> = {
+    crypto: groupedOptions.crypto.length,
+    local: groupedOptions.local.length,
+    manual: groupedOptions.manual.length,
+  };
+
+  const step2Title = selectedKind === 'crypto'
+    ? t('deposit.selectCrypto')
+    : selectedKind === 'local'
+      ? t('deposit.selectBank')
+      : '';
+
   return (
     <div className="mx-auto max-w-7xl py-4 sm:py-8">
       {loading ? (
@@ -247,19 +338,55 @@ export function DepositPage() {
           <div className="mx-auto w-full max-w-2xl min-w-0 space-y-6">
           <h1 className="text-center text-2xl font-bold text-white">{t('deposit.title')}</h1>
           <div className="space-y-4">
-          {step === 1 ? (
-            <div className="rounded-xl border border-white/[0.08] bg-card p-4 space-y-4 sm:p-6">
-              <PaymentCountrySelect
-                countries={countries}
-                value={country}
-                onChange={handleCountryChange}
-                label={t('deposit.selectCountry')}
-              />
+          <div className="rounded-xl border border-white/[0.08] bg-card p-4 space-y-4 sm:p-6">
+            <DepositStepIndicator step={step} selectedKind={selectedKind} />
 
-              <div>
-                <p className="mb-2 text-xs text-muted">{t('deposit.selectPaymentOption')}</p>
+            {step === 1 && (
+              <div className="space-y-4">
+                <p className="text-xs text-muted">{t('deposit.selectPaymentKind')}</p>
+                <PaymentKindGrid
+                  counts={kindCounts}
+                  onSelect={handleKindSelect}
+                  loading={optionsLoading}
+                  localEnabled={countries.length > 0}
+                />
+              </div>
+            )}
+
+            {step === 2 && selectedKind && selectedKind !== 'manual' && (
+              <div className="space-y-4">
+                <Button
+                  type="button"
+                  variant="secondary"
+                  onClick={handleBackFromStep2}
+                  className="w-fit px-3 py-1.5 text-xs"
+                >
+                  {t('deposit.backToKinds')}
+                </Button>
+
+                <p className="text-xs text-muted">{step2Title}</p>
+
+                {selectedKind === 'local' && (
+                  <PaymentCountrySelect
+                    countries={countries}
+                    value={country}
+                    onChange={handleLocalCountryChange}
+                    label={t('deposit.selectLocalCountry')}
+                  />
+                )}
+
+                {selectedKind === 'crypto' && (
+                  <input
+                    type="text"
+                    value={cryptoSearch}
+                    onChange={(e) => setCryptoSearch(e.target.value)}
+                    placeholder={t('deposit.searchCurrency')}
+                    className="w-full rounded-lg border border-white/10 bg-background/50 px-3 py-2 text-sm text-white placeholder:text-muted focus:border-accent-gold/50 focus:outline-none"
+                  />
+                )}
+
                 <PaymentOptionGrid
-                  options={options}
+                  options={step2Options}
                   value={optionKey}
                   onChange={setOptionKey}
                   onSelect={handleOptionSelect}
@@ -269,79 +396,81 @@ export function DepositPage() {
                   emptyLabel={t('deposit.noOptionsForCountry')}
                 />
               </div>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="rounded-xl border border-white/[0.08] bg-card p-4 space-y-4 sm:p-6">
-              <Button
-                type="button"
-                variant="secondary"
-                onClick={handleBackToMethods}
-                className="w-fit px-3 py-1.5 text-xs"
-              >
-                {t('deposit.backToMethods')}
-              </Button>
+            )}
 
-              {confirmedOption && <PaymentOptionSummary option={confirmedOption} />}
+            {step === 3 && (
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <Button
+                  type="button"
+                  variant="secondary"
+                  onClick={handleBackFromStep3}
+                  className="w-fit px-3 py-1.5 text-xs"
+                >
+                  {selectedKind === 'manual' ? t('deposit.backToKinds') : t('deposit.backToOptions')}
+                </Button>
 
-              <CryptoAmountInput
-                value={amount}
-                onChange={setAmount}
-                currencyLabel={confirmedOption?.payment_currency ?? ''}
-                amountLabel={t('deposit.amount')}
-                clearLabel={t('common.close')}
-              />
+                {confirmedOption && <PaymentOptionSummary option={confirmedOption} />}
 
-              {confirmedOption && (
-                <PaymentOptionMinMax option={confirmedOption} />
-              )}
-
-              {amount && Number(amount) > 0 && (
-                <div className="rounded-lg border border-white/10 bg-background/50 p-3 text-sm">
-                  {quoteLoading && (
-                    <p className="text-muted">{t('deposit.loadingQuote')}</p>
-                  )}
-                  {!quoteLoading && quote && (
-                    <>
-                      <p className="font-medium text-accent-gold">
-                        {t('deposit.estimatedBalance', {
-                          amount: formatBalance(quote.credited_amount),
-                          currency: quote.wallet_currency,
-                        })}
-                      </p>
-                      {quote.rate_display && (
-                        <p className="mt-1 text-xs text-muted">
-                          {t('deposit.exchangeRate', { rate: quote.rate_display })}
-                        </p>
-                      )}
-                      <p className="mt-2 text-xs text-muted">{t('deposit.estimateDisclaimer')}</p>
-                    </>
-                  )}
-                  {!quoteLoading && quoteError && (
-                    <p className="text-xs text-red-400">{t('deposit.quoteFailed')}</p>
-                  )}
-                </div>
-              )}
-
-              {error && <p className="text-sm text-red-400">{error}</p>}
-              {challengeRequired && (
-                <RiskChallengePanel
-                  onSuccess={handleTurnstileSuccess}
-                  onError={() => setChallengeError(t('risk.challengeFailed'))}
-                  onRegisterReset={registerWidgetReset}
-                  error={challengeError ?? undefined}
+                <CryptoAmountInput
+                  value={amount}
+                  onChange={setAmount}
+                  currencyLabel={confirmedOption?.payment_currency ?? ''}
+                  amountLabel={t('deposit.amount')}
+                  clearLabel={t('common.close')}
                 />
-              )}
-              {message && <p className="text-sm text-green-400">{message}</p>}
 
-              <Button
-                type="submit"
-                variant="gold"
-                disabled={submitting || challengeRequired || !confirmedOption || !amount}
-              >
-                {submitting ? t('common.submitting') : t('deposit.requestDeposit')}
-              </Button>
-            </form>
-          )}
+                {confirmedOption && (
+                  <PaymentOptionMinMax option={confirmedOption} />
+                )}
+
+                {amount && Number(amount) > 0 && (
+                  <div className="rounded-lg border border-white/10 bg-background/50 p-3 text-sm">
+                    {quoteLoading && (
+                      <p className="text-muted">{t('deposit.loadingQuote')}</p>
+                    )}
+                    {!quoteLoading && quote && (
+                      <>
+                        <p className="font-medium text-accent-gold">
+                          {t('deposit.estimatedBalance', {
+                            amount: formatBalance(quote.credited_amount),
+                            currency: quote.wallet_currency,
+                          })}
+                        </p>
+                        {quote.rate_display && (
+                          <p className="mt-1 text-xs text-muted">
+                            {t('deposit.exchangeRate', { rate: quote.rate_display })}
+                          </p>
+                        )}
+                        <p className="mt-2 text-xs text-muted">{t('deposit.estimateDisclaimer')}</p>
+                      </>
+                    )}
+                    {!quoteLoading && quoteError && (
+                      <p className="text-xs text-red-400">{t('deposit.quoteFailed')}</p>
+                    )}
+                  </div>
+                )}
+
+                {error && <p className="text-sm text-red-400">{error}</p>}
+                {challengeRequired && (
+                  <RiskChallengePanel
+                    onSuccess={handleTurnstileSuccess}
+                    onError={() => setChallengeError(t('risk.challengeFailed'))}
+                    onRegisterReset={registerWidgetReset}
+                    error={challengeError ?? undefined}
+                  />
+                )}
+                {message && <p className="text-sm text-green-400">{message}</p>}
+
+                <Button
+                  type="submit"
+                  variant="gold"
+                  disabled={submitting || challengeRequired || !confirmedOption || !amount}
+                >
+                  {submitting ? t('common.submitting') : t('deposit.requestDeposit')}
+                </Button>
+              </form>
+            )}
+          </div>
 
           {lastDeposit?.payment_info && Object.keys(lastDeposit.payment_info).length > 0 && (
             <div className="mt-4 rounded-lg border border-accent-gold/30 bg-accent-gold/5 p-4">
