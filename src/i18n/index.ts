@@ -367,7 +367,9 @@ for (const code of LANGUAGE_CODES) {
   if (!tree) continue;
 
   const phraseMap = phraseMapsByLanguage[code];
-  const mappedAffiliate = phraseMap ? applyPhraseMapToValues(en.affiliate, phraseMap) : {};
+  const mappedAffiliate: Partial<typeof en.affiliate> = phraseMap
+    ? applyPhraseMapToValues(en.affiliate, phraseMap)
+    : {};
   const parentCode = LOCALE_VARIANT_PARENT[code];
   const parentAffiliate = parentCode ? translations[parentCode]?.affiliate : undefined;
   const mergedAffiliate: Record<string, string> = {};
