@@ -34,8 +34,8 @@ export const zu: LocaleTree = {
     "actions": "Isenzo",
     "openMenu": "Vula imenyu",
     "language": "Ulimi",
-    "yes": "Yes",
-    "no": "No"
+    "yes": "Yebo",
+    "no": "Cha"
   },
   "nav": {
     "allGames": "YONKE IMIDLALO",
@@ -269,13 +269,13 @@ export const zu: LocaleTree = {
     "updateSuccess": "Iphrofayili ibuyekezwe ngempumelelo.",
     "updateFailed": "Yehlulekile ukubuyekeza iphrofayela.",
     "language": "Ulimi",
-    "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "kyc": "I-KYC",
+    "kycComingSoon": "Ukuqinisekiswa kwe-KYC kuzotholakala maduzane. Sicela uphinde uhlole kamuva.",
+    "verificationTitleKyc": "Qinisekisa umazisi (KYC)",
+    "kycLoading": "Ilayisha ukuqinisekiswa...",
+    "kycFailed": "Ayikwazi ukuqala ukuqinisekiswa kwe-KYC. Sicela uphinde uzame kamuva.",
+    "kycHint": "Gcwalisa izinyathelo kwifomu elingenhla. Isimo sakho sizobuyekezwa ngemva kokubuyekezwa kwe-SumSub.",
+    "verificationSendConfirm": "Thumela ikhodi yokuqinisekisa ku- {{destination}}?"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -339,17 +339,17 @@ export const zu: LocaleTree = {
     "noWithdrawals": "No withdrawal requests yet.",
     "submitted": "Isicelo sokuhoxa #{{id}} sithunyelwe ({{status}}). Kulinde ukubuyekezwa kwabaqondisi.",
     "submitFailed": "Yehlulekile ukuthumela ukuhoxisa.",
-    "verificationRequiredTitle": "Verification Required",
-    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
-    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
-    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
-    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
-    "limitAlertTitle": "Withdrawal Limit",
-    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
-    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
-    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
-    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
-    "goToProfile": "Go to Profile"
+    "verificationRequiredTitle": "Kudingeka Ukuqinisekisa",
+    "verificationRequiredMessage": "Kufanele uqinisekise i-imeyili yakho, inombolo yocingo, futhi uqedele i-KYC ngaphambi kokuthi uhoxe.",
+    "verificationRequiredBanner": "Ukuhoxisa kudinga ukuqinisekiswa kwe-akhawunti. Sicela uqinisekise i-imeyili yakho, ucingo, futhi uqedele i-KYC kuphrofayili yakho.",
+    "verificationLimitBanner": "Inani lakho eliwumkhawulo lokuhoxisa ngu- {{amount}} ngokusekelwe ezingeni lakho lokuqinisekisa lamanje.",
+    "verificationLimitExceeded": "Inani lidlula umkhawulo wakho wokuqinisekisa we- {{amount}}.",
+    "limitAlertTitle": "Umkhawulo Wokuhoxa",
+    "limitAlertEmailOnly": "Ngenxa yokuthi uqinisekise i-imeyili yakho kuphela, ungahoxa kuze kufike ku- {{amount}}. Ukuze ukhiphe imali eyengeziwe, sicela uqedele ukuqinisekiswa kwefoni noma kwe-KYC kuphrofayili yakho.",
+    "limitAlertPhoneOnly": "Ngenxa yokuthi uqinisekise ucingo lwakho kuphela, ungahoxa kuze kufike ku- {{amount}}. Ukuze ukhiphe imali eyengeziwe, sicela ugcwalise Ukuqinisekiswa kwe-imeyili noma kwe-KYC kuphrofayili yakho.",
+    "limitAlertEmailAndPhone": "Ngenxa yokuthi uqinisekisile i-imeyili nocingo kodwa hhayi i-KYC, ungahoxa kuze kufike ku- {{amount}}. Ukuze ukhiphe amanani angenamkhawulo, sicela uqedele ukuqinisekiswa kwe-KYC kuphrofayili yakho.",
+    "limitAlertGeneric": "Ungahoxa kuze kufike ku- {{amount}} ngokusekelwe ezingeni lakho lokuqinisekisa lamanje. Qedela ukuqinisekiswa okwengeziwe kuphrofayili yakho ukuze wandise umkhawulo wakho.",
+    "goToProfile": "Iya kokuthi Iphrofayili"
   },
   "bonus": {
     "title": "Amabhonasi",

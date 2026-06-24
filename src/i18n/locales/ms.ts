@@ -34,8 +34,8 @@ export const ms: LocaleTree = {
     "actions": "Tindakan",
     "openMenu": "Buka menu",
     "language": "Bahasa",
-    "yes": "Yes",
-    "no": "No"
+    "yes": "Ya",
+    "no": "No."
   },
   "nav": {
     "allGames": "SEMUA PERMAINAN",
@@ -270,12 +270,12 @@ export const ms: LocaleTree = {
     "updateFailed": "Gagal mengemas kini profil.",
     "language": "Bahasa",
     "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "kycComingSoon": "Pengesahan KYC akan tersedia tidak lama lagi. Sila semak semula kemudian.",
+    "verificationTitleKyc": "Sahkan identiti (KYC)",
+    "kycLoading": "Memuatkan pengesahan...",
+    "kycFailed": "Tidak dapat memulakan pengesahan KYC. Sila cuba lagi kemudian.",
+    "kycHint": "Lengkapkan langkah-langkah dalam borang di atas. Status anda akan dikemas kini selepas semakan SumSub.",
+    "verificationSendConfirm": "Hantar kod pengesahan ke {{destination}}?"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -339,17 +339,17 @@ export const ms: LocaleTree = {
     "noWithdrawals": "Tiada permintaan pengeluaran lagi.",
     "submitted": "Permintaan pengeluaran #{{id}} dihantar ({{status}}). Menunggu semakan pentadbir.",
     "submitFailed": "Gagal menghantar pengeluaran.",
-    "verificationRequiredTitle": "Verification Required",
-    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
-    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
-    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
-    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
-    "limitAlertTitle": "Withdrawal Limit",
-    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
-    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
-    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
-    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
-    "goToProfile": "Go to Profile"
+    "verificationRequiredTitle": "Pengesahan Diperlukan.",
+    "verificationRequiredMessage": "Anda mesti mengesahkan e-mel, nombor telefon, dan melengkapkan KYC sebelum anda boleh menarik diri.",
+    "verificationRequiredBanner": "Pengeluaran memerlukan pengesahan akaun. Sila sahkan e-mel, telefon anda, dan lengkapkan KYC dalam profil anda.",
+    "verificationLimitBanner": "Jumlah pengeluaran maksimum anda ialah {{amount}} berdasarkan tahap pengesahan semasa anda.",
+    "verificationLimitExceeded": "Jumlah melebihi had pengesahan anda sebanyak {{amount}}.",
+    "limitAlertTitle": "Had Pengeluaran",
+    "limitAlertEmailOnly": "Oleh kerana anda hanya mengesahkan e-mel anda, anda boleh mengeluarkan sehingga {{amount}}. Untuk menarik balik lebih banyak, sila lengkapkan pengesahan Telefon atau KYC dalam profil anda.",
+    "limitAlertPhoneOnly": "Oleh kerana anda hanya mengesahkan telefon anda, anda boleh mengeluarkan sehingga {{amount}}. Untuk menarik balik lebih banyak, sila lengkapkan pengesahan E-mel atau KYC dalam profil anda.",
+    "limitAlertEmailAndPhone": "Oleh kerana anda telah mengesahkan e-mel dan telefon tetapi bukan KYC, anda boleh membuat pengeluaran sehingga {{amount}}. Untuk mengeluarkan jumlah tanpa had, sila lengkapkan pengesahan KYC dalam profil anda.",
+    "limitAlertGeneric": "Anda boleh mengeluarkan sehingga {{amount}} berdasarkan tahap pengesahan semasa anda. Lengkapkan pengesahan tambahan dalam profil anda untuk meningkatkan had anda.",
+    "goToProfile": "Pergi ke Profil"
   },
   "bonus": {
     "title": "Ganjaran",

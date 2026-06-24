@@ -34,8 +34,8 @@ export const th: LocaleTree = {
     "actions": "การดำเนินการ",
     "openMenu": "เปิดเมนู",
     "language": "ภาษา",
-    "yes": "Yes",
-    "no": "No"
+    "yes": "ใช่",
+    "no": "เลขที่"
   },
   "nav": {
     "allGames": "เกมทั้งหมด",
@@ -270,12 +270,12 @@ export const th: LocaleTree = {
     "updateFailed": "อัปเดตโปรไฟล์ไม่สำเร็จ",
     "language": "ภาษา",
     "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "kycComingSoon": "การยืนยัน KYC จะพร้อมใช้งานเร็วๆ นี้ โปรดกลับมาตรวจสอบอีกครั้งในภายหลัง",
+    "verificationTitleKyc": "ยืนยันตัวตน (KYC)",
+    "kycLoading": "กำลังโหลดการยืนยัน...",
+    "kycFailed": "ไม่สามารถเริ่มการยืนยัน KYC ได้ โปรดลองอีกครั้งในภายหลัง",
+    "kycHint": "ทำตามขั้นตอนในแบบฟอร์มด้านบนให้เสร็จสิ้น สถานะของคุณจะอัปเดตหลังจากการตรวจสอบ SumSub",
+    "verificationSendConfirm": "ส่งรหัสยืนยันไปที่ {{destination}} หรือไม่"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -339,7 +339,7 @@ export const th: LocaleTree = {
     "noWithdrawals": "ยังไม่มีคำขอถอนเงิน",
     "submitted": "ส่งคำขอถอนเงิน #{{id}} แล้ว ({{status}}) รอการตรวจสอบจากผู้ดูแล",
     "submitFailed": "ส่งคำขอถอนเงินไม่สำเร็จ",
-    "verificationRequiredTitle": "Verification Required",
+    "verificationRequiredTitle": "จำเป็นต้องมีการยืนยัน",
     "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
     "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
     "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",

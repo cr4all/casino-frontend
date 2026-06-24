@@ -34,8 +34,8 @@ export const ig: LocaleTree = {
     "actions": "Actions",
     "openMenu": "Open menu",
     "language": "Language",
-    "yes": "Yes",
-    "no": "No"
+    "yes": "Ee.",
+    "no": "Mba"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -270,12 +270,12 @@ export const ig: LocaleTree = {
     "updateFailed": "Failed to update profile.",
     "language": "Language",
     "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "kycComingSoon": "Nyocha KYC ga-adị n 'oge na-adịghị anya. Biko lelee ọzọ ma emesịa.",
+    "verificationTitleKyc": "Nyochaa njirimara (KYC)",
+    "kycLoading": "Na-edebata nkwenye...",
+    "kycFailed": "Enweghị ike ibido nkwenye KYC. Biko nwaa ọzọ ma emesịa.",
+    "kycHint": "Dejupụta nzọụkwụ n 'ụdị dị n' elu. Ọnọdụ gị ga-emelite mgbe nyocha SumSub gasịrị.",
+    "verificationSendConfirm": "Ziga koodu nkwenye na {{destination}}?"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -339,17 +339,17 @@ export const ig: LocaleTree = {
     "noWithdrawals": "No withdrawal requests yet.",
     "submitted": "Withdrawal request #{{id}} submitted ({{status}}). Awaiting admin review.",
     "submitFailed": "Failed to submit withdrawal.",
-    "verificationRequiredTitle": "Verification Required",
-    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
-    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
-    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
-    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
-    "limitAlertTitle": "Withdrawal Limit",
-    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
-    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
-    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
-    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
-    "goToProfile": "Go to Profile"
+    "verificationRequiredTitle": "Nyocha achọrọ",
+    "verificationRequiredMessage": "Ị ga-enyocha email gị, nọmba ekwentị, na KYC zuru ezu tupu ị nwee ike iwepụ.",
+    "verificationRequiredBanner": "Nwepu ego chọrọ nkwenye akaụntụ. Biko nyochaa email gị, ekwentị, na KYC zuru ezu na profaịlụ gị.",
+    "verificationLimitBanner": "Ego iwepụ gị kachasị bụ {{ego}} dabere na ọkwa nkwenye gị ugbu a.",
+    "verificationLimitExceeded": "Ego karịrị gị nkwenye ịgba nke {{ego}}.",
+    "limitAlertTitle": "Nwepu Limit",
+    "limitAlertEmailOnly": "Maka na ị kwenyesiri ike na email gị, ị nwere ike ịdọrọ ihe ruru {{ego}}. Iji wepụ ọzọ, biko mezue ekwentị ma ọ bụ KYC nkwenye na profaịlụ gị.",
+    "limitAlertPhoneOnly": "Maka na ị kwenyesiri ike na ekwentị gị, ị nwere ike ịdọrọ ihe ruru {{ego}}. Iji wepụ ọzọ, biko mezue Email ma ọ bụ KYC nkwenye na profaịlụ gị.",
+    "limitAlertEmailAndPhone": "N 'ihi na ị enen email na ekwentị ma ọ bụghị KYC, i nwere ike ịdọrọ ruo {{ego}}. Iji wepu ego na-akparaghị ókè, biko mezue nyocha KYC na profaịlụ gị.",
+    "limitAlertGeneric": "Ị nwere ike ịdọrọ ihe ruru {{ego}} dabere na ọkwa nkwenye gị ugbu a. Mezue nkwenye ọzọ na profaịlụ gị iji bulie oke gị.",
+    "goToProfile": "Gaa na profaịlụ"
   },
   "bonus": {
     "title": "Bonuses",

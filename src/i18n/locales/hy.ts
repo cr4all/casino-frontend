@@ -34,8 +34,8 @@ export const hy: LocaleTree = {
     "actions": "Գործողություններ",
     "openMenu": "Բացել меню",
     "language": "Լեզու",
-    "yes": "Yes",
-    "no": "No"
+    "yes": "ԱՅՈ",
+    "no": "Ոչ"
   },
   "nav": {
     "allGames": "ԲԱՐՁՐ ԽԱՂԵՐ",
@@ -273,9 +273,9 @@ export const hy: LocaleTree = {
     "kycComingSoon": "KYC verification will be available soon. Please check back later.",
     "verificationTitleKyc": "Verify identity (KYC)",
     "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "kycFailed": "Չհաջողվեց սկսել KYC - ի հաստատումը: Նորից փորձեք ավելի ուշ ։",
+    "kycHint": "Ավարտեք քայլերը վերը նշված տեսքով ։ Ձեր կարգավիճակը կթարմացվի SumSub - ի ստուգումից հետո ։",
+    "verificationSendConfirm": "Ուղարկե ՞ լ հաստատման կոդը {{Destination}} հասցեին ։"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -339,17 +339,17 @@ export const hy: LocaleTree = {
     "noWithdrawals": "Մինչ այժմ դուրսբերման հարցումներ չեն եղել։",
     "submitted": "Դադրեցման հարցում #{{id}} ներկայացված է ({{status}})։ Սպասում է ադմինիստրատորի ստուգմանը։",
     "submitFailed": "Չհաջողվեց իրականացնել զտումային դուրսբերումը:",
-    "verificationRequiredTitle": "Verification Required",
-    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
-    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
-    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
-    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
-    "limitAlertTitle": "Withdrawal Limit",
-    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
-    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
-    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
-    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
-    "goToProfile": "Go to Profile"
+    "verificationRequiredTitle": "Պահանջվում է հաստատում",
+    "verificationRequiredMessage": "Նախքան հետ կանչելը պետք է հաստատեք ձեր էլփոստը, հեռախոսահամարը և լրացնեք KYC - ն ։",
+    "verificationRequiredBanner": "Հետ կանչումը պահանջում է հաշվի հաստատում: Խնդրում ենք ձեր պրոֆիլում հաստատել ձեր էլփոստը, հեռախոսը և լրացնել KYC - ն:",
+    "verificationLimitBanner": "Ձեր կանխիկացման առավելագույն գումարը կազմում է {{amount }}՝ հիմնվելով ձեր ընթացիկ հաստատման մակարդակի վրա:",
+    "verificationLimitExceeded": "Գումարը գերազանցում է {{amount}} հաստատման սահմանաչափը ։",
+    "limitAlertTitle": "Հետ կանչելու սահմանափակում",
+    "limitAlertEmailOnly": "Քանի որ դուք միայն հաստատել եք ձեր էլփոստը, կարող եք հետ կանչել մինչև {{amount }}։ Ավելի շատ գումար հետ կանչելու համար խնդրում ենք ավարտել Հեռախոսի կամ KYC - ի հաստատումը ձեր պրոֆիլում ։",
+    "limitAlertPhoneOnly": "Քանի որ դուք միայն հաստատել եք ձեր հեռախոսը, կարող եք կանխիկացնել մինչև {{amount }}։ Ավելի շատ գումար հետ կանչելու համար խնդրում ենք ձեր պրոֆիլում լրացնել էլփոստի կամ KYC - ի հաստատումը ։",
+    "limitAlertEmailAndPhone": "Քանի որ ունեք հաստատված էլփոստ և հեռախոս, բայց ոչ KYC, կարող եք հետ կանչել մինչև {{amount }}։ Անսահմանափակ գումարներ կանխիկացնելու համար խնդրում ենք ավարտել KYC - ի հաստատումը ձեր պրոֆիլում ։",
+    "limitAlertGeneric": "Դուք կարող եք հետ կանչել մինչև {{amount }}՝ հաշվի առնելով ձեր ընթացիկ հաստատման մակարդակը ։ Լրացուցիչ հաստատում կատարեք ձեր պրոֆիլում ՝ սահմանաչափը մեծացնելու համար ։",
+    "goToProfile": "Հաստատել"
   },
   "bonus": {
     "title": "Պարգևավճարներ",

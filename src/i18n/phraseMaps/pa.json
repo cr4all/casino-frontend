@@ -377,5 +377,21 @@
   "Net": "Net",
   "CPA": "CPA",
   "OK": "OK",
-  "ID": "ID"
+  "ID": "ID",
+  "Yes": "ਹਾਂ",
+  "No": "ਨਹੀਂ",
+  "KYC": "ਕੇਵਾਈਸੀ",
+  "KYC verification will be available soon. Please check back later.": "ਕੇਵਾਈਸੀ ਵੈਰੀਫਿਕੇਸ਼ਨ ਜਲਦ ਹੀ ਉਪਲਬਧ ਹੋਵੇਗਾ । ਕਿਰਪਾ ਕਰਕੇ ਬਾਅਦ ਵਿੱਚ ਦੁਬਾਰਾ ਜਾਂਚ ਕਰੋ ।",
+  "Verify identity (KYC)": "ਪਛਾਣ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ (KYC)",
+  "Loading verification...": "ਜਾਂਚ ਲੋਡ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...",
+  "Unable to start KYC verification. Please try again later.": "KYC ਜਾਂਚ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਅਸਮਰੱਥ । ਕਿਰਪਾ ਕਰਕੇ ਬਾਅਦ ਵਿੱਚ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ ।",
+  "Complete the steps in the form above. Your status will update after SumSub review.": "ਉਪਰੋਕਤ ਫਾਰਮ ਵਿਚ ਕਦਮ ਨੂੰ ਪੂਰਾ ਕਰੋ. SumSub ਸਮੀਖਿਆ ਤੋਂ ਬਾਅਦ ਤੁਹਾਡੀ ਸਥਿਤੀ ਅੱਪਡੇਟ ਹੋਵੇਗੀ ।",
+  "Send verification code to {{destination}}?": "ਪੁਸ਼ਟੀਕਰਨ ਕੋਡ {{destination}} ਨੂੰ ਭੇਜਣਾ ਹੈ?",
+  "Verification Required": "ਤਸਦੀਕ ਦੀ ਲੋੜ ਹੈ",
+  "You must verify your email, phone number, and complete KYC before you can withdraw.": "ਤੁਹਾਨੂੰ ਵਾਪਸ ਲੈਣ ਤੋਂ ਪਹਿਲਾਂ ਆਪਣੀ ਈਮੇਲ, ਫੋਨ ਨੰਬਰ, ਅਤੇ ਕੇਵਾਈਸੀ ਨੂੰ ਪੂਰਾ ਕਰਨਾ ਲਾਜ਼ਮੀ ਹੈ.",
+  "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.": "ਕdraਵਾਉਣ ਲਈ ਖਾਤੇ ਦੀ ਤਸਦੀਕ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ. ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੀ ਪ੍ਰੋਫਾਈਲ ਵਿੱਚ ਆਪਣੀ ਈਮੇਲ, ਫੋਨ ਅਤੇ ਕੇਵਾਈਸੀ ਨੂੰ ਪੂਰਾ ਕਰੋ.",
+  "Your maximum withdrawal amount is {{amount}} based on your current verification level.": "ਤੁਹਾਡੀ ਵੱਧ ਤੋਂ ਵੱਧ ਕਢਵਾਉਣ ਦੀ ਰਕਮ ਤੁਹਾਡੇ ਮੌਜੂਦਾ ਤਸਦੀਕ ਪੱਧਰ ਦੇ ਅਧਾਰ ਤੇ {{amount}} ਹੈ ।",
+  "Amount exceeds your verification limit of {{amount}}.": "ਰਕਮ ਤੁਹਾਡੀ {{amount}} ਦੀ ਤਸਦੀਕ ਸੀਮਾ ਤੋਂ ਵੱਧ ਹੈ ।",
+  "Withdrawal Limit": "ਕdraਵਾਉਣ ਦੀ ਸੀਮਾ",
+  "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.": "ਕਿਉਂਕਿ ਤੁਸੀਂ ਸਿਰਫ ਆਪਣੀ ਈਮੇਲ ਦੀ ਪੁਸ਼ਟੀ ਕੀਤੀ ਹੈ, ਇਸ ਲਈ ਤੁਸੀਂ {{amount}} ਤੱਕ ਕਢਵਾ ਸਕਦੇ ਹੋ । ਵਧੇਰੇ ਕ withdrawalਵਾਉਣ ਲਈ, ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੀ ਪ੍ਰੋਫਾਈਲ ਵਿੱਚ ਫੋਨ ਜਾਂ ਕੇਵਾਈਸੀ ਤਸਦੀਕ ਨੂੰ ਪੂਰਾ ਕਰੋ."
 }

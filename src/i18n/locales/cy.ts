@@ -34,8 +34,8 @@ export const cy: LocaleTree = {
     "actions": "Actions",
     "openMenu": "Open menu",
     "language": "Language",
-    "yes": "Yes",
-    "no": "No"
+    "yes": "Ydy",
+    "no": "Nac ydw"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -270,12 +270,12 @@ export const cy: LocaleTree = {
     "updateFailed": "Failed to update profile.",
     "language": "Language",
     "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "kycComingSoon": "Bydd rhagor o fanylion ar gael yn fuan. Gwiriwch yn ôl yn nes ymlaen os gwelwch yn dda.",
+    "verificationTitleKyc": "Gwirio hunaniaeth (KYC)",
+    "kycLoading": "Yn llwytho dilysiad...",
+    "kycFailed": "Methu cychwyn dilysiad KYC. Ceisiwch eto yn nes ymlaen os gwelwch yn dda.",
+    "kycHint": "Cwblhewch y camau yn y ffurflen uchod. Bydd eich statws yn diweddaru ar ôl adolygiad SumSub.",
+    "verificationSendConfirm": "Anfon cod dilysu i {{Destination}}?"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -339,17 +339,17 @@ export const cy: LocaleTree = {
     "noWithdrawals": "No withdrawal requests yet.",
     "submitted": "Withdrawal request #{{id}} submitted ({{status}}). Awaiting admin review.",
     "submitFailed": "Failed to submit withdrawal.",
-    "verificationRequiredTitle": "Verification Required",
-    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
-    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
-    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
-    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
-    "limitAlertTitle": "Withdrawal Limit",
-    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
-    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
-    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
-    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
-    "goToProfile": "Go to Profile"
+    "verificationRequiredTitle": "Mae angen dilysu",
+    "verificationRequiredMessage": "Rhaid i chi wirio'ch e - bost, eich rhif ffôn, a chwblhau KYC cyn y gallwch dynnu'n ôl.",
+    "verificationRequiredBanner": "Mae tynnu arian yn gofyn am wirio'r cyfrif. Gwiriwch eich e - bost, ffôn, a chwblhewch KYC yn eich proffil.",
+    "verificationLimitBanner": "Mae eich uchafswm tynnu'n ôl yn {{SUM}} yn seiliedig ar eich lefel ddilysu gyfredol.",
+    "verificationLimitExceeded": "Mae'r swm yn fwy na'ch terfyn dilysu o {{SUM}}.",
+    "limitAlertTitle": "Terfyn Tynnu'n Ôl",
+    "limitAlertEmailOnly": "Oherwydd eich bod wedi gwirio'ch e - bost yn unig, gallwch dynnu'n ôl hyd at {{SUM}}. I dynnu mwy yn ôl, cwblhewch wiriad Ffôn neu KYC yn eich proffil.",
+    "limitAlertPhoneOnly": "Oherwydd eich bod wedi gwirio'ch ffôn yn unig, gallwch dynnu'n ôl hyd at {{SUM}}. I dynnu mwy yn ôl, cwblhewch wiriad E - bost neu KYC yn eich proffil.",
+    "limitAlertEmailAndPhone": "Oherwydd eich bod wedi gwirio e - bost a ffôn ond nid KYC, gallwch dynnu'n ôl hyd at {{SUM}}. I dynnu symiau diderfyn yn ôl, cwblhewch wiriad KYC yn eich proffil.",
+    "limitAlertGeneric": "Gallwch dynnu hyd at {{SUM}} yn ôl yn seiliedig ar eich lefel ddilysu gyfredol. Cwblhewch wiriad ychwanegol yn eich proffil i gynyddu eich terfyn.",
+    "goToProfile": "Mynd i Broffil"
   },
   "bonus": {
     "title": "Bonuses",

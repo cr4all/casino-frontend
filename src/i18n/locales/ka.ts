@@ -34,8 +34,8 @@ export const ka: LocaleTree = {
     "actions": "აქტივობები",
     "openMenu": "მენიუს გახსნა",
     "language": "ენა",
-    "yes": "Yes",
-    "no": "No"
+    "yes": "დიახ",
+    "no": "არა"
   },
   "nav": {
     "allGames": "ყველა თამაში",
@@ -270,12 +270,12 @@ export const ka: LocaleTree = {
     "updateFailed": "პროფილის განახლება ვერ მოხერხდა.",
     "language": "ენა",
     "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "kycComingSoon": "KYC დადასტურება მალე იქნება ხელმისაწვდომი. მოგვიანებით შეამოწმეთ.",
+    "verificationTitleKyc": "Ვინაობის დადასტურება (KYC)",
+    "kycLoading": "Მიმდინარეობს დადასტურების ჩატვირთვა...",
+    "kycFailed": "KYC-ის ვერიფიკაციის დაწყება ვერ მოხერხდა. სცადეთ მოგვიანებით.",
+    "kycHint": "Შეასრულეთ ნაბიჯები ზემოთ მოცემული ფორმით. თქვენი სტატუსი განახლდება SumSub-ის მიმოხილვის შემდეგ.",
+    "verificationSendConfirm": "Გსურთ დამადასტურებელი კოდის გაგზავნა მისამართზე: {{დანიშნულების ადგილი}}?"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -339,17 +339,17 @@ export const ka: LocaleTree = {
     "noWithdrawals": "ჯერ წაღების მოთხოვნები არ არის.",
     "submitted": "გამოჯანმრთელების მოთხოვნა #{{id}} წარდგენილია ({{status}}). ელოდება ადმინისტრატორის განხილვას.",
     "submitFailed": "ნაკლებად მოხდა სავაჭრო სესხის წარდგენა.",
-    "verificationRequiredTitle": "Verification Required",
-    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
-    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
-    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
-    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
-    "limitAlertTitle": "Withdrawal Limit",
-    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
-    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
-    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
-    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
-    "goToProfile": "Go to Profile"
+    "verificationRequiredTitle": "Საჭიროა დადასტურება",
+    "verificationRequiredMessage": "Გამოხმობამდე უნდა დაადასტუროთ თქვენი ელფოსტის მისამართი, ტელეფონის ნომერი და შეავსოთ KYC.",
+    "verificationRequiredBanner": "Თანხის გატანა მოითხოვს ანგარიშის დადასტურებას. დაადასტურეთ ელფოსტის მისამართი, ტელეფონი და შეავსეთ KYC თქვენს პროფილში.",
+    "verificationLimitBanner": "Თანხის გატანის მაქსიმალური ოდენობა არის {{amount}} დადასტურების მიმდინარე დონის მიხედვით.",
+    "verificationLimitExceeded": "Თანხა აჭარბებს თქვენს დადასტურების ლიმიტს ({{თანხა}}).",
+    "limitAlertTitle": "Მოხსნის ლიმიტი",
+    "limitAlertEmailOnly": "Რადგან მხოლოდ ელფოსტის მისამართი დაადასტურეთ, შეგიძლიათ გამოიტანოთ მაქსიმუმ {{თანხა}}. მეტის გამოსატანად დაასრულეთ ტელეფონის ან KYC ‑ ის დადასტურება თქვენს პროფილში.",
+    "limitAlertPhoneOnly": "Რადგან მხოლოდ თქვენი ტელეფონი დაადასტურეთ, შეგიძლიათ გამოიტანოთ მაქსიმუმ {{თანხა}}. მეტის გამოსატანად დაასრულეთ ელფოსტის ან KYC-ის დადასტურება თქვენს პროფილში.",
+    "limitAlertEmailAndPhone": "Ვინაიდან ელფოსტის დადასტურებული მისამართი და ტელეფონი გაქვთ, მაგრამ არა KYC, შეგიძლიათ გამოიტანოთ მაქსიმუმ {{amount}}. ულიმიტო თანხების გასანაღდებლად დაასრულეთ KYC-ის დადასტურება თქვენს პროფილში.",
+    "limitAlertGeneric": "Თქვენ შეგიძლიათ გამოიტანოთ მაქსიმუმ {{თანხა}} თქვენი მიმდინარე დადასტურების დონის მიხედვით. ლიმიტის გასაზრდელად დაასრულეთ დამატებითი დადასტურება თქვენს პროფილში.",
+    "goToProfile": "გადადით ამ პროფილზე"
   },
   "bonus": {
     "title": "ბონუსები",
