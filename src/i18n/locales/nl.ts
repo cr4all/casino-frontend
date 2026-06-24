@@ -33,7 +33,9 @@ export const nl: LocaleTree = {
     "pageOf": "Pagina {{page}} van {{last}}",
     "actions": "Acties",
     "openMenu": "Menu openen",
-    "language": "Taal"
+    "language": "Taal",
+    "yes": "Ja",
+    "no": "Nee"
   },
   "nav": {
     "allGames": "ALLE SPELLEN",
@@ -226,6 +228,8 @@ export const nl: LocaleTree = {
     "currency": "Valuta",
     "confirmPassword": "Wachtwoord bevestigen",
     "loginError": "Ongeldig e-mailadres, gebruikersnaam of wachtwoord.",
+    "riskBlocked": "This action was blocked for security reasons.",
+    "riskChallenge": "Additional verification is required before you can continue.",
     "registerError": "Registratie mislukt. Controleer uw gegevens.",
     "noAccount": "Geen account?",
     "hasAccount": "Heeft u al een account?",
@@ -264,7 +268,19 @@ export const nl: LocaleTree = {
     "saveChanges": "Wijzigingen opslaan",
     "updateSuccess": "Profiel succesvol bijgewerkt.",
     "updateFailed": "Profiel bijwerken mislukt.",
-    "language": "Taal"
+    "language": "Taal",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC-verificatie is binnenkort beschikbaar. Probeer het later nog eens.",
+    "verificationTitleKyc": "Identiteit verifiëren (KYC)",
+    "kycLoading": "Verificatie laden...",
+    "kycFailed": "Kan KYC-verificatie niet starten. Probeer het later opnieuw.",
+    "kycHint": "Voltooi de stappen in het bovenstaande formulier. Je status wordt bijgewerkt na de SumSub-beoordeling.",
+    "verificationSendConfirm": "Verificatiecode verzenden naar {{destination}}?"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
   },
   "deposit": {
     "title": "Storting",
@@ -322,7 +338,18 @@ export const nl: LocaleTree = {
     "recentWithdrawals": "Recente opnames",
     "noWithdrawals": "Nog geen opnameverzoeken.",
     "submitted": "Opnameverzoek #{{id}} ingediend ({{status}}). Wacht op beoordeling door beheerder.",
-    "submitFailed": "Opname indienen mislukt."
+    "submitFailed": "Opname indienen mislukt.",
+    "verificationRequiredTitle": "Verificatiecode Vereist",
+    "verificationRequiredMessage": "U moet uw e-mailadres, telefoonnummer en volledige KYC verifiëren voordat u kunt intrekken.",
+    "verificationRequiredBanner": "Voor opnames is accountverificatie vereist. Verifieer je e-mailadres, telefoonnummer en voltooi KYC in je profiel.",
+    "verificationLimitBanner": "Je maximale opnamebedrag is {{amount}} op basis van je huidige verificatieniveau.",
+    "verificationLimitExceeded": "Het bedrag overschrijdt je verificatielimiet van {{amount}}.",
+    "limitAlertTitle": "Opnamelimiet",
+    "limitAlertEmailOnly": "Omdat je alleen je e-mailadres hebt geverifieerd, kun je maximaal {{amount}} opnemen. Voltooi de telefoon- of KYC-verificatie in je profiel om meer op te nemen.",
+    "limitAlertPhoneOnly": "Omdat je alleen je telefoon hebt geverifieerd, kun je tot {{amount}} opnemen. Voltooi de e-mail- of KYC-verificatie in je profiel om meer op te nemen.",
+    "limitAlertEmailAndPhone": "Omdat je e-mail en telefoon hebt geverifieerd, maar niet KYC, kun je maximaal {{amount}} opnemen. Voltooi de KYC-verificatie in je profiel om onbeperkte bedragen op te nemen.",
+    "limitAlertGeneric": "Je kunt tot {{amount}} opnemen op basis van je huidige verificatieniveau. Voltooi extra verificatie in je profiel om je limiet te verhogen.",
+    "goToProfile": "Naar Profiel"
   },
   "bonus": {
     "title": "Bonussen",
@@ -339,13 +366,25 @@ export const nl: LocaleTree = {
     "autoApply": "Automatisch toegepast op kwalificerende stortingen.",
     "firstDepositAutoApply": "Alleen automatisch toegepast op uw eerste storting.",
     "claimed": "Bonus geclaimd: {{amount}} ({{status}})",
-    "claimFailed": "Bonus claimen mislukt."
+    "claimFailed": "Bonus claimen mislukt.",
+    "freeSpinCount": "{{count}} Free Spins",
+    "freeSpinUsage": "{{used}} / {{total}} spins used",
+    "freeSpinProvider": "Provider: {{provider}}",
+    "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
+    "freeSpinWinnings": "Winnings: {{amount}}",
+    "depositRequired": "Make at least one deposit to claim this bonus.",
+    "firstDepositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositCta": "Go to deposit",
+    "alreadyClaimed": "You have already claimed this bonus.",
+    "providerNotSupported": "This free spin provider is not supported yet."
   },
   "bonusTypes": {
     "welcome": "Welkom",
     "first_deposit": "Eerste storting",
     "reload": "Herladen",
-    "cashback": "Cashback"
+    "cashback": "Cashback",
+    "free_spin": "Free Spin"
   },
   "messages": {
     "title": "Berichten",
@@ -366,7 +405,11 @@ export const nl: LocaleTree = {
     "win": "Winst",
     "net": "Netto",
     "status": "Status",
-    "date": "Datum"
+    "date": "Datum",
+    "spinType": "Spin Type",
+    "fundingSource": "Spin Type",
+    "fundingCash": "Cash Spin",
+    "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
     "title": "Transactiegeschiedenis",
@@ -401,6 +444,10 @@ export const nl: LocaleTree = {
     "launchError": "Spel starten mislukt.",
     "closeWindow": "Sluiten",
     "loginRequired": "Log in om te spelen."
+  },
+  "gameCard": {
+    "newBadge": "New",
+    "bonusBadge": "Bonus"
   },
   "modal": {
     "comingSoon": "Binnenkort beschikbaar"

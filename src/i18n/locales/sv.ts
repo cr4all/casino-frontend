@@ -33,7 +33,9 @@ export const sv: LocaleTree = {
     "pageOf": "Sida {{page}} av {{last}}",
     "actions": "Åtgärder",
     "openMenu": "Öppna menyn",
-    "language": "Språk"
+    "language": "Språk",
+    "yes": "Yes",
+    "no": "No"
   },
   "nav": {
     "allGames": "ALLA SPEL",
@@ -226,6 +228,8 @@ export const sv: LocaleTree = {
     "currency": "Valuta",
     "confirmPassword": "Bekräfta lösenord",
     "loginError": "Ogiltig e-post, användarnamn eller lösenord.",
+    "riskBlocked": "This action was blocked for security reasons.",
+    "riskChallenge": "Additional verification is required before you can continue.",
     "registerError": "Registreringen misslyckades. Kontrollera dina uppgifter.",
     "noAccount": "Har du inget konto?",
     "hasAccount": "Har du redan ett konto?",
@@ -264,7 +268,19 @@ export const sv: LocaleTree = {
     "saveChanges": "Spara ändringar",
     "updateSuccess": "Profilen uppdaterades.",
     "updateFailed": "Misslyckades med att uppdatera profil.",
-    "language": "Språk"
+    "language": "Språk",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
+    "verificationSendConfirm": "Send verification code to {{destination}}?"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
   },
   "deposit": {
     "title": "Insättning",
@@ -322,7 +338,18 @@ export const sv: LocaleTree = {
     "recentWithdrawals": "Senaste uttag",
     "noWithdrawals": "Inga uttagsförfrågningar ännu.",
     "submitted": "Uttagsförfrågan #{{id}} skickad ({{status}}). Väntar på administratörsgodkännande.",
-    "submitFailed": "Misslyckades med att skicka uttag."
+    "submitFailed": "Misslyckades med att skicka uttag.",
+    "verificationRequiredTitle": "Verification Required",
+    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
+    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
+    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
+    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
+    "limitAlertTitle": "Withdrawal Limit",
+    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
+    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
+    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
+    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
+    "goToProfile": "Go to Profile"
   },
   "bonus": {
     "title": "Bonusar",
@@ -339,13 +366,25 @@ export const sv: LocaleTree = {
     "autoApply": "Tillämpas automatiskt vid kvalificerande insättningar.",
     "firstDepositAutoApply": "Tillämpas automatiskt endast vid din första insättning.",
     "claimed": "Bonus hämtad: {{amount}} ({{status}})",
-    "claimFailed": "Misslyckades med att hämta bonus."
+    "claimFailed": "Misslyckades med att hämta bonus.",
+    "freeSpinCount": "{{count}} Free Spins",
+    "freeSpinUsage": "{{used}} / {{total}} spins used",
+    "freeSpinProvider": "Provider: {{provider}}",
+    "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
+    "freeSpinWinnings": "Winnings: {{amount}}",
+    "depositRequired": "Make at least one deposit to claim this bonus.",
+    "firstDepositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositCta": "Go to deposit",
+    "alreadyClaimed": "You have already claimed this bonus.",
+    "providerNotSupported": "This free spin provider is not supported yet."
   },
   "bonusTypes": {
     "welcome": "Välkommen",
     "first_deposit": "Första insättningen",
     "reload": "Ladda om",
-    "cashback": "Cashback"
+    "cashback": "Cashback",
+    "free_spin": "Free Spin"
   },
   "messages": {
     "title": "Meddelanden",
@@ -366,7 +405,11 @@ export const sv: LocaleTree = {
     "win": "Vinst",
     "net": "Netto",
     "status": "Status",
-    "date": "Datum"
+    "date": "Datum",
+    "spinType": "Spin Type",
+    "fundingSource": "Spin Type",
+    "fundingCash": "Cash Spin",
+    "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
     "title": "Transaktionshistorik",
@@ -401,6 +444,10 @@ export const sv: LocaleTree = {
     "launchError": "Misslyckades med att starta spelet.",
     "closeWindow": "Stäng",
     "loginRequired": "Logga in för att spela."
+  },
+  "gameCard": {
+    "newBadge": "New",
+    "bonusBadge": "Bonus"
   },
   "modal": {
     "comingSoon": "Kommer snart"

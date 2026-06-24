@@ -339,6 +339,55 @@ for (const [path, overrides] of Object.entries(i18nOverrideMaps)) {
   translations[code] = applyPhraseMapToValues(en, overrides);
 }
 
+const LOCALE_VARIANT_PARENT: Partial<Record<Language, Language>> = {
+  'ar-dz': 'ar',
+  'ar-ma': 'ar',
+  'ar-tn': 'ar',
+  'de-be': 'de',
+  'fr-be': 'fr',
+  'nl-be': 'nl',
+};
+
+function pickAffiliateValue(
+  english: string,
+  ...candidates: Array<string | undefined>
+): string {
+  for (const candidate of candidates) {
+    if (candidate && candidate !== english) {
+      return candidate;
+    }
+  }
+  return candidates.find(Boolean) ?? english;
+}
+
+for (const code of LANGUAGE_CODES) {
+  if (code === 'en') continue;
+
+  const tree = translations[code];
+  if (!tree) continue;
+
+  const phraseMap = phraseMapsByLanguage[code];
+  const mappedAffiliate: Partial<typeof en.affiliate> = phraseMap
+    ? applyPhraseMapToValues(en.affiliate, phraseMap)
+    : {};
+  const parentCode = LOCALE_VARIANT_PARENT[code];
+  const parentAffiliate = parentCode ? translations[parentCode]?.affiliate : undefined;
+  const mergedAffiliate: Record<string, string> = {};
+
+  for (const key of Object.keys(en.affiliate)) {
+    const english = en.affiliate[key as keyof typeof en.affiliate];
+    mergedAffiliate[key] = pickAffiliateValue(
+      english,
+      tree.affiliate?.[key as keyof typeof en.affiliate],
+      parentAffiliate?.[key as keyof typeof en.affiliate],
+      mappedAffiliate[key as keyof typeof en.affiliate],
+      english,
+    );
+  }
+
+  translations[code] = { ...tree, affiliate: mergedAffiliate as typeof en.affiliate };
+}
+
 export function translate(
   language: Language,
   key: string,

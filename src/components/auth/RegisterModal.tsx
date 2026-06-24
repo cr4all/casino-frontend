@@ -202,14 +202,6 @@ export function RegisterModal() {
         {error && (
           <p className="rounded-md bg-accent/10 px-3 py-2 text-sm text-accent">{error}</p>
         )}
-        {challengeRequired && (
-          <RiskChallengePanel
-            onSuccess={handleTurnstileSuccess}
-            onError={() => setChallengeError(t('risk.challengeFailed'))}
-            onRegisterReset={registerWidgetReset}
-            error={challengeError}
-          />
-        )}
         <div>
           <label htmlFor="reg-email" className="mb-1 block text-xs text-muted">{t('auth.email')}</label>
           <input
@@ -311,6 +303,14 @@ export function RegisterModal() {
             className="w-full rounded-md border border-white/10 bg-card px-3 py-2 text-sm text-white focus:border-accent focus:outline-none"
           />
         </div>
+        {challengeRequired && (
+          <RiskChallengePanel
+            onSuccess={handleTurnstileSuccess}
+            onError={() => setChallengeError(t('risk.challengeFailed'))}
+            onRegisterReset={registerWidgetReset}
+            error={challengeError}
+          />
+        )}
         <Button type="submit" fullWidth disabled={loading || optionsLoading || challengeRequired}>
           {loading ? t('common.creatingAccount') : t('nav.register')}
         </Button>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import {
   paymentApi,
@@ -8,18 +8,40 @@ import {
 } from '@/api/payment.api';
 import { useAuthStore } from '@/stores/authStore';
 import { DEFAULT_CURRENCY, useWalletStore } from '@/stores/walletStore';
+import { usePlayerStore } from '@/stores/playerStore';
 import { formatBalance } from '@/utils/formatBalance';
 import { Button } from '@/components/common/Button';
+import { Modal } from '@/components/common/Modal';
 import { StatusBadge } from '@/components/common/StatusBadge';
 import { PaymentCountrySelect } from '@/components/payment/PaymentCountrySelect';
 import { PaymentOptionGrid, PaymentOptionSummary } from '@/components/payment/PaymentOptionGrid';
 import { useTranslation } from '@/hooks/useTranslation';
-import { getApiErrorMessage, isRiskChallengeError } from '@/utils/apiError';
+import {
+  getApiErrorDetails,
+  getApiErrorMessage,
+  isRiskChallengeError,
+  isWithdrawalLimitExceededError,
+  isWithdrawalVerificationRequiredError,
+} from '@/utils/apiError';
 import { RiskChallengePanel } from '@/components/risk/RiskChallengePanel';
 import { useRiskChallenge } from '@/hooks/useRiskChallenge';
+import type { WithdrawalEligibility } from '@/types';
 
 function formatPaymentAmount(currency: string, amount: string): string {
   return `${currency} ${formatBalance(amount)}`;
+}
+
+function getLimitAlertKey(eligibility: WithdrawalEligibility): string {
+  if (eligibility.email_verified && eligibility.phone_verified && !eligibility.kyc_verified) {
+    return 'withdraw.limitAlertEmailAndPhone';
+  }
+  if (eligibility.email_verified && !eligibility.phone_verified) {
+    return 'withdraw.limitAlertEmailOnly';
+  }
+  if (eligibility.phone_verified && !eligibility.email_verified) {
+    return 'withdraw.limitAlertPhoneOnly';
+  }
+  return 'withdraw.limitAlertGeneric';
 }
 
 export function WithdrawPage() {
@@ -27,6 +49,8 @@ export function WithdrawPage() {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const balance = useWalletStore((s) => s.balance);
   const fetchBalance = useWalletStore((s) => s.fetchBalance);
+  const profile = usePlayerStore((s) => s.profile);
+  const fetchProfile = usePlayerStore((s) => s.fetchProfile);
   const [countries, setCountries] = useState<PaymentCountry[]>([]);
   const [country, setCountry] = useState('');
   const [options, setOptions] = useState<PaymentOption[]>([]);
@@ -42,6 +66,9 @@ export function WithdrawPage() {
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [challengeError, setChallengeError] = useState<string | null>(null);
+  const [verificationModalOpen, setVerificationModalOpen] = useState(false);
+  const [limitAlertOpen, setLimitAlertOpen] = useState(false);
+  const [limitAlertAmount, setLimitAlertAmount] = useState<string | null>(null);
   const {
     challengeRequired,
     setChallengeRequired,
@@ -49,6 +76,16 @@ export function WithdrawPage() {
     registerWidgetReset,
     resetWidget,
   } = useRiskChallenge();
+
+  const eligibility = profile?.withdrawal_eligibility;
+  const walletCurrency = balance?.currency ?? profile?.currency ?? DEFAULT_CURRENCY;
+
+  const maxWithdrawAmount = useMemo(() => {
+    if (!eligibility || eligibility.unlimited || !eligibility.max_amount) {
+      return null;
+    }
+    return eligibility.max_amount;
+  }, [eligibility]);
 
   const loadWithdrawals = () =>
     paymentApi.getWithdrawals().then((data) => setWithdrawals(data.items));
@@ -71,6 +108,11 @@ export function WithdrawPage() {
   };
 
   const handleOptionSelect = (option: PaymentOption) => {
+    if (eligibility?.requires_verification) {
+      setVerificationModalOpen(true);
+      return;
+    }
+
     setConfirmedOption(option);
     setOptionKey(option.key);
     setAmount('');
@@ -89,14 +131,14 @@ export function WithdrawPage() {
 
   useEffect(() => {
     if (!isAuthenticated) return;
-    Promise.all([paymentApi.getCountries(), fetchBalance(), loadWithdrawals()])
+    Promise.all([paymentApi.getCountries(), fetchBalance(), loadWithdrawals(), fetchProfile(true)])
       .then(([data]) => {
         setCountries(data.countries);
         const initial = data.default_country ?? data.countries[0]?.code ?? '';
         setCountry(initial);
       })
       .finally(() => setLoading(false));
-  }, [isAuthenticated, fetchBalance]);
+  }, [isAuthenticated, fetchBalance, fetchProfile]);
 
   useEffect(() => {
     if (!country) {
@@ -136,8 +178,51 @@ export function WithdrawPage() {
     (field) => field.required && !destinationValues[field.name]?.trim(),
   ) ?? false;
 
+  const showLimitAlert = (maxAmount: string) => {
+    setLimitAlertAmount(maxAmount);
+    setLimitAlertOpen(true);
+    setError(null);
+  };
+
+  const isAmountOverLimit = (): boolean => {
+    if (!amount || !maxWithdrawAmount) {
+      return false;
+    }
+    return Number(amount) > Number(maxWithdrawAmount);
+  };
+
+  const handleWithdrawalError = (err: unknown) => {
+    if (isWithdrawalVerificationRequiredError(err)) {
+      setVerificationModalOpen(true);
+      setError(null);
+      return;
+    }
+
+    if (isWithdrawalLimitExceededError(err)) {
+      const details = getApiErrorDetails(err);
+      const maxAmount = typeof details?.max_amount === 'string' ? details.max_amount : maxWithdrawAmount;
+      if (maxAmount) {
+        showLimitAlert(maxAmount);
+      }
+      return;
+    }
+
+    setError(getApiErrorMessage(err, t('withdraw.submitFailed')));
+  };
+
   const performWithdrawal = async (turnstileToken?: string) => {
     if (!optionKey || !amount || !country || missingRequiredDestination) return;
+
+    if (eligibility?.requires_verification) {
+      setVerificationModalOpen(true);
+      return;
+    }
+
+    if (isAmountOverLimit() && maxWithdrawAmount) {
+      showLimitAlert(maxWithdrawAmount);
+      return;
+    }
+
     const result = await paymentApi.createWithdrawal(
       optionKey,
       amount,
@@ -167,7 +252,7 @@ export function WithdrawPage() {
         return;
       }
       resetChallenge();
-      setError(getApiErrorMessage(err, t('withdraw.submitFailed')));
+      handleWithdrawalError(err);
     } finally {
       setSubmitting(false);
     }
@@ -176,6 +261,17 @@ export function WithdrawPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!optionKey || !amount || !country || missingRequiredDestination) return;
+
+    if (eligibility?.requires_verification) {
+      setVerificationModalOpen(true);
+      return;
+    }
+
+    if (isAmountOverLimit() && maxWithdrawAmount) {
+      showLimitAlert(maxWithdrawAmount);
+      return;
+    }
+
     setSubmitting(true);
     setError(null);
     setChallengeError(null);
@@ -188,14 +284,75 @@ export function WithdrawPage() {
         setError(null);
         return;
       }
-      setError(getApiErrorMessage(err, t('withdraw.submitFailed')));
+      handleWithdrawalError(err);
     } finally {
       setSubmitting(false);
     }
   };
 
+  const limitAlertMessage = eligibility && limitAlertAmount
+    ? t(getLimitAlertKey(eligibility), {
+        amount: formatPaymentAmount(walletCurrency, limitAlertAmount),
+      })
+    : '';
+
   return (
     <div className="mx-auto max-w-7xl py-4 sm:py-8">
+      <Modal
+        isOpen={limitAlertOpen}
+        onClose={() => setLimitAlertOpen(false)}
+        title={t('withdraw.limitAlertTitle')}
+        titleIcon={
+          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-500/20 text-amber-400">
+            !
+          </span>
+        }
+      >
+        <div className="mb-6 rounded-lg border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm leading-relaxed text-amber-100">
+          {limitAlertMessage}
+        </div>
+        <div className="flex flex-col gap-2 sm:flex-row">
+          <Link
+            to="/profile"
+            className="inline-flex flex-1 items-center justify-center rounded-lg bg-accent-gold py-2.5 text-sm font-bold text-background hover:bg-accent-gold/90 transition-colors"
+            onClick={() => setLimitAlertOpen(false)}
+          >
+            {t('withdraw.goToProfile')}
+          </Link>
+          <button
+            type="button"
+            onClick={() => setLimitAlertOpen(false)}
+            className="inline-flex flex-1 items-center justify-center rounded-lg border border-white/10 py-2.5 text-sm text-white hover:bg-surface transition-colors"
+          >
+            {t('common.close')}
+          </button>
+        </div>
+      </Modal>
+
+      <Modal
+        isOpen={verificationModalOpen}
+        onClose={() => setVerificationModalOpen(false)}
+        title={t('withdraw.verificationRequiredTitle')}
+      >
+        <p className="mb-6 text-sm text-muted">{t('withdraw.verificationRequiredMessage')}</p>
+        <div className="flex flex-col gap-2 sm:flex-row">
+          <Link
+            to="/profile"
+            className="inline-flex flex-1 items-center justify-center rounded-lg bg-accent-gold py-2.5 text-sm font-bold text-background hover:bg-accent-gold/90 transition-colors"
+            onClick={() => setVerificationModalOpen(false)}
+          >
+            {t('withdraw.goToProfile')}
+          </Link>
+          <button
+            type="button"
+            onClick={() => setVerificationModalOpen(false)}
+            className="inline-flex flex-1 items-center justify-center rounded-lg border border-white/10 py-2.5 text-sm text-white hover:bg-surface transition-colors"
+          >
+            {t('common.close')}
+          </button>
+        </div>
+      </Modal>
+
       {loading ? (
         <div className="mx-auto w-full max-w-2xl space-y-6">
           <h1 className="text-center text-2xl font-bold text-white">{t('withdraw.title')}</h1>
@@ -209,9 +366,23 @@ export function WithdrawPage() {
           <p className="text-center text-sm text-muted break-words">
             {t('withdraw.availableBalance')}{' '}
             <span className="font-mono text-accent-gold">
-              {balance?.currency ?? DEFAULT_CURRENCY} {formatBalance(balance?.balance)}
+              {walletCurrency} {formatBalance(balance?.balance)}
             </span>
           </p>
+
+          {eligibility?.requires_verification && (
+            <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">
+              {t('withdraw.verificationRequiredBanner')}
+            </div>
+          )}
+
+          {!eligibility?.requires_verification && maxWithdrawAmount && (
+            <div className="rounded-xl border border-white/10 bg-card/50 px-4 py-3 text-sm text-muted">
+              {t('withdraw.verificationLimitBanner', {
+                amount: formatPaymentAmount(walletCurrency, maxWithdrawAmount),
+              })}
+            </div>
+          )}
 
           {step === 1 ? (
             <div className="rounded-xl border border-white/[0.08] bg-card p-4 space-y-4 sm:p-6">
@@ -237,7 +408,7 @@ export function WithdrawPage() {
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="rounded-xl border border-white/[0.08] bg-card p-4 space-y-4 sm:p-6">
+            <form onSubmit={handleSubmit} noValidate className="rounded-xl border border-white/[0.08] bg-card p-4 space-y-4 sm:p-6">
               <Button
                 type="button"
                 variant="secondary"
@@ -252,6 +423,11 @@ export function WithdrawPage() {
               <div>
                 <label htmlFor="withdraw-amount" className="mb-1 block text-xs text-muted">
                   {t('deposit.amount')}
+                  {maxWithdrawAmount && (
+                    <span className="ml-2 text-muted">
+                      (max {formatPaymentAmount(walletCurrency, maxWithdrawAmount)})
+                    </span>
+                  )}
                 </label>
                 <input
                   id="withdraw-amount"

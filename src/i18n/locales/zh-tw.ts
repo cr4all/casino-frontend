@@ -33,7 +33,9 @@ export const zhTw: LocaleTree = {
     "pageOf": "第 {{page}} 頁，共 {{last}} 頁",
     "actions": "操作",
     "openMenu": "開啟選單",
-    "language": "語言"
+    "language": "語言",
+    "yes": "是",
+    "no": "否"
   },
   "nav": {
     "allGames": "全部遊戲",
@@ -226,6 +228,8 @@ export const zhTw: LocaleTree = {
     "currency": "幣別",
     "confirmPassword": "確認密碼",
     "loginError": "電子郵件、使用者名稱或密碼無效。",
+    "riskBlocked": "This action was blocked for security reasons.",
+    "riskChallenge": "Additional verification is required before you can continue.",
     "registerError": "註冊失敗，請檢查您的資料。",
     "noAccount": "還沒有帳戶嗎？",
     "hasAccount": "已經有帳戶了嗎？",
@@ -264,7 +268,19 @@ export const zhTw: LocaleTree = {
     "saveChanges": "儲存變更",
     "updateSuccess": "個人資料已成功更新。",
     "updateFailed": "個人資料更新失敗。",
-    "language": "語言"
+    "language": "語言",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC驗證即將推出。請稍後再回來查看。",
+    "verificationTitleKyc": "驗證身分(KYC)",
+    "kycLoading": "正在載入驗證…",
+    "kycFailed": "無法啟動KYC驗證。請稍後再試。",
+    "kycHint": "完成上表中的步驟。您的狀態將在SumSub審核後更新。",
+    "verificationSendConfirm": "要將驗證碼發送到{{destination}}嗎？"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
   },
   "deposit": {
     "title": "存款",
@@ -322,7 +338,18 @@ export const zhTw: LocaleTree = {
     "recentWithdrawals": "近期提款",
     "noWithdrawals": "尚無提款申請。",
     "submitted": "提款申請 #{{id}} 已提交（{{status}}），等待管理員審核。",
-    "submitFailed": "提款申請提交失敗。"
+    "submitFailed": "提款申請提交失敗。",
+    "verificationRequiredTitle": "需要驗證",
+    "verificationRequiredMessage": "您必須先驗證電子郵件地址、電話號碼並完成KYC驗證，才能提款。",
+    "verificationRequiredBanner": "提款需要驗證帳戶。請驗證你的電郵、電話，並在個人資料中填寫KYC。",
+    "verificationLimitBanner": "根據您目前的驗證等級，您的最高提款金額為{{amount}}。",
+    "verificationLimitExceeded": "金額超過您的驗證限制{{amount}}。",
+    "limitAlertTitle": "提款限額",
+    "limitAlertEmailOnly": "由於你只驗證了電郵，因此最多可以提取{{amount}}。如要提領更多款項，請在基本資料中完成電話或KYC驗證。",
+    "limitAlertPhoneOnly": "由於你只驗證了手機號碼，因此最多可提取{{amount}}。如要提領更多款項，請在基本資料中完成電子郵件或KYC驗證。",
+    "limitAlertEmailAndPhone": "由於你已驗證電郵和電話，但並非KYC ，因此最多可提取{{amount}}。如要提取無限金額，請在基本資料中完成KYC驗證。",
+    "limitAlertGeneric": "根據你目前的驗證等級，你最多可以提取{{amount}}。請在個人資料中完成額外驗證，以提高上限。",
+    "goToProfile": "前往簡介"
   },
   "bonus": {
     "title": "獎金",
@@ -339,13 +366,25 @@ export const zhTw: LocaleTree = {
     "autoApply": "符合資格的存款將自動套用。",
     "firstDepositAutoApply": "僅在首次存款時自動套用。",
     "claimed": "已領取獎金：{{amount}}（{{status}}）",
-    "claimFailed": "領取獎金失敗。"
+    "claimFailed": "領取獎金失敗。",
+    "freeSpinCount": "{{count}} Free Spins",
+    "freeSpinUsage": "{{used}} / {{total}} spins used",
+    "freeSpinProvider": "Provider: {{provider}}",
+    "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
+    "freeSpinWinnings": "Winnings: {{amount}}",
+    "depositRequired": "Make at least one deposit to claim this bonus.",
+    "firstDepositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositCta": "Go to deposit",
+    "alreadyClaimed": "You have already claimed this bonus.",
+    "providerNotSupported": "This free spin provider is not supported yet."
   },
   "bonusTypes": {
     "welcome": "歡迎",
     "first_deposit": "首次存款",
     "reload": "重新載入",
-    "cashback": "返水"
+    "cashback": "返水",
+    "free_spin": "Free Spin"
   },
   "messages": {
     "title": "訊息",
@@ -366,7 +405,11 @@ export const zhTw: LocaleTree = {
     "win": "贏額",
     "net": "淨額",
     "status": "狀態",
-    "date": "日期"
+    "date": "日期",
+    "spinType": "Spin Type",
+    "fundingSource": "Spin Type",
+    "fundingCash": "Cash Spin",
+    "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
     "title": "交易紀錄",
@@ -401,6 +444,10 @@ export const zhTw: LocaleTree = {
     "launchError": "啟動遊戲失敗。",
     "closeWindow": "關閉",
     "loginRequired": "請登入後再遊玩。"
+  },
+  "gameCard": {
+    "newBadge": "New",
+    "bonusBadge": "獎金"
   },
   "modal": {
     "comingSoon": "即將推出"

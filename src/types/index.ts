@@ -19,6 +19,18 @@ export interface User {
   role?: string;
 }
 
+export interface WithdrawalEligibility {
+  allowed: boolean;
+  unlimited: boolean;
+  max_amount: string | null;
+  email_verified: boolean;
+  phone_verified: boolean;
+  kyc_verified: boolean;
+  requires_verification: boolean;
+  email_verified_limit: string;
+  phone_verified_limit: string;
+}
+
 export interface PlayerProfile {
   id: number;
   user_id: number;
@@ -33,6 +45,7 @@ export interface PlayerProfile {
   language: string | null;
   status: string;
   kyc_status: string;
+  withdrawal_eligibility?: WithdrawalEligibility | null;
 }
 
 export interface AuthTokens {

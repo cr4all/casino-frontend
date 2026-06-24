@@ -6,6 +6,7 @@ import { usePlayerStore } from '@/stores/playerStore';
 
 export function useLanguageInit() {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
+  const isAffiliateUser = useAuthStore((s) => s.user?.role === 'affiliate');
   const profileLanguage = usePlayerStore((s) => s.profile?.language);
   const setLanguage = useLanguageStore((s) => s.setLanguage);
 
@@ -15,10 +16,15 @@ export function useLanguageInit() {
   }, []);
 
   useEffect(() => {
-    if (!isAuthenticated || !profileLanguage || !isLanguage(profileLanguage)) {
+    if (
+      !isAuthenticated ||
+      isAffiliateUser ||
+      !profileLanguage ||
+      !isLanguage(profileLanguage)
+    ) {
       return;
     }
 
     setLanguage(profileLanguage);
-  }, [isAuthenticated, profileLanguage, setLanguage]);
+  }, [isAuthenticated, isAffiliateUser, profileLanguage, setLanguage]);
 }

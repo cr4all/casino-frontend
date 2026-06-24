@@ -33,7 +33,9 @@ export const mn: LocaleTree = {
     "pageOf": "Хуудас {{page}} / {{last}}",
     "actions": "Үйлдлүүд",
     "openMenu": "Цэс нээх",
-    "language": "Хэл"
+    "language": "Хэл",
+    "yes": "Тийм",
+    "no": "Үгүй"
   },
   "nav": {
     "allGames": "БҮХ ТОГЛООМ",
@@ -226,6 +228,8 @@ export const mn: LocaleTree = {
     "currency": "Валют",
     "confirmPassword": "Нууц үг батлах",
     "loginError": "Буруу и-мэйл, хэрэглэгчийн нэр эсвэл нууц үг.",
+    "riskBlocked": "This action was blocked for security reasons.",
+    "riskChallenge": "Additional verification is required before you can continue.",
     "registerError": "Бүртгэл амжилтгүй. Мэдээллээ шалгана уу.",
     "noAccount": "Account байхгүй юу?",
     "hasAccount": "Аль хэдийн account байгаа юу?",
@@ -264,7 +268,19 @@ export const mn: LocaleTree = {
     "saveChanges": "Өөрчлөлт хадгалах",
     "updateSuccess": "Профайл амжилттай шинэчлэгдлээ.",
     "updateFailed": "Профайл шинэчлэх амжилтгүй.",
-    "language": "Хэл"
+    "language": "Хэл",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC-ийн баталгаажуулалт удахгүй гарна. Дараа дахин шалгана уу.",
+    "verificationTitleKyc": "Таних тэмдэг (KYC) баталгаажуулах",
+    "kycLoading": "Баталгаажуулалтыг ачаалж байна...",
+    "kycFailed": "KYC баталгаажуулалтыг эхлүүлж чадсангүй. Дараа дахин оролдоно уу.",
+    "kycHint": "Дээрх маягтыг бөглөнө үү. SumSub хяналт хийсний дараа таны статус шинэчлэх болно.",
+    "verificationSendConfirm": "Баталгаажуулах кодыг {{destination}} руу илгээх үү?"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
   },
   "deposit": {
     "title": "Deposit",
@@ -322,7 +338,18 @@ export const mn: LocaleTree = {
     "recentWithdrawals": "Сүүлийн таталтууд",
     "noWithdrawals": "Одоогоор татах хүсэлт байхгүй.",
     "submitted": "Татах хүсэлт #{{id}} илгээгдлээ ({{status}}). Админы шалгалтыг хүлээж байна.",
-    "submitFailed": "Татах хүсэлт илгээх амжилтгүй."
+    "submitFailed": "Татах хүсэлт илгээх амжилтгүй.",
+    "verificationRequiredTitle": "Баталгаажуулах Шаардлагатай",
+    "verificationRequiredMessage": "Та авахаасаа өмнө имэйл, утасны дугаараа баталгаажуулах, KYC-г бөглөх ёстой.",
+    "verificationRequiredBanner": "Зарлага нь дансны баталгаажуулалтыг шаарддаг. KYC-ийг имэйл, утсаа, мөн бүрэн гүйцэд баталгаажуулна уу.",
+    "verificationLimitBanner": "Таны хүчингүй болгох дээд хэмжээ нь таны одоогийн баталгаажуулалтын түвшинд суурилагдсан {{amount}}} байна.",
+    "verificationLimitExceeded": "Таны баталгаажуулах хязгаараас давсан дүн {{amount}}.",
+    "limitAlertTitle": "Зарлагын Хязгаар",
+    "limitAlertEmailOnly": "Та имэйлээ зөвхөн баталгаажуулсан тул та {amount}} хүртэл татан авч болно. Илүү ихийг буцаахын тулд Утас эсвэл KYC баталгаажуулалтыг профайлдаа бөглөнө үү.",
+    "limitAlertPhoneOnly": "Та утсаа зөвхөн баталгаажуулсан тул та {amount}} хүртэл татан авч болно. Илүү ихийг буцаахын тулд имэйл эсвэл KYC баталгаажуулалтаа дуусгана уу.",
+    "limitAlertEmailAndPhone": "Та имэйл, утасны дугаарыг баталгаажуулсан боловч KYC биш учраас та {amount}} хүртэл татан авч болно. Хязгааргүй дүнг авахын тулд KYC баталгаажуулалтаа профайлдаа бөглөнө үү.",
+    "limitAlertGeneric": "Та одоогийн баталгаажуулалтын түвшингээ үндэслэн {{amount}} хүртэл татан авч болно. Профайлдаа нэмэлт баталгаажуулалт хийж, хязгаараа нэмэгдүүлнэ.",
+    "goToProfile": "Профайл руу орох"
   },
   "bonus": {
     "title": "Bonus-ууд",
@@ -339,13 +366,25 @@ export const mn: LocaleTree = {
     "autoApply": "Эрх бүхий deposit дээр автоматаар хэрэглэгдэнэ.",
     "firstDepositAutoApply": "Зөвхөн анхны deposit дээр автоматаар хэрэглэгдэнэ.",
     "claimed": "Bonus авлаа: {{amount}} ({{status}})",
-    "claimFailed": "Bonus авах амжилтгүй."
+    "claimFailed": "Bonus авах амжилтгүй.",
+    "freeSpinCount": "{{count}} Free Spins",
+    "freeSpinUsage": "{{used}} / {{total}} spins used",
+    "freeSpinProvider": "Provider: {{provider}}",
+    "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
+    "freeSpinWinnings": "Winnings: {{amount}}",
+    "depositRequired": "Make at least one deposit to claim this bonus.",
+    "firstDepositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositCta": "Go to deposit",
+    "alreadyClaimed": "You have already claimed this bonus.",
+    "providerNotSupported": "This free spin provider is not supported yet."
   },
   "bonusTypes": {
     "welcome": "Тавтай морил",
     "first_deposit": "Анхны deposit",
     "reload": "Дахин ачаалах",
-    "cashback": "Cashback"
+    "cashback": "Cashback",
+    "free_spin": "Free Spin"
   },
   "messages": {
     "title": "Мессеж",
@@ -366,7 +405,11 @@ export const mn: LocaleTree = {
     "win": "Ялалт",
     "net": "Цэвэр",
     "status": "Төлөв",
-    "date": "Огноо"
+    "date": "Огноо",
+    "spinType": "Spin Type",
+    "fundingSource": "Spin Type",
+    "fundingCash": "Cash Spin",
+    "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
     "title": "Гүйлгээний түүх",
@@ -401,6 +444,10 @@ export const mn: LocaleTree = {
     "launchError": "Тоглоом эхлүүлэх амжилтгүй.",
     "closeWindow": "Хаах",
     "loginRequired": "Тоглохын тулд нэвтэрнэ үү."
+  },
+  "gameCard": {
+    "newBadge": "New",
+    "bonusBadge": "Bonus"
   },
   "modal": {
     "comingSoon": "Удахгүй"

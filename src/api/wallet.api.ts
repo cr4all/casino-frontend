@@ -72,4 +72,13 @@ export const playerApi = {
     });
     return data.data;
   },
+
+  createKycAccessToken: async () => {
+    const { data } = await api.post<ApiResponse<{
+      token: string;
+      external_user_id: string;
+      level_name: string;
+    }>>('/player/kyc/access-token');
+    return data.data;
+  },
 };

@@ -33,7 +33,9 @@ export const km: LocaleTree = {
     "pageOf": "ទំព័រ {{page}} នៃ {{last}}",
     "actions": "សកម្មភាព",
     "openMenu": "បើក​ម៉ឺនុយ",
-    "language": "ភាសា"
+    "language": "ភាសា",
+    "yes": "បាទ/ចាស",
+    "no": "មិនដឹង"
   },
   "nav": {
     "allGames": "ហ្គេមទាំងអស់",
@@ -226,6 +228,8 @@ export const km: LocaleTree = {
     "currency": "រូបិយវត្ថុ",
     "confirmPassword": "បញ្ជាក់លេខសម្ងាត់",
     "loginError": "អ៊ីមែល ឈ្មោះប្រើប្រាស់ ឬពាក្យសម្ងាត់មិនត្រឹមត្រូវ។",
+    "riskBlocked": "This action was blocked for security reasons.",
+    "riskChallenge": "Additional verification is required before you can continue.",
     "registerError": "ការចុះឈ្មោះបរាជ័យ។ សូមពិនិត្យព័ត៌មានរបស់អ្នក។",
     "noAccount": "មិនមានគណនីទេ?",
     "hasAccount": "មានគណនីរួចហើយទេ?",
@@ -264,7 +268,19 @@ export const km: LocaleTree = {
     "saveChanges": "រក្សាទុកការផ្លាស់ប្តូរ",
     "updateSuccess": "ប្រវត្តិរូបត្រូវបានធ្វើបច្ចុប្បន្នភាពដោយជោគជ័យ។",
     "updateFailed": "បរាជ័យក្នុងការអាប់ដេតប្រវត្តិរូប។",
-    "language": "ភាសា"
+    "language": "ភាសា",
+    "kyc": "KYC",
+    "kycComingSoon": "ការផ្ទៀងផ្ទាត់ KYC នឹងមានក្នុងពេលឆាប់ៗនេះ ។ សូមពិនិត្យឡើងវិញនៅពេលក្រោយ ។",
+    "verificationTitleKyc": "ផ្ទៀងផ្ទាត់អត្តសញ្ញាណ (KYC)",
+    "kycLoading": "កំពុង ផ្ទុក ការ ផ្ទៀងផ្ទាត់...",
+    "kycFailed": "មិនអាច ចាប់ផ្ដើម ការ ផ្ទៀងផ្ទាត់ KYC បានទេ & # 160; ។ សូមព្យាយាមម្តងទៀតនៅពេលក្រោយ ។",
+    "kycHint": "បំពេញជំហានដូចបានរៀបរាប់ខាងលើ ។ ស្ថានភាពរបស់អ្នកនឹងត្រូវបានធ្វើបច្ចុប្បន្នភាពបន្ទាប់ពី SumSub ពិនិត្យឡើងវិញ ។",
+    "verificationSendConfirm": "ផ្ញើកូដផ្ទៀងផ្ទាត់ទៅ {{destination}}?"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
   },
   "deposit": {
     "title": "កក់ប្រាក់",
@@ -322,7 +338,18 @@ export const km: LocaleTree = {
     "recentWithdrawals": "ការដកប្រាក់ថ្មីៗ",
     "noWithdrawals": "មិនមានសំណើការដកប្រាក់នៅឡើយទេ។",
     "submitted": "សំណើការដកប្រាក់ #{{id}} បានដាក់ស្នើ ({{status}})។ កំពុងរង់ចាំការត្រួតពិនិត្យពីអ្នកគ្រប់គ្រង។",
-    "submitFailed": "បរាជ័យក្នុងការដាក់ស្នើការដកប្រាក់។"
+    "submitFailed": "បរាជ័យក្នុងការដាក់ស្នើការដកប្រាក់។",
+    "verificationRequiredTitle": "ទាមទារការផ្ទៀងផ្ទាត់",
+    "verificationRequiredMessage": "អ្នកត្រូវតែផ្ទៀងផ្ទាត់អ៊ីមែល លេខទូរស័ព្ទ និងបំពេញ KYC របស់អ្នក មុនពេលអ្នកអាចដកប្រាក់បាន ។",
+    "verificationRequiredBanner": "ការដកប្រាក់តម្រូវឱ្យមានការផ្ទៀងផ្ទាត់គណនី ។ សូមផ្ទៀងផ្ទាត់អ៊ីមែល ទូរស័ព្ទ និងបំពេញ KYC នៅក្នុងប្រវត្តិរូបរបស់អ្នក ។",
+    "verificationLimitBanner": "ចំនួនទឹកប្រាក់ដកអតិបរមារបស់អ្នកគឺ {{amount}} ដោយផ្អែកលើកម្រិតផ្ទៀងផ្ទាត់បច្ចុប្បន្នរបស់អ្នក ។",
+    "verificationLimitExceeded": "ចំនួនទឹកប្រាក់លើសពីដែនកំណត់នៃការផ្ទៀងផ្ទាត់របស់អ្នកចំនួន {{amount}} ។",
+    "limitAlertTitle": "ដែនកំណត់ដកប្រាក់",
+    "limitAlertEmailOnly": "ដោយសារតែអ្នកបានផ្ទៀងផ្ទាត់តែអ៊ីមែលរបស់អ្នក អ្នកអាចដកប្រាក់រហូតដល់ {{amount}} ។ ដើម្បីដកប្រាក់បន្ថែម សូមបំពេញការផ្ទៀងផ្ទាត់ទូរស័ព្ទ ឬ KYC នៅក្នុងប្រវត្តិរូបរបស់អ្នក ។",
+    "limitAlertPhoneOnly": "ដោយសារតែអ្នកបានផ្ទៀងផ្ទាត់តែទូរស័ព្ទរបស់អ្នក អ្នកអាចដកប្រាក់រហូតដល់ {{amount}} ។ ដើម្បីដកប្រាក់បន្ថែម សូមបំពេញការផ្ទៀងផ្ទាត់អ៊ីមែល ឬ KYC នៅក្នុងប្រវត្តិរូបរបស់អ្នក ។",
+    "limitAlertEmailAndPhone": "ដោយសារអ្នកបានផ្ទៀងផ្ទាត់អ៊ីមែល និងទូរសព្ទ ប៉ុន្តែមិនមែន KYC អ្នកអាចដកប្រាក់រហូតដល់ {{amount}} ។ ដើម្បីដកចំនួនទឹកប្រាក់ដែលគ្មានដែនកំណត់ សូមបំពេញការផ្ទៀងផ្ទាត់ KYC នៅក្នុងប្រវត្តិរូបរបស់អ្នក ។",
+    "limitAlertGeneric": "អ្នកអាចដកប្រាក់រហូតដល់ {{amount}} ដោយផ្អែកលើកម្រិតផ្ទៀងផ្ទាត់បច្ចុប្បន្នរបស់អ្នក ។ បំពេញការផ្ទៀងផ្ទាត់បន្ថែមនៅក្នុងប្រវត្តិរូបរបស់អ្នក ដើម្បីបង្កើនដែនកំណត់របស់អ្នក ។",
+    "goToProfile": "ចូលទៅកាន់ប្រូហ្វាល"
   },
   "bonus": {
     "title": "ប្រាក់រង្វាន់",
@@ -339,13 +366,25 @@ export const km: LocaleTree = {
     "autoApply": "អនុវត្តដោយស្វ័យប្រវត្តិនៅលើប្រាក់ដាក់ទំរូងដែលមានលក្ខខណ្ឌ។",
     "firstDepositAutoApply": "អនុវត្តដោយស្វ័យប្រវត្តិលើការដាក់ទុនដំបូងរបស់អ្នកតែប៉ុណ្ណោះ។",
     "claimed": "បានទាមទារប្រាក់បន្ថែម: {{amount}} ({{status}})",
-    "claimFailed": "បរាជ័យក្នុងការទាមទារប្រាក់រង្វាន់។"
+    "claimFailed": "បរាជ័យក្នុងការទាមទារប្រាក់រង្វាន់។",
+    "freeSpinCount": "{{count}} Free Spins",
+    "freeSpinUsage": "{{used}} / {{total}} spins used",
+    "freeSpinProvider": "Provider: {{provider}}",
+    "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
+    "freeSpinWinnings": "Winnings: {{amount}}",
+    "depositRequired": "Make at least one deposit to claim this bonus.",
+    "firstDepositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositCta": "Go to deposit",
+    "alreadyClaimed": "You have already claimed this bonus.",
+    "providerNotSupported": "This free spin provider is not supported yet."
   },
   "bonusTypes": {
     "welcome": "សូមស្វាគមន៍",
     "first_deposit": "ការដាក់ប្រាក់ដំបូង",
     "reload": "ផ្ទុកឡើងម្ដងទៀត",
-    "cashback": "ប្រាក់ត្រឡប់"
+    "cashback": "ប្រាក់ត្រឡប់",
+    "free_spin": "Free Spin"
   },
   "messages": {
     "title": "សារ",
@@ -366,7 +405,11 @@ export const km: LocaleTree = {
     "win": "ឈ្នះ",
     "net": "បំណែកសុទ្ធ",
     "status": "ស្ថានភាព",
-    "date": "កាលបរិច្ឆេទ"
+    "date": "កាលបរិច្ឆេទ",
+    "spinType": "Spin Type",
+    "fundingSource": "Spin Type",
+    "fundingCash": "Cash Spin",
+    "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
     "title": "ប្រវត្តិប្រតិបត្តិការ",
@@ -401,6 +444,10 @@ export const km: LocaleTree = {
     "launchError": "បរាជ័យក្នុងការចាប់ផ្តើមហ្គេម។",
     "closeWindow": "បិទ",
     "loginRequired": "សូមចូលខ account ដើម្បីលេង។"
+  },
+  "gameCard": {
+    "newBadge": "New",
+    "bonusBadge": "ប្រាក់រង្វាន់"
   },
   "modal": {
     "comingSoon": "រៀបចំមុន"

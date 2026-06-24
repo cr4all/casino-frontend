@@ -377,5 +377,14 @@
   "Net": "Net",
   "CPA": "CPA",
   "OK": "OK",
-  "ID": "ID"
+  "ID": "ID",
+  "Yes": "ใช่",
+  "No": "เลขที่",
+  "KYC verification will be available soon. Please check back later.": "การยืนยัน KYC จะพร้อมใช้งานเร็วๆ นี้ โปรดกลับมาตรวจสอบอีกครั้งในภายหลัง",
+  "Verify identity (KYC)": "ยืนยันตัวตน (KYC)",
+  "Loading verification...": "กำลังโหลดการยืนยัน...",
+  "Unable to start KYC verification. Please try again later.": "ไม่สามารถเริ่มการยืนยัน KYC ได้ โปรดลองอีกครั้งในภายหลัง",
+  "Complete the steps in the form above. Your status will update after SumSub review.": "ทำตามขั้นตอนในแบบฟอร์มด้านบนให้เสร็จสิ้น สถานะของคุณจะอัปเดตหลังจากการตรวจสอบ SumSub",
+  "Send verification code to {{destination}}?": "ส่งรหัสยืนยันไปที่ {{destination}} หรือไม่",
+  "Verification Required": "จำเป็นต้องมีการยืนยัน"
 }

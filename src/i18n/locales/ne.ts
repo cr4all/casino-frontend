@@ -33,7 +33,9 @@ export const ne: LocaleTree = {
     "pageOf": "पृष्ठ {{last}} को {{page}}",
     "actions": "क्रिया",
     "openMenu": "मेनु खोल्नुहोस्",
-    "language": "भाषा"
+    "language": "भाषा",
+    "yes": "हो",
+    "no": "होइन"
   },
   "nav": {
     "allGames": "सबै खेलहरू",
@@ -226,6 +228,8 @@ export const ne: LocaleTree = {
     "currency": "मुद्रा",
     "confirmPassword": "पासवर्ड पक्का गर्नुहोस्",
     "loginError": "अमान्य इमेल, प्रयोगकर्ता नाम, वा पासवर्ड ।",
+    "riskBlocked": "This action was blocked for security reasons.",
+    "riskChallenge": "Additional verification is required before you can continue.",
     "registerError": "दर्ता असफल भयो । कृपया आफ्नो विवरण जाँच गर्नुहोस् ।",
     "noAccount": "खाता छैन?",
     "hasAccount": "पहिले नै खाता छ?",
@@ -264,7 +268,19 @@ export const ne: LocaleTree = {
     "saveChanges": "परिवर्तनहरू सुरक्षित गर्नुहोस",
     "updateSuccess": "प्रोफाइल सफलतापूर्वक अद्यावधिक गरियो!",
     "updateFailed": "प्रोफाइल अद्यावधिक गर्न असफल भयो ।",
-    "language": "भाषा"
+    "language": "भाषा",
+    "kyc": "ग्राहक पहिचान (KYC)",
+    "kycComingSoon": "KYC प्रमाणीकरण चाँडै उपलब्ध हुनेछ । कृपया पछि फेरि जाँच गर्नुहोस् ।",
+    "verificationTitleKyc": "पहिचान प्रमाणित गर्नुहोस् (KYC)",
+    "kycLoading": "प्रमाणीकरण लोड हुँदैछ...",
+    "kycFailed": "KYC प्रमाणीकरण सुरु गर्न असमर्थ । कृपया पछि फेरि प्रयास गर्नुहोस् ।",
+    "kycHint": "माथिको फारममा चरणहरू पूरा गर्नुहोस् । SumSub समीक्षा पछि तपाईंको स्थिति अद्यावधिक हुनेछ ।",
+    "verificationSendConfirm": "{{destination}} मा प्रमाणिकरण कोड पठाउनुहुन्छ?"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
   },
   "deposit": {
     "title": "जम्मा गर्नुहोस्",
@@ -322,7 +338,18 @@ export const ne: LocaleTree = {
     "recentWithdrawals": "भर्खरै निकासी",
     "noWithdrawals": "अहिलेसम्म कुनै निकासी अनुरोधहरू छैनन् ।",
     "submitted": "फिर्ता अनुरोध #{{ id}} पेश गरियो ({{status}}) । व्यवस्थापक समीक्षाको प्रतिक्षामा ।",
-    "submitFailed": "निकासी पेश गर्न असफल भयो ।"
+    "submitFailed": "निकासी पेश गर्न असफल भयो ।",
+    "verificationRequiredTitle": "प्रमाणीकरण आवश्यक छ",
+    "verificationRequiredMessage": "तपाईंले फिर्ता लिन सक्नु अघि तपाईंले आफ्नो ईमेल, फोन नम्बर र KYC भर्नु पर्छ ।",
+    "verificationRequiredBanner": "निकासीको लागि खाता प्रमाणिकरण आवश्यक छ । कृपया आफ्नो प्रोफाइलमा आफ्नो ईमेल, फोन, र KYC पूरा गर्नुहोस् ।",
+    "verificationLimitBanner": "तपाईंको हालको प्रमाणिकरण स्तरको आधारमा तपाईंको अधिकतम निकासी रकम {{amount}} हो ।",
+    "verificationLimitExceeded": "रकम तपाईंको {{amount}} को प्रमाणिकरण सीमा भन्दा बढी छ ।",
+    "limitAlertTitle": "निकासी सीमा",
+    "limitAlertEmailOnly": "तपाईंले आफ्नो ईमेल मात्र प्रमाणित गर्नुभएको हुनाले, तपाईं {{amount}} सम्म निकाल्न सक्नुहुन्छ । थप फिर्ता लिनको लागि, कृपया आफ्नो प्रोफाइलमा फोन वा KYC प्रमाणिकरण पूरा गर्नुहोस् ।",
+    "limitAlertPhoneOnly": "तपाईंले आफ्नो फोन मात्र प्रमाणित गर्नुभएको हुनाले, तपाईं {{amount}} सम्म निकाल्न सक्नुहुन्छ । थप फिर्ता लिनको लागि, कृपया आफ्नो प्रोफाइलमा ईमेल वा KYC प्रमाणिकरण पूरा गर्नुहोस् ।",
+    "limitAlertEmailAndPhone": "तपाईंले ईमेल र फोन प्रमाणित गर्नुभएको तर KYC नभएकाले, तपाईं {{amount}} सम्म निकाल्न सक्नुहुन्छ । असीमित रकम निकाल्नको लागि, कृपया आफ्नो प्रोफाइलमा KYC प्रमाणिकरण पूरा गर्नुहोस् ।",
+    "limitAlertGeneric": "तपाईं आफ्नो हालको प्रमाणिकरण स्तरको आधारमा {{amount}} सम्म निकाल्न सक्नुहुन्छ । आफ्नो सीमा बढाउनको लागि आफ्नो प्रोफाइलमा थप प्रमाणिकरण पूरा गर्नुहोस् ।",
+    "goToProfile": "प्रोफाइलमा जानुहोस्"
   },
   "bonus": {
     "title": "बोनसहरू",
