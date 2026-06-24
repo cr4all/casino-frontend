@@ -33,7 +33,9 @@ export const hy: LocaleTree = {
     "pageOf": "Էջ {{page}} מתוך {{last}}",
     "actions": "Գործողություններ",
     "openMenu": "Բացել меню",
-    "language": "Լեզու"
+    "language": "Լեզու",
+    "yes": "Yes",
+    "no": "No"
   },
   "nav": {
     "allGames": "ԲԱՐՁՐ ԽԱՂԵՐ",
@@ -226,6 +228,8 @@ export const hy: LocaleTree = {
     "currency": "Հատուկ դրամ",
     "confirmPassword": "Հաստատել գաղտնաբառը",
     "loginError": "Անվավեր էլ. հասցե, օգտագործողի անուն կամ գաղտնաբառ։",
+    "riskBlocked": "This action was blocked for security reasons.",
+    "riskChallenge": "Additional verification is required before you can continue.",
     "registerError": "Գրանցումը ձախողվեց։ Խնդրում ենք ստուգել ձեր տվյալները։",
     "noAccount": "Հաշիվ չունե՞ս։",
     "hasAccount": "Հագեցած եք արդեն հաշիվով՞",
@@ -264,7 +268,19 @@ export const hy: LocaleTree = {
     "saveChanges": "Պահպանել փոփոխությունները",
     "updateSuccess": "Պրոֆիլը հաջողությամբ նորացվել է։",
     "updateFailed": "Չհաջողվեց թարմացնել պրոֆիլը։",
-    "language": "Լեզու"
+    "language": "Լեզու",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
+    "verificationSendConfirm": "Send verification code to {{destination}}?"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
   },
   "deposit": {
     "title": "Հատկացում",
@@ -322,7 +338,18 @@ export const hy: LocaleTree = {
     "recentWithdrawals": "Վերջին դուրսբերումները",
     "noWithdrawals": "Մինչ այժմ դուրսբերման հարցումներ չեն եղել։",
     "submitted": "Դադրեցման հարցում #{{id}} ներկայացված է ({{status}})։ Սպասում է ադմինիստրատորի ստուգմանը։",
-    "submitFailed": "Չհաջողվեց իրականացնել զտումային դուրսբերումը:"
+    "submitFailed": "Չհաջողվեց իրականացնել զտումային դուրսբերումը:",
+    "verificationRequiredTitle": "Verification Required",
+    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
+    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
+    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
+    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
+    "limitAlertTitle": "Withdrawal Limit",
+    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
+    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
+    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
+    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
+    "goToProfile": "Go to Profile"
   },
   "bonus": {
     "title": "Պարգևավճարներ",
@@ -339,13 +366,25 @@ export const hy: LocaleTree = {
     "autoApply": "Միավորված է ավտոմատ կերպով համապատասխան ավանդներին:",
     "firstDepositAutoApply": "Ակտիվացվում է ավտոմատ կերպով միայն ձեր առաջին ավանդի համար։",
     "claimed": "Պարգևատրում պահանջված է՝ {{amount}} ({{status}})",
-    "claimFailed": "Չհաջողվեց ստանալ բոնուսը։"
+    "claimFailed": "Չհաջողվեց ստանալ բոնուսը։",
+    "freeSpinCount": "{{count}} Free Spins",
+    "freeSpinUsage": "{{used}} / {{total}} spins used",
+    "freeSpinProvider": "Provider: {{provider}}",
+    "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
+    "freeSpinWinnings": "Winnings: {{amount}}",
+    "depositRequired": "Make at least one deposit to claim this bonus.",
+    "firstDepositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositCta": "Go to deposit",
+    "alreadyClaimed": "You have already claimed this bonus.",
+    "providerNotSupported": "This free spin provider is not supported yet."
   },
   "bonusTypes": {
     "welcome": "Բարի գալուստ",
     "first_deposit": "Առաջին ավանդ",
     "reload": "Վերաբեռնել",
-    "cashback": "Փաստացի վերադարձ"
+    "cashback": "Փաստացի վերադարձ",
+    "free_spin": "Free Spin"
   },
   "messages": {
     "title": "Հաղորդագրություններ",
@@ -366,7 +405,11 @@ export const hy: LocaleTree = {
     "win": "Հաղթել",
     "net": "ցանց",
     "status": "Կարգավիճակ",
-    "date": "Ամսաթիվ"
+    "date": "Ամսաթիվ",
+    "spinType": "Spin Type",
+    "fundingSource": "Spin Type",
+    "fundingCash": "Cash Spin",
+    "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
     "title": "Գործարքների պատմություն",
@@ -401,6 +444,10 @@ export const hy: LocaleTree = {
     "launchError": "Չհաջողվեց սկսել խաղը։",
     "closeWindow": "Փակել",
     "loginRequired": "Խնդրում ենք մուտք գործել խաղալու համար։"
+  },
+  "gameCard": {
+    "newBadge": "New",
+    "bonusBadge": "Պարգևավճար"
   },
   "modal": {
     "comingSoon": "Շուտով հասանելի"

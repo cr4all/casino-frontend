@@ -22,29 +22,15 @@ export function activeBonusHasRemainingBenefit(bonus: ActiveBonus): boolean {
   return spinsRemaining !== null && spinsRemaining > 0;
 }
 
-export function availablePolicyShowsBonusBadge(policy: BonusPolicy): boolean {
-  if (policy.type !== 'free_spin' || !policy.provider_slug || !policy.claimable) {
-    return false;
-  }
-
-  return policy.claim_blocked_reason !== 'already_claimed';
-}
-
 export function countClaimableFreeSpinBonuses(policies: BonusPolicy[]): number {
   return policies.filter((policy) => policy.type === 'free_spin' && policy.claimable).length;
 }
 
 export function collectBonusProviderSlugs(
-  available: BonusPolicy[],
+  _available: BonusPolicy[],
   active: ActiveBonus[],
 ): string[] {
   const slugs = new Set<string>();
-
-  for (const policy of available) {
-    if (availablePolicyShowsBonusBadge(policy)) {
-      slugs.add(policy.provider_slug!);
-    }
-  }
 
   for (const bonus of active) {
     if (activeBonusHasRemainingBenefit(bonus)) {

@@ -33,7 +33,9 @@ export const bn: LocaleTree = {
     "pageOf": "{{last}} এর পৃষ্ঠা {{page}}",
     "actions": "পদক্ষেপগুলি",
     "openMenu": "মেনু খুলুন",
-    "language": "ভাষা"
+    "language": "ভাষা",
+    "yes": "হ্যাঁ",
+    "no": "নং"
   },
   "nav": {
     "allGames": "সকল খেলা",
@@ -226,6 +228,8 @@ export const bn: LocaleTree = {
     "currency": "মুদ্রা",
     "confirmPassword": "পাসওয়ার্ড নিশ্চিত করুন",
     "loginError": "ভুল ইমেল বা পাসওয়ার্ড.",
+    "riskBlocked": "This action was blocked for security reasons.",
+    "riskChallenge": "Additional verification is required before you can continue.",
     "registerError": "রেজিস্ট্রেশন ব্যর্থ হয়েছে । অনুগ্রহ করে আপনার বিবরণ চেক করুন ।",
     "noAccount": "কোন অ্যাকাউন্ট নেই? ",
     "hasAccount": "আগে থেকেই একটি অ্যাকাউন্ট আছে কি?",
@@ -264,7 +268,19 @@ export const bn: LocaleTree = {
     "saveChanges": "পরিবর্তনগুলো সংরক্ষণ করুন",
     "updateSuccess": "প্রোফাইল সফলভাবে আপডেট করা হয়েছে!",
     "updateFailed": "ব্যবহারকারী প্রোফাইল আপডেট করতে ব্যর্থ হয়েছে",
-    "language": "ভাষা"
+    "language": "ভাষা",
+    "kyc": "কেওয়াইসি (KYC)",
+    "kycComingSoon": "KYC যাচাইকরণ শীঘ্রই পাওয়া যাবে । অনুগ্রহ করে পরে আবার দেখুন ।",
+    "verificationTitleKyc": "পরিচয় যাচাই করুন (KYC)",
+    "kycLoading": "যাচাইকরণ লোড হচ্ছে...",
+    "kycFailed": "KYC যাচাইকরণ শুরু করতে অক্ষম । অনুগ্রহ করে পরে আবার চেষ্টা করুন ।",
+    "kycHint": "উপরের ফর্মটিতে ধাপগুলি সম্পূর্ণ করুন । SumSub পর্যালোচনার পরে আপনার স্ট্যাটাস আপডেট করা হবে ।",
+    "verificationSendConfirm": "{{destination}} -এ যাচাইকরণ কোড পাঠান?"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
   },
   "deposit": {
     "title": "ডেপোজিট",
@@ -322,7 +338,18 @@ export const bn: LocaleTree = {
     "recentWithdrawals": "সাম্প্রতিক উত্তোলন",
     "noWithdrawals": "এখনও কোনও প্রত্যাহারের অনুরোধ নেই ।",
     "submitted": "প্রত্যাহারের অনুরোধ #{{id}} জমা দেওয়া হয়েছে ({{status}}) । অ্যাডমিন পর্যালোচনার জন্য অপেক্ষা করা হচ্ছে ।",
-    "submitFailed": "প্রত্যাহার জমা দিতে ব্যর্থ হয়েছে ।"
+    "submitFailed": "প্রত্যাহার জমা দিতে ব্যর্থ হয়েছে ।",
+    "verificationRequiredTitle": "যাচাইকরণ প্রয়োজন",
+    "verificationRequiredMessage": "আপনি প্রত্যাহার করার আগে আপনাকে অবশ্যই আপনার ইমেল, ফোন নম্বর এবং সম্পূর্ণ KYC যাচাই করতে হবে ।",
+    "verificationRequiredBanner": "প্রত্যাহারের জন্য অ্যাকাউন্ট যাচাইকরণ প্রয়োজন । অনুগ্রহ করে আপনার প্রোফাইলে আপনার ইমেল, ফোন এবং সম্পূর্ণ KYC যাচাই করুন ।",
+    "verificationLimitBanner": "আপনার বর্তমান যাচাইকরণ স্তরের উপর ভিত্তি করে আপনার সর্বাধিক উত্তোলনের পরিমাণ {{amount}} ।",
+    "verificationLimitExceeded": "পরিমাণ আপনার যাচাইকরণের সীমা {{amount}} ছাড়িয়ে গেছে ।",
+    "limitAlertTitle": "প্রত্যাহারের সীমা",
+    "limitAlertEmailOnly": "যেহেতু আপনি শুধুমাত্র আপনার ইমেল যাচাই করেছেন, তাই আপনি {{amount}} পর্যন্ত উত্তোলন করতে পারেন । আরও প্রত্যাহার করতে, অনুগ্রহ করে আপনার প্রোফাইলে ফোন বা KYC যাচাইকরণ সম্পূর্ণ করুন ।",
+    "limitAlertPhoneOnly": "যেহেতু আপনি শুধুমাত্র আপনার ফোন যাচাই করেছেন, তাই আপনি {{amount}} পর্যন্ত উত্তোলন করতে পারেন । আরও প্রত্যাহার করতে, অনুগ্রহ করে আপনার প্রোফাইলে ইমেল বা KYC যাচাইকরণ সম্পূর্ণ করুন ।",
+    "limitAlertEmailAndPhone": "যেহেতু আপনার ইমেল এবং ফোন যাচাই করা হয়েছে কিন্তু KYC নয়, তাই আপনি {{amount}} পর্যন্ত উত্তোলন করতে পারেন । সীমাহীন পরিমাণ অর্থ উত্তোলন করতে, অনুগ্রহ করে আপনার প্রোফাইলে KYC যাচাইকরণ সম্পূর্ণ করুন ।",
+    "limitAlertGeneric": "আপনি আপনার বর্তমান যাচাইকরণ স্তরের উপর ভিত্তি করে {{amount}} পর্যন্ত উত্তোলন করতে পারেন । আপনার সীমা বাড়াতে আপনার প্রোফাইলে অতিরিক্ত যাচাইকরণ সম্পন্ন করুন ।",
+    "goToProfile": "প্রোফাইলে যান"
   },
   "bonus": {
     "title": "বোনাস",
@@ -339,13 +366,25 @@ export const bn: LocaleTree = {
     "autoApply": "যোগ্য আমানতের ক্ষেত্রে স্বয়ংক্রিয়ভাবে প্রয়োগ করা হয় ।",
     "firstDepositAutoApply": "শুধুমাত্র আপনার প্রথম ডিপোজিটে স্বয়ংক্রিয়ভাবে প্রয়োগ করা হয়েছে ।",
     "claimed": "বোনাস দাবি করা হয়েছে: {{amount}} ({{status}})",
-    "claimFailed": "বোনাস দাবি করতে ব্যর্থ হয়েছে ।"
+    "claimFailed": "বোনাস দাবি করতে ব্যর্থ হয়েছে ।",
+    "freeSpinCount": "{{count}} Free Spins",
+    "freeSpinUsage": "{{used}} / {{total}} spins used",
+    "freeSpinProvider": "Provider: {{provider}}",
+    "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
+    "freeSpinWinnings": "Winnings: {{amount}}",
+    "depositRequired": "Make at least one deposit to claim this bonus.",
+    "firstDepositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositCta": "Go to deposit",
+    "alreadyClaimed": "You have already claimed this bonus.",
+    "providerNotSupported": "This free spin provider is not supported yet."
   },
   "bonusTypes": {
     "welcome": "স্বাগতম",
     "first_deposit": "প্রথম ডিপোজিট",
     "reload": "রিলোড",
-    "cashback": "নগদ ফেরত"
+    "cashback": "নগদ ফেরত",
+    "free_spin": "Free Spin"
   },
   "messages": {
     "title": "বার্তাগুলি",
@@ -366,7 +405,11 @@ export const bn: LocaleTree = {
     "win": "জয়",
     "net": "নিট",
     "status": "স্ট্যাটাস",
-    "date": "তারিখ"
+    "date": "তারিখ",
+    "spinType": "Spin Type",
+    "fundingSource": "Spin Type",
+    "fundingCash": "Cash Spin",
+    "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
     "title": "লেনদেনের ইতিহাস",
@@ -401,6 +444,10 @@ export const bn: LocaleTree = {
     "launchError": "খেলা আরম্ভ করতে ব্যর্থ হয়েছে ।",
     "closeWindow": "বন্ধ",
     "loginRequired": "খেলতে লগ ইন করুন ।"
+  },
+  "gameCard": {
+    "newBadge": "New",
+    "bonusBadge": "বোনাস"
   },
   "modal": {
     "comingSoon": "শীঘ্রই আসছে"

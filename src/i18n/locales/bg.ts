@@ -33,7 +33,9 @@ export const bg: LocaleTree = {
     "pageOf": "Страница {{page}} от {{last}}",
     "actions": "Действия",
     "openMenu": "Отворете менюто",
-    "language": "език"
+    "language": "език",
+    "yes": "Да",
+    "no": "Не"
   },
   "nav": {
     "allGames": "ВСИЧКИ ИГРИ",
@@ -226,6 +228,8 @@ export const bg: LocaleTree = {
     "currency": "Валута",
     "confirmPassword": "Потвърди Парола",
     "loginError": "Невалиден имейл, потребителско име или парола.",
+    "riskBlocked": "This action was blocked for security reasons.",
+    "riskChallenge": "Additional verification is required before you can continue.",
     "registerError": "Регистрацията не бе успешна. Моля, проверете данните си.",
     "noAccount": "Нямате акаунт?",
     "hasAccount": "Вече имате акаунт?",
@@ -264,7 +268,19 @@ export const bg: LocaleTree = {
     "saveChanges": "Запазване на промените",
     "updateSuccess": "Профилът е актуализиран успешно.",
     "updateFailed": "Актуализирането на профила не бе успешно.",
-    "language": "език"
+    "language": "език",
+    "kyc": "KYC",
+    "kycComingSoon": "Проверката на KYC ще бъде налична скоро. Моля, проверете отново по - късно.",
+    "verificationTitleKyc": "Проверка на самоличността (KYC)",
+    "kycLoading": "Зареждане на проверка...",
+    "kycFailed": "Неуспешно стартиране на проверката на KYC. Моля, опитайте отново по - късно.",
+    "kycHint": "Изпълнете стъпките във формуляра по - горе. Статусът ви ще се актуализира след прегледа на SumSub.",
+    "verificationSendConfirm": "Изпращане на код за потвърждение до {{destination}}?"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
   },
   "deposit": {
     "title": "Депозит",
@@ -322,7 +338,18 @@ export const bg: LocaleTree = {
     "recentWithdrawals": "Последни тегления",
     "noWithdrawals": "Все още няма заявки за теглене.",
     "submitted": "Заявка за теглене #{{id}} е подадена ({{status}}). Очаква преглед от администратор.",
-    "submitFailed": "Подаването на заявка за теглене не бе успешно."
+    "submitFailed": "Подаването на заявка за теглене не бе успешно.",
+    "verificationRequiredTitle": "Изисква се проверка",
+    "verificationRequiredMessage": "Трябва да потвърдите имейла, телефонния си номер и да завършите KYC, преди да можете да теглите.",
+    "verificationRequiredBanner": "Тегленията изискват потвърждаване на акаунта. Потвърдете имейла, телефона и попълнете KYC в профила си.",
+    "verificationLimitBanner": "Максималната сума за теглене е {{amount}} въз основа на текущото ви ниво на проверка.",
+    "verificationLimitExceeded": "Сумата надвишава ограничението ви за потвърждение от {{amount}}.",
+    "limitAlertTitle": "Лимит за теглене",
+    "limitAlertEmailOnly": "Тъй като сте потвърдили само имейла си, можете да изтеглите до {{amount}}. За да изтеглите повече, завършете потвърждаването по телефона или KYC в профила си.",
+    "limitAlertPhoneOnly": "Тъй като сте потвърдили само телефона си, можете да изтеглите до {{amount}}. За да изтеглите повече, завършете проверката по имейл или KYC в профила си.",
+    "limitAlertEmailAndPhone": "Тъй като имате потвърден имейл и телефон, но не и KYC, можете да теглите до {{amount}}. За да изтеглите неограничени суми, завършете проверката на KYC в профила си.",
+    "limitAlertGeneric": "Можете да изтеглите до {{amount}} въз основа на текущото си ниво на потвърждение. Завършете допълнителна проверка в профила си, за да увеличите лимита си.",
+    "goToProfile": "Към профила"
   },
   "bonus": {
     "title": "Бонуси",
@@ -339,13 +366,25 @@ export const bg: LocaleTree = {
     "autoApply": "Прилага се автоматично при подходящи депозити.",
     "firstDepositAutoApply": "Прилага се автоматично само при първия ви депозит.",
     "claimed": "Бонусът е получен: {{amount}} ({{status}})",
-    "claimFailed": "Получаването на бонус не бе успешно."
+    "claimFailed": "Получаването на бонус не бе успешно.",
+    "freeSpinCount": "{{count}} Free Spins",
+    "freeSpinUsage": "{{used}} / {{total}} spins used",
+    "freeSpinProvider": "Provider: {{provider}}",
+    "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
+    "freeSpinWinnings": "Winnings: {{amount}}",
+    "depositRequired": "Make at least one deposit to claim this bonus.",
+    "firstDepositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositCta": "Go to deposit",
+    "alreadyClaimed": "You have already claimed this bonus.",
+    "providerNotSupported": "This free spin provider is not supported yet."
   },
   "bonusTypes": {
     "welcome": "Добре дошли",
     "first_deposit": "Първи депозит",
     "reload": "Презаредете",
-    "cashback": "Кешбек"
+    "cashback": "Кешбек",
+    "free_spin": "Free Spin"
   },
   "messages": {
     "title": "Съобщения",
@@ -366,7 +405,11 @@ export const bg: LocaleTree = {
     "win": "Победа",
     "net": "Нетно",
     "status": "Вид и статут",
-    "date": "Дата"
+    "date": "Дата",
+    "spinType": "Spin Type",
+    "fundingSource": "Spin Type",
+    "fundingCash": "Cash Spin",
+    "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
     "title": "История на транзакциите",
@@ -401,6 +444,10 @@ export const bg: LocaleTree = {
     "launchError": "Стартирането на играта не бе успешно.",
     "closeWindow": "Затваряне",
     "loginRequired": "Моля, влезте, за да играете."
+  },
+  "gameCard": {
+    "newBadge": "New",
+    "bonusBadge": "BONUS"
   },
   "modal": {
     "comingSoon": "Очаквайте скоро"

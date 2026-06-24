@@ -15,10 +15,16 @@ const inputClassName =
 type ChangePasswordFormProps = {
   onChangePassword: (payload: ChangePasswordPayload) => Promise<unknown>;
   onSuccess?: () => void;
+  translationNamespace?: 'profile' | 'affiliate';
 };
 
-export function ChangePasswordForm({ onChangePassword, onSuccess }: ChangePasswordFormProps) {
+export function ChangePasswordForm({
+  onChangePassword,
+  onSuccess,
+  translationNamespace = 'profile',
+}: ChangePasswordFormProps) {
   const { t } = useTranslation();
+  const ns = translationNamespace;
   const [saving, setSaving] = useState(false);
   const [passwordMessageKey, setPasswordMessageKey] = useState<'success' | 'error' | ''>('');
   const [passwordError, setPasswordError] = useState('');
@@ -45,7 +51,7 @@ export function ChangePasswordForm({ onChangePassword, onSuccess }: ChangePasswo
       onSuccess?.();
     } catch (err) {
       setPasswordMessageKey('error');
-      setPasswordError(getApiErrorMessage(err, t('profile.passwordUpdateFailed')));
+      setPasswordError(getApiErrorMessage(err, t(`${ns}.passwordUpdateFailed`)));
     } finally {
       setSaving(false);
     }
@@ -69,7 +75,7 @@ export function ChangePasswordForm({ onChangePassword, onSuccess }: ChangePasswo
       </div>
       <div>
         <label htmlFor="new-password" className="mb-1 block text-xs font-medium text-muted">
-          {t('profile.newPassword')}
+          {t(`${ns}.newPassword`)}
         </label>
         <input
           id="new-password"
@@ -84,7 +90,7 @@ export function ChangePasswordForm({ onChangePassword, onSuccess }: ChangePasswo
       </div>
       <div>
         <label htmlFor="confirm-new-password" className="mb-1 block text-xs font-medium text-muted">
-          {t('profile.confirmNewPassword')}
+          {t(`${ns}.confirmNewPassword`)}
         </label>
         <input
           id="confirm-new-password"
@@ -98,13 +104,13 @@ export function ChangePasswordForm({ onChangePassword, onSuccess }: ChangePasswo
         />
       </div>
       {passwordMessageKey === 'success' && (
-        <p className="text-sm text-accent-gold">{t('profile.passwordUpdateSuccess')}</p>
+        <p className="text-sm text-accent-gold">{t(`${ns}.passwordUpdateSuccess`)}</p>
       )}
       {passwordMessageKey === 'error' && (
         <p className="text-sm text-red-400">{passwordError}</p>
       )}
       <Button type="submit" disabled={saving}>
-        {saving ? t('common.saving') : t('profile.changePassword')}
+        {saving ? t('common.saving') : t(`${ns}.changePassword`)}
       </Button>
     </form>
   );

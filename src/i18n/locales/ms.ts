@@ -33,7 +33,9 @@ export const ms: LocaleTree = {
     "pageOf": "Halaman {{page}} daripada {{last}}",
     "actions": "Tindakan",
     "openMenu": "Buka menu",
-    "language": "Bahasa"
+    "language": "Bahasa",
+    "yes": "Yes",
+    "no": "No"
   },
   "nav": {
     "allGames": "SEMUA PERMAINAN",
@@ -226,6 +228,8 @@ export const ms: LocaleTree = {
     "currency": "Mata wang",
     "confirmPassword": "Sahkan Kata Laluan",
     "loginError": "E-mel, nama pengguna atau kata laluan tidak sah.",
+    "riskBlocked": "This action was blocked for security reasons.",
+    "riskChallenge": "Additional verification is required before you can continue.",
     "registerError": "Pendaftaran gagal. Sila semak butiran anda.",
     "noAccount": "Belum mempunyai akaun?",
     "hasAccount": "Sudah mempunyai akaun?",
@@ -264,7 +268,19 @@ export const ms: LocaleTree = {
     "saveChanges": "Simpan Perubahan",
     "updateSuccess": "Profil berjaya dikemas kini.",
     "updateFailed": "Gagal mengemas kini profil.",
-    "language": "Bahasa"
+    "language": "Bahasa",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
+    "verificationSendConfirm": "Send verification code to {{destination}}?"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
   },
   "deposit": {
     "title": "Tambah dana",
@@ -322,7 +338,18 @@ export const ms: LocaleTree = {
     "recentWithdrawals": "Pengeluaran Terkini",
     "noWithdrawals": "Tiada permintaan pengeluaran lagi.",
     "submitted": "Permintaan pengeluaran #{{id}} dihantar ({{status}}). Menunggu semakan pentadbir.",
-    "submitFailed": "Gagal menghantar pengeluaran."
+    "submitFailed": "Gagal menghantar pengeluaran.",
+    "verificationRequiredTitle": "Verification Required",
+    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
+    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
+    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
+    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
+    "limitAlertTitle": "Withdrawal Limit",
+    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
+    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
+    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
+    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
+    "goToProfile": "Go to Profile"
   },
   "bonus": {
     "title": "Ganjaran",
@@ -339,13 +366,25 @@ export const ms: LocaleTree = {
     "autoApply": "Digunakan secara automatik pada deposit yang layak.",
     "firstDepositAutoApply": "Digunakan secara automatik pada deposit pertama anda sahaja.",
     "claimed": "Bonus dituntut: {{amount}} ({{status}})",
-    "claimFailed": "Gagal menuntut bonus."
+    "claimFailed": "Gagal menuntut bonus.",
+    "freeSpinCount": "{{count}} Free Spins",
+    "freeSpinUsage": "{{used}} / {{total}} spins used",
+    "freeSpinProvider": "Provider: {{provider}}",
+    "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
+    "freeSpinWinnings": "Winnings: {{amount}}",
+    "depositRequired": "Make at least one deposit to claim this bonus.",
+    "firstDepositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositCta": "Go to deposit",
+    "alreadyClaimed": "You have already claimed this bonus.",
+    "providerNotSupported": "This free spin provider is not supported yet."
   },
   "bonusTypes": {
     "welcome": "Selamat datang",
     "first_deposit": "Deposit Pertama",
     "reload": "Muat semula",
-    "cashback": "Pulangan tunai"
+    "cashback": "Pulangan tunai",
+    "free_spin": "Free Spin"
   },
   "messages": {
     "title": "Mesej",
@@ -366,7 +405,11 @@ export const ms: LocaleTree = {
     "win": "Menang",
     "net": "Bersih",
     "status": "Keadaan",
-    "date": "Tarikh"
+    "date": "Tarikh",
+    "spinType": "Spin Type",
+    "fundingSource": "Spin Type",
+    "fundingCash": "Cash Spin",
+    "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
     "title": "Sejarah Transaksi",
@@ -401,6 +444,10 @@ export const ms: LocaleTree = {
     "launchError": "Gagal melancarkan permainan.",
     "closeWindow": "Tutup",
     "loginRequired": "Sila log masuk untuk bermain."
+  },
+  "gameCard": {
+    "newBadge": "New",
+    "bonusBadge": "Ganjaran"
   },
   "modal": {
     "comingSoon": "Akan Datang"

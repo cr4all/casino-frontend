@@ -33,7 +33,9 @@ export const ka: LocaleTree = {
     "pageOf": "გვერდი {{page}} {{last}}-დან",
     "actions": "აქტივობები",
     "openMenu": "მენიუს გახსნა",
-    "language": "ენა"
+    "language": "ენა",
+    "yes": "Yes",
+    "no": "No"
   },
   "nav": {
     "allGames": "ყველა თამაში",
@@ -226,6 +228,8 @@ export const ka: LocaleTree = {
     "currency": "ვალუტა",
     "confirmPassword": "პაროლის დადასტურება",
     "loginError": "არასწორი ელ.ფოსტა, მომხმარებლის სახელი ან პაროლი.",
+    "riskBlocked": "This action was blocked for security reasons.",
+    "riskChallenge": "Additional verification is required before you can continue.",
     "registerError": "რეგისტრაცია ვერ შესრულდა. გთხოვთ, გადაამოწმოთ თქვენი მონაცემები.",
     "noAccount": "არ გაქვთ ანგარიში?",
     "hasAccount": "ქვის უკვე ანგარიში?",
@@ -264,7 +268,19 @@ export const ka: LocaleTree = {
     "saveChanges": "შენახვა ცვლილებები",
     "updateSuccess": "პროფილი წარმატებით განახლდა.",
     "updateFailed": "პროფილის განახლება ვერ მოხერხდა.",
-    "language": "ენა"
+    "language": "ენა",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
+    "verificationSendConfirm": "Send verification code to {{destination}}?"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
   },
   "deposit": {
     "title": "ნაღდი ანაბარი",
@@ -322,7 +338,18 @@ export const ka: LocaleTree = {
     "recentWithdrawals": "ბოლო გამოტანილობები",
     "noWithdrawals": "ჯერ წაღების მოთხოვნები არ არის.",
     "submitted": "გამოჯანმრთელების მოთხოვნა #{{id}} წარდგენილია ({{status}}). ელოდება ადმინისტრატორის განხილვას.",
-    "submitFailed": "ნაკლებად მოხდა სავაჭრო სესხის წარდგენა."
+    "submitFailed": "ნაკლებად მოხდა სავაჭრო სესხის წარდგენა.",
+    "verificationRequiredTitle": "Verification Required",
+    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
+    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
+    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
+    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
+    "limitAlertTitle": "Withdrawal Limit",
+    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
+    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
+    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
+    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
+    "goToProfile": "Go to Profile"
   },
   "bonus": {
     "title": "ბონუსები",
@@ -339,13 +366,25 @@ export const ka: LocaleTree = {
     "autoApply": "გადახდებზე ავტომატურად გამოიყენება, თუ ისინი აკმაყოფილებენ მოთხოვნებს.",
     "firstDepositAutoApply": "თავიდან ეცემა ავტომატურად მხოლოდ თქვენს პირველ დეპოზიტზე.",
     "claimed": "ბონუსი მოთხოვნილია: {{amount}} ({{status}})",
-    "claimFailed": "ბონუსის მიღება ვერ მოხერხდა."
+    "claimFailed": "ბონუსის მიღება ვერ მოხერხდა.",
+    "freeSpinCount": "{{count}} Free Spins",
+    "freeSpinUsage": "{{used}} / {{total}} spins used",
+    "freeSpinProvider": "Provider: {{provider}}",
+    "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
+    "freeSpinWinnings": "Winnings: {{amount}}",
+    "depositRequired": "Make at least one deposit to claim this bonus.",
+    "firstDepositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositCta": "Go to deposit",
+    "alreadyClaimed": "You have already claimed this bonus.",
+    "providerNotSupported": "This free spin provider is not supported yet."
   },
   "bonusTypes": {
     "welcome": "კეთილი იყოს თქვენი მობრძანება",
     "first_deposit": "პირველი დეპოზიტი",
     "reload": "განახლება",
-    "cashback": "ნაღდი ფულის დაბრუნება"
+    "cashback": "ნაღდი ფულის დაბრუნება",
+    "free_spin": "Free Spin"
   },
   "messages": {
     "title": "შეტყობინებები",
@@ -366,7 +405,11 @@ export const ka: LocaleTree = {
     "win": "გამარჯვება",
     "net": "ნეტი",
     "status": "სტატუსი",
-    "date": "თარიღი"
+    "date": "თარიღი",
+    "spinType": "Spin Type",
+    "fundingSource": "Spin Type",
+    "fundingCash": "Cash Spin",
+    "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
     "title": "გარიგების ისტორია",
@@ -401,6 +444,10 @@ export const ka: LocaleTree = {
     "launchError": "เกมส์-ის გაშვება უარყოფილია.",
     "closeWindow": "დახურვა",
     "loginRequired": "გთხოვთ შეხვიდეთ თამაშიისთვის."
+  },
+  "gameCard": {
+    "newBadge": "New",
+    "bonusBadge": "ბონუსი"
   },
   "modal": {
     "comingSoon": "მოკ σύν მალე"

@@ -33,7 +33,9 @@ export const tg: LocaleTree = {
     "pageOf": "Саҳифа {{page}} аз {{last}}",
     "actions": "Амалҳо",
     "openMenu": "Кушодани меню",
-    "language": "Забон"
+    "language": "Забон",
+    "yes": "Yes",
+    "no": "No"
   },
   "nav": {
     "allGames": "ҲАМАИ БОЗИҲО",
@@ -226,6 +228,8 @@ export const tg: LocaleTree = {
     "currency": "Асъор",
     "confirmPassword": "Паролро тасдиқ кунед",
     "loginError": "Почтаи электронӣ, номи корбар ё парол нодуруст.",
+    "riskBlocked": "This action was blocked for security reasons.",
+    "riskChallenge": "Additional verification is required before you can continue.",
     "registerError": "Бақайдгирӣ ноком шуд. Маълумоти худро санҷед.",
     "noAccount": "Ҳисоб надоред?",
     "hasAccount": "Аллакай ҳисоб доред?",
@@ -264,7 +268,19 @@ export const tg: LocaleTree = {
     "saveChanges": "Захираи тағйирот",
     "updateSuccess": "Профил бо муваффақият навсозӣ шуд.",
     "updateFailed": "Профилро навсозӣ карда нашуд.",
-    "language": "Забон"
+    "language": "Забон",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
+    "verificationSendConfirm": "Send verification code to {{destination}}?"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
   },
   "deposit": {
     "title": "Депозит",
@@ -322,7 +338,18 @@ export const tg: LocaleTree = {
     "recentWithdrawals": "Бароварданҳои охирин",
     "noWithdrawals": "Ҳанӯз дархостҳои баровардан нест.",
     "submitted": "Дархости баровардан №{{id}} фиристода шуд ({{status}}). Интизори баррасии админ.",
-    "submitFailed": "Дархости бароварданро фиристода нашуд."
+    "submitFailed": "Дархости бароварданро фиристода нашуд.",
+    "verificationRequiredTitle": "Verification Required",
+    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
+    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
+    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
+    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
+    "limitAlertTitle": "Withdrawal Limit",
+    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
+    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
+    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
+    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
+    "goToProfile": "Go to Profile"
   },
   "bonus": {
     "title": "Бонусҳо",
@@ -339,13 +366,25 @@ export const tg: LocaleTree = {
     "autoApply": "Дар депозитҳои мувофиқ ба таври худкор татбиқ мешавад.",
     "firstDepositAutoApply": "Танҳо дар депозити аввал ба таври худкор татбиқ мешавад.",
     "claimed": "Бонус гирифта шуд: {{amount}} ({{status}})",
-    "claimFailed": "Бонусро гирифта нашуд."
+    "claimFailed": "Бонусро гирифта нашуд.",
+    "freeSpinCount": "{{count}} Free Spins",
+    "freeSpinUsage": "{{used}} / {{total}} spins used",
+    "freeSpinProvider": "Provider: {{provider}}",
+    "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
+    "freeSpinWinnings": "Winnings: {{amount}}",
+    "depositRequired": "Make at least one deposit to claim this bonus.",
+    "firstDepositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositAfterValidFromRequired": "This bonus is only available if your first deposit is completed after the promotion start date.",
+    "depositCta": "Go to deposit",
+    "alreadyClaimed": "You have already claimed this bonus.",
+    "providerNotSupported": "This free spin provider is not supported yet."
   },
   "bonusTypes": {
     "welcome": "Хуш омадед",
     "first_deposit": "Депозити аввал",
     "reload": "Навсозӣ",
-    "cashback": "Кешбэк"
+    "cashback": "Кешбэк",
+    "free_spin": "Free Spin"
   },
   "messages": {
     "title": "Паёмҳо",
@@ -366,7 +405,11 @@ export const tg: LocaleTree = {
     "win": "Бурд",
     "net": "Соф",
     "status": "Ҳолат",
-    "date": "Сана"
+    "date": "Сана",
+    "spinType": "Spin Type",
+    "fundingSource": "Spin Type",
+    "fundingCash": "Cash Spin",
+    "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
     "title": "Таърихи транзаксияҳо",
@@ -401,6 +444,10 @@ export const tg: LocaleTree = {
     "launchError": "Бозиро оғоз карда нашуд.",
     "closeWindow": "Пӯшидан",
     "loginRequired": "Барои бозӣ ворид шавед."
+  },
+  "gameCard": {
+    "newBadge": "New",
+    "bonusBadge": "Бонус"
   },
   "modal": {
     "comingSoon": "Ба зудӣ"

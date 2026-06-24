@@ -29,13 +29,16 @@ export function useTranslation() {
   const changeLanguage = useCallback(
     async (next: Language) => {
       setLanguage(next);
-      if (useAuthStore.getState().isAuthenticated) {
-        try {
-          const updated = await playerApi.updateProfile({ language: next });
-          usePlayerStore.getState().setProfile(updated);
-        } catch {
-          // keep local preference even if sync fails
-        }
+      const { isAuthenticated, user } = useAuthStore.getState();
+      if (!isAuthenticated || user?.role === 'affiliate') {
+        return;
+      }
+
+      try {
+        const updated = await playerApi.updateProfile({ language: next });
+        usePlayerStore.getState().setProfile(updated);
+      } catch {
+        // keep local preference even if sync fails
       }
     },
     [setLanguage],
