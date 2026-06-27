@@ -91,7 +91,7 @@ export function KycVerificationModal({
       )}
 
       {accessToken && !error && (
-        <div className="min-h-[520px] overflow-hidden rounded-lg border border-white/10 bg-background">
+        <div className="min-h-[320px] rounded-lg border border-white/10 bg-background">
           <SumsubWebSdk
             accessToken={accessToken}
             expirationHandler={handleExpiration}

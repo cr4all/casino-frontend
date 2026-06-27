@@ -23,7 +23,7 @@ export const legalEn: LegalContentBundle = {
       {
         title: 'Customer support',
         paragraphs: [
-          'Our support team is available via live chat and email at partners@ibets24.com.',
+          'Our support team is available via live chat and email at support@ibets24.com.',
           'For account, payment, or bonus questions, please contact us before submitting duplicate requests.',
         ],
       },
@@ -99,7 +99,7 @@ export const legalEn: LegalContentBundle = {
       {
         title: 'Your rights',
         paragraphs: [
-          'Depending on your jurisdiction, you may request access, correction, or deletion of personal data by contacting partners@ibets24.com.',
+          'Depending on your jurisdiction, you may request access, correction, or deletion of personal data by contacting support@ibets24.com.',
         ],
       },
     ],
@@ -162,7 +162,7 @@ export const legalEn: LegalContentBundle = {
       {
         title: 'How do I contact support?',
         paragraphs: [
-          'Use Live Chat in the sidebar or email partners@ibets24.com. Include your registered email for faster assistance.',
+          'Use Live Chat in the sidebar or email support@ibets24.com. Include your registered email for faster assistance.',
         ],
       },
     ],
@@ -174,7 +174,7 @@ export const legalEn: LegalContentBundle = {
       {
         title: 'Support channels',
         paragraphs: [
-          'Email: partners@ibets24.com',
+          'Email: support@ibets24.com',
           'Live chat: available from the sidebar when signed in (subject to availability).',
         ],
       },

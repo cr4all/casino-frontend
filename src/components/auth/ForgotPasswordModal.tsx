@@ -1,5 +1,6 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import { Modal } from '@/components/common/Modal';
+import { PasswordInput } from '@/components/auth/PasswordInput';
 import { PhoneNumberInput } from '@/components/auth/PhoneNumberInput';
 import { authApi } from '@/api/auth.api';
 import { useUiStore } from '@/stores/uiStore';
@@ -163,37 +164,25 @@ export function ForgotPasswordModal() {
             />
           </div>
 
-          <div>
-            <label htmlFor="forgot-new-password" className="mb-1 block text-xs text-muted">
-              {t('auth.password')}
-            </label>
-            <input
-              id="forgot-new-password"
-              type="password"
-              required
-              minLength={8}
-              autoComplete="new-password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className={plainInputClassName}
-            />
-          </div>
+          <PasswordInput
+            id="forgot-new-password"
+            label={t('auth.password')}
+            required
+            minLength={8}
+            autoComplete="new-password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-          <div>
-            <label htmlFor="forgot-confirm-password" className="mb-1 block text-xs text-muted">
-              {t('auth.confirmPassword')}
-            </label>
-            <input
-              id="forgot-confirm-password"
-              type="password"
-              required
-              minLength={8}
-              autoComplete="new-password"
-              value={passwordConfirmation}
-              onChange={(e) => setPasswordConfirmation(e.target.value)}
-              className={plainInputClassName}
-            />
-          </div>
+          <PasswordInput
+            id="forgot-confirm-password"
+            label={t('auth.confirmPassword')}
+            required
+            minLength={8}
+            autoComplete="new-password"
+            value={passwordConfirmation}
+            onChange={(e) => setPasswordConfirmation(e.target.value)}
+          />
 
           {error ? <p className="text-sm text-red-400">{error}</p> : null}
 

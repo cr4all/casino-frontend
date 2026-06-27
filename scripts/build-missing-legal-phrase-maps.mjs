@@ -33,7 +33,7 @@ const LANG_TARGETS = {
   zu: 'zu',
 };
 
-const EMAIL_KEY = 'Email: partners@ibets24.com';
+const EMAIL_KEY = 'Email: support@ibets24.com';
 
 async function translatePhrase(text, targetLang) {
   const url = new URL('https://api.mymemory.translated.net/get');
