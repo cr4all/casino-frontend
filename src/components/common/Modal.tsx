@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { useUiStore } from '@/stores/uiStore';
+import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
 import { useTranslation } from '@/hooks/useTranslation';
 
 interface ModalProps {
@@ -18,17 +19,21 @@ const panelSizeClass: Record<NonNullable<ModalProps['size']>, string> = {
 
 export function Modal({ isOpen, onClose, title, titleIcon, size = 'md', children }: ModalProps) {
   const { t } = useTranslation();
+  useBodyScrollLock(isOpen);
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 overflow-y-auto overscroll-contain">
       <div
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        className="fixed inset-0 bg-black/70 backdrop-blur-sm"
         onClick={onClose}
         aria-hidden
       />
-      <div className={`relative z-10 w-full ${panelSizeClass[size]} rounded-xl border border-white/[0.08] bg-card p-6 shadow-card`}>
+      <div className="relative flex min-h-full items-center justify-center p-4">
+        <div
+          className={`relative z-10 w-full ${panelSizeClass[size]} max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain rounded-xl border border-white/[0.08] bg-card p-6 shadow-card`}
+        >
         <div className="mb-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             {titleIcon}
@@ -44,6 +49,7 @@ export function Modal({ isOpen, onClose, title, titleIcon, size = 'md', children
           </button>
         </div>
         {children}
+        </div>
       </div>
     </div>
   );

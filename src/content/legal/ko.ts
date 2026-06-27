@@ -23,7 +23,7 @@ export const legalKo: LegalContentBundle = {
       {
         title: '고객 지원',
         paragraphs: [
-          '라이브 채팅 및 partners@ibets24.com 이메일로 지원팀에 문의할 수 있습니다.',
+          '라이브 채팅 및 support@ibets24.com 이메일로 지원팀에 문의할 수 있습니다.',
           '계정, 결제, 보너스 문의는 중복 요청 전에 먼저 연락해 주세요.',
         ],
       },
@@ -98,7 +98,7 @@ export const legalKo: LegalContentBundle = {
       {
         title: '이용자 권리',
         paragraphs: [
-          '관할에 따라 partners@ibets24.com으로 열람·정정·삭제를 요청할 수 있습니다.',
+          '관할에 따라 support@ibets24.com으로 열람·정정·삭제를 요청할 수 있습니다.',
         ],
       },
     ],
@@ -159,7 +159,7 @@ export const legalKo: LegalContentBundle = {
       {
         title: '고객 지원 문의',
         paragraphs: [
-          '사이드바 라이브 채팅 또는 partners@ibets24.com 이메일을 이용하세요. 등록 이메일을 함께 알려주시면 더 빠릅니다.',
+          '사이드바 라이브 채팅 또는 support@ibets24.com 이메일을 이용하세요. 등록 이메일을 함께 알려주시면 더 빠릅니다.',
         ],
       },
     ],
@@ -171,7 +171,7 @@ export const legalKo: LegalContentBundle = {
       {
         title: '지원 채널',
         paragraphs: [
-          '이메일: partners@ibets24.com',
+          '이메일: support@ibets24.com',
           '라이브 채팅: 로그인 후 사이드바에서 이용 (가용 여부에 따름)',
         ],
       },

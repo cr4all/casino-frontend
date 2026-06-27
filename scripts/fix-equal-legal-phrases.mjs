@@ -4,11 +4,11 @@ import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const mapDir = join(root, 'src/content/legal/phraseMaps');
-const EMAIL_KEY = 'Email: partners@ibets24.com';
+const EMAIL_KEY = 'Email: support@ibets24.com';
 
 const KEEP_PARTIAL = [
   'iBets24',
-  'partners@ibets24.com',
+  'support@ibets24.com',
   'GamCare',
   'Gamblers Anonymous',
   'BeGambleAware',

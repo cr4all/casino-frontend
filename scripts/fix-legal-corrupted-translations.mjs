@@ -7,9 +7,9 @@ const dataDir = join(root, 'scripts/legal-translation-data');
 const phrases = JSON.parse(readFileSync(join(root, 'scripts/legal-phrases.json'), 'utf8'));
 
 const KEEP_PARTIAL = [
-  'Email: partners@ibets24.com',
+  'Email: support@ibets24.com',
   'iBets24',
-  'partners@ibets24.com',
+  'support@ibets24.com',
   'GamCare',
   'Gamblers Anonymous',
   'BeGambleAware',

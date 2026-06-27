@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const mapDir = join(root, 'src/content/legal/phraseMaps');
-const EMAIL_KEY = 'Email: partners@ibets24.com';
+const EMAIL_KEY = 'Email: support@ibets24.com';
 
 const fixes = {
   km: {

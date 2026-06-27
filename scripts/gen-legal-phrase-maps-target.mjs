@@ -42,7 +42,7 @@ const LANG_TARGETS = {
 
 const PRESERVE = [
   'iBets24',
-  'partners@ibets24.com',
+  'support@ibets24.com',
   'GamCare',
   'Gamblers Anonymous',
   'BeGambleAware',

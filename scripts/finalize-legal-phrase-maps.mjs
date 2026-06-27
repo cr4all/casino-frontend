@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const phrases = JSON.parse(readFileSync(join(root, 'scripts/legal-phrases.json'), 'utf8'));
 const mapDir = join(root, 'src/content/legal/phraseMaps');
-const EMAIL_KEY = 'Email: partners@ibets24.com';
+const EMAIL_KEY = 'Email: support@ibets24.com';
 
 const filFixes = {
   'Limitation of liability': 'Limitasyon ng pananagutan',
