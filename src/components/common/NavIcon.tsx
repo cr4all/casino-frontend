@@ -6,6 +6,7 @@ export type NavIconName =
   | 'withdraw'
   | 'transactions'
   | 'notices'
+  | 'supportTickets'
   | 'bonus'
   | 'liveChat';
 
@@ -67,6 +68,14 @@ const icons: Record<NavIconName, ReactNode> = {
       <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
     </>
   ),
+  supportTickets: (
+    <>
+      <path d="M6 8h12v14H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2z" />
+      <path d="M18 8h6a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-6V8z" />
+      <path d="M12 8v14" strokeDasharray="2 2" />
+      <path d="M8 12h4M8 15h6M8 18h5" />
+    </>
+  ),
   bonus: (
     <>
       <rect x="3" y="8" width="18" height="13" rx="2" />
@@ -96,6 +105,7 @@ const NAV_ICON_FILES: Record<NavIconName, string> = {
   withdraw: 'withdraw',
   transactions: 'transactions',
   notices: 'notices',
+  supportTickets: 'support_tickets',
   bonus: 'bonus',
   liveChat: 'live_chat',
 };

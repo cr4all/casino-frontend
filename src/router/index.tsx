@@ -8,6 +8,8 @@ import { DepositPage } from '@/pages/DepositPage';
 import { WithdrawPage } from '@/pages/WithdrawPage';
 import { BonusPage } from '@/pages/BonusPage';
 import { NotificationsPage } from '@/pages/NotificationsPage';
+import { SupportTicketsPage } from '@/pages/SupportTicketsPage';
+import { SupportTicketDetailPage } from '@/pages/SupportTicketDetailPage';
 import { BetHistoryPage } from '@/pages/BetHistoryPage';
 import { TransactionsPage } from '@/pages/TransactionsPage';
 import { GamePlayPage } from '@/pages/GamePlayPage';
@@ -31,6 +33,8 @@ export const router = createBrowserRouter([
       { path: 'withdraw', element: <WithdrawPage /> },
       { path: 'bonus', element: <BonusPage /> },
       { path: 'notifications', element: <NotificationsPage /> },
+      { path: 'support-tickets', element: <SupportTicketsPage /> },
+      { path: 'support-tickets/:id', element: <SupportTicketDetailPage /> },
       { path: 'bets', element: <BetHistoryPage /> },
       { path: 'transactions', element: <TransactionsPage /> },
       { path: 'affiliate', element: <AffiliateDashboardPage /> },
