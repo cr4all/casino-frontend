@@ -59,7 +59,9 @@ export const ko: LocaleTree = {
     "balance": "잔액",
     "playResponsibly": "18+ · 책임감 있는 게임",
     "liveChat": "라이브 채팅",
-    "liveChatLabel": "고객 지원"
+    "liveChatLabel": "고객 지원",
+    "supportTickets": "지원 티켓",
+    "supportTicketsLabel": "헬프데스크"
   },
   "liveChat": {
     "title": "라이브 채팅",
@@ -73,6 +75,38 @@ export const ko: LocaleTree = {
     "sendFailed": "메시지를 보내지 못했습니다. 다시 시도해 주세요.",
     "loadFailed": "채팅 메시지를 불러오지 못했습니다."
   },
+  "supportTickets": {
+    "title": "지원 티켓",
+    "subtitle": "문의를 제출하고 지원팀의 답변을 확인하세요.",
+    "newTicket": "새 티켓",
+    "subject": "제목",
+    "category": "카테고리",
+    "message": "메시지",
+    "submit": "티켓 제출",
+    "createFailed": "티켓을 생성하지 못했습니다. 다시 시도해 주세요.",
+    "empty": "지원 티켓이 아직 없습니다.",
+    "backToList": "← 티켓 목록으로",
+    "notFound": "티켓을 찾을 수 없습니다.",
+    "closedHint": "이 티켓은 종료되었습니다. 추가 도움이 필요하면 새 티켓을 열어 주세요.",
+    "replyPlaceholder": "답장을 입력하세요...",
+    "sendReply": "답장 보내기",
+    "replyFailed": "답장을 보내지 못했습니다. 다시 시도해 주세요.",
+    "supportTeam": "지원팀",
+    "you": "나",
+    "categories": {
+      "account": "계정",
+      "payment": "결제",
+      "bonus": "보너스",
+      "game": "게임",
+      "other": "기타"
+    },
+    "status": {
+      "open": "열림",
+      "pending": "대기",
+      "resolved": "해결됨",
+      "closed": "종료"
+    }
+  },
   "footer": {
     "slots": "슬롯",
     "liveCasino": "라이브 카지노",
@@ -80,6 +114,7 @@ export const ko: LocaleTree = {
     "account": "계정",
     "support": "지원",
     "messages": "메시지",
+    "tickets": "티켓",
     "legal": "법적 고지",
     "about": "회사 소개",
     "terms": "이용약관",

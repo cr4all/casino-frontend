@@ -61,6 +61,7 @@ export function Footer() {
               <button type="button" onClick={openLiveChat} className="site-footer__col-link">
                 {t('footer.messages')}
               </button>
+              <Link to="/support-tickets" className="site-footer__col-link">{t('footer.tickets')}</Link>
               <Link to="/faq" className="site-footer__col-link">{t('footer.faq')}</Link>
               <Link to="/contact" className="site-footer__col-link">{t('footer.contact')}</Link>
               <a href={`mailto:${SUPPORT_EMAIL}`} className="site-footer__col-link site-footer__email">

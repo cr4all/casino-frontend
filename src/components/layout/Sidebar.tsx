@@ -29,6 +29,7 @@ const accountItems: StaticNavItem[] = [
   { id: 'withdraw', labelKey: 'nav.withdraw', sublabelKey: 'nav.withdrawLabel', icon: 'withdraw', path: '/withdraw', auth: true },
   { id: 'transactions', labelKey: 'nav.history', sublabelKey: 'nav.transactions', icon: 'transactions', path: '/transactions', auth: true },
   { id: 'notices', labelKey: 'nav.notices', sublabelKey: 'nav.noticesLabel', icon: 'notices', path: '/notifications', auth: true },
+  { id: 'supportTickets', labelKey: 'nav.supportTickets', sublabelKey: 'nav.supportTicketsLabel', icon: 'supportTickets', path: '/support-tickets', auth: true },
   { id: 'bonus', labelKey: 'nav.bonuses', sublabelKey: 'nav.bonusesLabel', icon: 'bonus', path: '/bonus', auth: true },
 ];
 
