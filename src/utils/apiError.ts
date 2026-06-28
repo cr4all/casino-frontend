@@ -80,6 +80,17 @@ export function isRiskChallengeError(err: unknown): boolean {
   return getApiErrorCode(err) === 'RISK_CHALLENGE';
 }
 
+export class PostRegisterLoginChallengeError extends Error {
+  constructor() {
+    super('Login requires challenge after successful registration');
+    this.name = 'PostRegisterLoginChallengeError';
+  }
+}
+
+export function isPostRegisterLoginChallengeError(err: unknown): boolean {
+  return err instanceof PostRegisterLoginChallengeError;
+}
+
 export function isWithdrawalVerificationRequiredError(err: unknown): boolean {
   return getApiErrorCode(err) === 'WITHDRAWAL_VERIFICATION_REQUIRED';
 }

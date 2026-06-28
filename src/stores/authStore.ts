@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { authApi } from '@/api/auth.api';
 import { disconnectEcho } from '@/lib/echo';
+import { isRiskChallengeError, PostRegisterLoginChallengeError } from '@/utils/apiError';
 import type { User } from '@/types';
 
 interface AuthState {
@@ -58,11 +59,18 @@ export const useAuthStore = create<AuthState>()(
       register: async (payload) => {
         const { turnstileToken, ...registerPayload } = payload;
         await authApi.register({ ...registerPayload, turnstileToken });
-        await get().login({
-          email: payload.email,
-          password: payload.password,
-          turnstileToken,
-        });
+        try {
+          await get().login({
+            email: payload.email,
+            password: payload.password,
+            turnstileToken,
+          });
+        } catch (err) {
+          if (isRiskChallengeError(err)) {
+            throw new PostRegisterLoginChallengeError();
+          }
+          throw err;
+        }
       },
 
       logout: () => {

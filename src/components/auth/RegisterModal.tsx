@@ -15,7 +15,11 @@ import {
   isLocalPhoneValid,
   parsePhoneNumber,
 } from '@/data/phoneDialCodes';
-import { getAuthApiErrorMessage, isRiskChallengeError } from '@/utils/apiError';
+import {
+  getAuthApiErrorMessage,
+  isPostRegisterLoginChallengeError,
+  isRiskChallengeError,
+} from '@/utils/apiError';
 import { RiskChallengePanel } from '@/components/risk/RiskChallengePanel';
 import { useRiskChallenge } from '@/hooks/useRiskChallenge';
 import { clearStoredAffiliateCode, getStoredAffiliateCode } from '@/utils/affiliateReferral';
@@ -28,12 +32,15 @@ import {
   type FieldErrors,
 } from '@/utils/formValidation';
 
+type ChallengePhase = 'register' | 'login';
+
 export function RegisterModal() {
   const { t } = useTranslation();
   const activeModal = useUiStore((s) => s.activeModal);
   const closeModal = useUiStore((s) => s.closeModal);
   const openModal = useUiStore((s) => s.openModal);
   const register = useAuthStore((s) => s.register);
+  const login = useAuthStore((s) => s.login);
   const fetchBalance = useWalletStore((s) => s.fetchBalance);
 
   const [options, setOptions] = useState<RegisterOptions | null>(null);
@@ -50,6 +57,7 @@ export function RegisterModal() {
   const [error, setError] = useState('');
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [challengeError, setChallengeError] = useState('');
+  const [challengePhase, setChallengePhase] = useState<ChallengePhase>('register');
   const [loading, setLoading] = useState(false);
   const {
     challengeRequired,
@@ -113,6 +121,7 @@ export function RegisterModal() {
 
   const resetForm = () => {
     registerInFlightRef.current = false;
+    setChallengePhase('register');
     setForm({
       email: '',
       password: '',
@@ -140,12 +149,41 @@ export function RegisterModal() {
     ...(turnstileToken ? { turnstileToken } : {}),
   });
 
-  const performRegister = async (turnstileToken?: string) => {
-    await register(buildRegisterPayload(turnstileToken));
+  const completeRegistration = async () => {
     clearStoredAffiliateCode();
     await fetchBalance();
     closeModal();
     resetForm();
+  };
+
+  const handleChallengeFlowError = (err: unknown): boolean => {
+    if (isPostRegisterLoginChallengeError(err)) {
+      setChallengePhase('login');
+      setChallengeRequired(true);
+      setError('');
+      return true;
+    }
+    if (isRiskChallengeError(err)) {
+      setChallengePhase('register');
+      setChallengeRequired(true);
+      setError('');
+      return true;
+    }
+    return false;
+  };
+
+  const performRegister = async (turnstileToken?: string) => {
+    await register(buildRegisterPayload(turnstileToken));
+    await completeRegistration();
+  };
+
+  const performLoginAfterRegister = async (turnstileToken: string) => {
+    await login({
+      email: form.email,
+      password: form.password,
+      turnstileToken,
+    });
+    await completeRegistration();
   };
 
   const handleTurnstileSuccess = async (token: string) => {
@@ -156,9 +194,20 @@ export function RegisterModal() {
     setChallengeError('');
     setLoading(true);
     try {
-      await performRegister(token);
+      if (challengePhase === 'login') {
+        await performLoginAfterRegister(token);
+      } else {
+        await performRegister(token);
+      }
     } catch (err) {
       registerInFlightRef.current = false;
+      if (isPostRegisterLoginChallengeError(err)) {
+        setChallengePhase('login');
+        resetWidget();
+        setChallengeRequired(true);
+        setError('');
+        return;
+      }
       if (isRiskChallengeError(err)) {
         resetWidget();
         setChallengeError(t('risk.challengeFailed'));
@@ -227,9 +276,7 @@ export function RegisterModal() {
     try {
       await performRegister();
     } catch (err) {
-      if (isRiskChallengeError(err)) {
-        setChallengeRequired(true);
-        setError('');
+      if (handleChallengeFlowError(err)) {
         return;
       }
       setError(getAuthApiErrorMessage(err, t('auth.registerError'), t));
