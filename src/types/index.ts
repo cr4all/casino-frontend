@@ -60,14 +60,27 @@ export interface WalletBalance {
   player_id: number;
   currency: string;
   balance: string;
+  cash_balance: string;
+  bonus_balance: string;
+  withdrawable_balance: string;
+  withdrawable_cash_balance: string;
+  withdrawable_bonus_balance: string;
+  bonus_locked: boolean;
   status: string;
 }
+
+export type BetFundingSource = 'cash' | 'bonus' | 'mixed' | 'free_spin';
+export type WalletBucket = 'cash' | 'bonus';
 
 export interface Transaction {
   id: number;
   type: string;
   amount: string;
   balance_after?: string | null;
+  cash_balance_after?: string | null;
+  bonus_balance_after?: string | null;
+  funding_source?: BetFundingSource | null;
+  wallet_bucket?: WalletBucket | null;
   status: string;
   description: string | null;
   reference_type?: string | null;
@@ -84,10 +97,12 @@ export interface BetHistoryItem {
     provider: string | null;
   };
   bet_amount: string;
+  bet_cash_amount?: string;
+  bet_bonus_amount?: string;
   win_amount: string;
   net_amount: string;
   status: string;
-  funding_source: 'cash' | 'free_spin';
+  funding_source: BetFundingSource;
   spin_type?: string;
   currency: string;
   played_at: string | null;

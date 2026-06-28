@@ -166,7 +166,11 @@ export function TransactionsPage() {
               <tr className="border-b border-white/5 bg-surface text-left">
                 <Th>{t('transactions.type')}</Th>
                 <Th>{t('transactions.amount')}</Th>
+                <Th className="hidden lg:table-cell">{t('wallet.fundingSource')}</Th>
+                <Th className="hidden lg:table-cell">{t('wallet.walletBucket')}</Th>
                 <Th className="hidden md:table-cell">{t('transactions.balanceAfter')}</Th>
+                <Th className="hidden xl:table-cell">{t('wallet.cashAfter')}</Th>
+                <Th className="hidden xl:table-cell">{t('wallet.bonusAfter')}</Th>
                 <Th className="hidden sm:table-cell">{t('transactions.reference')}</Th>
                 <Th>{t('transactions.date')}</Th>
               </tr>
@@ -178,8 +182,20 @@ export function TransactionsPage() {
                     {tTxType(tx.type)}
                   </td>
                   <td className="px-4 py-3 font-mono text-white">{formatBalance(tx.amount)}</td>
+                  <td className="px-4 py-3 text-xs text-muted hidden lg:table-cell">
+                    {tx.funding_source ? t(`wallet.funding.${tx.funding_source}`) : '—'}
+                  </td>
+                  <td className="px-4 py-3 text-xs text-muted hidden lg:table-cell">
+                    {tx.wallet_bucket ? t(`wallet.bucket.${tx.wallet_bucket}`) : '—'}
+                  </td>
                   <td className="px-4 py-3 font-mono text-muted hidden md:table-cell">
                     {tx.balance_after != null ? formatBalance(tx.balance_after) : '—'}
+                  </td>
+                  <td className="px-4 py-3 font-mono text-muted hidden xl:table-cell">
+                    {tx.cash_balance_after != null ? formatBalance(tx.cash_balance_after) : '—'}
+                  </td>
+                  <td className="px-4 py-3 font-mono text-muted hidden xl:table-cell">
+                    {tx.bonus_balance_after != null ? formatBalance(tx.bonus_balance_after) : '—'}
                   </td>
                   <td className="px-4 py-3 text-xs text-muted hidden sm:table-cell">
                     {tx.reference_type ? `${tx.reference_type}/${tx.reference_id}` : (tx.description ?? '—')}

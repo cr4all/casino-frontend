@@ -363,12 +363,39 @@ export function WithdrawPage() {
           <div className="mx-auto w-full max-w-2xl min-w-0 space-y-6">
           <h1 className="text-center text-2xl font-bold text-white">{t('withdraw.title')}</h1>
           <div className="space-y-4">
-          <p className="text-center text-sm text-muted break-words">
-            {t('withdraw.availableBalance')}{' '}
-            <span className="font-mono text-accent-gold">
-              {walletCurrency} {formatBalance(balance?.balance)}
-            </span>
-          </p>
+          <div className="rounded-xl border border-white/[0.08] bg-card/50 px-4 py-3 text-center text-sm">
+            <p className="text-muted">
+              {t('wallet.withdrawableBalance')}{' '}
+              <span className="font-mono font-medium text-accent-gold">
+                {walletCurrency} {formatBalance(balance?.withdrawable_balance ?? balance?.balance)}
+              </span>
+            </p>
+            {balance && (
+              <div className="mt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-muted">
+                <span>
+                  {t('wallet.withdrawableCash')}:{' '}
+                  <span className="font-mono text-white">
+                    {walletCurrency} {formatBalance(balance.withdrawable_cash_balance)}
+                  </span>
+                </span>
+                <span>
+                  {t('wallet.withdrawableBonus')}:{' '}
+                  <span className="font-mono text-accent-purple">
+                    {walletCurrency} {formatBalance(balance.withdrawable_bonus_balance)}
+                  </span>
+                </span>
+              </div>
+            )}
+            {balance?.bonus_locked && (
+              <p className="mt-2 text-xs text-amber-300/90">{t('wallet.bonusLockedHint')}</p>
+            )}
+            <p className="mt-2 text-xs text-muted">
+              {t('wallet.totalPlayable')}:{' '}
+              <span className="font-mono text-white">
+                {walletCurrency} {formatBalance(balance?.balance)}
+              </span>
+            </p>
+          </div>
 
           {eligibility?.requires_verification && (
             <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">
