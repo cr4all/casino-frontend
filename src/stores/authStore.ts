@@ -61,6 +61,7 @@ export const useAuthStore = create<AuthState>()(
         await get().login({
           email: payload.email,
           password: payload.password,
+          turnstileToken,
         });
       },
 

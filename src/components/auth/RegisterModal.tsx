@@ -1,4 +1,4 @@
-import { useState, useEffect, type FormEvent } from 'react';
+import { useState, useEffect, useRef, type FormEvent } from 'react';
 import { Modal } from '@/components/common/Modal';
 import { Button } from '@/components/common/Button';
 import { FormSelect, FormTextField } from '@/components/common/FormTextField';
@@ -58,6 +58,7 @@ export function RegisterModal() {
     registerWidgetReset,
     resetWidget,
   } = useRiskChallenge();
+  const registerInFlightRef = useRef(false);
 
   useEffect(() => {
     if (activeModal !== 'register') {
@@ -111,6 +112,7 @@ export function RegisterModal() {
   };
 
   const resetForm = () => {
+    registerInFlightRef.current = false;
     setForm({
       email: '',
       password: '',
@@ -147,11 +149,16 @@ export function RegisterModal() {
   };
 
   const handleTurnstileSuccess = async (token: string) => {
+    if (registerInFlightRef.current) {
+      return;
+    }
+    registerInFlightRef.current = true;
     setChallengeError('');
     setLoading(true);
     try {
       await performRegister(token);
     } catch (err) {
+      registerInFlightRef.current = false;
       if (isRiskChallengeError(err)) {
         resetWidget();
         setChallengeError(t('risk.challengeFailed'));
