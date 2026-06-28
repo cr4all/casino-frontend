@@ -20,6 +20,14 @@ import {
   saveRememberedLogin,
   type RememberedLoginMethod,
 } from '@/utils/loginRemember';
+import {
+  collectFieldErrors,
+  hasFieldErrors,
+  isValidEmail,
+  omitFieldError,
+  requiredValue,
+  type FieldErrors,
+} from '@/utils/formValidation';
 
 type LoginMethod = RememberedLoginMethod;
 
@@ -45,6 +53,7 @@ export function LoginModal() {
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState('');
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [challengeError, setChallengeError] = useState('');
   const [loading, setLoading] = useState(false);
   const {
@@ -75,6 +84,7 @@ export function LoginModal() {
   const resetForm = () => {
     setPassword('');
     setError('');
+    setFieldErrors({});
     setChallengeError('');
     resetChallenge();
   };
@@ -145,16 +155,45 @@ export function LoginModal() {
     }
   };
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    setError('');
+  const validateForm = (): boolean => {
+    const required = (field: string, value: string) =>
+      requiredValue(value) ? undefined : t('common.fieldRequired', { field });
 
+    let emailError: string | undefined;
+    if (method === 'email') {
+      if (!requiredValue(email)) {
+        emailError = t('common.fieldRequired', { field: t('auth.email') });
+      } else if (!isValidEmail(email)) {
+        emailError = t('common.fieldEmailInvalid');
+      }
+    }
+
+    let phoneError: string | undefined;
     if (method === 'phone') {
       const parsed = parsePhoneNumber(phone, phoneCountryCode);
       if (!isLocalPhoneValid(phoneCountryCode, parsed.local)) {
-        setError(t('auth.loginErrorPhone'));
-        return;
+        phoneError = t('auth.loginErrorPhone');
       }
+    }
+
+    const errors = collectFieldErrors([
+      ['username', method === 'username' ? required(t('auth.username'), username) : undefined],
+      ['email', emailError],
+      ['phone', phoneError],
+      ['password', required(t('auth.password'), password)],
+    ]);
+
+    setFieldErrors(errors);
+    return !hasFieldErrors(errors);
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setError('');
+    setFieldErrors({});
+
+    if (!validateForm()) {
+      return;
     }
 
     setLoading(true);
@@ -178,6 +217,7 @@ export function LoginModal() {
   const switchMethod = (next: LoginMethod) => {
     setMethod(next);
     setError('');
+    setFieldErrors({});
     setChallengeError('');
     resetChallenge();
   };
@@ -211,7 +251,7 @@ export function LoginModal() {
         </button>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} noValidate className="space-y-4">
         {error && (
           <p className="rounded-md bg-accent/10 px-3 py-2 text-sm text-accent">{error}</p>
         )}
@@ -230,12 +270,15 @@ export function LoginModal() {
             id="login-username"
             label={t('auth.username')}
             type="text"
-            required
             autoComplete="username"
             value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={(e) => {
+              setUsername(e.target.value);
+              setFieldErrors((prev) => omitFieldError(prev, 'username'));
+            }}
             placeholder={t('auth.loginUsernamePlaceholder')}
             copyAriaLabel={t('common.copy')}
+            error={fieldErrors.username}
           />
         )}
 
@@ -244,9 +287,13 @@ export function LoginModal() {
             id="login-phone"
             label={t('auth.phone')}
             value={phone}
-            onChange={setPhone}
+            onChange={(value) => {
+              setPhone(value);
+              setFieldErrors((prev) => omitFieldError(prev, 'phone'));
+            }}
             countryCode={phoneCountryCode}
             onCountryCodeChange={setPhoneCountryCode}
+            error={fieldErrors.phone}
           />
         )}
 
@@ -255,23 +302,29 @@ export function LoginModal() {
             id="login-email"
             label={t('auth.email')}
             type="email"
-            required
             autoComplete="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              setFieldErrors((prev) => omitFieldError(prev, 'email'));
+            }}
             placeholder={t('auth.loginEmailPlaceholder')}
             copyAriaLabel={t('common.copy')}
+            error={fieldErrors.email}
           />
         )}
 
         <PasswordInput
           id="login-password"
           label={t('auth.password')}
-          required
           autoComplete="current-password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => {
+            setPassword(e.target.value);
+            setFieldErrors((prev) => omitFieldError(prev, 'password'));
+          }}
           placeholder="••••••••"
+          error={fieldErrors.password}
         />
 
         <div className="flex items-center justify-between gap-3">

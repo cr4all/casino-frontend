@@ -22,20 +22,29 @@ export const sw: LocaleTree = {
     "next": "Ifuatayo",
     "showMore": "Onyesha zaidi",
     "ok": "OK",
+    "yes": "Yes",
+    "no": "No",
     "close": "Funga",
     "copy": "Nakili",
     "copied": "Imenakiliwa",
     "games": "michezo",
     "gamesCount": "Michezo {{count}}",
     "noLimit": "Hakuna kikomo",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "Kiwango cha chini: {{min}} · Kiwango cha juu: {{max}}",
     "currencyIdr": "· Sarafu: IDR",
     "pageOf": "Ukurasa {{page}} wa {{last}}",
-    "actions": "Vitendo",
     "openMenu": "Fungua menyu",
-    "language": "Lugha",
-    "yes": "Yes",
-    "no": "No"
+    "actions": "Vitendo",
+    "fieldRequired": "Tafadhali ingiza",
+    "fieldRequiredGeneric": "Sehemu hii inahitajika kujazwa",
+    "fieldEmailInvalid": "Tafadhali ingiza anwani halali ya baruapepe.",
+    "fieldMinLength": "Lazima iwe na angalau &lt;&lt;<COUNT>&gt;&gt; herufi.",
+    "fieldPasswordMismatch": "Nenosiri haziendani.",
+    "fieldSelectRequired": "Tafadhali chagua",
+    "fieldCodeInvalid": "Tafadhali weka msimbo wa uthibitishaji wenye tarakimu 6.",
+    "language": "Lugha"
   },
   "nav": {
     "allGames": "MICHEZO YOTE",
@@ -59,7 +68,9 @@ export const sw: LocaleTree = {
     "balance": "Salio",
     "playResponsibly": "18+ · Cheza kwa uwajibikaji",
     "liveChat": "GUMZO LA MOJA KWA MOJA",
-    "liveChatLabel": "Msaada"
+    "liveChatLabel": "Msaada",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Gumzo la moja kwa moja",
@@ -73,6 +84,38 @@ export const sw: LocaleTree = {
     "sendFailed": "Imeshindwa kutuma ujumbe wako. Tafadhali jaribu tena.",
     "loadFailed": "Imeshindwa kupakia ujumbe wa gumzo."
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Msaada",
+    "you": "You",
+    "categories": {
+      "account": "Akaunti",
+      "payment": "Payment",
+      "bonus": "Bonasi",
+      "game": "Mchezo",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "Slots",
     "liveCasino": "Kasino ya moja kwa moja",
@@ -80,6 +123,7 @@ export const sw: LocaleTree = {
     "account": "Akaunti",
     "support": "Msaada",
     "messages": "Ujumbe",
+    "tickets": "Tickets",
     "legal": "Kisheria",
     "about": "Kuhusu sisi",
     "terms": "Sheria na masharti",
@@ -170,7 +214,8 @@ export const sw: LocaleTree = {
     "crypto": "Sarafu ya kidijitali",
     "bank": "Uhamisho wa benki",
     "redirect": "Malipo ya mtandaoni",
-    "local": "Malipo ya ndani"
+    "local": "Malipo ya ndani",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "Amana",
@@ -243,11 +288,18 @@ export const sw: LocaleTree = {
     "country": "Nchi",
     "phone": "Simu",
     "kycStatus": "Hali ya KYC",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
     "verified": "Imethibitishwa",
     "notVerified": "Haijathibitishwa",
     "verifyNow": "Thibitisha",
     "verificationTitleEmail": "Thibitisha barua pepe",
     "verificationTitlePhone": "Thibitisha simu",
+    "verificationSendConfirm": "Send verification code to {{destination}}?",
     "verificationCodeHintEmail": "Weka msimbo wa tarakimu 6 uliotumwa kwa {{destination}}.",
     "verificationCodeHintPhone": "Weka msimbo wa tarakimu 6 uliotumwa kwa {{destination}}.",
     "verificationSubmit": "Thibitisha uthibitishaji",
@@ -268,14 +320,7 @@ export const sw: LocaleTree = {
     "saveChanges": "Hifadhi mabadiliko",
     "updateSuccess": "Wasifu umesasishwa.",
     "updateFailed": "Imeshindwa kusasisha wasifu.",
-    "language": "Lugha",
-    "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "language": "Lugha"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const sw: LocaleTree = {
     "selectPaymentOption": "Chagua njia ya malipo",
     "noOptionsForCountry": "Hakuna njia za malipo zinazopatikana kwa nchi hii.",
     "backToMethods": "← Rudi",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← Rudi",
+    "stepMethod": "Njia ya malipo",
+    "stepOption": "Select Option",
+    "stepAmount": "Kiasi",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "Njia ya malipo",
     "localCountryLabel": "Nchi ya malipo",
     "selectLocalCountry": "Chagua nchi ya malipo ili kuendelea.",
@@ -351,6 +408,55 @@ export const sw: LocaleTree = {
     "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
     "goToProfile": "Go to Profile"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Bonasi",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Bonasi",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Bonasi"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "Rejea",
+    "amount": "Kiasi",
+    "currency": "Sarafu"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "Bonasi",
     "wageringProgress": "Maendeleo ya ubashiri",
@@ -409,6 +515,8 @@ export const sw: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {

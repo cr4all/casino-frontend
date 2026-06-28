@@ -35,7 +35,16 @@ export const de: LocaleTree = {
     "language": "Sprache",
     "yes": "Ja",
     "no": "Nr.",
-    "actions": "Actions"
+    "actions": "Actions",
+    "fieldRequired": "Bitte {{field}} eingeben.",
+    "fieldRequiredGeneric": "Dieses Feld ist erforderlich.",
+    "fieldEmailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "fieldMinLength": "Mindestens {{count}} Zeichen erforderlich.",
+    "fieldPasswordMismatch": "Die Passwörter stimmen nicht überein.",
+    "fieldSelectRequired": "Bitte wählen Sie {{field}}.",
+    "fieldCodeInvalid": "Bitte geben Sie den 6-stelligen Bestätigungscode ein.",
+    "maxOnly": "max. {{amount}}",
+    "notAvailable": "—"
   },
   "nav": {
     "allGames": "ALLE SPIELE",
@@ -59,7 +68,9 @@ export const de: LocaleTree = {
     "balance": "Guthaben",
     "playResponsibly": "18+ · Verantwortungsvoll spielen",
     "liveChat": "LIVE-CHAT",
-    "liveChatLabel": "Support"
+    "liveChatLabel": "Support",
+    "supportTickets": "SUPPORT-TICKETS",
+    "supportTicketsLabel": "Helpdesk"
   },
   "liveChat": {
     "title": "Live-Chat",
@@ -164,7 +175,8 @@ export const de: LocaleTree = {
     "crypto": "Kryptowährung",
     "bank": "Banküberweisung",
     "redirect": "Online-Zahlung",
-    "local": "Lokale Zahlung"
+    "local": "Lokale Zahlung",
+    "manual": "Manuelle Überweisung"
   },
   "txTypes": {
     "deposit": "Einzahlung",
@@ -271,9 +283,9 @@ export const de: LocaleTree = {
     "title": "Einzahlung",
     "bonusesLink": "Boni",
     "withdrawLink": "Auszahlung →",
-    "selectCountry": "Payment country",
-    "selectPaymentOption": "Select a payment method",
-    "noOptionsForCountry": "No payment methods available for this country.",
+    "selectCountry": "Zahlungsland",
+    "selectPaymentOption": "Zahlungsmethode auswählen",
+    "noOptionsForCountry": "Für dieses Land sind keine Zahlungsmethoden verfügbar.",
     "backToMethods": "? Back",
     "paymentMethod": "Zahlungsmethode",
     "localCountryLabel": "Zahlungsland",
@@ -307,7 +319,19 @@ export const de: LocaleTree = {
     "estimateDisclaimer": "Der endgültige Gutschriftbetrag wird bei Zahlungsbestätigung festgelegt und kann abweichen.",
     "credited": "Gutgeschrieben",
     "loadingQuote": "Schätzung wird berechnet...",
-    "quoteFailed": "Wechselkurs-Schätzung nicht verfügbar."
+    "quoteFailed": "Wechselkurs-Schätzung nicht verfügbar.",
+    "backToKinds": "← Zurück zu Methoden",
+    "backToOptions": "← Back",
+    "stepMethod": "Zahlungsmethode",
+    "stepOption": "Option wählen",
+    "stepAmount": "Amount",
+    "selectPaymentKind": "Wählen Sie, wie Sie einzahlen möchten",
+    "selectCrypto": "Kryptowährung auswählen",
+    "selectBank": "Zahlungsmethode auswählen",
+    "kindCountCrypto": "{{count}} Kryptowährungen",
+    "kindCountLocal": "{{count}} Zahlungsmethoden",
+    "kindCountManual": "Banküberweisung",
+    "kindUnavailable": "Nicht verfügbar"
   },
   "withdraw": {
     "title": "Auszahlung",
@@ -513,5 +537,91 @@ export const de: LocaleTree = {
     "passwordUpdateFailed": "Passwort konnte nicht aktualisiert werden.",
     "verificationCodeSent": "Bestätigungscode gesendet.",
     "verificationCodeRequestFailed": "Bestätigungscode konnte nicht gesendet werden."
+  },
+  "risk": {
+    "challengeTitle": "Bestätigen Sie, dass Sie ein Mensch sind",
+    "challengeHint": "Schließen Sie die Sicherheitsprüfung ab, um fortzufahren.",
+    "challengeFailed": "Verifizierung fehlgeschlagen. Bitte versuchen Sie es erneut."
+  },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Bonus",
+    "totalPlayable": "Gesamt spielbar",
+    "withdrawableBalance": "Auszahlbares Guthaben",
+    "withdrawableCash": "Auszahlbares Bargeld",
+    "withdrawableBonus": "Auszahlbarer Bonus",
+    "bonusLockedHint": "Bonusguthaben ist gesperrt, bis die Umsatzbedingungen erfüllt sind.",
+    "showBreakdown": "Saldoaufschlüsselung anzeigen",
+    "balanceBreakdown": "Saldoaufschlüsselung",
+    "fundingSource": "Finanzierung",
+    "walletBucket": "Kategorie",
+    "cashAfter": "Bargeld danach",
+    "bonusAfter": "Bonus danach",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Bonus",
+      "mixed": "Gemischt",
+      "free_spin": "Freispiel"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Bonus"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Zahlungsadresse",
+    "address": "Adresse",
+    "network": "Netzwerk",
+    "pay_currency": "Zahlungswährung",
+    "pay_amount": "Zahlungsbetrag",
+    "payment_url": "Zahlungsseite",
+    "qr_string": "QR-Code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Ziel-Tag",
+    "bank_name": "Bankname",
+    "account_name": "Kontoinhaber",
+    "account_number": "Kontonummer",
+    "reference": "Referenz",
+    "amount": "Amount",
+    "currency": "Currency"
+  },
+  "destinationFields": {
+    "address": "Wallet-Adresse",
+    "network": "Netzwerk",
+    "account": "Konto / Wallet-ID",
+    "bank_account": "Bankkonto"
+  },
+  "supportTickets": {
+    "title": "Support-Tickets",
+    "subtitle": "Senden Sie eine Anfrage und verfolgen Sie Antworten unseres Support-Teams.",
+    "newTicket": "Neues Ticket",
+    "subject": "Betreff",
+    "category": "Kategorie",
+    "message": "Nachricht",
+    "submit": "Ticket senden",
+    "createFailed": "Ticket konnte nicht erstellt werden. Bitte versuchen Sie es erneut.",
+    "empty": "Noch keine Support-Tickets.",
+    "backToList": "← Zurück zu Tickets",
+    "notFound": "Ticket nicht gefunden.",
+    "closedHint": "Dieses Ticket ist geschlossen. Öffnen Sie ein neues Ticket, wenn Sie weitere Hilfe benötigen.",
+    "replyPlaceholder": "Antwort eingeben...",
+    "sendReply": "Antwort senden",
+    "replyFailed": "Antwort konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+    "supportTeam": "Support",
+    "you": "Sie",
+    "categories": {
+      "account": "Konto",
+      "payment": "Zahlung",
+      "bonus": "Bonus",
+      "game": "Spiel",
+      "other": "Sonstiges"
+    },
+    "status": {
+      "open": "Offen",
+      "pending": "Ausstehend",
+      "resolved": "Gelöst",
+      "closed": "Geschlossen"
+    }
   }
 };

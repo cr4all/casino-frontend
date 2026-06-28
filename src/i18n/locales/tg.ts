@@ -22,20 +22,29 @@ export const tg: LocaleTree = {
     "next": "Навбатӣ",
     "showMore": "Бештар нишон диҳед",
     "ok": "OK",
+    "yes": "Yes",
+    "no": "No",
     "close": "Пӯшидан",
     "copy": "Нусха",
     "copied": "Нусха гирифта шуд",
     "games": "бозиҳо",
     "gamesCount": "{{count}} бозӣ",
     "noLimit": "Бе маҳдудият",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "Мин: {{min}} · Макс: {{max}}",
     "currencyIdr": "· Асъор: IDR",
     "pageOf": "Саҳифа {{page}} аз {{last}}",
-    "actions": "Амалҳо",
     "openMenu": "Кушодани меню",
-    "language": "Забон",
-    "yes": "Yes",
-    "no": "No"
+    "actions": "Амалҳо",
+    "fieldRequired": "Лутфан &lt;&lt;<FIELD>&gt;&gt; ворид кунед.",
+    "fieldRequiredGeneric": "Ин майдон зарур аст.",
+    "fieldEmailInvalid": "Лутфан нишонаи почтаи электронии дурустро ворид намоед.",
+    "fieldMinLength": "Kailangan ay hindi bababa &lt;&lt;<COUNT>&gt;&gt; mga character.",
+    "fieldPasswordMismatch": "Паролҳо мувофиқат намекунанд.",
+    "fieldSelectRequired": "Лутфан &lt;&lt;<FIELD>&gt;&gt; -ро интихоб кунед.",
+    "fieldCodeInvalid": "Mangyaring magpasok ng 6-рақами-verification code.",
+    "language": "Забон"
   },
   "nav": {
     "allGames": "ҲАМАИ БОЗИҲО",
@@ -59,7 +68,9 @@ export const tg: LocaleTree = {
     "balance": "Баланс",
     "playResponsibly": "18+ · Бо масъулият бозӣ кунед",
     "liveChat": "ЧАТИ ЗИНДА",
-    "liveChatLabel": "Дастгирӣ"
+    "liveChatLabel": "Дастгирӣ",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Чати зинда",
@@ -73,6 +84,38 @@ export const tg: LocaleTree = {
     "sendFailed": "Паёми шуморо фиристода нашуд. Лутфан дубора кӯшиш кунед.",
     "loadFailed": "Паёмҳои чатро бор карда нашуд."
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Дастгирӣ",
+    "you": "You",
+    "categories": {
+      "account": "Ҳисоб",
+      "payment": "Payment",
+      "bonus": "Бонус",
+      "game": "Бозӣ",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "Слотҳо",
     "liveCasino": "Казинои зинда",
@@ -80,6 +123,7 @@ export const tg: LocaleTree = {
     "account": "Ҳисоб",
     "support": "Дастгирӣ",
     "messages": "Паёмҳо",
+    "tickets": "Tickets",
     "legal": "Ҳуқуқӣ",
     "about": "Дар бораи мо",
     "terms": "Шартҳои истифода",
@@ -170,7 +214,8 @@ export const tg: LocaleTree = {
     "crypto": "Криптовалюта",
     "bank": "Интиқоли бонкӣ",
     "redirect": "Пардохти онлайн",
-    "local": "Пардохти маҳаллӣ"
+    "local": "Пардохти маҳаллӣ",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "Депозит",
@@ -243,11 +288,18 @@ export const tg: LocaleTree = {
     "country": "Кишвар",
     "phone": "Телефон",
     "kycStatus": "Ҳолати KYC",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
     "verified": "Тасдиқшуда",
     "notVerified": "Тасдиқнашуда",
     "verifyNow": "Тасдиқ",
     "verificationTitleEmail": "Тасдиқи почтаи электронӣ",
     "verificationTitlePhone": "Тасдиқи телефон",
+    "verificationSendConfirm": "Send verification code to {{destination}}?",
     "verificationCodeHintEmail": "Рамзи 6-рақамаи ба {{destination}} фиристодашударо ворид кунед.",
     "verificationCodeHintPhone": "Рамзи 6-рақамаи ба {{destination}} фиристодашударо ворид кунед.",
     "verificationSubmit": "Тасдиқи тасдиқ",
@@ -268,14 +320,7 @@ export const tg: LocaleTree = {
     "saveChanges": "Захираи тағйирот",
     "updateSuccess": "Профил бо муваффақият навсозӣ шуд.",
     "updateFailed": "Профилро навсозӣ карда нашуд.",
-    "language": "Забон",
-    "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "language": "Забон"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const tg: LocaleTree = {
     "selectPaymentOption": "Усули пардохтро интихоб кунед",
     "noOptionsForCountry": "Барои ин кишвар усулҳои пардохт дастрас нестанд.",
     "backToMethods": "← Бозгашт",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← Бозгашт",
+    "stepMethod": "Усули пардохт",
+    "stepOption": "Select Option",
+    "stepAmount": "Маблағ",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "Усули пардохт",
     "localCountryLabel": "Кишвари пардохт",
     "selectLocalCountry": "Барои идома кишвари пардохтро интихоб кунед.",
@@ -351,6 +408,55 @@ export const tg: LocaleTree = {
     "limitAlertGeneric": "Шумо метавонед то {{amount}} бар асоси сатҳи санҷиши кунунии худ бозпас гиред. Барои зиёд кардани маҳдудияти худ дар профили худ санҷиши иловагиро анҷом диҳед.",
     "goToProfile": "Ба профил гузаред"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Бонус",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Бонус",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Бонус"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "Маълумотнома",
+    "amount": "Маблағ",
+    "currency": "Асъор"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "Бонусҳо",
     "wageringProgress": "Пешрафти гардиш",
@@ -409,6 +515,8 @@ export const tg: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {

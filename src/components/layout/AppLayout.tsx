@@ -16,6 +16,7 @@ import { useScrollToTopOnNavigate } from '@/hooks/useScrollToTopOnNavigate';
 import { useIdleLogout } from '@/hooks/useIdleLogout';
 import { useLanguageInit } from '@/hooks/useLanguageInit';
 import { useLiveChatSync } from '@/hooks/useLiveChatSync';
+import { useSupportTicketSync } from '@/hooks/useSupportTicketSync';
 import { useNotificationSync } from '@/hooks/useNotificationSync';
 import { useBonusSync } from '@/hooks/useBonusSync';
 import { usePlayerProfileSync } from '@/hooks/usePlayerProfileSync';
@@ -38,6 +39,7 @@ export function AppLayout() {
   useNotificationSync();
   useBonusSync();
   useLiveChatSync();
+  useSupportTicketSync();
   useIdleLogout();
   useLanguageInit();
   useCloseLiveChatOnNavigate();

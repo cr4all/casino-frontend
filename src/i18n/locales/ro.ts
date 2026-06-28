@@ -22,20 +22,29 @@ export const ro: LocaleTree = {
     "next": "Următorul",
     "showMore": "Afișați mai mult",
     "ok": "OK",
+    "yes": "Yes",
+    "no": "No",
     "close": "Închideți",
     "copy": "Copiați",
     "copied": "Copiat",
     "games": "jocuri",
     "gamesCount": "{{count}} jocuri",
     "noLimit": "Fără limită",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "Min: {{min}} · Max: {{max}}",
     "currencyIdr": "· Monedă: IDR",
     "pageOf": "Pagina {{page}} din {{last}}",
-    "actions": "Acțiuni",
     "openMenu": "Deschideți meniul",
-    "language": "Limbă",
-    "yes": "Yes",
-    "no": "No"
+    "actions": "Acțiuni",
+    "fieldRequired": "Introduceți {{field}}.",
+    "fieldRequiredGeneric": "Acest câmp este obligatoriu.",
+    "fieldEmailInvalid": "Introduceți o adresă de e-mail validă.",
+    "fieldMinLength": "Trebuie să aibă cel puțin {{count}} caractere.",
+    "fieldPasswordMismatch": "Parolele nu se potrivesc.",
+    "fieldSelectRequired": "Selectați {{field}}.",
+    "fieldCodeInvalid": "Introduceți codul de verificare din 6 cifre.",
+    "language": "Limbă"
   },
   "nav": {
     "allGames": "TOATE JOCURILE",
@@ -59,7 +68,9 @@ export const ro: LocaleTree = {
     "balance": "Sold",
     "playResponsibly": "18+ · Jucați responsabil",
     "liveChat": "CHAT LIVE",
-    "liveChatLabel": "Suport"
+    "liveChatLabel": "Suport",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Chat live",
@@ -73,6 +84,38 @@ export const ro: LocaleTree = {
     "sendFailed": "Nu s-a putut trimite mesajul. Vă rugăm să încercați din nou.",
     "loadFailed": "Nu s-au putut încărca mesajele de chat."
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Suport",
+    "you": "You",
+    "categories": {
+      "account": "Cont",
+      "payment": "Payment",
+      "bonus": "Bonus",
+      "game": "Joc",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "Sloturi",
     "liveCasino": "Cazinou live",
@@ -80,6 +123,7 @@ export const ro: LocaleTree = {
     "account": "Cont",
     "support": "Suport",
     "messages": "Mesaje",
+    "tickets": "Tickets",
     "legal": "Legal",
     "about": "Despre noi",
     "terms": "Termeni și condiții",
@@ -170,7 +214,8 @@ export const ro: LocaleTree = {
     "crypto": "Criptomonedă",
     "bank": "Transfer bancar",
     "redirect": "Plată online",
-    "local": "Plată locală"
+    "local": "Plată locală",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "Depozit",
@@ -243,11 +288,18 @@ export const ro: LocaleTree = {
     "country": "Țară",
     "phone": "Telefon",
     "kycStatus": "Status KYC",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
     "verified": "Verificat",
     "notVerified": "Neverificat",
     "verifyNow": "Verificați",
     "verificationTitleEmail": "Verificați e-mailul",
     "verificationTitlePhone": "Verificați telefonul",
+    "verificationSendConfirm": "Send verification code to {{destination}}?",
     "verificationCodeHintEmail": "Introduceți codul de 6 cifre trimis la {{destination}}.",
     "verificationCodeHintPhone": "Introduceți codul de 6 cifre trimis la {{destination}}.",
     "verificationSubmit": "Confirmați verificarea",
@@ -268,14 +320,7 @@ export const ro: LocaleTree = {
     "saveChanges": "Salvați modificările",
     "updateSuccess": "Profil actualizat cu succes.",
     "updateFailed": "Actualizarea profilului a eșuat.",
-    "language": "Limbă",
-    "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "language": "Limbă"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const ro: LocaleTree = {
     "selectPaymentOption": "Selectați o metodă de plată",
     "noOptionsForCountry": "Nu există metode de plată disponibile pentru această țară.",
     "backToMethods": "← Înapoi",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← Înapoi",
+    "stepMethod": "Metodă de plată",
+    "stepOption": "Select Option",
+    "stepAmount": "Sumă",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "Metodă de plată",
     "localCountryLabel": "Țara de plată",
     "selectLocalCountry": "Selectați o țară de plată pentru a continua.",
@@ -351,6 +408,55 @@ export const ro: LocaleTree = {
     "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
     "goToProfile": "Go to Profile"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Bonus",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Bonus",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Bonus"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "Referință",
+    "amount": "Sumă",
+    "currency": "Monedă"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "Bonusuri",
     "wageringProgress": "Progres rulaj",
@@ -409,6 +515,8 @@ export const ro: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {

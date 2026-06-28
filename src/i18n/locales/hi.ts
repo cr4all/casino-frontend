@@ -35,7 +35,16 @@ export const hi: LocaleTree = {
     "language": "भाषा",
     "yes": "Yes",
     "no": "No",
-    "actions": "Actions"
+    "actions": "Actions",
+    "fieldRequired": "कृपया {{field}} दर्ज करें।",
+    "fieldRequiredGeneric": "यह फ़ील्ड आवश्यक है।",
+    "fieldEmailInvalid": "कृपया एक मान्य ईमेल पता दर्ज करें।",
+    "fieldMinLength": "कम से कम {{count}} अक्षर होने चाहिए।",
+    "fieldPasswordMismatch": "पासवर्ड मेल नहीं खाते।",
+    "fieldSelectRequired": "कृपया {{field}} चुनें।",
+    "fieldCodeInvalid": "कृपया 6 अंकों का सत्यापन कोड दर्ज करें।",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—"
   },
   "nav": {
     "allGames": "सभी गेम",
@@ -59,7 +68,9 @@ export const hi: LocaleTree = {
     "balance": "बैलेंस",
     "playResponsibly": "18+ · जिम्मेदारी से खेलें",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "Support"
+    "liveChatLabel": "Support",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -164,7 +175,8 @@ export const hi: LocaleTree = {
     "crypto": "क्रिप्टो",
     "bank": "बैंक ट्रांसफर",
     "redirect": "ऑनलाइन भुगतान",
-    "local": "स्थानीय भुगतान"
+    "local": "स्थानीय भुगतान",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "जमा",
@@ -307,7 +319,19 @@ export const hi: LocaleTree = {
     "estimateDisclaimer": "अंतिम राशि भुगतान पुष्टि पर निर्धारित होती है।",
     "credited": "क्रेडिट किया गया",
     "loadingQuote": "अनुमान की गणना...",
-    "quoteFailed": "विनिमय अनुमान प्राप्त नहीं हो सका।"
+    "quoteFailed": "विनिमय अनुमान प्राप्त नहीं हो सका।",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← Back",
+    "stepMethod": "Payment Method",
+    "stepOption": "Select Option",
+    "stepAmount": "Amount",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available"
   },
   "withdraw": {
     "title": "निकासी",
@@ -513,5 +537,91 @@ export const hi: LocaleTree = {
     "passwordUpdateFailed": "पासवर्ड अपडेट नहीं किया जा सका।",
     "verificationCodeSent": "सत्यापन कोड भेजा है",
     "verificationCodeRequestFailed": "वेरिफ़िकेशन कोड नहीं भेजा जा सका।"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
+  },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Bonus",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Bonus",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Bonus"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "Reference",
+    "amount": "Amount",
+    "currency": "Currency"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Support",
+    "you": "You",
+    "categories": {
+      "account": "Account",
+      "payment": "Payment",
+      "bonus": "Bonus",
+      "game": "Game",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
   }
 };

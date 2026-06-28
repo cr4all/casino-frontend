@@ -35,7 +35,16 @@ export const fr: LocaleTree = {
     "language": "Langue",
     "yes": "Yes",
     "no": "No",
-    "actions": "Actions"
+    "actions": "Actions",
+    "fieldRequired": "Veuillez saisir {{field}}.",
+    "fieldRequiredGeneric": "Ce champ est obligatoire.",
+    "fieldEmailInvalid": "Veuillez saisir une adresse e-mail valide.",
+    "fieldMinLength": "Au moins {{count}} caractères requis.",
+    "fieldPasswordMismatch": "Les mots de passe ne correspondent pas.",
+    "fieldSelectRequired": "Veuillez sélectionner {{field}}.",
+    "fieldCodeInvalid": "Veuillez saisir le code de vérification à 6 chiffres.",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—"
   },
   "nav": {
     "allGames": "TOUS LES JEUX",
@@ -59,7 +68,9 @@ export const fr: LocaleTree = {
     "balance": "Solde",
     "playResponsibly": "18+ · Jouez responsablement",
     "liveChat": "CHAT EN DIRECT",
-    "liveChatLabel": "Support"
+    "liveChatLabel": "Support",
+    "supportTickets": "TICKETS D'ASSISTANCE",
+    "supportTicketsLabel": "Helpdesk"
   },
   "liveChat": {
     "title": "Chat en direct",
@@ -164,7 +175,8 @@ export const fr: LocaleTree = {
     "crypto": "Cryptomonnaie",
     "bank": "Virement bancaire",
     "redirect": "Paiement en ligne",
-    "local": "Paiement local"
+    "local": "Paiement local",
+    "manual": "Virement manuel"
   },
   "txTypes": {
     "deposit": "Dépôt",
@@ -271,9 +283,9 @@ export const fr: LocaleTree = {
     "title": "Dépôt",
     "bonusesLink": "Bonus",
     "withdrawLink": "Retrait →",
-    "selectCountry": "Payment country",
-    "selectPaymentOption": "Select a payment method",
-    "noOptionsForCountry": "No payment methods available for this country.",
+    "selectCountry": "Pays de paiement",
+    "selectPaymentOption": "Sélectionnez un mode de paiement",
+    "noOptionsForCountry": "Aucun mode de paiement disponible pour ce pays.",
     "backToMethods": "? Back",
     "paymentMethod": "Méthode de paiement",
     "localCountryLabel": "Pays de paiement",
@@ -307,7 +319,19 @@ export const fr: LocaleTree = {
     "estimateDisclaimer": "Le montant final est déterminé à la confirmation du paiement et peut différer.",
     "credited": "Crédité",
     "loadingQuote": "Calcul de l’estimation...",
-    "quoteFailed": "Impossible d’obtenir l’estimation de change."
+    "quoteFailed": "Impossible d’obtenir l’estimation de change.",
+    "backToKinds": "← Retour aux méthodes",
+    "backToOptions": "← Back",
+    "stepMethod": "Mode de paiement",
+    "stepOption": "Choisir une option",
+    "stepAmount": "Amount",
+    "selectPaymentKind": "Choisissez comment vous souhaitez déposer",
+    "selectCrypto": "Sélectionner une cryptomonnaie",
+    "selectBank": "Sélectionner un mode de paiement",
+    "kindCountCrypto": "{{count}} cryptomonnaies",
+    "kindCountLocal": "{{count}} modes de paiement",
+    "kindCountManual": "Virement bancaire",
+    "kindUnavailable": "Indisponible"
   },
   "withdraw": {
     "title": "Retrait",
@@ -513,5 +537,91 @@ export const fr: LocaleTree = {
     "passwordUpdateFailed": "Impossible de mettre à jour le mot de passe",
     "verificationCodeSent": "Code de vérification envoyé",
     "verificationCodeRequestFailed": "Impossible d'envoyer le code de vérification."
+  },
+  "risk": {
+    "challengeTitle": "Vérifiez que vous êtes humain",
+    "challengeHint": "Complétez la vérification de sécurité pour continuer.",
+    "challengeFailed": "Échec de la vérification. Veuillez réessayer."
+  },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Bonus",
+    "totalPlayable": "Total jouable",
+    "withdrawableBalance": "Solde retirable",
+    "withdrawableCash": "Espèces retirables",
+    "withdrawableBonus": "Bonus retirable",
+    "bonusLockedHint": "Les fonds bonus sont bloqués jusqu'à la satisfaction des conditions de mise.",
+    "showBreakdown": "Afficher le détail du solde",
+    "balanceBreakdown": "Détail du solde",
+    "fundingSource": "Source",
+    "walletBucket": "Catégorie",
+    "cashAfter": "Espèces après",
+    "bonusAfter": "Bonus après",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Bonus",
+      "mixed": "Mixte",
+      "free_spin": "Tour gratuit"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Bonus"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Adresse de paiement",
+    "address": "Adresse",
+    "network": "Réseau",
+    "pay_currency": "Devise de paiement",
+    "pay_amount": "Montant du paiement",
+    "payment_url": "Page de paiement",
+    "qr_string": "Code QR",
+    "memo": "Mémo",
+    "tag": "Tag",
+    "destination_tag": "Tag de destination",
+    "bank_name": "Nom de la banque",
+    "account_name": "Titulaire du compte",
+    "account_number": "Numéro de compte",
+    "reference": "Référence",
+    "amount": "Amount",
+    "currency": "Currency"
+  },
+  "destinationFields": {
+    "address": "Adresse du portefeuille",
+    "network": "Réseau",
+    "account": "Compte / ID portefeuille",
+    "bank_account": "Compte bancaire"
+  },
+  "supportTickets": {
+    "title": "Tickets d'assistance",
+    "subtitle": "Soumettez une demande et suivez les réponses de notre équipe d'assistance.",
+    "newTicket": "Nouveau ticket",
+    "subject": "Objet",
+    "category": "Catégorie",
+    "message": "Message",
+    "submit": "Envoyer le ticket",
+    "createFailed": "Impossible de créer votre ticket. Veuillez réessayer.",
+    "empty": "Aucun ticket d'assistance pour le moment.",
+    "backToList": "← Retour aux tickets",
+    "notFound": "Ticket introuvable.",
+    "closedHint": "Ce ticket est fermé. Ouvrez un nouveau ticket si vous avez besoin d'aide supplémentaire.",
+    "replyPlaceholder": "Saisissez votre réponse...",
+    "sendReply": "Envoyer la réponse",
+    "replyFailed": "Impossible d'envoyer votre réponse. Veuillez réessayer.",
+    "supportTeam": "Assistance",
+    "you": "Vous",
+    "categories": {
+      "account": "Compte",
+      "payment": "Paiement",
+      "bonus": "Bonus",
+      "game": "Jeu",
+      "other": "Autre"
+    },
+    "status": {
+      "open": "Ouvert",
+      "pending": "En attente",
+      "resolved": "Résolu",
+      "closed": "Fermé"
+    }
   }
 };

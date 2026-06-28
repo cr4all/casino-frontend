@@ -1,27 +1,30 @@
 import { useState, type InputHTMLAttributes } from 'react';
+import { FieldError, fieldControlClassName } from '@/components/common/FieldError';
 import { useTranslation } from '@/hooks/useTranslation';
-
-const inputClassName =
-  'w-full rounded-md border border-white/10 bg-card px-3 py-2.5 pr-10 text-sm text-white placeholder:text-muted focus:border-accent focus:outline-none';
 
 interface PasswordInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'className'> {
   label: string;
+  error?: string;
 }
 
-export function PasswordInput({ label, ...props }: PasswordInputProps) {
+export function PasswordInput({ label, error, id, ...props }: PasswordInputProps) {
   const { t } = useTranslation();
   const [visible, setVisible] = useState(false);
+  const errorId = error && id ? `${id}-error` : undefined;
 
   return (
     <div>
-      <label htmlFor={props.id} className="mb-1 block text-xs text-muted">
+      <label htmlFor={id} className="mb-1 block text-xs text-muted">
         {label}
       </label>
       <div className="relative">
         <input
           {...props}
+          id={id}
           type={visible ? 'text' : 'password'}
-          className={inputClassName}
+          aria-invalid={error ? true : undefined}
+          aria-describedby={errorId}
+          className={`${fieldControlClassName(Boolean(error))} pr-10`}
         />
         <button
           type="button"
@@ -57,6 +60,7 @@ export function PasswordInput({ label, ...props }: PasswordInputProps) {
           )}
         </button>
       </div>
+      <FieldError id={errorId} message={error} />
     </div>
   );
 }

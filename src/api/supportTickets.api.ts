@@ -61,4 +61,9 @@ export const supportTicketsApi = {
     );
     return data.data.message;
   },
+
+  getUnreadCount: async () => {
+    const { data } = await api.get<ApiResponse<{ unread_count: number }>>('/support-tickets/unread');
+    return data.data;
+  },
 };

@@ -35,7 +35,16 @@ export const es: LocaleTree = {
     "language": "Idioma",
     "yes": "Sí",
     "no": "No",
-    "actions": "Actions"
+    "actions": "Actions",
+    "fieldRequired": "Introduzca {{field}}.",
+    "fieldRequiredGeneric": "Este campo es obligatorio.",
+    "fieldEmailInvalid": "Introduzca una dirección de correo electrónico válida.",
+    "fieldMinLength": "Debe tener al menos {{count}} caracteres.",
+    "fieldPasswordMismatch": "Las contraseñas no coinciden.",
+    "fieldSelectRequired": "Seleccione {{field}}.",
+    "fieldCodeInvalid": "Introduzca el código de verificación de 6 dígitos.",
+    "maxOnly": "máx. {{amount}}",
+    "notAvailable": "—"
   },
   "nav": {
     "allGames": "TODOS LOS JUEGOS",
@@ -59,7 +68,9 @@ export const es: LocaleTree = {
     "balance": "Saldo",
     "playResponsibly": "18+ · Juega responsablemente",
     "liveChat": "CHAT EN VIVO",
-    "liveChatLabel": "Soporte"
+    "liveChatLabel": "Soporte",
+    "supportTickets": "TICKETS DE SOPORTE",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Chat en vivo",
@@ -164,7 +175,8 @@ export const es: LocaleTree = {
     "crypto": "Criptomoneda",
     "bank": "Transferencia bancaria",
     "redirect": "Pago en línea",
-    "local": "Pago local"
+    "local": "Pago local",
+    "manual": "Transferencia manual"
   },
   "txTypes": {
     "deposit": "Depósito",
@@ -271,9 +283,9 @@ export const es: LocaleTree = {
     "title": "Depósito",
     "bonusesLink": "Bonos",
     "withdrawLink": "Retiro →",
-    "selectCountry": "Payment country",
-    "selectPaymentOption": "Select a payment method",
-    "noOptionsForCountry": "No payment methods available for this country.",
+    "selectCountry": "País de pago",
+    "selectPaymentOption": "Seleccione un método de pago",
+    "noOptionsForCountry": "No hay métodos de pago disponibles para este país.",
     "backToMethods": "? Back",
     "paymentMethod": "Método de pago",
     "localCountryLabel": "País de pago",
@@ -307,7 +319,19 @@ export const es: LocaleTree = {
     "estimateDisclaimer": "El monto final acreditado se determina al confirmar el pago y puede diferir de esta estimación.",
     "credited": "Acreditado",
     "loadingQuote": "Calculando estimación...",
-    "quoteFailed": "No se pudo obtener la estimación de cambio."
+    "quoteFailed": "No se pudo obtener la estimación de cambio.",
+    "backToKinds": "← Volver a métodos",
+    "backToOptions": "← Back",
+    "stepMethod": "Método de pago",
+    "stepOption": "Seleccionar opción",
+    "stepAmount": "Amount",
+    "selectPaymentKind": "Elija cómo desea depositar",
+    "selectCrypto": "Seleccionar criptomoneda",
+    "selectBank": "Seleccionar método de pago",
+    "kindCountCrypto": "{{count}} criptomonedas",
+    "kindCountLocal": "{{count}} métodos de pago",
+    "kindCountManual": "Transferencia bancaria",
+    "kindUnavailable": "No disponible"
   },
   "withdraw": {
     "title": "Retiro",
@@ -513,5 +537,91 @@ export const es: LocaleTree = {
     "passwordUpdateFailed": "No se pudo actualizar la contraseña.",
     "verificationCodeSent": "Código de verificación enviado.",
     "verificationCodeRequestFailed": "No se pudo enviar el código de verificación."
+  },
+  "risk": {
+    "challengeTitle": "Verifique que es humano",
+    "challengeHint": "Complete la verificación de seguridad para continuar.",
+    "challengeFailed": "Verificación fallida. Inténtelo de nuevo."
+  },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Bonus",
+    "totalPlayable": "Total jugable",
+    "withdrawableBalance": "Saldo retirable",
+    "withdrawableCash": "Efectivo retirable",
+    "withdrawableBonus": "Bono retirable",
+    "bonusLockedHint": "Los fondos de bono están bloqueados hasta cumplir los requisitos de apuesta.",
+    "showBreakdown": "Mostrar desglose de saldo",
+    "balanceBreakdown": "Desglose de saldo",
+    "fundingSource": "Financiación",
+    "walletBucket": "Tipo",
+    "cashAfter": "Efectivo después",
+    "bonusAfter": "Bono después",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Bonus",
+      "mixed": "Mixto",
+      "free_spin": "Giro gratis"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Bonus"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Dirección de pago",
+    "address": "Dirección",
+    "network": "Red",
+    "pay_currency": "Moneda de pago",
+    "pay_amount": "Importe de pago",
+    "payment_url": "Página de pago",
+    "qr_string": "Código QR",
+    "memo": "Memo",
+    "tag": "Etiqueta",
+    "destination_tag": "Etiqueta de destino",
+    "bank_name": "Nombre del banco",
+    "account_name": "Titular de la cuenta",
+    "account_number": "Número de cuenta",
+    "reference": "Referencia",
+    "amount": "Amount",
+    "currency": "Currency"
+  },
+  "destinationFields": {
+    "address": "Dirección de wallet",
+    "network": "Red",
+    "account": "Cuenta / ID de wallet",
+    "bank_account": "Cuenta bancaria"
+  },
+  "supportTickets": {
+    "title": "Tickets de soporte",
+    "subtitle": "Envíe una solicitud y siga las respuestas de nuestro equipo de soporte.",
+    "newTicket": "Nuevo ticket",
+    "subject": "Asunto",
+    "category": "Categoría",
+    "message": "Mensaje",
+    "submit": "Enviar ticket",
+    "createFailed": "No se pudo crear su ticket. Inténtelo de nuevo.",
+    "empty": "Aún no hay tickets de soporte.",
+    "backToList": "← Volver a tickets",
+    "notFound": "Ticket no encontrado.",
+    "closedHint": "Este ticket está cerrado. Abra un nuevo ticket si necesita más ayuda.",
+    "replyPlaceholder": "Escriba su respuesta...",
+    "sendReply": "Enviar respuesta",
+    "replyFailed": "No se pudo enviar su respuesta. Inténtelo de nuevo.",
+    "supportTeam": "Soporte",
+    "you": "Usted",
+    "categories": {
+      "account": "Cuenta",
+      "payment": "Pago",
+      "bonus": "Bonificación",
+      "game": "Juego",
+      "other": "Otro"
+    },
+    "status": {
+      "open": "Abierto",
+      "pending": "Pendiente",
+      "resolved": "Resuelto",
+      "closed": "Cerrado"
+    }
   }
 };

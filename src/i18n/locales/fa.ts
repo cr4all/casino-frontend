@@ -22,20 +22,29 @@ export const fa: LocaleTree = {
     "next": "بعدی",
     "showMore": "نمایش بیشتر",
     "ok": "OK",
+    "yes": "Yes",
+    "no": "No",
     "close": "بستن",
     "copy": "کپی",
     "copied": "کپی شد",
     "games": "بازی‌ها",
     "gamesCount": "{{count}} بازی",
     "noLimit": "بدون محدودیت",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "حداقل: {{min}} · حداکثر: {{max}}",
     "currencyIdr": "· ارز: IDR",
     "pageOf": "صفحه {{page}} از {{last}}",
-    "actions": "اقدامات",
     "openMenu": "باز کردن منو",
-    "language": "زبان",
-    "yes": "Yes",
-    "no": "No"
+    "actions": "اقدامات",
+    "fieldRequired": "لطفا &lt;&lt; را وارد کنید<FIELD> &gt;&gt;.",
+    "fieldRequiredGeneric": "این فیلد ضروری است .",
+    "fieldEmailInvalid": "لطفا یک آدرس ایمیل معتبر وارد کنید.",
+    "fieldMinLength": "باید حداقل 8 کاراکتر باشد",
+    "fieldPasswordMismatch": "گذرواژه هم‌خوانی ندارد",
+    "fieldSelectRequired": "لطفا &lt;&lt; را انتخاب کنید<FIELD> &gt;&gt;.",
+    "fieldCodeInvalid": "لطفا کد تایید ۶ رقمی را وارد کنید.",
+    "language": "زبان"
   },
   "nav": {
     "allGames": "همه بازی‌ها",
@@ -59,7 +68,9 @@ export const fa: LocaleTree = {
     "balance": "موجودی",
     "playResponsibly": "18+ · مسئولانه بازی کنید",
     "liveChat": "چت زنده",
-    "liveChatLabel": "پشتیبانی"
+    "liveChatLabel": "پشتیبانی",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "چت زنده",
@@ -73,6 +84,38 @@ export const fa: LocaleTree = {
     "sendFailed": "پیام شما ارسال نشد. لطفاً دوباره تلاش کنید.",
     "loadFailed": "بارگذاری پیام‌های چت ممکن نبود."
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "پشتیبانی",
+    "you": "You",
+    "categories": {
+      "account": "حساب",
+      "payment": "Payment",
+      "bonus": "بونوس",
+      "game": "بازی",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "اسلات‌ها",
     "liveCasino": "کازینوی زنده",
@@ -80,6 +123,7 @@ export const fa: LocaleTree = {
     "account": "حساب",
     "support": "پشتیبانی",
     "messages": "پیام‌ها",
+    "tickets": "Tickets",
     "legal": "قانونی",
     "about": "درباره ما",
     "terms": "شرایط و ضوابط",
@@ -170,7 +214,8 @@ export const fa: LocaleTree = {
     "crypto": "رمزارز",
     "bank": "انتقال بانکی",
     "redirect": "پرداخت آنلاین",
-    "local": "پرداخت محلی"
+    "local": "پرداخت محلی",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "واریز",
@@ -243,11 +288,18 @@ export const fa: LocaleTree = {
     "country": "کشور",
     "phone": "تلفن",
     "kycStatus": "وضعیت KYC",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
     "verified": "تأییدشده",
     "notVerified": "تأیید نشده",
     "verifyNow": "تأیید",
     "verificationTitleEmail": "تأیید ایمیل",
     "verificationTitlePhone": "تأیید تلفن",
+    "verificationSendConfirm": "Send verification code to {{destination}}?",
     "verificationCodeHintEmail": "کد ۶ رقمی ارسال‌شده به {{destination}} را وارد کنید.",
     "verificationCodeHintPhone": "کد ۶ رقمی ارسال‌شده به {{destination}} را وارد کنید.",
     "verificationSubmit": "تأیید اعتبارسنجی",
@@ -268,14 +320,7 @@ export const fa: LocaleTree = {
     "saveChanges": "ذخیره تغییرات",
     "updateSuccess": "پروفایل با موفقیت به‌روزرسانی شد.",
     "updateFailed": "به‌روزرسانی پروفایل ناموفق بود.",
-    "language": "زبان",
-    "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "language": "زبان"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const fa: LocaleTree = {
     "selectPaymentOption": "روش پرداخت را انتخاب کنید",
     "noOptionsForCountry": "روش پرداختی برای این کشور موجود نیست.",
     "backToMethods": "← بازگشت",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← بازگشت",
+    "stepMethod": "روش پرداخت",
+    "stepOption": "Select Option",
+    "stepAmount": "مبلغ",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "روش پرداخت",
     "localCountryLabel": "کشور پرداخت",
     "selectLocalCountry": "برای ادامه، کشور پرداخت را انتخاب کنید.",
@@ -351,6 +408,55 @@ export const fa: LocaleTree = {
     "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
     "goToProfile": "Go to Profile"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "بونوس",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "بونوس",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "بونوس"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "مرجع",
+    "amount": "مبلغ",
+    "currency": "ارز"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "بونوس‌ها",
     "wageringProgress": "پیشرفت شرط‌بندی",
@@ -409,6 +515,8 @@ export const fa: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {

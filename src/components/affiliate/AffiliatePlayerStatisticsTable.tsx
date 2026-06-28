@@ -49,6 +49,9 @@ export function AffiliatePlayerStatisticsTable({
     { key: 'ngr', labelKey: 'affiliate.ngr' },
   ];
 
+  const showReferredVia = items.some((row) => row.referred_via_code);
+  const columnCount = statColumns.length + 1 + (showReferredVia ? 1 : 0);
+
   return (
     <section className="rounded-lg border border-white/10 bg-card p-4">
       <h2 className="mb-3 text-sm font-semibold text-white">{t('affiliate.playerStatistics')}</h2>
@@ -75,6 +78,9 @@ export function AffiliatePlayerStatisticsTable({
           <thead>
             <tr className="border-b border-white/10 text-xs text-muted">
               <th className="pb-2 pr-4 whitespace-nowrap">{t('affiliate.player')}</th>
+              {showReferredVia && (
+                <th className="pb-2 pr-4 whitespace-nowrap">{t('affiliate.subAffiliateCode')}</th>
+              )}
               {statColumns.map((column) => (
                 <th key={column.key} className="pb-2 pr-4 whitespace-nowrap">
                   {t(column.labelKey)}
@@ -85,13 +91,13 @@ export function AffiliatePlayerStatisticsTable({
           <tbody>
             {loading ? (
               <tr>
-                <td colSpan={11} className="py-4 text-muted">
+                <td colSpan={columnCount} className="py-4 text-muted">
                   {t('common.loading')}
                 </td>
               </tr>
             ) : items.length === 0 ? (
               <tr>
-                <td colSpan={11} className="py-4 text-muted">
+                <td colSpan={columnCount} className="py-4 text-muted">
                   {t('affiliate.noPlayerStats')}
                 </td>
               </tr>
@@ -104,6 +110,11 @@ export function AffiliatePlayerStatisticsTable({
                       <span className="ml-2 text-xs text-muted">{row.nickname}</span>
                     ) : null}
                   </td>
+                  {showReferredVia && (
+                    <td className="py-2 pr-4 whitespace-nowrap text-xs text-muted">
+                      {row.referred_via_code ?? '—'}
+                    </td>
+                  )}
                   {statColumns.map((column) => (
                     <td key={column.key} className="py-2 pr-4 whitespace-nowrap">
                       {formatBalance(row.stats[column.key])}

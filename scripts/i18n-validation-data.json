@@ -1,0 +1,434 @@
+{
+  "af": {
+    "fieldRequired": "Voer asseblief &lt;&lt;<FIELD>&gt;&gt; in.",
+    "fieldRequiredGeneric": "Hierdie is 'n verpligte veld",
+    "fieldEmailInvalid": "Voer asseblief 'n geldige e-pos adres in.",
+    "fieldMinLength": "Dit moet ten minste \"<COUNT>karakters\" wees.",
+    "fieldPasswordMismatch": "Wagwoorde stem nie ooreen nie.",
+    "fieldSelectRequired": "Selekteer asseblief",
+    "fieldCodeInvalid": "Voer asseblief die 6-syfer-verifikasiekode in."
+  },
+  "am": {
+    "fieldRequired": "እባክዎ ይግቡ &lt;&lt;<FIELD>&gt;&gt;.",
+    "fieldRequiredGeneric": "ይሄ ቦታ ይፈለጋል",
+    "fieldEmailInvalid": "እባክህን ትክክለኛ ኢሜል ያስገቡ።",
+    "fieldMinLength": "ቢያንስ መሆን አለበት &lt;&lt;<COUNT>&gt;&gt; ቁምፊዎች.",
+    "fieldPasswordMismatch": "የይለፍ ቃላት አይዛመዱም",
+    "fieldSelectRequired": "-- ይምረጡ --",
+    "fieldCodeInvalid": "እባክዎ የ 6 አሃዝ የማረጋገጫ ኮድ ያስገቡ ።"
+  },
+  "az": {
+    "fieldRequired": "&lt;&lt;<FIELD>&gt;&gt; daxil edin.",
+    "fieldRequiredGeneric": "Bu xana mütləq doldurulmalıdır.",
+    "fieldEmailInvalid": "Xahiş edirik etibarlı bir e-poçt ünvanı daxil edin",
+    "fieldMinLength": "Ən azı &lt;&lt;<COUNT>&gt;&gt; simvol olmalıdır.",
+    "fieldPasswordMismatch": "Şifrələr uyğun gəlmir.",
+    "fieldSelectRequired": "-- Seçin --",
+    "fieldCodeInvalid": "6 rəqəmli təsdiqləmə kodunu daxil edin."
+  },
+  "be": {
+    "fieldRequired": "Увядзіце &lt;&lt;<FIELD>&gt;&gt;.",
+    "fieldRequiredGeneric": "Гэта поле абавязковае.",
+    "fieldEmailInvalid": "Калі ласка, увядзіце дзейны адрас электроннай пошты",
+    "fieldMinLength": "Павінны быць па меншай меры &lt;&lt;<COUNT>&gt;&gt; сімвалы.",
+    "fieldPasswordMismatch": "& Адмысловае настаўленне",
+    "fieldSelectRequired": "Абярыце",
+    "fieldCodeInvalid": "Увядзіце 6-значны код праверкі."
+  },
+  "bg": {
+    "fieldRequired": "Моля, въведете",
+    "fieldRequiredGeneric": "Това поле е задължително.",
+    "fieldEmailInvalid": "Моля, въведете валиден имейл адрес.",
+    "fieldMinLength": "(Трябва да бъде поне 6 символа.)",
+    "fieldPasswordMismatch": "Паролите не съответстват.",
+    "fieldSelectRequired": "Изберете",
+    "fieldCodeInvalid": "Моля, въведете 6 - цифрения код за потвърждение."
+  },
+  "bn": {
+    "fieldRequired": "অনুগ্রহ করে লিখুন",
+    "fieldRequiredGeneric": "ঘরটি অবশ্যই পূরণ করতে হবে.",
+    "fieldEmailInvalid": "একটি কার্যকর ইমেল অ্যাড্রেস লিখুন।",
+    "fieldMinLength": "কমপক্ষে &lt;&lt;<COUNT>&gt;&gt; অক্ষর হতে হবে ।",
+    "fieldPasswordMismatch": "পাসওয়ার্ড মিলছে না।",
+    "fieldSelectRequired": "অনুগ্রহ করে নির্বাচন করুন",
+    "fieldCodeInvalid": "অনুগ্রহ করে 6-সংখ্যার যাচাইকরণ কোডটি লিখুন ।"
+  },
+  "cy": {
+    "fieldRequired": "Mewnbynnwch.",
+    "fieldRequiredGeneric": "Mae angen y maes hwn.",
+    "fieldEmailInvalid": "Rhowch gyfeiriad e-bost dilys",
+    "fieldMinLength": "Rhaid bod o leiaf 8 nod",
+    "fieldPasswordMismatch": "Cyfrineiriau ddim yr un fath.",
+    "fieldSelectRequired": "Dewiswch",
+    "fieldCodeInvalid": "Rhowch y cod dilysu 6 digid"
+  },
+  "et": {
+    "fieldRequired": "Palun sisesta",
+    "fieldRequiredGeneric": "See väli on kohustuslik.",
+    "fieldEmailInvalid": "Palun sisestage kehtiv e-posti aadress",
+    "fieldMinLength": "Peab olema vähemalt &lt;&lt;<COUNT>&gt;&gt; tähemärki.",
+    "fieldPasswordMismatch": "Paroolid ei kattu.",
+    "fieldSelectRequired": "Palun valige",
+    "fieldCodeInvalid": "Sisesta 6-kohaline kinnituskood."
+  },
+  "fa": {
+    "fieldRequired": "لطفا &lt;&lt; را وارد کنید<FIELD> &gt;&gt;.",
+    "fieldRequiredGeneric": "این فیلد ضروری است .",
+    "fieldEmailInvalid": "لطفا یک آدرس ایمیل معتبر وارد کنید.",
+    "fieldMinLength": "باید حداقل 8 کاراکتر باشد",
+    "fieldPasswordMismatch": "گذرواژه هم‌خوانی ندارد",
+    "fieldSelectRequired": "لطفا &lt;&lt; را انتخاب کنید<FIELD> &gt;&gt;.",
+    "fieldCodeInvalid": "لطفا کد تایید ۶ رقمی را وارد کنید."
+  },
+  "fil": {
+    "fieldRequired": "Pakilagay ng OTP",
+    "fieldRequiredGeneric": "Kailangan ang field na ito",
+    "fieldEmailInvalid": "Maglagay ng wastong email address.",
+    "fieldMinLength": "Dapat na hindi bababa sa &lt;&lt;<COUNT>&gt;&gt; mga character.",
+    "fieldPasswordMismatch": "Hindi tugma ang mga password",
+    "fieldSelectRequired": "Pumili...",
+    "fieldCodeInvalid": "Pakilagay ang 6 na digit na code ng beripikasyon."
+  },
+  "ga": {
+    "fieldRequired": "Cuir isteach",
+    "fieldRequiredGeneric": "Tá an réimse seo ag teastáil.",
+    "fieldEmailInvalid": "Cuir isteach seoladh ríomhphoist bailí le do thoil.",
+    "fieldMinLength": "Caithfidh sé a bheith &lt;&lt;<COUNT>&gt;&gt; carachtair ar a laghad.",
+    "fieldPasswordMismatch": "Ní ionann na focail fhaire.",
+    "fieldSelectRequired": "Roghnaigh le do thoil",
+    "fieldCodeInvalid": "Cuir isteach an cód deimhnithe 6 dhigit, le do thoil."
+  },
+  "gu": {
+    "fieldRequired": "કૃપા કરી નામ દાખલ કરો.",
+    "fieldRequiredGeneric": "આ જગ્યા ભરવી આવશ્યક છે",
+    "fieldEmailInvalid": "kapda kevi rite dhovay",
+    "fieldMinLength": "ઓછામાં ઓછા &lt;&lt;<COUNT>&gt;&gt; અક્ષરો હોવા જોઈએ.",
+    "fieldPasswordMismatch": "પાસવર્ડસ બંધબેસતાં નથી.",
+    "fieldSelectRequired": "કૃપા કરીને બેંક પસંદ કરો",
+    "fieldCodeInvalid": "કૃપા કરીને 6-અંકનો ચકાસણી કોડ દાખલ કરો."
+  },
+  "ha": {
+    "fieldRequired": "Don Allah shigar &lt;<FIELD> &lt; &gt;&gt;.",
+    "fieldRequiredGeneric": "Ana buƙatar wannan filin.",
+    "fieldEmailInvalid": "Da fatan za a shigar da adireshin imel mai inganci.",
+    "fieldMinLength": "Dole ne a kalla &lt;<COUNT> &lt; &gt;&gt; haruffa.",
+    "fieldPasswordMismatch": "Kalmomin wucewa ba su dace ba.",
+    "fieldSelectRequired": "Da fatan za a zaɓi &lt;<FIELD>&lt;&gt; &gt;.",
+    "fieldCodeInvalid": "Da fatan za a shigar da lambar tabbatar da lambobi 6."
+  },
+  "hr": {
+    "fieldRequired": "Molimo unesi",
+    "fieldRequiredGeneric": "Ovo polje je obavezno.",
+    "fieldEmailInvalid": "Unesi valjanu e-mail adresu.",
+    "fieldMinLength": "Mora sadržavati najmanje 6 znakova",
+    "fieldPasswordMismatch": "Lozinke se ne podudaraju.",
+    "fieldSelectRequired": "Molimo odaberite",
+    "fieldCodeInvalid": "Unesite 6-znamenkasti verifikacijski kod."
+  },
+  "hy": {
+    "fieldRequired": "Խնդրում ենք մուտքագրել<FIELD> &lt;&gt;:",
+    "fieldRequiredGeneric": "[{field}] դաշտը պարտադիր է",
+    "fieldEmailInvalid": "Խնդրում ենք մուտքագրել իրական էլ. փոստի հասցե։",
+    "fieldMinLength": "Պետք է լինի առնվազն<COUNT> &lt;&gt; նիշ:",
+    "fieldPasswordMismatch": "Nonce no coincide",
+    "fieldSelectRequired": "Խնդրում ենք ընտրել",
+    "fieldCodeInvalid": "Մուտքագրեք հաստատման 6 նիշանոց կոդը ։"
+  },
+  "ig": {
+    "fieldRequired": "Biko tinye &lt;&lt;<FIELD>&gt;&gt;.",
+    "fieldRequiredGeneric": "A chọrọ mpaghara a.",
+    "fieldEmailInvalid": "Biko tinye adreesị ozi-e dị mma.",
+    "fieldMinLength": "Ọ ga-abụ opekata mpe &lt;&lt;<COUNT>&gt;&gt; mkpụrụedemede.",
+    "fieldPasswordMismatch": "Okwuntughe adabaghị.",
+    "fieldSelectRequired": "Biko họrọ &lt;&lt;<FIELD>&gt;&gt;.",
+    "fieldCodeInvalid": "Biko tinye koodu nkwenye ọnụọgụ 6."
+  },
+  "is": {
+    "fieldRequired": "Vinsamlegast sláðu inn &lt;&lt;<FIELD>&gt;&gt;.",
+    "fieldRequiredGeneric": "Þessi reitur er nauðsynlegur.",
+    "fieldEmailInvalid": "Vinsamlega sláðu inn gilt netfang.",
+    "fieldMinLength": "Verður að vera að minnsta kosti &lt;&lt;<COUNT>&gt;&gt; stafir.",
+    "fieldPasswordMismatch": "Lykilorð eru ekki eins.",
+    "fieldSelectRequired": "Vinsamlegast veldu",
+    "fieldCodeInvalid": "Sláðu inn 6 talna staðfestingarkóðann."
+  },
+  "ka": {
+    "fieldRequired": "Გთხოვთ, შეიყვანოთ &lt;&lt;<FIELD>&gt;&gt;.",
+    "fieldRequiredGeneric": "ეს ველი სავალდებულოა.",
+    "fieldEmailInvalid": "გთხოვთ შეიყვანოთ სწორი ელფოსტის მისამართი.",
+    "fieldMinLength": "Უნდა იყოს მინიმუმ &lt;&lt;<COUNT>&gt;&gt; სიმბოლო.",
+    "fieldPasswordMismatch": "პაროლები არ ემთხვევა.",
+    "fieldSelectRequired": "გთხოვთ, აირჩიოთ",
+    "fieldCodeInvalid": "Მიუთითეთ დამადასტურებელი 6-ციფრიანი კოდი."
+  },
+  "kk": {
+    "fieldRequired": "Кіріңіз &lt;&lt;<FIELD>&gt;&gt;.",
+    "fieldRequiredGeneric": "Бұл жолды толтыру қажет",
+    "fieldEmailInvalid": "Жарамды электрондық поштаңызды енгізіңіз",
+    "fieldMinLength": "(Кем дегенде 6 таңбадан тұру керек)",
+    "fieldPasswordMismatch": "Пароль орнатылған",
+    "fieldSelectRequired": "--Таңдаңыз--",
+    "fieldCodeInvalid": "6 таңбалы тексеру кодын енгізіңіз."
+  },
+  "km": {
+    "fieldRequired": "សូមបញ្ចូលឈ្មោះ។",
+    "fieldRequiredGeneric": "ចន្លោះ​នេះ​ត្រូវតែ​បំពេញ។",
+    "fieldEmailInvalid": "សូមបញ្ចូលអាសយដ្ឋានអ៊ីមែលត្រឹមត្រូវ",
+    "fieldMinLength": "ពាក្យសម្ងាត់ត្រូវតែមានយ៉ាងហោចណាស់ 6 តួអក្សរ",
+    "fieldPasswordMismatch": "ពាក្យសម្ងាត់​មិនផ្គូផ្គង​ទេ។",
+    "fieldSelectRequired": "សូមជ្រើសរើស ​",
+    "fieldCodeInvalid": "សូមបញ្ចូលលេខកូដផ្ទៀងផ្ទាត់ 6 ខ្ទង់ ។"
+  },
+  "kn": {
+    "fieldRequired": "ದಯವಿಟ್ಟು ನಮೂದಿಸಿ &lt;&lt;<FIELD>&gt; &gt;&gt;.",
+    "fieldRequiredGeneric": "ಈ ಕ್ಷೇತ್ರವು ಅಗತ್ಯವಿದೆ",
+    "fieldEmailInvalid": "ದಯವಿಟ್ಟು ಮಾನ್ಯ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ನಮೂದಿಸು",
+    "fieldMinLength": "ಕನಿಷ್ಠ &lt;&lt;<COUNT>&gt; &gt;&gt; ಅಕ್ಷರಗಳಾಗಿರಬೇಕು.",
+    "fieldPasswordMismatch": "ಗುಪ್ತಪದವು ತಾಳೆಯಾಗಿಲ್ಲ.",
+    "fieldSelectRequired": "ದಯವಿಟ್ಟು ಆಯ್ಕೆಮಾಡಿ &lt;&lt;<FIELD>&gt; &gt;&gt;.",
+    "fieldCodeInvalid": "ದಯವಿಟ್ಟು 6-ಅಂಕಿಯ ಪರಿಶೀಲನಾ ಕೋಡ್ ಅನ್ನು ನಮೂದಿಸಿ."
+  },
+  "lb": {
+    "fieldRequired": "Bitteschön &lt;&lt;<FIELD>&gt;&gt;.",
+    "fieldRequiredGeneric": "Dëst Feld ass obligatoresch.",
+    "fieldEmailInvalid": "Gitt wgl. eng gülteg E-Mail-Adress an.",
+    "fieldMinLength": "Muss mindestens &lt;<COUNT>&gt;&gt; Charaktere sinn.",
+    "fieldPasswordMismatch": "Passwierder passen net.",
+    "fieldSelectRequired": "Wielt wgl. aus",
+    "fieldCodeInvalid": "Gitt w.e.g. de 6-Zifferen Verifikatiounscode an."
+  },
+  "lo": {
+    "fieldRequired": "ກະລຸນາໃສ່ &lt;<FIELD> &lt; &gt;&gt;.",
+    "fieldRequiredGeneric": "ຕ້ອງມີພາກສະຫນາມນີ້",
+    "fieldEmailInvalid": "ກະລຸນາໃສ່ທີ່ຢູ່ອີເມວທີ່ຖືກຕ້ອງ.",
+    "fieldMinLength": "ຕ້ອງມີຢ່າງ ຫນ້ອຍ &lt;<COUNT> &lt; &gt; &gt; ຕົວອັກສອນ.",
+    "fieldPasswordMismatch": "ລະຫັດຜ່ານບໍ່ກົງກັນ.",
+    "fieldSelectRequired": "ກະລຸນາເລືອກ &lt;<FIELD> &lt; &gt;&gt;.",
+    "fieldCodeInvalid": "ກະລຸນາໃສ່ລະຫັດກວດສອບ 6 ຕົວເລກ."
+  },
+  "lt": {
+    "fieldRequired": "Įeik.",
+    "fieldRequiredGeneric": "Šį lauką būtina užpildyti.",
+    "fieldEmailInvalid": "Įveskite galiojantį el. pašto adresą.",
+    "fieldMinLength": "Slaptažodį turi sudaryti ne mažiau kaip 6 simboliai.",
+    "fieldPasswordMismatch": "Slaptažodžiai nesutampa.",
+    "fieldSelectRequired": "Pasirinkite",
+    "fieldCodeInvalid": "Įveskite 6 skaitmenų patvirtinimo kodą."
+  },
+  "lv": {
+    "fieldRequired": "Lūdzu, ievadiet",
+    "fieldRequiredGeneric": "Šis lauks ir obligāts.",
+    "fieldEmailInvalid": "Lūdzu, ievadiet derīgu e-pasta adresi.",
+    "fieldMinLength": "Jābūt vismaz &lt;&lt;<COUNT>&gt;&gt; rakstzīmēm.",
+    "fieldPasswordMismatch": "Ievadītās paroles nesakrīt.",
+    "fieldSelectRequired": "Lūdzu, izvēlieties",
+    "fieldCodeInvalid": "Lūdzu, ievadiet sešu ciparu pārbaudes kodu."
+  },
+  "mk": {
+    "fieldRequired": "Внесете",
+    "fieldRequiredGeneric": "Оваа поле не е потполнето.",
+    "fieldEmailInvalid": "Внесете важечка адреса на е-пошта.",
+    "fieldMinLength": "Лозинката мора да има најмалку 8 знаци.",
+    "fieldPasswordMismatch": "Лозинките не се совпаѓаат.",
+    "fieldSelectRequired": "Ве молиме изберете",
+    "fieldCodeInvalid": "Внесете го 6-цифрениот код за потврда."
+  },
+  "ml": {
+    "fieldRequired": "ദയവായി നൽകുക<FIELD> &lt;&lt;&gt;&gt;&gt;.",
+    "fieldRequiredGeneric": "ഈ ഫീല്‍ഡ് ആവശ്യമാണ്",
+    "fieldEmailInvalid": "സാധുതയുള്ള ഇമെയില്‍ വിലാസം നല്‍‌കുക",
+    "fieldMinLength": "കുറഞ്ഞത് ആയിരിക്കണം<COUNT> &lt; &lt;&gt;&gt;&gt; പ്രതീകങ്ങൾ.",
+    "fieldPasswordMismatch": "രഹസ്യവാക്കുകള്‍ ചേരുന്നുല്ല.",
+    "fieldSelectRequired": "ദയവായി തിരഞ്ഞെടുക്കുക<FIELD> &lt;&lt;&gt;&gt;&gt;.",
+    "fieldCodeInvalid": "ദയവായി 6 അക്ക സ്ഥിരീകരണ കോഡ് നൽകുക."
+  },
+  "mn": {
+    "fieldRequired": "Оруулна уу;",
+    "fieldRequiredGeneric": "Энэ талбай нь шаардлагатай",
+    "fieldEmailInvalid": "Зөв имэйл хаяг оруулна уу.",
+    "fieldMinLength": "Багадаа &lt;&lt;<COUNT>&gt;&gt; тэмдэгт байх ёстой.",
+    "fieldPasswordMismatch": "Шинэ нууц үг таарахгүй байна.",
+    "fieldSelectRequired": "сонгоно уу",
+    "fieldCodeInvalid": "6 оронтой баталгаажуулах кодыг оруулна уу."
+  },
+  "mr": {
+    "fieldRequired": "नाव प्रविष्ट करा.",
+    "fieldRequiredGeneric": "हे  क्षेत्र गरजेचे आहे.",
+    "fieldEmailInvalid": "कृपया एक वैध ईमेल पत्ता प्रविष्ट करा",
+    "fieldMinLength": "कमीतकमी <COUNT>&lt;&gt;&gt; वर्ण असणे आवश्यक आहे.",
+    "fieldPasswordMismatch": "परवलीचे शब्द जुळत नाहीत.",
+    "fieldSelectRequired": "कृपया {0} निवडा",
+    "fieldCodeInvalid": "कृपया 6 - अंकी पडताळणी कोड टाका."
+  },
+  "ms": {
+    "fieldRequired": "Lūdzu, ievadiet",
+    "fieldRequiredGeneric": "Kolom wajib diisi.",
+    "fieldEmailInvalid": "Sila masukkan alamat e-mel yang sah.",
+    "fieldMinLength": "Mesti sekurang-kurangnya 8 aksara.",
+    "fieldPasswordMismatch": "Kata laluan tidak sepadan.",
+    "fieldSelectRequired": "Sila pilih",
+    "fieldCodeInvalid": "Sila masukkan kod pengesahan 6 digit."
+  },
+  "mt": {
+    "fieldRequired": "Jekk jogħġbok daħħal",
+    "fieldRequiredGeneric": "Dan il-qasam huwa meħtieġ.",
+    "fieldEmailInvalid": "Jekk jogħġbok daħħal indirizz elettroniku validu.",
+    "fieldMinLength": "Għandu jkun mill-inqas 6 karattri.",
+    "fieldPasswordMismatch": "Il-passwords ma jaqblux",
+    "fieldSelectRequired": "Jekk jogħġbok agħżel.",
+    "fieldCodeInvalid": "Jekk jogħġbok daħħal il-kodiċi ta' verifika b' 6 ċifri."
+  },
+  "my": {
+    "fieldRequired": "ကျေးဇူးပြု ၍ ဝင်ရောက်ပါ &lt;<FIELD>&gt;&gt;",
+    "fieldRequiredGeneric": "ကွက်လပ်မှာဖြည့်ရန်လိုအပ်ပါသည်။",
+    "fieldEmailInvalid": "လျှပ်စစ်စာပို့ အဆက်အသွယ်လိပ်စာ အစစ်အမှန်တခု ထည့်သွင်းပါ",
+    "fieldMinLength": "အနည်းဆုံး &gt;<COUNT> &gt;အက္ခရာများဖြစ်ရမည် ။",
+    "fieldPasswordMismatch": "စကားဝှက်တွေဟာ လိုက်ဖက်ခြင်းမရှိပါ။",
+    "fieldSelectRequired": "-- ကျေးဇူးပြုပြီး ရွေးချယ်ပါ --",
+    "fieldCodeInvalid": "ဂဏန်း 6 လုံးပါ အတည်ပြုကုဒ်ကို ထည့်သွင်းပေးပါ ။"
+  },
+  "ne": {
+    "fieldRequired": "कृपया हाल्नुहोस्",
+    "fieldRequiredGeneric": "यो जानकारी आवश्यक छ",
+    "fieldEmailInvalid": "कृपया मान्य इमेल ठेगाना प्रविष्ट गर्नुहोस्।",
+    "fieldMinLength": "कम्तिमा <COUNT>&lt;&lt;&gt;&gt; क्यारेक्टरहरू हुनुपर्छ ।",
+    "fieldPasswordMismatch": "पासवर्ड मिलेन ।",
+    "fieldSelectRequired": "कृपया छनौट गर्नुहोस्",
+    "fieldCodeInvalid": "कृपया 6 अंकको प्रमाणिकरण कोड प्रविष्ट गर्नुहोस् ।"
+  },
+  "pa": {
+    "fieldRequired": "ਕਿਰਪਾ ਕਰਕੇ &lt;&lt;<FIELD>&gt;&gt; ਦਾਖਲ ਕਰੋ.",
+    "fieldRequiredGeneric": "ਇਹ ਫੀਲਡ ਲੋੜੀਂਦਾ ਹੈ.",
+    "fieldEmailInvalid": "ਕਿਰਪਾ ਕਰਕੇ ਇੱਕ ਵੈਧ ਈਮੇਲ ਪਤਾ ਦਰਜ ਕਰੋ.",
+    "fieldMinLength": "ਘੱਟੋ-ਘੱਟ &lt;&lt;<COUNT>&gt;&gt; ਅੱਖਰ ਹੋਣੇ ਚਾਹੀਦੇ ਹਨ ।",
+    "fieldPasswordMismatch": "ਪਾਸਵਰਡ ਮੇਲ ਨਾ ਕਰੋ.",
+    "fieldSelectRequired": "ਕਿਰਪਾ ਕਰਕੇ &lt;&lt;<FIELD>&gt;&gt; ਚੁਣੋ.",
+    "fieldCodeInvalid": "ਕਿਰਪਾ ਕਰਕੇ 6-ਅੰਕਾਂ ਦਾ ਤਸਦੀਕ ਕੋਡ ਦਾਖਲ ਕਰੋ ।"
+  },
+  "si": {
+    "fieldRequired": "කරුණාකර ඇතුලත් කරන්න",
+    "fieldRequiredGeneric": "ක්ෂේත්‍රය පිරවීම අවශ්‍යයි.",
+    "fieldEmailInvalid": "කරණාකර වලංගු ඊමේල් ලිපිනයක් ඇතුලත් කරන්න.",
+    "fieldMinLength": "අවම වශයෙන් &lt;<COUNT>&gt;&gt; අක්ෂර විය යුතුය.",
+    "fieldPasswordMismatch": "මුරපද නොගැලපේ",
+    "fieldSelectRequired": "කරුණාකර තෝරන්න {0}",
+    "fieldCodeInvalid": "ඉලක්කම් 6ක සත් ‍ යාපන කේතය ඇතුළත් කරන්න."
+  },
+  "sk": {
+    "fieldRequired": "Prosím zadajte",
+    "fieldRequiredGeneric": "Toto políčko je povinné.",
+    "fieldEmailInvalid": "Prosím, vložte validnú emailovú adresu.",
+    "fieldMinLength": "Musí mať aspoň &lt;&lt;<COUNT>&gt;&gt; znakov.",
+    "fieldPasswordMismatch": "Heslá sa nezhodujú.",
+    "fieldSelectRequired": "Vyberte",
+    "fieldCodeInvalid": "Zadajte 6-miestny overovací kód."
+  },
+  "sl": {
+    "fieldRequired": "Prosimo, vnesite",
+    "fieldRequiredGeneric": "To polje je obvezno.",
+    "fieldEmailInvalid": "Vnesite veljaven e-poštni naslov.",
+    "fieldMinLength": "mora biti vsaj %s znakov",
+    "fieldPasswordMismatch": "Gesli se ne ujemata.",
+    "fieldSelectRequired": "Prosimo, izberite",
+    "fieldCodeInvalid": "Vnesite 6-mestno potrditveno kodo."
+  },
+  "so": {
+    "fieldRequired": "Fadlan geli &lt;&lt;<FIELD>&gt;&gt;.",
+    "fieldRequiredGeneric": "Goobtan waa loo baahan yahay.",
+    "fieldEmailInvalid": "Fadlan qor cinwaan email ansax ah.",
+    "fieldMinLength": "Waa in ay ahaataa ugu yaraan &lt;&lt;<COUNT>&gt;&gt; characters.",
+    "fieldPasswordMismatch": "Furayaasha sirta ahi isma waafaqsana",
+    "fieldSelectRequired": "Fadlan dooro --",
+    "fieldCodeInvalid": "Fadlan geli koodhka xaqiijinta 6 lambar."
+  },
+  "sq": {
+    "fieldRequired": "Ju lutemi shënoni",
+    "fieldRequiredGeneric": "Kjo fushë është e domosdoshme.",
+    "fieldEmailInvalid": "Ju lutemi shkruani një adresë të vlefshme emaili.",
+    "fieldMinLength": "Duhet të jenë të paktën %s karaktere",
+    "fieldPasswordMismatch": "Fjalëkalimet nuk përputhen.",
+    "fieldSelectRequired": "Të lutemi, zgjidh...",
+    "fieldCodeInvalid": "Vendos kodin 6-shifror të verifikimit."
+  },
+  "sr": {
+    "fieldRequired": "Izvolite, uđite.",
+    "fieldRequiredGeneric": "Ovo polje je obavezno.",
+    "fieldEmailInvalid": "Unesite važeću imejl adresu.",
+    "fieldMinLength": "Мора да има најмање %d знакова",
+    "fieldPasswordMismatch": "Lozinke se ne podudaraju.",
+    "fieldSelectRequired": "Izaberite",
+    "fieldCodeInvalid": "Unesite šestocifrenu šifru za proveru."
+  },
+  "sw": {
+    "fieldRequired": "Tafadhali ingiza",
+    "fieldRequiredGeneric": "Sehemu hii inahitajika kujazwa",
+    "fieldEmailInvalid": "Tafadhali ingiza anwani halali ya baruapepe.",
+    "fieldMinLength": "Lazima iwe na angalau &lt;&lt;<COUNT>&gt;&gt; herufi.",
+    "fieldPasswordMismatch": "Nenosiri haziendani.",
+    "fieldSelectRequired": "Tafadhali chagua",
+    "fieldCodeInvalid": "Tafadhali weka msimbo wa uthibitishaji wenye tarakimu 6."
+  },
+  "ta": {
+    "fieldRequired": "தயவுசெய்து உள்ளிடவும் &lt;&lt;<FIELD>&gt; &gt;&gt;.",
+    "fieldRequiredGeneric": "\"இந்த புலம் தேவை\",",
+    "fieldEmailInvalid": "ஒரு செல்லுபடியாகும் மின்னஞ்சலை உள்ளிடவும்",
+    "fieldMinLength": "குறைந்தபட்சம் &lt;&lt;<COUNT>&gt;&gt; எழுத்துக்கள் இருக்க வேண்டும்.",
+    "fieldPasswordMismatch": "கடவுச்சொல் பொருந்தவில்லை.",
+    "fieldSelectRequired": "தயவு செய்து தேர்வு செய்யவும்",
+    "fieldCodeInvalid": "6 இலக்கச் சரிபார்ப்புக் குறியீட்டை உள்ளிடவும்."
+  },
+  "te": {
+    "fieldRequired": "ventrukalu teeyadam",
+    "fieldRequiredGeneric": "ఈ ఫీల్డ్ అవసరం",
+    "fieldEmailInvalid": "దయచేసి చెల్లుబాటు అయ్యే ఇమెయిల్ చిరునామాని ఎంటర్ చేయండి",
+    "fieldMinLength": "కనీసం &lt;&lt;<COUNT>&gt; &gt;&gt; అక్షరాలు ఉండాలి.",
+    "fieldPasswordMismatch": "పాస్‌వర్డ్‌లు జతకావడం లేదు.",
+    "fieldSelectRequired": "దయచేసి ఎంచుకోండి --",
+    "fieldCodeInvalid": "దయచేసి 6-అంకెల ధృవీకరణ కోడ్ ‌ ను నమోదు చేయండి."
+  },
+  "tg": {
+    "fieldRequired": "Лутфан &lt;&lt;<FIELD>&gt;&gt; ворид кунед.",
+    "fieldRequiredGeneric": "Ин майдон зарур аст.",
+    "fieldEmailInvalid": "Лутфан нишонаи почтаи электронии дурустро ворид намоед.",
+    "fieldMinLength": "Kailangan ay hindi bababa &lt;&lt;<COUNT>&gt;&gt; mga character.",
+    "fieldPasswordMismatch": "Паролҳо мувофиқат намекунанд.",
+    "fieldSelectRequired": "Лутфан &lt;&lt;<FIELD>&gt;&gt; -ро интихоб кунед.",
+    "fieldCodeInvalid": "Mangyaring magpasok ng 6-рақами-verification code."
+  },
+  "ur": {
+    "fieldRequired": "براہ کرم درج کریں۔",
+    "fieldRequiredGeneric": "یہ خانہ پُر کرنا ضروری ہے۔",
+    "fieldEmailInvalid": "براہ مہربانی درست ای میل پتہ درج کریں۔",
+    "fieldMinLength": "کم از کم &lt;&lt;&gt;&gt;<COUNT> حروف ہونے چاہئیں ۔",
+    "fieldPasswordMismatch": "پاس ورڈز مماثل نہیں ہیں۔",
+    "fieldSelectRequired": "براہ کرم منتخب کریں",
+    "fieldCodeInvalid": "براہ کرم 6 ہندسوں کا توثیقی کوڈ درج کریں ۔"
+  },
+  "uz": {
+    "fieldRequired": "Iltimos, &lt;&lt; kiriting<FIELD> &gt;&gt;.",
+    "fieldRequiredGeneric": "Bu maydon to'ldirilishi shart.",
+    "fieldEmailInvalid": "Amaldagi email manzilingizni kiriting.",
+    "fieldMinLength": "Kamida &lt;&lt; bo&#39;lishi kerak<COUNT> &gt;&gt; belgilar.",
+    "fieldPasswordMismatch": "Парол мос келмаяпти",
+    "fieldSelectRequired": "* Iltimos saralang",
+    "fieldCodeInvalid": "Iltimos, 6 xonali tasdiqlash kodini kiriting."
+  },
+  "yo": {
+    "fieldRequired": "Jọ̀wọ́ tẹ &lt;&lt;<FIELD>&gt;&gt;.",
+    "fieldRequiredGeneric": "A nílò pápá yìí.",
+    "fieldEmailInvalid": "Jọ̀wọ́ tẹ àdírẹ́sì imeélì tó wúlò",
+    "fieldMinLength": "Ó gbọdọ̀ kéré tán &lt;&lt;<COUNT>&gt;&gt; àwọn àkàwé.",
+    "fieldPasswordMismatch": "Ọ̀rọ̀ ìgbani wọlé náà ni kò báàra wọn mu",
+    "fieldSelectRequired": "Jọ̀wọ́ yàn",
+    "fieldCodeInvalid": "Jọ̀wọ́ tẹ kọ́ọ̀dì ìdánimọ̀ dídì 6."
+  },
+  "zu": {
+    "fieldRequired": "Sicela ufake &lt;&lt;<FIELD>&gt;&gt;.",
+    "fieldRequiredGeneric": "Lesi sikhala siyadingeka.",
+    "fieldEmailInvalid": "Sicela ufake ikheli le-imeyili elivumelekile.",
+    "fieldMinLength": "Kufanele okungenani kube<COUNT> nezinhlamvu &lt;&lt; &gt;&gt;.",
+    "fieldPasswordMismatch": "Amaphasiwedi awafani.",
+    "fieldSelectRequired": "Sicela ukhethe &lt;&lt;<FIELD>&gt;&gt;.",
+    "fieldCodeInvalid": "Sicela ufake ikhodi yokuqinisekisa enamadijithi angu-6."
+  }
+}

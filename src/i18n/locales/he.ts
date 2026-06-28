@@ -22,20 +22,29 @@ export const he: LocaleTree = {
     "next": "הבא",
     "showMore": "הצג עוד",
     "ok": "OK",
+    "yes": "Yes",
+    "no": "No",
     "close": "סגור",
     "copy": "העתק",
     "copied": "הועתק",
     "games": "משחקים",
     "gamesCount": "{{count}} משחקים",
     "noLimit": "ללא הגבלה",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "מינימום: {{min}} · מקסימום: {{max}}",
     "currencyIdr": "· מטבע: IDR",
     "pageOf": "עמוד {{page}} מתוך {{last}}",
-    "actions": "פעולות",
     "openMenu": "פתח תפריט",
-    "language": "שפה",
-    "yes": "Yes",
-    "no": "No"
+    "actions": "פעולות",
+    "fieldRequired": "נא להזין {{field}}.",
+    "fieldRequiredGeneric": "שדה זה נדרש.",
+    "fieldEmailInvalid": "נא להזין כתובת דוא\"ל תקינה.",
+    "fieldMinLength": "נדרשים לפחות {{count}} תווים.",
+    "fieldPasswordMismatch": "הסיסמאות אינן תואמות.",
+    "fieldSelectRequired": "נא לבחור {{field}}.",
+    "fieldCodeInvalid": "נא להזין את קוד האימות בן 6 הספרות.",
+    "language": "שפה"
   },
   "nav": {
     "allGames": "כל המשחקים",
@@ -59,7 +68,9 @@ export const he: LocaleTree = {
     "balance": "יתרה",
     "playResponsibly": "18+ · שחק באחריות",
     "liveChat": "צ'אט חי",
-    "liveChatLabel": "תמיכה"
+    "liveChatLabel": "תמיכה",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "צ'אט חי",
@@ -73,6 +84,38 @@ export const he: LocaleTree = {
     "sendFailed": "לא ניתן לשלוח את ההודעה שלך. אנא נסה שוב.",
     "loadFailed": "לא ניתן לטעון הודעות צ'אט."
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "תמיכה",
+    "you": "You",
+    "categories": {
+      "account": "חשבון",
+      "payment": "Payment",
+      "bonus": "בונוס",
+      "game": "משחק",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "סלוטים",
     "liveCasino": "קזינו חי",
@@ -80,6 +123,7 @@ export const he: LocaleTree = {
     "account": "חשבון",
     "support": "תמיכה",
     "messages": "הודעות",
+    "tickets": "Tickets",
     "legal": "משפטי",
     "about": "אודותינו",
     "terms": "תנאים והגבלות",
@@ -170,7 +214,8 @@ export const he: LocaleTree = {
     "crypto": "מטבע קריפטו",
     "bank": "העברה בנקאית",
     "redirect": "תשלום מקוון",
-    "local": "תשלום מקומי"
+    "local": "תשלום מקומי",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "הפקדה",
@@ -243,11 +288,18 @@ export const he: LocaleTree = {
     "country": "מדינה",
     "phone": "טלפון",
     "kycStatus": "סטטוס KYC",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
     "verified": "מאומת",
     "notVerified": "לא מאומת",
     "verifyNow": "אמת",
     "verificationTitleEmail": "אמת אימייל",
     "verificationTitlePhone": "אמת טלפון",
+    "verificationSendConfirm": "Send verification code to {{destination}}?",
     "verificationCodeHintEmail": "הזן את הקוד בן 6 הספרות שנשלח ל-{{destination}}.",
     "verificationCodeHintPhone": "הזן את הקוד בן 6 הספרות שנשלח ל-{{destination}}.",
     "verificationSubmit": "אשר אימות",
@@ -268,14 +320,7 @@ export const he: LocaleTree = {
     "saveChanges": "שמור שינויים",
     "updateSuccess": "הפרופיל עודכן בהצלחה.",
     "updateFailed": "עדכון הפרופיל נכשל.",
-    "language": "שפה",
-    "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "language": "שפה"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const he: LocaleTree = {
     "selectPaymentOption": "בחר אמצעי תשלום",
     "noOptionsForCountry": "אין אמצעי תשלום זמינים עבור מדינה זו.",
     "backToMethods": "← חזרה",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← חזרה",
+    "stepMethod": "אמצעי תשלום",
+    "stepOption": "Select Option",
+    "stepAmount": "סכום",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "אמצעי תשלום",
     "localCountryLabel": "מדינת תשלום",
     "selectLocalCountry": "בחר מדינת תשלום כדי להמשיך.",
@@ -351,6 +408,55 @@ export const he: LocaleTree = {
     "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
     "goToProfile": "Go to Profile"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "בונוס",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "בונוס",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "בונוס"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "אסמכתא",
+    "amount": "סכום",
+    "currency": "מטבע"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "בונוסים",
     "wageringProgress": "התקדמות הימור",
@@ -409,6 +515,8 @@ export const he: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {

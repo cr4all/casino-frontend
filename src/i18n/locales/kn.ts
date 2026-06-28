@@ -22,20 +22,29 @@ export const kn: LocaleTree = {
     "next": "Next",
     "showMore": "Show more",
     "ok": "OK",
+    "yes": "ಹೌದು",
+    "no": "ಇಲ್ಲ",
     "close": "Close",
     "copy": "Copy",
     "copied": "Copied",
     "games": "games",
     "gamesCount": "{{count}} games",
     "noLimit": "No limit",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "Min: {{min}} · Max: {{max}}",
     "currencyIdr": "· Currency: IDR",
     "pageOf": "Page {{page}} of {{last}}",
-    "actions": "Actions",
     "openMenu": "Open menu",
-    "language": "Language",
-    "yes": "ಹೌದು",
-    "no": "ಇಲ್ಲ"
+    "actions": "Actions",
+    "fieldRequired": "ದಯವಿಟ್ಟು ನಮೂದಿಸಿ &lt;&lt;<FIELD>&gt; &gt;&gt;.",
+    "fieldRequiredGeneric": "ಈ ಕ್ಷೇತ್ರವು ಅಗತ್ಯವಿದೆ",
+    "fieldEmailInvalid": "ದಯವಿಟ್ಟು ಮಾನ್ಯ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ನಮೂದಿಸು",
+    "fieldMinLength": "ಕನಿಷ್ಠ &lt;&lt;<COUNT>&gt; &gt;&gt; ಅಕ್ಷರಗಳಾಗಿರಬೇಕು.",
+    "fieldPasswordMismatch": "ಗುಪ್ತಪದವು ತಾಳೆಯಾಗಿಲ್ಲ.",
+    "fieldSelectRequired": "ದಯವಿಟ್ಟು ಆಯ್ಕೆಮಾಡಿ &lt;&lt;<FIELD>&gt; &gt;&gt;.",
+    "fieldCodeInvalid": "ದಯವಿಟ್ಟು 6-ಅಂಕಿಯ ಪರಿಶೀಲನಾ ಕೋಡ್ ಅನ್ನು ನಮೂದಿಸಿ.",
+    "language": "Language"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -59,7 +68,9 @@ export const kn: LocaleTree = {
     "balance": "Balance",
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "Support"
+    "liveChatLabel": "Support",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -73,6 +84,38 @@ export const kn: LocaleTree = {
     "sendFailed": "Could not send your message. Please try again.",
     "loadFailed": "Could not load chat messages."
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Support",
+    "you": "You",
+    "categories": {
+      "account": "Account",
+      "payment": "Payment",
+      "bonus": "Bonus",
+      "game": "Game",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "Slots",
     "liveCasino": "Live Casino",
@@ -80,6 +123,7 @@ export const kn: LocaleTree = {
     "account": "Account",
     "support": "Support",
     "messages": "Messages",
+    "tickets": "Tickets",
     "legal": "Legal",
     "about": "About Us",
     "terms": "Terms & Conditions",
@@ -170,7 +214,8 @@ export const kn: LocaleTree = {
     "crypto": "Cryptocurrency",
     "bank": "Bank Transfer",
     "redirect": "Online Payment",
-    "local": "Local Payment"
+    "local": "Local Payment",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "Deposit",
@@ -243,11 +288,18 @@ export const kn: LocaleTree = {
     "country": "Country",
     "phone": "Phone",
     "kycStatus": "KYC Status",
+    "kyc": "ಕೆವೈಸಿ",
+    "kycComingSoon": "KYC ಪರಿಶೀಲನೆ ಶೀಘ್ರದಲ್ಲೇ ಲಭ್ಯವಿರುತ್ತದೆ. ದಯವಿಟ್ಟು ನಂತರ ಮತ್ತೆ ಪರಿಶೀಲಿಸಿ.",
+    "verificationTitleKyc": "ಗುರುತನ್ನು ಪರಿಶೀಲಿಸಿ (KYC)",
+    "kycLoading": "ಪರಿಶೀಲನೆಯನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...",
+    "kycFailed": "KYC ಪರಿಶೀಲನೆಯನ್ನು ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ದಯವಿಟ್ಟು ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+    "kycHint": "ಮೇಲಿನ ನಮೂನೆಯಲ್ಲಿನ ಹಂತಗಳನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ. SumSub ಪರಿಶೀಲನೆಯ ನಂತರ ನಿಮ್ಮ ಸ್ಥಿತಿಯನ್ನು ನವೀಕರಿಸಲಾಗುತ್ತದೆ.",
     "verified": "Verified",
     "notVerified": "Not verified",
     "verifyNow": "Verify",
     "verificationTitleEmail": "Verify email",
     "verificationTitlePhone": "Verify phone",
+    "verificationSendConfirm": "{{destination}} ಗೆ ಪರಿಶೀಲನಾ ಕೋಡ್ ಕಳುಹಿಸುವುದೇ?",
     "verificationCodeHintEmail": "Enter the 6-digit code sent to {{destination}}.",
     "verificationCodeHintPhone": "Enter the 6-digit code sent to {{destination}}.",
     "verificationSubmit": "Confirm verification",
@@ -268,14 +320,7 @@ export const kn: LocaleTree = {
     "saveChanges": "Save Changes",
     "updateSuccess": "Profile updated successfully.",
     "updateFailed": "Failed to update profile.",
-    "language": "Language",
-    "kyc": "ಕೆವೈಸಿ",
-    "kycComingSoon": "KYC ಪರಿಶೀಲನೆ ಶೀಘ್ರದಲ್ಲೇ ಲಭ್ಯವಿರುತ್ತದೆ. ದಯವಿಟ್ಟು ನಂತರ ಮತ್ತೆ ಪರಿಶೀಲಿಸಿ.",
-    "verificationTitleKyc": "ಗುರುತನ್ನು ಪರಿಶೀಲಿಸಿ (KYC)",
-    "kycLoading": "ಪರಿಶೀಲನೆಯನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...",
-    "kycFailed": "KYC ಪರಿಶೀಲನೆಯನ್ನು ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ದಯವಿಟ್ಟು ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
-    "kycHint": "ಮೇಲಿನ ನಮೂನೆಯಲ್ಲಿನ ಹಂತಗಳನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ. SumSub ಪರಿಶೀಲನೆಯ ನಂತರ ನಿಮ್ಮ ಸ್ಥಿತಿಯನ್ನು ನವೀಕರಿಸಲಾಗುತ್ತದೆ.",
-    "verificationSendConfirm": "{{destination}} ಗೆ ಪರಿಶೀಲನಾ ಕೋಡ್ ಕಳುಹಿಸುವುದೇ?"
+    "language": "Language"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const kn: LocaleTree = {
     "selectPaymentOption": "Select a payment method",
     "noOptionsForCountry": "No payment methods available for this country.",
     "backToMethods": "← Back",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← Back",
+    "stepMethod": "Payment Method",
+    "stepOption": "Select Option",
+    "stepAmount": "ಮೊತ್ತ",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "Payment Method",
     "localCountryLabel": "Payment country",
     "selectLocalCountry": "Select a payment country to continue.",
@@ -351,6 +408,55 @@ export const kn: LocaleTree = {
     "limitAlertGeneric": "ನಿಮ್ಮ ಪ್ರಸ್ತುತ ಪರಿಶೀಲನಾ ಮಟ್ಟವನ್ನು ಆಧರಿಸಿ ನೀವು {{amount}} ವರೆಗೆ ಹಿಂಪಡೆಯಬಹುದು. ನಿಮ್ಮ ಮಿತಿಯನ್ನು ಹೆಚ್ಚಿಸಲು ನಿಮ್ಮ ಪ್ರೊಫೈಲ್‌ನಲ್ಲಿ ಹೆಚ್ಚುವರಿ ಪರಿಶೀಲನೆಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ.",
     "goToProfile": "ಪ್ರೊಫೈಲ್‌ಗೆ ಹೋಗಿ"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Bonus",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Bonus",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Bonus"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "ಉಲ್ಲೇಖ:",
+    "amount": "ಮೊತ್ತ",
+    "currency": "Currency"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "Bonuses",
     "wageringProgress": "Wagering progress",
@@ -409,6 +515,8 @@ export const kn: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {

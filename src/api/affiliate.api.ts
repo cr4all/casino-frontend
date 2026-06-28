@@ -30,6 +30,7 @@ export interface AffiliateReferredPlayer {
   player_id: number;
   nickname: string | null;
   registered_at: string;
+  referred_via_code?: string | null;
 }
 
 export interface AffiliateCommission {
@@ -62,6 +63,7 @@ export interface AffiliatePlayerStatistics {
   player_id: number;
   nickname: string | null;
   registered_at: string;
+  referred_via_code?: string | null;
   stats: PlayerStatisticsMetrics;
 }
 

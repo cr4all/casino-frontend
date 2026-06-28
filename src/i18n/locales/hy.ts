@@ -22,20 +22,29 @@ export const hy: LocaleTree = {
     "next": "Հաջորդ",
     "showMore": "Ցույց տալ ավելին",
     "ok": "OK",
+    "yes": "ԱՅՈ",
+    "no": "Ոչ",
     "close": "Փակել",
     "copy": "Հատուկել",
     "copied": "Հատվել է",
     "games": "խաղեր",
     "gamesCount": "{{count}} խաղեր",
     "noLimit": "Անսահման",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "Նվազագույնը: {{min}} · Մեծագույնը: {{max}}",
     "currencyIdr": "· Արժույթ՝ IDR",
     "pageOf": "Էջ {{page}} מתוך {{last}}",
-    "actions": "Գործողություններ",
     "openMenu": "Բացել меню",
-    "language": "Լեզու",
-    "yes": "ԱՅՈ",
-    "no": "Ոչ"
+    "actions": "Գործողություններ",
+    "fieldRequired": "Խնդրում ենք մուտքագրել<FIELD> &lt;&gt;:",
+    "fieldRequiredGeneric": "[{field}] դաշտը պարտադիր է",
+    "fieldEmailInvalid": "Խնդրում ենք մուտքագրել իրական էլ. փոստի հասցե։",
+    "fieldMinLength": "Պետք է լինի առնվազն<COUNT> &lt;&gt; նիշ:",
+    "fieldPasswordMismatch": "Nonce no coincide",
+    "fieldSelectRequired": "Խնդրում ենք ընտրել",
+    "fieldCodeInvalid": "Մուտքագրեք հաստատման 6 նիշանոց կոդը ։",
+    "language": "Լեզու"
   },
   "nav": {
     "allGames": "ԲԱՐՁՐ ԽԱՂԵՐ",
@@ -59,7 +68,9 @@ export const hy: LocaleTree = {
     "balance": "Հաշվեկշիռ",
     "playResponsibly": "18+ · Խաղացեք պատասխանատու կերպով",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "Համակարգել"
+    "liveChatLabel": "Համակարգել",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -73,6 +84,38 @@ export const hy: LocaleTree = {
     "sendFailed": "Չհաջողվեց ուղարկել ձեր հաղորդագրությունը։ Խնդրում ենք կրկնել փորձը։",
     "loadFailed": "Չհաջողվեց โหลด-ը հեռագրային հաղորդագրությունները։"
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Համակարգել",
+    "you": "You",
+    "categories": {
+      "account": "Հաշիվ",
+      "payment": "Payment",
+      "bonus": "Պարգևավճար",
+      "game": "Խաղ",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "Սլոթեր",
     "liveCasino": "Ուղիղ կազինո",
@@ -80,6 +123,7 @@ export const hy: LocaleTree = {
     "account": "Հաշիվ",
     "support": "Համակարգել",
     "messages": "Հաղորդագրություններ",
+    "tickets": "Tickets",
     "legal": "օրինական",
     "about": "Մեր մասին",
     "terms": "Պայմաններ եւ պայմանավորվածություններ",
@@ -170,7 +214,8 @@ export const hy: LocaleTree = {
     "crypto": "Կրիպտოვալուտա",
     "bank": "Բանկային փոխանցում",
     "redirect": "Անլայն վճարում",
-    "local": "Տեղական վճարում"
+    "local": "Տեղական վճարում",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "Հատկացում",
@@ -243,11 +288,18 @@ export const hy: LocaleTree = {
     "country": "Երկիր",
     "phone": "Հեռախոս",
     "kycStatus": "KYC վիճակ",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Չհաջողվեց սկսել KYC - ի հաստատումը: Նորից փորձեք ավելի ուշ ։",
+    "kycHint": "Ավարտեք քայլերը վերը նշված տեսքով ։ Ձեր կարգավիճակը կթարմացվի SumSub - ի ստուգումից հետո ։",
     "verified": "Հաստատված",
     "notVerified": "Չստուգված",
     "verifyNow": "Հաստատել",
     "verificationTitleEmail": "Հաստատել էլ-նամակը",
     "verificationTitlePhone": "Հաստատել հեռախոսը",
+    "verificationSendConfirm": "Ուղարկե ՞ լ հաստատման կոդը {{Destination}} հասցեին ։",
     "verificationCodeHintEmail": "Մուտքագրեք {{destination}} ուղարկված 6-մատյան կոդը։",
     "verificationCodeHintPhone": "Մուտքագրեք {{destination}} ուղարկված 6-մատյան կոդը։",
     "verificationSubmit": "Հաստատել ստուգումը",
@@ -268,14 +320,7 @@ export const hy: LocaleTree = {
     "saveChanges": "Պահպանել փոփոխությունները",
     "updateSuccess": "Պրոֆիլը հաջողությամբ նորացվել է։",
     "updateFailed": "Չհաջողվեց թարմացնել պրոֆիլը։",
-    "language": "Լեզու",
-    "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Չհաջողվեց սկսել KYC - ի հաստատումը: Նորից փորձեք ավելի ուշ ։",
-    "kycHint": "Ավարտեք քայլերը վերը նշված տեսքով ։ Ձեր կարգավիճակը կթարմացվի SumSub - ի ստուգումից հետո ։",
-    "verificationSendConfirm": "Ուղարկե ՞ լ հաստատման կոդը {{Destination}} հասցեին ։"
+    "language": "Լեզու"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const hy: LocaleTree = {
     "selectPaymentOption": "Ընտրեք վճարման մեթոդը",
     "noOptionsForCountry": "Այս երկրի համար վճարման մեթոդներ उपलब्ध չեն։",
     "backToMethods": "← Վերադառնալ",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← Վերադառնալ",
+    "stepMethod": "Վճարման մեթոդ",
+    "stepOption": "Select Option",
+    "stepAmount": "Համար",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "Վճարման մեթոդ",
     "localCountryLabel": "Վճարման երկիր",
     "selectLocalCountry": "Ընտրեք վճարման երկիր շարունակելու համար։",
@@ -351,6 +408,55 @@ export const hy: LocaleTree = {
     "limitAlertGeneric": "Դուք կարող եք հետ կանչել մինչև {{amount }}՝ հաշվի առնելով ձեր ընթացիկ հաստատման մակարդակը ։ Լրացուցիչ հաստատում կատարեք ձեր պրոֆիլում ՝ սահմանաչափը մեծացնելու համար ։",
     "goToProfile": "Հաստատել"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Պարգևավճար",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Պարգևավճար",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Պարգևավճար"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "Հղում",
+    "amount": "Համար",
+    "currency": "Հատուկ դրամ"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "Պարգևավճարներ",
     "wageringProgress": "Պարտագրման առաջընթաց",
@@ -409,6 +515,8 @@ export const hy: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {

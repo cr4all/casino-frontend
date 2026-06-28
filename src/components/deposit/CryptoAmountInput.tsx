@@ -1,4 +1,5 @@
 import { addToAmountInput } from '@/utils/amountInput';
+import { FieldError } from '@/components/common/FieldError';
 
 const QUICK_AMOUNTS = [10, 20, 50, 100];
 
@@ -8,6 +9,7 @@ interface CryptoAmountInputProps {
   currencyLabel?: string;
   amountLabel: string;
   clearLabel: string;
+  error?: string;
 }
 
 export function CryptoAmountInput({
@@ -16,7 +18,10 @@ export function CryptoAmountInput({
   currencyLabel,
   amountLabel,
   clearLabel,
+  error,
 }: CryptoAmountInputProps) {
+  const errorId = error ? 'deposit-amount-error' : undefined;
+
   return (
     <div className="space-y-2">
       <label htmlFor="deposit-amount" className="block text-xs text-muted">
@@ -24,7 +29,11 @@ export function CryptoAmountInput({
         {currencyLabel ? ` (${currencyLabel})` : ''}
       </label>
 
-      <div className="flex overflow-hidden rounded-lg border border-white/15 bg-background">
+      <div
+        className={`flex overflow-hidden rounded-lg border bg-background ${
+          error ? 'border-red-400/70' : 'border-white/15'
+        }`}
+      >
         <input
           id="deposit-amount"
           type="number"
@@ -32,7 +41,8 @@ export function CryptoAmountInput({
           min="0"
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          required
+          aria-invalid={error ? true : undefined}
+          aria-describedby={errorId}
           className="min-w-0 flex-1 bg-transparent px-3 py-2.5 text-sm text-white outline-none [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
           placeholder="0.00"
         />
@@ -46,6 +56,7 @@ export function CryptoAmountInput({
           <span className="text-lg leading-none" aria-hidden="true">×</span>
         </button>
       </div>
+      <FieldError id={errorId} message={error} />
 
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
         {QUICK_AMOUNTS.map((delta) => (

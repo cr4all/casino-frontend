@@ -22,20 +22,29 @@ export const ms: LocaleTree = {
     "next": "Seterusnya",
     "showMore": "Tunjukkan lagi",
     "ok": "OK",
+    "yes": "Ya",
+    "no": "No.",
     "close": "Tutup",
     "copy": "Salin",
     "copied": "Disalin",
     "games": "permainan",
     "gamesCount": "{{count}} permainan",
     "noLimit": "Tiada had",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "Min: {{min}} · Maks: {{max}}",
     "currencyIdr": "· Mata wang: IDR",
     "pageOf": "Halaman {{page}} daripada {{last}}",
-    "actions": "Tindakan",
     "openMenu": "Buka menu",
-    "language": "Bahasa",
-    "yes": "Ya",
-    "no": "No."
+    "actions": "Tindakan",
+    "fieldRequired": "Lūdzu, ievadiet",
+    "fieldRequiredGeneric": "Kolom wajib diisi.",
+    "fieldEmailInvalid": "Sila masukkan alamat e-mel yang sah.",
+    "fieldMinLength": "Mesti sekurang-kurangnya 8 aksara.",
+    "fieldPasswordMismatch": "Kata laluan tidak sepadan.",
+    "fieldSelectRequired": "Sila pilih",
+    "fieldCodeInvalid": "Sila masukkan kod pengesahan 6 digit.",
+    "language": "Bahasa"
   },
   "nav": {
     "allGames": "SEMUA PERMAINAN",
@@ -59,7 +68,9 @@ export const ms: LocaleTree = {
     "balance": "Baki",
     "playResponsibly": "18+ · Main Secara Bertanggungjawab",
     "liveChat": "SEMBANG LANGSUNG",
-    "liveChatLabel": "Sokongan"
+    "liveChatLabel": "Sokongan",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Sembang Langsung",
@@ -73,6 +84,38 @@ export const ms: LocaleTree = {
     "sendFailed": "Tidak dapat menghantar mesej anda. Sila cuba lagi.",
     "loadFailed": "Tidak dapat memuatkan mesej sembang."
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Sokongan",
+    "you": "You",
+    "categories": {
+      "account": "Akaun",
+      "payment": "Payment",
+      "bonus": "Ganjaran",
+      "game": "Permainan",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "Slot",
     "liveCasino": "Kasino Langsung",
@@ -80,6 +123,7 @@ export const ms: LocaleTree = {
     "account": "Akaun",
     "support": "Sokongan",
     "messages": "Mesej",
+    "tickets": "Tickets",
     "legal": "Undang-undang",
     "about": "Tentang Kami",
     "terms": "Terma & Syarat",
@@ -170,7 +214,8 @@ export const ms: LocaleTree = {
     "crypto": "Mata wang kripto",
     "bank": "Pemindahan Bank",
     "redirect": "Pembayaran Dalam Talian",
-    "local": "Pembayaran Tempatan"
+    "local": "Pembayaran Tempatan",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "Tambah dana",
@@ -243,11 +288,18 @@ export const ms: LocaleTree = {
     "country": "Negara",
     "phone": "Telefon",
     "kycStatus": "Status KYC",
+    "kyc": "KYC",
+    "kycComingSoon": "Pengesahan KYC akan tersedia tidak lama lagi. Sila semak semula kemudian.",
+    "verificationTitleKyc": "Sahkan identiti (KYC)",
+    "kycLoading": "Memuatkan pengesahan...",
+    "kycFailed": "Tidak dapat memulakan pengesahan KYC. Sila cuba lagi kemudian.",
+    "kycHint": "Lengkapkan langkah-langkah dalam borang di atas. Status anda akan dikemas kini selepas semakan SumSub.",
     "verified": "Disahkan",
     "notVerified": "Belum disahkan",
     "verifyNow": "Sahkan",
     "verificationTitleEmail": "Sahkan e-mel",
     "verificationTitlePhone": "Sahkan telefon",
+    "verificationSendConfirm": "Hantar kod pengesahan ke {{destination}}?",
     "verificationCodeHintEmail": "Masukkan kod 6 digit yang dihantar ke {{destination}}.",
     "verificationCodeHintPhone": "Masukkan kod 6 digit yang dihantar ke {{destination}}.",
     "verificationSubmit": "Sahkan pengesahan",
@@ -268,14 +320,7 @@ export const ms: LocaleTree = {
     "saveChanges": "Simpan Perubahan",
     "updateSuccess": "Profil berjaya dikemas kini.",
     "updateFailed": "Gagal mengemas kini profil.",
-    "language": "Bahasa",
-    "kyc": "KYC",
-    "kycComingSoon": "Pengesahan KYC akan tersedia tidak lama lagi. Sila semak semula kemudian.",
-    "verificationTitleKyc": "Sahkan identiti (KYC)",
-    "kycLoading": "Memuatkan pengesahan...",
-    "kycFailed": "Tidak dapat memulakan pengesahan KYC. Sila cuba lagi kemudian.",
-    "kycHint": "Lengkapkan langkah-langkah dalam borang di atas. Status anda akan dikemas kini selepas semakan SumSub.",
-    "verificationSendConfirm": "Hantar kod pengesahan ke {{destination}}?"
+    "language": "Bahasa"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const ms: LocaleTree = {
     "selectPaymentOption": "Pilih kaedah pembayaran",
     "noOptionsForCountry": "Tiada kaedah pembayaran tersedia untuk negara ini.",
     "backToMethods": "← Kembali",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← Kembali",
+    "stepMethod": "Kaedah Pembayaran",
+    "stepOption": "Select Option",
+    "stepAmount": "Jumlah",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "Kaedah Pembayaran",
     "localCountryLabel": "Negara pembayaran",
     "selectLocalCountry": "Pilih negara pembayaran untuk meneruskan.",
@@ -351,6 +408,55 @@ export const ms: LocaleTree = {
     "limitAlertGeneric": "Anda boleh mengeluarkan sehingga {{amount}} berdasarkan tahap pengesahan semasa anda. Lengkapkan pengesahan tambahan dalam profil anda untuk meningkatkan had anda.",
     "goToProfile": "Pergi ke Profil"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Ganjaran",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Ganjaran",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Ganjaran"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "Rujukan",
+    "amount": "Jumlah",
+    "currency": "Mata wang"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "Ganjaran",
     "wageringProgress": "Kemajuan pertaruhan",
@@ -409,6 +515,8 @@ export const ms: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {

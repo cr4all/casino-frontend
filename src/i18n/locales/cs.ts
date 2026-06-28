@@ -35,7 +35,18 @@ export const cs: LocaleTree = {
     "language": "Jazyk",
     "yes": "Ano",
     "no": "Ne",
-    "actions": "Actions"
+    "actions": "Actions",
+    "fieldRequired": "Zadejte {{field}}.",
+    "fieldRequiredGeneric": "Toto pole je povinné.",
+    "fieldEmailInvalid": "Zadejte platnou e-mailovou adresu.",
+    "fieldMinLength": "Musí mít alespoň {{count}} znaků.",
+    "fieldPasswordMismatch": "Hesla se neshodují.",
+    "fieldSelectRequired": "Vyberte {{field}}.",
+    "fieldCodeInvalid": "Zadejte 6místný ověřovací kód.",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "VŠECHNY HRY",
@@ -59,7 +70,9 @@ export const cs: LocaleTree = {
     "balance": "Zůstatek",
     "playResponsibly": "18+ · Hrajte zodpovědně",
     "liveChat": "ŽIVÝ CHAT",
-    "liveChatLabel": "Podpora"
+    "liveChatLabel": "Podpora",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Živý chat",
@@ -158,13 +171,15 @@ export const cs: LocaleTree = {
     "crypto": "Kryptoměna",
     "crypto_payment": "Krypto platba",
     "bank": "Bankovní převod",
-    "bank_transfer": "Bankovní převod"
+    "bank_transfer": "Bankovní převod",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Kryptoměna",
     "bank": "Bankovní převod",
     "redirect": "Online platba",
-    "local": "Místní platba"
+    "local": "Místní platba",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "Vklad",
@@ -307,7 +322,19 @@ export const cs: LocaleTree = {
     "estimateDisclaimer": "Konečná připsaná částka se určí při potvrzení platby a může se lišit od tohoto odhadu.",
     "credited": "Připsáno",
     "loadingQuote": "Výpočet odhadu...",
-    "quoteFailed": "Nepodařilo se načíst odhad směnného kurzu."
+    "quoteFailed": "Nepodařilo se načíst odhad směnného kurzu.",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← Back",
+    "stepMethod": "Payment Method",
+    "stepOption": "Select Option",
+    "stepAmount": "Amount",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available"
   },
   "withdraw": {
     "title": "Výběr",
@@ -513,5 +540,91 @@ export const cs: LocaleTree = {
     "passwordUpdateFailed": "Aktualizace hesla se nezdařila.",
     "verificationCodeSent": "Kód pro ověření odeslán",
     "verificationCodeRequestFailed": "Nepodařilo se odeslat ověřovací kód"
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
+  },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Bonus",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Bonus",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Bonus"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "Reference",
+    "amount": "Amount",
+    "currency": "Currency"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Support",
+    "you": "You",
+    "categories": {
+      "account": "Account",
+      "payment": "Payment",
+      "bonus": "Bonus",
+      "game": "Game",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
   }
 };

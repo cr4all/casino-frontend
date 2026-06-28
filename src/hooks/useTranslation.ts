@@ -8,7 +8,10 @@ import {
   translateBonusType,
   translateCollectionSlug,
   translateGameType,
+  translateDestinationField,
+  translatePaymentInfoField,
   translatePaymentMethod,
+  translatePaymentOptionLabel,
   translatePaymentType,
   translateStatus,
   translateTxType,
@@ -61,6 +64,21 @@ export function useTranslation() {
     [language],
   );
 
+  const tPaymentOptionLabel = useCallback(
+    (label: string | null | undefined) => translatePaymentOptionLabel(language, label),
+    [language],
+  );
+
+  const tPaymentInfoField = useCallback(
+    (fieldKey: string) => translatePaymentInfoField(language, fieldKey),
+    [language],
+  );
+
+  const tDestinationField = useCallback(
+    (fieldName: string, fallbackLabel: string) => translateDestinationField(language, fieldName, fallbackLabel),
+    [language],
+  );
+
   const tPaymentType = useCallback(
     (type: string | null | undefined) => translatePaymentType(language, type),
     [language],
@@ -83,6 +101,9 @@ export function useTranslation() {
     tCollection,
     tStatus,
     tPaymentMethod,
+    tPaymentOptionLabel,
+    tPaymentInfoField,
+    tDestinationField,
     tPaymentType,
     tTxType,
     tBonusType,

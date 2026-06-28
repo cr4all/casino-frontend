@@ -1,0 +1,18 @@
+{
+  "max {{amount}}": "máx. {{amount}}",
+  "Manual Transfer": "Transferência manual",
+  "Choose how you want to deposit": "Escolha como deseja depositar",
+  "Select cryptocurrency": "Selecionar criptomoeda",
+  "Select payment method": "Selecionar método de pagamento",
+  "{{count}} cryptocurrencies": "{{count}} criptomoedas",
+  "{{count}} payment methods": "{{count}} métodos de pagamento",
+  "Bank transfer": "Transferência bancária",
+  "Not available": "Indisponível",
+  "Withdrawable balance": "Saldo sacável",
+  "Withdrawable cash": "Dinheiro sacável",
+  "Withdrawable bonus": "Bônus sacável",
+  "Total playable": "Total jogável",
+  "Wallet address": "Endereço da carteira",
+  "Account / wallet ID": "Conta / ID da carteira",
+  "Bank account": "Conta bancária"
+}

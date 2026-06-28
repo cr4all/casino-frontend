@@ -8,6 +8,14 @@ import {
 import { useAuthStore } from '@/stores/authStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { Button } from '@/components/common/Button';
+import { FormTextArea, FormTextField } from '@/components/common/FormTextField';
+import {
+  collectFieldErrors,
+  hasFieldErrors,
+  omitFieldError,
+  requiredValue,
+  type FieldErrors,
+} from '@/utils/formValidation';
 
 const categories: SupportTicketCategory[] = ['account', 'payment', 'bonus', 'game', 'other'];
 
@@ -22,6 +30,7 @@ export function SupportTicketsPage() {
   const [body, setBody] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
 
   useEffect(() => {
     if (!isAuthenticated) return;
@@ -35,10 +44,36 @@ export function SupportTicketsPage() {
     return <Navigate to="/" replace />;
   }
 
+  const validateForm = (): boolean => {
+    const required = (field: string, value: string) =>
+      requiredValue(value) ? undefined : t('common.fieldRequired', { field });
+
+    let subjectError: string | undefined;
+    if (!requiredValue(subject)) {
+      subjectError = t('common.fieldRequired', { field: t('supportTickets.subject') });
+    } else if (subject.trim().length < 3) {
+      subjectError = t('common.fieldMinLength', { count: 3 });
+    }
+
+    const errors = collectFieldErrors([
+      ['subject', subjectError],
+      ['body', required(t('supportTickets.message'), body)],
+    ]);
+
+    setFieldErrors(errors);
+    return !hasFieldErrors(errors);
+  };
+
   const handleCreate = async (event: FormEvent) => {
     event.preventDefault();
-    setSubmitting(true);
     setError(null);
+    setFieldErrors({});
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setSubmitting(true);
     try {
       const ticket = await supportTicketsApi.create({
         subject: subject.trim(),
@@ -70,19 +105,19 @@ export function SupportTicketsPage() {
       </div>
 
       {showForm && (
-        <form onSubmit={(event) => void handleCreate(event)} className="mb-6 rounded-lg border border-white/5 bg-surface p-5 space-y-4">
-          <div>
-            <label htmlFor="ticket-subject" className="mb-1 block text-sm text-muted">{t('supportTickets.subject')}</label>
-            <input
-              id="ticket-subject"
-              value={subject}
-              onChange={(event) => setSubject(event.target.value)}
-              required
-              minLength={3}
-              maxLength={255}
-              className="w-full rounded-md border border-white/10 bg-background px-3 py-2 text-white"
-            />
-          </div>
+        <form onSubmit={(event) => void handleCreate(event)} noValidate className="mb-6 rounded-lg border border-white/5 bg-surface p-5 space-y-4">
+          <FormTextField
+            id="ticket-subject"
+            label={t('supportTickets.subject')}
+            value={subject}
+            onChange={(event) => {
+              setSubject(event.target.value);
+              setFieldErrors((prev) => omitFieldError(prev, 'subject'));
+            }}
+            maxLength={255}
+            error={fieldErrors.subject}
+            inputClassName="bg-background py-2"
+          />
           <div>
             <label htmlFor="ticket-category" className="mb-1 block text-sm text-muted">{t('supportTickets.category')}</label>
             <select
@@ -96,18 +131,18 @@ export function SupportTicketsPage() {
               ))}
             </select>
           </div>
-          <div>
-            <label htmlFor="ticket-body" className="mb-1 block text-sm text-muted">{t('supportTickets.message')}</label>
-            <textarea
-              id="ticket-body"
-              value={body}
-              onChange={(event) => setBody(event.target.value)}
-              required
-              rows={5}
-              maxLength={5000}
-              className="w-full rounded-md border border-white/10 bg-background px-3 py-2 text-white"
-            />
-          </div>
+          <FormTextArea
+            id="ticket-body"
+            label={t('supportTickets.message')}
+            value={body}
+            onChange={(event) => {
+              setBody(event.target.value);
+              setFieldErrors((prev) => omitFieldError(prev, 'body'));
+            }}
+            rows={5}
+            maxLength={5000}
+            error={fieldErrors.body}
+          />
           {error && <p className="text-sm text-red-400">{error}</p>}
           <Button type="submit" disabled={submitting}>
             {submitting ? t('common.loading') : t('supportTickets.submit')}
@@ -138,8 +173,8 @@ export function SupportTicketsPage() {
                     </p>
                   </div>
                   {ticket.unread_player_count > 0 && (
-                    <span className="rounded-full bg-accent px-2 py-0.5 text-xs font-medium text-white">
-                      {ticket.unread_player_count}
+                    <span className="flex h-5 min-w-5 shrink-0 items-center justify-center rounded-full bg-accent-gold px-1.5 text-[10px] font-bold leading-none text-background">
+                      {ticket.unread_player_count > 99 ? '99+' : ticket.unread_player_count}
                     </span>
                   )}
                 </div>

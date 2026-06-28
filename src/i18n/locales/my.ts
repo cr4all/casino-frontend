@@ -22,20 +22,29 @@ export const my: LocaleTree = {
     "next": "Next",
     "showMore": "Show more",
     "ok": "OK",
+    "yes": "ကျင်းပပါတယ်",
+    "no": "မရှိ",
     "close": "Close",
     "copy": "Copy",
     "copied": "Copied",
     "games": "games",
     "gamesCount": "{{count}} games",
     "noLimit": "No limit",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "Min: {{min}} · Max: {{max}}",
     "currencyIdr": "· Currency: IDR",
     "pageOf": "Page {{page}} of {{last}}",
-    "actions": "Actions",
     "openMenu": "Open menu",
-    "language": "Language",
-    "yes": "ကျင်းပပါတယ်",
-    "no": "မရှိ"
+    "actions": "Actions",
+    "fieldRequired": "ကျေးဇူးပြု ၍ ဝင်ရောက်ပါ &lt;<FIELD>&gt;&gt;",
+    "fieldRequiredGeneric": "ကွက်လပ်မှာဖြည့်ရန်လိုအပ်ပါသည်။",
+    "fieldEmailInvalid": "လျှပ်စစ်စာပို့ အဆက်အသွယ်လိပ်စာ အစစ်အမှန်တခု ထည့်သွင်းပါ",
+    "fieldMinLength": "အနည်းဆုံး &gt;<COUNT> &gt;အက္ခရာများဖြစ်ရမည် ။",
+    "fieldPasswordMismatch": "စကားဝှက်တွေဟာ လိုက်ဖက်ခြင်းမရှိပါ။",
+    "fieldSelectRequired": "-- ကျေးဇူးပြုပြီး ရွေးချယ်ပါ --",
+    "fieldCodeInvalid": "ဂဏန်း 6 လုံးပါ အတည်ပြုကုဒ်ကို ထည့်သွင်းပေးပါ ။",
+    "language": "Language"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -59,7 +68,9 @@ export const my: LocaleTree = {
     "balance": "Balance",
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "Support"
+    "liveChatLabel": "Support",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -73,6 +84,38 @@ export const my: LocaleTree = {
     "sendFailed": "Could not send your message. Please try again.",
     "loadFailed": "Could not load chat messages."
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Support",
+    "you": "You",
+    "categories": {
+      "account": "Account",
+      "payment": "Payment",
+      "bonus": "Bonus",
+      "game": "Game",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "Slots",
     "liveCasino": "Live Casino",
@@ -80,6 +123,7 @@ export const my: LocaleTree = {
     "account": "Account",
     "support": "Support",
     "messages": "Messages",
+    "tickets": "Tickets",
     "legal": "Legal",
     "about": "About Us",
     "terms": "Terms & Conditions",
@@ -170,7 +214,8 @@ export const my: LocaleTree = {
     "crypto": "Cryptocurrency",
     "bank": "Bank Transfer",
     "redirect": "Online Payment",
-    "local": "Local Payment"
+    "local": "Local Payment",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "Deposit",
@@ -243,11 +288,18 @@ export const my: LocaleTree = {
     "country": "Country",
     "phone": "Phone",
     "kycStatus": "KYC Status",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC အတည်ပြုချက်ကို မကြာမီ ရရှိပါမည် ။ ကျေးဇူးပြု ၍ နောက်မှ ပြန်စစ်ပါ ။",
+    "verificationTitleKyc": "ဝိသေသလက္ခဏာကို အတည်ပြုပါ (KYC)",
+    "kycLoading": "အတည်ပြုချက်ကို ဖွင့်နေသည်...",
+    "kycFailed": "KYC အတည်ပြုခြင်းကို စတင် ၍ မရနိုင်ပါ ။ နောက်မှ ထပ်မံကြိုးစားပါ ။",
+    "kycHint": "အထက်ပါပုံစံအတိုင်း အဆင့်များကို ဖြည့်ပါ ။ SumSub ပြန်လည်သုံးသပ်ပြီးနောက် သင့်အခြေအနေကို အပ်ဒိတ်လုပ်ပါမည် ။",
     "verified": "Verified",
     "notVerified": "Not verified",
     "verifyNow": "Verify",
     "verificationTitleEmail": "Verify email",
     "verificationTitlePhone": "Verify phone",
+    "verificationSendConfirm": "အတည်ပြုကုဒ်ကို {{destination}} သို့ ပေးပို့ပါသလား ။",
     "verificationCodeHintEmail": "Enter the 6-digit code sent to {{destination}}.",
     "verificationCodeHintPhone": "Enter the 6-digit code sent to {{destination}}.",
     "verificationSubmit": "Confirm verification",
@@ -268,14 +320,7 @@ export const my: LocaleTree = {
     "saveChanges": "Save Changes",
     "updateSuccess": "Profile updated successfully.",
     "updateFailed": "Failed to update profile.",
-    "language": "Language",
-    "kyc": "KYC",
-    "kycComingSoon": "KYC အတည်ပြုချက်ကို မကြာမီ ရရှိပါမည် ။ ကျေးဇူးပြု ၍ နောက်မှ ပြန်စစ်ပါ ။",
-    "verificationTitleKyc": "ဝိသေသလက္ခဏာကို အတည်ပြုပါ (KYC)",
-    "kycLoading": "အတည်ပြုချက်ကို ဖွင့်နေသည်...",
-    "kycFailed": "KYC အတည်ပြုခြင်းကို စတင် ၍ မရနိုင်ပါ ။ နောက်မှ ထပ်မံကြိုးစားပါ ။",
-    "kycHint": "အထက်ပါပုံစံအတိုင်း အဆင့်များကို ဖြည့်ပါ ။ SumSub ပြန်လည်သုံးသပ်ပြီးနောက် သင့်အခြေအနေကို အပ်ဒိတ်လုပ်ပါမည် ။",
-    "verificationSendConfirm": "အတည်ပြုကုဒ်ကို {{destination}} သို့ ပေးပို့ပါသလား ။"
+    "language": "Language"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const my: LocaleTree = {
     "selectPaymentOption": "Select a payment method",
     "noOptionsForCountry": "No payment methods available for this country.",
     "backToMethods": "← Back",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← Back",
+    "stepMethod": "Payment Method",
+    "stepOption": "Select Option",
+    "stepAmount": "လျှော့မည့်ပမာဏ",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "Payment Method",
     "localCountryLabel": "Payment country",
     "selectLocalCountry": "Select a payment country to continue.",
@@ -351,6 +408,55 @@ export const my: LocaleTree = {
     "limitAlertGeneric": "သင် ၏ လက်ရှိစိစစ်အတည်ပြုအဆင့်ပေါ် မူတည် ၍ {{amount}} အထိ ထုတ်ယူနိုင်ပါသည် ။ သင် ၏ အကန့်အသတ်ကို တိုးမြှင့်ရန် သင် ၏ ပရိုဖိုင်တွင် ထပ်ဆောင်းအတည်ပြုချက်ကို ဖြည့်စွက်ပါ ။",
     "goToProfile": "ပရိုဖိုင်သို့သွားပါ"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Bonus",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Bonus",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Bonus"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "စာချုပ် မှီငြမ်းချက်",
+    "amount": "လျှော့မည့်ပမာဏ",
+    "currency": "Currency"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "Bonuses",
     "wageringProgress": "Wagering progress",
@@ -409,6 +515,8 @@ export const my: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {

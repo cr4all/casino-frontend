@@ -22,20 +22,29 @@ export const mn: LocaleTree = {
     "next": "Дараах",
     "showMore": "Илүү их харуулах",
     "ok": "OK",
+    "yes": "Тийм",
+    "no": "Үгүй",
     "close": "Хаах",
     "copy": "Хуулах",
     "copied": "Хуулсан",
     "games": "тоглоомууд",
     "gamesCount": "{{count}} тоглоом",
     "noLimit": "Хязгааргүй",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "Min: {{min}} · Max: {{max}}",
     "currencyIdr": "· Валют: IDR",
     "pageOf": "Хуудас {{page}} / {{last}}",
-    "actions": "Үйлдлүүд",
     "openMenu": "Цэс нээх",
-    "language": "Хэл",
-    "yes": "Тийм",
-    "no": "Үгүй"
+    "actions": "Үйлдлүүд",
+    "fieldRequired": "Оруулна уу;",
+    "fieldRequiredGeneric": "Энэ талбай нь шаардлагатай",
+    "fieldEmailInvalid": "Зөв имэйл хаяг оруулна уу.",
+    "fieldMinLength": "Багадаа &lt;&lt;<COUNT>&gt;&gt; тэмдэгт байх ёстой.",
+    "fieldPasswordMismatch": "Шинэ нууц үг таарахгүй байна.",
+    "fieldSelectRequired": "сонгоно уу",
+    "fieldCodeInvalid": "6 оронтой баталгаажуулах кодыг оруулна уу.",
+    "language": "Хэл"
   },
   "nav": {
     "allGames": "БҮХ ТОГЛООМ",
@@ -59,7 +68,9 @@ export const mn: LocaleTree = {
     "balance": "Balance",
     "playResponsibly": "18+ · Хариуцлагатай тоглоорой",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "Дэмжлэг"
+    "liveChatLabel": "Дэмжлэг",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -73,6 +84,38 @@ export const mn: LocaleTree = {
     "sendFailed": "Мессеж илгээгдсэнгүй. Дахин оролдоно уу.",
     "loadFailed": "Chat мессеж ачаалах боломжгүй."
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Дэмжлэг",
+    "you": "You",
+    "categories": {
+      "account": "Account",
+      "payment": "Payment",
+      "bonus": "Bonus",
+      "game": "Тоглоом",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "Slots",
     "liveCasino": "Live Casino",
@@ -80,6 +123,7 @@ export const mn: LocaleTree = {
     "account": "Account",
     "support": "Дэмжлэг",
     "messages": "Мессеж",
+    "tickets": "Tickets",
     "legal": "Хууль ёсны",
     "about": "Бидний тухай",
     "terms": "Нөхцөл ба дүрэм",
@@ -170,7 +214,8 @@ export const mn: LocaleTree = {
     "crypto": "Cryptocurrency",
     "bank": "Банкны шилжүүлэг",
     "redirect": "Online төлбөр",
-    "local": "Орон нутгийн төлбөр"
+    "local": "Орон нутгийн төлбөр",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "Deposit",
@@ -243,11 +288,18 @@ export const mn: LocaleTree = {
     "country": "Улс",
     "phone": "Утас",
     "kycStatus": "KYC төлөв",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC-ийн баталгаажуулалт удахгүй гарна. Дараа дахин шалгана уу.",
+    "verificationTitleKyc": "Таних тэмдэг (KYC) баталгаажуулах",
+    "kycLoading": "Баталгаажуулалтыг ачаалж байна...",
+    "kycFailed": "KYC баталгаажуулалтыг эхлүүлж чадсангүй. Дараа дахин оролдоно уу.",
+    "kycHint": "Дээрх маягтыг бөглөнө үү. SumSub хяналт хийсний дараа таны статус шинэчлэх болно.",
     "verified": "Баталгаажсан",
     "notVerified": "Баталгаажаагүй",
     "verifyNow": "Баталгаажуулах",
     "verificationTitleEmail": "И-мэйл баталгаажуулах",
     "verificationTitlePhone": "Утас баталгаажуулах",
+    "verificationSendConfirm": "Баталгаажуулах кодыг {{destination}} руу илгээх үү?",
     "verificationCodeHintEmail": "{{destination}} руу илгээсэн 6 оронтой кодыг оруулна уу.",
     "verificationCodeHintPhone": "{{destination}} руу илгээсэн 6 оронтой кодыг оруулна уу.",
     "verificationSubmit": "Баталгаажуулалтыг батлах",
@@ -268,14 +320,7 @@ export const mn: LocaleTree = {
     "saveChanges": "Өөрчлөлт хадгалах",
     "updateSuccess": "Профайл амжилттай шинэчлэгдлээ.",
     "updateFailed": "Профайл шинэчлэх амжилтгүй.",
-    "language": "Хэл",
-    "kyc": "KYC",
-    "kycComingSoon": "KYC-ийн баталгаажуулалт удахгүй гарна. Дараа дахин шалгана уу.",
-    "verificationTitleKyc": "Таних тэмдэг (KYC) баталгаажуулах",
-    "kycLoading": "Баталгаажуулалтыг ачаалж байна...",
-    "kycFailed": "KYC баталгаажуулалтыг эхлүүлж чадсангүй. Дараа дахин оролдоно уу.",
-    "kycHint": "Дээрх маягтыг бөглөнө үү. SumSub хяналт хийсний дараа таны статус шинэчлэх болно.",
-    "verificationSendConfirm": "Баталгаажуулах кодыг {{destination}} руу илгээх үү?"
+    "language": "Хэл"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const mn: LocaleTree = {
     "selectPaymentOption": "Төлбөрийн арга сонгоно уу",
     "noOptionsForCountry": "Энэ улсад төлбөрийн арга байхгүй.",
     "backToMethods": "← Буцах",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← Буцах",
+    "stepMethod": "Төлбөрийн арга",
+    "stepOption": "Select Option",
+    "stepAmount": "Дүн",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "Төлбөрийн арга",
     "localCountryLabel": "Төлбөрийн улс",
     "selectLocalCountry": "Үргэлжлүүлэхийн тулд төлбөрийн улсыг сонгоно уу.",
@@ -351,6 +408,55 @@ export const mn: LocaleTree = {
     "limitAlertGeneric": "Та одоогийн баталгаажуулалтын түвшингээ үндэслэн {{amount}} хүртэл татан авч болно. Профайлдаа нэмэлт баталгаажуулалт хийж, хязгаараа нэмэгдүүлнэ.",
     "goToProfile": "Профайл руу орох"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Bonus",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Bonus",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Bonus"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "Лавлагаа",
+    "amount": "Дүн",
+    "currency": "Валют"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "Bonus-ууд",
     "wageringProgress": "Wagering явц",
@@ -409,6 +515,8 @@ export const mn: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {

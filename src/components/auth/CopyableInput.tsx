@@ -1,18 +1,18 @@
 import { useState, type InputHTMLAttributes } from 'react';
+import { FieldError, fieldControlClassName } from '@/components/common/FieldError';
 import { useTranslation } from '@/hooks/useTranslation';
-
-const inputClassName =
-  'w-full rounded-md border border-white/10 bg-card px-3 py-2.5 pr-10 text-sm text-white placeholder:text-muted focus:border-accent focus:outline-none';
 
 interface CopyableInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'className'> {
   label: string;
   copyAriaLabel?: string;
+  error?: string;
 }
 
-export function CopyableInput({ label, copyAriaLabel, value, ...props }: CopyableInputProps) {
+export function CopyableInput({ label, copyAriaLabel, value, error, id, ...props }: CopyableInputProps) {
   const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
   const textValue = typeof value === 'string' ? value : String(value ?? '');
+  const errorId = error && id ? `${id}-error` : undefined;
 
   const handleCopy = async () => {
     if (!textValue.trim()) return;
@@ -28,11 +28,18 @@ export function CopyableInput({ label, copyAriaLabel, value, ...props }: Copyabl
 
   return (
     <div>
-      <label htmlFor={props.id} className="mb-1 block text-xs text-muted">
+      <label htmlFor={id} className="mb-1 block text-xs text-muted">
         {label}
       </label>
       <div className="relative">
-        <input {...props} value={value} className={inputClassName} />
+        <input
+          {...props}
+          id={id}
+          value={value}
+          aria-invalid={error ? true : undefined}
+          aria-describedby={errorId}
+          className={`${fieldControlClassName(Boolean(error))} pr-10`}
+        />
         <button
           type="button"
           onClick={() => void handleCopy()}
@@ -57,6 +64,7 @@ export function CopyableInput({ label, copyAriaLabel, value, ...props }: Copyabl
           )}
         </button>
       </div>
+      <FieldError id={errorId} message={error} />
     </div>
   );
 }

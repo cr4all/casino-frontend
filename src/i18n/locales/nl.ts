@@ -22,20 +22,29 @@ export const nl: LocaleTree = {
     "next": "Volgende",
     "showMore": "Meer tonen",
     "ok": "OK",
+    "yes": "Ja",
+    "no": "Nee",
     "close": "Sluiten",
     "copy": "Kopiëren",
     "copied": "Gekopieerd",
     "games": "spellen",
     "gamesCount": "{{count}} spellen",
     "noLimit": "Geen limiet",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "Min.: {{min}} · Max.: {{max}}",
     "currencyIdr": "· Valuta: IDR",
     "pageOf": "Pagina {{page}} van {{last}}",
-    "actions": "Acties",
     "openMenu": "Menu openen",
-    "language": "Taal",
-    "yes": "Ja",
-    "no": "Nee"
+    "actions": "Acties",
+    "fieldRequired": "Voer {{field}} in.",
+    "fieldRequiredGeneric": "Dit veld is verplicht.",
+    "fieldEmailInvalid": "Voer een geldig e-mailadres in.",
+    "fieldMinLength": "Moet minimaal {{count}} tekens bevatten.",
+    "fieldPasswordMismatch": "Wachtwoorden komen niet overeen.",
+    "fieldSelectRequired": "Selecteer {{field}}.",
+    "fieldCodeInvalid": "Voer de 6-cijferige verificatiecode in.",
+    "language": "Taal"
   },
   "nav": {
     "allGames": "ALLE SPELLEN",
@@ -59,7 +68,9 @@ export const nl: LocaleTree = {
     "balance": "Saldo",
     "playResponsibly": "18+ · Speel verantwoord",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "Support"
+    "liveChatLabel": "Support",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live chat",
@@ -73,6 +84,38 @@ export const nl: LocaleTree = {
     "sendFailed": "Uw bericht kon niet worden verzonden. Probeer opnieuw.",
     "loadFailed": "Chatberichten konden niet worden geladen."
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Support",
+    "you": "You",
+    "categories": {
+      "account": "Account",
+      "payment": "Payment",
+      "bonus": "Bonus",
+      "game": "Spel",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "Gokkasten",
     "liveCasino": "Live casino",
@@ -80,6 +123,7 @@ export const nl: LocaleTree = {
     "account": "Account",
     "support": "Support",
     "messages": "Berichten",
+    "tickets": "Tickets",
     "legal": "Juridisch",
     "about": "Over ons",
     "terms": "Algemene voorwaarden",
@@ -170,7 +214,8 @@ export const nl: LocaleTree = {
     "crypto": "Cryptovaluta",
     "bank": "Bankoverschrijving",
     "redirect": "Online betaling",
-    "local": "Lokale betaling"
+    "local": "Lokale betaling",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "Storting",
@@ -243,11 +288,18 @@ export const nl: LocaleTree = {
     "country": "Land",
     "phone": "Telefoon",
     "kycStatus": "KYC-status",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC-verificatie is binnenkort beschikbaar. Probeer het later nog eens.",
+    "verificationTitleKyc": "Identiteit verifiëren (KYC)",
+    "kycLoading": "Verificatie laden...",
+    "kycFailed": "Kan KYC-verificatie niet starten. Probeer het later opnieuw.",
+    "kycHint": "Voltooi de stappen in het bovenstaande formulier. Je status wordt bijgewerkt na de SumSub-beoordeling.",
     "verified": "Geverifieerd",
     "notVerified": "Niet geverifieerd",
     "verifyNow": "Verifiëren",
     "verificationTitleEmail": "E-mail verifiëren",
     "verificationTitlePhone": "Telefoon verifiëren",
+    "verificationSendConfirm": "Verificatiecode verzenden naar {{destination}}?",
     "verificationCodeHintEmail": "Voer de 6-cijferige code in die naar {{destination}} is gestuurd.",
     "verificationCodeHintPhone": "Voer de 6-cijferige code in die naar {{destination}} is gestuurd.",
     "verificationSubmit": "Verificatie bevestigen",
@@ -268,14 +320,7 @@ export const nl: LocaleTree = {
     "saveChanges": "Wijzigingen opslaan",
     "updateSuccess": "Profiel succesvol bijgewerkt.",
     "updateFailed": "Profiel bijwerken mislukt.",
-    "language": "Taal",
-    "kyc": "KYC",
-    "kycComingSoon": "KYC-verificatie is binnenkort beschikbaar. Probeer het later nog eens.",
-    "verificationTitleKyc": "Identiteit verifiëren (KYC)",
-    "kycLoading": "Verificatie laden...",
-    "kycFailed": "Kan KYC-verificatie niet starten. Probeer het later opnieuw.",
-    "kycHint": "Voltooi de stappen in het bovenstaande formulier. Je status wordt bijgewerkt na de SumSub-beoordeling.",
-    "verificationSendConfirm": "Verificatiecode verzenden naar {{destination}}?"
+    "language": "Taal"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const nl: LocaleTree = {
     "selectPaymentOption": "Selecteer een betaalmethode",
     "noOptionsForCountry": "Geen betaalmethoden beschikbaar voor dit land.",
     "backToMethods": "← Terug",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← Terug",
+    "stepMethod": "Betaalmethode",
+    "stepOption": "Select Option",
+    "stepAmount": "Bedrag",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "Betaalmethode",
     "localCountryLabel": "Betaalland",
     "selectLocalCountry": "Selecteer een betaalland om door te gaan.",
@@ -351,6 +408,55 @@ export const nl: LocaleTree = {
     "limitAlertGeneric": "Je kunt tot {{amount}} opnemen op basis van je huidige verificatieniveau. Voltooi extra verificatie in je profiel om je limiet te verhogen.",
     "goToProfile": "Naar Profiel"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Bonus",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Bonus",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Bonus"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "Referentie",
+    "amount": "Bedrag",
+    "currency": "Valuta"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "Bonussen",
     "wageringProgress": "Inzetvoortgang",
@@ -409,6 +515,8 @@ export const nl: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {

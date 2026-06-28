@@ -22,20 +22,29 @@ export const km: LocaleTree = {
     "next": "បន្ទាប់",
     "showMore": "បង្ហាញបន្ថែម",
     "ok": "OK",
+    "yes": "បាទ/ចាស",
+    "no": "មិនដឹង",
     "close": "បិទ",
     "copy": "ចម្លង",
     "copied": "បានចម្លង",
     "games": "ហ្គេម",
     "gamesCount": "ហ្គេម {{count}}",
     "noLimit": "គ្មានកំណត់",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "តិច​បំផុត: {{min}} · ធំ​បំផុត: {{max}}",
     "currencyIdr": "· រូបិយប័ណ្ណ៖ IDR",
     "pageOf": "ទំព័រ {{page}} នៃ {{last}}",
-    "actions": "សកម្មភាព",
     "openMenu": "បើក​ម៉ឺនុយ",
-    "language": "ភាសា",
-    "yes": "បាទ/ចាស",
-    "no": "មិនដឹង"
+    "actions": "សកម្មភាព",
+    "fieldRequired": "សូមបញ្ចូលឈ្មោះ។",
+    "fieldRequiredGeneric": "ចន្លោះ​នេះ​ត្រូវតែ​បំពេញ។",
+    "fieldEmailInvalid": "សូមបញ្ចូលអាសយដ្ឋានអ៊ីមែលត្រឹមត្រូវ",
+    "fieldMinLength": "ពាក្យសម្ងាត់ត្រូវតែមានយ៉ាងហោចណាស់ 6 តួអក្សរ",
+    "fieldPasswordMismatch": "ពាក្យសម្ងាត់​មិនផ្គូផ្គង​ទេ។",
+    "fieldSelectRequired": "សូមជ្រើសរើស ​",
+    "fieldCodeInvalid": "សូមបញ្ចូលលេខកូដផ្ទៀងផ្ទាត់ 6 ខ្ទង់ ។",
+    "language": "ភាសា"
   },
   "nav": {
     "allGames": "ហ្គេមទាំងអស់",
@@ -59,7 +68,9 @@ export const km: LocaleTree = {
     "balance": "តុល្យភាព",
     "playResponsibly": "អាយុ ១៨+ · លេងដោយមានការទទួលខុសត្រូវ",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "គាំទ្រ"
+    "liveChatLabel": "គាំទ្រ",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -73,6 +84,38 @@ export const km: LocaleTree = {
     "sendFailed": "មិនអាចផ្ញើសាររបស់អ្នកបាន។ សូមព្យាយាមម្ដងទៀត។",
     "loadFailed": "មិនអាចផ្ទុកសារ​សន្ទនា​បាន។"
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "គាំទ្រ",
+    "you": "You",
+    "categories": {
+      "account": "គណនី",
+      "payment": "Payment",
+      "bonus": "ប្រាក់រង្វាន់",
+      "game": "ហ្គេម",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "ស្លុត",
     "liveCasino": "កាស៊ីណូផ្ទាល់ខ្លួន",
@@ -80,6 +123,7 @@ export const km: LocaleTree = {
     "account": "គណនី",
     "support": "គាំទ្រ",
     "messages": "សារ",
+    "tickets": "Tickets",
     "legal": "ផ្លូវច្បាប់",
     "about": "អំពីយើង",
     "terms": "លក្ខខណ្ឌ និងល័ក្ខ",
@@ -170,7 +214,8 @@ export const km: LocaleTree = {
     "crypto": "រូបិយប័ណ្ណឌីជីថល",
     "bank": "ផ្ទេរប្រាក់តាមធនាគារ",
     "redirect": "ការទូទាត់ប្រាក់តាមអ៊ីនធឺណិត",
-    "local": "ការទូទាត់ក្នុងស្រុក"
+    "local": "ការទូទាត់ក្នុងស្រុក",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "កក់ប្រាក់",
@@ -243,11 +288,18 @@ export const km: LocaleTree = {
     "country": "ប្រទេស",
     "phone": "ទូរស័ព្ទ",
     "kycStatus": "ស្ថានភាព KYC",
+    "kyc": "KYC",
+    "kycComingSoon": "ការផ្ទៀងផ្ទាត់ KYC នឹងមានក្នុងពេលឆាប់ៗនេះ ។ សូមពិនិត្យឡើងវិញនៅពេលក្រោយ ។",
+    "verificationTitleKyc": "ផ្ទៀងផ្ទាត់អត្តសញ្ញាណ (KYC)",
+    "kycLoading": "កំពុង ផ្ទុក ការ ផ្ទៀងផ្ទាត់...",
+    "kycFailed": "មិនអាច ចាប់ផ្ដើម ការ ផ្ទៀងផ្ទាត់ KYC បានទេ & # 160; ។ សូមព្យាយាមម្តងទៀតនៅពេលក្រោយ ។",
+    "kycHint": "បំពេញជំហានដូចបានរៀបរាប់ខាងលើ ។ ស្ថានភាពរបស់អ្នកនឹងត្រូវបានធ្វើបច្ចុប្បន្នភាពបន្ទាប់ពី SumSub ពិនិត្យឡើងវិញ ។",
     "verified": "បានផ្ទៀងផ្ទាត់",
     "notVerified": "មិនត្រូវបានផ្ទៀងផ្ទាត់",
     "verifyNow": "ផ្ទៀងផ្ទាត់",
     "verificationTitleEmail": "ផ្ទៀងផ្ទាត់អ៊ីមែល",
     "verificationTitlePhone": "ផ្ទៀងផ្ទាត់ទូរស័ព្ទ",
+    "verificationSendConfirm": "ផ្ញើកូដផ្ទៀងផ្ទាត់ទៅ {{destination}}?",
     "verificationCodeHintEmail": "បញ្ចូលលេខកូដ 6 ខ្ទង់ដែលបានផ្ញើទៅ {{destination}}។",
     "verificationCodeHintPhone": "បញ្ចូលលេខកូដ 6 ខ្ទង់ដែលបានផ្ញើទៅ {{destination}}។",
     "verificationSubmit": "បញ្ជាក់ការត្រួតពិនិត្យ",
@@ -268,14 +320,7 @@ export const km: LocaleTree = {
     "saveChanges": "រក្សាទុកការផ្លាស់ប្តូរ",
     "updateSuccess": "ប្រវត្តិរូបត្រូវបានធ្វើបច្ចុប្បន្នភាពដោយជោគជ័យ។",
     "updateFailed": "បរាជ័យក្នុងការអាប់ដេតប្រវត្តិរូប។",
-    "language": "ភាសា",
-    "kyc": "KYC",
-    "kycComingSoon": "ការផ្ទៀងផ្ទាត់ KYC នឹងមានក្នុងពេលឆាប់ៗនេះ ។ សូមពិនិត្យឡើងវិញនៅពេលក្រោយ ។",
-    "verificationTitleKyc": "ផ្ទៀងផ្ទាត់អត្តសញ្ញាណ (KYC)",
-    "kycLoading": "កំពុង ផ្ទុក ការ ផ្ទៀងផ្ទាត់...",
-    "kycFailed": "មិនអាច ចាប់ផ្ដើម ការ ផ្ទៀងផ្ទាត់ KYC បានទេ & # 160; ។ សូមព្យាយាមម្តងទៀតនៅពេលក្រោយ ។",
-    "kycHint": "បំពេញជំហានដូចបានរៀបរាប់ខាងលើ ។ ស្ថានភាពរបស់អ្នកនឹងត្រូវបានធ្វើបច្ចុប្បន្នភាពបន្ទាប់ពី SumSub ពិនិត្យឡើងវិញ ។",
-    "verificationSendConfirm": "ផ្ញើកូដផ្ទៀងផ្ទាត់ទៅ {{destination}}?"
+    "language": "ភាសា"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const km: LocaleTree = {
     "selectPaymentOption": "ជ្រើសវិធីទូទាត់",
     "noOptionsForCountry": "មិនមានវិធីបង់ប្រាក់ណាដែលមានសម្រាប់ប្រទេសនេះទេ។",
     "backToMethods": "← ត្រឡប់វិញ",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← ត្រឡប់វិញ",
+    "stepMethod": "វិធីសាស្រ្តបង់ប្រាក់",
+    "stepOption": "Select Option",
+    "stepAmount": "ចំនួន",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "វិធីសាស្រ្តបង់ប្រាក់",
     "localCountryLabel": "ប្រទេសទូទាត់",
     "selectLocalCountry": "ជ្រើសប្រទេសសម្រាប់ការទូទាត់ដើម្បីបន្ត។",
@@ -351,6 +408,55 @@ export const km: LocaleTree = {
     "limitAlertGeneric": "អ្នកអាចដកប្រាក់រហូតដល់ {{amount}} ដោយផ្អែកលើកម្រិតផ្ទៀងផ្ទាត់បច្ចុប្បន្នរបស់អ្នក ។ បំពេញការផ្ទៀងផ្ទាត់បន្ថែមនៅក្នុងប្រវត្តិរូបរបស់អ្នក ដើម្បីបង្កើនដែនកំណត់របស់អ្នក ។",
     "goToProfile": "ចូលទៅកាន់ប្រូហ្វាល"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "ប្រាក់រង្វាន់",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "ប្រាក់រង្វាន់",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "ប្រាក់រង្វាន់"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "ឯកសារយោង",
+    "amount": "ចំនួន",
+    "currency": "រូបិយវត្ថុ"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "ប្រាក់រង្វាន់",
     "wageringProgress": "ការរីកចម្រើនក្នុងការភ្នាល់",
@@ -409,6 +515,8 @@ export const km: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {

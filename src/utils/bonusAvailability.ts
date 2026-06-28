@@ -12,14 +12,22 @@ export function resolveSpinsRemaining(bonus: ActiveBonus): number | null {
   return null;
 }
 
-/** True when an active free spin bonus still has spins left on its provider. */
+/** True when an active provider-scoped bonus still qualifies for the game badge. */
 export function activeBonusHasRemainingBenefit(bonus: ActiveBonus): boolean {
-  if (bonus.status !== 'active' || bonus.type !== 'free_spin' || !bonus.provider_slug) {
+  if (bonus.status !== 'active' || !bonus.provider_slug) {
     return false;
   }
 
-  const spinsRemaining = resolveSpinsRemaining(bonus);
-  return spinsRemaining !== null && spinsRemaining > 0;
+  if (bonus.type === 'first_deposit') {
+    return true;
+  }
+
+  if (bonus.type === 'free_spin') {
+    const spinsRemaining = resolveSpinsRemaining(bonus);
+    return spinsRemaining !== null && spinsRemaining > 0;
+  }
+
+  return false;
 }
 
 export function countClaimableFreeSpinBonuses(policies: BonusPolicy[]): number {

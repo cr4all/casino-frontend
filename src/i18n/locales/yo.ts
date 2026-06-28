@@ -22,20 +22,29 @@ export const yo: LocaleTree = {
     "next": "Next",
     "showMore": "Show more",
     "ok": "OK",
+    "yes": "Yes",
+    "no": "No",
     "close": "Close",
     "copy": "Copy",
     "copied": "Copied",
     "games": "games",
     "gamesCount": "{{count}} games",
     "noLimit": "No limit",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "Min: {{min}} · Max: {{max}}",
     "currencyIdr": "· Currency: IDR",
     "pageOf": "Page {{page}} of {{last}}",
-    "actions": "Actions",
     "openMenu": "Open menu",
-    "language": "Language",
-    "yes": "Yes",
-    "no": "No"
+    "actions": "Actions",
+    "fieldRequired": "Jọ̀wọ́ tẹ &lt;&lt;<FIELD>&gt;&gt;.",
+    "fieldRequiredGeneric": "A nílò pápá yìí.",
+    "fieldEmailInvalid": "Jọ̀wọ́ tẹ àdírẹ́sì imeélì tó wúlò",
+    "fieldMinLength": "Ó gbọdọ̀ kéré tán &lt;&lt;<COUNT>&gt;&gt; àwọn àkàwé.",
+    "fieldPasswordMismatch": "Ọ̀rọ̀ ìgbani wọlé náà ni kò báàra wọn mu",
+    "fieldSelectRequired": "Jọ̀wọ́ yàn",
+    "fieldCodeInvalid": "Jọ̀wọ́ tẹ kọ́ọ̀dì ìdánimọ̀ dídì 6.",
+    "language": "Language"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -59,7 +68,9 @@ export const yo: LocaleTree = {
     "balance": "Balance",
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "Support"
+    "liveChatLabel": "Support",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -73,6 +84,38 @@ export const yo: LocaleTree = {
     "sendFailed": "Could not send your message. Please try again.",
     "loadFailed": "Could not load chat messages."
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Support",
+    "you": "You",
+    "categories": {
+      "account": "Account",
+      "payment": "Payment",
+      "bonus": "Bonus",
+      "game": "Game",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "Slots",
     "liveCasino": "Live Casino",
@@ -80,6 +123,7 @@ export const yo: LocaleTree = {
     "account": "Account",
     "support": "Support",
     "messages": "Messages",
+    "tickets": "Tickets",
     "legal": "Legal",
     "about": "About Us",
     "terms": "Terms & Conditions",
@@ -170,7 +214,8 @@ export const yo: LocaleTree = {
     "crypto": "Cryptocurrency",
     "bank": "Bank Transfer",
     "redirect": "Online Payment",
-    "local": "Local Payment"
+    "local": "Local Payment",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "Deposit",
@@ -243,11 +288,18 @@ export const yo: LocaleTree = {
     "country": "Country",
     "phone": "Phone",
     "kycStatus": "KYC Status",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Pari àwọn ìgbésẹ̀ náà nínú fọ́mù tí ó wà lókè yìí. Ipò rẹ yóò ṣe àtúnṣe lẹ́yìn àyẹ̀wò SumSub.",
     "verified": "Verified",
     "notVerified": "Not verified",
     "verifyNow": "Verify",
     "verificationTitleEmail": "Verify email",
     "verificationTitlePhone": "Verify phone",
+    "verificationSendConfirm": "Fi kọ́ọ̀dì ìdánimọ̀ ránṣẹ́ sí {{destination}}?",
     "verificationCodeHintEmail": "Enter the 6-digit code sent to {{destination}}.",
     "verificationCodeHintPhone": "Enter the 6-digit code sent to {{destination}}.",
     "verificationSubmit": "Confirm verification",
@@ -268,14 +320,7 @@ export const yo: LocaleTree = {
     "saveChanges": "Save Changes",
     "updateSuccess": "Profile updated successfully.",
     "updateFailed": "Failed to update profile.",
-    "language": "Language",
-    "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Pari àwọn ìgbésẹ̀ náà nínú fọ́mù tí ó wà lókè yìí. Ipò rẹ yóò ṣe àtúnṣe lẹ́yìn àyẹ̀wò SumSub.",
-    "verificationSendConfirm": "Fi kọ́ọ̀dì ìdánimọ̀ ránṣẹ́ sí {{destination}}?"
+    "language": "Language"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const yo: LocaleTree = {
     "selectPaymentOption": "Select a payment method",
     "noOptionsForCountry": "No payment methods available for this country.",
     "backToMethods": "← Back",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← Back",
+    "stepMethod": "Payment Method",
+    "stepOption": "Select Option",
+    "stepAmount": "Amount",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "Payment Method",
     "localCountryLabel": "Payment country",
     "selectLocalCountry": "Select a payment country to continue.",
@@ -351,6 +408,55 @@ export const yo: LocaleTree = {
     "limitAlertGeneric": "O lè yọ̀ǹda ara rẹ sí {{iye}} lórí ìpìlẹ̀ ìpele ìdánimọ̀ rẹ. Pari àyẹ̀wò àfikún nínú àkójọpọ̀ rẹ láti fi kún ààlà rẹ.",
     "goToProfile": "Lọ si Profaili"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Bonus",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Bonus",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Bonus"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "Reference",
+    "amount": "Amount",
+    "currency": "Currency"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "Bonuses",
     "wageringProgress": "Wagering progress",
@@ -409,6 +515,8 @@ export const yo: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {

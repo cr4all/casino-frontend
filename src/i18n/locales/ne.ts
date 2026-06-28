@@ -22,20 +22,29 @@ export const ne: LocaleTree = {
     "next": "अर्को",
     "showMore": "धेरै देखाउनुहोस्",
     "ok": "ठिक छ",
+    "yes": "हो",
+    "no": "होइन",
     "close": "बन्द गर्नुहोस्",
     "copy": "सार्नुहोस्",
     "copied": "कपी गरियो",
     "games": "खेल",
     "gamesCount": "{{count}} खेलहरू",
     "noLimit": "सिमा छैन",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "न्यूनतम: {{min}} · अधिकतम: {{max}}",
     "currencyIdr": "· मुद्रा: IDR",
     "pageOf": "पृष्ठ {{last}} को {{page}}",
-    "actions": "क्रिया",
     "openMenu": "मेनु खोल्नुहोस्",
-    "language": "भाषा",
-    "yes": "हो",
-    "no": "होइन"
+    "actions": "क्रिया",
+    "fieldRequired": "कृपया हाल्नुहोस्",
+    "fieldRequiredGeneric": "यो जानकारी आवश्यक छ",
+    "fieldEmailInvalid": "कृपया मान्य इमेल ठेगाना प्रविष्ट गर्नुहोस्।",
+    "fieldMinLength": "कम्तिमा <COUNT>&lt;&lt;&gt;&gt; क्यारेक्टरहरू हुनुपर्छ ।",
+    "fieldPasswordMismatch": "पासवर्ड मिलेन ।",
+    "fieldSelectRequired": "कृपया छनौट गर्नुहोस्",
+    "fieldCodeInvalid": "कृपया 6 अंकको प्रमाणिकरण कोड प्रविष्ट गर्नुहोस् ।",
+    "language": "भाषा"
   },
   "nav": {
     "allGames": "सबै खेलहरू",
@@ -59,7 +68,9 @@ export const ne: LocaleTree = {
     "balance": "विवरण",
     "playResponsibly": "18+ · जिम्मेवारीपूर्वक खेल्नुहोस्",
     "liveChat": "प्रत्यक्ष कुराकानी",
-    "liveChatLabel": "सहायता"
+    "liveChatLabel": "Support",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "प्रत्यक्ष कुराकानी",
@@ -73,13 +84,46 @@ export const ne: LocaleTree = {
     "sendFailed": "तपाईंको सन्देश पठाउन सकिएन । कृपया फेरि प्रयास गर्नुहोस् ।",
     "loadFailed": "कुराकानी सन्देशहरू लोड गर्न सकिएन ।"
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Support",
+    "you": "You",
+    "categories": {
+      "account": "Account",
+      "payment": "Payment",
+      "bonus": "Bonus",
+      "game": "Game",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "स्लटहरू",
     "liveCasino": "प्रत्यक्ष क्यासिनो",
     "jackpots": "Jackpots",
-    "account": "खाता",
-    "support": "सहायता",
+    "account": "Account",
+    "support": "Support",
     "messages": "सन्देशहरू",
+    "tickets": "Tickets",
     "legal": "कानुनी",
     "about": "हाम्रो बारेमा",
     "terms": "नियम र सर्तहरू",
@@ -170,14 +214,15 @@ export const ne: LocaleTree = {
     "crypto": "क्रिप्टोकरेन्सी",
     "bank": "बैंक रकमान्तर",
     "redirect": "अनलाइन भुक्तानी",
-    "local": "स्थानीय भुक्तानी"
+    "local": "स्थानीय भुक्तानी",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "जम्मा गर्नुहोस्",
     "withdraw": "(फिर्ता लिनुहोस् ।)",
     "bet": "बाजी",
     "win": "विजयी",
-    "bonus": "बोनस",
+    "bonus": "Bonus",
     "rollback": "रोलब्याक"
   },
   "auth": {
@@ -243,11 +288,18 @@ export const ne: LocaleTree = {
     "country": "राही",
     "phone": "फोन",
     "kycStatus": "KYC स्थिति",
+    "kyc": "ग्राहक पहिचान (KYC)",
+    "kycComingSoon": "KYC प्रमाणीकरण चाँडै उपलब्ध हुनेछ । कृपया पछि फेरि जाँच गर्नुहोस् ।",
+    "verificationTitleKyc": "पहिचान प्रमाणित गर्नुहोस् (KYC)",
+    "kycLoading": "प्रमाणीकरण लोड हुँदैछ...",
+    "kycFailed": "KYC प्रमाणीकरण सुरु गर्न असमर्थ । कृपया पछि फेरि प्रयास गर्नुहोस् ।",
+    "kycHint": "माथिको फारममा चरणहरू पूरा गर्नुहोस् । SumSub समीक्षा पछि तपाईंको स्थिति अद्यावधिक हुनेछ ।",
     "verified": "प्रमाणित",
     "notVerified": "प्रमाणिकरण गरिएको छैन",
     "verifyNow": "रूजु गर्नुहोस्",
     "verificationTitleEmail": "ईमेल प्रमाणित गर्नुस",
     "verificationTitlePhone": "फोन प्रमाणित गर्नुहोस्",
+    "verificationSendConfirm": "{{destination}} मा प्रमाणिकरण कोड पठाउनुहुन्छ?",
     "verificationCodeHintEmail": "{{destination}} मा पठाइएको 6 - अंकको कोड प्रविष्ट गर्नुहोस् ।",
     "verificationCodeHintPhone": "{{destination}} मा पठाइएको 6 - अंकको कोड प्रविष्ट गर्नुहोस् ।",
     "verificationSubmit": "प्रमाणिकरण पुष्टि गर्नुहोस्",
@@ -264,18 +316,11 @@ export const ne: LocaleTree = {
     "passwordUpdateFailed": "पासवर्ड अद्यावधिक गर्न असफल भयो ।",
     "editProfile": "प्रोफाइल सम्पादन गर",
     "quickActions": "द्रुत कार्यहरू",
-    "account": "खाता",
+    "account": "Account",
     "saveChanges": "परिवर्तनहरू सुरक्षित गर्नुहोस",
     "updateSuccess": "प्रोफाइल सफलतापूर्वक अद्यावधिक गरियो!",
     "updateFailed": "प्रोफाइल अद्यावधिक गर्न असफल भयो ।",
-    "language": "भाषा",
-    "kyc": "ग्राहक पहिचान (KYC)",
-    "kycComingSoon": "KYC प्रमाणीकरण चाँडै उपलब्ध हुनेछ । कृपया पछि फेरि जाँच गर्नुहोस् ।",
-    "verificationTitleKyc": "पहिचान प्रमाणित गर्नुहोस् (KYC)",
-    "kycLoading": "प्रमाणीकरण लोड हुँदैछ...",
-    "kycFailed": "KYC प्रमाणीकरण सुरु गर्न असमर्थ । कृपया पछि फेरि प्रयास गर्नुहोस् ।",
-    "kycHint": "माथिको फारममा चरणहरू पूरा गर्नुहोस् । SumSub समीक्षा पछि तपाईंको स्थिति अद्यावधिक हुनेछ ।",
-    "verificationSendConfirm": "{{destination}} मा प्रमाणिकरण कोड पठाउनुहुन्छ?"
+    "language": "भाषा"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const ne: LocaleTree = {
     "selectPaymentOption": "भुक्तानी विधि चयन गर्नुहोस्",
     "noOptionsForCountry": "यस देशका लागि कुनै भुक्तानी विधिहरू उपलब्ध छैनन् ।",
     "backToMethods": "०. पछाडि",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "०. पछाडि",
+    "stepMethod": "भुक्तानी विधि",
+    "stepOption": "Select Option",
+    "stepAmount": "मात्रा:",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "भुक्तानी विधि",
     "localCountryLabel": "भुक्तानी देश",
     "selectLocalCountry": "जारी राख्न भुक्तानी देश चयन गर्नुहोस् ।",
@@ -351,6 +408,55 @@ export const ne: LocaleTree = {
     "limitAlertGeneric": "तपाईं आफ्नो हालको प्रमाणिकरण स्तरको आधारमा {{amount}} सम्म निकाल्न सक्नुहुन्छ । आफ्नो सीमा बढाउनको लागि आफ्नो प्रोफाइलमा थप प्रमाणिकरण पूरा गर्नुहोस् ।",
     "goToProfile": "प्रोफाइलमा जानुहोस्"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Bonus",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Bonus",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Bonus"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "प्राथमिकताहरू",
+    "amount": "मात्रा:",
+    "currency": "मुद्रा"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "बोनसहरू",
     "wageringProgress": "दांव प्रगति",
@@ -358,7 +464,7 @@ export const ne: LocaleTree = {
     "noActive": "कुनै सक्रिय बोनस छैन ।",
     "availableBonuses": "उपलब्ध बोनसहरू",
     "noAvailable": "हाल कुनै बोनस उपलब्ध छैन ।",
-    "defaultName": "बोनस",
+    "defaultName": "Bonus",
     "percentMatch": "{{value }}% मिलान",
     "fixedMatch": "{{value}} स्थिर",
     "wageringMultiplier": "{{value}}x wagering",
@@ -409,6 +515,8 @@ export const ne: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
@@ -447,7 +555,7 @@ export const ne: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "बोनस"
+    "bonusBadge": "Bonus"
   },
   "modal": {
     "comingSoon": "चाँडै आउँदै छ"
