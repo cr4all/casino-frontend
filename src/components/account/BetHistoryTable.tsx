@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
+import { SpinTypeBadge } from '@/components/account/SpinTypeBadge';
 import { Pagination } from '@/components/common/Pagination';
 import { StatusBadge } from '@/components/common/StatusBadge';
 import { useTranslation } from '@/hooks/useTranslation';
-import type { BetFundingSource, BetHistoryItem, PaginationMeta } from '@/types';
+import type { BetHistoryItem, PaginationMeta } from '@/types';
 import { formatBalance } from '@/utils/formatBalance';
 
 interface BetHistoryTableProps {
@@ -10,26 +11,6 @@ interface BetHistoryTableProps {
   pagination: PaginationMeta;
   loading?: boolean;
   onPageChange: (page: number) => void;
-}
-
-const FUNDING_BADGE_STYLES: Record<BetFundingSource, string> = {
-  cash: 'bg-white/5 text-muted',
-  bonus: 'bg-accent-gold/15 text-accent-gold',
-  mixed: 'bg-accent/15 text-accent',
-  free_spin: 'bg-accent-purple/15 text-accent-purple',
-};
-
-function fundingLabelKey(source: BetFundingSource): string {
-  switch (source) {
-    case 'free_spin':
-      return 'betHistory.fundingFreeSpin';
-    case 'bonus':
-      return 'betHistory.fundingBonus';
-    case 'mixed':
-      return 'betHistory.fundingMixed';
-    default:
-      return 'betHistory.fundingCash';
-  }
 }
 
 export function BetHistoryTable({ bets, pagination, loading, onPageChange }: BetHistoryTableProps) {
@@ -89,13 +70,7 @@ export function BetHistoryTable({ bets, pagination, loading, onPageChange }: Bet
                   {formatBalance(bet.net_amount)}
                 </td>
                 <td className="px-4 py-3">
-                  <span
-                    className={`inline-flex rounded-full px-2 py-0.5 text-xs font-medium ${
-                      FUNDING_BADGE_STYLES[bet.funding_source]
-                    }`}
-                  >
-                    {t(fundingLabelKey(bet.funding_source))}
-                  </span>
+                  <SpinTypeBadge fundingSource={bet.funding_source} />
                 </td>
                 <td className="px-4 py-3">
                   <StatusBadge status={bet.status} />

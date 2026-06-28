@@ -14,6 +14,7 @@ import { NavBadgeIcon, sidebarBadgeIconClassName, type NavIconName } from '@/com
 import { hideTawkWidget, showTawkWidget } from '@/utils/tawkWidget';
 import { useLiveChatConfig } from '@/hooks/useLiveChat';
 import { useLiveChatStore } from '@/stores/liveChatStore';
+import { useSupportTicketStore } from '@/stores/supportTicketStore';
 
 interface StaticNavItem {
   id: string;
@@ -54,6 +55,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
   const chatAllowed = canLoadChat(level, preferences);
   const { nativeEnabled } = useLiveChatConfig();
   const liveChatUnreadCount = useLiveChatStore((s) => s.unreadCount);
+  const supportTicketUnreadCount = useSupportTicketStore((s) => s.unreadCount);
 
   const isPathActive = (path: string) =>
     location.pathname === path || location.pathname.startsWith(`${path}/`);
@@ -140,8 +142,14 @@ export function Sidebar({ onNavigate }: SidebarProps) {
           const active = isPathActive(item.path);
           const showBadge =
             (item.id === 'notices' && unreadCount > 0)
-            || (item.id === 'bonus' && claimableFreeSpinCount > 0);
-          const badgeCount = item.id === 'notices' ? unreadCount : claimableFreeSpinCount;
+            || (item.id === 'bonus' && claimableFreeSpinCount > 0)
+            || (item.id === 'supportTickets' && supportTicketUnreadCount > 0);
+          const badgeCount =
+            item.id === 'notices'
+              ? unreadCount
+              : item.id === 'bonus'
+                ? claimableFreeSpinCount
+                : supportTicketUnreadCount;
 
           return (
             <Link

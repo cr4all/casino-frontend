@@ -1,5 +1,6 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import { Modal } from '@/components/common/Modal';
+import { FormTextField } from '@/components/common/FormTextField';
 import { PasswordInput } from '@/components/auth/PasswordInput';
 import { PhoneNumberInput } from '@/components/auth/PhoneNumberInput';
 import { authApi } from '@/api/auth.api';
@@ -7,15 +8,17 @@ import { useUiStore } from '@/stores/uiStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getApiErrorMessage } from '@/utils/apiError';
 import { isLocalPhoneValid, parsePhoneNumber } from '@/data/phoneDialCodes';
+import {
+  collectFieldErrors,
+  hasFieldErrors,
+  isValidEmail,
+  omitFieldError,
+  requiredValue,
+  type FieldErrors,
+} from '@/utils/formValidation';
 
 type RecoveryMethod = 'email' | 'phone';
 type RecoveryStep = 'request' | 'reset' | 'success';
-
-const inputClassName =
-  'w-full rounded-md border border-white/10 bg-card py-2.5 pl-9 pr-3 text-sm text-white placeholder:text-muted focus:border-accent focus:outline-none';
-
-const plainInputClassName =
-  'w-full rounded-md border border-white/10 bg-card px-3 py-2.5 text-sm text-white placeholder:text-muted focus:border-accent focus:outline-none';
 
 export function ForgotPasswordModal() {
   const { t } = useTranslation();
@@ -32,6 +35,7 @@ export function ForgotPasswordModal() {
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
   const [error, setError] = useState('');
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [loading, setLoading] = useState(false);
 
   const isOpen = activeModal === 'forgotPassword';
@@ -47,6 +51,7 @@ export function ForgotPasswordModal() {
       setPassword('');
       setPasswordConfirmation('');
       setError('');
+      setFieldErrors({});
       setLoading(false);
     }
   }, [isOpen]);
@@ -54,18 +59,69 @@ export function ForgotPasswordModal() {
   const switchMethod = (next: RecoveryMethod) => {
     setMethod(next);
     setError('');
+    setFieldErrors({});
+  };
+
+  const validateRequestForm = (): boolean => {
+    if (method === 'email') {
+      let emailError: string | undefined;
+      if (!requiredValue(email)) {
+        emailError = t('common.fieldRequired', { field: t('auth.email') });
+      } else if (!isValidEmail(email)) {
+        emailError = t('common.fieldEmailInvalid');
+      }
+      const errors = collectFieldErrors([['email', emailError]]);
+      setFieldErrors(errors);
+      return !hasFieldErrors(errors);
+    }
+
+    const parsed = parsePhoneNumber(phone, phoneCountryCode);
+    const phoneError = isLocalPhoneValid(phoneCountryCode, parsed.local)
+      ? undefined
+      : t('auth.phoneInvalid');
+    const errors = collectFieldErrors([['phone', phoneError]]);
+    setFieldErrors(errors);
+    return !hasFieldErrors(errors);
+  };
+
+  const validateResetForm = (): boolean => {
+    let passwordError: string | undefined;
+    if (!requiredValue(password)) {
+      passwordError = t('common.fieldRequired', { field: t('auth.password') });
+    } else if (password.length < 8) {
+      passwordError = t('common.fieldMinLength', { count: 8 });
+    }
+
+    let confirmError: string | undefined;
+    if (!requiredValue(passwordConfirmation)) {
+      confirmError = t('common.fieldRequired', { field: t('auth.confirmPassword') });
+    } else if (password !== passwordConfirmation) {
+      confirmError = t('common.fieldPasswordMismatch');
+    }
+
+    let codeError: string | undefined;
+    if (!requiredValue(code)) {
+      codeError = t('common.fieldRequired', { field: t('auth.forgotPasswordCode') });
+    } else if (code.length !== 6) {
+      codeError = t('common.fieldCodeInvalid');
+    }
+
+    const errors = collectFieldErrors([
+      ['code', codeError],
+      ['password', passwordError],
+      ['password_confirmation', confirmError],
+    ]);
+    setFieldErrors(errors);
+    return !hasFieldErrors(errors);
   };
 
   const handleRequest = async (e: FormEvent) => {
     e.preventDefault();
     setError('');
+    setFieldErrors({});
 
-    if (method === 'phone') {
-      const parsed = parsePhoneNumber(phone, phoneCountryCode);
-      if (!isLocalPhoneValid(phoneCountryCode, parsed.local)) {
-        setError(t('auth.phoneInvalid'));
-        return;
-      }
+    if (!validateRequestForm()) {
+      return;
     }
 
     setLoading(true);
@@ -86,6 +142,12 @@ export function ForgotPasswordModal() {
   const handleReset = async (e: FormEvent) => {
     e.preventDefault();
     setError('');
+    setFieldErrors({});
+
+    if (!validateResetForm()) {
+      return;
+    }
+
     setLoading(true);
 
     const resetPayload = {
@@ -142,46 +204,47 @@ export function ForgotPasswordModal() {
           </button>
         </div>
       ) : step === 'reset' ? (
-        <form onSubmit={handleReset} className="space-y-4">
+        <form onSubmit={handleReset} noValidate className="space-y-4">
           <p className="text-sm text-accent">{codeHint}</p>
 
-          <div>
-            <label htmlFor="forgot-code" className="mb-1 block text-xs text-muted">
-              {t('auth.forgotPasswordCode')}
-            </label>
-            <input
-              id="forgot-code"
-              type="text"
-              inputMode="numeric"
-              pattern="\d{6}"
-              maxLength={6}
-              required
-              autoComplete="one-time-code"
-              value={code}
-              onChange={(e) => setCode(e.target.value.replace(/\D/g, '').slice(0, 6))}
-              className={plainInputClassName}
-              placeholder="000000"
-            />
-          </div>
+          <FormTextField
+            id="forgot-code"
+            label={t('auth.forgotPasswordCode')}
+            type="text"
+            inputMode="numeric"
+            maxLength={6}
+            autoComplete="one-time-code"
+            value={code}
+            onChange={(e) => {
+              setCode(e.target.value.replace(/\D/g, '').slice(0, 6));
+              setFieldErrors((prev) => omitFieldError(prev, 'code'));
+            }}
+            placeholder="000000"
+            error={fieldErrors.code}
+          />
 
           <PasswordInput
             id="forgot-new-password"
             label={t('auth.password')}
-            required
-            minLength={8}
             autoComplete="new-password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              setFieldErrors((prev) => omitFieldError(prev, 'password'));
+            }}
+            error={fieldErrors.password}
           />
 
           <PasswordInput
             id="forgot-confirm-password"
             label={t('auth.confirmPassword')}
-            required
-            minLength={8}
             autoComplete="new-password"
             value={passwordConfirmation}
-            onChange={(e) => setPasswordConfirmation(e.target.value)}
+            onChange={(e) => {
+              setPasswordConfirmation(e.target.value);
+              setFieldErrors((prev) => omitFieldError(prev, 'password_confirmation'));
+            }}
+            error={fieldErrors.password_confirmation}
           />
 
           {error ? <p className="text-sm text-red-400">{error}</p> : null}
@@ -235,35 +298,42 @@ export function ForgotPasswordModal() {
             </button>
           </div>
 
-          <form onSubmit={handleRequest} className="space-y-4">
+          <form onSubmit={handleRequest} noValidate className="space-y-4">
             {method === 'email' ? (
-              <div className="relative">
-                <span
-                  className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm text-muted"
-                  aria-hidden="true"
-                >
-                  ✉
-                </span>
-                <input
-                  id="forgot-email"
-                  type="email"
-                  required
-                  autoComplete="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className={inputClassName}
-                  placeholder={t('auth.loginEmailPlaceholder')}
-                />
-              </div>
+              <FormTextField
+                id="forgot-email"
+                label={t('auth.email')}
+                type="email"
+                autoComplete="email"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  setFieldErrors((prev) => omitFieldError(prev, 'email'));
+                }}
+                placeholder={t('auth.loginEmailPlaceholder')}
+                error={fieldErrors.email}
+                leading={
+                  <span
+                    className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm text-muted"
+                    aria-hidden="true"
+                  >
+                    ✉
+                  </span>
+                }
+              />
             ) : (
               <PhoneNumberInput
                 id="forgot-phone"
                 label={t('auth.phone')}
                 hideLabel
                 value={phone}
-                onChange={setPhone}
+                onChange={(value) => {
+                  setPhone(value);
+                  setFieldErrors((prev) => omitFieldError(prev, 'phone'));
+                }}
                 countryCode={phoneCountryCode}
                 onCountryCodeChange={setPhoneCountryCode}
+                error={fieldErrors.phone}
               />
             )}
 

@@ -22,20 +22,29 @@ export const mr: LocaleTree = {
     "next": "Next",
     "showMore": "Show more",
     "ok": "OK",
+    "yes": "होय",
+    "no": "नाही",
     "close": "Close",
     "copy": "Copy",
     "copied": "Copied",
     "games": "games",
     "gamesCount": "{{count}} games",
     "noLimit": "No limit",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "किमान: {{min}} · कमाल: {{max}}",
     "currencyIdr": "· Currency: IDR",
     "pageOf": "पृष्ठ {{PAGE}} पैकी {{PAGE}}",
-    "actions": "Actions",
     "openMenu": "Open menu",
-    "language": "Language",
-    "yes": "होय",
-    "no": "नाही"
+    "actions": "Actions",
+    "fieldRequired": "नाव प्रविष्ट करा.",
+    "fieldRequiredGeneric": "हे  क्षेत्र गरजेचे आहे.",
+    "fieldEmailInvalid": "कृपया एक वैध ईमेल पत्ता प्रविष्ट करा",
+    "fieldMinLength": "कमीतकमी <COUNT>&lt;&gt;&gt; वर्ण असणे आवश्यक आहे.",
+    "fieldPasswordMismatch": "परवलीचे शब्द जुळत नाहीत.",
+    "fieldSelectRequired": "कृपया {0} निवडा",
+    "fieldCodeInvalid": "कृपया 6 - अंकी पडताळणी कोड टाका.",
+    "language": "Language"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -59,7 +68,9 @@ export const mr: LocaleTree = {
     "balance": "Balance",
     "playResponsibly": "18+ जबाबदारीने प्ले करा",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "Support"
+    "liveChatLabel": "Support",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -73,6 +84,38 @@ export const mr: LocaleTree = {
     "sendFailed": "तुमचा संदेश पाठवू शकलो नाही. कृपया पुन्हा प्रयत्न करा.",
     "loadFailed": "गप्पा संदेश लोड करू शकलो नाही."
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Support",
+    "you": "You",
+    "categories": {
+      "account": "Account",
+      "payment": "Payment",
+      "bonus": "Bonus",
+      "game": "Game",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "Slots",
     "liveCasino": "Live Casino",
@@ -80,6 +123,7 @@ export const mr: LocaleTree = {
     "account": "Account",
     "support": "Support",
     "messages": "Messages",
+    "tickets": "Tickets",
     "legal": "Legal",
     "about": "About Us",
     "terms": "नियम आणि अटी",
@@ -170,7 +214,8 @@ export const mr: LocaleTree = {
     "crypto": "Cryptocurrency",
     "bank": "Bank Transfer",
     "redirect": "Online Payment",
-    "local": "Local Payment"
+    "local": "Local Payment",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "Deposit",
@@ -243,11 +288,18 @@ export const mr: LocaleTree = {
     "country": "Country",
     "phone": "Phone",
     "kycStatus": "KYC Status",
+    "kyc": "केवायसी (KYC)",
+    "kycComingSoon": "केवायसी पडताळणी लवकरच उपलब्ध होईल. कृपया नंतर पुन्हा तपासा.",
+    "verificationTitleKyc": "ओळखीची पडताळणी करा (केवायसी)",
+    "kycLoading": "पडताळणी लोड करत आहे...",
+    "kycFailed": "केवायसी पडताळणी सुरू करू शकत नाही. कृपया नंतर पुन्हा प्रयत्न करा.",
+    "kycHint": "उपरोक्त फॉर्ममध्ये पायऱ्या पूर्ण करा. SumSub पुनरावलोकनानंतर तुमची स्थिती अपडेट होईल.",
     "verified": "Verified",
     "notVerified": "Not verified",
     "verifyNow": "Verify",
     "verificationTitleEmail": "Verify email",
     "verificationTitlePhone": "Verify phone",
+    "verificationSendConfirm": "पडताळणी कोड {{destination}} वर पाठवायचा?",
     "verificationCodeHintEmail": "{{destination}} वर पाठवलेला 6 - अंकी कोड लिहा.",
     "verificationCodeHintPhone": "{{destination}} वर पाठवलेला 6 - अंकी कोड लिहा.",
     "verificationSubmit": "पडताळणीची पुष्टी करा",
@@ -268,14 +320,7 @@ export const mr: LocaleTree = {
     "saveChanges": "Save Changes",
     "updateSuccess": "प्रोफाइल यशस्वीरित्या अपडेट केले.",
     "updateFailed": "प्रोफाइल अपडेट करण्यात अयशस्वी.",
-    "language": "Language",
-    "kyc": "केवायसी (KYC)",
-    "kycComingSoon": "केवायसी पडताळणी लवकरच उपलब्ध होईल. कृपया नंतर पुन्हा तपासा.",
-    "verificationTitleKyc": "ओळखीची पडताळणी करा (केवायसी)",
-    "kycLoading": "पडताळणी लोड करत आहे...",
-    "kycFailed": "केवायसी पडताळणी सुरू करू शकत नाही. कृपया नंतर पुन्हा प्रयत्न करा.",
-    "kycHint": "उपरोक्त फॉर्ममध्ये पायऱ्या पूर्ण करा. SumSub पुनरावलोकनानंतर तुमची स्थिती अपडेट होईल.",
-    "verificationSendConfirm": "पडताळणी कोड {{destination}} वर पाठवायचा?"
+    "language": "Language"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const mr: LocaleTree = {
     "selectPaymentOption": "देय द्यायची पद्धत निवडा",
     "noOptionsForCountry": "या देशासाठी कोणतीही पेमेंट पद्धत उपलब्ध नाही.",
     "backToMethods": "← Back",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← Back",
+    "stepMethod": "Payment Method",
+    "stepOption": "Select Option",
+    "stepAmount": "रक्कम",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "Payment Method",
     "localCountryLabel": "Payment country",
     "selectLocalCountry": "सुरू ठेवण्यासाठी पेमेंट देश निवडा.",
@@ -351,6 +408,55 @@ export const mr: LocaleTree = {
     "limitAlertGeneric": "तुम्ही तुमच्या सध्याच्या पडताळणी पातळीनुसार {{amount}} पर्यंत पैसे काढू शकता. तुमची मर्यादा वाढवण्यासाठी तुमच्या प्रोफाइलमध्ये अतिरिक्त पडताळणी पूर्ण करा.",
     "goToProfile": "प्रोफाइलवर जा"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Bonus",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Bonus",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Bonus"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "संदर्भ",
+    "amount": "रक्कम",
+    "currency": "Currency"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "Bonuses",
     "wageringProgress": "Wagering progress",
@@ -409,6 +515,8 @@ export const mr: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {

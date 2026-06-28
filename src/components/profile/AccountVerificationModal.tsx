@@ -1,9 +1,17 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import { Modal } from '@/components/common/Modal';
+import { FormTextField } from '@/components/common/FormTextField';
 import { playerApi } from '@/api/wallet.api';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getApiErrorMessage } from '@/utils/apiError';
 import type { PlayerProfile } from '@/types';
+import {
+  collectFieldErrors,
+  hasFieldErrors,
+  omitFieldError,
+  requiredValue,
+  type FieldErrors,
+} from '@/utils/formValidation';
 
 type VerificationChannel = 'email' | 'phone';
 type VerificationStep = 'confirm' | 'verify' | 'success';
@@ -14,9 +22,6 @@ interface AccountVerificationModalProps {
   onClose: () => void;
   onVerified: (profile: PlayerProfile) => void;
 }
-
-const inputClassName =
-  'w-full rounded-md border border-white/10 bg-card px-3 py-2.5 text-sm text-white placeholder:text-muted focus:border-accent focus:outline-none';
 
 const actionButtonClassName =
   'w-full rounded-full border border-white/15 bg-gradient-to-b from-white/25 to-white/10 py-3 text-sm font-bold uppercase tracking-wider text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50';
@@ -31,6 +36,7 @@ export function AccountVerificationModal({
   const [step, setStep] = useState<VerificationStep>('confirm');
   const [code, setCode] = useState('');
   const [error, setError] = useState('');
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [loading, setLoading] = useState(false);
   const [codeSent, setCodeSent] = useState(false);
 
@@ -63,6 +69,7 @@ export function AccountVerificationModal({
       setStep('confirm');
       setCode('');
       setError('');
+      setFieldErrors({});
       setCodeSent(false);
       setLoading(false);
       return;
@@ -71,6 +78,7 @@ export function AccountVerificationModal({
     setStep('confirm');
     setCode('');
     setError('');
+    setFieldErrors({});
     setCodeSent(false);
     setLoading(false);
   }, [channel, isOpen]);
@@ -80,6 +88,21 @@ export function AccountVerificationModal({
     if (!channel) return;
 
     setError('');
+    setFieldErrors({});
+
+    let codeError: string | undefined;
+    if (!requiredValue(code)) {
+      codeError = t('common.fieldRequired', { field: t('auth.forgotPasswordCode') });
+    } else if (code.length !== 6) {
+      codeError = t('common.fieldCodeInvalid');
+    }
+
+    const errors = collectFieldErrors([['code', codeError]]);
+    if (hasFieldErrors(errors)) {
+      setFieldErrors(errors);
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -149,32 +172,29 @@ export function AccountVerificationModal({
           </div>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} noValidate className="space-y-4">
           {loading && !codeSent ? (
             <p className="text-sm text-muted">{t('common.loading')}</p>
           ) : (
             <p className="text-sm text-accent">{codeSent ? hint : null}</p>
           )}
 
-          <div>
-            <label htmlFor="account-verify-code" className="mb-1 block text-xs text-muted">
-              {t('auth.forgotPasswordCode')}
-            </label>
-            <input
-              id="account-verify-code"
-              type="text"
-              inputMode="numeric"
-              pattern="\d{6}"
-              maxLength={6}
-              required
-              autoComplete="one-time-code"
-              value={code}
-              onChange={(e) => setCode(e.target.value.replace(/\D/g, '').slice(0, 6))}
-              className={inputClassName}
-              placeholder="000000"
-              disabled={!codeSent}
-            />
-          </div>
+          <FormTextField
+            id="account-verify-code"
+            label={t('auth.forgotPasswordCode')}
+            type="text"
+            inputMode="numeric"
+            maxLength={6}
+            autoComplete="one-time-code"
+            value={code}
+            onChange={(e) => {
+              setCode(e.target.value.replace(/\D/g, '').slice(0, 6));
+              setFieldErrors((prev) => omitFieldError(prev, 'code'));
+            }}
+            placeholder="000000"
+            disabled={!codeSent}
+            error={fieldErrors.code}
+          />
 
           {error ? <p className="text-sm text-red-400">{error}</p> : null}
 

@@ -466,7 +466,26 @@ export function translatePaymentMethod(language: Language, name: string | null |
     if (translated !== `paymentMethods.${key}`) return translated;
   }
 
+  if (language !== 'en') {
+    const mapped = phraseMapsByLanguage[language]?.[name];
+    if (mapped && mapped !== name) return mapped;
+  }
+
   return name;
+}
+
+export function translatePaymentOptionLabel(language: Language, label: string | null | undefined): string {
+  if (!label) return '';
+
+  const fromMethod = translatePaymentMethod(language, label);
+  if (fromMethod !== label) return fromMethod;
+
+  if (language !== 'en') {
+    const mapped = phraseMapsByLanguage[language]?.[label];
+    if (mapped && mapped !== label) return mapped;
+  }
+
+  return label;
 }
 
 export function translatePaymentType(language: Language, type: string | null | undefined): string {
@@ -500,4 +519,35 @@ export function translateStatus(language: Language, status: string): string {
   const key = `status.${normalized}`;
   const translated = translate(language, key);
   return translated === key ? status.replace(/_/g, ' ') : translated;
+}
+
+export function translatePaymentInfoField(language: Language, fieldKey: string): string {
+  const key = normalizeLookupKey(fieldKey);
+  const translated = translate(language, `paymentInfoFields.${key}`);
+  if (translated !== `paymentInfoFields.${key}`) return translated;
+
+  const labelLike = fieldKey.replace(/_/g, ' ');
+  const translatedLabel = translate(language, `paymentInfoFields.${normalizeLookupKey(labelLike)}`);
+  return translatedLabel !== `paymentInfoFields.${normalizeLookupKey(labelLike)}` ? translatedLabel : labelLike;
+}
+
+export function translateDestinationField(
+  language: Language,
+  fieldName: string,
+  fallbackLabel: string,
+): string {
+  const nameKey = normalizeLookupKey(fieldName);
+  const translatedByName = translate(language, `destinationFields.${nameKey}`);
+  if (translatedByName !== `destinationFields.${nameKey}`) return translatedByName;
+
+  const labelKey = normalizeLookupKey(fallbackLabel);
+  const translatedByLabel = translate(language, `destinationFields.${labelKey}`);
+  if (translatedByLabel !== `destinationFields.${labelKey}`) return translatedByLabel;
+
+  const phraseTranslated = language !== 'en'
+    ? phraseMapsByLanguage[language]?.[fallbackLabel]
+    : undefined;
+  if (phraseTranslated && phraseTranslated !== fallbackLabel) return phraseTranslated;
+
+  return fallbackLabel;
 }

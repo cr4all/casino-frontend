@@ -22,20 +22,29 @@ export const ka: LocaleTree = {
     "next": "შემდეგი",
     "showMore": "მიჩვენე მეტი",
     "ok": "OK",
+    "yes": "დიახ",
+    "no": "არა",
     "close": "დახურვა",
     "copy": "ნაკრები",
     "copied": "ნაკრული",
     "games": "თამაში",
     "gamesCount": "{{count}} თამაშები",
     "noLimit": "_limiti არ υπάρχει",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "მინ: {{min}} · მაქს: {{max}}",
     "currencyIdr": "· ვალუტა: IDR",
     "pageOf": "გვერდი {{page}} {{last}}-დან",
-    "actions": "აქტივობები",
     "openMenu": "მენიუს გახსნა",
-    "language": "ენა",
-    "yes": "დიახ",
-    "no": "არა"
+    "actions": "აქტივობები",
+    "fieldRequired": "Გთხოვთ, შეიყვანოთ &lt;&lt;<FIELD>&gt;&gt;.",
+    "fieldRequiredGeneric": "ეს ველი სავალდებულოა.",
+    "fieldEmailInvalid": "გთხოვთ შეიყვანოთ სწორი ელფოსტის მისამართი.",
+    "fieldMinLength": "Უნდა იყოს მინიმუმ &lt;&lt;<COUNT>&gt;&gt; სიმბოლო.",
+    "fieldPasswordMismatch": "პაროლები არ ემთხვევა.",
+    "fieldSelectRequired": "გთხოვთ, აირჩიოთ",
+    "fieldCodeInvalid": "Მიუთითეთ დამადასტურებელი 6-ციფრიანი კოდი.",
+    "language": "ენა"
   },
   "nav": {
     "allGames": "ყველა თამაში",
@@ -59,7 +68,9 @@ export const ka: LocaleTree = {
     "balance": "ბალანსი",
     "playResponsibly": "18+ · ითამაშეთ პასუხისმგებლობით",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "მხარდაჭერა"
+    "liveChatLabel": "მხარდაჭერა",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -73,6 +84,38 @@ export const ka: LocaleTree = {
     "sendFailed": "შეტყობინების გაგზავნა ვერ მოხერხდა. გთხოვთ, სცადოთ ისევ.",
     "loadFailed": "შეტყობინებების ჩატვირთვა ვერ მოხერხდა."
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "მხარდაჭერა",
+    "you": "You",
+    "categories": {
+      "account": "ანგარიში",
+      "payment": "Payment",
+      "bonus": "ბონუსი",
+      "game": "ნამგობი",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "სლოტები",
     "liveCasino": "სათამაშო კაზინო პირდაპირ ეთერში",
@@ -80,6 +123,7 @@ export const ka: LocaleTree = {
     "account": "ანგარიში",
     "support": "მხარდაჭერა",
     "messages": "შეტყობინებები",
+    "tickets": "Tickets",
     "legal": "ნებადართული",
     "about": "ჩვენს შესახებ",
     "terms": "წესები და პირობები",
@@ -170,7 +214,8 @@ export const ka: LocaleTree = {
     "crypto": "კრიპტოვალუტა",
     "bank": "ბანკის გადარიცხვა",
     "redirect": "ონლაინ გადახდა",
-    "local": "ადგილობრივი გადახდა"
+    "local": "ადგილობრივი გადახდა",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "ნაღდი ანაბარი",
@@ -243,11 +288,18 @@ export const ka: LocaleTree = {
     "country": "ქვეყანა",
     "phone": "ტელეფონი",
     "kycStatus": "KYC მდგომარეობა",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC დადასტურება მალე იქნება ხელმისაწვდომი. მოგვიანებით შეამოწმეთ.",
+    "verificationTitleKyc": "Ვინაობის დადასტურება (KYC)",
+    "kycLoading": "Მიმდინარეობს დადასტურების ჩატვირთვა...",
+    "kycFailed": "KYC-ის ვერიფიკაციის დაწყება ვერ მოხერხდა. სცადეთ მოგვიანებით.",
+    "kycHint": "Შეასრულეთ ნაბიჯები ზემოთ მოცემული ფორმით. თქვენი სტატუსი განახლდება SumSub-ის მიმოხილვის შემდეგ.",
     "verified": "დამოწმებული",
     "notVerified": "აუფასურა",
     "verifyNow": "დამოწმება",
     "verificationTitleEmail": "მეილის შემოწმება",
     "verificationTitlePhone": "ტელეფონის გადამოწმება",
+    "verificationSendConfirm": "Გსურთ დამადასტურებელი კოდის გაგზავნა მისამართზე: {{დანიშნულების ადგილი}}?",
     "verificationCodeHintEmail": "შეიყვანეთ 6-ნიშნა კოდი, გაგზავნილი {{destination}}-ზე.",
     "verificationCodeHintPhone": "შეიყვანეთ 6-ნიშნა კოდი, გაგზავნილი {{destination}}-ზე.",
     "verificationSubmit": "დასტურება წარდგენის",
@@ -268,14 +320,7 @@ export const ka: LocaleTree = {
     "saveChanges": "შენახვა ცვლილებები",
     "updateSuccess": "პროფილი წარმატებით განახლდა.",
     "updateFailed": "პროფილის განახლება ვერ მოხერხდა.",
-    "language": "ენა",
-    "kyc": "KYC",
-    "kycComingSoon": "KYC დადასტურება მალე იქნება ხელმისაწვდომი. მოგვიანებით შეამოწმეთ.",
-    "verificationTitleKyc": "Ვინაობის დადასტურება (KYC)",
-    "kycLoading": "Მიმდინარეობს დადასტურების ჩატვირთვა...",
-    "kycFailed": "KYC-ის ვერიფიკაციის დაწყება ვერ მოხერხდა. სცადეთ მოგვიანებით.",
-    "kycHint": "Შეასრულეთ ნაბიჯები ზემოთ მოცემული ფორმით. თქვენი სტატუსი განახლდება SumSub-ის მიმოხილვის შემდეგ.",
-    "verificationSendConfirm": "Გსურთ დამადასტურებელი კოდის გაგზავნა მისამართზე: {{დანიშნულების ადგილი}}?"
+    "language": "ენა"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const ka: LocaleTree = {
     "selectPaymentOption": "გაირჩიეთ გადახდის მეთოდი",
     "noOptionsForCountry": "ამ ქვეყანისთვის ხელმისაწვდომი გადახდის მეთოდი არ არსებობს.",
     "backToMethods": "← უკან",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← უკან",
+    "stepMethod": "გადახდის მეთოდი",
+    "stepOption": "Select Option",
+    "stepAmount": "ნაკვეთი",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "გადახდის მეთოდი",
     "localCountryLabel": "გადახდის ქვეყანა",
     "selectLocalCountry": "აირჩიეთ გადახდის ქვეყანა გაგრძელებისთვის.",
@@ -351,6 +408,55 @@ export const ka: LocaleTree = {
     "limitAlertGeneric": "Თქვენ შეგიძლიათ გამოიტანოთ მაქსიმუმ {{თანხა}} თქვენი მიმდინარე დადასტურების დონის მიხედვით. ლიმიტის გასაზრდელად დაასრულეთ დამატებითი დადასტურება თქვენს პროფილში.",
     "goToProfile": "გადადით ამ პროფილზე"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "ბონუსი",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "ბონუსი",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "ბონუსი"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "რეფერენცია",
+    "amount": "ნაკვეთი",
+    "currency": "ვალუტა"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "ბონუსები",
     "wageringProgress": "ობიექტის პროგრესი",
@@ -409,6 +515,8 @@ export const ka: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {

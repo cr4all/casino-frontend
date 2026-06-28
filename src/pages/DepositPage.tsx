@@ -31,6 +31,13 @@ import {
 } from '@/utils/depositOptions';
 import { formatBalance } from '@/utils/formatBalance';
 import { formatDepositCurrencyAmount, formatDepositReceivedAmount } from '@/utils/formatDepositDisplay';
+import {
+  collectFieldErrors,
+  hasFieldErrors,
+  omitFieldError,
+  requiredValue,
+  type FieldErrors,
+} from '@/utils/formValidation';
 
 type DepositStep = 1 | 2 | 3;
 
@@ -56,7 +63,7 @@ function CopyButton({ value }: { value: string }) {
 }
 
 export function DepositPage() {
-  const { t, tPaymentMethod, formatDate } = useTranslation();
+  const { t, tPaymentMethod, tPaymentInfoField, tStatus, formatDate } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const fetchBalance = useWalletStore((s) => s.fetchBalance);
   const [countries, setCountries] = useState<PaymentCountry[]>([]);
@@ -78,6 +85,7 @@ export function DepositPage() {
   const [submitting, setSubmitting] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [challengeError, setChallengeError] = useState<string | null>(null);
   const [lastDeposit, setLastDeposit] = useState<DepositRequest | null>(null);
   const {
@@ -118,6 +126,7 @@ export function DepositPage() {
     setQuote(null);
     setQuoteError(false);
     setError(null);
+    setFieldErrors({});
     setChallengeError(null);
     setCountry(defaultCountry);
     resetChallenge();
@@ -251,7 +260,7 @@ export function DepositPage() {
     if (!optionKey || !amount || !effectiveCountry) return;
     const result = await paymentApi.createDeposit(optionKey, amount, effectiveCountry, turnstileToken);
     setLastDeposit(result);
-    setMessage(t('deposit.submitted', { id: result.deposit_id, status: result.status }));
+    setMessage(t('deposit.submitted', { id: result.deposit_id, status: tStatus(result.status) }));
     setAmount('');
     setQuote(null);
     resetChallenge();
@@ -279,9 +288,23 @@ export function DepositPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!optionKey || !amount || !effectiveCountry) return;
-    setSubmitting(true);
     setError(null);
+    setFieldErrors({});
+
+    const amountError = !requiredValue(amount)
+      ? t('common.fieldRequired', { field: t('deposit.amount') })
+      : Number(amount) <= 0
+        ? t('common.fieldRequired', { field: t('deposit.amount') })
+        : undefined;
+
+    const errors = collectFieldErrors([['amount', amountError]]);
+    if (hasFieldErrors(errors)) {
+      setFieldErrors(errors);
+      return;
+    }
+
+    if (!optionKey || !effectiveCountry) return;
+    setSubmitting(true);
     setChallengeError(null);
     setMessage(null);
     setLastDeposit(null);
@@ -399,7 +422,7 @@ export function DepositPage() {
             )}
 
             {step === 3 && (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} noValidate className="space-y-4">
                 <Button
                   type="button"
                   variant="secondary"
@@ -413,10 +436,14 @@ export function DepositPage() {
 
                 <CryptoAmountInput
                   value={amount}
-                  onChange={setAmount}
+                  onChange={(value) => {
+                    setAmount(value);
+                    setFieldErrors((prev) => omitFieldError(prev, 'amount'));
+                  }}
                   currencyLabel={confirmedOption?.payment_currency ?? ''}
                   amountLabel={t('deposit.amount')}
                   clearLabel={t('common.close')}
+                  error={fieldErrors.amount}
                 />
 
                 {confirmedOption && (
@@ -464,7 +491,7 @@ export function DepositPage() {
                 <Button
                   type="submit"
                   variant="gold"
-                  disabled={submitting || challengeRequired || !confirmedOption || !amount}
+                  disabled={submitting || challengeRequired || !confirmedOption}
                 >
                   {submitting ? t('common.submitting') : t('deposit.requestDeposit')}
                 </Button>
@@ -540,7 +567,7 @@ export function DepositPage() {
 
                   return (
                     <div key={key}>
-                      <dt className="text-xs capitalize text-muted">{key.replace(/_/g, ' ')}</dt>
+                      <dt className="text-xs capitalize text-muted">{tPaymentInfoField(key)}</dt>
                       <dd className="text-sm text-white break-all">
                         {display}
                         {isAddress && display && <CopyButton value={display} />}
@@ -593,7 +620,7 @@ export function DepositPage() {
                           {formatDepositCurrencyAmount(d.currency, d.amount)}
                         </td>
                         <td className="hidden px-3 py-3 font-mono text-xs text-white sm:table-cell sm:px-4">
-                          {formatDepositReceivedAmount(d) ?? '—'}
+                          {formatDepositReceivedAmount(d) ?? t('common.notAvailable')}
                         </td>
                         <td className="hidden px-3 py-3 text-muted sm:table-cell sm:px-4">{tPaymentMethod(d.payment_method)}</td>
                         <td className="px-3 py-3 sm:px-4"><StatusBadge status={d.status} /></td>

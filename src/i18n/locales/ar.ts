@@ -33,9 +33,20 @@ export const ar: LocaleTree = {
     "pageOf": "صفحة {{page}} من {{last}}",
     "openMenu": "فتح القائمة",
     "language": "اللغة",
-    "yes": "Yes",
-    "no": "No",
-    "actions": "Actions"
+    "yes": "نعم",
+    "no": "لا",
+    "actions": "الإجراءات",
+    "fieldRequired": "يرجى إدخال {{field}}.",
+    "fieldRequiredGeneric": "هذا الحقل مطلوب.",
+    "fieldEmailInvalid": "يرجى إدخال عنوان بريد إلكتروني صالح.",
+    "fieldMinLength": "يجب أن يكون {{count}} أحرف على الأقل.",
+    "fieldPasswordMismatch": "كلمات المرور غير متطابقة.",
+    "fieldSelectRequired": "يرجى اختيار {{field}}.",
+    "fieldCodeInvalid": "يرجى إدخال رمز التحقق المكون من 6 أرقام.",
+    "maxOnly": "الحد الأقصى {{amount}}",
+    "notAvailable": "—",
+    "minLabel": "دقيقة",
+    "maxLabel": "أقصى"
   },
   "nav": {
     "allGames": "جميع الألعاب",
@@ -59,7 +70,9 @@ export const ar: LocaleTree = {
     "balance": "الرصيد",
     "playResponsibly": "18+ · العب بمسؤولية",
     "liveChat": "الدردشة المباشرة",
-    "liveChatLabel": "الدعم"
+    "liveChatLabel": "الدعم",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "الدردشة المباشرة",
@@ -158,13 +171,15 @@ export const ar: LocaleTree = {
     "crypto": "عملة رقمية",
     "crypto_payment": "دفع بالعملات الرقمية",
     "bank": "تحويل بنكي",
-    "bank_transfer": "تحويل بنكي"
+    "bank_transfer": "تحويل بنكي",
+    "manual_bank_transfer": "حوالة مصرفية يدوية"
   },
   "paymentTypes": {
     "crypto": "عملة رقمية",
     "bank": "تحويل بنكي",
     "redirect": "دفع إلكتروني",
-    "local": "دفع محلي"
+    "local": "دفع محلي",
+    "manual": "تحويل يدوي"
   },
   "txTypes": {
     "deposit": "إيداع",
@@ -271,9 +286,9 @@ export const ar: LocaleTree = {
     "title": "إيداع",
     "bonusesLink": "المكافآت",
     "withdrawLink": "سحب →",
-    "selectCountry": "Payment country",
-    "selectPaymentOption": "Select a payment method",
-    "noOptionsForCountry": "No payment methods available for this country.",
+    "selectCountry": "<g id=\"538\">بلد الدفع</g><g id=\"541\">.</g>",
+    "selectPaymentOption": "اختر طريقة دفع",
+    "noOptionsForCountry": "لا توجد طرق دفع متاحة لهذا البلد.",
     "backToMethods": "? Back",
     "paymentMethod": "طريقة الدفع",
     "localCountryLabel": "بلد الدفع",
@@ -307,7 +322,19 @@ export const ar: LocaleTree = {
     "estimateDisclaimer": "يُحدَّد المبلغ النهائي المضاف عند تأكيد الدفع وقد يختلف عن هذا التقدير.",
     "credited": "تمت الإضافة",
     "loadingQuote": "جاري حساب التقدير...",
-    "quoteFailed": "تعذّر جلب تقدير سعر الصرف."
+    "quoteFailed": "تعذّر جلب تقدير سعر الصرف.",
+    "backToKinds": "← العودة إلى الطرق",
+    "backToOptions": "← عودة",
+    "stepMethod": "طريقة الدفع:",
+    "stepOption": "حدد الخيار",
+    "stepAmount": "المبلغ",
+    "selectPaymentKind": "اختر طريقة الإيداع",
+    "selectCrypto": "اختر العملة المشفرة",
+    "selectBank": "اختر طريقة الدفع",
+    "kindCountCrypto": "{{count}} عملات مشفرة",
+    "kindCountLocal": "{{count}} طرق دفع",
+    "kindCountManual": "تحويل بنكي",
+    "kindUnavailable": "غير متاح"
   },
   "withdraw": {
     "title": "سحب",
@@ -316,7 +343,7 @@ export const ar: LocaleTree = {
     "walletAddress": "عنوان المحفظة",
     "destinationAccount": "حساب الوجهة",
     "networkOptional": "الشبكة (اختياري)",
-    "networkPlaceholder": "TRC20, ERC20...",
+    "networkPlaceholder": "TRC20، ERC20...",
     "addressPlaceholderCrypto": "TXyz...",
     "addressPlaceholderBank": "رقم الحساب البنكي",
     "requestWithdrawal": "طلب سحب",
@@ -324,17 +351,17 @@ export const ar: LocaleTree = {
     "noWithdrawals": "لا توجد طلبات سحب بعد.",
     "submitted": "تم إرسال طلب السحب #{{id}} ({{status}}). في انتظار مراجعة المسؤول.",
     "submitFailed": "فشل إرسال طلب السحب.",
-    "verificationRequiredTitle": "Verification Required",
-    "verificationRequiredMessage": "You must verify your email, phone number, and complete KYC before you can withdraw.",
-    "verificationRequiredBanner": "Withdrawals require account verification. Please verify your email, phone, and complete KYC in your profile.",
-    "verificationLimitBanner": "Your maximum withdrawal amount is {{amount}} based on your current verification level.",
-    "verificationLimitExceeded": "Amount exceeds your verification limit of {{amount}}.",
-    "limitAlertTitle": "Withdrawal Limit",
-    "limitAlertEmailOnly": "Because you have only verified your email, you can withdraw up to {{amount}}. To withdraw more, please complete Phone or KYC verification in your profile.",
-    "limitAlertPhoneOnly": "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.",
-    "limitAlertEmailAndPhone": "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.",
-    "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
-    "goToProfile": "Go to Profile"
+    "verificationRequiredTitle": "مطلوب التحقق من الصلاحية",
+    "verificationRequiredMessage": "يجب عليك التحقق من بريدك الإلكتروني ورقم هاتفك وإكمال \"اعرف عميلك\" قبل أن تتمكن من السحب.",
+    "verificationRequiredBanner": "تتطلب عمليات السحب التحقُّق من الحساب. يرجى التحقق من بريدك الإلكتروني وهاتفك وإكمال \"اعرف عميلك\" في ملفك الشخصي.",
+    "verificationLimitBanner": "الحد الأقصى لمبلغ السحب هو {{amount}} بناءً على مستوى التحقق الحالي.",
+    "verificationLimitExceeded": "يتجاوز المبلغ حد التحقق الخاص بك البالغ {{amount}}.",
+    "limitAlertTitle": "حد السحب",
+    "limitAlertEmailOnly": "نظرًا لأنك تحققت من بريدك الإلكتروني فقط، يمكنك سحب ما يصل إلى {{amount}}. لسحب المزيد، يرجى إكمال التحقق من الهاتف أو اعرف عميلك في ملفك الشخصي.",
+    "limitAlertPhoneOnly": "نظرًا لأنك قمت بالتحقق من هاتفك فقط، يمكنك سحب ما يصل إلى {{amount}}. لسحب المزيد، يرجى إكمال التحقق من البريد الإلكتروني أو اعرف عميلك في ملفك الشخصي.",
+    "limitAlertEmailAndPhone": "نظرًا لأنك قمت بالتحقق من البريد الإلكتروني والهاتف ولكن ليس KYC، يمكنك سحب ما يصل إلى {{amount}}. لسحب مبالغ غير محدودة، يرجى إكمال التحقق من اعرف عميلك في ملفك الشخصي.",
+    "limitAlertGeneric": "يمكنك سحب ما يصل إلى {{amount}} بناءً على مستوى التحقق الحالي. أكمِل عملية التحقُّق الإضافية في ملفك التعريفي لزيادة الحد المسموح به.",
+    "goToProfile": "الذهاب للملف الشخصي"
   },
   "bonus": {
     "title": "المكافآت",
@@ -513,5 +540,91 @@ export const ar: LocaleTree = {
     "passwordUpdateFailed": "فشل تحديث كلمة المرور.",
     "verificationCodeSent": "تم إرسال رمز التحقق.",
     "verificationCodeRequestFailed": "فشل إرسال رمز التحقق."
+  },
+  "risk": {
+    "challengeTitle": "تحقق من أنك إنسان",
+    "challengeHint": "أكمل فحص الأمان أدناه للمتابعة.",
+    "challengeFailed": "فشل التحقق، يرجى المحاولة مرة أخرى"
+  },
+  "wallet": {
+    "cashBalance": "نقدًا",
+    "bonusBalance": "المكافآت",
+    "totalPlayable": "إجمالي القابل للعب",
+    "withdrawableBalance": "الرصيد القابل للسحب",
+    "withdrawableCash": "النقد القابل للسحب",
+    "withdrawableBonus": "المكافأة القابلة للسحب",
+    "bonusLockedHint": "يتم قفل أموال المكافأة حتى يتم استيفاء متطلبات الرهان.",
+    "showBreakdown": "عرض تفاصيل الرصيد",
+    "balanceBreakdown": "تفاصيل الرصيد",
+    "fundingSource": "التمويل",
+    "walletBucket": "الفئة",
+    "cashAfter": "النقد بعد",
+    "bonusAfter": "المكافأة بعد",
+    "funding": {
+      "cash": "نقدًا",
+      "bonus": "المكافآت",
+      "mixed": "مختلطة",
+      "free_spin": "لفة مجانية"
+    },
+    "bucket": {
+      "cash": "نقدًا",
+      "bonus": "المكافآت"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "عنوان السداد:",
+    "address": "العنوان",
+    "network": "شبكتنا",
+    "pay_currency": "العملة الخاصة بالدفع",
+    "pay_amount": "مبلغ الدفع",
+    "payment_url": "صفحة الدفع",
+    "qr_string": "رمز الاستجابة السريع",
+    "memo": "ملاحظات",
+    "tag": "علامات",
+    "destination_tag": "الوجهة المقصودة",
+    "bank_name": "اسم البنك",
+    "account_name": "اسم الحساب",
+    "account_number": "رقم الحساب",
+    "reference": "المرجع",
+    "amount": "المبلغ",
+    "currency": "العملة"
+  },
+  "destinationFields": {
+    "address": "عنوان المحفظة",
+    "network": "شبكتنا",
+    "account": "الحساب / معرف المحفظة",
+    "bank_account": "الحساب البنكي"
+  },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Support",
+    "you": "You",
+    "categories": {
+      "account": "Account",
+      "payment": "Payment",
+      "bonus": "Bonus",
+      "game": "Game",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
   }
 };

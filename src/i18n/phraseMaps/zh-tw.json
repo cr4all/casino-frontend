@@ -396,5 +396,12 @@
   "Because you have only verified your phone, you can withdraw up to {{amount}}. To withdraw more, please complete Email or KYC verification in your profile.": "由於你只驗證了手機號碼，因此最多可提取{{amount}}。如要提領更多款項，請在基本資料中完成電子郵件或KYC驗證。",
   "Because you have verified email and phone but not KYC, you can withdraw up to {{amount}}. To withdraw unlimited amounts, please complete KYC verification in your profile.": "由於你已驗證電郵和電話，但並非KYC ，因此最多可提取{{amount}}。如要提取無限金額，請在基本資料中完成KYC驗證。",
   "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.": "根據你目前的驗證等級，你最多可以提取{{amount}}。請在個人資料中完成額外驗證，以提高上限。",
-  "Go to Profile": "前往簡介"
+  "Go to Profile": "前往簡介",
+  "Please enter {{field}}.": "請輸入{{field}}。",
+  "This field is required.": "此欄位為必填。",
+  "Please enter a valid email address.": "請輸入有效的電子郵件地址。",
+  "Must be at least {{count}} characters.": "至少需要 {{count}} 個字元。",
+  "Passwords do not match.": "密碼不一致。",
+  "Please select {{field}}.": "請選擇{{field}}。",
+  "Please enter the 6-digit verification code.": "請輸入6位數驗證碼。"
 }

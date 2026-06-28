@@ -1,6 +1,8 @@
 import { useState, useEffect, type FormEvent } from 'react';
 import { Modal } from '@/components/common/Modal';
 import { Button } from '@/components/common/Button';
+import { FormSelect, FormTextField } from '@/components/common/FormTextField';
+import { PasswordInput } from '@/components/auth/PasswordInput';
 import { useAuthStore } from '@/stores/authStore';
 import { useUiStore } from '@/stores/uiStore';
 import { useWalletStore } from '@/stores/walletStore';
@@ -17,9 +19,14 @@ import { getAuthApiErrorMessage, isRiskChallengeError } from '@/utils/apiError';
 import { RiskChallengePanel } from '@/components/risk/RiskChallengePanel';
 import { useRiskChallenge } from '@/hooks/useRiskChallenge';
 import { clearStoredAffiliateCode, getStoredAffiliateCode } from '@/utils/affiliateReferral';
-
-const selectClassName =
-  'w-full rounded-md border border-white/10 bg-card px-3 py-2 text-sm text-white focus:border-accent focus:outline-none';
+import {
+  collectFieldErrors,
+  hasFieldErrors,
+  isValidEmail,
+  omitFieldError,
+  requiredValue,
+  type FieldErrors,
+} from '@/utils/formValidation';
 
 export function RegisterModal() {
   const { t } = useTranslation();
@@ -41,6 +48,7 @@ export function RegisterModal() {
   });
   const [phoneCountryCode, setPhoneCountryCode] = useState('US');
   const [error, setError] = useState('');
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [challengeError, setChallengeError] = useState('');
   const [loading, setLoading] = useState(false);
   const {
@@ -84,11 +92,14 @@ export function RegisterModal() {
     };
   }, [activeModal, t]);
 
-  const update = (field: string, value: string) =>
+  const update = (field: string, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
+    setFieldErrors((prev) => omitFieldError(prev, field));
+  };
 
   const handlePhoneCountryChange = (code: string) => {
     setPhoneCountryCode(code);
+    setFieldErrors((prev) => omitFieldError(prev, 'phone'));
     setForm((prev) => {
       const { local } = parsePhoneNumber(prev.phone, code);
       const formatted = formatLocalPhoneNumber(code, local);
@@ -110,6 +121,7 @@ export function RegisterModal() {
       affiliate_code: getStoredAffiliateCode() ?? undefined,
     });
     setPhoneCountryCode('US');
+    setFieldErrors({});
     setChallengeError('');
     resetChallenge();
   };
@@ -152,12 +164,55 @@ export function RegisterModal() {
     }
   };
 
+  const validateForm = (): boolean => {
+    const required = (field: string, value: string) =>
+      requiredValue(value) ? undefined : t('common.fieldRequired', { field });
+
+    let emailError: string | undefined;
+    if (!requiredValue(form.email)) {
+      emailError = t('common.fieldRequired', { field: t('auth.email') });
+    } else if (!isValidEmail(form.email)) {
+      emailError = t('common.fieldEmailInvalid');
+    }
+
+    let passwordError: string | undefined;
+    if (!requiredValue(form.password)) {
+      passwordError = t('common.fieldRequired', { field: t('auth.password') });
+    } else if (form.password.length < 8) {
+      passwordError = t('common.fieldMinLength', { count: 8 });
+    }
+
+    let confirmError: string | undefined;
+    if (!requiredValue(form.password_confirmation)) {
+      confirmError = t('common.fieldRequired', { field: t('auth.confirmPassword') });
+    } else if (form.password !== form.password_confirmation) {
+      confirmError = t('common.fieldPasswordMismatch');
+    }
+
+    const parsedPhone = parsePhoneNumber(form.phone, phoneCountryCode);
+    const phoneError = isLocalPhoneValid(phoneCountryCode, parsedPhone.local)
+      ? undefined
+      : t('auth.phoneInvalid');
+
+    const errors = collectFieldErrors([
+      ['email', emailError],
+      ['nickname', required(t('auth.username'), form.nickname)],
+      ['phone', phoneError],
+      ['currency', required(t('auth.currency'), form.currency)],
+      ['password', passwordError],
+      ['password_confirmation', confirmError],
+    ]);
+
+    setFieldErrors(errors);
+    return !hasFieldErrors(errors);
+  };
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError('');
-    const parsedPhone = parsePhoneNumber(form.phone, phoneCountryCode);
-    if (!isLocalPhoneValid(phoneCountryCode, parsedPhone.local)) {
-      setError(t('auth.phoneInvalid'));
+    setFieldErrors({});
+
+    if (!validateForm()) {
       return;
     }
 
@@ -180,88 +235,76 @@ export function RegisterModal() {
 
   return (
     <Modal isOpen={activeModal === 'register'} onClose={closeModal} title={t('auth.registerTitle')}>
-      <form onSubmit={handleSubmit} className="space-y-3">
+      <form onSubmit={handleSubmit} noValidate className="space-y-3">
         {error && (
           <p className="rounded-md bg-accent/10 px-3 py-2 text-sm text-accent">{error}</p>
         )}
-        <div>
-          <label htmlFor="reg-email" className="mb-1 block text-xs text-muted">{t('auth.email')}</label>
-          <input
-            id="reg-email"
-            type="email"
-            required
-            value={form.email}
-            onChange={(e) => update('email', e.target.value)}
-            className="w-full rounded-md border border-white/10 bg-card px-3 py-2 text-sm text-white focus:border-accent focus:outline-none"
-          />
-        </div>
-        <div>
-          <label htmlFor="reg-username" className="mb-1 block text-xs text-muted">{t('auth.username')}</label>
-          <input
-            id="reg-username"
-            type="text"
-            required
-            maxLength={50}
-            value={form.nickname}
-            onChange={(e) => update('nickname', e.target.value)}
-            className="w-full rounded-md border border-white/10 bg-card px-3 py-2 text-sm text-white focus:border-accent focus:outline-none"
-          />
-        </div>
+        <FormTextField
+          id="reg-email"
+          label={t('auth.email')}
+          type="email"
+          autoComplete="email"
+          value={form.email}
+          onChange={(e) => update('email', e.target.value)}
+          error={fieldErrors.email}
+        />
+        <FormTextField
+          id="reg-username"
+          label={t('auth.username')}
+          type="text"
+          maxLength={50}
+          autoComplete="username"
+          value={form.nickname}
+          onChange={(e) => update('nickname', e.target.value)}
+          error={fieldErrors.nickname}
+        />
         <PhoneNumberInput
           id="reg-phone"
           label={t('auth.phone')}
           value={form.phone}
-          onChange={(phone) => update('phone', phone)}
+          onChange={(phone) => {
+            update('phone', phone);
+            setFieldErrors((prev) => omitFieldError(prev, 'phone'));
+          }}
           countryCode={phoneCountryCode}
           onCountryCodeChange={handlePhoneCountryChange}
           disabled={optionsLoading}
+          error={fieldErrors.phone}
         />
-        <div>
-          <label htmlFor="reg-currency" className="mb-1 block text-xs text-muted">{t('auth.currency')}</label>
-          <select
-            id="reg-currency"
-            required
-            value={form.currency}
-            onChange={(e) => update('currency', e.target.value)}
-            disabled={optionsLoading}
-            className={selectClassName}
-          >
-            {optionsLoading ? (
-              <option value="">{t('common.loading')}</option>
-            ) : (
-              options?.currencies.map((currency) => (
-                <option key={currency.code} value={currency.code}>
-                  {currency.name} ({currency.code})
-                </option>
-              ))
-            )}
-          </select>
-        </div>
-        <div>
-          <label htmlFor="reg-password" className="mb-1 block text-xs text-muted">{t('auth.password')}</label>
-          <input
-            id="reg-password"
-            type="password"
-            required
-            minLength={8}
-            value={form.password}
-            onChange={(e) => update('password', e.target.value)}
-            className="w-full rounded-md border border-white/10 bg-card px-3 py-2 text-sm text-white focus:border-accent focus:outline-none"
-          />
-        </div>
-        <div>
-          <label htmlFor="reg-password-confirm" className="mb-1 block text-xs text-muted">
-            {t('auth.confirmPassword')}
-          </label>
-          <input
-            id="reg-password-confirm"
-            type="password"
-            required
-            value={form.password_confirmation}
-            onChange={(e) => update('password_confirmation', e.target.value)}
-            className="w-full rounded-md border border-white/10 bg-card px-3 py-2 text-sm text-white focus:border-accent focus:outline-none"
-          />
-        </div>
+        <FormSelect
+          id="reg-currency"
+          label={t('auth.currency')}
+          value={form.currency}
+          onChange={(e) => update('currency', e.target.value)}
+          disabled={optionsLoading}
+          error={fieldErrors.currency}
+        >
+          {optionsLoading ? (
+            <option value="">{t('common.loading')}</option>
+          ) : (
+            options?.currencies.map((currency) => (
+              <option key={currency.code} value={currency.code}>
+                {currency.name} ({currency.code})
+              </option>
+            ))
+          )}
+        </FormSelect>
+        <PasswordInput
+          id="reg-password"
+          label={t('auth.password')}
+          autoComplete="new-password"
+          value={form.password}
+          onChange={(e) => update('password', e.target.value)}
+          error={fieldErrors.password}
+        />
+        <PasswordInput
+          id="reg-password-confirm"
+          label={t('auth.confirmPassword')}
+          autoComplete="new-password"
+          value={form.password_confirmation}
+          onChange={(e) => update('password_confirmation', e.target.value)}
+          error={fieldErrors.password_confirmation}
+        />
         {challengeRequired && (
           <RiskChallengePanel
             onSuccess={handleTurnstileSuccess}

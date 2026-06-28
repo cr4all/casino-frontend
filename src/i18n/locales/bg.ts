@@ -22,20 +22,31 @@ export const bg: LocaleTree = {
     "next": "Следващ",
     "showMore": "Покажи повече",
     "ok": "OK",
+    "yes": "Да",
+    "no": "Не",
     "close": "Затваряне",
     "copy": "Копиране",
     "copied": "Копирано",
     "games": "гри",
     "gamesCount": "{{count}} игри",
     "noLimit": "Без ограничение",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "Мин: {{min}} · Макс: {{max}}",
     "currencyIdr": "· Валута: IDR",
     "pageOf": "Страница {{page}} от {{last}}",
-    "actions": "Действия",
     "openMenu": "Отворете менюто",
+    "actions": "Действия",
+    "fieldRequired": "Моля, въведете",
+    "fieldRequiredGeneric": "Това поле е задължително.",
+    "fieldEmailInvalid": "Моля, въведете валиден имейл адрес.",
+    "fieldMinLength": "(Трябва да бъде поне 6 символа.)",
+    "fieldPasswordMismatch": "Паролите не съответстват.",
+    "fieldSelectRequired": "Изберете",
+    "fieldCodeInvalid": "Моля, въведете 6 - цифрения код за потвърждение.",
     "language": "език",
-    "yes": "Да",
-    "no": "Не"
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "ВСИЧКИ ИГРИ",
@@ -59,7 +70,9 @@ export const bg: LocaleTree = {
     "balance": "Баланс",
     "playResponsibly": "18+ · Играйте отговорно",
     "liveChat": "ЧАТ НА ЖИВО",
-    "liveChatLabel": "поддръжка"
+    "liveChatLabel": "Support",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Чат на живо",
@@ -73,13 +86,46 @@ export const bg: LocaleTree = {
     "sendFailed": "Съобщението не може да бъде изпратено. Моля, опитайте отново.",
     "loadFailed": "Съобщенията в чата не можаха да бъдат заредени."
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Support",
+    "you": "You",
+    "categories": {
+      "account": "Account",
+      "payment": "Payment",
+      "bonus": "Bonus",
+      "game": "Game",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "Слотове",
     "liveCasino": "Казино на живо",
     "jackpots": "Джакпоти",
-    "account": "акаунт",
-    "support": "поддръжка",
+    "account": "Account",
+    "support": "Support",
     "messages": "Съобщения",
+    "tickets": "Tickets",
     "legal": "Правен ",
     "about": "За нас",
     "terms": "Общи условия",
@@ -120,7 +166,7 @@ export const bg: LocaleTree = {
   },
   "liveBetFeed": {
     "title": "Залози на живо",
-    "game": "Игра",
+    "game": "Game",
     "user": "Потребител",
     "time": "Време",
     "betAmount": "Сума на залога",
@@ -164,20 +210,22 @@ export const bg: LocaleTree = {
     "crypto": "Криптовалута",
     "crypto_payment": "Крипто плащане",
     "bank": "Банков превод",
-    "bank_transfer": "Банков превод"
+    "bank_transfer": "Банков превод",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Криптовалута",
     "bank": "Банков превод",
     "redirect": "Онлайн плащане",
-    "local": "Местно плащане"
+    "local": "Местно плащане",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "Депозит",
     "withdraw": "Оттегляне",
     "bet": "TUN",
     "win": "Победа",
-    "bonus": "BONUS",
+    "bonus": "Bonus",
     "rollback": "Връщане назад"
   },
   "auth": {
@@ -243,11 +291,18 @@ export const bg: LocaleTree = {
     "country": "държава",
     "phone": "Телефон",
     "kycStatus": "Статус KYC",
+    "kyc": "KYC",
+    "kycComingSoon": "Проверката на KYC ще бъде налична скоро. Моля, проверете отново по - късно.",
+    "verificationTitleKyc": "Проверка на самоличността (KYC)",
+    "kycLoading": "Зареждане на проверка...",
+    "kycFailed": "Неуспешно стартиране на проверката на KYC. Моля, опитайте отново по - късно.",
+    "kycHint": "Изпълнете стъпките във формуляра по - горе. Статусът ви ще се актуализира след прегледа на SumSub.",
     "verified": "Проверен",
     "notVerified": "Не е проверено",
     "verifyNow": "Потвърждаване",
     "verificationTitleEmail": "Потвърдете имейл",
     "verificationTitlePhone": "Потвърдете телефона",
+    "verificationSendConfirm": "Изпращане на код за потвърждение до {{destination}}?",
     "verificationCodeHintEmail": "Въведете 6-цифрения код, изпратен на {{destination}}.",
     "verificationCodeHintPhone": "Въведете 6-цифрения код, изпратен на {{destination}}.",
     "verificationSubmit": "Потвърдете верификацията",
@@ -264,18 +319,11 @@ export const bg: LocaleTree = {
     "passwordUpdateFailed": "Актуализирането на паролата не бе успешно.",
     "editProfile": "Редактиране на профил",
     "quickActions": "Бързи действия",
-    "account": "акаунт",
+    "account": "Account",
     "saveChanges": "Запазване на промените",
     "updateSuccess": "Профилът е актуализиран успешно.",
     "updateFailed": "Актуализирането на профила не бе успешно.",
-    "language": "език",
-    "kyc": "KYC",
-    "kycComingSoon": "Проверката на KYC ще бъде налична скоро. Моля, проверете отново по - късно.",
-    "verificationTitleKyc": "Проверка на самоличността (KYC)",
-    "kycLoading": "Зареждане на проверка...",
-    "kycFailed": "Неуспешно стартиране на проверката на KYC. Моля, опитайте отново по - късно.",
-    "kycHint": "Изпълнете стъпките във формуляра по - горе. Статусът ви ще се актуализира след прегледа на SumSub.",
-    "verificationSendConfirm": "Изпращане на код за потвърждение до {{destination}}?"
+    "language": "език"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +338,18 @@ export const bg: LocaleTree = {
     "selectPaymentOption": "Изберете метод на плащане",
     "noOptionsForCountry": "Няма налични методи на плащане за тази държава.",
     "backToMethods": "Назад",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "Назад",
+    "stepMethod": "Начин на плащане",
+    "stepOption": "Select Option",
+    "stepAmount": "Размер",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "Начин на плащане",
     "localCountryLabel": "Държава на плащане",
     "selectLocalCountry": "Изберете държава за плащане, за да продължите.",
@@ -351,6 +411,55 @@ export const bg: LocaleTree = {
     "limitAlertGeneric": "Можете да изтеглите до {{amount}} въз основа на текущото си ниво на потвърждение. Завършете допълнителна проверка в профила си, за да увеличите лимита си.",
     "goToProfile": "Към профила"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Bonus",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Bonus",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Bonus"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "справка",
+    "amount": "Размер",
+    "currency": "Валута"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "Бонуси",
     "wageringProgress": "Напредък на залога",
@@ -358,7 +467,7 @@ export const bg: LocaleTree = {
     "noActive": "Няма активни бонуси.",
     "availableBonuses": "Налични бонуси",
     "noAvailable": "В момента няма налични бонуси.",
-    "defaultName": "BONUS",
+    "defaultName": "Bonus",
     "percentMatch": "{{value}}% съвпадение",
     "fixedMatch": "{{value}} фиксирано",
     "wageringMultiplier": "{{value}}x залог",
@@ -400,7 +509,7 @@ export const bg: LocaleTree = {
     "allTransactions": "Всички транзакции →",
     "noBets": "Все още няма залози. Играйте игра, за да видите историята си тук.",
     "browseGames": "Преглед на игри",
-    "game": "Игра",
+    "game": "Game",
     "bet": "TUN",
     "win": "Победа",
     "net": "Нетно",
@@ -409,6 +518,8 @@ export const bg: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
@@ -440,14 +551,14 @@ export const bg: LocaleTree = {
     "tryAgain": "Моля, опитайте отново или се свържете с поддръжката.",
     "goBack": "Иди назад",
     "backToLobby": "← Назад към лобито",
-    "defaultName": "Игра",
+    "defaultName": "Game",
     "launchError": "Стартирането на играта не бе успешно.",
     "closeWindow": "Затваряне",
     "loginRequired": "Моля, влезте, за да играете."
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "BONUS"
+    "bonusBadge": "Bonus"
   },
   "modal": {
     "comingSoon": "Очаквайте скоро"

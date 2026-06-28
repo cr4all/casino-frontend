@@ -22,20 +22,31 @@ export const bn: LocaleTree = {
     "next": "পরবর্তী",
     "showMore": "আরও দেখান",
     "ok": "OK",
+    "yes": "হ্যাঁ",
+    "no": "নং",
     "close": "বন্ধ",
     "copy": "কপি করুন",
     "copied": "কপি করা হয়েছে",
     "games": "গেমস",
     "gamesCount": "{{count}} টি খেলা",
     "noLimit": "কোনো সীমা নেই",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "ন্যূনতম: {{min}} · সর্বোচ্চ: {{max}}",
     "currencyIdr": "· মুদ্রা: IDR",
     "pageOf": "{{last}} এর পৃষ্ঠা {{page}}",
-    "actions": "পদক্ষেপগুলি",
     "openMenu": "মেনু খুলুন",
+    "actions": "পদক্ষেপগুলি",
+    "fieldRequired": "অনুগ্রহ করে লিখুন",
+    "fieldRequiredGeneric": "ঘরটি অবশ্যই পূরণ করতে হবে.",
+    "fieldEmailInvalid": "একটি কার্যকর ইমেল অ্যাড্রেস লিখুন।",
+    "fieldMinLength": "কমপক্ষে &lt;&lt;<COUNT>&gt;&gt; অক্ষর হতে হবে ।",
+    "fieldPasswordMismatch": "পাসওয়ার্ড মিলছে না।",
+    "fieldSelectRequired": "অনুগ্রহ করে নির্বাচন করুন",
+    "fieldCodeInvalid": "অনুগ্রহ করে 6-সংখ্যার যাচাইকরণ কোডটি লিখুন ।",
     "language": "ভাষা",
-    "yes": "হ্যাঁ",
-    "no": "নং"
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "সকল খেলা",
@@ -59,7 +70,9 @@ export const bn: LocaleTree = {
     "balance": "ব্যালেন্স",
     "playResponsibly": "18+ · দায়িত্বের সাথে খেলুন",
     "liveChat": "লাইভ চ্যাট",
-    "liveChatLabel": "সমর্থন"
+    "liveChatLabel": "Support",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "লাইভ চ্যাট",
@@ -73,13 +86,46 @@ export const bn: LocaleTree = {
     "sendFailed": "আপনার মেসেজ পাঠানো যায়নি । অনুগ্রহ করে আবার চেষ্টা করুন ।",
     "loadFailed": "চ্যাট বার্তা লোড করা যায়নি ।"
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Support",
+    "you": "You",
+    "categories": {
+      "account": "Account",
+      "payment": "Payment",
+      "bonus": "Bonus",
+      "game": "Game",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "স্লটগুলো",
     "liveCasino": "লাইভ ক্যাসিনো",
     "jackpots": "জ্যাকপটস",
-    "account": "অ্যাকাউন্ট",
-    "support": "সমর্থন",
+    "account": "Account",
+    "support": "Support",
     "messages": "বার্তাগুলি",
+    "tickets": "Tickets",
     "legal": "আইনী",
     "about": "আমাদের সম্পর্কে",
     "terms": "শর্তাবলী",
@@ -120,7 +166,7 @@ export const bn: LocaleTree = {
   },
   "liveBetFeed": {
     "title": "লাইভ বেট",
-    "game": "গেম",
+    "game": "Game",
     "user": "ইউজার",
     "time": "সময়",
     "betAmount": "বেটের পরিমাণ",
@@ -164,20 +210,22 @@ export const bn: LocaleTree = {
     "crypto": "ক্রিপ্টোকারেন্সি",
     "crypto_payment": "ক্রিপ্টো পেমেন্ট",
     "bank": "ব্যাংক ট্রান্সফার",
-    "bank_transfer": "ব্যাংক ট্রান্সফার"
+    "bank_transfer": "ব্যাংক ট্রান্সফার",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "ক্রিপ্টোকারেন্সি",
     "bank": "ব্যাংক ট্রান্সফার",
     "redirect": "নিরাপদ অনলাইন পেমেন্ট",
-    "local": "স্থানীয় পেমেন্ট"
+    "local": "স্থানীয় পেমেন্ট",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "ডেপোজিট",
     "withdraw": "প্রত্যাহার করুন",
     "bet": "বাজি",
     "win": "জয়",
-    "bonus": "বোনাস",
+    "bonus": "Bonus",
     "rollback": "রোলব্যাক"
   },
   "auth": {
@@ -243,11 +291,18 @@ export const bn: LocaleTree = {
     "country": "দেশ",
     "phone": "ফোন",
     "kycStatus": "KYC স্ট্যাটাস",
+    "kyc": "কেওয়াইসি (KYC)",
+    "kycComingSoon": "KYC যাচাইকরণ শীঘ্রই পাওয়া যাবে । অনুগ্রহ করে পরে আবার দেখুন ।",
+    "verificationTitleKyc": "পরিচয় যাচাই করুন (KYC)",
+    "kycLoading": "যাচাইকরণ লোড হচ্ছে...",
+    "kycFailed": "KYC যাচাইকরণ শুরু করতে অক্ষম । অনুগ্রহ করে পরে আবার চেষ্টা করুন ।",
+    "kycHint": "উপরের ফর্মটিতে ধাপগুলি সম্পূর্ণ করুন । SumSub পর্যালোচনার পরে আপনার স্ট্যাটাস আপডেট করা হবে ।",
     "verified": "ভেরিফাইড",
     "notVerified": "ভেরিফাইড না",
     "verifyNow": "যাচাই",
     "verificationTitleEmail": "ইমেইল যাচাই করুন",
     "verificationTitlePhone": "ফোন যাচাই করুন",
+    "verificationSendConfirm": "{{destination}} -এ যাচাইকরণ কোড পাঠান?",
     "verificationCodeHintEmail": "{{destination}} -এ পাঠানো 6-সংখ্যার কোডটি লিখুন ।",
     "verificationCodeHintPhone": "{{destination}} -এ পাঠানো 6-সংখ্যার কোডটি লিখুন ।",
     "verificationSubmit": "যাচাইকরণ নিশ্চিত করুন",
@@ -264,18 +319,11 @@ export const bn: LocaleTree = {
     "passwordUpdateFailed": "পাসওয়ার্ড আপডেট করতে ব্যর্থ হয়েছে",
     "editProfile": "প্রোফাইল এডিট করুন",
     "quickActions": "দ্রুত পদক্ষেপ",
-    "account": "অ্যাকাউন্ট",
+    "account": "Account",
     "saveChanges": "পরিবর্তনগুলো সংরক্ষণ করুন",
     "updateSuccess": "প্রোফাইল সফলভাবে আপডেট করা হয়েছে!",
     "updateFailed": "ব্যবহারকারী প্রোফাইল আপডেট করতে ব্যর্থ হয়েছে",
-    "language": "ভাষা",
-    "kyc": "কেওয়াইসি (KYC)",
-    "kycComingSoon": "KYC যাচাইকরণ শীঘ্রই পাওয়া যাবে । অনুগ্রহ করে পরে আবার দেখুন ।",
-    "verificationTitleKyc": "পরিচয় যাচাই করুন (KYC)",
-    "kycLoading": "যাচাইকরণ লোড হচ্ছে...",
-    "kycFailed": "KYC যাচাইকরণ শুরু করতে অক্ষম । অনুগ্রহ করে পরে আবার চেষ্টা করুন ।",
-    "kycHint": "উপরের ফর্মটিতে ধাপগুলি সম্পূর্ণ করুন । SumSub পর্যালোচনার পরে আপনার স্ট্যাটাস আপডেট করা হবে ।",
-    "verificationSendConfirm": "{{destination}} -এ যাচাইকরণ কোড পাঠান?"
+    "language": "ভাষা"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +338,18 @@ export const bn: LocaleTree = {
     "selectPaymentOption": "একটি পেমেন্ট পদ্ধতি নির্বাচন করুন",
     "noOptionsForCountry": "এই দেশের জন্য কোনও পেমেন্ট পদ্ধতি উপলব্ধ নেই ।",
     "backToMethods": "পিছনে",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "পিছনে",
+    "stepMethod": "পেমেন্ট পদ্ধতি",
+    "stepOption": "Select Option",
+    "stepAmount": "পরিমাণ",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "পেমেন্ট পদ্ধতি",
     "localCountryLabel": "পেমেন্টের দেশ",
     "selectLocalCountry": "চালিয়ে যেতে একটি পেমেন্ট দেশ বেছে নিন ।",
@@ -351,6 +411,55 @@ export const bn: LocaleTree = {
     "limitAlertGeneric": "আপনি আপনার বর্তমান যাচাইকরণ স্তরের উপর ভিত্তি করে {{amount}} পর্যন্ত উত্তোলন করতে পারেন । আপনার সীমা বাড়াতে আপনার প্রোফাইলে অতিরিক্ত যাচাইকরণ সম্পন্ন করুন ।",
     "goToProfile": "প্রোফাইলে যান"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Bonus",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Bonus",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Bonus"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "রেফারেন্স",
+    "amount": "পরিমাণ",
+    "currency": "মুদ্রা"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "বোনাস",
     "wageringProgress": "বাজির অগ্রগতি",
@@ -358,7 +467,7 @@ export const bn: LocaleTree = {
     "noActive": "কোনও সক্রিয় বোনাস নেই ।",
     "availableBonuses": "উপলভ্য বোনাস",
     "noAvailable": "এই মুহূর্তে কোনও বোনাস পাওয়া যাচ্ছে না ।",
-    "defaultName": "বোনাস",
+    "defaultName": "Bonus",
     "percentMatch": "{{value}}% ম্যাচ",
     "fixedMatch": "{{value}} নির্ধারিত",
     "wageringMultiplier": "{{value}}x বাজি ধরা",
@@ -400,7 +509,7 @@ export const bn: LocaleTree = {
     "allTransactions": "সমস্ত লেনদেন →",
     "noBets": "এখনও কোন বাজি নেই । এখানে আপনার ইতিহাস দেখতে একটি খেলা খেলুন ।",
     "browseGames": "গেম ব্রাউজ করুন",
-    "game": "গেম",
+    "game": "Game",
     "bet": "বাজি",
     "win": "জয়",
     "net": "নিট",
@@ -409,6 +518,8 @@ export const bn: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
@@ -440,14 +551,14 @@ export const bn: LocaleTree = {
     "tryAgain": "অনুগ্রহ করে আবার চেষ্টা করে দেখুন বা সহায়তা দলের সাথে যোগাযোগ করুন।",
     "goBack": "পূর্বাবস্থায় যান",
     "backToLobby": "লবিতে ফিরে যান",
-    "defaultName": "গেম",
+    "defaultName": "Game",
     "launchError": "খেলা আরম্ভ করতে ব্যর্থ হয়েছে ।",
     "closeWindow": "বন্ধ",
     "loginRequired": "খেলতে লগ ইন করুন ।"
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "বোনাস"
+    "bonusBadge": "Bonus"
   },
   "modal": {
     "comingSoon": "শীঘ্রই আসছে"

@@ -3,6 +3,13 @@ import { Button } from '@/components/common/Button';
 import { PasswordInput } from '@/components/auth/PasswordInput';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getApiErrorMessage } from '@/utils/apiError';
+import {
+  collectFieldErrors,
+  hasFieldErrors,
+  omitFieldError,
+  requiredValue,
+  type FieldErrors,
+} from '@/utils/formValidation';
 
 export type ChangePasswordPayload = {
   current_password: string;
@@ -26,15 +33,50 @@ export function ChangePasswordForm({
   const [saving, setSaving] = useState(false);
   const [passwordMessageKey, setPasswordMessageKey] = useState<'success' | 'error' | ''>('');
   const [passwordError, setPasswordError] = useState('');
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
+  const validateForm = (): boolean => {
+    const required = (field: string, value: string) =>
+      requiredValue(value) ? undefined : t('common.fieldRequired', { field });
+
+    let newPasswordError: string | undefined;
+    if (!requiredValue(newPassword)) {
+      newPasswordError = t('common.fieldRequired', { field: t(`${ns}.newPassword`) });
+    } else if (newPassword.length < 8) {
+      newPasswordError = t('common.fieldMinLength', { count: 8 });
+    }
+
+    let confirmError: string | undefined;
+    if (!requiredValue(confirmPassword)) {
+      confirmError = t('common.fieldRequired', { field: t(`${ns}.confirmNewPassword`) });
+    } else if (newPassword !== confirmPassword) {
+      confirmError = t('common.fieldPasswordMismatch');
+    }
+
+    const errors = collectFieldErrors([
+      ['current_password', required(t('profile.currentPassword'), currentPassword)],
+      ['password', newPasswordError],
+      ['password_confirmation', confirmError],
+    ]);
+
+    setFieldErrors(errors);
+    return !hasFieldErrors(errors);
+  };
+
   const handlePasswordSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setSaving(true);
     setPasswordMessageKey('');
     setPasswordError('');
+    setFieldErrors({});
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setSaving(true);
 
     try {
       await onChangePassword({
@@ -56,32 +98,39 @@ export function ChangePasswordForm({
   };
 
   return (
-    <form onSubmit={handlePasswordSubmit} className="space-y-4">
+    <form onSubmit={handlePasswordSubmit} noValidate className="space-y-4">
       <PasswordInput
         id="current-password"
         label={t('profile.currentPassword')}
-        required
         autoComplete="current-password"
         value={currentPassword}
-        onChange={(e) => setCurrentPassword(e.target.value)}
+        onChange={(e) => {
+          setCurrentPassword(e.target.value);
+          setFieldErrors((prev) => omitFieldError(prev, 'current_password'));
+        }}
+        error={fieldErrors.current_password}
       />
       <PasswordInput
         id="new-password"
         label={t(`${ns}.newPassword`)}
-        required
-        minLength={8}
         autoComplete="new-password"
         value={newPassword}
-        onChange={(e) => setNewPassword(e.target.value)}
+        onChange={(e) => {
+          setNewPassword(e.target.value);
+          setFieldErrors((prev) => omitFieldError(prev, 'password'));
+        }}
+        error={fieldErrors.password}
       />
       <PasswordInput
         id="confirm-new-password"
         label={t(`${ns}.confirmNewPassword`)}
-        required
-        minLength={8}
         autoComplete="new-password"
         value={confirmPassword}
-        onChange={(e) => setConfirmPassword(e.target.value)}
+        onChange={(e) => {
+          setConfirmPassword(e.target.value);
+          setFieldErrors((prev) => omitFieldError(prev, 'password_confirmation'));
+        }}
+        error={fieldErrors.password_confirmation}
       />
       {passwordMessageKey === 'success' && (
         <p className="text-sm text-accent-gold">{t(`${ns}.passwordUpdateSuccess`)}</p>

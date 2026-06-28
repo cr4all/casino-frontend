@@ -22,20 +22,29 @@ export const th: LocaleTree = {
     "next": "ถัดไป",
     "showMore": "แสดงเพิ่มเติม",
     "ok": "OK",
+    "yes": "ใช่",
+    "no": "เลขที่",
     "close": "ปิด",
     "copy": "คัดลอก",
     "copied": "คัดลอกแล้ว",
     "games": "เกม",
     "gamesCount": "{{count}} เกม",
     "noLimit": "ไม่จำกัด",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "ต่ำสุด: {{min}} · สูงสุด: {{max}}",
     "currencyIdr": "· สกุลเงิน: IDR",
     "pageOf": "หน้า {{page}} จาก {{last}}",
-    "actions": "การดำเนินการ",
     "openMenu": "เปิดเมนู",
-    "language": "ภาษา",
-    "yes": "ใช่",
-    "no": "เลขที่"
+    "actions": "การดำเนินการ",
+    "fieldRequired": "กรุณากรอก {{field}}",
+    "fieldRequiredGeneric": "ช่องนี้จำเป็นต้องกรอก",
+    "fieldEmailInvalid": "กรุณากรอกที่อยู่อีเมลที่ถูกต้อง",
+    "fieldMinLength": "ต้องมีอย่างน้อย {{count}} ตัวอักษร",
+    "fieldPasswordMismatch": "รหัสผ่านไม่ตรงกัน",
+    "fieldSelectRequired": "กรุณาเลือก {{field}}",
+    "fieldCodeInvalid": "กรุณากรอกรหัสยืนยัน 6 หลัก",
+    "language": "ภาษา"
   },
   "nav": {
     "allGames": "เกมทั้งหมด",
@@ -59,7 +68,9 @@ export const th: LocaleTree = {
     "balance": "ยอดคงเหลือ",
     "playResponsibly": "18+ · เล่นอย่างมีความรับผิดชอบ",
     "liveChat": "แชทสด",
-    "liveChatLabel": "สนับสนุน"
+    "liveChatLabel": "สนับสนุน",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "แชทสด",
@@ -73,6 +84,38 @@ export const th: LocaleTree = {
     "sendFailed": "ไม่สามารถส่งข้อความของคุณได้ โปรดลองอีกครั้ง",
     "loadFailed": "ไม่สามารถโหลดข้อความแชทได้"
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "สนับสนุน",
+    "you": "You",
+    "categories": {
+      "account": "บัญชี",
+      "payment": "Payment",
+      "bonus": "โบนัส",
+      "game": "เกม",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "สล็อต",
     "liveCasino": "คาสิโนสด",
@@ -80,6 +123,7 @@ export const th: LocaleTree = {
     "account": "บัญชี",
     "support": "สนับสนุน",
     "messages": "ข้อความ",
+    "tickets": "Tickets",
     "legal": "กฎหมาย",
     "about": "เกี่ยวกับเรา",
     "terms": "ข้อกำหนดและเงื่อนไข",
@@ -170,7 +214,8 @@ export const th: LocaleTree = {
     "crypto": "สกุลเงินดิจิทัล",
     "bank": "โอนผ่านธนาคาร",
     "redirect": "ชำระเงินออนไลน์",
-    "local": "ชำระเงินท้องถิ่น"
+    "local": "ชำระเงินท้องถิ่น",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "ฝากเงิน",
@@ -243,11 +288,18 @@ export const th: LocaleTree = {
     "country": "ประเทศ",
     "phone": "โทรศัพท์",
     "kycStatus": "สถานะ KYC",
+    "kyc": "KYC",
+    "kycComingSoon": "การยืนยัน KYC จะพร้อมใช้งานเร็วๆ นี้ โปรดกลับมาตรวจสอบอีกครั้งในภายหลัง",
+    "verificationTitleKyc": "ยืนยันตัวตน (KYC)",
+    "kycLoading": "กำลังโหลดการยืนยัน...",
+    "kycFailed": "ไม่สามารถเริ่มการยืนยัน KYC ได้ โปรดลองอีกครั้งในภายหลัง",
+    "kycHint": "ทำตามขั้นตอนในแบบฟอร์มด้านบนให้เสร็จสิ้น สถานะของคุณจะอัปเดตหลังจากการตรวจสอบ SumSub",
     "verified": "ยืนยันแล้ว",
     "notVerified": "ยังไม่ยืนยัน",
     "verifyNow": "ยืนยัน",
     "verificationTitleEmail": "ยืนยันอีเมล",
     "verificationTitlePhone": "ยืนยันโทรศัพท์",
+    "verificationSendConfirm": "ส่งรหัสยืนยันไปที่ {{destination}} หรือไม่",
     "verificationCodeHintEmail": "กรอกรหัส 6 หลักที่ส่งไปยัง {{destination}}",
     "verificationCodeHintPhone": "กรอกรหัส 6 หลักที่ส่งไปยัง {{destination}}",
     "verificationSubmit": "ยืนยันการตรวจสอบ",
@@ -268,14 +320,7 @@ export const th: LocaleTree = {
     "saveChanges": "บันทึกการเปลี่ยนแปลง",
     "updateSuccess": "อัปเดตโปรไฟล์สำเร็จ",
     "updateFailed": "อัปเดตโปรไฟล์ไม่สำเร็จ",
-    "language": "ภาษา",
-    "kyc": "KYC",
-    "kycComingSoon": "การยืนยัน KYC จะพร้อมใช้งานเร็วๆ นี้ โปรดกลับมาตรวจสอบอีกครั้งในภายหลัง",
-    "verificationTitleKyc": "ยืนยันตัวตน (KYC)",
-    "kycLoading": "กำลังโหลดการยืนยัน...",
-    "kycFailed": "ไม่สามารถเริ่มการยืนยัน KYC ได้ โปรดลองอีกครั้งในภายหลัง",
-    "kycHint": "ทำตามขั้นตอนในแบบฟอร์มด้านบนให้เสร็จสิ้น สถานะของคุณจะอัปเดตหลังจากการตรวจสอบ SumSub",
-    "verificationSendConfirm": "ส่งรหัสยืนยันไปที่ {{destination}} หรือไม่"
+    "language": "ภาษา"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const th: LocaleTree = {
     "selectPaymentOption": "เลือกวิธีชำระเงิน",
     "noOptionsForCountry": "ไม่มีวิธีชำระเงินสำหรับประเทศนี้",
     "backToMethods": "← ย้อนกลับ",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← ย้อนกลับ",
+    "stepMethod": "วิธีชำระเงิน",
+    "stepOption": "Select Option",
+    "stepAmount": "จำนวนเงิน",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "วิธีชำระเงิน",
     "localCountryLabel": "ประเทศชำระเงิน",
     "selectLocalCountry": "เลือกประเทศชำระเงินเพื่อดำเนินการต่อ",
@@ -351,6 +408,55 @@ export const th: LocaleTree = {
     "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
     "goToProfile": "Go to Profile"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "โบนัส",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "โบนัส",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "โบนัส"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "อ้างอิง",
+    "amount": "จำนวนเงิน",
+    "currency": "สกุลเงิน"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "โบนัส",
     "wageringProgress": "ความคืบหน้าเทิร์นโอเวอร์",
@@ -409,6 +515,8 @@ export const th: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {

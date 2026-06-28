@@ -35,7 +35,16 @@ export const fi: LocaleTree = {
     "language": "Kieli",
     "yes": "Yes",
     "no": "No",
-    "actions": "Actions"
+    "actions": "Actions",
+    "fieldRequired": "Syötä {{field}}.",
+    "fieldRequiredGeneric": "Tämä kenttä on pakollinen.",
+    "fieldEmailInvalid": "Syötä kelvollinen sähköpostiosoite.",
+    "fieldMinLength": "Vähintään {{count}} merkkiä.",
+    "fieldPasswordMismatch": "Salasanat eivät täsmää.",
+    "fieldSelectRequired": "Valitse {{field}}.",
+    "fieldCodeInvalid": "Syötä 6-numeroinen vahvistuskoodi.",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—"
   },
   "nav": {
     "allGames": "KAIKKI PELIT",
@@ -59,7 +68,9 @@ export const fi: LocaleTree = {
     "balance": "Saldo",
     "playResponsibly": "18+ · Pelaa vastuullisesti",
     "liveChat": "LIVE-CHAT",
-    "liveChatLabel": "Tuki"
+    "liveChatLabel": "Tuki",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live-chat",
@@ -164,7 +175,8 @@ export const fi: LocaleTree = {
     "crypto": "Kryptovaluutta",
     "bank": "Pankkisiirto",
     "redirect": "Verkkomaksu",
-    "local": "Paikallinen maksu"
+    "local": "Paikallinen maksu",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "Talletus",
@@ -307,7 +319,19 @@ export const fi: LocaleTree = {
     "estimateDisclaimer": "Lopullinen hyvitetty summa määräytyy maksun vahvistuksessa ja voi poiketa tästä arviosta.",
     "credited": "Hyvitetty",
     "loadingQuote": "Lasketaan arviota...",
-    "quoteFailed": "Vaihtokurssiarvion haku epäonnistui."
+    "quoteFailed": "Vaihtokurssiarvion haku epäonnistui.",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← Back",
+    "stepMethod": "Payment Method",
+    "stepOption": "Select Option",
+    "stepAmount": "Amount",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available"
   },
   "withdraw": {
     "title": "Nosto",
@@ -513,5 +537,91 @@ export const fi: LocaleTree = {
     "passwordUpdateFailed": "Salasanan päivittäminen epäonnistui.",
     "verificationCodeSent": "Vahvistuskoodi lähetetty.",
     "verificationCodeRequestFailed": "Vahvistuskoodin lähettäminen epäonnistui."
+  },
+  "risk": {
+    "challengeTitle": "Verify you are human",
+    "challengeHint": "Complete the security check below to continue.",
+    "challengeFailed": "Verification failed. Please try again."
+  },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Bonus",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Bonus",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Bonus"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "Reference",
+    "amount": "Amount",
+    "currency": "Currency"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Support",
+    "you": "You",
+    "categories": {
+      "account": "Account",
+      "payment": "Payment",
+      "bonus": "Bonus",
+      "game": "Game",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
   }
 };

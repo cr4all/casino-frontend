@@ -10,6 +10,7 @@ import {
   isLocalPhoneValid,
   parsePhoneNumber,
 } from '@/data/phoneDialCodes';
+import { FieldError, fieldControlClassName } from '@/components/common/FieldError';
 import { filterPhoneCountries, findPhoneCountry } from '@/data/phoneCountries';
 
 interface PhoneNumberInputProps {
@@ -21,6 +22,7 @@ interface PhoneNumberInputProps {
   onCountryCodeChange: (code: string) => void;
   disabled?: boolean;
   hideLabel?: boolean;
+  error?: string;
 }
 
 const fieldClassName =
@@ -35,6 +37,7 @@ export function PhoneNumberInput({
   onCountryCodeChange,
   disabled = false,
   hideLabel = false,
+  error,
 }: PhoneNumberInputProps) {
   const { t } = useTranslation();
   const listId = useId();
@@ -103,6 +106,8 @@ export function PhoneNumberInput({
     rule.minLength === rule.maxLength
       ? t('auth.phoneDigitsExact', { count: rule.maxLength })
       : t('auth.phoneDigitsRange', { min: rule.minLength, max: rule.maxLength });
+  const errorId = error ? `${id}-error` : undefined;
+  const showInvalid = Boolean(error) || (digitCount > 0 && !isValid);
 
   return (
     <div>
@@ -188,20 +193,22 @@ export function PhoneNumberInput({
           type="tel"
           inputMode="numeric"
           autoComplete="tel-national"
-          required
           disabled={disabled}
           value={localNumber}
           onChange={(e) => handleLocalChange(e.target.value)}
           placeholder={placeholder}
           minLength={rule.minLength}
           maxLength={rule.maxLength + rule.groups.length - 1}
-          aria-invalid={digitCount > 0 && !isValid}
-          className={`min-w-0 flex-1 px-3 py-2 ${fieldClassName} disabled:opacity-50 ${
-            digitCount > 0 && !isValid ? 'border-red-400/60' : ''
-          }`}
+          aria-invalid={showInvalid ? true : undefined}
+          aria-describedby={errorId}
+          className={`min-w-0 flex-1 px-3 py-2 ${fieldControlClassName(showInvalid, 'rounded-md')} disabled:opacity-50`}
         />
       </div>
-      <p className="mt-1 text-[11px] text-muted">{lengthHint}</p>
+      {error ? (
+        <FieldError id={errorId} message={error} />
+      ) : (
+        <p className="mt-1 text-[11px] text-muted">{lengthHint}</p>
+      )}
     </div>
   );
 }

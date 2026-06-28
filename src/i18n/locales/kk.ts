@@ -22,20 +22,29 @@ export const kk: LocaleTree = {
     "next": "Келесі",
     "showMore": "Көбірек көрсету",
     "ok": "OK",
+    "yes": "Иә",
+    "no": "Жоқ",
     "close": "Жабу",
     "copy": "Көшіру",
     "copied": "Көшірілді",
     "games": "ойындар",
     "gamesCount": "{{count}} ойындар",
     "noLimit": "Шектеусіз",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "Мин: {{min}} · Макс: {{max}}",
     "currencyIdr": "· Валюта: IDR",
     "pageOf": "{{last}} бетінен {{page}}",
-    "actions": "Әрекеттер",
     "openMenu": "Мәзірді ашу",
-    "language": "Тіл",
-    "yes": "Иә",
-    "no": "Жоқ"
+    "actions": "Әрекеттер",
+    "fieldRequired": "Кіріңіз &lt;&lt;<FIELD>&gt;&gt;.",
+    "fieldRequiredGeneric": "Бұл жолды толтыру қажет",
+    "fieldEmailInvalid": "Жарамды электрондық поштаңызды енгізіңіз",
+    "fieldMinLength": "(Кем дегенде 6 таңбадан тұру керек)",
+    "fieldPasswordMismatch": "Пароль орнатылған",
+    "fieldSelectRequired": "--Таңдаңыз--",
+    "fieldCodeInvalid": "6 таңбалы тексеру кодын енгізіңіз.",
+    "language": "Тіл"
   },
   "nav": {
     "allGames": "БАРЛЫҚ ОЙЫНДАР",
@@ -59,7 +68,9 @@ export const kk: LocaleTree = {
     "balance": "Баланс",
     "playResponsibly": "18+ · Жауапты ойнаңыз",
     "liveChat": "LIVE ЧАТ",
-    "liveChatLabel": "Қолдау"
+    "liveChatLabel": "Қолдау",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live чат",
@@ -73,6 +84,38 @@ export const kk: LocaleTree = {
     "sendFailed": "Хабарламаңыз жіберілмеді. Әрекетті қайталаңыз.",
     "loadFailed": "Чат хабарларын жүктеу мүмкін емес."
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Қолдау",
+    "you": "You",
+    "categories": {
+      "account": "Аккаунт",
+      "payment": "Payment",
+      "bonus": "Бонус",
+      "game": "Ойын",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "Слоттар",
     "liveCasino": "Лайв казино",
@@ -80,6 +123,7 @@ export const kk: LocaleTree = {
     "account": "Аккаунт",
     "support": "Қолдау",
     "messages": "Хабарламалар",
+    "tickets": "Tickets",
     "legal": "Заңды",
     "about": "Біз туралы",
     "terms": "Шарттар мен ережелер",
@@ -170,7 +214,8 @@ export const kk: LocaleTree = {
     "crypto": "Криптовалюта",
     "bank": "Банктік аударым",
     "redirect": "Онлайн төлем. ",
-    "local": "Жергілікті төлем"
+    "local": "Жергілікті төлем",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "Депозит",
@@ -243,11 +288,18 @@ export const kk: LocaleTree = {
     "country": "Ел",
     "phone": "Телефон",
     "kycStatus": "KYC мәртебесі",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC тексеру жақын арада қол жетімді болады. Кейінірек қайта тексеріңіз.",
+    "verificationTitleKyc": "Жеке басын растау (KYC)",
+    "kycLoading": "Тексеру жүктелуде...",
+    "kycFailed": "KYC тексеруін іске қосу мүмкін емес. Кейінірек қайталап көріңіз.",
+    "kycHint": "Жоғарыдағы нысандағы қадамдарды аяқтаңыз. Сіздің мәртебеңіз SumSub шолуынан кейін жаңартылады.",
     "verified": "Расталған",
     "notVerified": "Расталған емес",
     "verifyNow": "Растау",
     "verificationTitleEmail": "Электрондық поштаны растау:",
     "verificationTitlePhone": "Телефонды растау",
+    "verificationSendConfirm": "Тексеру кодын {{destination}} мекенжайына жіберу керек пе?",
     "verificationCodeHintEmail": "{{destination}} мекенжайына жіберілген 6 таңбалы кодты енгізіңіз.",
     "verificationCodeHintPhone": "{{destination}} мекенжайына жіберілген 6 таңбалы кодты енгізіңіз.",
     "verificationSubmit": "Тексеруді растау",
@@ -268,14 +320,7 @@ export const kk: LocaleTree = {
     "saveChanges": "өзгертулерді сақтау",
     "updateSuccess": "Профиль сәтті жаңартылды",
     "updateFailed": "Профильді жаңарту сәтсіз аяқталды.",
-    "language": "Тіл",
-    "kyc": "KYC",
-    "kycComingSoon": "KYC тексеру жақын арада қол жетімді болады. Кейінірек қайта тексеріңіз.",
-    "verificationTitleKyc": "Жеке басын растау (KYC)",
-    "kycLoading": "Тексеру жүктелуде...",
-    "kycFailed": "KYC тексеруін іске қосу мүмкін емес. Кейінірек қайталап көріңіз.",
-    "kycHint": "Жоғарыдағы нысандағы қадамдарды аяқтаңыз. Сіздің мәртебеңіз SumSub шолуынан кейін жаңартылады.",
-    "verificationSendConfirm": "Тексеру кодын {{destination}} мекенжайына жіберу керек пе?"
+    "language": "Тіл"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const kk: LocaleTree = {
     "selectPaymentOption": "Төлем әдісін таңдау",
     "noOptionsForCountry": "Бұл ел үшін төлем әдістері жоқ.",
     "backToMethods": "← Артқа",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← Артқа",
+    "stepMethod": "Төлем әдісі",
+    "stepOption": "Select Option",
+    "stepAmount": "Сома",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "Төлем әдісі",
     "localCountryLabel": "Төлем елі",
     "selectLocalCountry": "Жалғастыру үшін төлем елін таңдаңыз.",
@@ -351,6 +408,55 @@ export const kk: LocaleTree = {
     "limitAlertGeneric": "Ағымдағы тексеру деңгейіңізге байланысты {{amount}} дейін алуға болады. Шекті ұлғайту үшін профиліңізде қосымша тексеруді аяқтаңыз.",
     "goToProfile": "Сіздің профильға өтіңіз"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Бонус",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Бонус",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Бонус"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "Анықтама",
+    "amount": "Сома",
+    "currency": "Валюта"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "Бонустар",
     "wageringProgress": "Ставка прогресі",
@@ -409,6 +515,8 @@ export const kk: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {

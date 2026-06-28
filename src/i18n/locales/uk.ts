@@ -22,20 +22,29 @@ export const uk: LocaleTree = {
     "next": "Далі",
     "showMore": "Показати більше",
     "ok": "OK",
+    "yes": "Yes",
+    "no": "No",
     "close": "Закрити",
     "copy": "Копіювати",
     "copied": "Скопійовано",
     "games": "ігри",
     "gamesCount": "{{count}} ігор",
     "noLimit": "Без ліміту",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "Мін: {{min}} · Макс: {{max}}",
     "currencyIdr": "· Валюта: IDR",
     "pageOf": "Сторінка {{page}} з {{last}}",
-    "actions": "Дії",
     "openMenu": "Відкрити меню",
-    "language": "Мова",
-    "yes": "Yes",
-    "no": "No"
+    "actions": "Дії",
+    "fieldRequired": "Введіть {{field}}.",
+    "fieldRequiredGeneric": "Це поле обовʼязкове.",
+    "fieldEmailInvalid": "Введіть дійсну адресу електронної пошти.",
+    "fieldMinLength": "Мінімум {{count}} символів.",
+    "fieldPasswordMismatch": "Паролі не збігаються.",
+    "fieldSelectRequired": "Виберіть {{field}}.",
+    "fieldCodeInvalid": "Введіть 6-значний код підтвердження.",
+    "language": "Мова"
   },
   "nav": {
     "allGames": "УСІ ІГРИ",
@@ -59,7 +68,9 @@ export const uk: LocaleTree = {
     "balance": "Баланс",
     "playResponsibly": "18+ · Грайте відповідально",
     "liveChat": "ОНЛАЙН-ЧАТ",
-    "liveChatLabel": "Підтримка"
+    "liveChatLabel": "Підтримка",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Онлайн-чат",
@@ -73,6 +84,38 @@ export const uk: LocaleTree = {
     "sendFailed": "Не вдалося надіслати повідомлення. Спробуйте знову.",
     "loadFailed": "Не вдалося завантажити повідомлення чату."
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Підтримка",
+    "you": "You",
+    "categories": {
+      "account": "Акаунт",
+      "payment": "Payment",
+      "bonus": "Бонус",
+      "game": "Гра",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "Слоти",
     "liveCasino": "Live-казино",
@@ -80,6 +123,7 @@ export const uk: LocaleTree = {
     "account": "Акаунт",
     "support": "Підтримка",
     "messages": "Повідомлення",
+    "tickets": "Tickets",
     "legal": "Правова інформація",
     "about": "Про нас",
     "terms": "Умови використання",
@@ -170,7 +214,8 @@ export const uk: LocaleTree = {
     "crypto": "Криптовалюта",
     "bank": "Банківський переказ",
     "redirect": "Онлайн-платіж",
-    "local": "Локальний платіж"
+    "local": "Локальний платіж",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "Депозит",
@@ -243,11 +288,18 @@ export const uk: LocaleTree = {
     "country": "Країна",
     "phone": "Телефон",
     "kycStatus": "Статус KYC",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
     "verified": "Підтверджено",
     "notVerified": "Не підтверджено",
     "verifyNow": "Підтвердити",
     "verificationTitleEmail": "Підтвердити електронну пошту",
     "verificationTitlePhone": "Підтвердити телефон",
+    "verificationSendConfirm": "Send verification code to {{destination}}?",
     "verificationCodeHintEmail": "Введіть 6-значний код, надісланий на {{destination}}.",
     "verificationCodeHintPhone": "Введіть 6-значний код, надісланий на {{destination}}.",
     "verificationSubmit": "Підтвердити перевірку",
@@ -268,14 +320,7 @@ export const uk: LocaleTree = {
     "saveChanges": "Зберегти зміни",
     "updateSuccess": "Профіль успішно оновлено.",
     "updateFailed": "Не вдалося оновити профіль.",
-    "language": "Мова",
-    "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "language": "Мова"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const uk: LocaleTree = {
     "selectPaymentOption": "Виберіть спосіб оплати",
     "noOptionsForCountry": "Для цієї країни немає доступних способів оплати.",
     "backToMethods": "← Назад",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← Назад",
+    "stepMethod": "Спосіб оплати",
+    "stepOption": "Select Option",
+    "stepAmount": "Сума",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "Спосіб оплати",
     "localCountryLabel": "Країна платежу",
     "selectLocalCountry": "Виберіть країну платежу, щоб продовжити.",
@@ -351,6 +408,55 @@ export const uk: LocaleTree = {
     "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
     "goToProfile": "Go to Profile"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Бонус",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Бонус",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Бонус"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "Референс",
+    "amount": "Сума",
+    "currency": "Валюта"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "Бонуси",
     "wageringProgress": "Прогрес відіграшу",
@@ -409,6 +515,8 @@ export const uk: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {

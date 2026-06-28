@@ -30,10 +30,21 @@ export const ko: LocaleTree = {
     "games": "게임",
     "gamesCount": "{{count}}개 게임",
     "noLimit": "제한 없음",
+    "minLabel": "최소",
+    "maxLabel": "최대",
+    "maxOnly": "최대 {{amount}}",
+    "notAvailable": "—",
     "minMax": "최소: {{min}} · 최대: {{max}}",
     "currencyIdr": "· 통화: IDR",
     "pageOf": "{{page}} / {{last}} 페이지",
     "openMenu": "메뉴 열기",
+    "fieldRequired": "{{field}}을(를) 입력해 주세요.",
+    "fieldRequiredGeneric": "필수 입력 항목입니다.",
+    "fieldEmailInvalid": "올바른 이메일 주소를 입력해 주세요.",
+    "fieldMinLength": "최소 {{count}}자 이상 입력해 주세요.",
+    "fieldPasswordMismatch": "비밀번호가 일치하지 않습니다.",
+    "fieldSelectRequired": "{{field}}을(를) 선택해 주세요.",
+    "fieldCodeInvalid": "6자리 인증 코드를 입력해 주세요.",
     "language": "언어",
     "actions": "Actions"
   },
@@ -208,13 +219,15 @@ export const ko: LocaleTree = {
     "crypto": "암호화폐",
     "crypto_payment": "암호화폐 결제",
     "bank": "계좌 이체",
-    "bank_transfer": "계좌 이체"
+    "bank_transfer": "계좌 이체",
+    "manual_bank_transfer": "수동 계좌 이체"
   },
   "paymentTypes": {
     "crypto": "암호화폐",
     "bank": "계좌 이체",
     "redirect": "온라인 결제",
-    "local": "현지 결제"
+    "local": "현지 결제",
+    "manual": "수동 이체"
   },
   "txTypes": {
     "deposit": "입금",
@@ -317,14 +330,31 @@ export const ko: LocaleTree = {
     "updateFailed": "프로필 업데이트에 실패했습니다.",
     "language": "언어"
   },
+  "risk": {
+    "challengeTitle": "사람인지 확인",
+    "challengeHint": "계속하려면 아래 보안 확인을 완료하세요.",
+    "challengeFailed": "인증에 실패했습니다. 다시 시도해 주세요."
+  },
   "deposit": {
     "title": "입금",
     "bonusesLink": "보너스",
     "withdrawLink": "출금 →",
-    "selectCountry": "Payment country",
-    "selectPaymentOption": "Select a payment method",
-    "noOptionsForCountry": "No payment methods available for this country.",
+    "selectCountry": "결제 국가",
+    "selectPaymentOption": "결제 방법 선택",
+    "noOptionsForCountry": "이 국가에서 이용 가능한 결제 방법이 없습니다.",
     "backToMethods": "← 뒤로",
+    "backToKinds": "← 결제 유형으로",
+    "backToOptions": "← 뒤로",
+    "stepMethod": "결제 방법",
+    "stepOption": "옵션 선택",
+    "stepAmount": "금액",
+    "selectPaymentKind": "입금 방법을 선택하세요",
+    "selectCrypto": "암호화폐 선택",
+    "selectBank": "결제 방법 선택",
+    "kindCountCrypto": "암호화폐 {{count}}개",
+    "kindCountLocal": "결제 방법 {{count}}개",
+    "kindCountManual": "계좌 이체",
+    "kindUnavailable": "이용 불가",
     "paymentMethod": "결제 방법",
     "localCountryLabel": "결제 국가",
     "selectLocalCountry": "결제 국가를 선택해 주세요.",
@@ -386,6 +416,55 @@ export const ko: LocaleTree = {
     "limitAlertGeneric": "현재 인증 수준에 따라 최대 {{amount}}까지 출금할 수 있습니다. 프로필에서 추가 인증을 완료하면 한도를 늘릴 수 있습니다.",
     "goToProfile": "프로필로 이동"
   },
+  "wallet": {
+    "cashBalance": "현금",
+    "bonusBalance": "보너스",
+    "totalPlayable": "총 플레이 가능",
+    "withdrawableBalance": "출금 가능 잔액",
+    "withdrawableCash": "출금 가능 현금",
+    "withdrawableBonus": "출금 가능 보너스",
+    "bonusLockedHint": "보너스 자금은 베팅 요건을 충족할 때까지 잠겨 있습니다.",
+    "showBreakdown": "잔액 상세 보기",
+    "balanceBreakdown": "잔액 상세",
+    "fundingSource": "자금 출처",
+    "walletBucket": "구분",
+    "cashAfter": "거래 후 현금",
+    "bonusAfter": "거래 후 보너스",
+    "funding": {
+      "cash": "현금",
+      "bonus": "보너스",
+      "mixed": "혼합",
+      "free_spin": "프리스핀"
+    },
+    "bucket": {
+      "cash": "현금",
+      "bonus": "보너스"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "결제 주소",
+    "address": "주소",
+    "network": "네트워크",
+    "pay_currency": "결제 통화",
+    "pay_amount": "결제 금액",
+    "payment_url": "결제 페이지",
+    "qr_string": "QR 코드",
+    "memo": "메모",
+    "tag": "태그",
+    "destination_tag": "목적지 태그",
+    "bank_name": "은행명",
+    "account_name": "예금주",
+    "account_number": "계좌번호",
+    "reference": "참조",
+    "amount": "금액",
+    "currency": "통화"
+  },
+  "destinationFields": {
+    "address": "지갑 주소",
+    "network": "네트워크",
+    "account": "계좌 / 지갑 ID",
+    "bank_account": "은행 계좌"
+  },
   "bonus": {
     "title": "보너스",
     "wageringProgress": "베팅 진행률",
@@ -443,6 +522,8 @@ export const ko: LocaleTree = {
     "spinType": "스핀 형태",
     "fundingSource": "스핀 형태",
     "fundingCash": "Cash 스핀",
+    "fundingBonus": "보너스 스핀",
+    "fundingMixed": "혼합 스핀",
     "fundingFreeSpin": "프리스핀"
   },
   "transactions": {

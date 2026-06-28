@@ -22,20 +22,29 @@ export const is: LocaleTree = {
     "next": "Next",
     "showMore": "Show more",
     "ok": "OK",
+    "yes": "Já",
+    "no": "Nei",
     "close": "Close",
     "copy": "Copy",
     "copied": "Copied",
     "games": "games",
     "gamesCount": "{{count}} leikir",
     "noLimit": "No limit",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "Lágmark: {{min}} · Hámark: {{max}}",
     "currencyIdr": "· Gjaldmiðill: IDR",
     "pageOf": "Síða {{page}} af {{last}}",
-    "actions": "Actions",
     "openMenu": "Open menu",
-    "language": "Language",
-    "yes": "Já",
-    "no": "Nei"
+    "actions": "Actions",
+    "fieldRequired": "Vinsamlegast sláðu inn &lt;&lt;<FIELD>&gt;&gt;.",
+    "fieldRequiredGeneric": "Þessi reitur er nauðsynlegur.",
+    "fieldEmailInvalid": "Vinsamlega sláðu inn gilt netfang.",
+    "fieldMinLength": "Verður að vera að minnsta kosti &lt;&lt;<COUNT>&gt;&gt; stafir.",
+    "fieldPasswordMismatch": "Lykilorð eru ekki eins.",
+    "fieldSelectRequired": "Vinsamlegast veldu",
+    "fieldCodeInvalid": "Sláðu inn 6 talna staðfestingarkóðann.",
+    "language": "Language"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -59,7 +68,9 @@ export const is: LocaleTree = {
     "balance": "Balance",
     "playResponsibly": "18+ · Leiktu á ábyrgan hátt",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "Support"
+    "liveChatLabel": "Support",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -73,6 +84,38 @@ export const is: LocaleTree = {
     "sendFailed": "Ekki tókst að senda skilaboðin þín. Reyndu aftur.",
     "loadFailed": "Gat ekki hlaðið skilaboðum"
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Support",
+    "you": "You",
+    "categories": {
+      "account": "Account",
+      "payment": "Payment",
+      "bonus": "Bonus",
+      "game": "Game",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "Slots",
     "liveCasino": "Live Casino",
@@ -80,6 +123,7 @@ export const is: LocaleTree = {
     "account": "Account",
     "support": "Support",
     "messages": "Messages",
+    "tickets": "Tickets",
     "legal": "Legal",
     "about": "About Us",
     "terms": "Skilmálar",
@@ -170,7 +214,8 @@ export const is: LocaleTree = {
     "crypto": "Rafmynt",
     "bank": "Bankamillifærsla",
     "redirect": "Netgreiðsla",
-    "local": "Staðbundin greiðsla"
+    "local": "Staðbundin greiðsla",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "Deposit",
@@ -243,11 +288,18 @@ export const is: LocaleTree = {
     "country": "Country",
     "phone": "Phone",
     "kycStatus": "KYC Status",
+    "kyc": "KYC",
+    "kycComingSoon": "Staðfesting KYC verður tiltæk fljótlega. Líttu aftur við síðar.",
+    "verificationTitleKyc": "Staðfesta auðkenni (KYC)",
+    "kycLoading": "Hleð inn staðfestingu...",
+    "kycFailed": "Ekki tókst að hefja staðfestingu á KYC. Reyndu aftur síðar.",
+    "kycHint": "Ljúktu skrefunum á eyðublaðinu hér að ofan. Staða þín verður uppfærð eftir yfirferð á SumSub.",
     "verified": "Verified",
     "notVerified": "Not verified",
     "verifyNow": "Verify",
     "verificationTitleEmail": "Verify email",
     "verificationTitlePhone": "Verify phone",
+    "verificationSendConfirm": "Senda staðfestingarkóða á {{destination}}?",
     "verificationCodeHintEmail": "Sláðu inn 6 talna kóðann sem sendur var til {{destination}}.",
     "verificationCodeHintPhone": "Sláðu inn 6 talna kóðann sem sendur var til {{destination}}.",
     "verificationSubmit": "Staðfesta staðfestingu",
@@ -268,14 +320,7 @@ export const is: LocaleTree = {
     "saveChanges": "Save Changes",
     "updateSuccess": "Prófíll hefur verið uppfærður.",
     "updateFailed": "Ekki tókst að uppfæra notandalýsingu.",
-    "language": "Language",
-    "kyc": "KYC",
-    "kycComingSoon": "Staðfesting KYC verður tiltæk fljótlega. Líttu aftur við síðar.",
-    "verificationTitleKyc": "Staðfesta auðkenni (KYC)",
-    "kycLoading": "Hleð inn staðfestingu...",
-    "kycFailed": "Ekki tókst að hefja staðfestingu á KYC. Reyndu aftur síðar.",
-    "kycHint": "Ljúktu skrefunum á eyðublaðinu hér að ofan. Staða þín verður uppfærð eftir yfirferð á SumSub.",
-    "verificationSendConfirm": "Senda staðfestingarkóða á {{destination}}?"
+    "language": "Language"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const is: LocaleTree = {
     "selectPaymentOption": "Veldu greiðslumáta",
     "noOptionsForCountry": "Engir greiðslumátar í boði fyrir þetta land.",
     "backToMethods": "← Back",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← Back",
+    "stepMethod": "Greiðslumáti",
+    "stepOption": "Select Option",
+    "stepAmount": "Upphæð",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "Greiðslumáti",
     "localCountryLabel": "Greiðsluland",
     "selectLocalCountry": "Veldu greiðsluland til að halda áfram.",
@@ -351,6 +408,55 @@ export const is: LocaleTree = {
     "limitAlertGeneric": "Þú getur tekið út allt að {{amount}} miðað við núverandi vottunarstig þitt. Ljúktu viðbótarstaðfestingu í notandalýsingunni þinni til að auka hámarkið hjá þér.",
     "goToProfile": "Opna notandalýsingu"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Bonus",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Bonus",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Bonus"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "Tilvísun",
+    "amount": "Upphæð",
+    "currency": "Currency"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "Bonuses",
     "wageringProgress": "Framvinda veðmála",
@@ -409,6 +515,8 @@ export const is: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {

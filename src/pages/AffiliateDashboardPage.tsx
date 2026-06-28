@@ -11,6 +11,7 @@ import {
 } from '@/api/affiliate.api';
 import { AffiliatePlayerStatisticsTable } from '@/components/affiliate/AffiliatePlayerStatisticsTable';
 import { Button } from '@/components/common/Button';
+import { FormTextField } from '@/components/common/FormTextField';
 import { LanguageSelector } from '@/components/common/LanguageSelector';
 import { Modal } from '@/components/common/Modal';
 import { ChangePasswordForm } from '@/components/profile/ChangePasswordForm';
@@ -25,6 +26,14 @@ import {
 } from '@/utils/affiliateCommissionModel';
 import { formatBalance, formatPercent } from '@/utils/formatBalance';
 import { getApiErrorMessage } from '@/utils/apiError';
+import {
+  collectFieldErrors,
+  hasFieldErrors,
+  isValidEmail,
+  omitFieldError,
+  requiredValue,
+  type FieldErrors,
+} from '@/utils/formValidation';
 
 function createDefaultSubAffiliatePayload(parent: AffiliateMe): CreateSubAffiliatePayload {
   const commission_model = getDefaultSubAffiliateCommissionModel(parent.commission_model);
@@ -87,6 +96,7 @@ export function AffiliateDashboardPage() {
   const [copiedSubId, setCopiedSubId] = useState<number | null>(null);
   const [showCreateSub, setShowCreateSub] = useState(false);
   const [subFormError, setSubFormError] = useState<string | null>(null);
+  const [subFormFieldErrors, setSubFormFieldErrors] = useState<FieldErrors>({});
   const [subFormLoading, setSubFormLoading] = useState(false);
   const [showPasswordDialog, setShowPasswordDialog] = useState(false);
   const [subForm, setSubForm] = useState<CreateSubAffiliatePayload>({
@@ -102,6 +112,11 @@ export function AffiliateDashboardPage() {
   const allowedSubCommissionModels = me
     ? getAllowedSubAffiliateCommissionModels(me.commission_model)
     : [];
+
+  const showCpaFields =
+    subForm.commission_model === 'cpa' || subForm.commission_model === 'hybrid';
+  const showRateFields =
+    subForm.commission_model === 'revshare' || subForm.commission_model === 'hybrid';
 
   const loadPlayerStatistics = async (period: PlayerStatisticsPeriod, page = 1) => {
     setPlayerStatsLoading(true);
@@ -175,10 +190,63 @@ export function AffiliateDashboardPage() {
     setTimeout(() => setCopiedSubId(null), 2000);
   };
 
+  const validateSubForm = (): boolean => {
+    const required = (field: string, value: string) =>
+      requiredValue(value) ? undefined : t('common.fieldRequired', { field });
+
+    let emailError: string | undefined;
+    if (!requiredValue(subForm.email)) {
+      emailError = t('common.fieldRequired', { field: t('affiliate.portalEmail') });
+    } else if (!isValidEmail(subForm.email)) {
+      emailError = t('common.fieldEmailInvalid');
+    }
+
+    let passwordError: string | undefined;
+    if (!requiredValue(subForm.password)) {
+      passwordError = t('common.fieldRequired', { field: t('affiliate.portalPassword') });
+    } else if (subForm.password.length < 8) {
+      passwordError = t('common.fieldMinLength', { count: 8 });
+    }
+
+    const checks: Array<[string, string | undefined]> = [
+      ['email', emailError],
+      ['password', passwordError],
+      ['code', required(t('affiliate.subAffiliateCode'), subForm.code)],
+    ];
+
+    if (showRateFields) {
+      checks.push([
+        'commission_rate',
+        subForm.commission_rate == null || subForm.commission_rate < 0
+          ? t('common.fieldRequired', { field: t('affiliate.commissionRate') })
+          : undefined,
+      ]);
+    }
+
+    if (showCpaFields) {
+      checks.push([
+        'cpa_amount',
+        subForm.cpa_amount == null || subForm.cpa_amount < 0
+          ? t('common.fieldRequired', { field: t('affiliate.cpaAmount') })
+          : undefined,
+      ]);
+    }
+
+    const errors = collectFieldErrors(checks);
+    setSubFormFieldErrors(errors);
+    return !hasFieldErrors(errors);
+  };
+
   const handleCreateSubAffiliate = async (e: FormEvent) => {
     e.preventDefault();
-    setSubFormLoading(true);
     setSubFormError(null);
+    setSubFormFieldErrors({});
+
+    if (!validateSubForm()) {
+      return;
+    }
+
+    setSubFormLoading(true);
     try {
       const created = await affiliateApi.createSubAffiliate(subForm);
       setSubAffiliates((prev) => [created, ...prev]);
@@ -204,11 +272,6 @@ export function AffiliateDashboardPage() {
       setError(t('affiliate.loadError'));
     }
   };
-
-  const showCpaFields =
-    subForm.commission_model === 'cpa' || subForm.commission_model === 'hybrid';
-  const showRateFields =
-    subForm.commission_model === 'revshare' || subForm.commission_model === 'hybrid';
 
   return (
     <div className="mx-auto max-w-5xl space-y-6">
@@ -304,6 +367,7 @@ export function AffiliateDashboardPage() {
                     if (!showCreateSub && me) {
                       setSubForm(createDefaultSubAffiliatePayload(me));
                       setSubFormError(null);
+                      setSubFormFieldErrors({});
                     }
                     setShowCreateSub((v) => !v);
                   }}
@@ -315,57 +379,60 @@ export function AffiliateDashboardPage() {
               {showCreateSub && (
                 <form
                   onSubmit={handleCreateSubAffiliate}
+                  noValidate
                   className="mb-4 space-y-3 rounded border border-white/10 bg-background p-4"
                 >
                   {subFormError && (
                     <p className="whitespace-pre-line text-sm text-accent">{subFormError}</p>
                   )}
                   <div className="grid gap-3 sm:grid-cols-2">
-                    <label className="block text-xs text-muted">
-                      {t('affiliate.portalEmail')}
-                      <input
-                        type="email"
-                        className="mt-1 w-full rounded border border-white/10 bg-card px-3 py-2 text-sm text-white"
-                        value={subForm.email}
-                        onChange={(e) => setSubForm({ ...subForm, email: e.target.value })}
-                        required
-                      />
-                    </label>
-                    <label className="block text-xs text-muted">
-                      {t('affiliate.portalPassword')}
-                      <input
-                        type="password"
-                        className="mt-1 w-full rounded border border-white/10 bg-card px-3 py-2 text-sm text-white"
-                        value={subForm.password}
-                        onChange={(e) => setSubForm({ ...subForm, password: e.target.value })}
-                        required
-                        minLength={8}
-                      />
-                    </label>
+                    <FormTextField
+                      id="sub-affiliate-email"
+                      label={t('affiliate.portalEmail')}
+                      type="email"
+                      value={subForm.email}
+                      onChange={(e) => {
+                        setSubForm({ ...subForm, email: e.target.value });
+                        setSubFormFieldErrors((prev) => omitFieldError(prev, 'email'));
+                      }}
+                      error={subFormFieldErrors.email}
+                    />
+                    <FormTextField
+                      id="sub-affiliate-password"
+                      label={t('affiliate.portalPassword')}
+                      type="password"
+                      value={subForm.password}
+                      onChange={(e) => {
+                        setSubForm({ ...subForm, password: e.target.value });
+                        setSubFormFieldErrors((prev) => omitFieldError(prev, 'password'));
+                      }}
+                      error={subFormFieldErrors.password}
+                    />
                   </div>
                   <div
                     className={`grid gap-3 sm:grid-cols-2 ${
                       showRateFields && showCpaFields ? 'lg:grid-cols-4' : 'lg:grid-cols-3'
                     }`}
                   >
-                    <label className="block text-xs text-muted">
-                      {t('affiliate.subAffiliateCode')}
-                      <input
-                        className="mt-1 w-full rounded border border-white/10 bg-card px-3 py-2 text-sm text-white"
-                        value={subForm.code}
-                        onChange={(e) => setSubForm({ ...subForm, code: e.target.value })}
-                        required
-                      />
-                    </label>
-                    <label className="block text-xs text-muted">
-                      {t('affiliate.commissionModel')}
+                    <FormTextField
+                      id="sub-affiliate-code"
+                      label={t('affiliate.subAffiliateCode')}
+                      value={subForm.code}
+                      onChange={(e) => {
+                        setSubForm({ ...subForm, code: e.target.value });
+                        setSubFormFieldErrors((prev) => omitFieldError(prev, 'code'));
+                      }}
+                      error={subFormFieldErrors.code}
+                    />
+                    <div>
+                      <label className="mb-1 block text-xs text-muted">{t('affiliate.commissionModel')}</label>
                       {allowedSubCommissionModels.length === 1 ? (
-                        <p className="mt-1 rounded border border-white/10 bg-card px-3 py-2 text-sm text-white">
+                        <p className="rounded border border-white/10 bg-card px-3 py-2 text-sm text-white">
                           {commissionModelLabel(allowedSubCommissionModels[0], t)}
                         </p>
                       ) : (
                         <select
-                          className="mt-1 w-full rounded border border-white/10 bg-card px-3 py-2 text-sm text-white"
+                          className="w-full rounded border border-white/10 bg-card px-3 py-2 text-sm text-white"
                           value={subForm.commission_model}
                           onChange={(e) =>
                             setSubForm({
@@ -381,40 +448,38 @@ export function AffiliateDashboardPage() {
                           ))}
                         </select>
                       )}
-                    </label>
+                    </div>
                     {showRateFields && (
-                      <label className="block text-xs text-muted">
-                        {t('affiliate.commissionRate')}
-                        <input
-                          type="number"
-                          step="0.0001"
-                          min={0}
-                          max={Number(me?.commission_rate ?? 100)}
-                          className="mt-1 w-full rounded border border-white/10 bg-card px-3 py-2 text-sm text-white"
-                          value={subForm.commission_rate ?? 0}
-                          onChange={(e) =>
-                            setSubForm({ ...subForm, commission_rate: Number(e.target.value) })
-                          }
-                          required
-                        />
-                      </label>
+                      <FormTextField
+                        id="sub-affiliate-rate"
+                        label={t('affiliate.commissionRate')}
+                        type="number"
+                        step="0.0001"
+                        min={0}
+                        max={Number(me?.commission_rate ?? 100)}
+                        value={subForm.commission_rate ?? 0}
+                        onChange={(e) => {
+                          setSubForm({ ...subForm, commission_rate: Number(e.target.value) });
+                          setSubFormFieldErrors((prev) => omitFieldError(prev, 'commission_rate'));
+                        }}
+                        error={subFormFieldErrors.commission_rate}
+                      />
                     )}
                     {showCpaFields && (
-                      <label className="block text-xs text-muted">
-                        {t('affiliate.cpaAmount')}
-                        <input
-                          type="number"
-                          step="0.0001"
-                          min={0}
-                          max={Number(me?.cpa_amount ?? undefined)}
-                          className="mt-1 w-full rounded border border-white/10 bg-card px-3 py-2 text-sm text-white"
-                          value={subForm.cpa_amount ?? 0}
-                          onChange={(e) =>
-                            setSubForm({ ...subForm, cpa_amount: Number(e.target.value) })
-                          }
-                          required
-                        />
-                      </label>
+                      <FormTextField
+                        id="sub-affiliate-cpa"
+                        label={t('affiliate.cpaAmount')}
+                        type="number"
+                        step="0.0001"
+                        min={0}
+                        max={Number(me?.cpa_amount ?? undefined)}
+                        value={subForm.cpa_amount ?? 0}
+                        onChange={(e) => {
+                          setSubForm({ ...subForm, cpa_amount: Number(e.target.value) });
+                          setSubFormFieldErrors((prev) => omitFieldError(prev, 'cpa_amount'));
+                        }}
+                        error={subFormFieldErrors.cpa_amount}
+                      />
                     )}
                   </div>
                   <Button type="submit" disabled={subFormLoading}>

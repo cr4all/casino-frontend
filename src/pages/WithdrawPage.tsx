@@ -11,6 +11,7 @@ import { DEFAULT_CURRENCY, useWalletStore } from '@/stores/walletStore';
 import { usePlayerStore } from '@/stores/playerStore';
 import { formatBalance } from '@/utils/formatBalance';
 import { Button } from '@/components/common/Button';
+import { FormTextField } from '@/components/common/FormTextField';
 import { Modal } from '@/components/common/Modal';
 import { StatusBadge } from '@/components/common/StatusBadge';
 import { PaymentCountrySelect } from '@/components/payment/PaymentCountrySelect';
@@ -26,6 +27,13 @@ import {
 import { RiskChallengePanel } from '@/components/risk/RiskChallengePanel';
 import { useRiskChallenge } from '@/hooks/useRiskChallenge';
 import type { WithdrawalEligibility } from '@/types';
+import {
+  collectFieldErrors,
+  hasFieldErrors,
+  omitFieldError,
+  requiredValue,
+  type FieldErrors,
+} from '@/utils/formValidation';
 
 function formatPaymentAmount(currency: string, amount: string): string {
   return `${currency} ${formatBalance(amount)}`;
@@ -45,7 +53,7 @@ function getLimitAlertKey(eligibility: WithdrawalEligibility): string {
 }
 
 export function WithdrawPage() {
-  const { t, tPaymentMethod, formatDate } = useTranslation();
+  const { t, tPaymentMethod, tDestinationField, tStatus, formatDate } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const balance = useWalletStore((s) => s.balance);
   const fetchBalance = useWalletStore((s) => s.fetchBalance);
@@ -65,6 +73,7 @@ export function WithdrawPage() {
   const [submitting, setSubmitting] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [challengeError, setChallengeError] = useState<string | null>(null);
   const [verificationModalOpen, setVerificationModalOpen] = useState(false);
   const [limitAlertOpen, setLimitAlertOpen] = useState(false);
@@ -172,11 +181,26 @@ export function WithdrawPage() {
 
   const handleDestinationChange = (name: string, value: string) => {
     setDestinationValues((prev) => ({ ...prev, [name]: value }));
+    setFieldErrors((prev) => omitFieldError(prev, name));
   };
 
-  const missingRequiredDestination = confirmedOption?.destination_fields.some(
-    (field) => field.required && !destinationValues[field.name]?.trim(),
-  ) ?? false;
+  const validateWithdrawForm = (): boolean => {
+    const checks: Array<[string, string | undefined]> = [];
+
+    if (!requiredValue(amount) || Number(amount) <= 0) {
+      checks.push(['amount', t('common.fieldRequired', { field: t('deposit.amount') })]);
+    }
+
+    confirmedOption?.destination_fields.forEach((field) => {
+      if (field.required && !requiredValue(destinationValues[field.name] ?? '')) {
+        checks.push([field.name, t('common.fieldRequired', { field: tDestinationField(field.name, field.label) })]);
+      }
+    });
+
+    const errors = collectFieldErrors(checks);
+    setFieldErrors(errors);
+    return !hasFieldErrors(errors);
+  };
 
   const showLimitAlert = (maxAmount: string) => {
     setLimitAlertAmount(maxAmount);
@@ -211,7 +235,7 @@ export function WithdrawPage() {
   };
 
   const performWithdrawal = async (turnstileToken?: string) => {
-    if (!optionKey || !amount || !country || missingRequiredDestination) return;
+    if (!optionKey || !amount || !country) return;
 
     if (eligibility?.requires_verification) {
       setVerificationModalOpen(true);
@@ -231,7 +255,7 @@ export function WithdrawPage() {
       turnstileToken,
     );
     setMessage(
-      t('withdraw.submitted', { id: result.withdrawal_id, status: result.status }),
+      t('withdraw.submitted', { id: result.withdrawal_id, status: tStatus(result.status) }),
     );
     setAmount('');
     setDestinationValues({});
@@ -260,7 +284,14 @@ export function WithdrawPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!optionKey || !amount || !country || missingRequiredDestination) return;
+    setError(null);
+    setFieldErrors({});
+
+    if (!optionKey || !country || !confirmedOption) return;
+
+    if (!validateWithdrawForm()) {
+      return;
+    }
 
     if (eligibility?.requires_verification) {
       setVerificationModalOpen(true);
@@ -447,42 +478,46 @@ export function WithdrawPage() {
 
               {confirmedOption && <PaymentOptionSummary option={confirmedOption} />}
 
-              <div>
-                <label htmlFor="withdraw-amount" className="mb-1 block text-xs text-muted">
-                  {t('deposit.amount')}
-                  {maxWithdrawAmount && (
-                    <span className="ml-2 text-muted">
-                      (max {formatPaymentAmount(walletCurrency, maxWithdrawAmount)})
-                    </span>
-                  )}
-                </label>
-                <input
-                  id="withdraw-amount"
-                  type="number"
-                  step="0.0001"
-                  min="0"
-                  value={amount}
-                  onChange={(e) => setAmount(e.target.value)}
-                  required
-                  className="w-full rounded-md border border-white/10 bg-background px-3 py-2 text-sm text-white"
-                />
-              </div>
+              <FormTextField
+                id="withdraw-amount"
+                label={
+                  <>
+                    {t('deposit.amount')}
+                    {maxWithdrawAmount && (
+                      <span className="ml-2 text-muted">
+                        ({t('common.maxOnly', { amount: formatPaymentAmount(walletCurrency, maxWithdrawAmount) })})
+                      </span>
+                    )}
+                  </>
+                }
+                type="number"
+                step="0.0001"
+                min="0"
+                value={amount}
+                onChange={(e) => {
+                  setAmount(e.target.value);
+                  setFieldErrors((prev) => omitFieldError(prev, 'amount'));
+                }}
+                error={fieldErrors.amount}
+                inputClassName="bg-background py-2"
+              />
 
               {confirmedOption?.destination_fields.map((field) => (
-                <div key={field.name}>
-                  <label htmlFor={`withdraw-${field.name}`} className="mb-1 block text-xs text-muted">
-                    {field.label}
-                    {!field.required && ` (${t('withdraw.networkOptional')})`}
-                  </label>
-                  <input
-                    id={`withdraw-${field.name}`}
-                    type="text"
-                    value={destinationValues[field.name] ?? ''}
-                    onChange={(e) => handleDestinationChange(field.name, e.target.value)}
-                    required={field.required}
-                    className="w-full rounded-md border border-white/10 bg-background px-3 py-2 text-sm text-white"
-                  />
-                </div>
+                <FormTextField
+                  key={field.name}
+                  id={`withdraw-${field.name}`}
+                  label={
+                    <>
+                      {tDestinationField(field.name, field.label)}
+                      {!field.required && ` (${t('withdraw.networkOptional')})`}
+                    </>
+                  }
+                  type="text"
+                  value={destinationValues[field.name] ?? ''}
+                  onChange={(e) => handleDestinationChange(field.name, e.target.value)}
+                  error={fieldErrors[field.name]}
+                  inputClassName="bg-background py-2"
+                />
               ))}
 
               {error && <p className="text-sm text-red-400">{error}</p>}
@@ -499,7 +534,7 @@ export function WithdrawPage() {
               <Button
                 type="submit"
                 variant="gold"
-                disabled={submitting || challengeRequired || !confirmedOption || !country || missingRequiredDestination}
+                disabled={submitting || challengeRequired || !confirmedOption || !country}
               >
                 {submitting ? t('common.submitting') : t('withdraw.requestWithdrawal')}
               </Button>

@@ -22,20 +22,29 @@ export const uz: LocaleTree = {
     "next": "Keyingi",
     "showMore": "Ko'proq ko'rsatish",
     "ok": "OK",
+    "yes": "Yes",
+    "no": "No",
     "close": "Yopish",
     "copy": "Nusxa olish",
     "copied": "Nusxa olindi",
     "games": "o'yinlar",
     "gamesCount": "{{count}} o'yin",
     "noLimit": "Cheklovsiz",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "Min: {{min}} · Maks: {{max}}",
     "currencyIdr": "· Valyuta: IDR",
     "pageOf": "{{last}} sahifadan {{page}}-sahifa",
-    "actions": "Amallar",
     "openMenu": "Menyuni ochish",
-    "language": "Til",
-    "yes": "Yes",
-    "no": "No"
+    "actions": "Amallar",
+    "fieldRequired": "Iltimos, &lt;&lt; kiriting<FIELD> &gt;&gt;.",
+    "fieldRequiredGeneric": "Bu maydon to'ldirilishi shart.",
+    "fieldEmailInvalid": "Amaldagi email manzilingizni kiriting.",
+    "fieldMinLength": "Kamida &lt;&lt; bo&#39;lishi kerak<COUNT> &gt;&gt; belgilar.",
+    "fieldPasswordMismatch": "Парол мос келмаяпти",
+    "fieldSelectRequired": "* Iltimos saralang",
+    "fieldCodeInvalid": "Iltimos, 6 xonali tasdiqlash kodini kiriting.",
+    "language": "Til"
   },
   "nav": {
     "allGames": "BARCHA O'YINLAR",
@@ -59,7 +68,9 @@ export const uz: LocaleTree = {
     "balance": "Balans",
     "playResponsibly": "18+ · Mas'uliyat bilan o'ynang",
     "liveChat": "JONLI CHAT",
-    "liveChatLabel": "Qo'llab-quvvatlash"
+    "liveChatLabel": "Qo'llab-quvvatlash",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Jonli chat",
@@ -73,6 +84,38 @@ export const uz: LocaleTree = {
     "sendFailed": "Xabaringizni yuborib bo'lmadi. Qayta urinib ko'ring.",
     "loadFailed": "Chat xabarlarini yuklab bo'lmadi."
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Qo'llab-quvvatlash",
+    "you": "You",
+    "categories": {
+      "account": "Hisob",
+      "payment": "Payment",
+      "bonus": "Mukofot",
+      "game": "O'yin",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "Slotlar",
     "liveCasino": "Jonli kazino",
@@ -80,6 +123,7 @@ export const uz: LocaleTree = {
     "account": "Hisob",
     "support": "Qo'llab-quvvatlash",
     "messages": "Xabarlar",
+    "tickets": "Tickets",
     "legal": "Huquqiy",
     "about": "Biz haqimizda",
     "terms": "Foydalanish shartlari",
@@ -170,7 +214,8 @@ export const uz: LocaleTree = {
     "crypto": "Kriptovalyuta",
     "bank": "Bank o'tkazmasi",
     "redirect": "Onlayn to'lov",
-    "local": "Mahalliy to'lov"
+    "local": "Mahalliy to'lov",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "Depozit",
@@ -243,11 +288,18 @@ export const uz: LocaleTree = {
     "country": "Mamlakat",
     "phone": "Telefon",
     "kycStatus": "KYC holati",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
     "verified": "Tasdiqlangan",
     "notVerified": "Tasdiqlanmagan",
     "verifyNow": "Tasdiqlash",
     "verificationTitleEmail": "Elektron pochtani tasdiqlash",
     "verificationTitlePhone": "Telefonni tasdiqlash",
+    "verificationSendConfirm": "Send verification code to {{destination}}?",
     "verificationCodeHintEmail": "{{destination}} manziliga yuborilgan 6 xonali kodni kiriting.",
     "verificationCodeHintPhone": "{{destination}} manziliga yuborilgan 6 xonali kodni kiriting.",
     "verificationSubmit": "Tasdiqlashni tasdiqlang",
@@ -268,14 +320,7 @@ export const uz: LocaleTree = {
     "saveChanges": "O'zgarishlarni saqlash",
     "updateSuccess": "Profil muvaffaqiyatli yangilandi.",
     "updateFailed": "Profilni yangilab bo'lmadi.",
-    "language": "Til",
-    "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "language": "Til"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const uz: LocaleTree = {
     "selectPaymentOption": "To'lov usulini tanlang",
     "noOptionsForCountry": "Ushbu mamlakat uchun to'lov usullari mavjud emas.",
     "backToMethods": "← Orqaga",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← Orqaga",
+    "stepMethod": "To'lov usuli",
+    "stepOption": "Select Option",
+    "stepAmount": "Summa",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "To'lov usuli",
     "localCountryLabel": "To'lov mamlakati",
     "selectLocalCountry": "Davom etish uchun to'lov mamlakatini tanlang.",
@@ -351,6 +408,55 @@ export const uz: LocaleTree = {
     "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
     "goToProfile": "Go to Profile"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Mukofot",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Mukofot",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Mukofot"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "Ma'lumotnoma",
+    "amount": "Summa",
+    "currency": "Valyuta"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "Bonuslar",
     "wageringProgress": "Aylanma jarayoni",
@@ -409,6 +515,8 @@ export const uz: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {

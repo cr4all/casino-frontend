@@ -22,20 +22,29 @@ export const sv: LocaleTree = {
     "next": "Nästa",
     "showMore": "Visa mer",
     "ok": "OK",
+    "yes": "Yes",
+    "no": "No",
     "close": "Stäng",
     "copy": "Kopiera",
     "copied": "Kopierad",
     "games": "spel",
     "gamesCount": "{{count}} spel",
     "noLimit": "Ingen gräns",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "Min: {{min}} · Max: {{max}}",
     "currencyIdr": "· Valuta: IDR",
     "pageOf": "Sida {{page}} av {{last}}",
-    "actions": "Åtgärder",
     "openMenu": "Öppna menyn",
-    "language": "Språk",
-    "yes": "Yes",
-    "no": "No"
+    "actions": "Åtgärder",
+    "fieldRequired": "Ange {{field}}.",
+    "fieldRequiredGeneric": "Detta fält är obligatoriskt.",
+    "fieldEmailInvalid": "Ange en giltig e-postadress.",
+    "fieldMinLength": "Minst {{count}} tecken krävs.",
+    "fieldPasswordMismatch": "Lösenorden matchar inte.",
+    "fieldSelectRequired": "Välj {{field}}.",
+    "fieldCodeInvalid": "Ange den 6-siffriga verifieringskoden.",
+    "language": "Språk"
   },
   "nav": {
     "allGames": "ALLA SPEL",
@@ -59,7 +68,9 @@ export const sv: LocaleTree = {
     "balance": "Saldo",
     "playResponsibly": "18+ · Spela ansvarsfullt",
     "liveChat": "LIVECHATT",
-    "liveChatLabel": "Support"
+    "liveChatLabel": "Support",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Livechatt",
@@ -73,6 +84,38 @@ export const sv: LocaleTree = {
     "sendFailed": "Kunde inte skicka ditt meddelande. Försök igen.",
     "loadFailed": "Kunde inte ladda chattmeddelanden."
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Support",
+    "you": "You",
+    "categories": {
+      "account": "Konto",
+      "payment": "Payment",
+      "bonus": "Bonus",
+      "game": "Spel",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "Slots",
     "liveCasino": "Livecasino",
@@ -80,6 +123,7 @@ export const sv: LocaleTree = {
     "account": "Konto",
     "support": "Support",
     "messages": "Meddelanden",
+    "tickets": "Tickets",
     "legal": "Juridiskt",
     "about": "Om oss",
     "terms": "Villkor",
@@ -170,7 +214,8 @@ export const sv: LocaleTree = {
     "crypto": "Kryptovaluta",
     "bank": "Banköverföring",
     "redirect": "Onlinebetalning",
-    "local": "Lokal betalning"
+    "local": "Lokal betalning",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "Insättning",
@@ -243,11 +288,18 @@ export const sv: LocaleTree = {
     "country": "Land",
     "phone": "Telefon",
     "kycStatus": "KYC-status",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
     "verified": "Verifierad",
     "notVerified": "Ej verifierad",
     "verifyNow": "Verifiera",
     "verificationTitleEmail": "Verifiera e-post",
     "verificationTitlePhone": "Verifiera telefon",
+    "verificationSendConfirm": "Send verification code to {{destination}}?",
     "verificationCodeHintEmail": "Ange den 6-siffriga koden som skickats till {{destination}}.",
     "verificationCodeHintPhone": "Ange den 6-siffriga koden som skickats till {{destination}}.",
     "verificationSubmit": "Bekräfta verifiering",
@@ -268,14 +320,7 @@ export const sv: LocaleTree = {
     "saveChanges": "Spara ändringar",
     "updateSuccess": "Profilen uppdaterades.",
     "updateFailed": "Misslyckades med att uppdatera profil.",
-    "language": "Språk",
-    "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "language": "Språk"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const sv: LocaleTree = {
     "selectPaymentOption": "Välj en betalningsmetod",
     "noOptionsForCountry": "Inga betalningsmetoder tillgängliga för detta land.",
     "backToMethods": "← Tillbaka",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← Tillbaka",
+    "stepMethod": "Betalningsmetod",
+    "stepOption": "Select Option",
+    "stepAmount": "Belopp",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "Betalningsmetod",
     "localCountryLabel": "Betalningsland",
     "selectLocalCountry": "Välj ett betalningsland för att fortsätta.",
@@ -351,6 +408,55 @@ export const sv: LocaleTree = {
     "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
     "goToProfile": "Go to Profile"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Bonus",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Bonus",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Bonus"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "Referens",
+    "amount": "Belopp",
+    "currency": "Valuta"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "Bonusar",
     "wageringProgress": "Omsättningsförlopp",
@@ -409,6 +515,8 @@ export const sv: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {

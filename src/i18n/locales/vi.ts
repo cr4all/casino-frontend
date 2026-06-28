@@ -22,20 +22,29 @@ export const vi: LocaleTree = {
     "next": "Tiếp",
     "showMore": "Xem thêm",
     "ok": "OK",
+    "yes": "Yes",
+    "no": "No",
     "close": "Đóng",
     "copy": "Sao chép",
     "copied": "Đã sao chép",
     "games": "game",
     "gamesCount": "{{count}} game",
     "noLimit": "Không giới hạn",
+    "maxOnly": "max {{amount}}",
+    "notAvailable": "—",
     "minMax": "Tối thiểu: {{min}} · Tối đa: {{max}}",
     "currencyIdr": "· Tiền tệ: IDR",
     "pageOf": "Trang {{page}} / {{last}}",
-    "actions": "Thao tác",
     "openMenu": "Mở menu",
-    "language": "Ngôn ngữ",
-    "yes": "Yes",
-    "no": "No"
+    "actions": "Thao tác",
+    "fieldRequired": "Vui lòng nhập {{field}}.",
+    "fieldRequiredGeneric": "Trường này là bắt buộc.",
+    "fieldEmailInvalid": "Vui lòng nhập địa chỉ email hợp lệ.",
+    "fieldMinLength": "Phải có ít nhất {{count}} ký tự.",
+    "fieldPasswordMismatch": "Mật khẩu không khớp.",
+    "fieldSelectRequired": "Vui lòng chọn {{field}}.",
+    "fieldCodeInvalid": "Vui lòng nhập mã xác minh 6 chữ số.",
+    "language": "Ngôn ngữ"
   },
   "nav": {
     "allGames": "TẤT CẢ GAME",
@@ -59,7 +68,9 @@ export const vi: LocaleTree = {
     "balance": "Số dư",
     "playResponsibly": "18+ · Chơi có trách nhiệm",
     "liveChat": "CHAT TRỰC TUYẾN",
-    "liveChatLabel": "Hỗ trợ"
+    "liveChatLabel": "Hỗ trợ",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Chat trực tuyến",
@@ -73,6 +84,38 @@ export const vi: LocaleTree = {
     "sendFailed": "Không thể gửi tin nhắn. Vui lòng thử lại.",
     "loadFailed": "Không thể tải tin nhắn chat."
   },
+  "supportTickets": {
+    "title": "Support Tickets",
+    "subtitle": "Submit a request and track replies from our support team.",
+    "newTicket": "New ticket",
+    "subject": "Subject",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit ticket",
+    "createFailed": "Could not create your ticket. Please try again.",
+    "empty": "No support tickets yet.",
+    "backToList": "← Back to tickets",
+    "notFound": "Ticket not found.",
+    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Type your reply...",
+    "sendReply": "Send reply",
+    "replyFailed": "Could not send your reply. Please try again.",
+    "supportTeam": "Hỗ trợ",
+    "you": "You",
+    "categories": {
+      "account": "Tài khoản",
+      "payment": "Payment",
+      "bonus": "Thưởng",
+      "game": "Trò chơi",
+      "other": "Other"
+    },
+    "status": {
+      "open": "Open",
+      "pending": "Pending",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    }
+  },
   "footer": {
     "slots": "Slot",
     "liveCasino": "Casino trực tiếp",
@@ -80,6 +123,7 @@ export const vi: LocaleTree = {
     "account": "Tài khoản",
     "support": "Hỗ trợ",
     "messages": "Tin nhắn",
+    "tickets": "Tickets",
     "legal": "Pháp lý",
     "about": "Về chúng tôi",
     "terms": "Điều khoản & Điều kiện",
@@ -170,7 +214,8 @@ export const vi: LocaleTree = {
     "crypto": "Tiền mã hóa",
     "bank": "Chuyển khoản ngân hàng",
     "redirect": "Thanh toán trực tuyến",
-    "local": "Thanh toán địa phương"
+    "local": "Thanh toán địa phương",
+    "manual": "Manual Transfer"
   },
   "txTypes": {
     "deposit": "Nạp tiền",
@@ -243,11 +288,18 @@ export const vi: LocaleTree = {
     "country": "Quốc gia",
     "phone": "Điện thoại",
     "kycStatus": "Trạng thái KYC",
+    "kyc": "KYC",
+    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
+    "verificationTitleKyc": "Verify identity (KYC)",
+    "kycLoading": "Loading verification...",
+    "kycFailed": "Unable to start KYC verification. Please try again later.",
+    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
     "verified": "Đã xác minh",
     "notVerified": "Chưa xác minh",
     "verifyNow": "Xác minh",
     "verificationTitleEmail": "Xác minh email",
     "verificationTitlePhone": "Xác minh điện thoại",
+    "verificationSendConfirm": "Send verification code to {{destination}}?",
     "verificationCodeHintEmail": "Nhập mã 6 chữ số gửi đến {{destination}}.",
     "verificationCodeHintPhone": "Nhập mã 6 chữ số gửi đến {{destination}}.",
     "verificationSubmit": "Xác nhận xác minh",
@@ -268,14 +320,7 @@ export const vi: LocaleTree = {
     "saveChanges": "Lưu thay đổi",
     "updateSuccess": "Cập nhật hồ sơ thành công.",
     "updateFailed": "Cập nhật hồ sơ thất bại.",
-    "language": "Ngôn ngữ",
-    "kyc": "KYC",
-    "kycComingSoon": "KYC verification will be available soon. Please check back later.",
-    "verificationTitleKyc": "Verify identity (KYC)",
-    "kycLoading": "Loading verification...",
-    "kycFailed": "Unable to start KYC verification. Please try again later.",
-    "kycHint": "Complete the steps in the form above. Your status will update after SumSub review.",
-    "verificationSendConfirm": "Send verification code to {{destination}}?"
+    "language": "Ngôn ngữ"
   },
   "risk": {
     "challengeTitle": "Verify you are human",
@@ -290,6 +335,18 @@ export const vi: LocaleTree = {
     "selectPaymentOption": "Chọn phương thức thanh toán",
     "noOptionsForCountry": "Không có phương thức thanh toán cho quốc gia này.",
     "backToMethods": "← Quay lại",
+    "backToKinds": "← Back to methods",
+    "backToOptions": "← Quay lại",
+    "stepMethod": "Phương thức thanh toán",
+    "stepOption": "Select Option",
+    "stepAmount": "Số tiền",
+    "selectPaymentKind": "Choose how you want to deposit",
+    "selectCrypto": "Select cryptocurrency",
+    "selectBank": "Select payment method",
+    "kindCountCrypto": "{{count}} cryptocurrencies",
+    "kindCountLocal": "{{count}} payment methods",
+    "kindCountManual": "Bank transfer",
+    "kindUnavailable": "Not available",
     "paymentMethod": "Phương thức thanh toán",
     "localCountryLabel": "Quốc gia thanh toán",
     "selectLocalCountry": "Chọn quốc gia thanh toán để tiếp tục.",
@@ -351,6 +408,55 @@ export const vi: LocaleTree = {
     "limitAlertGeneric": "You can withdraw up to {{amount}} based on your current verification level. Complete additional verification in your profile to increase your limit.",
     "goToProfile": "Go to Profile"
   },
+  "wallet": {
+    "cashBalance": "Cash",
+    "bonusBalance": "Thưởng",
+    "totalPlayable": "Total playable",
+    "withdrawableBalance": "Withdrawable balance",
+    "withdrawableCash": "Withdrawable cash",
+    "withdrawableBonus": "Withdrawable bonus",
+    "bonusLockedHint": "Bonus funds are locked until wagering requirements are met.",
+    "showBreakdown": "Show balance breakdown",
+    "balanceBreakdown": "Balance breakdown",
+    "fundingSource": "Funding",
+    "walletBucket": "Bucket",
+    "cashAfter": "Cash after",
+    "bonusAfter": "Bonus after",
+    "funding": {
+      "cash": "Cash",
+      "bonus": "Thưởng",
+      "mixed": "Mixed",
+      "free_spin": "Free spin"
+    },
+    "bucket": {
+      "cash": "Cash",
+      "bonus": "Thưởng"
+    }
+  },
+  "paymentInfoFields": {
+    "pay_address": "Payment address",
+    "address": "Address",
+    "network": "Network",
+    "pay_currency": "Payment currency",
+    "pay_amount": "Payment amount",
+    "payment_url": "Payment page",
+    "qr_string": "QR code",
+    "memo": "Memo",
+    "tag": "Tag",
+    "destination_tag": "Destination tag",
+    "bank_name": "Bank name",
+    "account_name": "Account name",
+    "account_number": "Account number",
+    "reference": "Tham chiếu",
+    "amount": "Số tiền",
+    "currency": "Tiền tệ"
+  },
+  "destinationFields": {
+    "address": "Wallet address",
+    "network": "Network",
+    "account": "Account / wallet ID",
+    "bank_account": "Bank account"
+  },
   "bonus": {
     "title": "Thưởng",
     "wageringProgress": "Tiến độ vòng cược",
@@ -409,6 +515,8 @@ export const vi: LocaleTree = {
     "spinType": "Spin Type",
     "fundingSource": "Spin Type",
     "fundingCash": "Cash Spin",
+    "fundingBonus": "Bonus Spin",
+    "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
   },
   "transactions": {
