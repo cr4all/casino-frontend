@@ -7,7 +7,10 @@ import { reportUserActivity } from '@/utils/userActivity';
 
 export const DEFAULT_CURRENCY = 'USD';
 
-export type WalletBalanceUpdate = WalletBalance & { ledger_id?: number | null };
+export type WalletBalanceUpdate = WalletBalance & {
+  ledger_id?: number | null;
+  event_type?: string | null;
+};
 
 interface WalletState {
   balance: WalletBalance | null;
@@ -20,6 +23,43 @@ interface WalletState {
 }
 
 let balanceInflight: Promise<void> | null = null;
+
+function formatWalletBalanceFields(balance: WalletBalance): WalletBalance {
+  return {
+    ...balance,
+    balance: formatBalance(balance.balance),
+    cash_balance: formatBalance(balance.cash_balance),
+    bonus_balance: formatBalance(balance.bonus_balance),
+    withdrawable_balance: formatBalance(balance.withdrawable_balance),
+    withdrawable_cash_balance: formatBalance(balance.withdrawable_cash_balance),
+    withdrawable_bonus_balance: formatBalance(balance.withdrawable_bonus_balance),
+  };
+}
+
+function normalizeWalletBalance(
+  update: Partial<WalletBalance> & Pick<WalletBalance, 'wallet_id' | 'player_id' | 'currency' | 'status'>,
+  previous: WalletBalance | null,
+): WalletBalance {
+  const total = update.balance ?? previous?.balance ?? '0';
+  const cash = update.cash_balance ?? previous?.cash_balance ?? total;
+  const bonus = update.bonus_balance ?? previous?.bonus_balance ?? '0';
+
+  return {
+    wallet_id: update.wallet_id,
+    player_id: update.player_id,
+    currency: update.currency,
+    status: update.status,
+    balance: total,
+    cash_balance: cash,
+    bonus_balance: bonus,
+    withdrawable_balance: update.withdrawable_balance ?? previous?.withdrawable_balance ?? total,
+    withdrawable_cash_balance:
+      update.withdrawable_cash_balance ?? previous?.withdrawable_cash_balance ?? cash,
+    withdrawable_bonus_balance:
+      update.withdrawable_bonus_balance ?? previous?.withdrawable_bonus_balance ?? '0',
+    bonus_locked: update.bonus_locked ?? previous?.bonus_locked ?? false,
+  };
+}
 
 export const useWalletStore = create<WalletState>()(
   persist(
@@ -37,14 +77,14 @@ export const useWalletStore = create<WalletState>()(
           try {
             const previousBalance = get().balance?.balance ?? null;
             const balance = await walletApi.getBalance();
-            const formattedBalance = formatBalance(balance.balance);
+            const formattedBalance = formatWalletBalanceFields(balance);
 
-            if (previousBalance !== null && previousBalance !== formattedBalance) {
+            if (previousBalance !== null && previousBalance !== formattedBalance.balance) {
               reportUserActivity();
             }
 
             set({
-              balance: { ...balance, balance: formattedBalance },
+              balance: formattedBalance,
               isLoading: false,
             });
           } catch {
@@ -69,15 +109,11 @@ export const useWalletStore = create<WalletState>()(
           return;
         }
 
+        const normalized = normalizeWalletBalance(update, get().balance);
+
         set({
           lastLedgerId: incomingLedgerId ?? lastLedgerId,
-          balance: {
-            wallet_id: update.wallet_id,
-            player_id: update.player_id,
-            currency: update.currency,
-            balance: formatBalance(update.balance),
-            status: update.status,
-          },
+          balance: formatWalletBalanceFields(normalized),
           error: null,
         });
 

@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuthStore } from '@/stores/authStore';
-import { DEFAULT_CURRENCY, useWalletStore } from '@/stores/walletStore';
-import { formatBalance } from '@/utils/formatBalance';
+import { useWalletStore } from '@/stores/walletStore';
 import { useUiStore } from '@/stores/uiStore';
 import { useUnreadNotifications } from '@/hooks/useUnreadNotifications';
 import { useTranslation } from '@/hooks/useTranslation';
 import { Button } from '@/components/common/Button';
 import { LanguageSelector } from '@/components/common/LanguageSelector';
 import { Logo } from '@/components/common/Logo';
+import { WalletBalanceBreakdown } from '@/components/wallet/WalletBalanceBreakdown';
 
 interface HeaderProps {
   onMenuToggle?: () => void;
@@ -60,11 +60,7 @@ export function Header({ onMenuToggle }: HeaderProps) {
         {isAuthenticated ? (
           <>
             <div className="flex h-9 max-w-[7.5rem] shrink-0 items-center rounded-lg border border-white/10 bg-card px-2 sm:max-w-none sm:px-4 sm:py-2 sm:h-auto">
-              <span className="mr-2 hidden text-xs text-muted sm:inline">{t('nav.balance')}</span>
-              <span className="font-condensed truncate whitespace-nowrap text-xs font-bold tracking-wide text-accent-gold sm:text-sm">
-                {balance?.currency ?? DEFAULT_CURRENCY}{' '}
-                {formatBalance(balance?.balance)}
-              </span>
+              <WalletBalanceBreakdown balance={balance} compact showLabel />
             </div>
 
             <div ref={userMenuRef} className="relative shrink-0">
