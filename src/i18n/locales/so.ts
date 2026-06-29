@@ -69,8 +69,8 @@ export const so: LocaleTree = {
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "ONDERSTEUNING WADAHADALLO",
+    "supportTicketsLabel": "Ondersteuning"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +85,35 @@ export const so: LocaleTree = {
     "loadFailed": "Could not load chat messages."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Ondersteuning Wadahadallo",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New Wadahadallo",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "category": "Tipe",
+    "message": "message",
+    "submit": "Stuur Wadahadallo",
+    "createFailed": "Ku guuldareystay in la diro fariinta. Fadlan isku day mar kale.",
+    "empty": "Wali ma jiraan wadahadallo.",
+    "backToList": "← Back to Wadahadallo",
+    "notFound": "Wadahadallo not found.",
+    "closedHint": "Tigidhkan waa la xiray. Fur tigidh cusub haddii aad u baahan tahay caawimaad dheeraad ah.",
+    "replyPlaceholder": "Qor jawaabtaada...",
+    "sendReply": "Stuur reply",
+    "replyFailed": "Ku guuldareystay in la diro fariinta. Fadlan isku day mar kale.",
+    "supportTeam": "Ondersteuning",
+    "you": "Adiga",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "rekening",
+      "payment": "Onttrekkings",
+      "bonus": "Gunno",
+      "game": "Spel",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktief",
+      "pending": "hangende",
+      "resolved": "La xaliyay",
+      "closed": "gesluit"
     }
   },
   "footer": {

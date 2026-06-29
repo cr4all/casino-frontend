@@ -69,8 +69,8 @@ export const th: LocaleTree = {
     "playResponsibly": "18+ · เล่นอย่างมีความรับผิดชอบ",
     "liveChat": "แชทสด",
     "liveChatLabel": "สนับสนุน",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "การสนับสนุน การสนทนา",
+    "supportTicketsLabel": "สนับสนุน"
   },
   "liveChat": {
     "title": "แชทสด",
@@ -85,35 +85,35 @@ export const th: LocaleTree = {
     "loadFailed": "ไม่สามารถโหลดข้อความแชทได้"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "การสนับสนุน การสนทนา",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
+    "newTicket": "New การสนทนา",
+    "subject": "หัวข้อ",
+    "category": "ประเภท",
+    "message": "ข้อความ",
+    "submit": "ส่ง การสนทนา",
+    "createFailed": "ไม่สามารถส่งข้อความได้ โปรดลองอีกครั้ง",
+    "empty": "ยังไม่มีการสนทนา",
+    "backToList": "← Back to การสนทนา",
+    "notFound": "การสนทนา not found.",
     "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "สนับสนุน",
-    "you": "You",
+    "replyPlaceholder": "พิมพ์ของคุณ ตอบกลับ...",
+    "sendReply": "ส่งคำตอบ",
+    "replyFailed": "ไม่สามารถส่งข้อความได้ โปรดลองอีกครั้ง",
+    "supportTeam": "การสนับสนุน",
+    "you": "คุณ",
     "categories": {
-      "account": "บัญชี",
-      "payment": "Payment",
+      "account": "บัญชีปัจจุบัน",
+      "payment": "การถอนเงิน",
       "bonus": "โบนัส",
       "game": "เกม",
-      "other": "Other"
+      "other": "อื่นๆ"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "ใช้งานอยู่",
+      "pending": "รอดำเนินการ",
+      "resolved": "แก้ไขแล้ว",
+      "closed": "ปิด"
     }
   },
   "footer": {

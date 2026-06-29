@@ -69,8 +69,8 @@ export const kn: LocaleTree = {
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "ಬೆಂಬಲ ಸಂಭಾಷಣೆಗಳು",
+    "supportTicketsLabel": "ಬೆಂಬಲ"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +85,35 @@ export const kn: LocaleTree = {
     "loadFailed": "Could not load chat messages."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "ಬೆಂಬಲ ಸಂಭಾಷಣೆಗಳು",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New ಸಂಭಾಷಣೆಗಳು",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "category": "ಪ್ರಕಾರ",
+    "message": "message",
+    "submit": "ಕಳುಹಿಸಿ ಸಂಭಾಷಣೆಗಳು",
+    "createFailed": "ಸಂದೇಶವನ್ನು ಕಳುಹಿಸಲು ವಿಫಲವಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+    "empty": "ಇನ್ನೂ ಯಾವುದೇ ಸಂಭಾಷಣೆಗಳಿಲ್ಲ.",
+    "backToList": "← Back to ಸಂಭಾಷಣೆಗಳು",
+    "notFound": "ಸಂಭಾಷಣೆಗಳು not found.",
+    "closedHint": "ಈ ಟಿಕೆಟ್ ಮುಚ್ಚಲಾಗಿದೆ. ಹೆಚ್ಚಿನ ಸಹಾಯ ಬೇಕಾದರೆ ಹೊಸ ಟಿಕೆಟ್ ತೆರೆಯಿರಿ.",
+    "replyPlaceholder": "ನಿಮ್ಮ ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಟೈಪ್ ಮಾಡಿ...",
+    "sendReply": "ಕಳುಹಿಸಿ reply",
+    "replyFailed": "ಸಂದೇಶವನ್ನು ಕಳುಹಿಸಲು ವಿಫಲವಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+    "supportTeam": "ಬೆಂಬಲ",
+    "you": "ನೀವು",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "ಖಾತೆ",
+      "payment": "ಹಿಂಪಡೆಯುವಿಕೆ",
+      "bonus": "ಬೋನಸ್",
+      "game": "ಆಟ",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "ಸಕ್ರಿಯ",
+      "pending": "ಬಾಕಿ",
+      "resolved": "ಪರಿಹರಿಸಲಾಗಿದೆ",
+      "closed": "ಮುಚ್ಚಲಾಗಿದೆ"
     }
   },
   "footer": {

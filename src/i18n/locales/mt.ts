@@ -69,8 +69,8 @@ export const mt: LocaleTree = {
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "APPOĠĠ KONVERSAZZJONIJIET",
+    "supportTicketsLabel": "Appoġġ"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +85,35 @@ export const mt: LocaleTree = {
     "loadFailed": "Could not load chat messages."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Appoġġ Konversazzjonijiet",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New Konversazzjonijiet",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "category": "Tip",
+    "message": "message",
+    "submit": "Ibgħat Konversazzjonijiet",
+    "createFailed": "Ma rnexxiex tibgħat il-messaġġ. Erġa' pprova.",
+    "empty": "Għad m'hemm l-ebda konversazzjonijiet.",
+    "backToList": "← Back to Konversazzjonijiet",
+    "notFound": "Konversazzjonijiet not found.",
+    "closedHint": "Dan it-ticket huwa magħluq. Iftaħ ticket ġdid jekk għandek bżonn aktar għajnuna.",
+    "replyPlaceholder": "Ikteb ir-risposta tiegħek...",
+    "sendReply": "Ibgħat reply",
+    "replyFailed": "Ma rnexxiex tibgħat il-messaġġ. Erġa' pprova.",
+    "supportTeam": "Appoġġ",
+    "you": "Int",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "corrente",
+      "payment": "Irtiri",
+      "bonus": "Bonusi",
+      "game": "Logħba",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Attivo",
+      "pending": "pendenti",
+      "resolved": "Riżolt",
+      "closed": "magħluq"
     }
   },
   "footer": {

@@ -69,8 +69,8 @@ export const lv: LocaleTree = {
     "playResponsibly": "18+ · Spēlējiet atbildīgi",
     "liveChat": "TIEŠRAIDES ČATS",
     "liveChatLabel": "Atbalsts",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "ATBALSTS SARUNAS",
+    "supportTicketsLabel": "Atbalsts"
   },
   "liveChat": {
     "title": "Tiešraides čats",
@@ -593,35 +593,35 @@ export const lv: LocaleTree = {
     "bank_account": "Bank account"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Atbalsts Sarunas",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New Sarunas",
     "subject": "Subject",
-    "category": "Category",
+    "category": "Tips",
     "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "submit": "Sūtīt Sarunas",
+    "createFailed": "Neizdevās nosūtīt ziņojumu. Lūdzu, mēģiniet vēlreiz.",
+    "empty": "Vēl nav sarunu.",
+    "backToList": "← Back to Sarunas",
+    "notFound": "Sarunas not found.",
+    "closedHint": "Šī biļete ir slēgta. Atveriet jaunu biļeti, ja nepieciešama papildu palīdzība.",
+    "replyPlaceholder": "Ierakstiet savu atbildi...",
+    "sendReply": "Sūtīt reply",
+    "replyFailed": "Neizdevās nosūtīt ziņojumu. Lūdzu, mēģiniet vēlreiz.",
+    "supportTeam": "Atbalsts",
+    "you": "Jūs",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "konts",
+      "payment": "Izmaksas",
+      "bonus": "Bonuss",
+      "game": "Spēle",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktīvs",
+      "pending": "gaida",
+      "resolved": "Atrisināts",
+      "closed": "slēgts"
     }
   }
 };

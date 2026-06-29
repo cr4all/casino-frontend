@@ -69,8 +69,8 @@ export const ro: LocaleTree = {
     "playResponsibly": "18+ · Jucați responsabil",
     "liveChat": "CHAT LIVE",
     "liveChatLabel": "Suport",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "SUPORT TICKETȚII",
+    "supportTicketsLabel": "Suport"
   },
   "liveChat": {
     "title": "Chat live",
@@ -85,35 +85,35 @@ export const ro: LocaleTree = {
     "loadFailed": "Nu s-au putut încărca mesajele de chat."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Suport Ticketții",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
+    "newTicket": "New ticketții",
+    "subject": "Subiect",
+    "category": "Tip",
+    "message": "Scrieți mesajul",
+    "submit": "Trimite ticketții",
+    "createFailed": "Trimiterea mesajului a eșuat. Încearcă din nou.",
+    "empty": "Nicio ticketție încă.",
+    "backToList": "← Back to ticketții",
+    "notFound": "Ticketții not found.",
+    "closedHint": "Acest tichet este închis. Deschideți un tichet nou dacă aveți nevoie de ajutor suplimentar.",
+    "replyPlaceholder": "Scrie răspunsul tău...",
+    "sendReply": "Trimite reply",
+    "replyFailed": "Trimiterea mesajului a eșuat. Încearcă din nou.",
     "supportTeam": "Suport",
-    "you": "You",
+    "you": "Dvs.",
     "categories": {
-      "account": "Cont",
-      "payment": "Payment",
-      "bonus": "Bonus",
+      "account": "curent",
+      "payment": "Retrageri",
+      "bonus": "Bonusuri",
       "game": "Joc",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Activ",
+      "pending": "în așteptare",
+      "resolved": "Rezolvat",
+      "closed": "închis"
     }
   },
   "footer": {

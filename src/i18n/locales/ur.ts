@@ -69,8 +69,8 @@ export const ur: LocaleTree = {
     "playResponsibly": "18+ · ذمہ داری سے کھیلیں",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "سپورٹ گفتگو",
+    "supportTicketsLabel": "سپورٹ"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -593,35 +593,35 @@ export const ur: LocaleTree = {
     "bank_account": "Bank account"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "سپورٹ گفتگو",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New گفتگو",
     "subject": "Subject",
-    "category": "Category",
+    "category": "قسم",
     "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "submit": "भेजें گفتگو",
+    "createFailed": "پیغام نہیں بھیجا جا سکا۔ براہ کرم دوبارہ کوشش کریں۔",
+    "empty": "ابھی تک کوئی گفتگو نہیں۔",
+    "backToList": "← Back to گفتگو",
+    "notFound": "گفتگو not found.",
+    "closedHint": "یہ ٹکٹ بند ہے۔ اگر مزید مدد درکار ہو تو نیا ٹکٹ کھولیں۔",
+    "replyPlaceholder": "اپنا جواب لکھیں...",
+    "sendReply": "भेजें reply",
+    "replyFailed": "پیغام نہیں بھیجا جا سکا۔ براہ کرم دوبارہ کوشش کریں۔",
+    "supportTeam": "سپورٹ",
+    "you": "آپ",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "खाता",
+      "payment": "نکاسی",
+      "bonus": "بونس",
+      "game": "گیم",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "सक्रिय",
+      "pending": "زیر التوا",
+      "resolved": "حل ہو گیا",
+      "closed": "बंद"
     }
   }
 };

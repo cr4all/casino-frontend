@@ -69,8 +69,8 @@ export const sv: LocaleTree = {
     "playResponsibly": "18+ · Spela ansvarsfullt",
     "liveChat": "LIVECHATT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "KUNDSUPPORT TICKETER",
+    "supportTicketsLabel": "Kundsupport"
   },
   "liveChat": {
     "title": "Livechatt",
@@ -85,35 +85,35 @@ export const sv: LocaleTree = {
     "loadFailed": "Kunde inte ladda chattmeddelanden."
   },
   "supportTickets": {
-    "title": "Support Tickets",
-    "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
+    "title": "Kundsupport Ticketer",
+    "subtitle": "Skicka en förfrågan och följ svar från vårt supportteam.",
+    "newTicket": "New ticketer",
+    "subject": "Ämne",
+    "category": "Typ",
+    "message": "Meddelande",
+    "submit": "Skicka ticketer",
+    "createFailed": "Kunde inte skicka meddelandet. Försök igen.",
+    "empty": "Inga Ticketer ännu.",
+    "backToList": "← Back to ticketer",
+    "notFound": "Ticketer not found.",
     "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "replyPlaceholder": "Skriv ditt svar...",
+    "sendReply": "Skicka svar",
+    "replyFailed": "Kunde inte skicka meddelandet. Försök igen.",
+    "supportTeam": "Kundsupport",
+    "you": "Du",
     "categories": {
-      "account": "Konto",
-      "payment": "Payment",
-      "bonus": "Bonus",
+      "account": "konto",
+      "payment": "Uttag",
+      "bonus": "Bonusar",
       "game": "Spel",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktiv",
+      "pending": "väntande",
+      "resolved": "Löst",
+      "closed": "stängd"
     }
   },
   "footer": {

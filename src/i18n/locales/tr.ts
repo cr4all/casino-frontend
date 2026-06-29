@@ -69,8 +69,8 @@ export const tr: LocaleTree = {
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "DESTEK KONUŞMALAR",
+    "supportTicketsLabel": "Destek"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +85,35 @@ export const tr: LocaleTree = {
     "loadFailed": "Could not load chat messages."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Destek Konuşmalar",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
+    "newTicket": "New Konuşmalar",
+    "subject": "Konu",
+    "category": "Tür",
+    "message": "Mesaj",
+    "submit": "Gönder Konuşmalar",
+    "createFailed": "Mesaj gönderilemedi. Lütfen tekrar deneyin.",
+    "empty": "Henüz konuşma yok.",
+    "backToList": "← Back to Konuşmalar",
+    "notFound": "Konuşmalar not found.",
     "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "replyPlaceholder": "Yanıtınızı yazın...",
+    "sendReply": "Yanıt gönder",
+    "replyFailed": "Mesaj gönderilemedi. Lütfen tekrar deneyin.",
+    "supportTeam": "Destek",
+    "you": "Siz",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
-      "other": "Other"
+      "account": "hesap",
+      "payment": "Para Çekme",
+      "bonus": "Bonuslar",
+      "game": "Oyun",
+      "other": "Diğer"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktif",
+      "pending": "beklemede",
+      "resolved": "Çözüldü",
+      "closed": "kapalı"
     }
   },
   "footer": {

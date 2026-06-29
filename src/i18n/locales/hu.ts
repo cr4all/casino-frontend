@@ -44,7 +44,9 @@ export const hu: LocaleTree = {
     "fieldSelectRequired": "Válassza ki: {{field}}.",
     "fieldCodeInvalid": "Adja meg a 6 számjegyű ellenőrző kódot.",
     "maxOnly": "max {{amount}}",
-    "notAvailable": "—"
+    "notAvailable": "—",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "ÖSSZES JÁTÉK",
@@ -69,8 +71,8 @@ export const hu: LocaleTree = {
     "playResponsibly": "18+ · Játsszon felelősségteljesen",
     "liveChat": "ÉLŐ CHAT",
     "liveChatLabel": "Ügyfélszolgálat",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "TÁMOGATÁS TICKETS",
+    "supportTicketsLabel": "Támogatás"
   },
   "liveChat": {
     "title": "Élő chat",
@@ -169,7 +171,8 @@ export const hu: LocaleTree = {
     "crypto": "Kriptovaluta",
     "crypto_payment": "Kripto fizetés",
     "bank": "Banki átutalás",
-    "bank_transfer": "Banki átutalás"
+    "bank_transfer": "Banki átutalás",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Kriptovaluta",
@@ -593,35 +596,35 @@ export const hu: LocaleTree = {
     "bank_account": "Bank account"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Támogatás Tickets",
     "subtitle": "Submit a request and track replies from our support team.",
     "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
+    "subject": "Tárgy",
+    "category": "Típus",
     "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
+    "submit": "Küldés ticket",
+    "createFailed": "Az üzenet küldése sikertelen. Kérjük, próbálja újra.",
+    "empty": "Még nincsenek Tickets.",
+    "backToList": "← Back to ticket",
     "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "closedHint": "Ez a jegy le van zárva. Nyisson új jegyet, ha további segítségre van szüksége.",
+    "replyPlaceholder": "Írja be a választ...",
+    "sendReply": "Küldés reply",
+    "replyFailed": "Az üzenet küldése sikertelen. Kérjük, próbálja újra.",
+    "supportTeam": "Támogatás",
+    "you": "Ön",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "fiók",
+      "payment": "Kifizetések",
+      "bonus": "Bónusz",
+      "game": "Játék",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktív",
+      "pending": "függőben",
+      "resolved": "Megoldva",
+      "closed": "lezárva"
     }
   }
 };

@@ -69,8 +69,8 @@ export const sk: LocaleTree = {
     "playResponsibly": "18+ · Hrajte zodpovedne",
     "liveChat": "ŽIVÝ CHAT",
     "liveChatLabel": "Podpora",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "PODPORA KONVERZÁCIE",
+    "supportTicketsLabel": "Podpora"
   },
   "liveChat": {
     "title": "Živý chat",
@@ -593,35 +593,35 @@ export const sk: LocaleTree = {
     "bank_account": "Bank account"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Podpora Konverzácie",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
+    "newTicket": "New Konverzácie",
+    "subject": "Predmet",
+    "category": "Typ",
     "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
+    "submit": "Odoslať Konverzácie",
+    "createFailed": "Odoslanie správy zlyhalo. Skúste to znova.",
+    "empty": "Zatiaľ žiadne konverzácie.",
+    "backToList": "← Back to Konverzácie",
+    "notFound": "Konverzácie not found.",
     "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
+    "replyPlaceholder": "Napíšte svoju odpoveď...",
+    "sendReply": "Odoslať reply",
+    "replyFailed": "Odoslanie správy zlyhalo. Skúste to znova.",
+    "supportTeam": "Podpora",
     "you": "You",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "účet",
+      "payment": "Výbery",
+      "bonus": "Bonusy",
+      "game": "Hra",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
+      "open": "Aktívne",
+      "pending": "čakajúce",
       "resolved": "Resolved",
-      "closed": "Closed"
+      "closed": "uzavreté"
     }
   }
 };

@@ -44,7 +44,9 @@ export const cy: LocaleTree = {
     "fieldPasswordMismatch": "Cyfrineiriau ddim yr un fath.",
     "fieldSelectRequired": "Dewiswch",
     "fieldCodeInvalid": "Rhowch y cod dilysu 6 digid",
-    "language": "Language"
+    "language": "Language",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -69,8 +71,8 @@ export const cy: LocaleTree = {
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "CEFNOGAETH SGYRSIAU",
+    "supportTicketsLabel": "Cefnogaeth"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +87,35 @@ export const cy: LocaleTree = {
     "loadFailed": "Could not load chat messages."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Cefnogaeth Sgyrsiau",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New Sgyrsiau",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "category": "Math",
+    "message": "message",
+    "submit": "Anfon Sgyrsiau",
+    "createFailed": "Wedi methu ag anfon neges. Ceisiwch eto.",
+    "empty": "Dim sgyrsiau eto.",
+    "backToList": "← Back to Sgyrsiau",
+    "notFound": "Sgyrsiau not found.",
+    "closedHint": "Mae'r tocyn hwn ar gau. Agorwch docyn newydd os oes angen rhagor o gymorth arnoch.",
+    "replyPlaceholder": "Teipiwch eich ateb...",
+    "sendReply": "Anfon reply",
+    "replyFailed": "Wedi methu ag anfon neges. Ceisiwch eto.",
+    "supportTeam": "Cefnogaeth",
+    "you": "Chi",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "cyfredol",
+      "payment": "Tynnu'n Ôl",
+      "bonus": "Bonws",
+      "game": "Gêm",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Actif",
+      "pending": "arfaeth",
+      "resolved": "Wedi'i ddatrys",
+      "closed": " ar gau"
     }
   },
   "footer": {
@@ -208,7 +210,8 @@ export const cy: LocaleTree = {
     "crypto": "Cryptocurrency",
     "crypto_payment": "Crypto Payment",
     "bank": "Bank Transfer",
-    "bank_transfer": "Bank Transfer"
+    "bank_transfer": "Bank Transfer",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Cryptocurrency",

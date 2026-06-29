@@ -69,8 +69,8 @@ export const ne: LocaleTree = {
     "playResponsibly": "18+ · जिम्मेवारीपूर्वक खेल्नुहोस्",
     "liveChat": "प्रत्यक्ष कुराकानी",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "सहायता कुराकानीहरू",
+    "supportTicketsLabel": "सहायता"
   },
   "liveChat": {
     "title": "प्रत्यक्ष कुराकानी",
@@ -85,35 +85,35 @@ export const ne: LocaleTree = {
     "loadFailed": "कुराकानी सन्देशहरू लोड गर्न सकिएन ।"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "सहायता कुराकानीहरू",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New कुराकानीहरू",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "category": "प्रकार",
+    "message": "तपाईंको सन्देश यहाँ टाइप गर्नुहोस्",
+    "submit": "पठाउनुहोस् कुराकानीहरू",
+    "createFailed": "सन्देश पठाउन असफल। कृपया पुन: प्रयास गर्नुहोस्।",
+    "empty": "अहिलेसम्म कुनै कुराकानी छैन।",
+    "backToList": "← Back to कुराकानीहरू",
+    "notFound": "कुराकानीहरू not found.",
+    "closedHint": "यो टिकट बन्द छ। थप सहायता चाहिन्छ भने नयाँ टिकट खोल्नुहोस्।",
+    "replyPlaceholder": "आफ्नो जवाफ टाइप गर्नुहोस्...",
+    "sendReply": "पठाउनुहोस् reply",
+    "replyFailed": "सन्देश पठाउन असफल। कृपया पुन: प्रयास गर्नुहोस्।",
+    "supportTeam": "सहायता",
+    "you": "तपाईं",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "खाता",
+      "payment": "निकासी",
+      "bonus": "बोनस",
+      "game": "गेम",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "सक्रिय",
+      "pending": "विचाराधीन",
+      "resolved": "समाधान भयो",
+      "closed": "बन्द भएको"
     }
   },
   "footer": {

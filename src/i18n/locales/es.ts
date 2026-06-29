@@ -44,7 +44,9 @@ export const es: LocaleTree = {
     "fieldSelectRequired": "Seleccione {{field}}.",
     "fieldCodeInvalid": "Introduzca el código de verificación de 6 dígitos.",
     "maxOnly": "máx. {{amount}}",
-    "notAvailable": "—"
+    "notAvailable": "—",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "TODOS LOS JUEGOS",
@@ -169,7 +171,8 @@ export const es: LocaleTree = {
     "crypto": "Criptomoneda",
     "crypto_payment": "Pago cripto",
     "bank": "Transferencia bancaria",
-    "bank_transfer": "Transferencia bancaria"
+    "bank_transfer": "Transferencia bancaria",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Criptomoneda",

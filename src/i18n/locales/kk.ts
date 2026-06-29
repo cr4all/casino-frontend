@@ -69,8 +69,8 @@ export const kk: LocaleTree = {
     "playResponsibly": "18+ · Жауапты ойнаңыз",
     "liveChat": "LIVE ЧАТ",
     "liveChatLabel": "Қолдау",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "ҚОЛДАУ СӨЙЛЕСУЛЕР",
+    "supportTicketsLabel": "Қолдау"
   },
   "liveChat": {
     "title": "Live чат",
@@ -85,35 +85,35 @@ export const kk: LocaleTree = {
     "loadFailed": "Чат хабарларын жүктеу мүмкін емес."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Қолдау Сөйлесулер",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New Сөйлесулер",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
+    "category": "Түр",
+    "message": "Хабарламаңызды теріңіз",
+    "submit": "Жіберу Сөйлесулер",
+    "createFailed": "Хабарламаны жіберу сәтсіз аяқталды. Қайта көріңіз.",
+    "empty": "Сөйлесулер әлі жоқ.",
+    "backToList": "← Back to Сөйлесулер",
+    "notFound": "Сөйлесулер not found.",
+    "closedHint": "Бұл билет жабық. Қосымша көмек қажет болса, жаңа билет ашыңыз.",
+    "replyPlaceholder": "Жауабыңызды жазыңыз...",
+    "sendReply": "Жіберу reply",
+    "replyFailed": "Хабарламаны жіберу сәтсіз аяқталды. Қайта көріңіз.",
     "supportTeam": "Қолдау",
-    "you": "You",
+    "you": "Сіз",
     "categories": {
-      "account": "Аккаунт",
-      "payment": "Payment",
+      "account": "тіркелгі",
+      "payment": "Шығарып алу",
       "bonus": "Бонус",
       "game": "Ойын",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Белсенді",
+      "pending": "күтуде",
+      "resolved": "Шешілді",
+      "closed": "жабық"
     }
   },
   "footer": {

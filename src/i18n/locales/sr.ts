@@ -69,8 +69,8 @@ export const sr: LocaleTree = {
     "playResponsibly": "18+ · Igrajte odgovorno",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "PODRŠKA RAZGOVORI",
+    "supportTicketsLabel": "Podrška"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -593,35 +593,35 @@ export const sr: LocaleTree = {
     "bank_account": "Bank account"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Podrška Razgovori",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
+    "newTicket": "New Razgovori",
+    "subject": "Предмет",
+    "category": "Tip",
     "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "submit": "Pošalji Razgovori",
+    "createFailed": "Slanje poruke nije uspelo. Pokušajte ponovo.",
+    "empty": "Još nema razgovora.",
+    "backToList": "← Back to Razgovori",
+    "notFound": "Razgovori not found.",
+    "closedHint": "Ова картица је затворена. Отворите нову картицу ако вам је потребна додатна помоћ.",
+    "replyPlaceholder": "Unesite odgovor...",
+    "sendReply": "Pošalji reply",
+    "replyFailed": "Slanje poruke nije uspelo. Pokušajte ponovo.",
+    "supportTeam": "Podrška",
+    "you": "Ви",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "nalog",
+      "payment": "Isplate",
+      "bonus": "Bonusi",
+      "game": "Igra",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktivno",
+      "pending": "na čekanju",
+      "resolved": "Решено",
+      "closed": "zatvoreno"
     }
   }
 };

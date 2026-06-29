@@ -69,8 +69,8 @@ export const lt: LocaleTree = {
     "playResponsibly": "18+ · Žaiskite atsakingai",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Palaikymas",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "PAGALBA POKALBIAI",
+    "supportTicketsLabel": "Palaikymas"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +85,35 @@ export const lt: LocaleTree = {
     "loadFailed": "Nepavyko įkelti pokalbių žinučių."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Pagalba Pokalbiai",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New Pokalbiai",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Palaikymas",
-    "you": "You",
+    "category": "Tipas",
+    "message": "Rašykite žinutę",
+    "submit": "Siųsti Pokalbiai",
+    "createFailed": "Nepavyko išsiųsti žinutės. Bandykite dar kartą.",
+    "empty": "Pokalbių dar nėra.",
+    "backToList": "← Back to Pokalbiai",
+    "notFound": "Pokalbiai not found.",
+    "closedHint": "Šis bilietas uždarytas. Atidarykite naują bilietą, jei reikia papildomos pagalbos.",
+    "replyPlaceholder": "Įveskite atsakymą...",
+    "sendReply": "Siųsti reply",
+    "replyFailed": "Nepavyko išsiųsti žinutės. Bandykite dar kartą.",
+    "supportTeam": "Pagalba",
+    "you": "Jūs",
     "categories": {
-      "account": "Paskyra",
-      "payment": "Payment",
+      "account": "paskyra",
+      "payment": "Išėmimai",
       "bonus": "Premija",
       "game": "Žaidimas",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktyvus",
+      "pending": "laukiama",
+      "resolved": "Išspręsta",
+      "closed": "uždarytas"
     }
   },
   "footer": {

@@ -69,8 +69,8 @@ export const si: LocaleTree = {
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "সহায়তা සංවාද",
+    "supportTicketsLabel": "সহায়তা"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +85,35 @@ export const si: LocaleTree = {
     "loadFailed": "Could not load chat messages."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "সহায়তা සංවාද",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New සංවාද",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "category": "টাইপ",
+    "message": "message",
+    "submit": "পাঠান සංවාද",
+    "createFailed": "පණිවිඩය යැවීමට අසමත් විය. නැවත උත්සාහ කරන්න.",
+    "empty": "තවම සංවාද නොමැත.",
+    "backToList": "← Back to සංවාද",
+    "notFound": "සංවාද not found.",
+    "closedHint": "මෙම ටිකට් පත වසා ඇත. තවත් උදව් අවශ්‍ය නම් නව ටිකට් පතක් විවෘත කරන්න.",
+    "replyPlaceholder": "ඔබේ ප්‍රතිචාරය ටයිප් කරන්න...",
+    "sendReply": "পাঠান reply",
+    "replyFailed": "පණිවිඩය යැවීමට අසමත් විය. නැවත උත්සාහ කරන්න.",
+    "supportTeam": "সহায়তা",
+    "you": "ඔබ",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "অ্যাকাউন্ট",
+      "payment": "উত্তোলন",
+      "bonus": "বোনাস",
+      "game": "গেম",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "সক্রিয়",
+      "pending": "মুলতুবি",
+      "resolved": "විසඳා ඇත",
+      "closed": "বন্ধ"
     }
   },
   "footer": {

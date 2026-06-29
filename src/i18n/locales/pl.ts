@@ -69,8 +69,8 @@ export const pl: LocaleTree = {
     "playResponsibly": "18+ · Graj odpowiedzialnie",
     "liveChat": "CZAT NA ŻYWO",
     "liveChatLabel": "Wsparcie",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "WSPARCIE TICKETS",
+    "supportTicketsLabel": "Wsparcie"
   },
   "liveChat": {
     "title": "Czat na żywo",
@@ -593,35 +593,35 @@ export const pl: LocaleTree = {
     "bank_account": "Bank account"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Wsparcie Tickets",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "newTicket": "Nowy ticket",
+    "subject": "Temat",
+    "category": "Typ",
+    "message": "Wiadomość",
+    "submit": "Wyślij ticket",
+    "createFailed": "Nie udało się wysłać wiadomości. Spróbuj ponownie.",
+    "empty": "Jeszcze żadnych rozmów.",
+    "backToList": "← Powrót do ticket",
+    "notFound": "Ticket nie znaleziono.",
+    "closedHint": "To zgłoszenie jest zamknięty. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Wpisz swój odpowiedz...",
+    "sendReply": "Wyślij odpowiedź",
+    "replyFailed": "Nie udało się wysłać wiadomości. Spróbuj ponownie.",
+    "supportTeam": "Wsparcie",
+    "you": "Ty",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
-      "other": "Other"
+      "account": "konto",
+      "payment": "Wypłaty",
+      "bonus": "Bonusy",
+      "game": "Gra",
+      "other": "Inne"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktywne",
+      "pending": "oczekuje",
+      "resolved": "Rozwiązane",
+      "closed": "zamknięty"
     }
   }
 };

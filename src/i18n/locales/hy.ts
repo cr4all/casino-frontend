@@ -44,7 +44,9 @@ export const hy: LocaleTree = {
     "fieldPasswordMismatch": "Nonce no coincide",
     "fieldSelectRequired": "Խնդրում ենք ընտրել",
     "fieldCodeInvalid": "Մուտքագրեք հաստատման 6 նիշանոց կոդը ։",
-    "language": "Լեզու"
+    "language": "Լեզու",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "ԲԱՐՁՐ ԽԱՂԵՐ",
@@ -69,8 +71,8 @@ export const hy: LocaleTree = {
     "playResponsibly": "18+ · Խաղացեք պատասխանատու կերպով",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Համակարգել",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "ԱՋԱԿՑՈՒԹՅՈՒՆ ԶՐՈՒՅՑՆԵՐ",
+    "supportTicketsLabel": "Համակարգել"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +87,35 @@ export const hy: LocaleTree = {
     "loadFailed": "Չհաջողվեց โหลด-ը հեռագրային հաղորդագրությունները։"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Աջակցություն Զրույցներ",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New Զրույցներ",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Համակարգել",
-    "you": "You",
+    "category": "Տեսակ",
+    "message": "Մտցրեք ձեր հաղորդագրությունը",
+    "submit": "Ուղարկել Զրույցներ",
+    "createFailed": "Հաղորդագրությունը ուղարկել չհաջողվեց։ Խնդրում ենք կրկին փորձել։",
+    "empty": "Դեռևս զրույցներ չկան։",
+    "backToList": "← Back to Զրույցներ",
+    "notFound": "Զրույցներ not found.",
+    "closedHint": "Այս տոմսը փակ է։ Բացեք նոր տոմս, եթե լրացուցիչ օգնություն է պետք։",
+    "replyPlaceholder": "Մուտքագրեք ձեր պատասխանը...",
+    "sendReply": "Ուղարկել reply",
+    "replyFailed": "Հաղորդագրությունը ուղարկել չհաջողվեց։ Խնդրում ենք կրկին փորձել։",
+    "supportTeam": "Աջակցություն",
+    "you": "Դուք",
     "categories": {
-      "account": "Հաշիվ",
-      "payment": "Payment",
-      "bonus": "Պարգևավճար",
+      "account": "հաշիվ",
+      "payment": "Դուրսբերումներ",
+      "bonus": "Բոնուս",
       "game": "Խաղ",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Ակտիվ",
+      "pending": "սպասման",
+      "resolved": "Լուծված",
+      "closed": "փակված"
     }
   },
   "footer": {
@@ -208,7 +210,8 @@ export const hy: LocaleTree = {
     "crypto": "Կրիպտოვալուտա",
     "crypto_payment": "Կրիպտո վճարում",
     "bank": "Բանկային փոխանցում",
-    "bank_transfer": "Բանկային փոխանցում"
+    "bank_transfer": "Բանկային փոխանցում",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Կրիպտოვալուտա",

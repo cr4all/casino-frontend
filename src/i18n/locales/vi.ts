@@ -69,8 +69,8 @@ export const vi: LocaleTree = {
     "playResponsibly": "18+ · Chơi có trách nhiệm",
     "liveChat": "CHAT TRỰC TUYẾN",
     "liveChatLabel": "Hỗ trợ",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "HỖ TRỢ CUỘC TRÒ CHUYỆN",
+    "supportTicketsLabel": "Hỗ trợ"
   },
   "liveChat": {
     "title": "Chat trực tuyến",
@@ -85,35 +85,35 @@ export const vi: LocaleTree = {
     "loadFailed": "Không thể tải tin nhắn chat."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Hỗ trợ Cuộc trò chuyện",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
+    "newTicket": "New Cuộc trò chuyện",
+    "subject": "Chủ đề",
+    "category": "Loại",
+    "message": "Tin nhắn",
+    "submit": "Gửi Cuộc trò chuyện",
+    "createFailed": "Không gửi được tin nhắn. Vui lòng thử lại.",
+    "empty": "Chưa có cuộc trò chuyện nào.",
+    "backToList": "← Back to Cuộc trò chuyện",
+    "notFound": "Cuộc trò chuyện not found.",
     "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
+    "replyPlaceholder": "Nhập câu trả lời của bạn...",
+    "sendReply": "Gửi trả lời",
+    "replyFailed": "Không gửi được tin nhắn. Vui lòng thử lại.",
     "supportTeam": "Hỗ trợ",
-    "you": "You",
+    "you": "Bạn",
     "categories": {
-      "account": "Tài khoản",
-      "payment": "Payment",
-      "bonus": "Thưởng",
+      "account": "tại",
+      "payment": "Rút tiền",
+      "bonus": "Tiền thưởng",
       "game": "Trò chơi",
-      "other": "Other"
+      "other": "Khác"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Hoạt động",
+      "pending": "đang chờ xử lý",
+      "resolved": "Đã giải quyết",
+      "closed": "đã đóng"
     }
   },
   "footer": {

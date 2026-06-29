@@ -69,8 +69,8 @@ export const mk: LocaleTree = {
     "playResponsibly": "18+ · Играјте одговорно",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "ПОДДРШКА РАЗГОВОРИ",
+    "supportTicketsLabel": "Поддршка"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -593,35 +593,35 @@ export const mk: LocaleTree = {
     "bank_account": "Bank account"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Поддршка Разговори",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New Разговори",
     "subject": "Subject",
-    "category": "Category",
+    "category": "Тип",
     "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "submit": "Испрати Разговори",
+    "createFailed": "Неуспешно испраќање на порака. Обидете се повторно.",
+    "empty": "Сè уште нема разговори.",
+    "backToList": "← Back to Разговори",
+    "notFound": "Разговори not found.",
+    "closedHint": "Овој тикет е затворен. Отворете нов тикет ако ви треба дополнителна помош.",
+    "replyPlaceholder": "Напишете одговор...",
+    "sendReply": "Испрати reply",
+    "replyFailed": "Неуспешно испраќање на порака. Обидете се повторно.",
+    "supportTeam": "Поддршка",
+    "you": "Вие",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "сметка",
+      "payment": "Подигнувања",
+      "bonus": "Бонус",
+      "game": "Игра",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Активно",
+      "pending": "на чекање",
+      "resolved": "Решено",
+      "closed": "затворено"
     }
   }
 };

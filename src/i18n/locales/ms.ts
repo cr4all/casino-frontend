@@ -69,8 +69,8 @@ export const ms: LocaleTree = {
     "playResponsibly": "18+ · Main Secara Bertanggungjawab",
     "liveChat": "SEMBANG LANGSUNG",
     "liveChatLabel": "Sokongan",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "SOKONGAN PERBUALAN",
+    "supportTicketsLabel": "Sokongan"
   },
   "liveChat": {
     "title": "Sembang Langsung",
@@ -85,35 +85,35 @@ export const ms: LocaleTree = {
     "loadFailed": "Tidak dapat memuatkan mesej sembang."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Sokongan Perbualan",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
+    "newTicket": "New Perbualan",
+    "subject": "Subjek",
+    "category": "Jenis",
+    "message": "Taip mesej anda",
+    "submit": "Kirim Perbualan",
+    "createFailed": "Gagal menghantar mesej. Sila cuba lagi.",
+    "empty": "Tiada perbualan lagi.",
+    "backToList": "← Back to Perbualan",
+    "notFound": "Perbualan not found.",
+    "closedHint": "Tiket ini telah ditutup. Buka tiket baharu jika anda memerlukan bantuan lanjutan.",
+    "replyPlaceholder": "Taip balasan anda...",
+    "sendReply": "Kirim reply",
+    "replyFailed": "Gagal menghantar mesej. Sila cuba lagi.",
     "supportTeam": "Sokongan",
-    "you": "You",
+    "you": "Anda",
     "categories": {
-      "account": "Akaun",
-      "payment": "Payment",
-      "bonus": "Ganjaran",
+      "account": "ini",
+      "payment": "Pengeluaran",
+      "bonus": "Bonusi",
       "game": "Permainan",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktif",
+      "pending": "menunggu",
+      "resolved": "Diselesaikan",
+      "closed": "ditutup"
     }
   },
   "footer": {

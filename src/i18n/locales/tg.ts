@@ -69,8 +69,8 @@ export const tg: LocaleTree = {
     "playResponsibly": "18+ · Бо масъулият бозӣ кунед",
     "liveChat": "ЧАТИ ЗИНДА",
     "liveChatLabel": "Дастгирӣ",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "ПОДДЕРЖКА СӮҲБАТҲО",
+    "supportTicketsLabel": "Дастгирӣ"
   },
   "liveChat": {
     "title": "Чати зинда",
@@ -85,35 +85,35 @@ export const tg: LocaleTree = {
     "loadFailed": "Паёмҳои чатро бор карда нашуд."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Поддержка Сӯҳбатҳо",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New Сӯҳбатҳо",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Дастгирӣ",
-    "you": "You",
+    "category": "Тип",
+    "message": "Паёми худро нависед",
+    "submit": "Отправить Сӯҳбатҳо",
+    "createFailed": "Ирсоли паём ноком шуд. Лутфан, боз кӯшиш кунед.",
+    "empty": "Ҳанӯз сӯҳбат нест.",
+    "backToList": "← Back to Сӯҳбатҳо",
+    "notFound": "Сӯҳбатҳо not found.",
+    "closedHint": "Ин чипта пӯшида шуд. Агар кӯмаки иловагӣ лозим бошад, чиптаи нав кушоед.",
+    "replyPlaceholder": "Ҷавоби худро нависед...",
+    "sendReply": "Отправить reply",
+    "replyFailed": "Ирсоли паём ноком шуд. Лутфан, боз кӯшиш кунед.",
+    "supportTeam": "Поддержка",
+    "you": "Шумо",
     "categories": {
-      "account": "Ҳисоб",
-      "payment": "Payment",
+      "account": "запись",
+      "payment": "Снятие средств",
       "bonus": "Бонус",
-      "game": "Бозӣ",
+      "game": "Игра",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Активна",
+      "pending": "интизор аст",
+      "resolved": "Ҳал шуд",
+      "closed": "закрыто"
     }
   },
   "footer": {

@@ -69,8 +69,8 @@ export const lo: LocaleTree = {
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "ສະໜັບສະໜູນ ການສົນທະນາ",
+    "supportTicketsLabel": "ສະໜັບສະໜູນ"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +85,35 @@ export const lo: LocaleTree = {
     "loadFailed": "Could not load chat messages."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "ສະໜັບສະໜູນ ການສົນທະນາ",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New ການສົນທະນາ",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "category": "ປະເພດ",
+    "message": "message",
+    "submit": "ສົ່ງ ການສົນທະນາ",
+    "createFailed": "ສົ່ງຂໍ້ຄວາມບໍ່ສຳເລັດ. ກະລຸນາລອງໃໝ່.",
+    "empty": "ຍັງບໍ່ມີການສົນທະນາ.",
+    "backToList": "← Back to ການສົນທະນາ",
+    "notFound": "ການສົນທະນາ not found.",
+    "closedHint": "ປີ້ນີ້ຖືກປິດແລ້ວ. ຖ້າຕ້ອງການຄວາມຊ່ວຍເຫຼືອເພີ່ມເຕີມ ກະລຸນາເປີດປີ້ນໃໝ່.",
+    "replyPlaceholder": "ພິມຄຳຕອບຂອງທ່ານ...",
+    "sendReply": "ສົ່ງ reply",
+    "replyFailed": "ສົ່ງຂໍ້ຄວາມບໍ່ສຳເລັດ. ກະລຸນາລອງໃໝ່.",
+    "supportTeam": "ສະໜັບສະໜູນ",
+    "you": "ທ່ານ",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "ບັນຊີປັດຈຸບັນ",
+      "payment": "ການຖອນເງິນ",
+      "bonus": "ໂບນັດ",
+      "game": "ເກມ",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "ໃຊ້ງານ",
+      "pending": "ລໍຖ້າ",
+      "resolved": "ແກ້ໄຂແລ້ວ",
+      "closed": "ປິດ"
     }
   },
   "footer": {

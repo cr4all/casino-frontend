@@ -44,7 +44,9 @@ export const he: LocaleTree = {
     "fieldPasswordMismatch": "הסיסמאות אינן תואמות.",
     "fieldSelectRequired": "נא לבחור {{field}}.",
     "fieldCodeInvalid": "נא להזין את קוד האימות בן 6 הספרות.",
-    "language": "שפה"
+    "language": "שפה",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "כל המשחקים",
@@ -69,8 +71,8 @@ export const he: LocaleTree = {
     "playResponsibly": "18+ · שחק באחריות",
     "liveChat": "צ'אט חי",
     "liveChatLabel": "תמיכה",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "תמיכה שיחות",
+    "supportTicketsLabel": "תמיכה"
   },
   "liveChat": {
     "title": "צ'אט חי",
@@ -85,35 +87,35 @@ export const he: LocaleTree = {
     "loadFailed": "לא ניתן לטעון הודעות צ'אט."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "תמיכה שיחות",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
+    "newTicket": "New שיחות",
+    "subject": "נושא",
+    "category": "סוג",
+    "message": "הודעה",
+    "submit": "שליחה שיחות",
+    "createFailed": "שליחת ההודעה נכשלה. נסה שוב.",
+    "empty": "אין עדיין שיחות.",
+    "backToList": "← Back to שיחות",
+    "notFound": "שיחות not found.",
+    "closedHint": "כרטיס זה סגור. פתחו כרטיס חדש אם אתם זקוקים לעזרה נוספת.",
+    "replyPlaceholder": "הקלד את תשובתך...",
+    "sendReply": "שליחה reply",
+    "replyFailed": "שליחת ההודעה נכשלה. נסה שוב.",
     "supportTeam": "תמיכה",
-    "you": "You",
+    "you": "אתה",
     "categories": {
-      "account": "חשבון",
-      "payment": "Payment",
+      "account": "נוכחי",
+      "payment": "משיכות",
       "bonus": "בונוס",
       "game": "משחק",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "פעיל",
+      "pending": "ממתין",
+      "resolved": "נפתר",
+      "closed": "סגור"
     }
   },
   "footer": {
@@ -208,7 +210,8 @@ export const he: LocaleTree = {
     "crypto": "מטבע קריפטו",
     "crypto_payment": "תשלום קריפטו",
     "bank": "העברה בנקאית",
-    "bank_transfer": "העברה בנקאית"
+    "bank_transfer": "העברה בנקאית",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "מטבע קריפטו",

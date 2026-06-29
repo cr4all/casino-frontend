@@ -69,8 +69,8 @@ export const sw: LocaleTree = {
     "playResponsibly": "18+ · Cheza kwa uwajibikaji",
     "liveChat": "GUMZO LA MOJA KWA MOJA",
     "liveChatLabel": "Msaada",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "MSAADA MAZUNGUMZO",
+    "supportTicketsLabel": "Msaada"
   },
   "liveChat": {
     "title": "Gumzo la moja kwa moja",
@@ -85,35 +85,35 @@ export const sw: LocaleTree = {
     "loadFailed": "Imeshindwa kupakia ujumbe wa gumzo."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Msaada Mazungumzo",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
+    "newTicket": "New Mazungumzo",
+    "subject": "Mada",
+    "category": "Tipe",
+    "message": "Andika ujumbe wako",
+    "submit": "Stuur Mazungumzo",
+    "createFailed": "Imeshindwa kutuma ujumbe. Tafadhali jaribu tena.",
+    "empty": "Bado hakuna mazungumzo.",
+    "backToList": "← Back to Mazungumzo",
+    "notFound": "Mazungumzo not found.",
+    "closedHint": "Tiketi hii imefungwa. Fungua tiketi mpya ikiwa unahitaji msaada zaidi.",
+    "replyPlaceholder": "Andika jibu lako...",
+    "sendReply": "Tuma jibu",
+    "replyFailed": "Imeshindwa kutuma ujumbe. Tafadhali jaribu tena.",
     "supportTeam": "Msaada",
-    "you": "You",
+    "you": "Wewe",
     "categories": {
-      "account": "Akaunti",
-      "payment": "Payment",
+      "account": "rekening",
+      "payment": "Utoaji",
       "bonus": "Bonasi",
-      "game": "Mchezo",
-      "other": "Other"
+      "game": "Spel",
+      "other": "Nyingine"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktief",
+      "pending": "hangende",
+      "resolved": "Imetatuliwa",
+      "closed": "gesluit"
     }
   },
   "footer": {

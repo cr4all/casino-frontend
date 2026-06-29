@@ -44,7 +44,9 @@ export const gu: LocaleTree = {
     "fieldPasswordMismatch": "પાસવર્ડસ બંધબેસતાં નથી.",
     "fieldSelectRequired": "કૃપા કરીને બેંક પસંદ કરો",
     "fieldCodeInvalid": "કૃપા કરીને 6-અંકનો ચકાસણી કોડ દાખલ કરો.",
-    "language": "Language"
+    "language": "Language",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -69,8 +71,8 @@ export const gu: LocaleTree = {
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "સહાય વાતચીત",
+    "supportTicketsLabel": "સહાય"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +87,35 @@ export const gu: LocaleTree = {
     "loadFailed": "Could not load chat messages."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "સહાય વાતચીત",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New વાતચીત",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "category": "પ્રકાર",
+    "message": "message",
+    "submit": "મોકલો વાતચીત",
+    "createFailed": "સંદેશ મોકલવામાં નિષ્ફળ. કૃપા કરીને ફરી પ્રયાસ કરો.",
+    "empty": "હજી સુધી કોઈ વાતચીત નથી.",
+    "backToList": "← Back to વાતચીત",
+    "notFound": "વાતચીત not found.",
+    "closedHint": "આ ટિકિટ બંધ છે. વધુ મદદ જોઈતી હોય તો નવી ટિકિટ ખોલો.",
+    "replyPlaceholder": "તમારો જવાબ લખો...",
+    "sendReply": "મોકલો reply",
+    "replyFailed": "સંદેશ મોકલવામાં નિષ્ફળ. કૃપા કરીને ફરી પ્રયાસ કરો.",
+    "supportTeam": "સહાય",
+    "you": "તમે",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "એકાઉન્ટ",
+      "payment": "ઉપાડ",
+      "bonus": "બોનસ",
+      "game": "રમત",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "સક્રિય",
+      "pending": "બાકી",
+      "resolved": "ઉકેલાયું",
+      "closed": "બંધ"
     }
   },
   "footer": {
@@ -208,7 +210,8 @@ export const gu: LocaleTree = {
     "crypto": "Cryptocurrency",
     "crypto_payment": "Crypto Payment",
     "bank": "Bank Transfer",
-    "bank_transfer": "Bank Transfer"
+    "bank_transfer": "Bank Transfer",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Cryptocurrency",

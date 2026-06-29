@@ -69,8 +69,8 @@ export const ml: LocaleTree = {
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "പിന്തുണ സംഭാഷണങ്ങൾ",
+    "supportTicketsLabel": "പിന്തുണ"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +85,35 @@ export const ml: LocaleTree = {
     "loadFailed": "Could not load chat messages."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "പിന്തുണ സംഭാഷണങ്ങൾ",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New സംഭാഷണങ്ങൾ",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "category": "തരം",
+    "message": "message",
+    "submit": "അയയ്ക്കുക സംഭാഷണങ്ങൾ",
+    "createFailed": "സന്ദേശം അയയ്‌ക്കുന്നതിൽ പരാജയപ്പെട്ടു. വീണ്ടും ശ്രമിക്കുക.",
+    "empty": "ഇതുവരെ സംഭാഷണങ്ങളൊന്നുമില്ല.",
+    "backToList": "← Back to സംഭാഷണങ്ങൾ",
+    "notFound": "സംഭാഷണങ്ങൾ not found.",
+    "closedHint": "ഈ ടിക്കറ്റ് അടച്ചിരിക്കുന്നു. കൂടുതൽ സഹായം ആവശ്യമെങ്കിൽ പുതിയ ടിക്കറ്റ് തുറക്കുക.",
+    "replyPlaceholder": "നിങ്ങളുടെ മറുപടി ടൈപ്പ് ചെയ്യുക...",
+    "sendReply": "അയയ്ക്കുക reply",
+    "replyFailed": "സന്ദേശം അയയ്‌ക്കുന്നതിൽ പരാജയപ്പെട്ടു. വീണ്ടും ശ്രമിക്കുക.",
+    "supportTeam": "പിന്തുണ",
+    "you": "നിങ്ങൾ",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "അക്കൗണ്ട്",
+      "payment": "പിൻവലിക്കലുകൾ",
+      "bonus": "ബോണസ്",
+      "game": "ഗെയിം",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "സജീവം",
+      "pending": "തീർപ്പാക്കാത്ത",
+      "resolved": "പരിഹരിച്ചു",
+      "closed": "അടച്ചു"
     }
   },
   "footer": {

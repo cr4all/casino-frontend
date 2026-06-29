@@ -71,8 +71,8 @@ export const bn: LocaleTree = {
     "playResponsibly": "18+ · দায়িত্বের সাথে খেলুন",
     "liveChat": "লাইভ চ্যাট",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "সহায়তা কথোপকথন",
+    "supportTicketsLabel": "সহায়তা"
   },
   "liveChat": {
     "title": "লাইভ চ্যাট",
@@ -87,35 +87,35 @@ export const bn: LocaleTree = {
     "loadFailed": "চ্যাট বার্তা লোড করা যায়নি ।"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "সহায়তা কথোপকথন",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "newTicket": "New কথোপকথন",
+    "subject": "বিষয়",
+    "category": "টাইপ",
+    "message": "আপনার মেসেজ টাইপ করুন",
+    "submit": "পাঠান কথোপকথন",
+    "createFailed": "বার্তা পাঠাতে ব্যর্থ হয়েছে৷ অনুগ্রহ করে আবার চেষ্টা করুন।",
+    "empty": "এখনও কোনো কথোপকথন নেই।",
+    "backToList": "← Back to কথোপকথন",
+    "notFound": "কথোপকথন not found.",
+    "closedHint": "এই টিকিট বন্ধ আছে। আরও সহায়তার প্রয়োজন হলে একটি নতুন টিকিট খুলুন।",
+    "replyPlaceholder": "আপনার উত্তর টাইপ করুন...",
+    "sendReply": "পাঠান reply",
+    "replyFailed": "বার্তা পাঠাতে ব্যর্থ হয়েছে৷ অনুগ্রহ করে আবার চেষ্টা করুন।",
+    "supportTeam": "সহায়তা",
+    "you": "আপনি",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "অ্যাকাউন্ট",
+      "payment": "উত্তোলন",
+      "bonus": "বোনাস",
+      "game": "গেম",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "সক্রিয়",
+      "pending": "মুলতুবি",
+      "resolved": "সমাধান হয়েছে",
+      "closed": "বন্ধ"
     }
   },
   "footer": {

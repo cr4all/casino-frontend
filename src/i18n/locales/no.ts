@@ -69,8 +69,8 @@ export const no: LocaleTree = {
     "playResponsibly": "18+ · Spill ansvarlig",
     "liveChat": "LIVE-CHAT",
     "liveChatLabel": "Kundestøtte",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "KUNDESTØTTE SAMTALER",
+    "supportTicketsLabel": "Kundestøtte"
   },
   "liveChat": {
     "title": "Live-chat",
@@ -593,35 +593,35 @@ export const no: LocaleTree = {
     "bank_account": "Bank account"
   },
   "supportTickets": {
-    "title": "Support Tickets",
-    "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
+    "title": "Kundestøtte Samtaler",
+    "subtitle": "Send en forespørgsel og følg svar fra kundestøtteteamet vårt.",
+    "newTicket": "New Samtaler",
+    "subject": "Emne",
+    "category": "Slag",
+    "message": "Melding",
+    "submit": "Send inn Samtaler",
+    "createFailed": "Kunne ikke sende melding. Prøv igjen.",
+    "empty": "Ingen samtaler ennå.",
+    "backToList": "← Back to Samtaler",
+    "notFound": "Samtaler not found.",
     "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "replyPlaceholder": "Skriv svaret ditt...",
+    "sendReply": "Send svar",
+    "replyFailed": "Kunne ikke sende melding. Prøv igjen.",
+    "supportTeam": "Kundestøtte",
+    "you": "Du",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "konto",
+      "payment": "Uttak",
+      "bonus": "Bonuser",
+      "game": "Spill",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktiv",
+      "pending": "venter",
+      "resolved": "Løst",
+      "closed": "lukket"
     }
   }
 };

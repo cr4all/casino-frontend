@@ -71,8 +71,8 @@ export const az: LocaleTree = {
     "playResponsibly": "18+ · Məsuliyyətlə oynayın",
     "liveChat": "CANLI SAHİB",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "DƏSTƏK SÖHBƏTLƏR",
+    "supportTicketsLabel": "Dəstək"
   },
   "liveChat": {
     "title": "Canlı Söhbət",
@@ -87,35 +87,35 @@ export const az: LocaleTree = {
     "loadFailed": "Söhbət mesajları yüklənə bilmədi."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Dəstək Söhbətlər",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New Söhbətlər",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "category": "Növ",
+    "message": "Mesajınızı yazın",
+    "submit": "Göndər Söhbətlər",
+    "createFailed": "Mesajı göndərmək alınmadı. Lütfən, yenidən cəhd edin.",
+    "empty": "Hələ söhbət yoxdur.",
+    "backToList": "← Back to Söhbətlər",
+    "notFound": "Söhbətlər not found.",
+    "closedHint": "Bu bilet bağlanıb. Əlavə kömək lazımdırsa, yeni bilet açın.",
+    "replyPlaceholder": "T söhbəti silin>>| cavabınız...",
+    "sendReply": "Göndər reply",
+    "replyFailed": "Mesajı göndərmək alınmadı. Lütfən, yenidən cəhd edin.",
+    "supportTeam": "Dəstək",
+    "you": "Siz",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "hesab",
+      "payment": "Çıxarmalar",
+      "bonus": "Bonuslar",
+      "game": "Oyun",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktiv",
+      "pending": "gözləmədə",
+      "resolved": "Həll olunub",
+      "closed": "bağlandı"
     }
   },
   "footer": {

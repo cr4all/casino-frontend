@@ -44,7 +44,9 @@ export const fi: LocaleTree = {
     "fieldSelectRequired": "Valitse {{field}}.",
     "fieldCodeInvalid": "Syötä 6-numeroinen vahvistuskoodi.",
     "maxOnly": "max {{amount}}",
-    "notAvailable": "—"
+    "notAvailable": "—",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "KAIKKI PELIT",
@@ -69,8 +71,8 @@ export const fi: LocaleTree = {
     "playResponsibly": "18+ · Pelaa vastuullisesti",
     "liveChat": "LIVE-CHAT",
     "liveChatLabel": "Tuki",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "TUKI KESKUSTELUT",
+    "supportTicketsLabel": "Tuki"
   },
   "liveChat": {
     "title": "Live-chat",
@@ -169,7 +171,8 @@ export const fi: LocaleTree = {
     "crypto": "Kryptovaluutta",
     "crypto_payment": "Kryptomaksu",
     "bank": "Pankkisiirto",
-    "bank_transfer": "Pankkisiirto"
+    "bank_transfer": "Pankkisiirto",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Kryptovaluutta",
@@ -593,35 +596,35 @@ export const fi: LocaleTree = {
     "bank_account": "Bank account"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Tuki Keskustelut",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
+    "newTicket": "New Keskustelut",
+    "subject": "Aihe",
+    "category": "Tyyppi",
+    "message": "Viesti",
+    "submit": "Lähetä Keskustelut",
+    "createFailed": "Viestin lähettäminen epäonnistui. Yritä uudelleen.",
+    "empty": "Ei keskusteluja vielä.",
+    "backToList": "← Back to Keskustelut",
+    "notFound": "Keskustelut not found.",
     "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "replyPlaceholder": "Kirjoita vastauksesi...",
+    "sendReply": "Lähetä vastaus",
+    "replyFailed": "Viestin lähettäminen epäonnistui. Yritä uudelleen.",
+    "supportTeam": "Tuki",
+    "you": "Sinä",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "Nykytili",
+      "payment": "Nostot",
+      "bonus": "Bonukset",
+      "game": "Peli",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktiivinen",
+      "pending": "odottaa",
+      "resolved": "Ratkaistu",
+      "closed": "suljettu"
     }
   }
 };

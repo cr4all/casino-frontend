@@ -69,8 +69,8 @@ export const pa: LocaleTree = {
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "समर्थन ਗੱਲਬਾਤ",
+    "supportTicketsLabel": "समर्थन"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +85,35 @@ export const pa: LocaleTree = {
     "loadFailed": "Could not load chat messages."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "समर्थन ਗੱਲਬਾਤ",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New ਗੱਲਬਾਤ",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "category": "प्रकार",
+    "message": "message",
+    "submit": "भेजें ਗੱਲਬਾਤ",
+    "createFailed": "ਸੁਨੇਹਾ ਭੇਜਣ ਵਿੱਚ ਅਸਫਲ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+    "empty": "ਅਜੇ ਤੱਕ ਕੋਈ ਗੱਲਬਾਤ ਨਹੀਂ।",
+    "backToList": "← Back to ਗੱਲਬਾਤ",
+    "notFound": "ਗੱਲਬਾਤ not found.",
+    "closedHint": "ਇਹ ਟਿਕਟ ਬੰਦ ਹੈ। ਜੇ ਹੋਰ ਮਦਦ ਚਾਹੀਦੀ ਹੈ ਤਾਂ ਨਵੀਂ ਟਿਕਟ ਖੋਲ੍ਹੋ।",
+    "replyPlaceholder": "ਆਪਣਾ ਜਵਾਬ ਟਾਈਪ ਕਰੋ...",
+    "sendReply": "भेजें reply",
+    "replyFailed": "ਸੁਨੇਹਾ ਭੇਜਣ ਵਿੱਚ ਅਸਫਲ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+    "supportTeam": "समर्थन",
+    "you": "ਤੁਸੀਂ",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "खाता",
+      "payment": "निकासी",
+      "bonus": "बोनस",
+      "game": "गेम",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "सक्रिय",
+      "pending": "लंबित",
+      "resolved": "ਹੱਲ ਹੋ ਗਿਆ",
+      "closed": "बंद"
     }
   },
   "footer": {

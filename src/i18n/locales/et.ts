@@ -44,7 +44,9 @@ export const et: LocaleTree = {
     "fieldSelectRequired": "Palun valige",
     "fieldCodeInvalid": "Sisesta 6-kohaline kinnituskood.",
     "maxOnly": "max {{amount}}",
-    "notAvailable": "—"
+    "notAvailable": "—",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "KÕIK MÄNGUD",
@@ -69,8 +71,8 @@ export const et: LocaleTree = {
     "playResponsibly": "18+ · Mängi vastutustundlikult",
     "liveChat": "REAALAJAS VESTLUS",
     "liveChatLabel": "Tugi",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "TUGI VESTLUSED",
+    "supportTicketsLabel": "Tugi"
   },
   "liveChat": {
     "title": "Reaalajas vestlus",
@@ -169,7 +171,8 @@ export const et: LocaleTree = {
     "crypto": "Krüptovaluuta",
     "crypto_payment": "Krüptomakse",
     "bank": "Pangaülekanne",
-    "bank_transfer": "Pangaülekanne"
+    "bank_transfer": "Pangaülekanne",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Krüptovaluuta",
@@ -593,35 +596,35 @@ export const et: LocaleTree = {
     "bank_account": "Bank account"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Tugi Vestlused",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New Vestlused",
     "subject": "Subject",
-    "category": "Category",
+    "category": "Tüüp",
     "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "submit": "Saada Vestlused",
+    "createFailed": "Sõnumi saatmine ebaõnnestus. Palun proovi uuesti.",
+    "empty": "Vestlusi pole veel.",
+    "backToList": "← Back to Vestlused",
+    "notFound": "Vestlused not found.",
+    "closedHint": "See pilet on suletud. Avage uus pilet, kui vajate täiendavat abi.",
+    "replyPlaceholder": "Sisesta oma vastus...",
+    "sendReply": "Saada reply",
+    "replyFailed": "Sõnumi saatmine ebaõnnestus. Palun proovi uuesti.",
+    "supportTeam": "Tugi",
+    "you": "Teie",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "konto",
+      "payment": "Väljamaksed",
+      "bonus": "Boonus",
+      "game": "Mäng",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktiivne",
+      "pending": "ootel",
+      "resolved": "Lahendatud",
+      "closed": "suletud"
     }
   }
 };

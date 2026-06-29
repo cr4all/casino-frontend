@@ -71,8 +71,8 @@ export const cs: LocaleTree = {
     "playResponsibly": "18+ · Hrajte zodpovědně",
     "liveChat": "ŽIVÝ CHAT",
     "liveChatLabel": "Podpora",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "PODPORA KONVERZACE",
+    "supportTicketsLabel": "Podpora"
   },
   "liveChat": {
     "title": "Živý chat",
@@ -596,35 +596,35 @@ export const cs: LocaleTree = {
     "bank_account": "Bank account"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Podpora Konverzace",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
+    "newTicket": "New Konverzace",
+    "subject": "Předmět",
+    "category": "Typ",
+    "message": "Zpráva",
+    "submit": "Odeslat Konverzace",
+    "createFailed": "Odeslání zprávy se nezdařilo. Zkuste to prosím znovu.",
+    "empty": "Zatím žádné konverzace.",
+    "backToList": "← Back to Konverzace",
+    "notFound": "Konverzace not found.",
     "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "replyPlaceholder": "Napište svou odpověď...",
+    "sendReply": "Odeslat odpověď",
+    "replyFailed": "Odeslání zprávy se nezdařilo. Zkuste to prosím znovu.",
+    "supportTeam": "Podpora",
+    "you": "Vy",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "účet",
+      "payment": "Výběry",
+      "bonus": "Bonusy",
+      "game": "Hra",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktivní",
+      "pending": "nevyřízeno",
+      "resolved": "Vyřešeno",
+      "closed": "uzavřeno"
     }
   }
 };

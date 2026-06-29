@@ -44,7 +44,9 @@ export const ja: LocaleTree = {
     "fieldPasswordMismatch": "Passwords do not match.",
     "fieldSelectRequired": "Please select {{field}}.",
     "fieldCodeInvalid": "Please enter the 6-digit verification code.",
-    "language": "Language"
+    "language": "Language",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -208,7 +210,8 @@ export const ja: LocaleTree = {
     "crypto": "Cryptocurrency",
     "crypto_payment": "Crypto Payment",
     "bank": "Bank Transfer",
-    "bank_transfer": "Bank Transfer"
+    "bank_transfer": "Bank Transfer",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Cryptocurrency",
