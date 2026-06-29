@@ -44,15 +44,17 @@ export interface AffiliateCommission {
   created_at: string | null;
 }
 
-export type PlayerStatisticsPeriod = 'today' | 'week' | '30days' | 'month';
+export type PlayerStatisticsPeriod = 'today' | 'last_week' | 'last_month' | 'custom';
 
 export interface PlayerStatisticsMetrics {
-  total_bet: string;
-  total_win: string;
   deposits: string;
   withdrawals: string;
   cash_turnover: string;
   bonus_turnover: string;
+  cash_win: string;
+  bonus_win: string;
+  total_turnover: string;
+  total_win: string;
   ggr: string;
   bonus_cost: string;
   affiliate_cost: string;
@@ -69,6 +71,8 @@ export interface AffiliatePlayerStatistics {
 
 export interface AffiliatePlayerStatisticsList {
   period: PlayerStatisticsPeriod;
+  from?: string | null;
+  to?: string | null;
   items: AffiliatePlayerStatistics[];
   pagination: PaginationMeta;
 }
@@ -106,6 +110,13 @@ interface Paginated<T> {
   pagination: PaginationMeta;
 }
 
+export interface PlayerStatisticsQuery {
+  period?: PlayerStatisticsPeriod;
+  page?: number;
+  from?: string;
+  to?: string;
+}
+
 export const affiliateApi = {
   getMe: async () => {
     const { data } = await api.get<ApiResponse<AffiliateMe>>('/affiliate/me');
@@ -133,10 +144,21 @@ export const affiliateApi = {
     return data.data;
   },
 
-  getPlayerStatistics: async (period: PlayerStatisticsPeriod = 'week', page = 1) => {
+  getPlayerStatistics: async ({
+    period = 'today',
+    page = 1,
+    from,
+    to,
+  }: PlayerStatisticsQuery = {}) => {
+    const params: Record<string, string | number> = { period, page };
+    if (period === 'custom' && from && to) {
+      params.from = from;
+      params.to = to;
+    }
+
     const { data } = await api.get<ApiResponse<AffiliatePlayerStatisticsList>>(
       '/affiliate/player-statistics',
-      { params: { period, page } },
+      { params },
     );
     return data.data;
   },
