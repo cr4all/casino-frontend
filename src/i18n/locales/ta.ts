@@ -69,8 +69,8 @@ export const ta: LocaleTree = {
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "ஆதரவு உரையாடல்கள்",
+    "supportTicketsLabel": "ஆதரவு"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +85,35 @@ export const ta: LocaleTree = {
     "loadFailed": "Could not load chat messages."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "ஆதரவு உரையாடல்கள்",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "newTicket": "New உரையாடல்கள்",
+    "subject": "தலைப்பு",
+    "category": "வகை",
+    "message": "message",
+    "submit": "அனுப்பு உரையாடல்கள்",
+    "createFailed": "செய்தியை அனுப்ப முடியவில்லை. மீண்டும் முயற்சிக்கவும்.",
+    "empty": "இன்னும் உரையாடல்கள் இல்லை.",
+    "backToList": "← Back to உரையாடல்கள்",
+    "notFound": "உரையாடல்கள் not found.",
+    "closedHint": "இந்த டிக்கெட் மூடப்பட்டுள்ளது. மேலும் உதவி தேவைப்பட்டால் புதிய டிக்கெட்டைத் திறக்கவும்.",
+    "replyPlaceholder": "உங்கள் பதிலை தட்டச்சு செய்யவும்...",
+    "sendReply": "அனுப்பு reply",
+    "replyFailed": "செய்தியை அனுப்ப முடியவில்லை. மீண்டும் முயற்சிக்கவும்.",
+    "supportTeam": "ஆதரவு",
+    "you": "நீங்கள்",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "खाता",
+      "payment": "திரும்பப் பெறுதல்கள்",
+      "bonus": "போனஸ்",
+      "game": "விளையாட்டு",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "सक्रिय",
+      "pending": "நிலுவையில்",
+      "resolved": "தீர்வு காணப்பட்டது",
+      "closed": "மூடப்பட்டது"
     }
   },
   "footer": {

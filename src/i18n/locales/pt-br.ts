@@ -69,8 +69,8 @@ export const ptBr: LocaleTree = {
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "APOIO TICKETS",
+    "supportTicketsLabel": "Apoio"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +85,35 @@ export const ptBr: LocaleTree = {
     "loadFailed": "Could not load chat messages."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Apoio Tickets",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "newTicket": "Novo ticket",
+    "subject": "Assunto",
+    "category": "Tipo",
+    "message": "Mensagem",
+    "submit": "Enviar ticket",
+    "createFailed": "Falha ao enviar a mensagem. Tente novamente.",
+    "empty": "Ainda não há tickets.",
+    "backToList": "← Voltar para ticket",
+    "notFound": "Ticket não encontrado.",
+    "closedHint": "Este ticket está encerrado. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Escreva a sua resposta...",
+    "sendReply": "Enviar resposta",
+    "replyFailed": "Falha ao enviar a mensagem. Tente novamente.",
+    "supportTeam": "Apoio",
+    "you": "Você",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
-      "other": "Other"
+      "account": "atual",
+      "payment": "Levantamentos",
+      "bonus": "Bónus",
+      "game": "Jogo",
+      "other": "Outro"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Ativo",
+      "pending": "pendente",
+      "resolved": "Resolvido",
+      "closed": "encerrado"
     }
   },
   "footer": {

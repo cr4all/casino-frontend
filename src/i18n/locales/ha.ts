@@ -44,7 +44,9 @@ export const ha: LocaleTree = {
     "fieldPasswordMismatch": "Kalmomin wucewa ba su dace ba.",
     "fieldSelectRequired": "Da fatan za a zaɓi &lt;<FIELD>&lt;&gt; &gt;.",
     "fieldCodeInvalid": "Da fatan za a shigar da lambar tabbatar da lambobi 6.",
-    "language": "Language"
+    "language": "Language",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -69,8 +71,8 @@ export const ha: LocaleTree = {
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "TAIMAKO TATTAUNAWA",
+    "supportTicketsLabel": "Taimako"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +87,35 @@ export const ha: LocaleTree = {
     "loadFailed": "Could not load chat messages."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Taimako Tattaunawa",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New Tattaunawa",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "category": "Nau'i",
+    "message": "message",
+    "submit": "Aika Tattaunawa",
+    "createFailed": "An kasa aika saƙo. Da fatan za a sake gwadawa.",
+    "empty": "Babu tattaunawa tukuna.",
+    "backToList": "← Back to Tattaunawa",
+    "notFound": "Tattaunawa not found.",
+    "closedHint": "An rufe wannan tikitin. Buɗe sabon tikiti idan kuna buƙatar ƙarin taimako.",
+    "replyPlaceholder": "Rubuta amsar ku...",
+    "sendReply": "Aika reply",
+    "replyFailed": "An kasa aika saƙo. Da fatan za a sake gwadawa.",
+    "supportTeam": "Taimako",
+    "you": "Kai",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "yanzu",
+      "payment": "Cirewa",
+      "bonus": "Kyauta",
+      "game": "Wasa",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Mai aiki",
+      "pending": "ana jira",
+      "resolved": "An warware",
+      "closed": "an rufe"
     }
   },
   "footer": {
@@ -208,7 +210,8 @@ export const ha: LocaleTree = {
     "crypto": "Cryptocurrency",
     "crypto_payment": "Crypto Payment",
     "bank": "Bank Transfer",
-    "bank_transfer": "Bank Transfer"
+    "bank_transfer": "Bank Transfer",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Cryptocurrency",

@@ -44,7 +44,9 @@ export const da: LocaleTree = {
     "fieldSelectRequired": "Vælg {{field}}.",
     "fieldCodeInvalid": "Indtast den 6-cifrede bekræftelseskode.",
     "maxOnly": "max {{amount}}",
-    "notAvailable": "—"
+    "notAvailable": "—",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "ALLE SPIL",
@@ -69,8 +71,8 @@ export const da: LocaleTree = {
     "playResponsibly": "18+ · Spil ansvarligt",
     "liveChat": "LIVE-CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "KUNDESERVICE SAMTALER",
+    "supportTicketsLabel": "Kundeservice"
   },
   "liveChat": {
     "title": "Live-chat",
@@ -169,7 +171,8 @@ export const da: LocaleTree = {
     "crypto": "Kryptovaluta",
     "crypto_payment": "Kryptobetaling",
     "bank": "Bankoverførsel",
-    "bank_transfer": "Bankoverførsel"
+    "bank_transfer": "Bankoverførsel",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Kryptovaluta",
@@ -593,35 +596,35 @@ export const da: LocaleTree = {
     "bank_account": "Bank account"
   },
   "supportTickets": {
-    "title": "Support Tickets",
-    "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
+    "title": "Kundeservice Samtaler",
+    "subtitle": "Indsend en anmodning og følg svar fra vores supportteam.",
+    "newTicket": "New Samtaler",
+    "subject": "Emne",
+    "category": "Kategori",
+    "message": "Besked",
+    "submit": "Seol Samtaler",
+    "createFailed": "Kunne ikke sende besked. Prøv igen.",
+    "empty": "Ingen samtaler endnu.",
+    "backToList": "← Back to Samtaler",
+    "notFound": "Samtaler not found.",
     "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "replyPlaceholder": "Skriv dit svar...",
+    "sendReply": "Send svar",
+    "replyFailed": "Kunne ikke sende besked. Prøv igen.",
+    "supportTeam": "Kundeservice",
+    "you": "Du",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "konto",
+      "payment": "Udbetalinger",
+      "bonus": "Bonusser",
+      "game": "Spil",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktiv",
+      "pending": "afventer",
+      "resolved": "Løst",
+      "closed": "lukket"
     }
   }
 };

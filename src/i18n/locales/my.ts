@@ -69,8 +69,8 @@ export const my: LocaleTree = {
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "DUKUNGAN စကားပြောဆိုမှုများ",
+    "supportTicketsLabel": "Dukungan"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +85,35 @@ export const my: LocaleTree = {
     "loadFailed": "Could not load chat messages."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Dukungan စကားပြောဆိုမှုများ",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New စကားပြောဆိုမှုများ",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "category": "Jenis",
+    "message": "message",
+    "submit": "Kirim စကားပြောဆိုမှုများ",
+    "createFailed": "မက်ဆေ့ချ် ပို့ရန် မအောင်မြင်ပါ။ ထပ်မံကြိုးစားပါ။",
+    "empty": "စကားပြောဆိုမှု မရှိသေးပါ။",
+    "backToList": "← Back to စကားပြောဆိုမှုများ",
+    "notFound": "စကားပြောဆိုမှုများ not found.",
+    "closedHint": "ဤတစ်ကိုယ်ရေလက်မှတ်ကို ပိတ်ထားပါသည်။ နောက်ထပ်အကူအညီလိုအပ်ပါက လက်မှတ်အသစ်ဖွင့်ပါ။",
+    "replyPlaceholder": "သင့်ပြန်ကြားချက်ကို ရိုက်ထည့်ပါ...",
+    "sendReply": "Kirim reply",
+    "replyFailed": "မက်ဆေ့ချ် ပို့ရန် မအောင်မြင်ပါ။ ထပ်မံကြိုးစားပါ။",
+    "supportTeam": "Dukungan",
+    "you": "သင်",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "ini",
+      "payment": "Penarikan",
+      "bonus": "ဘောနပ်စ်",
+      "game": "Permainan",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktif",
+      "pending": "menunggu",
+      "resolved": "ဖြေရှင်းပြီး",
+      "closed": "ditutup"
     }
   },
   "footer": {

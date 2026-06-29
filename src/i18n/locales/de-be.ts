@@ -44,7 +44,9 @@ export const deBe: LocaleTree = {
     "fieldSelectRequired": "Bitte wählen Sie {{field}}.",
     "fieldCodeInvalid": "Bitte geben Sie den 6-stelligen Bestätigungscode ein.",
     "maxOnly": "max. {{amount}}",
-    "notAvailable": "—"
+    "notAvailable": "—",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "ALLE SPIELE",
@@ -169,7 +171,8 @@ export const deBe: LocaleTree = {
     "crypto": "Kryptowährung",
     "crypto_payment": "Krypto-Zahlung",
     "bank": "Banküberweisung",
-    "bank_transfer": "Banküberweisung"
+    "bank_transfer": "Banküberweisung",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Kryptowährung",

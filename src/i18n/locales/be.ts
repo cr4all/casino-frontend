@@ -71,8 +71,8 @@ export const be: LocaleTree = {
     "playResponsibly": "18+ · Гуляць адказна",
     "liveChat": "Жывы чат",
     "liveChatLabel": "Падтрымка",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "ПАДТРЫМКА РАЗМОВЫ",
+    "supportTicketsLabel": "Падтрымка"
   },
   "liveChat": {
     "title": "Жывы чат",
@@ -613,35 +613,35 @@ export const be: LocaleTree = {
     "bank_account": "Bank account"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Падтрымка Размовы",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New Размовы",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "category": "Тып",
+    "message": "Увядзіце паведамленне",
+    "submit": "Адправіць Размовы",
+    "createFailed": "Не атрымалася адправіць паведамленне. Калі ласка, паспрабуйце яшчэ раз.",
+    "empty": "Размоў пакуль няма.",
+    "backToList": "← Back to Размовы",
+    "notFound": "Размовы not found.",
+    "closedHint": "Гэты квіток закрыты. Адкрыйце новы квіток, калі патрэбна дадатковая дапамога.",
+    "replyPlaceholder": "Увядзіце сваё адказаць...",
+    "sendReply": "Адправіць reply",
+    "replyFailed": "Не атрымалася адправіць паведамленне. Калі ласка, паспрабуйце яшчэ раз.",
+    "supportTeam": "Падтрымка",
+    "you": "Вы",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "запіс",
+      "payment": "Зняцце сродкаў",
+      "bonus": "Бонус",
+      "game": "Гульня",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Актыўны",
+      "pending": "у чаканні",
+      "resolved": "Вырашана",
+      "closed": "закрыты"
     }
   }
 };

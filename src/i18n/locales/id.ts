@@ -44,7 +44,9 @@ export const id: LocaleTree = {
     "fieldSelectRequired": "Pilih {{field}}.",
     "fieldCodeInvalid": "Masukkan kode verifikasi 6 digit.",
     "maxOnly": "max {{amount}}",
-    "notAvailable": "—"
+    "notAvailable": "—",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "SEMUA PERMAINAN",
@@ -69,8 +71,8 @@ export const id: LocaleTree = {
     "playResponsibly": "18+ · Bermain dengan bijak",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "DUKUNGAN PERCAKAPAN",
+    "supportTicketsLabel": "Dukungan"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -169,7 +171,8 @@ export const id: LocaleTree = {
     "crypto": "Kripto",
     "crypto_payment": "Pembayaran kripto",
     "bank": "Transfer bank",
-    "bank_transfer": "Transfer bank"
+    "bank_transfer": "Transfer bank",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Kripto",
@@ -593,35 +596,35 @@ export const id: LocaleTree = {
     "bank_account": "Bank account"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Dukungan Percakapan",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
+    "newTicket": "New Percakapan",
+    "subject": "Subjek",
+    "category": "Jenis",
     "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "submit": "Kirim Percakapan",
+    "createFailed": "Gagal mengirim pesan. Silakan coba lagi.",
+    "empty": "Belum ada percakapan.",
+    "backToList": "← Back to Percakapan",
+    "notFound": "Percakapan not found.",
+    "closedHint": "Tiket ini ditutup. Buka tiket baru jika Anda membutuhkan bantuan lebih lanjut.",
+    "replyPlaceholder": "Ketik pesan Anda reply...",
+    "sendReply": "Kirim reply",
+    "replyFailed": "Gagal mengirim pesan. Silakan coba lagi.",
+    "supportTeam": "Dukungan",
+    "you": "Anda",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "ini",
+      "payment": "Penarikan",
+      "bonus": "Bonus promosi",
+      "game": "Permainan",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktif",
+      "pending": "menunggu",
+      "resolved": "Terselesaikan",
+      "closed": "ditutup"
     }
   }
 };

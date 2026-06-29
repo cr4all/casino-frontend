@@ -69,8 +69,8 @@ export const mr: LocaleTree = {
     "playResponsibly": "18+ जबाबदारीने प्ले करा",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "समर्थन संभाषणे",
+    "supportTicketsLabel": "समर्थन"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +85,35 @@ export const mr: LocaleTree = {
     "loadFailed": "गप्पा संदेश लोड करू शकलो नाही."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "समर्थन संभाषणे",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New संभाषणे",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "category": "प्रकार",
+    "message": "तुमचा संदेश टाइप करा",
+    "submit": "भेजें संभाषणे",
+    "createFailed": "संदेश पाठवण्यात अयशस्वी. कृपया पुन्हा प्रयत्न करा.",
+    "empty": "अद्याप संभाषणे नाहीत.",
+    "backToList": "← Back to संभाषणे",
+    "notFound": "संभाषणे not found.",
+    "closedHint": "हा तिकीट बंद आहे. अधिक मदत हवी असल्यास नवीन तिकीट उघडा.",
+    "replyPlaceholder": "तुमचे उत्तर टाइप करा...",
+    "sendReply": "भेजें reply",
+    "replyFailed": "संदेश पाठवण्यात अयशस्वी. कृपया पुन्हा प्रयत्न करा.",
+    "supportTeam": "समर्थन",
+    "you": "तुम्ही",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "खाता",
+      "payment": "काढणी",
+      "bonus": "बोनस",
+      "game": "गेम",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "सक्रिय",
+      "pending": "लंबित",
+      "resolved": "सोडवले",
+      "closed": "बंद"
     }
   },
   "footer": {

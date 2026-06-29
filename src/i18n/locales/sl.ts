@@ -69,8 +69,8 @@ export const sl: LocaleTree = {
     "playResponsibly": "18+ · Igrajte odgovorno",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "PODPORA POGOVORI",
+    "supportTicketsLabel": "Podpora"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -593,35 +593,35 @@ export const sl: LocaleTree = {
     "bank_account": "Bank account"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Podpora Pogovori",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
+    "newTicket": "New Pogovori",
+    "subject": "Zadeva",
+    "category": "Vrsta",
     "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "submit": "Pošlji Pogovori",
+    "createFailed": "Sporočila ni bilo mogoče poslati. Poskusite znova.",
+    "empty": "Pogovorov še ni.",
+    "backToList": "← Back to Pogovori",
+    "notFound": "Pogovori not found.",
+    "closedHint": "Ta vstopnica je zaprta. Odprite novo vstopnico, če potrebujete dodatno pomoč.",
+    "replyPlaceholder": "Vnesite odgovor...",
+    "sendReply": "Pošlji reply",
+    "replyFailed": "Sporočila ni bilo mogoče poslati. Poskusite znova.",
+    "supportTeam": "Podpora",
+    "you": "Vi",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "račun",
+      "payment": "Dvigi",
+      "bonus": "Bonusi",
+      "game": "Igra",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktivno",
+      "pending": "v čakanju",
+      "resolved": "Rešeno",
+      "closed": "zaprto"
     }
   }
 };

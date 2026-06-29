@@ -44,7 +44,9 @@ export const ka: LocaleTree = {
     "fieldPasswordMismatch": "პაროლები არ ემთხვევა.",
     "fieldSelectRequired": "გთხოვთ, აირჩიოთ",
     "fieldCodeInvalid": "Მიუთითეთ დამადასტურებელი 6-ციფრიანი კოდი.",
-    "language": "ენა"
+    "language": "ენა",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "ყველა თამაში",
@@ -69,8 +71,8 @@ export const ka: LocaleTree = {
     "playResponsibly": "18+ · ითამაშეთ პასუხისმგებლობით",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "მხარდაჭერა",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "ᲛᲮᲐᲠᲓᲐᲭᲔᲠᲐ ᲡᲐᲣᲑᲠᲔᲑᲘ",
+    "supportTicketsLabel": "მხარდაჭერა"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +87,35 @@ export const ka: LocaleTree = {
     "loadFailed": "შეტყობინებების ჩატვირთვა ვერ მოხერხდა."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "მხარდაჭერა საუბრები",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New საუბრები",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
+    "category": "ტიპი",
+    "message": "გაწერეთ თქვენი შეტყობინი",
+    "submit": "გაგზავნა საუბრები",
+    "createFailed": "შეტყობინების გაგზავნა ვერ მოხერხდა. სცადეთ თავიდან.",
+    "empty": "საუბრები ჯერ არ არის.",
+    "backToList": "← Back to საუბრები",
+    "notFound": "Საუბრები not found.",
+    "closedHint": "ეს ბილეთი დახურულია. გახსენით ახალი ბილეთი, თუ დამატებითი დახმარება გჭირდებათ.",
+    "replyPlaceholder": "აკრიფეთ პასუხი...",
+    "sendReply": "გაგზავნა reply",
+    "replyFailed": "შეტყობინების გაგზავნა ვერ მოხერხდა. სცადეთ თავიდან.",
     "supportTeam": "მხარდაჭერა",
-    "you": "You",
+    "you": "თქვენ",
     "categories": {
       "account": "ანგარიში",
-      "payment": "Payment",
+      "payment": "გატანები",
       "bonus": "ბონუსი",
-      "game": "ნამგობი",
+      "game": "თამაში",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "აქტიური",
+      "pending": "მოლოდინში",
+      "resolved": "მოგვარებული",
+      "closed": "დახურული"
     }
   },
   "footer": {
@@ -208,7 +210,8 @@ export const ka: LocaleTree = {
     "crypto": "კრიპტოვალუტა",
     "crypto_payment": "კრიპტოვალუტით გადახდა",
     "bank": "ბანკის გადარიცხვა",
-    "bank_transfer": "ბანკის გადარიცხვა"
+    "bank_transfer": "ბანკის გადარიცხვა",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "კრიპტოვალუტა",

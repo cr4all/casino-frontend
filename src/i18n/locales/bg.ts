@@ -71,8 +71,8 @@ export const bg: LocaleTree = {
     "playResponsibly": "18+ · Играйте отговорно",
     "liveChat": "ЧАТ НА ЖИВО",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "ПОДДРЪЖКА РАЗГОВОРИ",
+    "supportTicketsLabel": "Поддръжка"
   },
   "liveChat": {
     "title": "Чат на живо",
@@ -87,35 +87,35 @@ export const bg: LocaleTree = {
     "loadFailed": "Съобщенията в чата не можаха да бъдат заредени."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Поддръжка Разговори",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "newTicket": "New Разговори",
+    "subject": "Тема",
+    "category": "Тип",
+    "message": "Напишете съобщението си",
+    "submit": "Изпрати Разговори",
+    "createFailed": "Неуспешно изпращане на съобщението. Моля, опитайте отново.",
+    "empty": "Все още няма разговори.",
+    "backToList": "← Back to Разговори",
+    "notFound": "Разговори not found.",
+    "closedHint": "Този билет е затворен. Отворете нов билет, ако ви е необходима допълнителна помощ.",
+    "replyPlaceholder": "Въведете отговора си...",
+    "sendReply": "Изпрати reply",
+    "replyFailed": "Неуспешно изпращане на съобщението. Моля, опитайте отново.",
+    "supportTeam": "Поддръжка",
+    "you": "Вие",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "акаунт",
+      "payment": "Тегления",
+      "bonus": "Бонус",
+      "game": "Игра",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Активен",
+      "pending": "чакащ",
+      "resolved": "Решен",
+      "closed": "затворен"
     }
   },
   "footer": {

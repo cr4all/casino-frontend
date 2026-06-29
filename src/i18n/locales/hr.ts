@@ -44,7 +44,9 @@ export const hr: LocaleTree = {
     "fieldSelectRequired": "Molimo odaberite",
     "fieldCodeInvalid": "Unesite 6-znamenkasti verifikacijski kod.",
     "maxOnly": "max {{amount}}",
-    "notAvailable": "—"
+    "notAvailable": "—",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "SVE IGRE",
@@ -69,8 +71,8 @@ export const hr: LocaleTree = {
     "playResponsibly": "18+ · Igrajte odgovorno",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "PODRŠKA RAZGOVORI",
+    "supportTicketsLabel": "Podrška"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -169,7 +171,8 @@ export const hr: LocaleTree = {
     "crypto": "Kriptovaluta",
     "crypto_payment": "Kripto plaćanje",
     "bank": "Bankovni transfer",
-    "bank_transfer": "Bankovni transfer"
+    "bank_transfer": "Bankovni transfer",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Kriptovaluta",
@@ -593,35 +596,35 @@ export const hr: LocaleTree = {
     "bank_account": "Bank account"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Podrška Razgovori",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
+    "newTicket": "New Razgovori",
+    "subject": "Predmet",
+    "category": "Vrsta",
     "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "submit": "Pošalji Razgovori",
+    "createFailed": "Slanje poruke nije uspjelo. Pokušajte ponovno.",
+    "empty": "Još nema razgovora.",
+    "backToList": "← Back to Razgovori",
+    "notFound": "Razgovori not found.",
+    "closedHint": "Ova kartica je zatvorena. Otvorite novu karticu ako vam je potrebna dodatna pomoć.",
+    "replyPlaceholder": "Upišite odgovor...",
+    "sendReply": "Pošalji reply",
+    "replyFailed": "Slanje poruke nije uspjelo. Pokušajte ponovno.",
+    "supportTeam": "Podrška",
+    "you": "Vi",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "račun",
+      "payment": "Isplate",
+      "bonus": "Bonusi",
+      "game": "Igra",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktivno",
+      "pending": "na čekanju",
+      "resolved": "Riješeno",
+      "closed": "zatvoren"
     }
   }
 };

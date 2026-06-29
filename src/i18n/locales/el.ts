@@ -44,7 +44,9 @@ export const el: LocaleTree = {
     "fieldSelectRequired": "Επιλέξτε {{field}}.",
     "fieldCodeInvalid": "Εισαγάγετε τον 6ψήφιο κωδικό επαλήθευσης.",
     "maxOnly": "max {{amount}}",
-    "notAvailable": "—"
+    "notAvailable": "—",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "ΟΛΑ ΤΑ ΠΑΙΧΝΙΔΙΑ",
@@ -69,8 +71,8 @@ export const el: LocaleTree = {
     "playResponsibly": "18+ · Παίξτε υπεύθυνα",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "ΥΠΟΣΤΉΡΙΞΗ ΣΥΝΟΜΙΛΊΕΣ",
+    "supportTicketsLabel": "Υποστήριξη"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -169,7 +171,8 @@ export const el: LocaleTree = {
     "crypto": "Κρυπτονόμισμα",
     "crypto_payment": "Κρυpto πληρωμή",
     "bank": "Τραπεζική μεταφορά",
-    "bank_transfer": "Τραπεζική μεταφορά"
+    "bank_transfer": "Τραπεζική μεταφορά",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Κρυπτονόμισμα",
@@ -593,35 +596,35 @@ export const el: LocaleTree = {
     "bank_account": "Bank account"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Υποστήριξη Συνομιλίες",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
+    "newTicket": "New Συνομιλίες",
+    "subject": "Θέμα",
+    "category": "Τύπος",
     "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "submit": "Αποστολή Συνομιλίες",
+    "createFailed": "Αποτυχία αποστολής μηνύματος. Δοκιμάστε ξανά.",
+    "empty": "Δεν υπάρχουν ακόμη συνομιλίες.",
+    "backToList": "← Back to Συνομιλίες",
+    "notFound": "Συνομιλίες not found.",
+    "closedHint": "Αυτό το εισιτήριο είναι κλειστό. Ανοίξτε νέο εισιτήριο αν χρειάζεστε περαιτέρω βοήθεια.",
+    "replyPlaceholder": "Πληκτρολογήστε την απάντησή σας...",
+    "sendReply": "Αποστολή reply",
+    "replyFailed": "Αποτυχία αποστολής μηνύματος. Δοκιμάστε ξανά.",
+    "supportTeam": "Υποστήριξη",
+    "you": "Εσείς",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "λογαριασμός",
+      "payment": "Αναλήψεις",
+      "bonus": "Μπόνους",
+      "game": "Παιχνίδι",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Ενεργός",
+      "pending": "εκκρεμεί",
+      "resolved": "Επιλύθηκε",
+      "closed": "κλειστός"
     }
   }
 };

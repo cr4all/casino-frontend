@@ -24,6 +24,7 @@ const require = createRequire(join(root, 'package.json'));
 const args = process.argv.slice(2);
 const langsArg = args.find((a) => a.startsWith('--langs='));
 const onlyLangs = langsArg ? langsArg.split('=')[1].split(',').map((s) => s.trim()).filter(Boolean) : null;
+const force = args.includes('--force');
 
 const SPLIT = '<<|SPLIT|>>';
 const LINGVA_HOST = 'https://lingva.ml';
@@ -481,7 +482,7 @@ async function resolvePaths(langCode, cache) {
   const parent = VARIANT_PARENT[langCode];
   if (MANUAL[langCode]) return MANUAL[langCode];
   if (parent && MANUAL[parent]) return MANUAL[parent];
-  if (cache[langCode]) return cache[langCode];
+  if (!force && cache[langCode]) return cache[langCode];
 
   const entries = Object.entries(ENGLISH_PATHS);
   const toTranslate = entries.filter(([, english]) => english);
@@ -565,7 +566,7 @@ if (onlyLangs) {
 for (const langCode of localeCodes) {
   const locale = await loadLocale(langCode);
   const hasManual = MANUAL[langCode] || (VARIANT_PARENT[langCode] && MANUAL[VARIANT_PARENT[langCode]]);
-  const needsWork = hasManual || pathsNeedUpdate(locale, ENGLISH_PATHS);
+  const needsWork = force || hasManual || pathsNeedUpdate(locale, ENGLISH_PATHS);
 
   if (!needsWork) {
     console.log(`${langCode}: complete`);

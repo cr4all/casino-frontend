@@ -44,7 +44,9 @@ export const ga: LocaleTree = {
     "fieldPasswordMismatch": "Ní ionann na focail fhaire.",
     "fieldSelectRequired": "Roghnaigh le do thoil",
     "fieldCodeInvalid": "Cuir isteach an cód deimhnithe 6 dhigit, le do thoil.",
-    "language": "Language"
+    "language": "Language",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -69,8 +71,8 @@ export const ga: LocaleTree = {
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "TACAÍOCHT COMHRÁITE",
+    "supportTicketsLabel": "Tacaíocht"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +87,35 @@ export const ga: LocaleTree = {
     "loadFailed": "Could not load chat messages."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Tacaíocht Comhráite",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New Comhráite",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "category": "Cineál",
+    "message": "message",
+    "submit": "Seol Comhráite",
+    "createFailed": "Theip ar sheoladh na teachtaireachta. Bain triail eile as.",
+    "empty": "Níl aon chomhráite fós.",
+    "backToList": "← Back to Comhráite",
+    "notFound": "Comhráite not found.",
+    "closedHint": "Tá an ticéad seo dúnta. Oscail ticéad nua más gá tuilleadh cabhrach.",
+    "replyPlaceholder": "Clóscríobh do fhreagra...",
+    "sendReply": "Seol reply",
+    "replyFailed": "Theip ar sheoladh na teachtaireachta. Bain triail eile as.",
+    "supportTeam": "Tacaíocht",
+    "you": "Tú",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "reatha",
+      "payment": "Aistarraingtí",
+      "bonus": "Bónas",
+      "game": "Cluiche",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Gníomhach",
+      "pending": "ar feitheamh",
+      "resolved": "Réitithe",
+      "closed": "dúnta"
     }
   },
   "footer": {
@@ -208,7 +210,8 @@ export const ga: LocaleTree = {
     "crypto": "Cryptocurrency",
     "crypto_payment": "Crypto Payment",
     "bank": "Bank Transfer",
-    "bank_transfer": "Bank Transfer"
+    "bank_transfer": "Bank Transfer",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Cryptocurrency",

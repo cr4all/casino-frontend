@@ -71,8 +71,8 @@ export const arTn: LocaleTree = {
     "playResponsibly": "18+ · العب بمسؤولية",
     "liveChat": "الدردشة المباشرة",
     "liveChatLabel": "الدعم",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "تذاكر الدعم",
+    "supportTicketsLabel": "الدعم"
   },
   "liveChat": {
     "title": "الدردشة المباشرة",
@@ -596,35 +596,35 @@ export const arTn: LocaleTree = {
     "bank_account": "الحساب البنكي"
   },
   "supportTickets": {
-    "title": "Support Tickets",
-    "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "title": "تذاكر الدعم",
+    "subtitle": "قدّم طلبًا وتابع ردود فريق الدعم لدينا.",
+    "newTicket": "تذكرة جديدة",
+    "subject": "الموضوع",
+    "category": "الفئة",
+    "message": "الرسالة",
+    "submit": "إرسال التذكرة",
+    "createFailed": "تعذر إنشاء التذكرة. يرجى المحاولة مرة أخرى.",
+    "empty": "لا توجد تذاكر دعم بعد.",
+    "backToList": "← العودة إلى التذاكر",
+    "notFound": "التذكرة غير موجودة.",
+    "closedHint": "هذه التذكرة مغلقة. افتح تذكرة جديدة إذا كنت بحاجة إلى مزيد من المساعدة.",
+    "replyPlaceholder": "اكتب ردك...",
+    "sendReply": "إرسال الرد",
+    "replyFailed": "تعذر إرسال الرد. يرجى المحاولة مرة أخرى.",
+    "supportTeam": "الدعم",
+    "you": "أنت",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
-      "other": "Other"
+      "account": "الحساب",
+      "payment": "الدفع",
+      "bonus": "المكافآت",
+      "game": "اللعبة",
+      "other": "أخرى"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "مفتوحة",
+      "pending": "قيد الانتظار",
+      "resolved": "تم الحل",
+      "closed": "مغلقة"
     }
   }
 };

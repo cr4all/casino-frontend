@@ -69,8 +69,8 @@ export const sq: LocaleTree = {
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "MBËSHTETJE BISEDAT",
+    "supportTicketsLabel": "Mbështetje"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +85,35 @@ export const sq: LocaleTree = {
     "loadFailed": "Could not load chat messages."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Mbështetje Bisedat",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New Bisedat",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "category": "Lloji",
+    "message": "message",
+    "submit": "Dërgo Bisedat",
+    "createFailed": "Dështoi dërgimi i mesazhit. Ju lutemi provoni përsëri.",
+    "empty": "Ende nuk ka biseda.",
+    "backToList": "← Back to Bisedat",
+    "notFound": "Bisedat not found.",
+    "closedHint": "Ky tiketë është mbyllur. Hapni një tiketë të re nëse keni nevojë për më shumë ndihmë.",
+    "replyPlaceholder": "Shkruani përgjigjen tuaj...",
+    "sendReply": "Dërgo reply",
+    "replyFailed": "Dështoi dërgimi i mesazhit. Ju lutemi provoni përsëri.",
+    "supportTeam": "Mbështetje",
+    "you": "Ju",
     "categories": {
       "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "payment": "Tërheqje",
+      "bonus": "Bonusi",
+      "game": "Lojë",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktive",
+      "pending": "në pritje",
+      "resolved": "Zgjidhur",
+      "closed": " e mbyllur"
     }
   },
   "footer": {

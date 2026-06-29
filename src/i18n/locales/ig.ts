@@ -44,7 +44,9 @@ export const ig: LocaleTree = {
     "fieldPasswordMismatch": "Okwuntughe adabaghị.",
     "fieldSelectRequired": "Biko họrọ &lt;&lt;<FIELD>&gt;&gt;.",
     "fieldCodeInvalid": "Biko tinye koodu nkwenye ọnụọgụ 6.",
-    "language": "Language"
+    "language": "Language",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -69,8 +71,8 @@ export const ig: LocaleTree = {
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "NKWADO MKPARỊTA ỤKA",
+    "supportTicketsLabel": "Nkwado"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +87,35 @@ export const ig: LocaleTree = {
     "loadFailed": "Could not load chat messages."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Nkwado Mkparịta ụka",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New Mkparịta ụka",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "category": "Ụdị",
+    "message": "message",
+    "submit": "Ziga Mkparịta ụka",
+    "createFailed": "Emeghị ka izipu ozi. Biko nwaa ọzọ.",
+    "empty": "Enweghị mkparịta ụka ugbu a.",
+    "backToList": "← Back to Mkparịta ụka",
+    "notFound": "Mkparịta ụka not found.",
+    "closedHint": "Tiketi a emechiela. Mepee tiketi ọhụrụ ma ị chọọ enyemaka ọzọ.",
+    "replyPlaceholder": "Dee azịza gị...",
+    "sendReply": "Ziga reply",
+    "replyFailed": "Emeghị ka izipu ozi. Biko nwaa ọzọ.",
+    "supportTeam": "Nkwado",
+    "you": "Gị",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "a",
+      "payment": "Mwepụ ego",
+      "bonus": "Bonu",
+      "game": "Egwuregwu",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Na-arụ ọrụ",
+      "pending": "na-echere",
+      "resolved": "Edozila",
+      "closed": "emechiri"
     }
   },
   "footer": {
@@ -208,7 +210,8 @@ export const ig: LocaleTree = {
     "crypto": "Cryptocurrency",
     "crypto_payment": "Crypto Payment",
     "bank": "Bank Transfer",
-    "bank_transfer": "Bank Transfer"
+    "bank_transfer": "Bank Transfer",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Cryptocurrency",

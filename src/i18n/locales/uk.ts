@@ -69,8 +69,8 @@ export const uk: LocaleTree = {
     "playResponsibly": "18+ · Грайте відповідально",
     "liveChat": "ОНЛАЙН-ЧАТ",
     "liveChatLabel": "Підтримка",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "ПІДТРИМКА РОЗМОВИ",
+    "supportTicketsLabel": "Підтримка"
   },
   "liveChat": {
     "title": "Онлайн-чат",
@@ -85,35 +85,35 @@ export const uk: LocaleTree = {
     "loadFailed": "Не вдалося завантажити повідомлення чату."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Підтримка Розмови",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
+    "newTicket": "New Розмови",
+    "subject": "Тема",
+    "category": "Тип",
+    "message": "Повідомлення",
+    "submit": "Надіслати Розмови",
+    "createFailed": "Не вдалося надіслати повідомлення. Будь ласка, спробуйте ще раз.",
+    "empty": "Розмов ще немає.",
+    "backToList": "← Back to Розмови",
+    "notFound": "Розмови not found.",
     "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
+    "replyPlaceholder": "Введіть своє відповісти...",
+    "sendReply": "Надіслати відповідь",
+    "replyFailed": "Не вдалося надіслати повідомлення. Будь ласка, спробуйте ще раз.",
     "supportTeam": "Підтримка",
-    "you": "You",
+    "you": "Ви",
     "categories": {
-      "account": "Акаунт",
-      "payment": "Payment",
-      "bonus": "Бонус",
+      "account": "запис",
+      "payment": "Зняття",
+      "bonus": "Бонуси",
       "game": "Гра",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Активні",
+      "pending": "очікує на розгляд",
+      "resolved": "Вирішено",
+      "closed": "закрито"
     }
   },
   "footer": {

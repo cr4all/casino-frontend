@@ -44,7 +44,9 @@ export const hi: LocaleTree = {
     "fieldSelectRequired": "कृपया {{field}} चुनें।",
     "fieldCodeInvalid": "कृपया 6 अंकों का सत्यापन कोड दर्ज करें।",
     "maxOnly": "max {{amount}}",
-    "notAvailable": "—"
+    "notAvailable": "—",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "सभी गेम",
@@ -69,8 +71,8 @@ export const hi: LocaleTree = {
     "playResponsibly": "18+ · जिम्मेदारी से खेलें",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "समर्थन बातचीत",
+    "supportTicketsLabel": "सहायता"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -169,7 +171,8 @@ export const hi: LocaleTree = {
     "crypto": "क्रिप्टो",
     "crypto_payment": "क्रिप्टो भुगतान",
     "bank": "बैंक ट्रांसफर",
-    "bank_transfer": "बैंक ट्रांसफर"
+    "bank_transfer": "बैंक ट्रांसफर",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "क्रिप्टो",
@@ -593,35 +596,35 @@ export const hi: LocaleTree = {
     "bank_account": "Bank account"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "समर्थन बातचीत",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "newTicket": "New बातचीत",
+    "subject": "विषय",
+    "category": "प्रकार",
+    "message": "संदेश",
+    "submit": "भेजें बातचीत",
+    "createFailed": "संदेश भेजने में विफल. कृपया पुनः प्रयास करें।",
+    "empty": "अभी तक कोई बातचीत नहीं।",
+    "backToList": "← Back to बातचीत",
+    "notFound": "बातचीत not found.",
+    "closedHint": "यह टिकट बंद है। यदि आपको और सहायता चाहिए तो नया टिकट खोलें।",
+    "replyPlaceholder": "अपना उत्तर लिखें...",
+    "sendReply": "भेजें reply",
+    "replyFailed": "संदेश भेजने में विफल. कृपया पुनः प्रयास करें।",
+    "supportTeam": "समर्थन",
+    "you": "आप",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "खाता",
+      "payment": "निकासी",
+      "bonus": "बोनस",
+      "game": "गेम",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "सक्रिय",
+      "pending": "लंबित",
+      "resolved": "हल हो गया",
+      "closed": "बंद"
     }
   }
 };

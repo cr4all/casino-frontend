@@ -69,8 +69,8 @@ export const nl: LocaleTree = {
     "playResponsibly": "18+ · Speel verantwoord",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "ONDERSTEUNING TICKETSN",
+    "supportTicketsLabel": "Ondersteuning"
   },
   "liveChat": {
     "title": "Live chat",
@@ -85,35 +85,35 @@ export const nl: LocaleTree = {
     "loadFailed": "Chatberichten konden niet worden geladen."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Ondersteuning Ticketsn",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "newTicket": "Nieuw ticketn",
+    "subject": "Onderwerp",
+    "category": "Soort",
+    "message": "Bericht",
+    "submit": "Verzenden ticketn",
+    "createFailed": "Bericht verzenden mislukt. Probeer het opnieuw.",
+    "empty": "Nog geen ondersteuning kaartjiesn.",
+    "backToList": "← Terug naar ticketn",
+    "notFound": "Ticketn niet gevonden.",
+    "closedHint": "Dit ticket is gesloten. Open een nieuw ticket als u meer hulp nodig heeft.",
+    "replyPlaceholder": "Typ uw antwoord...",
+    "sendReply": "Antwoord verzenden",
+    "replyFailed": "Bericht verzenden mislukt. Probeer het opnieuw.",
+    "supportTeam": "Ondersteuning",
+    "you": "U",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
+      "account": "account",
+      "payment": "Opnames",
+      "bonus": "Bonussen",
       "game": "Spel",
-      "other": "Other"
+      "other": "Overig"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Actief",
+      "pending": "in behandeling",
+      "resolved": "Opgelost",
+      "closed": "gesloten"
     }
   },
   "footer": {

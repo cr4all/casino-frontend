@@ -71,8 +71,8 @@ export const af: LocaleTree = {
     "playResponsibly": "18+ - Speel verantwoord",
     "liveChat": "Regstreekse klets",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "ONDERSTEUNING TICKETS",
+    "supportTicketsLabel": "Ondersteuning"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -87,35 +87,35 @@ export const af: LocaleTree = {
     "loadFailed": "Kon nie kletsboodskappe laai nie."
   },
   "supportTickets": {
-    "title": "Support Tickets",
-    "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "title": "Ondersteuning Tickets",
+    "subtitle": "Dien 'n versoek in en volg antwoorde van ons ondersteuningspan.",
+    "newTicket": "Nuwe ticket",
+    "subject": "Onderwerp",
+    "category": "Tipe",
+    "message": "Boodskap",
+    "submit": "Stuur ticket",
+    "createFailed": "Kon nie kaartjie skep nie. Probeer asseblief weer.",
+    "empty": "Nog geen ondersteuning kaartjies nie.",
+    "backToList": "← Terug na ticket",
+    "notFound": "Ticket nie gevind nie.",
+    "closedHint": "Hierdie kaartjie is gesluit. Maak 'n nuwe kaartjie oop as u verdere hulp benodig.",
+    "replyPlaceholder": "Tik jou antwoord...",
+    "sendReply": "Stuur antwoord",
+    "replyFailed": "Kon nie antwoord stuur nie. Probeer asseblief weer.",
+    "supportTeam": "Ondersteuning",
+    "you": "Jy",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
-      "other": "Other"
+      "account": "rekening",
+      "payment": "Onttrekkings",
+      "bonus": "Bonuss",
+      "game": "Spel",
+      "other": "Ander"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktief",
+      "pending": "hangende",
+      "resolved": "Opgelos",
+      "closed": "gesluit"
     }
   },
   "footer": {

@@ -44,7 +44,9 @@ export const it: LocaleTree = {
     "fieldPasswordMismatch": "Passwords do not match.",
     "fieldSelectRequired": "Please select {{field}}.",
     "fieldCodeInvalid": "Please enter the 6-digit verification code.",
-    "language": "Language"
+    "language": "Language",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -69,8 +71,8 @@ export const it: LocaleTree = {
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "SUPPORTO TICKET",
+    "supportTicketsLabel": "Supporto"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +87,35 @@ export const it: LocaleTree = {
     "loadFailed": "Could not load chat messages."
   },
   "supportTickets": {
-    "title": "Support Tickets",
-    "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "title": "Supporto Ticket",
+    "subtitle": "Invia una richiesta e segui le risposte del nostro team di supporto.",
+    "newTicket": "Nuovo ticket",
+    "subject": "Oggetto",
+    "category": "Tipo",
+    "message": "Messaggio",
+    "submit": "Invia ticket",
+    "createFailed": "Impossibile inviare il messaggio. Riprova.",
+    "empty": "Nessuna ticket ancora.",
+    "backToList": "← Torna ai ticket",
+    "notFound": "Ticket non trovato.",
+    "closedHint": "Questo ticket è chiuso. Open a new ticket if you need further help.",
+    "replyPlaceholder": "Scrivi la tua risposta...",
+    "sendReply": "Invia risposta",
+    "replyFailed": "Impossibile inviare il messaggio. Riprova.",
+    "supportTeam": "Supporto",
+    "you": "Lei",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
-      "other": "Other"
+      "account": "corrente",
+      "payment": "Prelievi",
+      "bonus": "Bonifici",
+      "game": "Gioco",
+      "other": "Altro"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Attivo",
+      "pending": "in attesa",
+      "resolved": "Risolto",
+      "closed": "chiuso"
     }
   },
   "footer": {
@@ -208,7 +210,8 @@ export const it: LocaleTree = {
     "crypto": "Cryptocurrency",
     "crypto_payment": "Crypto Payment",
     "bank": "Bank Transfer",
-    "bank_transfer": "Bank Transfer"
+    "bank_transfer": "Bank Transfer",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Cryptocurrency",

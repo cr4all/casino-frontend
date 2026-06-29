@@ -69,8 +69,8 @@ export const uz: LocaleTree = {
     "playResponsibly": "18+ · Mas'uliyat bilan o'ynang",
     "liveChat": "JONLI CHAT",
     "liveChatLabel": "Qo'llab-quvvatlash",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "DESTEK SUHBATLAR",
+    "supportTicketsLabel": "Qo'llab-quvvatlash"
   },
   "liveChat": {
     "title": "Jonli chat",
@@ -85,35 +85,35 @@ export const uz: LocaleTree = {
     "loadFailed": "Chat xabarlarini yuklab bo'lmadi."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Destek Suhbatlar",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New Suhbatlar",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Qo'llab-quvvatlash",
-    "you": "You",
+    "category": "Tür",
+    "message": "Xabaringizni yozing",
+    "submit": "Gönder Suhbatlar",
+    "createFailed": "Xabarni yuborib bo'lmadi. Qayta urinib ko'ring.",
+    "empty": "Hali suhbatlar yo'q.",
+    "backToList": "← Back to Suhbatlar",
+    "notFound": "Suhbatlar not found.",
+    "closedHint": "Bu chipta yopilgan. Qo‘shimcha yordam kerak bo‘lsa, yangi chipta oching.",
+    "replyPlaceholder": "Javobingizni yozing...",
+    "sendReply": "Gönder reply",
+    "replyFailed": "Xabarni yuborib bo'lmadi. Qayta urinib ko'ring.",
+    "supportTeam": "Destek",
+    "you": "Siz",
     "categories": {
-      "account": "Hisob",
-      "payment": "Payment",
-      "bonus": "Mukofot",
-      "game": "O'yin",
+      "account": "hesap",
+      "payment": "Para Çekme",
+      "bonus": "Bonuslar",
+      "game": "Oyun",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktif",
+      "pending": "beklemede",
+      "resolved": "Hal qilindi",
+      "closed": "kapalı"
     }
   },
   "footer": {

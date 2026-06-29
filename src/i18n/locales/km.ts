@@ -69,8 +69,8 @@ export const km: LocaleTree = {
     "playResponsibly": "អាយុ ១៨+ · លេងដោយមានការទទួលខុសត្រូវ",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "គាំទ្រ",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "ជំនួយ ការសន្ទនា",
+    "supportTicketsLabel": "គាំទ្រ"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +85,35 @@ export const km: LocaleTree = {
     "loadFailed": "មិនអាចផ្ទុកសារ​សន្ទនា​បាន។"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "ជំនួយ ការសន្ទនា",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New ការសន្ទនា",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "គាំទ្រ",
-    "you": "You",
+    "category": "ប្រភេទ",
+    "message": "វាយសាររបស់អ្នក",
+    "submit": "ផ្ញើ ការសន្ទនា",
+    "createFailed": "បរាជ័យក្នុងការផ្ញើសារ។ សូមព្យាយាមម្តងទៀត។",
+    "empty": "មិនទាន់មានការសន្ទនាទេ។",
+    "backToList": "← Back to ការសន្ទនា",
+    "notFound": "ការសន្ទនា not found.",
+    "closedHint": "សំបុត្រនេះត្រូវបានបិទ។ បើអ្នកត្រូវការជំនួយបន្ថែម សូមបើកសំបុត្រថ្មី។",
+    "replyPlaceholder": "វាយបញ្ចូលការឆ្លើយតបរបស់អ្នក...",
+    "sendReply": "ផ្ញើ reply",
+    "replyFailed": "បរាជ័យក្នុងការផ្ញើសារ។ សូមព្យាយាមម្តងទៀត។",
+    "supportTeam": "ជំនួយ",
+    "you": "អ្នក",
     "categories": {
-      "account": "គណនី",
-      "payment": "Payment",
+      "account": "គណនីបច្ចុប្បន្ន",
+      "payment": "ការដកប្រាក់",
       "bonus": "ប្រាក់រង្វាន់",
       "game": "ហ្គេម",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "សកម្ម",
+      "pending": "កំពុងរង់ចាំ",
+      "resolved": "បានដោះស្រាយ",
+      "closed": "បានបិទ"
     }
   },
   "footer": {

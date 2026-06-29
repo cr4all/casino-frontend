@@ -69,8 +69,8 @@ export const te: LocaleTree = {
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "समर्थन సంభాషణలు",
+    "supportTicketsLabel": "समर्थन"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +85,35 @@ export const te: LocaleTree = {
     "loadFailed": "Could not load chat messages."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "समर्थन సంభాషణలు",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "newTicket": "New సంభాషణలు",
+    "subject": "విషయం",
+    "category": "प्रकार",
+    "message": "message",
+    "submit": "भेजें సంభాషణలు",
+    "createFailed": "సందేశం పంపడం విఫలమైంది. దయచేసి మళ్లీ ప్రయత్నించండి.",
+    "empty": "ఇంకా సంభాషణలు లేవు.",
+    "backToList": "← Back to సంభాషణలు",
+    "notFound": "సంభాషణలు not found.",
+    "closedHint": "ఈ టికెట్ మూసివేయబడింది. మరింత సహాయం అవసరమైతే కొత్త టికెట్ తెరవండి.",
+    "replyPlaceholder": "మీ ప్రతిస్పందన టైప్ చేయండి...",
+    "sendReply": "भेजें reply",
+    "replyFailed": "సందేశం పంపడం విఫలమైంది. దయచేసి మళ్లీ ప్రయత్నించండి.",
+    "supportTeam": "समर्थन",
+    "you": "మీరు",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "खाता",
+      "payment": "निकासी",
+      "bonus": "बोनस",
+      "game": "गेम",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "सक्रिय",
+      "pending": "लंबित",
+      "resolved": "పరిష్కరించబడింది",
+      "closed": "बंद"
     }
   },
   "footer": {

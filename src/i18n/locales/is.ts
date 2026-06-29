@@ -44,7 +44,9 @@ export const is: LocaleTree = {
     "fieldPasswordMismatch": "Lykilorð eru ekki eins.",
     "fieldSelectRequired": "Vinsamlegast veldu",
     "fieldCodeInvalid": "Sláðu inn 6 talna staðfestingarkóðann.",
-    "language": "Language"
+    "language": "Language",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -69,8 +71,8 @@ export const is: LocaleTree = {
     "playResponsibly": "18+ · Leiktu á ábyrgan hátt",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "AÐSTOÐ SAMTÖL",
+    "supportTicketsLabel": "Aðstoð"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +87,35 @@ export const is: LocaleTree = {
     "loadFailed": "Gat ekki hlaðið skilaboðum"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Aðstoð Samtöl",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New Samtöl",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "category": "Tegund",
+    "message": "Skrifaðu skilaboðin hér",
+    "submit": "Senda Samtöl",
+    "createFailed": "Tókst ekki að senda skilaboð. Reyndu aftur.",
+    "empty": "Engar samtöl enn.",
+    "backToList": "← Back to Samtöl",
+    "notFound": "Samtöl not found.",
+    "closedHint": "Þessi miði er lokaður. Opnaðu nýjan miða ef þú þarft frekari aðstoð.",
+    "replyPlaceholder": "Sláðu inn svarið þitt...",
+    "sendReply": "Senda reply",
+    "replyFailed": "Tókst ekki að senda skilaboð. Reyndu aftur.",
+    "supportTeam": "Aðstoð",
+    "you": "Þú",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "reikningur",
+      "payment": "Úttektir",
+      "bonus": "Bónus",
+      "game": "Leikur",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Virkt",
+      "pending": "í bið",
+      "resolved": "Leyst",
+      "closed": "lokað"
     }
   },
   "footer": {
@@ -208,7 +210,8 @@ export const is: LocaleTree = {
     "crypto": "Rafmynt",
     "crypto_payment": "Dulkóðunargreiðsla",
     "bank": "Bankamillifærsla",
-    "bank_transfer": "Bankamillifærsla"
+    "bank_transfer": "Bankamillifærsla",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Rafmynt",

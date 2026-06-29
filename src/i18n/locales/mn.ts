@@ -69,8 +69,8 @@ export const mn: LocaleTree = {
     "playResponsibly": "18+ · Хариуцлагатай тоглоорой",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Дэмжлэг",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "ДЭМЖЛЭГ ЯРИА",
+    "supportTicketsLabel": "Дэмжлэг"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -85,35 +85,35 @@ export const mn: LocaleTree = {
     "loadFailed": "Chat мессеж ачаалах боломжгүй."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Дэмжлэг Яриа",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New Яриа",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
+    "category": "Төрөл",
+    "message": "Мессеж бичнэ үү",
+    "submit": "Илгээх Яриа",
+    "createFailed": "Мессеж илгээж чадсангүй. Дахин оролдоно уу.",
+    "empty": "Одоогоор яриа байхгүй.",
+    "backToList": "← Back to Яриа",
+    "notFound": "Яриа not found.",
+    "closedHint": "Энэ тасалбар хаагдсан байна. Нэмэлт тусламж хэрэгтэй бол шинэ тасалбар нээнэ үү.",
+    "replyPlaceholder": "Хариултаа бичнэ үү...",
+    "sendReply": "Илгээх reply",
+    "replyFailed": "Мессеж илгээж чадсангүй. Дахин оролдоно уу.",
     "supportTeam": "Дэмжлэг",
-    "you": "You",
+    "you": "Та",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
+      "account": "данс",
+      "payment": "Мөнгө татах",
+      "bonus": "Урамшуулал",
       "game": "Тоглоом",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Идэвхтэй",
+      "pending": "хүлээгдэж буй",
+      "resolved": "Шийдэгдсэн",
+      "closed": "хаагдсан"
     }
   },
   "footer": {

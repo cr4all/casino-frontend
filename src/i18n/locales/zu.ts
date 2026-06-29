@@ -69,8 +69,8 @@ export const zu: LocaleTree = {
     "playResponsibly": "18+ · Dlala Ngokuzibophezela",
     "liveChat": "INGXOXO EBUKHOMA",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "UKWESEKWA IZINGXOXO",
+    "supportTicketsLabel": "Ukwesekwa"
   },
   "liveChat": {
     "title": "Ukuxoxa bukhoma",
@@ -85,35 +85,35 @@ export const zu: LocaleTree = {
     "loadFailed": "Ayikwazanga ukulayisha imiyalezo yengxoxo."
   },
   "supportTickets": {
-    "title": "Support Tickets",
-    "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "title": "Amathekethe Wosizo",
+    "subtitle": "Thumela isicelo bese ulandelela izimpendulo eqenjini lethu losizo.",
+    "newTicket": "Entsha ithekethe",
+    "subject": "Isihloko",
+    "category": "Uhlobo",
+    "message": "Thayipha umlayezo wakho",
+    "submit": "Thumela ithekethe",
+    "createFailed": "Yehlulekile ukudala ithekethe. Sicela uzame futhi.",
+    "empty": "Azikho izingxoxo okwamanje.",
+    "backToList": "← Buyela kumathekethe",
+    "notFound": "Ithekethe ayitholakalanga.",
+    "closedHint": "Leli thekethe livaliwe. Vula ithekethe entsha uma udinga usizo olwengeziwe.",
+    "replyPlaceholder": "Thayipha impendulo yakho...",
+    "sendReply": "Thumela impendulo",
+    "replyFailed": "Yehlulekile ukuthumela umlayezo. Sicela uzame futhi.",
+    "supportTeam": "Ukwesekwa",
+    "you": "Wena",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
-      "other": "Other"
+      "account": "rekening",
+      "payment": "Ukukhipha",
+      "bonus": "Ibhonasi",
+      "game": "Umdlalo",
+      "other": "Okunye"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktief",
+      "pending": "kulindile",
+      "resolved": "Kuxazululiwe",
+      "closed": "kuvaliwe"
     }
   },
   "footer": {

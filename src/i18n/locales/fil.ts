@@ -44,7 +44,9 @@ export const fil: LocaleTree = {
     "fieldSelectRequired": "Pumili...",
     "fieldCodeInvalid": "Pakilagay ang 6 na digit na code ng beripikasyon.",
     "maxOnly": "max {{amount}}",
-    "notAvailable": "—"
+    "notAvailable": "—",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "LAHAT NG LARO",
@@ -69,8 +71,8 @@ export const fil: LocaleTree = {
     "playResponsibly": "18+ · Maglaro nang responsable",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "SUPORTA MGA PAG-UUSAP",
+    "supportTicketsLabel": "Suporta"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -169,7 +171,8 @@ export const fil: LocaleTree = {
     "crypto": "Cryptocurrency",
     "crypto_payment": "Crypto payment",
     "bank": "Bank transfer",
-    "bank_transfer": "Bank transfer"
+    "bank_transfer": "Bank transfer",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Cryptocurrency",
@@ -593,35 +596,35 @@ export const fil: LocaleTree = {
     "bank_account": "Bank account"
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "Suporta Mga pag-uusap",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New Mga pag-uusap",
     "subject": "Subject",
-    "category": "Category",
+    "category": "Uri",
     "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "submit": "Ipadala Mga pag-uusap",
+    "createFailed": "Nabigong magpadala ng mensahe. Pakisubukang muli.",
+    "empty": "Wala pang pag-uusap.",
+    "backToList": "← Back to Mga pag-uusap",
+    "notFound": "Mga pag-uusap not found.",
+    "closedHint": "Sarado na ang tiket na ito. Magbukas ng bagong tiket kung kailangan mo ng karagdagang tulong.",
+    "replyPlaceholder": "I-type ang iyong sagot...",
+    "sendReply": "Ipadala reply",
+    "replyFailed": "Nabigong magpadala ng mensahe. Pakisubukang muli.",
+    "supportTeam": "Suporta",
+    "you": "Ikaw",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "account",
+      "payment": "Pag-withdraw",
+      "bonus": "Gantimpala",
+      "game": "Laro",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "Aktibo",
+      "pending": "naghihintay",
+      "resolved": "Nalutas",
+      "closed": "sarado"
     }
   }
 };

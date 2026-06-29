@@ -44,7 +44,9 @@ export const fa: LocaleTree = {
     "fieldPasswordMismatch": "گذرواژه هم‌خوانی ندارد",
     "fieldSelectRequired": "لطفا &lt;&lt; را انتخاب کنید<FIELD> &gt;&gt;.",
     "fieldCodeInvalid": "لطفا کد تایید ۶ رقمی را وارد کنید.",
-    "language": "زبان"
+    "language": "زبان",
+    "minLabel": "Min",
+    "maxLabel": "Max"
   },
   "nav": {
     "allGames": "همه بازی‌ها",
@@ -69,8 +71,8 @@ export const fa: LocaleTree = {
     "playResponsibly": "18+ · مسئولانه بازی کنید",
     "liveChat": "چت زنده",
     "liveChatLabel": "پشتیبانی",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "پشتیبانی گفتگوها",
+    "supportTicketsLabel": "پشتیبانی"
   },
   "liveChat": {
     "title": "چت زنده",
@@ -85,35 +87,35 @@ export const fa: LocaleTree = {
     "loadFailed": "بارگذاری پیام‌های چت ممکن نبود."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "پشتیبانی گفتگوها",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
+    "newTicket": "New گفتگوها",
     "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
+    "category": "نوع",
+    "message": "پیام خود را بنویسید",
+    "submit": "ارسال گفتگوها",
+    "createFailed": "ارسال پیام ناموفق بود. لطفاً دوباره تلاش کنید.",
+    "empty": "هنوز گفتگویی وجود ندارد.",
+    "backToList": "← Back to گفتگوها",
+    "notFound": "گفتگوها not found.",
+    "closedHint": "این تیکت بسته شده است. در صورت نیاز به کمک بیشتر، تیکت جدیدی باز کنید.",
+    "replyPlaceholder": "پاسخ خود را بنویسید...",
+    "sendReply": "ارسال reply",
+    "replyFailed": "ارسال پیام ناموفق بود. لطفاً دوباره تلاش کنید.",
     "supportTeam": "پشتیبانی",
-    "you": "You",
+    "you": "شما",
     "categories": {
-      "account": "حساب",
-      "payment": "Payment",
+      "account": "فعلی",
+      "payment": "برداشت‌ها",
       "bonus": "بونوس",
       "game": "بازی",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "فعال",
+      "pending": "در انتظار",
+      "resolved": "حل شد",
+      "closed": "بسته"
     }
   },
   "footer": {
@@ -208,7 +210,8 @@ export const fa: LocaleTree = {
     "crypto": "رمزارز",
     "crypto_payment": "پرداخت رمزارز",
     "bank": "انتقال بانکی",
-    "bank_transfer": "انتقال بانکی"
+    "bank_transfer": "انتقال بانکی",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "رمزارز",

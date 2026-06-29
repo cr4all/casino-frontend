@@ -71,8 +71,8 @@ export const am: LocaleTree = {
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "SUPPORT TICKETS",
-    "supportTicketsLabel": "Help desk"
+    "supportTickets": "ድጋፍ ንግግሮች",
+    "supportTicketsLabel": "ድጋፍ"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -87,35 +87,35 @@ export const am: LocaleTree = {
     "loadFailed": "Could not load chat messages."
   },
   "supportTickets": {
-    "title": "Support Tickets",
+    "title": "ድጋፍ ንግግሮች",
     "subtitle": "Submit a request and track replies from our support team.",
-    "newTicket": "New ticket",
-    "subject": "Subject",
-    "category": "Category",
-    "message": "Message",
-    "submit": "Submit ticket",
-    "createFailed": "Could not create your ticket. Please try again.",
-    "empty": "No support tickets yet.",
-    "backToList": "← Back to tickets",
-    "notFound": "Ticket not found.",
-    "closedHint": "This ticket is closed. Open a new ticket if you need further help.",
-    "replyPlaceholder": "Type your reply...",
-    "sendReply": "Send reply",
-    "replyFailed": "Could not send your reply. Please try again.",
-    "supportTeam": "Support",
-    "you": "You",
+    "newTicket": "New ንግግሮች",
+    "subject": "ርዕስ",
+    "category": " አይነት",
+    "message": "message",
+    "submit": "ላክ ንግግሮች",
+    "createFailed": "መልዕክት መላክ አልተሳካም። እባክህ እንደገና ሞክር።",
+    "empty": "ገና ምንም ንግግሮች የሉም።",
+    "backToList": "← Back to ንግግሮች",
+    "notFound": "ንግግሮች not found.",
+    "closedHint": "ይህ ትኬት ተዘግቷል። ተጨማሪ እገዛ ከፈለጉ አዲስ ትኬት ይክፈቱ።",
+    "replyPlaceholder": "መልስህን ተይብ...",
+    "sendReply": "ላክ reply",
+    "replyFailed": "መልዕክት መላክ አልተሳካም። እባክህ እንደገና ሞክር።",
+    "supportTeam": "ድጋፍ",
+    "you": "እርስዎ",
     "categories": {
-      "account": "Account",
-      "payment": "Payment",
-      "bonus": "Bonus",
-      "game": "Game",
+      "account": "መለያ",
+      "payment": "ተቀማጭ ገንዘብ",
+      "bonus": "ጉርሻ",
+      "game": "ጨዋታ",
       "other": "Other"
     },
     "status": {
-      "open": "Open",
-      "pending": "Pending",
-      "resolved": "Resolved",
-      "closed": "Closed"
+      "open": "ንቁ",
+      "pending": "በመጠባበቅ ላይ",
+      "resolved": "ተፈትቷል",
+      "closed": "ተዘግቷል"
     }
   },
   "footer": {
