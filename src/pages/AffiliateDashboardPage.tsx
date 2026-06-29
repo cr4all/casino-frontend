@@ -9,7 +9,7 @@ import {
   type CreateSubAffiliatePayload,
   type PlayerStatisticsPeriod,
 } from '@/api/affiliate.api';
-import { AffiliatePlayerStatisticsTable } from '@/components/affiliate/AffiliatePlayerStatisticsTable';
+import { AffiliatePlayerStatisticsTable, type PlayerStatisticsPeriodChange } from '@/components/affiliate/AffiliatePlayerStatisticsTable';
 import { Button } from '@/components/common/Button';
 import { FormTextField } from '@/components/common/FormTextField';
 import { LanguageSelector } from '@/components/common/LanguageSelector';
@@ -86,7 +86,13 @@ export function AffiliateDashboardPage() {
   const [me, setMe] = useState<AffiliateMe | null>(null);
   const [stats, setStats] = useState<AffiliateStats | null>(null);
   const [playerStats, setPlayerStats] = useState<AffiliatePlayerStatistics[]>([]);
-  const [playerStatsPeriod, setPlayerStatsPeriod] = useState<PlayerStatisticsPeriod>('week');
+  const [playerStatsPeriod, setPlayerStatsPeriod] = useState<PlayerStatisticsPeriod>('today');
+  const [playerStatsCustomFrom, setPlayerStatsCustomFrom] = useState<string>(() =>
+    new Date().toISOString().slice(0, 10),
+  );
+  const [playerStatsCustomTo, setPlayerStatsCustomTo] = useState<string>(() =>
+    new Date().toISOString().slice(0, 10),
+  );
   const [playerStatsPagination, setPlayerStatsPagination] = useState<PaginationMeta | null>(null);
   const [playerStatsLoading, setPlayerStatsLoading] = useState(false);
   const [subAffiliates, setSubAffiliates] = useState<AffiliateSubAffiliate[]>([]);
@@ -118,12 +124,27 @@ export function AffiliateDashboardPage() {
   const showRateFields =
     subForm.commission_model === 'revshare' || subForm.commission_model === 'hybrid';
 
-  const loadPlayerStatistics = async (period: PlayerStatisticsPeriod, page = 1) => {
+  const loadPlayerStatistics = async (
+    change: PlayerStatisticsPeriodChange,
+    page = 1,
+  ) => {
     setPlayerStatsLoading(true);
     try {
-      const data = await affiliateApi.getPlayerStatistics(period, page);
+      const data = await affiliateApi.getPlayerStatistics({
+        period: change.period,
+        page,
+        from: change.period === 'custom' ? change.from : undefined,
+        to: change.period === 'custom' ? change.to : undefined,
+      });
       setPlayerStats(data.items);
       setPlayerStatsPagination(data.pagination);
+      setPlayerStatsPeriod(data.period);
+      if (data.from) {
+        setPlayerStatsCustomFrom(data.from);
+      }
+      if (data.to) {
+        setPlayerStatsCustomTo(data.to);
+      }
     } catch {
       setError(t('affiliate.loadError'));
     } finally {
@@ -138,7 +159,11 @@ export function AffiliateDashboardPage() {
       const [meData, statsData, playerStatsData] = await Promise.all([
         affiliateApi.getMe(),
         affiliateApi.getStats(),
-        affiliateApi.getPlayerStatistics(playerStatsPeriod),
+        affiliateApi.getPlayerStatistics({
+          period: playerStatsPeriod,
+          from: playerStatsPeriod === 'custom' ? playerStatsCustomFrom : undefined,
+          to: playerStatsPeriod === 'custom' ? playerStatsCustomTo : undefined,
+        }),
       ]);
       setMe(meData);
       setStats(statsData);
@@ -162,9 +187,15 @@ export function AffiliateDashboardPage() {
     }
   }, [isAuthenticated, user?.role]);
 
-  const handlePlayerStatsPeriodChange = (period: PlayerStatisticsPeriod) => {
-    setPlayerStatsPeriod(period);
-    void loadPlayerStatistics(period);
+  const handlePlayerStatsPeriodChange = (change: PlayerStatisticsPeriodChange) => {
+    setPlayerStatsPeriod(change.period);
+    if (change.from) {
+      setPlayerStatsCustomFrom(change.from);
+    }
+    if (change.to) {
+      setPlayerStatsCustomTo(change.to);
+    }
+    void loadPlayerStatistics(change);
   };
 
   if (!isAuthenticated) {
@@ -560,6 +591,8 @@ export function AffiliateDashboardPage() {
             items={playerStats}
             pagination={playerStatsPagination}
             period={playerStatsPeriod}
+            customFrom={playerStatsCustomFrom}
+            customTo={playerStatsCustomTo}
             loading={playerStatsLoading}
             onPeriodChange={handlePlayerStatsPeriodChange}
           />

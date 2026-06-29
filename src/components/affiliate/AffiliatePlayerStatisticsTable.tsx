@@ -1,56 +1,90 @@
+import { useState, type FormEvent } from 'react';
 import {
   type AffiliatePlayerStatistics,
   type PlayerStatisticsPeriod,
 } from '@/api/affiliate.api';
+import { Button } from '@/components/common/Button';
 import { useTranslation } from '@/hooks/useTranslation';
 import type { PaginationMeta } from '@/types';
 import { formatBalance } from '@/utils/formatBalance';
 
-const PERIODS: PlayerStatisticsPeriod[] = ['today', 'week', '30days', 'month'];
+const PERIODS: PlayerStatisticsPeriod[] = ['today', 'last_week', 'last_month', 'custom'];
 
 const PERIOD_LABEL_KEYS: Record<PlayerStatisticsPeriod, string> = {
   today: 'affiliate.statsPeriodToday',
-  week: 'affiliate.statsPeriodWeek',
-  '30days': 'affiliate.statsPeriod30Days',
-  month: 'affiliate.statsPeriodMonth',
+  last_week: 'affiliate.statsPeriodLastWeek',
+  last_month: 'affiliate.statsPeriodLastMonth',
+  custom: 'affiliate.statsPeriodCustom',
 };
+
+const STAT_COLUMNS: Array<{ key: keyof AffiliatePlayerStatistics['stats']; labelKey: string }> = [
+  { key: 'deposits', labelKey: 'affiliate.deposits' },
+  { key: 'withdrawals', labelKey: 'affiliate.withdrawals' },
+  { key: 'cash_turnover', labelKey: 'affiliate.cashTurnover' },
+  { key: 'bonus_turnover', labelKey: 'affiliate.bonusTurnover' },
+  { key: 'cash_win', labelKey: 'affiliate.cashWin' },
+  { key: 'bonus_win', labelKey: 'affiliate.bonusWin' },
+  { key: 'total_turnover', labelKey: 'affiliate.totalTurnover' },
+  { key: 'total_win', labelKey: 'affiliate.totalWin' },
+  { key: 'ggr', labelKey: 'affiliate.ggr' },
+  { key: 'bonus_cost', labelKey: 'affiliate.bonusCost' },
+  { key: 'affiliate_cost', labelKey: 'affiliate.affiliateCost' },
+  { key: 'ngr', labelKey: 'affiliate.ngr' },
+];
 
 function formatReferredPlayerId(playerId: number): string {
   return `P-${playerId}`;
+}
+
+function todayIsoDate(): string {
+  return new Date().toISOString().slice(0, 10);
+}
+
+export interface PlayerStatisticsPeriodChange {
+  period: PlayerStatisticsPeriod;
+  from?: string;
+  to?: string;
 }
 
 interface AffiliatePlayerStatisticsTableProps {
   items: AffiliatePlayerStatistics[];
   pagination: PaginationMeta | null;
   period: PlayerStatisticsPeriod;
+  customFrom?: string;
+  customTo?: string;
   loading?: boolean;
-  onPeriodChange: (period: PlayerStatisticsPeriod) => void;
+  onPeriodChange: (change: PlayerStatisticsPeriodChange) => void;
 }
 
 export function AffiliatePlayerStatisticsTable({
   items,
   pagination,
   period,
+  customFrom,
+  customTo,
   loading = false,
   onPeriodChange,
 }: AffiliatePlayerStatisticsTableProps) {
   const { t } = useTranslation();
-
-  const statColumns: Array<{ key: keyof AffiliatePlayerStatistics['stats']; labelKey: string }> = [
-    { key: 'total_bet', labelKey: 'affiliate.totalBet' },
-    { key: 'total_win', labelKey: 'affiliate.winMoney' },
-    { key: 'deposits', labelKey: 'affiliate.deposits' },
-    { key: 'withdrawals', labelKey: 'affiliate.withdrawals' },
-    { key: 'cash_turnover', labelKey: 'affiliate.cashTurnover' },
-    { key: 'bonus_turnover', labelKey: 'affiliate.bonusTurnover' },
-    { key: 'ggr', labelKey: 'affiliate.ggr' },
-    { key: 'bonus_cost', labelKey: 'affiliate.bonusCost' },
-    { key: 'affiliate_cost', labelKey: 'affiliate.affiliateCost' },
-    { key: 'ngr', labelKey: 'affiliate.ngr' },
-  ];
+  const [draftFrom, setDraftFrom] = useState(customFrom ?? todayIsoDate());
+  const [draftTo, setDraftTo] = useState(customTo ?? todayIsoDate());
 
   const showReferredVia = items.some((row) => row.referred_via_code);
-  const columnCount = statColumns.length + 1 + (showReferredVia ? 1 : 0);
+  const columnCount = STAT_COLUMNS.length + 1 + (showReferredVia ? 1 : 0);
+
+  const handlePresetClick = (value: PlayerStatisticsPeriod) => {
+    if (value === 'custom') {
+      onPeriodChange({ period: value, from: draftFrom, to: draftTo });
+      return;
+    }
+
+    onPeriodChange({ period: value });
+  };
+
+  const handleCustomApply = (e: FormEvent) => {
+    e.preventDefault();
+    onPeriodChange({ period: 'custom', from: draftFrom, to: draftTo });
+  };
 
   return (
     <section className="rounded-lg border border-white/10 bg-card p-4">
@@ -61,7 +95,7 @@ export function AffiliatePlayerStatisticsTable({
           <button
             key={value}
             type="button"
-            onClick={() => onPeriodChange(value)}
+            onClick={() => handlePresetClick(value)}
             className={`px-4 py-2 text-sm font-medium transition-colors border-b-2 -mb-px ${
               period === value
                 ? 'border-accent text-white'
@@ -73,15 +107,46 @@ export function AffiliatePlayerStatisticsTable({
         ))}
       </div>
 
+      {period === 'custom' && (
+        <form
+          onSubmit={handleCustomApply}
+          className="mb-4 flex flex-wrap items-end gap-3 rounded border border-white/10 bg-background p-3"
+        >
+          <label className="flex flex-col gap-1 text-xs text-muted">
+            {t('affiliate.statsPeriodFrom')}
+            <input
+              type="date"
+              value={draftFrom}
+              max={todayIsoDate()}
+              onChange={(e) => setDraftFrom(e.target.value)}
+              className="rounded border border-white/10 bg-card px-3 py-2 text-sm text-white"
+            />
+          </label>
+          <label className="flex flex-col gap-1 text-xs text-muted">
+            {t('affiliate.statsPeriodTo')}
+            <input
+              type="date"
+              value={draftTo}
+              max={todayIsoDate()}
+              onChange={(e) => setDraftTo(e.target.value)}
+              className="rounded border border-white/10 bg-card px-3 py-2 text-sm text-white"
+            />
+          </label>
+          <Button type="submit" variant="secondary">
+            {t('affiliate.statsPeriodApply')}
+          </Button>
+        </form>
+      )}
+
       <div className="overflow-x-auto">
-        <table className="w-full min-w-[960px] text-left text-sm">
+        <table className="w-full min-w-[1200px] text-left text-sm">
           <thead>
             <tr className="border-b border-white/10 text-xs text-muted">
               <th className="pb-2 pr-4 whitespace-nowrap">{t('affiliate.player')}</th>
               {showReferredVia && (
                 <th className="pb-2 pr-4 whitespace-nowrap">{t('affiliate.subAffiliateCode')}</th>
               )}
-              {statColumns.map((column) => (
+              {STAT_COLUMNS.map((column) => (
                 <th key={column.key} className="pb-2 pr-4 whitespace-nowrap">
                   {t(column.labelKey)}
                 </th>
@@ -115,7 +180,7 @@ export function AffiliatePlayerStatisticsTable({
                       {row.referred_via_code ?? '—'}
                     </td>
                   )}
-                  {statColumns.map((column) => (
+                  {STAT_COLUMNS.map((column) => (
                     <td key={column.key} className="py-2 pr-4 whitespace-nowrap">
                       {formatBalance(row.stats[column.key])}
                     </td>

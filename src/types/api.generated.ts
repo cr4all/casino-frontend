@@ -1171,7 +1171,11 @@ export interface paths {
         get: {
             parameters: {
                 query?: {
-                    period?: "today" | "week" | "30days" | "month";
+                    period?: "today" | "last_week" | "last_month" | "custom";
+                    /** @description Start date (YYYY-MM-DD) when period=custom */
+                    from?: string;
+                    /** @description End date (YYYY-MM-DD) when period=custom */
+                    to?: string;
                     per_page?: components["parameters"]["PerPage"];
                 };
                 header?: never;
@@ -2284,12 +2288,14 @@ export interface components {
             pagination: components["schemas"]["Pagination"];
         };
         PlayerStatisticsMetrics: {
-            total_bet: string;
-            total_win: string;
             deposits: string;
             withdrawals: string;
             cash_turnover: string;
             bonus_turnover: string;
+            cash_win: string;
+            bonus_win: string;
+            total_turnover: string;
+            total_win: string;
             ggr: string;
             bonus_cost: string;
             affiliate_cost: string;
@@ -2304,7 +2310,11 @@ export interface components {
         };
         AffiliatePlayerStatisticsList: {
             /** @enum {string} */
-            period: "today" | "week" | "30days" | "month";
+            period: "today" | "last_week" | "last_month" | "custom";
+            /** Format: date */
+            from?: string | null;
+            /** Format: date */
+            to?: string | null;
             items: components["schemas"]["AffiliatePlayerStatistics"][];
             pagination: components["schemas"]["Pagination"];
         };
