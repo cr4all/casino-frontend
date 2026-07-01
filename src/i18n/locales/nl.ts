@@ -30,6 +30,8 @@ export const nl: LocaleTree = {
     "games": "spellen",
     "gamesCount": "{{count}} spellen",
     "noLimit": "Geen limiet",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Min.: {{min}} · Max.: {{max}}",
@@ -69,8 +71,8 @@ export const nl: LocaleTree = {
     "playResponsibly": "18+ · Speel verantwoord",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
-    "supportTickets": "ONDERSTEUNING TICKETSN",
-    "supportTicketsLabel": "Ondersteuning"
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live chat",
@@ -100,12 +102,12 @@ export const nl: LocaleTree = {
     "replyPlaceholder": "Typ uw antwoord...",
     "sendReply": "Antwoord verzenden",
     "replyFailed": "Bericht verzenden mislukt. Probeer het opnieuw.",
-    "supportTeam": "Ondersteuning",
+    "supportTeam": "Support",
     "you": "U",
     "categories": {
-      "account": "account",
+      "account": "Account",
       "payment": "Opnames",
-      "bonus": "Bonussen",
+      "bonus": "Bonus",
       "game": "Spel",
       "other": "Overig"
     },
@@ -208,7 +210,8 @@ export const nl: LocaleTree = {
     "crypto": "Cryptovaluta",
     "crypto_payment": "Cryptobetaling",
     "bank": "Bankoverschrijving",
-    "bank_transfer": "Bankoverschrijving"
+    "bank_transfer": "Bankoverschrijving",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Cryptovaluta",
@@ -499,6 +502,12 @@ export const nl: LocaleTree = {
     "noMessagesHint": "Stortingsbevestigingen en bonusmeldingen verschijnen hier.",
     "showDetails": "Berichtdetails tonen",
     "hideDetails": "Berichtdetails verbergen"
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Sluiten",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   },
   "betHistory": {
     "title": "Inzetgeschiedenis",

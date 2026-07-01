@@ -30,6 +30,8 @@ export const tg: LocaleTree = {
     "games": "бозиҳо",
     "gamesCount": "{{count}} бозӣ",
     "noLimit": "Бе маҳдудият",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Мин: {{min}} · Макс: {{max}}",
@@ -69,8 +71,8 @@ export const tg: LocaleTree = {
     "playResponsibly": "18+ · Бо масъулият бозӣ кунед",
     "liveChat": "ЧАТИ ЗИНДА",
     "liveChatLabel": "Дастгирӣ",
-    "supportTickets": "ПОДДЕРЖКА СӮҲБАТҲО",
-    "supportTicketsLabel": "Дастгирӣ"
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Чати зинда",
@@ -100,13 +102,13 @@ export const tg: LocaleTree = {
     "replyPlaceholder": "Ҷавоби худро нависед...",
     "sendReply": "Отправить reply",
     "replyFailed": "Ирсоли паём ноком шуд. Лутфан, боз кӯшиш кунед.",
-    "supportTeam": "Поддержка",
+    "supportTeam": "Дастгирӣ",
     "you": "Шумо",
     "categories": {
-      "account": "запись",
+      "account": "Ҳисоб",
       "payment": "Снятие средств",
       "bonus": "Бонус",
-      "game": "Игра",
+      "game": "Бозӣ",
       "other": "Other"
     },
     "status": {
@@ -208,7 +210,8 @@ export const tg: LocaleTree = {
     "crypto": "Криптовалюта",
     "crypto_payment": "Пардохти крипто",
     "bank": "Интиқоли бонкӣ",
-    "bank_transfer": "Интиқоли бонкӣ"
+    "bank_transfer": "Интиқоли бонкӣ",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Криптовалюта",
@@ -499,6 +502,12 @@ export const tg: LocaleTree = {
     "noMessagesHint": "Тасдиқҳои депозит ва огоҳиҳои бонус дар ин ҷо пайдо мешаванд.",
     "showDetails": "Нишон додани тафсилоти паём",
     "hideDetails": "Пинҳон кардани тафсилоти паём"
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Пӯшидан",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   },
   "betHistory": {
     "title": "Таърихи шартҳо",

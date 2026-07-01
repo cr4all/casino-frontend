@@ -11,7 +11,7 @@ export function NotificationsPage() {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const [messages, setMessages] = useState<InternalMessage[]>([]);
   const [loading, setLoading] = useState(true);
-  const [expandedId, setExpandedId] = useState<number | null>(null);
+  const [expandedKey, setExpandedKey] = useState<string | null>(null);
   const markMessageRead = useNotificationStore((s) => s.markMessageRead);
   const setUnreadCount = useNotificationStore((s) => s.setUnreadCount);
 
@@ -32,21 +32,28 @@ export function NotificationsPage() {
 
   const unreadCount = messages.filter((m) => !m.is_read).length;
 
+  const messageKey = (msg: InternalMessage) => `${msg.source ?? 'system'}-${msg.id}`;
+
   const handleMessageToggle = async (msg: InternalMessage) => {
-    const isExpanded = expandedId === msg.id;
+    const key = messageKey(msg);
+    const isExpanded = expandedKey === key;
 
     if (isExpanded) {
-      setExpandedId(null);
+      setExpandedKey(null);
       return;
     }
 
-    setExpandedId(msg.id);
+    setExpandedKey(key);
 
     if (!msg.is_read) {
       try {
-        await notificationApi.markAsRead(msg.id);
+        if (msg.source === 'announcement') {
+          await notificationApi.markAnnouncementRead(msg.id);
+        } else {
+          await notificationApi.markAsRead(msg.id);
+        }
         setMessages((prev) =>
-          prev.map((item) => (item.id === msg.id ? { ...item, is_read: true } : item)),
+          prev.map((item) => (item.id === msg.id && item.source === msg.source ? { ...item, is_read: true } : item)),
         );
         markMessageRead();
       } catch {
@@ -76,10 +83,11 @@ export function NotificationsPage() {
       ) : (
         <ul className="space-y-3">
           {messages.map((msg) => {
-            const isExpanded = expandedId === msg.id;
+            const key = messageKey(msg);
+            const isExpanded = expandedKey === key;
 
             return (
-              <li key={msg.id}>
+              <li key={`${msg.source ?? 'system'}-${msg.id}`}>
                 <button
                   type="button"
                   onClick={() => void handleMessageToggle(msg)}

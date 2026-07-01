@@ -408,5 +408,7 @@
   "Open": "Gníomhach",
   "Pending": "ar feitheamh",
   "Resolved": "Réitithe",
-  "Closed": "dúnta"
+  "Closed": "dúnta",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

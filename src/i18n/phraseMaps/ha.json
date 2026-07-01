@@ -317,8 +317,8 @@
   "DEPOSIT": "DEPOSIT",
   "Deposit": "Deposit",
   "HISTORY": "HISTORY",
-  "NOTICES": "NOTICES",
-  "Notices": "Notices",
+  "NOTICES": "Sanarwa",
+  "Notices": "Sanarwa",
   "BONUSES": "BONUSES",
   "Bonuses": "Bonuses",
   "Profile": "Profile",
@@ -408,5 +408,7 @@
   "Open": "Mai aiki",
   "Pending": "ana jira",
   "Resolved": "An warware",
-  "Closed": "an rufe"
+  "Closed": "an rufe",
+  "Announcement": "Sanarwa",
+  "Don't show again today": "Kada ku sake nunawa a yau"
 }

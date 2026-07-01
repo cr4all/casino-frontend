@@ -427,5 +427,7 @@
   "Open": "Na-arụ ọrụ",
   "Pending": "na-echere",
   "Resolved": "Edozila",
-  "Closed": "emechiri"
+  "Closed": "emechiri",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

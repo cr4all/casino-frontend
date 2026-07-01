@@ -30,6 +30,8 @@ export const lt: LocaleTree = {
     "games": "žaidimai",
     "gamesCount": "{{count}} žaidimai",
     "noLimit": "Be limito",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Min.: {{min}} · Maks.: {{max}}",
@@ -69,8 +71,8 @@ export const lt: LocaleTree = {
     "playResponsibly": "18+ · Žaiskite atsakingai",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Palaikymas",
-    "supportTickets": "PAGALBA POKALBIAI",
-    "supportTicketsLabel": "Palaikymas"
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -100,10 +102,10 @@ export const lt: LocaleTree = {
     "replyPlaceholder": "Įveskite atsakymą...",
     "sendReply": "Siųsti reply",
     "replyFailed": "Nepavyko išsiųsti žinutės. Bandykite dar kartą.",
-    "supportTeam": "Pagalba",
+    "supportTeam": "Palaikymas",
     "you": "Jūs",
     "categories": {
-      "account": "paskyra",
+      "account": "Paskyra",
       "payment": "Išėmimai",
       "bonus": "Premija",
       "game": "Žaidimas",
@@ -208,7 +210,8 @@ export const lt: LocaleTree = {
     "crypto": "Kriptovaliuta",
     "crypto_payment": "Kripto mokėjimas",
     "bank": "Banko pavedimas",
-    "bank_transfer": "Banko pavedimas"
+    "bank_transfer": "Banko pavedimas",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Kriptovaliuta",
@@ -499,6 +502,12 @@ export const lt: LocaleTree = {
     "noMessagesHint": "Čia bus rodomi indėlių patvirtinimai ir pranešimai apie premijas.",
     "showDetails": "Rodyti žinutės detales",
     "hideDetails": "Slėpti žinutės detales"
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Uždaryti",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   },
   "betHistory": {
     "title": "Statymų istorija",

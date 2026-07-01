@@ -24,12 +24,14 @@ export const ja: LocaleTree = {
     "ok": "OK",
     "yes": "Yes",
     "no": "No",
-    "close": "Close",
+    "close": "閉じる",
     "copy": "Copy",
     "copied": "Copied",
     "games": "games",
     "gamesCount": "{{count}} games",
     "noLimit": "No limit",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "最大 {{amount}}",
     "notAvailable": "—",
     "minMax": "Min: {{min}} · Max: {{max}}",
@@ -44,9 +46,7 @@ export const ja: LocaleTree = {
     "fieldPasswordMismatch": "Passwords do not match.",
     "fieldSelectRequired": "Please select {{field}}.",
     "fieldCodeInvalid": "Please enter the 6-digit verification code.",
-    "language": "Language",
-    "minLabel": "Min",
-    "maxLabel": "Max"
+    "language": "Language"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -59,8 +59,8 @@ export const ja: LocaleTree = {
     "gameBets": "Game bets",
     "history": "HISTORY",
     "transactions": "Transactions",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "お知らせ",
+    "noticesLabel": "お知らせ",
     "bonuses": "BONUSES",
     "bonusesLabel": "Bonuses",
     "profile": "Profile",
@@ -71,8 +71,8 @@ export const ja: LocaleTree = {
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "サポート",
-    "supportTickets": "サポートチケット",
-    "supportTicketsLabel": "ヘルプデスク"
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -503,6 +503,12 @@ export const ja: LocaleTree = {
     "showDetails": "Show message details",
     "hideDetails": "Hide message details"
   },
+  "announcement": {
+    "popupBadge": "お知らせ",
+    "popupClose": "閉じる",
+    "popupConfirm": "OK",
+    "hideForToday": "今日は再表示しない"
+  },
   "betHistory": {
     "title": "Bet History",
     "subtitle": "Your game bets and wins by round",
@@ -553,7 +559,7 @@ export const ja: LocaleTree = {
     "backToLobby": "← Back to lobby",
     "defaultName": "ゲーム",
     "launchError": "Failed to launch game.",
-    "closeWindow": "Close",
+    "closeWindow": "閉じる",
     "loginRequired": "Please log in to play."
   },
   "gameCard": {

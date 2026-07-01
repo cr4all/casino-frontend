@@ -408,5 +408,7 @@
   "Open": "פעיל",
   "Pending": "ממתין",
   "Resolved": "נפתר",
-  "Closed": "סגור"
+  "Closed": "סגור",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

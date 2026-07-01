@@ -408,5 +408,7 @@
   "Open": "Activ",
   "Pending": "în așteptare",
   "Resolved": "Rezolvat",
-  "Closed": "închis"
+  "Closed": "închis",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

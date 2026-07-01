@@ -57,8 +57,8 @@ export const ur: LocaleTree = {
     "gameBets": "گیم بیٹس",
     "history": "تاریخ",
     "transactions": "لین دین",
-    "notices": "اطلاعات",
-    "noticesLabel": "اطلاعات",
+    "notices": "NOTICES",
+    "noticesLabel": "Notices",
     "bonuses": "بونس",
     "bonusesLabel": "بونس",
     "profile": "پروفائل",
@@ -623,5 +623,11 @@ export const ur: LocaleTree = {
       "resolved": "حل ہو گیا",
       "closed": "बंद"
     }
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   }
 };

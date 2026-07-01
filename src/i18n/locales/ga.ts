@@ -30,6 +30,8 @@ export const ga: LocaleTree = {
     "games": "games",
     "gamesCount": "{{count}} games",
     "noLimit": "No limit",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Min: {{min}} · Max: {{max}}",
@@ -44,9 +46,7 @@ export const ga: LocaleTree = {
     "fieldPasswordMismatch": "Ní ionann na focail fhaire.",
     "fieldSelectRequired": "Roghnaigh le do thoil",
     "fieldCodeInvalid": "Cuir isteach an cód deimhnithe 6 dhigit, le do thoil.",
-    "language": "Language",
-    "minLabel": "Min",
-    "maxLabel": "Max"
+    "language": "Language"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -70,9 +70,9 @@ export const ga: LocaleTree = {
     "balance": "Balance",
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "Support",
-    "supportTickets": "TACAÍOCHT COMHRÁITE",
-    "supportTicketsLabel": "Tacaíocht"
+    "liveChatLabel": "Tacaíocht",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -122,8 +122,8 @@ export const ga: LocaleTree = {
     "slots": "Slots",
     "liveCasino": "Live Casino",
     "jackpots": "Jackpots",
-    "account": "Account",
-    "support": "Support",
+    "account": "reatha",
+    "support": "Tacaíocht",
     "messages": "Messages",
     "tickets": "Tickets",
     "legal": "Legal",
@@ -166,7 +166,7 @@ export const ga: LocaleTree = {
   },
   "liveBetFeed": {
     "title": "Live bets",
-    "game": "Game",
+    "game": "Cluiche",
     "user": "User",
     "time": "Time",
     "betAmount": "Bet amount",
@@ -225,7 +225,7 @@ export const ga: LocaleTree = {
     "withdraw": "Tarraing siar",
     "bet": "Bet",
     "win": "Win",
-    "bonus": "Bonus",
+    "bonus": "Bónas",
     "rollback": "Rollback"
   },
   "auth": {
@@ -319,7 +319,7 @@ export const ga: LocaleTree = {
     "passwordUpdateFailed": "Theip ar nuashonrú an phasfhocail.",
     "editProfile": "Edit profile",
     "quickActions": "Quick actions",
-    "account": "Account",
+    "account": "reatha",
     "saveChanges": "Save Changes",
     "updateSuccess": "Profile updated successfully.",
     "updateFailed": "Failed to update profile.",
@@ -413,7 +413,7 @@ export const ga: LocaleTree = {
   },
   "wallet": {
     "cashBalance": "Cash",
-    "bonusBalance": "Bonus",
+    "bonusBalance": "Bónas",
     "totalPlayable": "Total playable",
     "withdrawableBalance": "Withdrawable balance",
     "withdrawableCash": "Withdrawable cash",
@@ -427,13 +427,13 @@ export const ga: LocaleTree = {
     "bonusAfter": "Bonus after",
     "funding": {
       "cash": "Cash",
-      "bonus": "Bonus",
+      "bonus": "Bónas",
       "mixed": "Mixed",
       "free_spin": "Free spin"
     },
     "bucket": {
       "cash": "Cash",
-      "bonus": "Bonus"
+      "bonus": "Bónas"
     }
   },
   "paymentInfoFields": {
@@ -467,7 +467,7 @@ export const ga: LocaleTree = {
     "noActive": "No active bonuses.",
     "availableBonuses": "Available Bonuses",
     "noAvailable": "No bonuses available at the moment.",
-    "defaultName": "Bonus",
+    "defaultName": "Bónas",
     "percentMatch": "{{value}}% match",
     "fixedMatch": "{{value}} fixed",
     "wageringMultiplier": "{{value}}x wagering",
@@ -503,13 +503,19 @@ export const ga: LocaleTree = {
     "showDetails": "Show message details",
     "hideDetails": "Hide message details"
   },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
+  },
   "betHistory": {
     "title": "Bet History",
     "subtitle": "Your game bets and wins by round",
     "allTransactions": "All transactions →",
     "noBets": "No bets yet. Play a game to see your history here.",
     "browseGames": "Browse games",
-    "game": "Game",
+    "game": "Cluiche",
     "bet": "Bet",
     "win": "Win",
     "net": "Net",
@@ -551,14 +557,14 @@ export const ga: LocaleTree = {
     "tryAgain": "Please try again or contact support.",
     "goBack": "Go Back",
     "backToLobby": "← Back to lobby",
-    "defaultName": "Game",
+    "defaultName": "Cluiche",
     "launchError": "Failed to launch game.",
     "closeWindow": "Close",
     "loginRequired": "Please log in to play."
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bónas"
   },
   "modal": {
     "comingSoon": "Coming Soon"

@@ -30,6 +30,8 @@ export const ms: LocaleTree = {
     "games": "permainan",
     "gamesCount": "{{count}} permainan",
     "noLimit": "Tiada had",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Min: {{min}} · Maks: {{max}}",
@@ -69,8 +71,8 @@ export const ms: LocaleTree = {
     "playResponsibly": "18+ · Main Secara Bertanggungjawab",
     "liveChat": "SEMBANG LANGSUNG",
     "liveChatLabel": "Sokongan",
-    "supportTickets": "SOKONGAN PERBUALAN",
-    "supportTicketsLabel": "Sokongan"
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Sembang Langsung",
@@ -103,9 +105,9 @@ export const ms: LocaleTree = {
     "supportTeam": "Sokongan",
     "you": "Anda",
     "categories": {
-      "account": "ini",
+      "account": "Akaun",
       "payment": "Pengeluaran",
-      "bonus": "Bonusi",
+      "bonus": "Ganjaran",
       "game": "Permainan",
       "other": "Other"
     },
@@ -208,7 +210,8 @@ export const ms: LocaleTree = {
     "crypto": "Mata wang kripto",
     "crypto_payment": "Pembayaran Kripto",
     "bank": "Pemindahan Bank",
-    "bank_transfer": "Pemindahan Bank"
+    "bank_transfer": "Pemindahan Bank",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Mata wang kripto",
@@ -499,6 +502,12 @@ export const ms: LocaleTree = {
     "noMessagesHint": "Pengesahan deposit dan pemberitahuan bonus akan dipaparkan di sini.",
     "showDetails": "Tunjukkan butiran mesej",
     "hideDetails": "Sembunyikan butiran mesej"
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Tutup",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   },
   "betHistory": {
     "title": "Sejarah Pertaruhan",

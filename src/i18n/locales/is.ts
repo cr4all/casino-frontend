@@ -30,6 +30,8 @@ export const is: LocaleTree = {
     "games": "games",
     "gamesCount": "{{count}} leikir",
     "noLimit": "No limit",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Lágmark: {{min}} · Hámark: {{max}}",
@@ -44,9 +46,7 @@ export const is: LocaleTree = {
     "fieldPasswordMismatch": "Lykilorð eru ekki eins.",
     "fieldSelectRequired": "Vinsamlegast veldu",
     "fieldCodeInvalid": "Sláðu inn 6 talna staðfestingarkóðann.",
-    "language": "Language",
-    "minLabel": "Min",
-    "maxLabel": "Max"
+    "language": "Language"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -70,9 +70,9 @@ export const is: LocaleTree = {
     "balance": "Balance",
     "playResponsibly": "18+ · Leiktu á ábyrgan hátt",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "Support",
-    "supportTickets": "AÐSTOÐ SAMTÖL",
-    "supportTicketsLabel": "Aðstoð"
+    "liveChatLabel": "Aðstoð",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -122,8 +122,8 @@ export const is: LocaleTree = {
     "slots": "Slots",
     "liveCasino": "Live Casino",
     "jackpots": "Jackpots",
-    "account": "Account",
-    "support": "Support",
+    "account": "reikningur",
+    "support": "Aðstoð",
     "messages": "Messages",
     "tickets": "Tickets",
     "legal": "Legal",
@@ -166,7 +166,7 @@ export const is: LocaleTree = {
   },
   "liveBetFeed": {
     "title": "Live bets",
-    "game": "Game",
+    "game": "Leikur",
     "user": "User",
     "time": "Time",
     "betAmount": "Bet amount",
@@ -225,7 +225,7 @@ export const is: LocaleTree = {
     "withdraw": "Withdraw",
     "bet": "Bet",
     "win": "Win",
-    "bonus": "Bonus",
+    "bonus": "Bónus",
     "rollback": "Rollback"
   },
   "auth": {
@@ -319,7 +319,7 @@ export const is: LocaleTree = {
     "passwordUpdateFailed": "Ekki tókst að uppfæra lykilorð.",
     "editProfile": "Edit profile",
     "quickActions": "Flýtiaðgerðir",
-    "account": "Account",
+    "account": "reikningur",
     "saveChanges": "Save Changes",
     "updateSuccess": "Prófíll hefur verið uppfærður.",
     "updateFailed": "Ekki tókst að uppfæra notandalýsingu.",
@@ -413,7 +413,7 @@ export const is: LocaleTree = {
   },
   "wallet": {
     "cashBalance": "Cash",
-    "bonusBalance": "Bonus",
+    "bonusBalance": "Bónus",
     "totalPlayable": "Total playable",
     "withdrawableBalance": "Withdrawable balance",
     "withdrawableCash": "Withdrawable cash",
@@ -427,13 +427,13 @@ export const is: LocaleTree = {
     "bonusAfter": "Bonus after",
     "funding": {
       "cash": "Cash",
-      "bonus": "Bonus",
+      "bonus": "Bónus",
       "mixed": "Mixed",
       "free_spin": "Free spin"
     },
     "bucket": {
       "cash": "Cash",
-      "bonus": "Bonus"
+      "bonus": "Bónus"
     }
   },
   "paymentInfoFields": {
@@ -467,7 +467,7 @@ export const is: LocaleTree = {
     "noActive": "Engir virkir bónusar.",
     "availableBonuses": "Kaupaukar í boði",
     "noAvailable": "Engir bónusar í boði eins og er.",
-    "defaultName": "Bonus",
+    "defaultName": "Bónus",
     "percentMatch": "{{value}}% samsvörun",
     "fixedMatch": "{{value}} lagað",
     "wageringMultiplier": "{{value}}x wagering",
@@ -503,13 +503,19 @@ export const is: LocaleTree = {
     "showDetails": "Upplýsingar Skilaboða",
     "hideDetails": "Upplýsingar Skilaboða"
   },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
+  },
   "betHistory": {
     "title": "Bet History",
     "subtitle": "Leikurinn þinn veðjar og vinnur eftir lotu",
     "allTransactions": "Allar færslur →",
     "noBets": "Engin veðmál enn. Spila leik til að sjá sögu þína hér.",
     "browseGames": "Browse games",
-    "game": "Game",
+    "game": "Leikur",
     "bet": "Bet",
     "win": "Win",
     "net": "Net",
@@ -551,14 +557,14 @@ export const is: LocaleTree = {
     "tryAgain": "Reyndu aftur eða hafðu samband við þjónustuverið.",
     "goBack": "Go Back",
     "backToLobby": "← Til baka í anddyri",
-    "defaultName": "Game",
+    "defaultName": "Leikur",
     "launchError": "Ekki tókst að ræsa leikinn.",
     "closeWindow": "Close",
     "loginRequired": "Please log in to play."
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bónus"
   },
   "modal": {
     "comingSoon": "Coming Soon"

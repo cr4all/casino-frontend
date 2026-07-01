@@ -57,8 +57,8 @@ export const mk: LocaleTree = {
     "gameBets": "Облози на игри",
     "history": "ИСТОРИЈА",
     "transactions": "Трансакции",
-    "notices": "ИЗВЕСТУВАЊА",
-    "noticesLabel": "Известувања",
+    "notices": "NOTICES",
+    "noticesLabel": "Notices",
     "bonuses": "БОНУСИ",
     "bonusesLabel": "Бонуси",
     "profile": "Профил",
@@ -623,5 +623,11 @@ export const mk: LocaleTree = {
       "resolved": "Решено",
       "closed": "затворено"
     }
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   }
 };

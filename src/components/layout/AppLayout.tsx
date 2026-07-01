@@ -9,6 +9,7 @@ import { RegisterModal } from '@/components/auth/RegisterModal';
 import { CookieConsentBanner } from '@/components/common/CookieConsentBanner';
 import { CookieSettingsModal } from '@/components/common/CookieSettingsModal';
 import { ComingSoonModal } from '@/components/common/Modal';
+import { AnnouncementPopupModal } from '@/components/announcement/AnnouncementPopupModal';
 import { useAuthInit } from '@/hooks/useAuthInit';
 import { prefetchDeviceContext } from '@/lib/deviceContext';
 import { useCloseLiveChatOnNavigate } from '@/hooks/useCloseLiveChatOnNavigate';
@@ -21,6 +22,7 @@ import { useNotificationSync } from '@/hooks/useNotificationSync';
 import { useBonusSync } from '@/hooks/useBonusSync';
 import { usePlayerProfileSync } from '@/hooks/usePlayerProfileSync';
 import { useSessionPolicy } from '@/hooks/useSessionPolicy';
+import { usePopupAnnouncements } from '@/hooks/usePopupAnnouncements';
 import { useWalletSync } from '@/hooks/useWalletSync';
 import { useAuthStore } from '@/stores/authStore';
 import { useGameStore } from '@/stores/gameStore';
@@ -44,6 +46,7 @@ export function AppLayout() {
   useLanguageInit();
   useCloseLiveChatOnNavigate();
   useScrollToTopOnNavigate();
+  const { activePopup, dismissPopup, userId } = usePopupAnnouncements();
   const [searchParams] = useSearchParams();
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -116,6 +119,9 @@ export function AppLayout() {
       <ComingSoonModal />
       <CookieConsentBanner />
       <CookieSettingsModal />
+      {activePopup && userId != null && (
+        <AnnouncementPopupModal popup={activePopup} userId={userId} onDismiss={dismissPopup} />
+      )}
     </div>
   );
 }

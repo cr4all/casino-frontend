@@ -502,6 +502,12 @@ export const en = {
     showDetails: 'Show message details',
     hideDetails: 'Hide message details',
   },
+  announcement: {
+    popupBadge: 'Announcement',
+    popupClose: 'Close',
+    popupConfirm: 'OK',
+    hideForToday: "Don't show again today",
+  },
   betHistory: {
     title: 'Bet History',
     subtitle: 'Your game bets and wins by round',

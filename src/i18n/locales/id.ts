@@ -59,8 +59,8 @@ export const id: LocaleTree = {
     "gameBets": "Taruhan permainan",
     "history": "RIWAYAT",
     "transactions": "Transaksi",
-    "notices": "PEMBERITAHUAN",
-    "noticesLabel": "Pemberitahuan",
+    "notices": "NOTICES",
+    "noticesLabel": "Notices",
     "bonuses": "BONUS",
     "bonusesLabel": "Bonus",
     "profile": "Profil",
@@ -626,5 +626,11 @@ export const id: LocaleTree = {
       "resolved": "Terselesaikan",
       "closed": "ditutup"
     }
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   }
 };

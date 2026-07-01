@@ -59,8 +59,8 @@ export const fil: LocaleTree = {
     "gameBets": "Taya sa laro",
     "history": "HISTORY",
     "transactions": "Mga transaksyon",
-    "notices": "ABISO",
-    "noticesLabel": "Abiso",
+    "notices": "NOTICES",
+    "noticesLabel": "Notices",
     "bonuses": "BONUS",
     "bonusesLabel": "Bonus",
     "profile": "Profile",
@@ -626,5 +626,11 @@ export const fil: LocaleTree = {
       "resolved": "Nalutas",
       "closed": "sarado"
     }
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   }
 };

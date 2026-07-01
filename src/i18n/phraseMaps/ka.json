@@ -427,5 +427,7 @@
   "Open": "აქტიური",
   "Pending": "მოლოდინში",
   "Resolved": "მოგვარებული",
-  "Closed": "დახურული"
+  "Closed": "დახურული",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

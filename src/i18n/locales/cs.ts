@@ -59,8 +59,8 @@ export const cs: LocaleTree = {
     "gameBets": "Herní sázky",
     "history": "HISTORIE",
     "transactions": "Transakce",
-    "notices": "OZNÁMENÍ",
-    "noticesLabel": "Oznámení",
+    "notices": "NOTICES",
+    "noticesLabel": "Notices",
     "bonuses": "BONUSY",
     "bonusesLabel": "Bonusy",
     "profile": "Profil",
@@ -626,5 +626,11 @@ export const cs: LocaleTree = {
       "resolved": "Vyřešeno",
       "closed": "uzavřeno"
     }
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   }
 };

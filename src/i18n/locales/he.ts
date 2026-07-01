@@ -30,6 +30,8 @@ export const he: LocaleTree = {
     "games": "משחקים",
     "gamesCount": "{{count}} משחקים",
     "noLimit": "ללא הגבלה",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "מינימום: {{min}} · מקסימום: {{max}}",
@@ -44,9 +46,7 @@ export const he: LocaleTree = {
     "fieldPasswordMismatch": "הסיסמאות אינן תואמות.",
     "fieldSelectRequired": "נא לבחור {{field}}.",
     "fieldCodeInvalid": "נא להזין את קוד האימות בן 6 הספרות.",
-    "language": "שפה",
-    "minLabel": "Min",
-    "maxLabel": "Max"
+    "language": "שפה"
   },
   "nav": {
     "allGames": "כל המשחקים",
@@ -71,8 +71,8 @@ export const he: LocaleTree = {
     "playResponsibly": "18+ · שחק באחריות",
     "liveChat": "צ'אט חי",
     "liveChatLabel": "תמיכה",
-    "supportTickets": "תמיכה שיחות",
-    "supportTicketsLabel": "תמיכה"
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "צ'אט חי",
@@ -105,7 +105,7 @@ export const he: LocaleTree = {
     "supportTeam": "תמיכה",
     "you": "אתה",
     "categories": {
-      "account": "נוכחי",
+      "account": "חשבון",
       "payment": "משיכות",
       "bonus": "בונוס",
       "game": "משחק",
@@ -502,6 +502,12 @@ export const he: LocaleTree = {
     "noMessagesHint": "אישורי הפקדה והתראות בונוס יופיעו כאן.",
     "showDetails": "הצג פרטי הודעה",
     "hideDetails": "הסתר פרטי הודעה"
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "סגור",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   },
   "betHistory": {
     "title": "היסטוריית הימורים",

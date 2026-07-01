@@ -30,6 +30,8 @@ export const ha: LocaleTree = {
     "games": "Wasanni",
     "gamesCount": "{{count}} games",
     "noLimit": "No limit",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Min: {{min}} · Max: {{max}}",
@@ -44,9 +46,7 @@ export const ha: LocaleTree = {
     "fieldPasswordMismatch": "Kalmomin wucewa ba su dace ba.",
     "fieldSelectRequired": "Da fatan za a zaɓi &lt;<FIELD>&lt;&gt; &gt;.",
     "fieldCodeInvalid": "Da fatan za a shigar da lambar tabbatar da lambobi 6.",
-    "language": "Language",
-    "minLabel": "Min",
-    "maxLabel": "Max"
+    "language": "Language"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -59,8 +59,8 @@ export const ha: LocaleTree = {
     "gameBets": "Game bets",
     "history": "HISTORY",
     "transactions": "Transactions",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "Sanarwa",
+    "noticesLabel": "Sanarwa",
     "bonuses": "BONUSES",
     "bonusesLabel": "Bonuses",
     "profile": "Profile",
@@ -70,9 +70,9 @@ export const ha: LocaleTree = {
     "balance": "Balance",
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "Support",
-    "supportTickets": "TAIMAKO TATTAUNAWA",
-    "supportTicketsLabel": "Taimako"
+    "liveChatLabel": "Taimako",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -122,8 +122,8 @@ export const ha: LocaleTree = {
     "slots": "Ramummuka",
     "liveCasino": "Live Casino",
     "jackpots": "Jackpots",
-    "account": "Account",
-    "support": "Support",
+    "account": "yanzu",
+    "support": "Taimako",
     "messages": "Messages",
     "tickets": "Tickets",
     "legal": "Shari'a",
@@ -166,7 +166,7 @@ export const ha: LocaleTree = {
   },
   "liveBetFeed": {
     "title": "Live bets",
-    "game": "Game",
+    "game": "Wasa",
     "user": "Mai amfani",
     "time": "QShortcut",
     "betAmount": "Bet amount",
@@ -225,7 +225,7 @@ export const ha: LocaleTree = {
     "withdraw": "Withdraw",
     "bet": "Fare",
     "win": "keyboard- key- name",
-    "bonus": "Bonus",
+    "bonus": "Kyauta",
     "rollback": "Rollback"
   },
   "auth": {
@@ -319,7 +319,7 @@ export const ha: LocaleTree = {
     "passwordUpdateFailed": "An kasa sabunta kalmar sirri.",
     "editProfile": "Edit profile",
     "quickActions": "Quick actions",
-    "account": "Account",
+    "account": "yanzu",
     "saveChanges": "Save Changes",
     "updateSuccess": "Profile updated successfully.",
     "updateFailed": "Failed to update profile.",
@@ -413,7 +413,7 @@ export const ha: LocaleTree = {
   },
   "wallet": {
     "cashBalance": "Cash",
-    "bonusBalance": "Bonus",
+    "bonusBalance": "Kyauta",
     "totalPlayable": "Total playable",
     "withdrawableBalance": "Withdrawable balance",
     "withdrawableCash": "Withdrawable cash",
@@ -427,13 +427,13 @@ export const ha: LocaleTree = {
     "bonusAfter": "Bonus after",
     "funding": {
       "cash": "Cash",
-      "bonus": "Bonus",
+      "bonus": "Kyauta",
       "mixed": "Mixed",
       "free_spin": "Free spin"
     },
     "bucket": {
       "cash": "Cash",
-      "bonus": "Bonus"
+      "bonus": "Kyauta"
     }
   },
   "paymentInfoFields": {
@@ -467,7 +467,7 @@ export const ha: LocaleTree = {
     "noActive": "No active bonuses.",
     "availableBonuses": "Available Bonuses",
     "noAvailable": "No bonuses available at the moment.",
-    "defaultName": "Bonus",
+    "defaultName": "Kyauta",
     "percentMatch": "{{value}}% match",
     "fixedMatch": "{{value}} fixed",
     "wageringMultiplier": "{{value}}x wagering",
@@ -503,13 +503,19 @@ export const ha: LocaleTree = {
     "showDetails": "Show message details",
     "hideDetails": "Hide message details"
   },
+  "announcement": {
+    "popupBadge": "Sanarwa",
+    "popupClose": "Kulle",
+    "popupConfirm": "QDialogButtonBox",
+    "hideForToday": "Kada ku sake nunawa a yau"
+  },
   "betHistory": {
     "title": "Bet History",
     "subtitle": "Your game bets and wins by round",
     "allTransactions": "All transactions →",
     "noBets": "No bets yet. Play a game to see your history here.",
     "browseGames": "Browse games",
-    "game": "Game",
+    "game": "Wasa",
     "bet": "Fare",
     "win": "keyboard- key- name",
     "net": "Ввввввввввввввввввввввввввввввввв",
@@ -551,14 +557,14 @@ export const ha: LocaleTree = {
     "tryAgain": "Please try again or contact support.",
     "goBack": "Go Back",
     "backToLobby": "← Back to lobby",
-    "defaultName": "Game",
+    "defaultName": "Wasa",
     "launchError": "Failed to launch game.",
     "closeWindow": "Kulle",
     "loginRequired": "Please log in to play."
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Kyauta"
   },
   "modal": {
     "comingSoon": "Coming Soon"

@@ -30,6 +30,8 @@ export const mn: LocaleTree = {
     "games": "тоглоомууд",
     "gamesCount": "{{count}} тоглоом",
     "noLimit": "Хязгааргүй",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Min: {{min}} · Max: {{max}}",
@@ -69,8 +71,8 @@ export const mn: LocaleTree = {
     "playResponsibly": "18+ · Хариуцлагатай тоглоорой",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Дэмжлэг",
-    "supportTickets": "ДЭМЖЛЭГ ЯРИА",
-    "supportTicketsLabel": "Дэмжлэг"
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -103,9 +105,9 @@ export const mn: LocaleTree = {
     "supportTeam": "Дэмжлэг",
     "you": "Та",
     "categories": {
-      "account": "данс",
+      "account": "Account",
       "payment": "Мөнгө татах",
-      "bonus": "Урамшуулал",
+      "bonus": "Bonus",
       "game": "Тоглоом",
       "other": "Other"
     },
@@ -208,7 +210,8 @@ export const mn: LocaleTree = {
     "crypto": "Cryptocurrency",
     "crypto_payment": "Crypto төлбөр",
     "bank": "Банкны шилжүүлэг",
-    "bank_transfer": "Банкны шилжүүлэг"
+    "bank_transfer": "Банкны шилжүүлэг",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Cryptocurrency",
@@ -499,6 +502,12 @@ export const mn: LocaleTree = {
     "noMessagesHint": "Deposit баталгаажуулалт болон bonus мэдэгдлүүд энд харагдана.",
     "showDetails": "Мессежийн дэлгэрэнгүй харуулах",
     "hideDetails": "Мессежийн дэлгэрэнгүй нуух"
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Хаах",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   },
   "betHistory": {
     "title": "Мөрийн түүх",

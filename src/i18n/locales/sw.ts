@@ -30,6 +30,8 @@ export const sw: LocaleTree = {
     "games": "michezo",
     "gamesCount": "Michezo {{count}}",
     "noLimit": "Hakuna kikomo",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Kiwango cha chini: {{min}} · Kiwango cha juu: {{max}}",
@@ -69,8 +71,8 @@ export const sw: LocaleTree = {
     "playResponsibly": "18+ · Cheza kwa uwajibikaji",
     "liveChat": "GUMZO LA MOJA KWA MOJA",
     "liveChatLabel": "Msaada",
-    "supportTickets": "MSAADA MAZUNGUMZO",
-    "supportTicketsLabel": "Msaada"
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Gumzo la moja kwa moja",
@@ -103,10 +105,10 @@ export const sw: LocaleTree = {
     "supportTeam": "Msaada",
     "you": "Wewe",
     "categories": {
-      "account": "rekening",
+      "account": "Akaunti",
       "payment": "Utoaji",
       "bonus": "Bonasi",
-      "game": "Spel",
+      "game": "Mchezo",
       "other": "Nyingine"
     },
     "status": {
@@ -208,7 +210,8 @@ export const sw: LocaleTree = {
     "crypto": "Sarafu ya kidijitali",
     "crypto_payment": "Malipo ya crypto",
     "bank": "Uhamisho wa benki",
-    "bank_transfer": "Uhamisho wa benki"
+    "bank_transfer": "Uhamisho wa benki",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Sarafu ya kidijitali",
@@ -499,6 +502,12 @@ export const sw: LocaleTree = {
     "noMessagesHint": "Uthibitisho wa amana na arifa za bonasi zitaonekana hapa.",
     "showDetails": "Onyesha maelezo ya ujumbe",
     "hideDetails": "Ficha maelezo ya ujumbe"
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Funga",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   },
   "betHistory": {
     "title": "Historia ya dau",

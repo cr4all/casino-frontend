@@ -30,6 +30,8 @@ export const hy: LocaleTree = {
     "games": "խաղեր",
     "gamesCount": "{{count}} խաղեր",
     "noLimit": "Անսահման",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Նվազագույնը: {{min}} · Մեծագույնը: {{max}}",
@@ -44,9 +46,7 @@ export const hy: LocaleTree = {
     "fieldPasswordMismatch": "Nonce no coincide",
     "fieldSelectRequired": "Խնդրում ենք ընտրել",
     "fieldCodeInvalid": "Մուտքագրեք հաստատման 6 նիշանոց կոդը ։",
-    "language": "Լեզու",
-    "minLabel": "Min",
-    "maxLabel": "Max"
+    "language": "Լեզու"
   },
   "nav": {
     "allGames": "ԲԱՐՁՐ ԽԱՂԵՐ",
@@ -71,8 +71,8 @@ export const hy: LocaleTree = {
     "playResponsibly": "18+ · Խաղացեք պատասխանատու կերպով",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Համակարգել",
-    "supportTickets": "ԱՋԱԿՑՈՒԹՅՈՒՆ ԶՐՈՒՅՑՆԵՐ",
-    "supportTicketsLabel": "Համակարգել"
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -102,12 +102,12 @@ export const hy: LocaleTree = {
     "replyPlaceholder": "Մուտքագրեք ձեր պատասխանը...",
     "sendReply": "Ուղարկել reply",
     "replyFailed": "Հաղորդագրությունը ուղարկել չհաջողվեց։ Խնդրում ենք կրկին փորձել։",
-    "supportTeam": "Աջակցություն",
+    "supportTeam": "Համակարգել",
     "you": "Դուք",
     "categories": {
-      "account": "հաշիվ",
+      "account": "Հաշիվ",
       "payment": "Դուրսբերումներ",
-      "bonus": "Բոնուս",
+      "bonus": "Պարգևավճար",
       "game": "Խաղ",
       "other": "Other"
     },
@@ -502,6 +502,12 @@ export const hy: LocaleTree = {
     "noMessagesHint": "Ներդրման հաստատումները և բոնուսային ծանուցումները կցուցադրվեն այստեղ։",
     "showDetails": "Ցույց տալ հաղորդագրության մանրամասները",
     "hideDetails": "Թաքցնել հաղորդագրության մանրամասները"
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Փակել",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   },
   "betHistory": {
     "title": "Փաստացի Խաղադրույքներ",

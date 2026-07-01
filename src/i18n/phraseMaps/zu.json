@@ -317,8 +317,8 @@
   "DEPOSIT": "IDIPHOZITHI",
   "Deposit": "Idiphozithi",
   "HISTORY": "Umlandu",
-  "NOTICES": "Izaziso",
-  "Notices": "Izaziso",
+  "NOTICES": "NOTICES",
+  "Notices": "Notices",
   "BONUSES": "AMABHONASI",
   "Bonuses": "Amabhonasi",
   "Profile": "Iprofayela",
@@ -351,7 +351,7 @@
   "closed": "ivaliwe",
   "Player": "dlali",
   "Hybrid": "I-Hybrid",
-  "Close": "Vala",
+  "Close": "Close",
   "games": "Imidlalo",
   "Login": "Ngena",
   "Slots": "Izikhala",
@@ -376,7 +376,7 @@
   "Win": "nqoba",
   "Net": "Inetha",
   "CPA": "I-CPA",
-  "OK": "KULUNGILE",
+  "OK": "OK",
   "ID": "Ubunikazi",
   "Yes": "Yebo",
   "No": "Cha",
@@ -428,5 +428,7 @@
   "Open": "Aktief",
   "Pending": "kulindile",
   "Resolved": "Kuxazululiwe",
-  "Closed": "kuvaliwe"
+  "Closed": "kuvaliwe",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

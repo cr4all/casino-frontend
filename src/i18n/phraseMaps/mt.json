@@ -427,5 +427,7 @@
   "Open": "Attivo",
   "Pending": "pendenti",
   "Resolved": "Riżolt",
-  "Closed": "magħluq"
+  "Closed": "magħluq",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

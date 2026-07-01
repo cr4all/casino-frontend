@@ -317,8 +317,8 @@
   "DEPOSIT": "ডিপোজিট",
   "Deposit": "ডেপোজিট",
   "HISTORY": "ইতিহাস",
-  "NOTICES": "নোটিশ",
-  "Notices": "নোটিশ",
+  "NOTICES": "NOTICES",
+  "Notices": "Notices",
   "BONUSES": "বোনাস",
   "Bonuses": "বোনাস",
   "Profile": "প্রোফাইল",
@@ -351,7 +351,7 @@
   "closed": "বন্ধ হয়ে গিয়েছিল। ",
   "Player": "খেলোয়াড়",
   "Hybrid": "হাইব্রিড",
-  "Close": "বন্ধ",
+  "Close": "Close",
   "games": "গেমস",
   "Login": "লগ ইন করুন",
   "Slots": "স্লটগুলো",
@@ -428,5 +428,7 @@
   "Open": "সক্রিয়",
   "Pending": "মুলতুবি",
   "Resolved": "সমাধান হয়েছে",
-  "Closed": "বন্ধ"
+  "Closed": "বন্ধ",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

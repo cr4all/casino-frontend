@@ -30,6 +30,8 @@ export const sq: LocaleTree = {
     "games": "games",
     "gamesCount": "{{count}} games",
     "noLimit": "No limit",
+    "minLabel": "Min",
+    "maxLabel": "Maks",
     "maxOnly": "maks. {{amount}}",
     "notAvailable": "—",
     "minMax": "Min: {{min}} · Maks: {{max}}",
@@ -68,9 +70,9 @@ export const sq: LocaleTree = {
     "balance": "Balance",
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "Support",
-    "supportTickets": "MBËSHTETJE BISEDAT",
-    "supportTicketsLabel": "Mbështetje"
+    "liveChatLabel": "Mbështetje",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -121,7 +123,7 @@ export const sq: LocaleTree = {
     "liveCasino": "Live Casino",
     "jackpots": "Jackpots",
     "account": "Account",
-    "support": "Support",
+    "support": "Mbështetje",
     "messages": "Messages",
     "tickets": "Tickets",
     "legal": "Legal",
@@ -164,7 +166,7 @@ export const sq: LocaleTree = {
   },
   "liveBetFeed": {
     "title": "Live bets",
-    "game": "Game",
+    "game": "Lojë",
     "user": "User",
     "time": "Time",
     "betAmount": "Bet amount",
@@ -208,7 +210,8 @@ export const sq: LocaleTree = {
     "crypto": "Cryptocurrency",
     "crypto_payment": "Crypto Payment",
     "bank": "Bank Transfer",
-    "bank_transfer": "Bank Transfer"
+    "bank_transfer": "Bank Transfer",
+    "manual_bank_transfer": "Transfer bankar manual"
   },
   "paymentTypes": {
     "crypto": "Cryptocurrency",
@@ -222,7 +225,7 @@ export const sq: LocaleTree = {
     "withdraw": "Withdraw",
     "bet": "Bet",
     "win": "Win",
-    "bonus": "Bonus",
+    "bonus": "Bonusi",
     "rollback": "Rollback"
   },
   "auth": {
@@ -410,7 +413,7 @@ export const sq: LocaleTree = {
   },
   "wallet": {
     "cashBalance": "Para",
-    "bonusBalance": "Bonus",
+    "bonusBalance": "Bonusi",
     "totalPlayable": "Total i luajtshëm",
     "withdrawableBalance": "Balanca e tërheqshme",
     "withdrawableCash": "Para tërheqëse",
@@ -424,13 +427,13 @@ export const sq: LocaleTree = {
     "bonusAfter": "Bonus pas",
     "funding": {
       "cash": "Para",
-      "bonus": "Bonus",
+      "bonus": "Bonusi",
       "mixed": "I përzier",
       "free_spin": "Rrotullim falas"
     },
     "bucket": {
       "cash": "Para",
-      "bonus": "Bonus"
+      "bonus": "Bonusi"
     }
   },
   "paymentInfoFields": {
@@ -464,7 +467,7 @@ export const sq: LocaleTree = {
     "noActive": "No active bonuses.",
     "availableBonuses": "Available Bonuses",
     "noAvailable": "No bonuses available at the moment.",
-    "defaultName": "Bonus",
+    "defaultName": "Bonusi",
     "percentMatch": "{{value}}% match",
     "fixedMatch": "{{value}} fixed",
     "wageringMultiplier": "{{value}}x wagering",
@@ -500,13 +503,19 @@ export const sq: LocaleTree = {
     "showDetails": "Show message details",
     "hideDetails": "Hide message details"
   },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
+  },
   "betHistory": {
     "title": "Bet History",
     "subtitle": "Your game bets and wins by round",
     "allTransactions": "All transactions →",
     "noBets": "No bets yet. Play a game to see your history here.",
     "browseGames": "Browse games",
-    "game": "Game",
+    "game": "Lojë",
     "bet": "Bet",
     "win": "Win",
     "net": "Net",
@@ -548,14 +557,14 @@ export const sq: LocaleTree = {
     "tryAgain": "Please try again or contact support.",
     "goBack": "Go Back",
     "backToLobby": "← Back to lobby",
-    "defaultName": "Game",
+    "defaultName": "Lojë",
     "launchError": "Failed to launch game.",
     "closeWindow": "Close",
     "loginRequired": "Please log in to play."
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonusi"
   },
   "modal": {
     "comingSoon": "Coming Soon"

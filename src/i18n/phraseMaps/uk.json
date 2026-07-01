@@ -408,5 +408,7 @@
   "Open": "Активні",
   "Pending": "очікує на розгляд",
   "Resolved": "Вирішено",
-  "Closed": "закрито"
+  "Closed": "закрито",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

@@ -96,5 +96,11 @@
   "Open": "مفتوحة",
   "Pending": "قيد الانتظار",
   "Resolved": "تم الحل",
-  "Closed": "مغلقة"
+  "Closed": "مغلقة",
+  "NOTICES": "الإشعارات",
+  "Notices": "الإخطارات",
+  "Announcement": "إعلان",
+  "Close": "خاتمة",
+  "OK": "مؤكد",
+  "Don't show again today": "عدم إظهار هذا مرة أخرى"
 }

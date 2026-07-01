@@ -30,6 +30,8 @@ export const fa: LocaleTree = {
     "games": "بازی‌ها",
     "gamesCount": "{{count}} بازی",
     "noLimit": "بدون محدودیت",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "حداقل: {{min}} · حداکثر: {{max}}",
@@ -44,9 +46,7 @@ export const fa: LocaleTree = {
     "fieldPasswordMismatch": "گذرواژه هم‌خوانی ندارد",
     "fieldSelectRequired": "لطفا &lt;&lt; را انتخاب کنید<FIELD> &gt;&gt;.",
     "fieldCodeInvalid": "لطفا کد تایید ۶ رقمی را وارد کنید.",
-    "language": "زبان",
-    "minLabel": "Min",
-    "maxLabel": "Max"
+    "language": "زبان"
   },
   "nav": {
     "allGames": "همه بازی‌ها",
@@ -71,8 +71,8 @@ export const fa: LocaleTree = {
     "playResponsibly": "18+ · مسئولانه بازی کنید",
     "liveChat": "چت زنده",
     "liveChatLabel": "پشتیبانی",
-    "supportTickets": "پشتیبانی گفتگوها",
-    "supportTicketsLabel": "پشتیبانی"
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "چت زنده",
@@ -105,7 +105,7 @@ export const fa: LocaleTree = {
     "supportTeam": "پشتیبانی",
     "you": "شما",
     "categories": {
-      "account": "فعلی",
+      "account": "حساب",
       "payment": "برداشت‌ها",
       "bonus": "بونوس",
       "game": "بازی",
@@ -502,6 +502,12 @@ export const fa: LocaleTree = {
     "noMessagesHint": "تأییدیه‌های واریز و اعلان‌های بونوس اینجا نمایش داده می‌شوند.",
     "showDetails": "نمایش جزئیات پیام",
     "hideDetails": "پنهان کردن جزئیات پیام"
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "بستن",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   },
   "betHistory": {
     "title": "تاریخچه شرط‌ها",

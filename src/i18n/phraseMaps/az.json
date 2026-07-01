@@ -317,7 +317,7 @@
   "DEPOSIT": "ƏMANƏT",
   "Deposit": "Depozit",
   "HISTORY": "TARİX",
-  "NOTICES": "XƏBƏRDARLIQLAR",
+  "NOTICES": "Bildirişlər",
   "Notices": "Bildirişlər",
   "BONUSES": "BONUSLAR",
   "Bonuses": "Bonuslar",
@@ -472,5 +472,7 @@
   "Account number": "Hesab nömrəsi",
   "Wallet address": "Cüzdan ünvanı",
   "Account / wallet ID": "Hesab / pul kisəsi nömrəsi",
-  "Bank account": "Bank hesabı"
+  "Bank account": "Bank hesabı",
+  "Announcement": "Bildiriş",
+  "Don't show again today": "Bu gün bir daha göstərməyin"
 }

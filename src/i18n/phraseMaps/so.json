@@ -408,5 +408,7 @@
   "Open": "Aktief",
   "Pending": "hangende",
   "Resolved": "La xaliyay",
-  "Closed": "gesluit"
+  "Closed": "gesluit",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

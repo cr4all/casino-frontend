@@ -74,5 +74,11 @@
   "Open": "Abierto",
   "Pending": "Pendiente",
   "Resolved": "Resuelto",
-  "Closed": "Cerrado"
+  "Closed": "Cerrado",
+  "NOTICES": "AVISOS",
+  "Notices": "Avisos",
+  "Announcement": "Anuncio",
+  "Close": "Cerrar",
+  "OK": "OK",
+  "Don't show again today": "No volver a mostrar hoy"
 }

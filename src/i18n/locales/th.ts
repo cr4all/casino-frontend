@@ -30,6 +30,8 @@ export const th: LocaleTree = {
     "games": "เกม",
     "gamesCount": "{{count}} เกม",
     "noLimit": "ไม่จำกัด",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "ต่ำสุด: {{min}} · สูงสุด: {{max}}",
@@ -69,8 +71,8 @@ export const th: LocaleTree = {
     "playResponsibly": "18+ · เล่นอย่างมีความรับผิดชอบ",
     "liveChat": "แชทสด",
     "liveChatLabel": "สนับสนุน",
-    "supportTickets": "การสนับสนุน การสนทนา",
-    "supportTicketsLabel": "สนับสนุน"
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "แชทสด",
@@ -100,10 +102,10 @@ export const th: LocaleTree = {
     "replyPlaceholder": "พิมพ์ของคุณ ตอบกลับ...",
     "sendReply": "ส่งคำตอบ",
     "replyFailed": "ไม่สามารถส่งข้อความได้ โปรดลองอีกครั้ง",
-    "supportTeam": "การสนับสนุน",
+    "supportTeam": "สนับสนุน",
     "you": "คุณ",
     "categories": {
-      "account": "บัญชีปัจจุบัน",
+      "account": "บัญชี",
       "payment": "การถอนเงิน",
       "bonus": "โบนัส",
       "game": "เกม",
@@ -208,7 +210,8 @@ export const th: LocaleTree = {
     "crypto": "สกุลเงินดิจิทัล",
     "crypto_payment": "ชำระด้วยคริปโต",
     "bank": "โอนผ่านธนาคาร",
-    "bank_transfer": "โอนผ่านธนาคาร"
+    "bank_transfer": "โอนผ่านธนาคาร",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "สกุลเงินดิจิทัล",
@@ -499,6 +502,12 @@ export const th: LocaleTree = {
     "noMessagesHint": "การยืนยันการฝากและการแจ้งเตือนโบนัสจะแสดงที่นี่",
     "showDetails": "แสดงรายละเอียดข้อความ",
     "hideDetails": "ซ่อนรายละเอียดข้อความ"
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "ปิด",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   },
   "betHistory": {
     "title": "ประวัติเดิมพัน",

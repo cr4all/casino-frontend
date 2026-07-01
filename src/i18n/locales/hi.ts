@@ -626,5 +626,11 @@ export const hi: LocaleTree = {
       "resolved": "हल हो गया",
       "closed": "बंद"
     }
+  },
+  "announcement": {
+    "popupBadge": "घोषणा ........",
+    "popupClose": "बंद करें",
+    "popupConfirm": "ठीक",
+    "hideForToday": "आज फिर से न दिखाएँ"
   }
 };

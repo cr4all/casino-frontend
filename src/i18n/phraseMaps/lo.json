@@ -408,5 +408,7 @@
   "Open": "ໃຊ້ງານ",
   "Pending": "ລໍຖ້າ",
   "Resolved": "ແກ້ໄຂແລ້ວ",
-  "Closed": "ປິດ"
+  "Closed": "ປິດ",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

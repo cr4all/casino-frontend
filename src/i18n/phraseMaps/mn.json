@@ -427,5 +427,7 @@
   "Open": "Идэвхтэй",
   "Pending": "хүлээгдэж буй",
   "Resolved": "Шийдэгдсэн",
-  "Closed": "хаагдсан"
+  "Closed": "хаагдсан",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

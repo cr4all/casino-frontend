@@ -74,5 +74,11 @@
   "Open": "开放",
   "Pending": "待处理",
   "Resolved": "已解决",
-  "Closed": "已关闭"
+  "Closed": "已关闭",
+  "NOTICES": "通知",
+  "Notices": "通知",
+  "Announcement": "公告",
+  "Close": "关闭",
+  "OK": "确定",
+  "Don't show again today": "今天不再显示"
 }

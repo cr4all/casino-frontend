@@ -24,12 +24,14 @@ export const bn: LocaleTree = {
     "ok": "OK",
     "yes": "হ্যাঁ",
     "no": "নং",
-    "close": "বন্ধ",
+    "close": "Close",
     "copy": "কপি করুন",
     "copied": "কপি করা হয়েছে",
     "games": "গেমস",
     "gamesCount": "{{count}} টি খেলা",
     "noLimit": "কোনো সীমা নেই",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "ন্যূনতম: {{min}} · সর্বোচ্চ: {{max}}",
@@ -44,9 +46,7 @@ export const bn: LocaleTree = {
     "fieldPasswordMismatch": "পাসওয়ার্ড মিলছে না।",
     "fieldSelectRequired": "অনুগ্রহ করে নির্বাচন করুন",
     "fieldCodeInvalid": "অনুগ্রহ করে 6-সংখ্যার যাচাইকরণ কোডটি লিখুন ।",
-    "language": "ভাষা",
-    "minLabel": "Min",
-    "maxLabel": "Max"
+    "language": "ভাষা"
   },
   "nav": {
     "allGames": "সকল খেলা",
@@ -59,8 +59,8 @@ export const bn: LocaleTree = {
     "gameBets": "গেম বেট",
     "history": "ইতিহাস",
     "transactions": "লেনদেন",
-    "notices": "নোটিশ",
-    "noticesLabel": "নোটিশ",
+    "notices": "NOTICES",
+    "noticesLabel": "Notices",
     "bonuses": "বোনাস",
     "bonusesLabel": "বোনাস",
     "profile": "প্রোফাইল",
@@ -70,9 +70,9 @@ export const bn: LocaleTree = {
     "balance": "ব্যালেন্স",
     "playResponsibly": "18+ · দায়িত্বের সাথে খেলুন",
     "liveChat": "লাইভ চ্যাট",
-    "liveChatLabel": "Support",
-    "supportTickets": "সহায়তা কথোপকথন",
-    "supportTicketsLabel": "সহায়তা"
+    "liveChatLabel": "সহায়তা",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "লাইভ চ্যাট",
@@ -122,8 +122,8 @@ export const bn: LocaleTree = {
     "slots": "স্লটগুলো",
     "liveCasino": "লাইভ ক্যাসিনো",
     "jackpots": "জ্যাকপটস",
-    "account": "Account",
-    "support": "Support",
+    "account": "অ্যাকাউন্ট",
+    "support": "সহায়তা",
     "messages": "বার্তাগুলি",
     "tickets": "Tickets",
     "legal": "আইনী",
@@ -166,7 +166,7 @@ export const bn: LocaleTree = {
   },
   "liveBetFeed": {
     "title": "লাইভ বেট",
-    "game": "Game",
+    "game": "গেম",
     "user": "ইউজার",
     "time": "সময়",
     "betAmount": "বেটের পরিমাণ",
@@ -225,7 +225,7 @@ export const bn: LocaleTree = {
     "withdraw": "প্রত্যাহার করুন",
     "bet": "বাজি",
     "win": "জয়",
-    "bonus": "Bonus",
+    "bonus": "বোনাস",
     "rollback": "রোলব্যাক"
   },
   "auth": {
@@ -319,7 +319,7 @@ export const bn: LocaleTree = {
     "passwordUpdateFailed": "পাসওয়ার্ড আপডেট করতে ব্যর্থ হয়েছে",
     "editProfile": "প্রোফাইল এডিট করুন",
     "quickActions": "দ্রুত পদক্ষেপ",
-    "account": "Account",
+    "account": "অ্যাকাউন্ট",
     "saveChanges": "পরিবর্তনগুলো সংরক্ষণ করুন",
     "updateSuccess": "প্রোফাইল সফলভাবে আপডেট করা হয়েছে!",
     "updateFailed": "ব্যবহারকারী প্রোফাইল আপডেট করতে ব্যর্থ হয়েছে",
@@ -413,7 +413,7 @@ export const bn: LocaleTree = {
   },
   "wallet": {
     "cashBalance": "Cash",
-    "bonusBalance": "Bonus",
+    "bonusBalance": "বোনাস",
     "totalPlayable": "Total playable",
     "withdrawableBalance": "Withdrawable balance",
     "withdrawableCash": "Withdrawable cash",
@@ -427,13 +427,13 @@ export const bn: LocaleTree = {
     "bonusAfter": "Bonus after",
     "funding": {
       "cash": "Cash",
-      "bonus": "Bonus",
+      "bonus": "বোনাস",
       "mixed": "Mixed",
       "free_spin": "Free spin"
     },
     "bucket": {
       "cash": "Cash",
-      "bonus": "Bonus"
+      "bonus": "বোনাস"
     }
   },
   "paymentInfoFields": {
@@ -467,7 +467,7 @@ export const bn: LocaleTree = {
     "noActive": "কোনও সক্রিয় বোনাস নেই ।",
     "availableBonuses": "উপলভ্য বোনাস",
     "noAvailable": "এই মুহূর্তে কোনও বোনাস পাওয়া যাচ্ছে না ।",
-    "defaultName": "Bonus",
+    "defaultName": "বোনাস",
     "percentMatch": "{{value}}% ম্যাচ",
     "fixedMatch": "{{value}} নির্ধারিত",
     "wageringMultiplier": "{{value}}x বাজি ধরা",
@@ -503,13 +503,19 @@ export const bn: LocaleTree = {
     "showDetails": "মেসেজের বিবরণ",
     "hideDetails": "মেসেজের বিবরণ"
   },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
+  },
   "betHistory": {
     "title": "বেট ইতিহাস",
     "subtitle": "আপনার গেম বেট করে এবং রাউন্ডের মাধ্যমে জয়ী হয়",
     "allTransactions": "সমস্ত লেনদেন →",
     "noBets": "এখনও কোন বাজি নেই । এখানে আপনার ইতিহাস দেখতে একটি খেলা খেলুন ।",
     "browseGames": "গেম ব্রাউজ করুন",
-    "game": "Game",
+    "game": "গেম",
     "bet": "বাজি",
     "win": "জয়",
     "net": "নিট",
@@ -551,14 +557,14 @@ export const bn: LocaleTree = {
     "tryAgain": "অনুগ্রহ করে আবার চেষ্টা করে দেখুন বা সহায়তা দলের সাথে যোগাযোগ করুন।",
     "goBack": "পূর্বাবস্থায় যান",
     "backToLobby": "লবিতে ফিরে যান",
-    "defaultName": "Game",
+    "defaultName": "গেম",
     "launchError": "খেলা আরম্ভ করতে ব্যর্থ হয়েছে ।",
-    "closeWindow": "বন্ধ",
+    "closeWindow": "Close",
     "loginRequired": "খেলতে লগ ইন করুন ।"
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "বোনাস"
   },
   "modal": {
     "comingSoon": "শীঘ্রই আসছে"

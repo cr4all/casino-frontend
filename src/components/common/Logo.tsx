@@ -18,7 +18,7 @@ interface LogoProps {
   onClick?: () => void;
 }
 
-function LogoMark({
+export function LogoMark({
   className,
   style,
   gradientId,

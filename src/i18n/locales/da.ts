@@ -59,8 +59,8 @@ export const da: LocaleTree = {
     "gameBets": "Spilindsatser",
     "history": "HISTORIK",
     "transactions": "Transaktioner",
-    "notices": "MEDDELELSER",
-    "noticesLabel": "Meddelelser",
+    "notices": "NOTICES",
+    "noticesLabel": "Notices",
     "bonuses": "BONUSSER",
     "bonusesLabel": "Bonusser",
     "profile": "Profil",
@@ -626,5 +626,11 @@ export const da: LocaleTree = {
       "resolved": "Løst",
       "closed": "lukket"
     }
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   }
 };

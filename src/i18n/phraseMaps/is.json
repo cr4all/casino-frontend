@@ -427,5 +427,7 @@
   "Open": "Virkt",
   "Pending": "í bið",
   "Resolved": "Leyst",
-  "Closed": "lokað"
+  "Closed": "lokað",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

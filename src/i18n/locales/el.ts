@@ -59,8 +59,8 @@ export const el: LocaleTree = {
     "gameBets": "Στοιχήματα παιχνιδιού",
     "history": "ΙΣΤΟΡΙΚΟ",
     "transactions": "Συναλλαγές",
-    "notices": "ΕΙΔΟΠΟΙΗΣΕΙΣ",
-    "noticesLabel": "Ειδοποιήσεις",
+    "notices": "NOTICES",
+    "noticesLabel": "Notices",
     "bonuses": "ΜΠΟΝΟΥΣ",
     "bonusesLabel": "Μπόνους",
     "profile": "Προφίλ",
@@ -626,5 +626,11 @@ export const el: LocaleTree = {
       "resolved": "Επιλύθηκε",
       "closed": "κλειστός"
     }
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   }
 };

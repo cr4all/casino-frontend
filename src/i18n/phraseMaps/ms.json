@@ -427,5 +427,7 @@
   "Open": "Aktif",
   "Pending": "menunggu",
   "Resolved": "Diselesaikan",
-  "Closed": "ditutup"
+  "Closed": "ditutup",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

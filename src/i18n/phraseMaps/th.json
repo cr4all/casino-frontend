@@ -417,5 +417,7 @@
   "Open": "ใช้งานอยู่",
   "Pending": "รอดำเนินการ",
   "Resolved": "แก้ไขแล้ว",
-  "Closed": "ปิด"
+  "Closed": "ปิด",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

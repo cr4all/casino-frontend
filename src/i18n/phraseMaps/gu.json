@@ -317,8 +317,8 @@
   "DEPOSIT": "DEPOSIT",
   "Deposit": "Deposit",
   "HISTORY": "HISTORY",
-  "NOTICES": "NOTICES",
-  "Notices": "Notices",
+  "NOTICES": "સૂચનાઓ",
+  "Notices": "સૂચનાઓ",
   "BONUSES": "BONUSES",
   "Bonuses": "Bonuses",
   "Profile": "Profile",
@@ -351,7 +351,7 @@
   "closed": "closed",
   "Player": "ખેલાડી",
   "Hybrid": "હાઇબ્રિડ",
-  "Close": "Close",
+  "Close": "બંધ કરો",
   "games": "games",
   "Login": "Login",
   "Slots": "Slots",
@@ -376,7 +376,7 @@
   "Win": "Win",
   "Net": "Net",
   "CPA": "CPA",
-  "OK": "OK",
+  "OK": "ઠીક છે",
   "ID": "ID",
   "Please enter {{field}}.": "કૃપા કરી નામ દાખલ કરો.",
   "This field is required.": "આ જગ્યા ભરવી આવશ્યક છે",
@@ -408,5 +408,7 @@
   "Open": "સક્રિય",
   "Pending": "બાકી",
   "Resolved": "ઉકેલાયું",
-  "Closed": "બંધ"
+  "Closed": "બંધ",
+  "Announcement": "જાહેરાત",
+  "Don't show again today": "આજે ફરીથી બતાવશો નહીં"
 }

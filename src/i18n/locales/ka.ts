@@ -30,6 +30,8 @@ export const ka: LocaleTree = {
     "games": "თამაში",
     "gamesCount": "{{count}} თამაშები",
     "noLimit": "_limiti არ υπάρχει",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "მინ: {{min}} · მაქს: {{max}}",
@@ -44,9 +46,7 @@ export const ka: LocaleTree = {
     "fieldPasswordMismatch": "პაროლები არ ემთხვევა.",
     "fieldSelectRequired": "გთხოვთ, აირჩიოთ",
     "fieldCodeInvalid": "Მიუთითეთ დამადასტურებელი 6-ციფრიანი კოდი.",
-    "language": "ენა",
-    "minLabel": "Min",
-    "maxLabel": "Max"
+    "language": "ენა"
   },
   "nav": {
     "allGames": "ყველა თამაში",
@@ -71,8 +71,8 @@ export const ka: LocaleTree = {
     "playResponsibly": "18+ · ითამაშეთ პასუხისმგებლობით",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "მხარდაჭერა",
-    "supportTickets": "ᲛᲮᲐᲠᲓᲐᲭᲔᲠᲐ ᲡᲐᲣᲑᲠᲔᲑᲘ",
-    "supportTicketsLabel": "მხარდაჭერა"
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -108,7 +108,7 @@ export const ka: LocaleTree = {
       "account": "ანგარიში",
       "payment": "გატანები",
       "bonus": "ბონუსი",
-      "game": "თამაში",
+      "game": "ნამგობი",
       "other": "Other"
     },
     "status": {
@@ -502,6 +502,12 @@ export const ka: LocaleTree = {
     "noMessagesHint": "დეპონირების დადასტურებები და ბონუსის შეტყობინებები გამოჩნდება აქ.",
     "showDetails": "მესიჯის დეტალების ჩვენება",
     "hideDetails": "მესიჯის დეტალების დამალვა"
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "დახურვა",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   },
   "betHistory": {
     "title": "სათამაშო წარსული",
