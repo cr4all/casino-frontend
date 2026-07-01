@@ -21,15 +21,17 @@ export const cy: LocaleTree = {
     "previous": "Previous",
     "next": "Next",
     "showMore": "Show more",
-    "ok": "OK",
+    "ok": "Iawn",
     "yes": "Ydy",
     "no": "Nac ydw",
-    "close": "Close",
+    "close": "Cau",
     "copy": "Copy",
     "copied": "Copied",
     "games": "games",
     "gamesCount": "{{count}} games",
     "noLimit": "No limit",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Min: {{min}} · Max: {{max}}",
@@ -44,9 +46,7 @@ export const cy: LocaleTree = {
     "fieldPasswordMismatch": "Cyfrineiriau ddim yr un fath.",
     "fieldSelectRequired": "Dewiswch",
     "fieldCodeInvalid": "Rhowch y cod dilysu 6 digid",
-    "language": "Language",
-    "minLabel": "Min",
-    "maxLabel": "Max"
+    "language": "Language"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -59,8 +59,8 @@ export const cy: LocaleTree = {
     "gameBets": "Game bets",
     "history": "HISTORY",
     "transactions": "Transactions",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "Hysbysiadau",
+    "noticesLabel": "Hysbysiadau",
     "bonuses": "BONUSES",
     "bonusesLabel": "Bonuses",
     "profile": "Profile",
@@ -70,9 +70,9 @@ export const cy: LocaleTree = {
     "balance": "Balance",
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "Support",
-    "supportTickets": "CEFNOGAETH SGYRSIAU",
-    "supportTicketsLabel": "Cefnogaeth"
+    "liveChatLabel": "Cefnogaeth",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -122,8 +122,8 @@ export const cy: LocaleTree = {
     "slots": "Slots",
     "liveCasino": "Live Casino",
     "jackpots": "Jackpots",
-    "account": "Account",
-    "support": "Support",
+    "account": "cyfredol",
+    "support": "Cefnogaeth",
     "messages": "Messages",
     "tickets": "Tickets",
     "legal": "Legal",
@@ -166,7 +166,7 @@ export const cy: LocaleTree = {
   },
   "liveBetFeed": {
     "title": "Live bets",
-    "game": "Game",
+    "game": "Gêm",
     "user": "User",
     "time": "Time",
     "betAmount": "Bet amount",
@@ -225,7 +225,7 @@ export const cy: LocaleTree = {
     "withdraw": "Withdraw",
     "bet": "Bet",
     "win": "Win",
-    "bonus": "Bonus",
+    "bonus": "Bonws",
     "rollback": "Rollback"
   },
   "auth": {
@@ -319,7 +319,7 @@ export const cy: LocaleTree = {
     "passwordUpdateFailed": "Methu diweddaru cyfrinair.",
     "editProfile": "Edit profile",
     "quickActions": "Quick actions",
-    "account": "Account",
+    "account": "cyfredol",
     "saveChanges": "Save Changes",
     "updateSuccess": "Profile updated successfully.",
     "updateFailed": "Failed to update profile.",
@@ -413,7 +413,7 @@ export const cy: LocaleTree = {
   },
   "wallet": {
     "cashBalance": "Cash",
-    "bonusBalance": "Bonus",
+    "bonusBalance": "Bonws",
     "totalPlayable": "Total playable",
     "withdrawableBalance": "Withdrawable balance",
     "withdrawableCash": "Withdrawable cash",
@@ -427,13 +427,13 @@ export const cy: LocaleTree = {
     "bonusAfter": "Bonus after",
     "funding": {
       "cash": "Cash",
-      "bonus": "Bonus",
+      "bonus": "Bonws",
       "mixed": "Mixed",
       "free_spin": "Free spin"
     },
     "bucket": {
       "cash": "Cash",
-      "bonus": "Bonus"
+      "bonus": "Bonws"
     }
   },
   "paymentInfoFields": {
@@ -467,7 +467,7 @@ export const cy: LocaleTree = {
     "noActive": "No active bonuses.",
     "availableBonuses": "Available Bonuses",
     "noAvailable": "No bonuses available at the moment.",
-    "defaultName": "Bonus",
+    "defaultName": "Bonws",
     "percentMatch": "{{value}}% match",
     "fixedMatch": "{{value}} fixed",
     "wageringMultiplier": "{{value}}x wagering",
@@ -503,13 +503,19 @@ export const cy: LocaleTree = {
     "showDetails": "Show message details",
     "hideDetails": "Hide message details"
   },
+  "announcement": {
+    "popupBadge": "cyhoeddiad",
+    "popupClose": "Cau",
+    "popupConfirm": "Iawn",
+    "hideForToday": "Peidiwch â'i ddangos eto heddiw"
+  },
   "betHistory": {
     "title": "Bet History",
     "subtitle": "Your game bets and wins by round",
     "allTransactions": "All transactions →",
     "noBets": "No bets yet. Play a game to see your history here.",
     "browseGames": "Browse games",
-    "game": "Game",
+    "game": "Gêm",
     "bet": "Bet",
     "win": "Win",
     "net": "Net",
@@ -551,14 +557,14 @@ export const cy: LocaleTree = {
     "tryAgain": "Please try again or contact support.",
     "goBack": "Go Back",
     "backToLobby": "← Back to lobby",
-    "defaultName": "Game",
+    "defaultName": "Gêm",
     "launchError": "Failed to launch game.",
-    "closeWindow": "Close",
+    "closeWindow": "Cau",
     "loginRequired": "Please log in to play."
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonws"
   },
   "modal": {
     "comingSoon": "Coming Soon"

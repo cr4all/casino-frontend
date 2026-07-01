@@ -427,5 +427,7 @@
   "Open": "Actief",
   "Pending": "in behandeling",
   "Resolved": "Opgelost",
-  "Closed": "gesloten"
+  "Closed": "gesloten",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

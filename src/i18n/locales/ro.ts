@@ -30,6 +30,8 @@ export const ro: LocaleTree = {
     "games": "jocuri",
     "gamesCount": "{{count}} jocuri",
     "noLimit": "Fără limită",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Min: {{min}} · Max: {{max}}",
@@ -69,8 +71,8 @@ export const ro: LocaleTree = {
     "playResponsibly": "18+ · Jucați responsabil",
     "liveChat": "CHAT LIVE",
     "liveChatLabel": "Suport",
-    "supportTickets": "SUPORT TICKETȚII",
-    "supportTicketsLabel": "Suport"
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Chat live",
@@ -103,9 +105,9 @@ export const ro: LocaleTree = {
     "supportTeam": "Suport",
     "you": "Dvs.",
     "categories": {
-      "account": "curent",
+      "account": "Cont",
       "payment": "Retrageri",
-      "bonus": "Bonusuri",
+      "bonus": "Bonus",
       "game": "Joc",
       "other": "Other"
     },
@@ -208,7 +210,8 @@ export const ro: LocaleTree = {
     "crypto": "Criptomonedă",
     "crypto_payment": "Plată cripto",
     "bank": "Transfer bancar",
-    "bank_transfer": "Transfer bancar"
+    "bank_transfer": "Transfer bancar",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Criptomonedă",
@@ -499,6 +502,12 @@ export const ro: LocaleTree = {
     "noMessagesHint": "Confirmările depozitelor și notificările de bonus vor apărea aici.",
     "showDetails": "Afișați detaliile mesajului",
     "hideDetails": "Ascundeți detaliile mesajului"
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Închideți",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   },
   "betHistory": {
     "title": "Istoric pariuri",

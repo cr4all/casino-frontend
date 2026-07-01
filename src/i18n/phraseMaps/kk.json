@@ -427,5 +427,7 @@
   "Open": "Белсенді",
   "Pending": "күтуде",
   "Resolved": "Шешілді",
-  "Closed": "жабық"
+  "Closed": "жабық",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

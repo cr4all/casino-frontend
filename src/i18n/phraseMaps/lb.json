@@ -408,5 +408,7 @@
   "Open": "Aktiv",
   "Pending": "Pending",
   "Resolved": "Geléist",
-  "Closed": "Closed"
+  "Closed": "Closed",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

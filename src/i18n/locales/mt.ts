@@ -30,6 +30,8 @@ export const mt: LocaleTree = {
     "games": "games",
     "gamesCount": "{{count}} games",
     "noLimit": "No limit",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Min: {{min}} · Max: {{max}}",
@@ -68,9 +70,9 @@ export const mt: LocaleTree = {
     "balance": "Balance",
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "Support",
-    "supportTickets": "APPOĠĠ KONVERSAZZJONIJIET",
-    "supportTicketsLabel": "Appoġġ"
+    "liveChatLabel": "Appoġġ",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -120,8 +122,8 @@ export const mt: LocaleTree = {
     "slots": "Slots",
     "liveCasino": "Live Casino",
     "jackpots": "Jackpots",
-    "account": "Account",
-    "support": "Support",
+    "account": "corrente",
+    "support": "Appoġġ",
     "messages": "Messages",
     "tickets": "Tickets",
     "legal": "Legal",
@@ -164,7 +166,7 @@ export const mt: LocaleTree = {
   },
   "liveBetFeed": {
     "title": "Live bets",
-    "game": "Game",
+    "game": "Logħba",
     "user": "User",
     "time": "Time",
     "betAmount": "Bet amount",
@@ -208,7 +210,8 @@ export const mt: LocaleTree = {
     "crypto": "Cryptocurrency",
     "crypto_payment": "Crypto Payment",
     "bank": "Bank Transfer",
-    "bank_transfer": "Bank Transfer"
+    "bank_transfer": "Bank Transfer",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Cryptocurrency",
@@ -222,7 +225,7 @@ export const mt: LocaleTree = {
     "withdraw": "Withdraw",
     "bet": "Bet",
     "win": "Win",
-    "bonus": "Bonus",
+    "bonus": "Bonusi",
     "rollback": "Rollback"
   },
   "auth": {
@@ -316,7 +319,7 @@ export const mt: LocaleTree = {
     "passwordUpdateFailed": "Ma rnexxilniex naġġornaw il-password.",
     "editProfile": "Edit profile",
     "quickActions": "Quick actions",
-    "account": "Account",
+    "account": "corrente",
     "saveChanges": "Save Changes",
     "updateSuccess": "Profile updated successfully.",
     "updateFailed": "Failed to update profile.",
@@ -410,7 +413,7 @@ export const mt: LocaleTree = {
   },
   "wallet": {
     "cashBalance": "Cash",
-    "bonusBalance": "Bonus",
+    "bonusBalance": "Bonusi",
     "totalPlayable": "Total playable",
     "withdrawableBalance": "Withdrawable balance",
     "withdrawableCash": "Withdrawable cash",
@@ -424,13 +427,13 @@ export const mt: LocaleTree = {
     "bonusAfter": "Bonus after",
     "funding": {
       "cash": "Cash",
-      "bonus": "Bonus",
+      "bonus": "Bonusi",
       "mixed": "Mixed",
       "free_spin": "Free spin"
     },
     "bucket": {
       "cash": "Cash",
-      "bonus": "Bonus"
+      "bonus": "Bonusi"
     }
   },
   "paymentInfoFields": {
@@ -464,7 +467,7 @@ export const mt: LocaleTree = {
     "noActive": "No active bonuses.",
     "availableBonuses": "Available Bonuses",
     "noAvailable": "No bonuses available at the moment.",
-    "defaultName": "Bonus",
+    "defaultName": "Bonusi",
     "percentMatch": "{{value}}% match",
     "fixedMatch": "{{value}} fixed",
     "wageringMultiplier": "{{value}}x wagering",
@@ -500,13 +503,19 @@ export const mt: LocaleTree = {
     "showDetails": "Show message details",
     "hideDetails": "Hide message details"
   },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
+  },
   "betHistory": {
     "title": "Bet History",
     "subtitle": "Your game bets and wins by round",
     "allTransactions": "All transactions →",
     "noBets": "No bets yet. Play a game to see your history here.",
     "browseGames": "Browse games",
-    "game": "Game",
+    "game": "Logħba",
     "bet": "Bet",
     "win": "Win",
     "net": "Net",
@@ -548,14 +557,14 @@ export const mt: LocaleTree = {
     "tryAgain": "Please try again or contact support.",
     "goBack": "Go Back",
     "backToLobby": "← Back to lobby",
-    "defaultName": "Game",
+    "defaultName": "Logħba",
     "launchError": "Failed to launch game.",
     "closeWindow": "Close",
     "loginRequired": "Please log in to play."
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonusi"
   },
   "modal": {
     "comingSoon": "Coming Soon"

@@ -507,6 +507,12 @@ export const ko: LocaleTree = {
     "showDetails": "메시지 상세 보기",
     "hideDetails": "메시지 상세 숨기기"
   },
+  "announcement": {
+    "popupBadge": "공지",
+    "popupClose": "닫기",
+    "popupConfirm": "확인",
+    "hideForToday": "하루동안 표시하지 않기"
+  },
   "betHistory": {
     "title": "베팅 내역",
     "subtitle": "라운드별 베팅 및 승리",

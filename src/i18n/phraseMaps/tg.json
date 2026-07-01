@@ -411,5 +411,7 @@
   "Open": "Активна",
   "Pending": "интизор аст",
   "Resolved": "Ҳал шуд",
-  "Closed": "закрыто"
+  "Closed": "закрыто",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

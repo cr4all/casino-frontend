@@ -317,8 +317,8 @@
   "DEPOSIT": "DEPOSIT",
   "Deposit": "Deposit",
   "HISTORY": "HISTORY",
-  "NOTICES": "NOTICES",
-  "Notices": "Notices",
+  "NOTICES": "Hysbysiadau",
+  "Notices": "Hysbysiadau",
   "BONUSES": "BONUSES",
   "Bonuses": "Bonuses",
   "Profile": "Profile",
@@ -351,7 +351,7 @@
   "closed": "closed",
   "Player": "Chwaraewr",
   "Hybrid": "Hybrid",
-  "Close": "Close",
+  "Close": "Cau",
   "games": "games",
   "Login": "Login",
   "Slots": "Slots",
@@ -376,7 +376,7 @@
   "Win": "Win",
   "Net": "Net",
   "CPA": "CPA",
-  "OK": "OK",
+  "OK": "Iawn",
   "ID": "ID",
   "Yes": "Ydy",
   "No": "Nac ydw",
@@ -427,5 +427,7 @@
   "Open": "Actif",
   "Pending": "arfaeth",
   "Resolved": "Wedi'i ddatrys",
-  "Closed": " ar gau"
+  "Closed": " ar gau",
+  "Announcement": "cyhoeddiad",
+  "Don't show again today": "Peidiwch â'i ddangos eto heddiw"
 }

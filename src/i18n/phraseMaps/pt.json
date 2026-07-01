@@ -42,5 +42,11 @@
   "Open": "Ativo",
   "Pending": "pendente",
   "Resolved": "Resolvido",
-  "Closed": "encerrado"
+  "Closed": "encerrado",
+  "NOTICES": "NOTICES",
+  "Notices": "Notices",
+  "Announcement": "Announcement",
+  "Close": "Close",
+  "OK": "OK",
+  "Don't show again today": "Don't show again today"
 }

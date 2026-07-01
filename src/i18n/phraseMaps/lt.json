@@ -408,5 +408,7 @@
   "Open": "Aktyvus",
   "Pending": "laukiama",
   "Resolved": "Išspręsta",
-  "Closed": "uždarytas"
+  "Closed": "uždarytas",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

@@ -408,5 +408,7 @@
   "Open": "Hoạt động",
   "Pending": "đang chờ xử lý",
   "Resolved": "Đã giải quyết",
-  "Closed": "đã đóng"
+  "Closed": "đã đóng",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

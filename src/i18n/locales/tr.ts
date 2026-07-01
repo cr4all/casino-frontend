@@ -30,6 +30,8 @@ export const tr: LocaleTree = {
     "games": "games",
     "gamesCount": "{{count}} games",
     "noLimit": "No limit",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "maks. {{amount}}",
     "notAvailable": "—",
     "minMax": "Min: {{min}} · Max: {{max}}",
@@ -68,9 +70,9 @@ export const tr: LocaleTree = {
     "balance": "Balance",
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "Support",
-    "supportTickets": "DESTEK KONUŞMALAR",
-    "supportTicketsLabel": "Destek"
+    "liveChatLabel": "Destek",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -120,8 +122,8 @@ export const tr: LocaleTree = {
     "slots": "Slots",
     "liveCasino": "Live Casino",
     "jackpots": "Jackpots",
-    "account": "Account",
-    "support": "Support",
+    "account": "hesap",
+    "support": "Destek",
     "messages": "Messages",
     "tickets": "Tickets",
     "legal": "Legal",
@@ -164,7 +166,7 @@ export const tr: LocaleTree = {
   },
   "liveBetFeed": {
     "title": "Live bets",
-    "game": "Game",
+    "game": "Oyun",
     "user": "User",
     "time": "Time",
     "betAmount": "Bet amount",
@@ -208,7 +210,8 @@ export const tr: LocaleTree = {
     "crypto": "Cryptocurrency",
     "crypto_payment": "Crypto Payment",
     "bank": "Bank Transfer",
-    "bank_transfer": "Bank Transfer"
+    "bank_transfer": "Bank Transfer",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Cryptocurrency",
@@ -222,7 +225,7 @@ export const tr: LocaleTree = {
     "withdraw": "Withdraw",
     "bet": "Bet",
     "win": "Win",
-    "bonus": "Bonus",
+    "bonus": "Bonuslar",
     "rollback": "Rollback"
   },
   "auth": {
@@ -316,7 +319,7 @@ export const tr: LocaleTree = {
     "passwordUpdateFailed": "Failed to update password.",
     "editProfile": "Edit profile",
     "quickActions": "Quick actions",
-    "account": "Account",
+    "account": "hesap",
     "saveChanges": "Save Changes",
     "updateSuccess": "Profile updated successfully.",
     "updateFailed": "Failed to update profile.",
@@ -410,7 +413,7 @@ export const tr: LocaleTree = {
   },
   "wallet": {
     "cashBalance": "Cash",
-    "bonusBalance": "Bonus",
+    "bonusBalance": "Bonuslar",
     "totalPlayable": "Toplam oynanabilir",
     "withdrawableBalance": "Çekilebilir bakiye",
     "withdrawableCash": "Çekilebilir nakit",
@@ -424,13 +427,13 @@ export const tr: LocaleTree = {
     "bonusAfter": "Sonraki bonus",
     "funding": {
       "cash": "Cash",
-      "bonus": "Bonus",
+      "bonus": "Bonuslar",
       "mixed": "Karışık",
       "free_spin": "Ücretsiz spin"
     },
     "bucket": {
       "cash": "Cash",
-      "bonus": "Bonus"
+      "bonus": "Bonuslar"
     }
   },
   "paymentInfoFields": {
@@ -464,7 +467,7 @@ export const tr: LocaleTree = {
     "noActive": "No active bonuses.",
     "availableBonuses": "Available Bonuses",
     "noAvailable": "No bonuses available at the moment.",
-    "defaultName": "Bonus",
+    "defaultName": "Bonuslar",
     "percentMatch": "{{value}}% match",
     "fixedMatch": "{{value}} fixed",
     "wageringMultiplier": "{{value}}x wagering",
@@ -500,13 +503,19 @@ export const tr: LocaleTree = {
     "showDetails": "Show message details",
     "hideDetails": "Hide message details"
   },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
+  },
   "betHistory": {
     "title": "Bet History",
     "subtitle": "Your game bets and wins by round",
     "allTransactions": "All transactions →",
     "noBets": "No bets yet. Play a game to see your history here.",
     "browseGames": "Browse games",
-    "game": "Game",
+    "game": "Oyun",
     "bet": "Bet",
     "win": "Win",
     "net": "Net",
@@ -548,14 +557,14 @@ export const tr: LocaleTree = {
     "tryAgain": "Please try again or contact support.",
     "goBack": "Go Back",
     "backToLobby": "← Back to lobby",
-    "defaultName": "Game",
+    "defaultName": "Oyun",
     "launchError": "Failed to launch game.",
     "closeWindow": "Close",
     "loginRequired": "Please log in to play."
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonuslar"
   },
   "modal": {
     "comingSoon": "Coming Soon"

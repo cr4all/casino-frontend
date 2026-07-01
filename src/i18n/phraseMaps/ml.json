@@ -428,5 +428,7 @@
   "Open": "സജീവം",
   "Pending": "തീർപ്പാക്കാത്ത",
   "Resolved": "പരിഹരിച്ചു",
-  "Closed": "അടച്ചു"
+  "Closed": "അടച്ചു",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

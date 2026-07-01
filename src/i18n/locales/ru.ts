@@ -30,6 +30,8 @@ export const ru: LocaleTree = {
     "games": "games",
     "gamesCount": "{{count}} games",
     "noLimit": "No limit",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "макс. {{amount}}",
     "notAvailable": "—",
     "minMax": "Min: {{min}} · Max: {{max}}",
@@ -68,9 +70,9 @@ export const ru: LocaleTree = {
     "balance": "Balance",
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "Support",
-    "supportTickets": "ПОДДЕРЖКА РАЗГОВОРЫ",
-    "supportTicketsLabel": "Поддержка"
+    "liveChatLabel": "Поддержка",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -120,8 +122,8 @@ export const ru: LocaleTree = {
     "slots": "Slots",
     "liveCasino": "Live Casino",
     "jackpots": "Jackpots",
-    "account": "Account",
-    "support": "Support",
+    "account": "запись",
+    "support": "Поддержка",
     "messages": "Messages",
     "tickets": "Tickets",
     "legal": "Legal",
@@ -164,7 +166,7 @@ export const ru: LocaleTree = {
   },
   "liveBetFeed": {
     "title": "Live bets",
-    "game": "Game",
+    "game": "Игра",
     "user": "User",
     "time": "Time",
     "betAmount": "Bet amount",
@@ -208,7 +210,8 @@ export const ru: LocaleTree = {
     "crypto": "Cryptocurrency",
     "crypto_payment": "Crypto Payment",
     "bank": "Bank Transfer",
-    "bank_transfer": "Bank Transfer"
+    "bank_transfer": "Bank Transfer",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Cryptocurrency",
@@ -222,7 +225,7 @@ export const ru: LocaleTree = {
     "withdraw": "Withdraw",
     "bet": "Bet",
     "win": "Win",
-    "bonus": "Bonus",
+    "bonus": "Бонус",
     "rollback": "Rollback"
   },
   "auth": {
@@ -316,7 +319,7 @@ export const ru: LocaleTree = {
     "passwordUpdateFailed": "Failed to update password.",
     "editProfile": "Edit profile",
     "quickActions": "Quick actions",
-    "account": "Account",
+    "account": "запись",
     "saveChanges": "Save Changes",
     "updateSuccess": "Profile updated successfully.",
     "updateFailed": "Failed to update profile.",
@@ -410,7 +413,7 @@ export const ru: LocaleTree = {
   },
   "wallet": {
     "cashBalance": "Cash",
-    "bonusBalance": "Bonus",
+    "bonusBalance": "Бонус",
     "totalPlayable": "Всего для игры",
     "withdrawableBalance": "Доступно к выводу",
     "withdrawableCash": "Доступные наличные",
@@ -424,13 +427,13 @@ export const ru: LocaleTree = {
     "bonusAfter": "Бонус после",
     "funding": {
       "cash": "Cash",
-      "bonus": "Bonus",
+      "bonus": "Бонус",
       "mixed": "Смешанный",
       "free_spin": "Фриспин"
     },
     "bucket": {
       "cash": "Cash",
-      "bonus": "Bonus"
+      "bonus": "Бонус"
     }
   },
   "paymentInfoFields": {
@@ -464,7 +467,7 @@ export const ru: LocaleTree = {
     "noActive": "No active bonuses.",
     "availableBonuses": "Available Bonuses",
     "noAvailable": "No bonuses available at the moment.",
-    "defaultName": "Bonus",
+    "defaultName": "Бонус",
     "percentMatch": "{{value}}% match",
     "fixedMatch": "{{value}} fixed",
     "wageringMultiplier": "{{value}}x wagering",
@@ -500,13 +503,19 @@ export const ru: LocaleTree = {
     "showDetails": "Show message details",
     "hideDetails": "Hide message details"
   },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
+  },
   "betHistory": {
     "title": "Bet History",
     "subtitle": "Your game bets and wins by round",
     "allTransactions": "All transactions →",
     "noBets": "No bets yet. Play a game to see your history here.",
     "browseGames": "Browse games",
-    "game": "Game",
+    "game": "Игра",
     "bet": "Bet",
     "win": "Win",
     "net": "Net",
@@ -548,14 +557,14 @@ export const ru: LocaleTree = {
     "tryAgain": "Please try again or contact support.",
     "goBack": "Go Back",
     "backToLobby": "← Back to lobby",
-    "defaultName": "Game",
+    "defaultName": "Игра",
     "launchError": "Failed to launch game.",
     "closeWindow": "Close",
     "loginRequired": "Please log in to play."
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Бонус"
   },
   "modal": {
     "comingSoon": "Coming Soon"

@@ -59,8 +59,8 @@ export const et: LocaleTree = {
     "gameBets": "Mängupanused",
     "history": "AJALUGU",
     "transactions": "Tehingud",
-    "notices": "TEATISED",
-    "noticesLabel": "Teatised",
+    "notices": "NOTICES",
+    "noticesLabel": "Notices",
     "bonuses": "BOONUSED",
     "bonusesLabel": "Boonused",
     "profile": "Profiil",
@@ -626,5 +626,11 @@ export const et: LocaleTree = {
       "resolved": "Lahendatud",
       "closed": "suletud"
     }
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   }
 };

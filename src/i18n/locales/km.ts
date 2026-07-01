@@ -30,6 +30,8 @@ export const km: LocaleTree = {
     "games": "ហ្គេម",
     "gamesCount": "ហ្គេម {{count}}",
     "noLimit": "គ្មានកំណត់",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "តិច​បំផុត: {{min}} · ធំ​បំផុត: {{max}}",
@@ -69,8 +71,8 @@ export const km: LocaleTree = {
     "playResponsibly": "អាយុ ១៨+ · លេងដោយមានការទទួលខុសត្រូវ",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "គាំទ្រ",
-    "supportTickets": "ជំនួយ ការសន្ទនា",
-    "supportTicketsLabel": "គាំទ្រ"
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -100,10 +102,10 @@ export const km: LocaleTree = {
     "replyPlaceholder": "វាយបញ្ចូលការឆ្លើយតបរបស់អ្នក...",
     "sendReply": "ផ្ញើ reply",
     "replyFailed": "បរាជ័យក្នុងការផ្ញើសារ។ សូមព្យាយាមម្តងទៀត។",
-    "supportTeam": "ជំនួយ",
+    "supportTeam": "គាំទ្រ",
     "you": "អ្នក",
     "categories": {
-      "account": "គណនីបច្ចុប្បន្ន",
+      "account": "គណនី",
       "payment": "ការដកប្រាក់",
       "bonus": "ប្រាក់រង្វាន់",
       "game": "ហ្គេម",
@@ -208,7 +210,8 @@ export const km: LocaleTree = {
     "crypto": "រូបិយប័ណ្ណឌីជីថល",
     "crypto_payment": "ការទូទាត់វិញ្ញាបនប័ត្រឌីជីថល",
     "bank": "ផ្ទេរប្រាក់តាមធនាគារ",
-    "bank_transfer": "ផ្ទេរប្រាក់តាមធនាគារ"
+    "bank_transfer": "ផ្ទេរប្រាក់តាមធនាគារ",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "រូបិយប័ណ្ណឌីជីថល",
@@ -499,6 +502,12 @@ export const km: LocaleTree = {
     "noMessagesHint": "ការបញ្ជាក់ការដាក់ប្រាក់ និងការជូនដំណឹងអំពីប្រាក់បញ្ជាក់នឹងបង្ហាញនៅទីនេះ។",
     "showDetails": "បង្ហាញព័ត៌មានលម្អិតសារណា",
     "hideDetails": "លាក់ព័ត៌មានលម្អិតនៃសារជូន"
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "បិទ",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   },
   "betHistory": {
     "title": "ប្រវត្តិការគប់ឆ្នោត",

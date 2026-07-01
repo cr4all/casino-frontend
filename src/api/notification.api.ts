@@ -6,6 +6,7 @@ export interface InternalMessage {
   subject: string;
   body: string;
   is_read: boolean;
+  source?: 'system' | 'announcement';
   created_at: string | null;
 }
 
@@ -53,4 +54,37 @@ export const notificationApi = {
     clearMessagesCache();
     return data.data;
   },
+
+  markAnnouncementRead: async (announcementId: number) => {
+    const { data } = await api.post<ApiResponse<{ id: number; is_read: boolean }>>(
+      `/notifications/announcements/${announcementId}/read`,
+    );
+    clearMessagesCache();
+    return data.data;
+  },
+
+  getPopups: async () => {
+    const { data } = await api.get<
+      ApiResponse<{
+        items: AnnouncementPopup[];
+      }>
+    >('/notifications/popups');
+    return data.data.items;
+  },
+
+  dismissPopup: async (popupId: number) => {
+    const { data } = await api.post<ApiResponse<{ id: number; dismissed_at: string | null }>>(
+      `/notifications/popups/${popupId}/dismiss`,
+    );
+    return data.data;
+  },
 };
+
+export interface AnnouncementPopup {
+  id: number;
+  title: string;
+  body: string;
+  starts_at: string | null;
+  ends_at: string | null;
+  published_at: string | null;
+}

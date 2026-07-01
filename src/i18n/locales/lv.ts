@@ -57,8 +57,8 @@ export const lv: LocaleTree = {
     "gameBets": "Spēļu likmes",
     "history": "VĒSTURE",
     "transactions": "Darījumi",
-    "notices": "PAZIŅOJUMI",
-    "noticesLabel": "Paziņojumi",
+    "notices": "NOTICES",
+    "noticesLabel": "Notices",
     "bonuses": "BONUSI",
     "bonusesLabel": "Bonusi",
     "profile": "Profils",
@@ -623,5 +623,11 @@ export const lv: LocaleTree = {
       "resolved": "Atrisināts",
       "closed": "slēgts"
     }
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   }
 };

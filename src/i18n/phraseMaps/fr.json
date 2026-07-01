@@ -74,5 +74,11 @@
   "Open": "Ouvert",
   "Pending": "En attente",
   "Resolved": "Résolu",
-  "Closed": "Fermé"
+  "Closed": "Fermé",
+  "NOTICES": "AVIS",
+  "Notices": "Avis",
+  "Announcement": "Annonce",
+  "Close": "Fermer",
+  "OK": "OK",
+  "Don't show again today": "Ne plus afficher aujourd'hui"
 }

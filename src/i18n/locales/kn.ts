@@ -21,15 +21,17 @@ export const kn: LocaleTree = {
     "previous": "Previous",
     "next": "Next",
     "showMore": "Show more",
-    "ok": "OK",
+    "ok": "ಸರಿ",
     "yes": "ಹೌದು",
     "no": "ಇಲ್ಲ",
-    "close": "Close",
+    "close": "ಮುಚ್ಚಿ",
     "copy": "Copy",
     "copied": "Copied",
     "games": "games",
     "gamesCount": "{{count}} games",
     "noLimit": "No limit",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Min: {{min}} · Max: {{max}}",
@@ -57,8 +59,8 @@ export const kn: LocaleTree = {
     "gameBets": "Game bets",
     "history": "HISTORY",
     "transactions": "Transactions",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "ಸೂಚನೆಗಳು",
+    "noticesLabel": "ಸೂಚನೆಗಳು",
     "bonuses": "BONUSES",
     "bonusesLabel": "Bonuses",
     "profile": "Profile",
@@ -68,9 +70,9 @@ export const kn: LocaleTree = {
     "balance": "Balance",
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "Support",
-    "supportTickets": "ಬೆಂಬಲ ಸಂಭಾಷಣೆಗಳು",
-    "supportTicketsLabel": "ಬೆಂಬಲ"
+    "liveChatLabel": "ಬೆಂಬಲ",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -120,8 +122,8 @@ export const kn: LocaleTree = {
     "slots": "Slots",
     "liveCasino": "Live Casino",
     "jackpots": "Jackpots",
-    "account": "Account",
-    "support": "Support",
+    "account": "ಖಾತೆ",
+    "support": "ಬೆಂಬಲ",
     "messages": "Messages",
     "tickets": "Tickets",
     "legal": "Legal",
@@ -164,7 +166,7 @@ export const kn: LocaleTree = {
   },
   "liveBetFeed": {
     "title": "Live bets",
-    "game": "Game",
+    "game": "ಆಟ",
     "user": "User",
     "time": "Time",
     "betAmount": "Bet amount",
@@ -208,7 +210,8 @@ export const kn: LocaleTree = {
     "crypto": "Cryptocurrency",
     "crypto_payment": "Crypto Payment",
     "bank": "Bank Transfer",
-    "bank_transfer": "Bank Transfer"
+    "bank_transfer": "Bank Transfer",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Cryptocurrency",
@@ -222,7 +225,7 @@ export const kn: LocaleTree = {
     "withdraw": "Withdraw",
     "bet": "Bet",
     "win": "Win",
-    "bonus": "Bonus",
+    "bonus": "ಬೋನಸ್",
     "rollback": "Rollback"
   },
   "auth": {
@@ -316,7 +319,7 @@ export const kn: LocaleTree = {
     "passwordUpdateFailed": "ಪಾಸ್‌ವರ್ಡ್ ಅಪ್‌ಡೇಟ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ.",
     "editProfile": "Edit profile",
     "quickActions": "Quick actions",
-    "account": "Account",
+    "account": "ಖಾತೆ",
     "saveChanges": "Save Changes",
     "updateSuccess": "Profile updated successfully.",
     "updateFailed": "Failed to update profile.",
@@ -410,7 +413,7 @@ export const kn: LocaleTree = {
   },
   "wallet": {
     "cashBalance": "Cash",
-    "bonusBalance": "Bonus",
+    "bonusBalance": "ಬೋನಸ್",
     "totalPlayable": "Total playable",
     "withdrawableBalance": "Withdrawable balance",
     "withdrawableCash": "Withdrawable cash",
@@ -424,13 +427,13 @@ export const kn: LocaleTree = {
     "bonusAfter": "Bonus after",
     "funding": {
       "cash": "Cash",
-      "bonus": "Bonus",
+      "bonus": "ಬೋನಸ್",
       "mixed": "Mixed",
       "free_spin": "Free spin"
     },
     "bucket": {
       "cash": "Cash",
-      "bonus": "Bonus"
+      "bonus": "ಬೋನಸ್"
     }
   },
   "paymentInfoFields": {
@@ -464,7 +467,7 @@ export const kn: LocaleTree = {
     "noActive": "No active bonuses.",
     "availableBonuses": "Available Bonuses",
     "noAvailable": "No bonuses available at the moment.",
-    "defaultName": "Bonus",
+    "defaultName": "ಬೋನಸ್",
     "percentMatch": "{{value}}% match",
     "fixedMatch": "{{value}} fixed",
     "wageringMultiplier": "{{value}}x wagering",
@@ -500,13 +503,19 @@ export const kn: LocaleTree = {
     "showDetails": "Show message details",
     "hideDetails": "Hide message details"
   },
+  "announcement": {
+    "popupBadge": "ಪ್ರಕಟಣೆ",
+    "popupClose": "ಮುಚ್ಚಿ",
+    "popupConfirm": "ಸರಿ",
+    "hideForToday": "ಇಂದು ಮತ್ತೆ ತೋರಿಸಬೇಡಿ"
+  },
   "betHistory": {
     "title": "Bet History",
     "subtitle": "Your game bets and wins by round",
     "allTransactions": "All transactions →",
     "noBets": "No bets yet. Play a game to see your history here.",
     "browseGames": "Browse games",
-    "game": "Game",
+    "game": "ಆಟ",
     "bet": "Bet",
     "win": "Win",
     "net": "Net",
@@ -548,14 +557,14 @@ export const kn: LocaleTree = {
     "tryAgain": "Please try again or contact support.",
     "goBack": "Go Back",
     "backToLobby": "← Back to lobby",
-    "defaultName": "Game",
+    "defaultName": "ಆಟ",
     "launchError": "Failed to launch game.",
-    "closeWindow": "Close",
+    "closeWindow": "ಮುಚ್ಚಿ",
     "loginRequired": "Please log in to play."
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "ಬೋನಸ್"
   },
   "modal": {
     "comingSoon": "Coming Soon"

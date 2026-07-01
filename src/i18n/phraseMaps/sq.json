@@ -96,5 +96,11 @@
   "Open": "Aktive",
   "Pending": "në pritje",
   "Resolved": "Zgjidhur",
-  "Closed": " e mbyllur"
+  "Closed": " e mbyllur",
+  "NOTICES": "NOTICES",
+  "Notices": "Notices",
+  "Announcement": "Announcement",
+  "Close": "Close",
+  "OK": "OK",
+  "Don't show again today": "Don't show again today"
 }

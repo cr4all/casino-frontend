@@ -427,5 +427,7 @@
   "Open": "សកម្ម",
   "Pending": "កំពុងរង់ចាំ",
   "Resolved": "បានដោះស្រាយ",
-  "Closed": "បានបិទ"
+  "Closed": "បានបិទ",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

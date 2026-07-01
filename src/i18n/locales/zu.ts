@@ -21,15 +21,17 @@ export const zu: LocaleTree = {
     "previous": "Okudlule",
     "next": "Okulandelayo",
     "showMore": "Bonisa okwengeziwe",
-    "ok": "KULUNGILE",
+    "ok": "OK",
     "yes": "Yebo",
     "no": "Cha",
-    "close": "Vala",
+    "close": "Close",
     "copy": "Phinda",
     "copied": "Kukopishiwe",
     "games": "Imidlalo",
     "gamesCount": "{{count}} imidlalo",
     "noLimit": "Awukho umkhawulo",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Ubuncane: {{imiz}} · Ubuningi: {{max}}",
@@ -57,8 +59,8 @@ export const zu: LocaleTree = {
     "gameBets": "Ukubheja kwemidlalo",
     "history": "Umlandu",
     "transactions": "Ukuthengiselana",
-    "notices": "Izaziso",
-    "noticesLabel": "Izaziso",
+    "notices": "NOTICES",
+    "noticesLabel": "Notices",
     "bonuses": "AMABHONASI",
     "bonusesLabel": "Amabhonasi",
     "profile": "Iprofayela",
@@ -68,9 +70,9 @@ export const zu: LocaleTree = {
     "balance": "_Cishebalance",
     "playResponsibly": "18+ · Dlala Ngokuzibophezela",
     "liveChat": "INGXOXO EBUKHOMA",
-    "liveChatLabel": "Support",
-    "supportTickets": "UKWESEKWA IZINGXOXO",
-    "supportTicketsLabel": "Ukwesekwa"
+    "liveChatLabel": "Ukwesekwa",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Ukuxoxa bukhoma",
@@ -120,8 +122,8 @@ export const zu: LocaleTree = {
     "slots": "Izikhala",
     "liveCasino": "Ikhasino Ebukhoma",
     "jackpots": "Ama-jackpot",
-    "account": "Account",
-    "support": "Support",
+    "account": "rekening",
+    "support": "Ukwesekwa",
     "messages": "Imiyalezo",
     "tickets": "Tickets",
     "legal": "Ezomthetho",
@@ -164,7 +166,7 @@ export const zu: LocaleTree = {
   },
   "liveBetFeed": {
     "title": "Ukubheja bukhoma",
-    "game": "Game",
+    "game": "Umdlalo",
     "user": "Umsebenzisi",
     "time": "Isikhathi",
     "betAmount": "Inani lokubheja",
@@ -208,7 +210,8 @@ export const zu: LocaleTree = {
     "crypto": "I-Cryptocurrency",
     "crypto_payment": "Inkokhelo ye-Crypto",
     "bank": "Ukudluliswa Kwebhange",
-    "bank_transfer": "Ukudluliswa Kwebhange"
+    "bank_transfer": "Ukudluliswa Kwebhange",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "I-Cryptocurrency",
@@ -222,7 +225,7 @@ export const zu: LocaleTree = {
     "withdraw": "Hoxisa",
     "bet": "Ukubheja",
     "win": "nqoba",
-    "bonus": "Bonus",
+    "bonus": "Ibhonasi",
     "rollback": "I-Rollback"
   },
   "auth": {
@@ -316,7 +319,7 @@ export const zu: LocaleTree = {
     "passwordUpdateFailed": "Yehlulekile ukubuyekeza iphasiwedi.",
     "editProfile": "Hlela iphrofayela",
     "quickActions": "Izenzo ezisheshayo",
-    "account": "Account",
+    "account": "rekening",
     "saveChanges": "Londoloza Izinguquko",
     "updateSuccess": "Iphrofayili ibuyekezwe ngempumelelo.",
     "updateFailed": "Yehlulekile ukubuyekeza iphrofayela.",
@@ -410,7 +413,7 @@ export const zu: LocaleTree = {
   },
   "wallet": {
     "cashBalance": "Cash",
-    "bonusBalance": "Bonus",
+    "bonusBalance": "Ibhonasi",
     "totalPlayable": "Total playable",
     "withdrawableBalance": "Withdrawable balance",
     "withdrawableCash": "Withdrawable cash",
@@ -424,13 +427,13 @@ export const zu: LocaleTree = {
     "bonusAfter": "Bonus after",
     "funding": {
       "cash": "Cash",
-      "bonus": "Bonus",
+      "bonus": "Ibhonasi",
       "mixed": "Mixed",
       "free_spin": "Free spin"
     },
     "bucket": {
       "cash": "Cash",
-      "bonus": "Bonus"
+      "bonus": "Ibhonasi"
     }
   },
   "paymentInfoFields": {
@@ -464,7 +467,7 @@ export const zu: LocaleTree = {
     "noActive": "Awekho amabhonasi asebenzayo.",
     "availableBonuses": "Amabhonasi Atholakalayo",
     "noAvailable": "Awekho amabhonasi atholakalayo okwamanje.",
-    "defaultName": "Bonus",
+    "defaultName": "Ibhonasi",
     "percentMatch": "{{value}}% okufanayo",
     "fixedMatch": "{{value}} ilungisiwe",
     "wageringMultiplier": "{{value}}x ukubheja",
@@ -500,13 +503,19 @@ export const zu: LocaleTree = {
     "showDetails": "Bonisa imininingwane yomlayezo",
     "hideDetails": "Fihla imininingwane yomlayezo"
   },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
+  },
   "betHistory": {
     "title": "Umlando Wokubheja",
     "subtitle": "Umdlalo wakho uyabheja futhi uwine ngomzuliswano",
     "allTransactions": "Konke ukuthengiselana →",
     "noBets": "Akukho ukubheja okwamanje. Dlala umdlalo ukuze ubone umlando wakho lapha.",
     "browseGames": "Phequlula imidlalo",
-    "game": "Game",
+    "game": "Umdlalo",
     "bet": "Ukubheja",
     "win": "nqoba",
     "net": "Inetha",
@@ -548,14 +557,14 @@ export const zu: LocaleTree = {
     "tryAgain": "Sicela uzame futhi noma uthintane nosizo.",
     "goBack": "Hlehla",
     "backToLobby": "← Buyela endaweni yokwamukela izivakashi",
-    "defaultName": "Game",
+    "defaultName": "Umdlalo",
     "launchError": "Yehlulekile ukuqalisa igeyimu.",
-    "closeWindow": "Vala",
+    "closeWindow": "Close",
     "loginRequired": "Sicela ungene ukuze udlale."
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Ibhonasi"
   },
   "modal": {
     "comingSoon": "Iyeza Maduzane"

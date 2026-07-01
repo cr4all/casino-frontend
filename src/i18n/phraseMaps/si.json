@@ -408,5 +408,7 @@
   "Open": "সক্রিয়",
   "Pending": "মুলতুবি",
   "Resolved": "විසඳා ඇත",
-  "Closed": "বন্ধ"
+  "Closed": "বন্ধ",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

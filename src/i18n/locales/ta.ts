@@ -30,6 +30,8 @@ export const ta: LocaleTree = {
     "games": "games",
     "gamesCount": "{{count}} games",
     "noLimit": "No limit",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Min: {{min}} · Max: {{max}}",
@@ -68,9 +70,9 @@ export const ta: LocaleTree = {
     "balance": "Balance",
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "Support",
-    "supportTickets": "ஆதரவு உரையாடல்கள்",
-    "supportTicketsLabel": "ஆதரவு"
+    "liveChatLabel": "ஆதரவு",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -120,8 +122,8 @@ export const ta: LocaleTree = {
     "slots": "Slots",
     "liveCasino": "Live Casino",
     "jackpots": "Jackpots",
-    "account": "Account",
-    "support": "Support",
+    "account": "खाता",
+    "support": "ஆதரவு",
     "messages": "Messages",
     "tickets": "Tickets",
     "legal": "Legal",
@@ -164,7 +166,7 @@ export const ta: LocaleTree = {
   },
   "liveBetFeed": {
     "title": "Live bets",
-    "game": "Game",
+    "game": "விளையாட்டு",
     "user": "User",
     "time": "Time",
     "betAmount": "Bet amount",
@@ -208,7 +210,8 @@ export const ta: LocaleTree = {
     "crypto": "Cryptocurrency",
     "crypto_payment": "Crypto Payment",
     "bank": "Bank Transfer",
-    "bank_transfer": "Bank Transfer"
+    "bank_transfer": "Bank Transfer",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Cryptocurrency",
@@ -222,7 +225,7 @@ export const ta: LocaleTree = {
     "withdraw": "Withdraw",
     "bet": "Bet",
     "win": "Win",
-    "bonus": "Bonus",
+    "bonus": "போனஸ்",
     "rollback": "Rollback"
   },
   "auth": {
@@ -316,7 +319,7 @@ export const ta: LocaleTree = {
     "passwordUpdateFailed": "Failed to update password.",
     "editProfile": "Edit profile",
     "quickActions": "Quick actions",
-    "account": "Account",
+    "account": "खाता",
     "saveChanges": "Save Changes",
     "updateSuccess": "Profile updated successfully.",
     "updateFailed": "Failed to update profile.",
@@ -410,7 +413,7 @@ export const ta: LocaleTree = {
   },
   "wallet": {
     "cashBalance": "Cash",
-    "bonusBalance": "Bonus",
+    "bonusBalance": "போனஸ்",
     "totalPlayable": "Total playable",
     "withdrawableBalance": "Withdrawable balance",
     "withdrawableCash": "Withdrawable cash",
@@ -424,13 +427,13 @@ export const ta: LocaleTree = {
     "bonusAfter": "Bonus after",
     "funding": {
       "cash": "Cash",
-      "bonus": "Bonus",
+      "bonus": "போனஸ்",
       "mixed": "Mixed",
       "free_spin": "Free spin"
     },
     "bucket": {
       "cash": "Cash",
-      "bonus": "Bonus"
+      "bonus": "போனஸ்"
     }
   },
   "paymentInfoFields": {
@@ -464,7 +467,7 @@ export const ta: LocaleTree = {
     "noActive": "No active bonuses.",
     "availableBonuses": "Available Bonuses",
     "noAvailable": "No bonuses available at the moment.",
-    "defaultName": "Bonus",
+    "defaultName": "போனஸ்",
     "percentMatch": "{{value}}% match",
     "fixedMatch": "{{value}} fixed",
     "wageringMultiplier": "{{value}}x wagering",
@@ -500,13 +503,19 @@ export const ta: LocaleTree = {
     "showDetails": "Show message details",
     "hideDetails": "Hide message details"
   },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
+  },
   "betHistory": {
     "title": "Bet History",
     "subtitle": "Your game bets and wins by round",
     "allTransactions": "All transactions →",
     "noBets": "No bets yet. Play a game to see your history here.",
     "browseGames": "Browse games",
-    "game": "Game",
+    "game": "விளையாட்டு",
     "bet": "Bet",
     "win": "Win",
     "net": "Net",
@@ -548,14 +557,14 @@ export const ta: LocaleTree = {
     "tryAgain": "Please try again or contact support.",
     "goBack": "Go Back",
     "backToLobby": "← Back to lobby",
-    "defaultName": "Game",
+    "defaultName": "விளையாட்டு",
     "launchError": "Failed to launch game.",
     "closeWindow": "Close",
     "loginRequired": "Please log in to play."
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "போனஸ்"
   },
   "modal": {
     "comingSoon": "Coming Soon"

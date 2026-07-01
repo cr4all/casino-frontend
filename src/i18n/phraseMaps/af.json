@@ -317,8 +317,8 @@
   "DEPOSIT": "bankbesonderhede",
   "Deposit": "Deposito",
   "HISTORY": "Geskiedenis",
-  "NOTICES": "Kennisgewings",
-  "Notices": "Kennisgewings",
+  "NOTICES": "NOTICES",
+  "Notices": "Notices",
   "BONUSES": "Bonusse",
   "Bonuses": "Bonusse",
   "Profile": "Profiel",
@@ -351,7 +351,7 @@
   "closed": "gesluit",
   "Player": "Speler",
   "Hybrid": "Hibriede",
-  "Close": "Maak toe",
+  "Close": "Close",
   "games": "televisie program",
   "Login": "Meld aan",
   "Slots": "Slaan uit Teks",
@@ -466,5 +466,7 @@
   "Account number": "Rekeningnommer",
   "Wallet address": "Beursie adres",
   "Account / wallet ID": "Rekening /beursie-ID",
-  "Bank account": "Bankrekening"
+  "Bank account": "Bankrekening",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

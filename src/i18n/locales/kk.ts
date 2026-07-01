@@ -30,6 +30,8 @@ export const kk: LocaleTree = {
     "games": "ойындар",
     "gamesCount": "{{count}} ойындар",
     "noLimit": "Шектеусіз",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Мин: {{min}} · Макс: {{max}}",
@@ -69,8 +71,8 @@ export const kk: LocaleTree = {
     "playResponsibly": "18+ · Жауапты ойнаңыз",
     "liveChat": "LIVE ЧАТ",
     "liveChatLabel": "Қолдау",
-    "supportTickets": "ҚОЛДАУ СӨЙЛЕСУЛЕР",
-    "supportTicketsLabel": "Қолдау"
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live чат",
@@ -103,7 +105,7 @@ export const kk: LocaleTree = {
     "supportTeam": "Қолдау",
     "you": "Сіз",
     "categories": {
-      "account": "тіркелгі",
+      "account": "Аккаунт",
       "payment": "Шығарып алу",
       "bonus": "Бонус",
       "game": "Ойын",
@@ -208,7 +210,8 @@ export const kk: LocaleTree = {
     "crypto": "Криптовалюта",
     "crypto_payment": "Крипто төлем",
     "bank": "Банктік аударым",
-    "bank_transfer": "Банктік аударым"
+    "bank_transfer": "Банктік аударым",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Криптовалюта",
@@ -499,6 +502,12 @@ export const kk: LocaleTree = {
     "noMessagesHint": "Мұнда депозиттік растаулар мен бонустық хабарландырулар пайда болады.",
     "showDetails": "Хабарламаның егжей- тегж",
     "hideDetails": "Хабарламаның егжей- тегжейін жас"
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Жабу",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   },
   "betHistory": {
     "title": "Ставкалар тарихы",

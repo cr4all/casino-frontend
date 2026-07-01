@@ -158,5 +158,11 @@
   "Open": "सक्रिय",
   "Pending": "நிலுவையில்",
   "Resolved": "தீர்வு காணப்பட்டது",
-  "Closed": "மூடப்பட்டது"
+  "Closed": "மூடப்பட்டது",
+  "NOTICES": "NOTICES",
+  "Notices": "Notices",
+  "Announcement": "Announcement",
+  "Close": "Close",
+  "OK": "OK",
+  "Don't show again today": "Don't show again today"
 }

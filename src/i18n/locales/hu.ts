@@ -59,8 +59,8 @@ export const hu: LocaleTree = {
     "gameBets": "Játék fogadások",
     "history": "ELŐZMÉNYEK",
     "transactions": "Tranzakciók",
-    "notices": "ÉRTESÍTÉSEK",
-    "noticesLabel": "Értesítések",
+    "notices": "NOTICES",
+    "noticesLabel": "Notices",
     "bonuses": "BÓNUSZOK",
     "bonusesLabel": "Bónuszok",
     "profile": "Profil",
@@ -626,5 +626,11 @@ export const hu: LocaleTree = {
       "resolved": "Megoldva",
       "closed": "lezárva"
     }
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   }
 };

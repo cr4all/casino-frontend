@@ -24,12 +24,14 @@ export const bg: LocaleTree = {
     "ok": "OK",
     "yes": "Да",
     "no": "Не",
-    "close": "Затваряне",
+    "close": "Close",
     "copy": "Копиране",
     "copied": "Копирано",
     "games": "гри",
     "gamesCount": "{{count}} игри",
     "noLimit": "Без ограничение",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Мин: {{min}} · Макс: {{max}}",
@@ -44,9 +46,7 @@ export const bg: LocaleTree = {
     "fieldPasswordMismatch": "Паролите не съответстват.",
     "fieldSelectRequired": "Изберете",
     "fieldCodeInvalid": "Моля, въведете 6 - цифрения код за потвърждение.",
-    "language": "език",
-    "minLabel": "Min",
-    "maxLabel": "Max"
+    "language": "език"
   },
   "nav": {
     "allGames": "ВСИЧКИ ИГРИ",
@@ -59,8 +59,8 @@ export const bg: LocaleTree = {
     "gameBets": "Залози на игри",
     "history": "ИСТОРИЯ",
     "transactions": "Транзакции",
-    "notices": "СЪОБЩЕНИЯ",
-    "noticesLabel": "Забележки",
+    "notices": "NOTICES",
+    "noticesLabel": "Notices",
     "bonuses": "БОНУСИ",
     "bonusesLabel": "Бонуси",
     "profile": "Профил",
@@ -70,9 +70,9 @@ export const bg: LocaleTree = {
     "balance": "Баланс",
     "playResponsibly": "18+ · Играйте отговорно",
     "liveChat": "ЧАТ НА ЖИВО",
-    "liveChatLabel": "Support",
-    "supportTickets": "ПОДДРЪЖКА РАЗГОВОРИ",
-    "supportTicketsLabel": "Поддръжка"
+    "liveChatLabel": "Поддръжка",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Чат на живо",
@@ -122,8 +122,8 @@ export const bg: LocaleTree = {
     "slots": "Слотове",
     "liveCasino": "Казино на живо",
     "jackpots": "Джакпоти",
-    "account": "Account",
-    "support": "Support",
+    "account": "акаунт",
+    "support": "Поддръжка",
     "messages": "Съобщения",
     "tickets": "Tickets",
     "legal": "Правен ",
@@ -166,7 +166,7 @@ export const bg: LocaleTree = {
   },
   "liveBetFeed": {
     "title": "Залози на живо",
-    "game": "Game",
+    "game": "Игра",
     "user": "Потребител",
     "time": "Време",
     "betAmount": "Сума на залога",
@@ -225,7 +225,7 @@ export const bg: LocaleTree = {
     "withdraw": "Оттегляне",
     "bet": "TUN",
     "win": "Победа",
-    "bonus": "Bonus",
+    "bonus": "Бонус",
     "rollback": "Връщане назад"
   },
   "auth": {
@@ -319,7 +319,7 @@ export const bg: LocaleTree = {
     "passwordUpdateFailed": "Актуализирането на паролата не бе успешно.",
     "editProfile": "Редактиране на профил",
     "quickActions": "Бързи действия",
-    "account": "Account",
+    "account": "акаунт",
     "saveChanges": "Запазване на промените",
     "updateSuccess": "Профилът е актуализиран успешно.",
     "updateFailed": "Актуализирането на профила не бе успешно.",
@@ -413,7 +413,7 @@ export const bg: LocaleTree = {
   },
   "wallet": {
     "cashBalance": "Cash",
-    "bonusBalance": "Bonus",
+    "bonusBalance": "Бонус",
     "totalPlayable": "Total playable",
     "withdrawableBalance": "Withdrawable balance",
     "withdrawableCash": "Withdrawable cash",
@@ -427,13 +427,13 @@ export const bg: LocaleTree = {
     "bonusAfter": "Bonus after",
     "funding": {
       "cash": "Cash",
-      "bonus": "Bonus",
+      "bonus": "Бонус",
       "mixed": "Mixed",
       "free_spin": "Free spin"
     },
     "bucket": {
       "cash": "Cash",
-      "bonus": "Bonus"
+      "bonus": "Бонус"
     }
   },
   "paymentInfoFields": {
@@ -467,7 +467,7 @@ export const bg: LocaleTree = {
     "noActive": "Няма активни бонуси.",
     "availableBonuses": "Налични бонуси",
     "noAvailable": "В момента няма налични бонуси.",
-    "defaultName": "Bonus",
+    "defaultName": "Бонус",
     "percentMatch": "{{value}}% съвпадение",
     "fixedMatch": "{{value}} фиксирано",
     "wageringMultiplier": "{{value}}x залог",
@@ -503,13 +503,19 @@ export const bg: LocaleTree = {
     "showDetails": "Покажи детайли на съобщението",
     "hideDetails": "Скрий детайли на съобщението"
   },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
+  },
   "betHistory": {
     "title": "История на залозите",
     "subtitle": "Вашите залози и печалби по рунд",
     "allTransactions": "Всички транзакции →",
     "noBets": "Все още няма залози. Играйте игра, за да видите историята си тук.",
     "browseGames": "Преглед на игри",
-    "game": "Game",
+    "game": "Игра",
     "bet": "TUN",
     "win": "Победа",
     "net": "Нетно",
@@ -551,14 +557,14 @@ export const bg: LocaleTree = {
     "tryAgain": "Моля, опитайте отново или се свържете с поддръжката.",
     "goBack": "Иди назад",
     "backToLobby": "← Назад към лобито",
-    "defaultName": "Game",
+    "defaultName": "Игра",
     "launchError": "Стартирането на играта не бе успешно.",
-    "closeWindow": "Затваряне",
+    "closeWindow": "Close",
     "loginRequired": "Моля, влезте, за да играете."
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Бонус"
   },
   "modal": {
     "comingSoon": "Очаквайте скоро"

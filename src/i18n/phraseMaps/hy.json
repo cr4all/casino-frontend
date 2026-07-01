@@ -424,5 +424,7 @@
   "Open": "Ակտիվ",
   "Pending": "սպասման",
   "Resolved": "Լուծված",
-  "Closed": "փակված"
+  "Closed": "փակված",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

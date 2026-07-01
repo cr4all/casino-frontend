@@ -30,6 +30,8 @@ export const az: LocaleTree = {
     "games": "oyunlar",
     "gamesCount": "{{count}} oyun",
     "noLimit": "Limit yoxdur",
+    "minLabel": "Aşağı",
+    "maxLabel": "Yuxarı",
     "maxOnly": "maksimum {{məbləğ}}",
     "notAvailable": "—",
     "minMax": "Min: {{min}} · Maks: {{max}}",
@@ -44,9 +46,7 @@ export const az: LocaleTree = {
     "fieldPasswordMismatch": "Şifrələr uyğun gəlmir.",
     "fieldSelectRequired": "-- Seçin --",
     "fieldCodeInvalid": "6 rəqəmli təsdiqləmə kodunu daxil edin.",
-    "language": "Dil",
-    "minLabel": "Aşağı",
-    "maxLabel": "Yuxarı"
+    "language": "Dil"
   },
   "nav": {
     "allGames": "BÜTÜN OYUNLAR",
@@ -59,7 +59,7 @@ export const az: LocaleTree = {
     "gameBets": "Oyun mərcləri",
     "history": "TARİX",
     "transactions": "Əməliyyatlar",
-    "notices": "XƏBƏRDARLIQLAR",
+    "notices": "Bildirişlər",
     "noticesLabel": "Bildirişlər",
     "bonuses": "BONUSLAR",
     "bonusesLabel": "Bonuslar",
@@ -70,9 +70,9 @@ export const az: LocaleTree = {
     "balance": "Balans",
     "playResponsibly": "18+ · Məsuliyyətlə oynayın",
     "liveChat": "CANLI SAHİB",
-    "liveChatLabel": "Support",
-    "supportTickets": "DƏSTƏK SÖHBƏTLƏR",
-    "supportTicketsLabel": "Dəstək"
+    "liveChatLabel": "Dəstək",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Canlı Söhbət",
@@ -107,7 +107,7 @@ export const az: LocaleTree = {
     "categories": {
       "account": "hesab",
       "payment": "Çıxarmalar",
-      "bonus": "Bonuslar",
+      "bonus": "Bonus",
       "game": "Oyun",
       "other": "Other"
     },
@@ -122,8 +122,8 @@ export const az: LocaleTree = {
     "slots": "Slotlar",
     "liveCasino": "Canlı Casino",
     "jackpots": "Cekpotlar",
-    "account": "Account",
-    "support": "Support",
+    "account": "hesab",
+    "support": "Dəstək",
     "messages": "Mesajlar",
     "tickets": "Tickets",
     "legal": "Hüquqi",
@@ -166,7 +166,7 @@ export const az: LocaleTree = {
   },
   "liveBetFeed": {
     "title": "Canlı mərclər",
-    "game": "Game",
+    "game": "Oyun",
     "user": "İstifadəçi",
     "time": "Zaman",
     "betAmount": "Mərc məbləği",
@@ -319,7 +319,7 @@ export const az: LocaleTree = {
     "passwordUpdateFailed": "Parol yenilənə bilmədi.",
     "editProfile": "Profili redaktə edin",
     "quickActions": "Sürətli hərəkətlər",
-    "account": "Account",
+    "account": "hesab",
     "saveChanges": "Dəyişiklikləri Saxla",
     "updateSuccess": "Profil uğurla yeniləndi.",
     "updateFailed": "Profil yenilənə bilmədi.",
@@ -353,7 +353,7 @@ export const az: LocaleTree = {
     "paymentMethod": "Ödəniş metodu",
     "localCountryLabel": "Ödəniş ölkəsi",
     "selectLocalCountry": "Davam etmək üçün ödəniş ölkəsini seçin.",
-    "localCountryOption": "{{name}} ({{valyuta}})",
+    "localCountryOption": "{{name}} ({{currency}})",
     "cryptocurrency": "Kriptovalyuta",
     "currency": "Valyuta",
     "searchCurrency": "Valyuta yazın",
@@ -503,13 +503,19 @@ export const az: LocaleTree = {
     "showDetails": "Mesaj detallarını göstər",
     "hideDetails": "Mesaj detallarını gizlət"
   },
+  "announcement": {
+    "popupBadge": "Bildiriş",
+    "popupClose": "Bağla",
+    "popupConfirm": "Ok",
+    "hideForToday": "Bu gün bir daha göstərməyin"
+  },
   "betHistory": {
     "title": "Mərc Tarixi",
     "subtitle": "Raund üzrə oyun mərcləriniz və qazanclarınız",
     "allTransactions": "Bütün əməliyyatlar →",
     "noBets": "Hələ mərc yoxdur. Tarixçənizi görmək üçün oyun oynayın.",
     "browseGames": "Oyunları nəzərdən keçirin",
-    "game": "Game",
+    "game": "Oyun",
     "bet": "mərc",
     "win": "qalib gəlmək",
     "net": "Xalis",
@@ -551,7 +557,7 @@ export const az: LocaleTree = {
     "tryAgain": "Zəhmət olmasa yenidən cəhd edin və ya dəstəklə əlaqə saxlayın.",
     "goBack": "Geri qayıt",
     "backToLobby": "← Lobbiyə qayıt",
-    "defaultName": "Game",
+    "defaultName": "Oyun",
     "launchError": "Oyun başladıla bilmədi.",
     "closeWindow": "Bağla",
     "loginRequired": "Oynamaq üçün daxil olun."

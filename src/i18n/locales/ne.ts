@@ -21,15 +21,17 @@ export const ne: LocaleTree = {
     "previous": "यसबाट फिल्टर गरिएको",
     "next": "अर्को",
     "showMore": "धेरै देखाउनुहोस्",
-    "ok": "ठिक छ",
+    "ok": "OK",
     "yes": "हो",
     "no": "होइन",
-    "close": "बन्द गर्नुहोस्",
+    "close": "Close",
     "copy": "सार्नुहोस्",
     "copied": "कपी गरियो",
     "games": "खेल",
     "gamesCount": "{{count}} खेलहरू",
     "noLimit": "सिमा छैन",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "न्यूनतम: {{min}} · अधिकतम: {{max}}",
@@ -57,8 +59,8 @@ export const ne: LocaleTree = {
     "gameBets": "खेल बाजी",
     "history": "इतिहास",
     "transactions": "कारोवार",
-    "notices": "सूचनाहरू",
-    "noticesLabel": "सूचनाहरू",
+    "notices": "NOTICES",
+    "noticesLabel": "Notices",
     "bonuses": "बोनसहरू",
     "bonusesLabel": "बोनसहरू",
     "profile": "प्रोफाइल",
@@ -68,9 +70,9 @@ export const ne: LocaleTree = {
     "balance": "विवरण",
     "playResponsibly": "18+ · जिम्मेवारीपूर्वक खेल्नुहोस्",
     "liveChat": "प्रत्यक्ष कुराकानी",
-    "liveChatLabel": "Support",
-    "supportTickets": "सहायता कुराकानीहरू",
-    "supportTicketsLabel": "सहायता"
+    "liveChatLabel": "सहायता",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "प्रत्यक्ष कुराकानी",
@@ -120,8 +122,8 @@ export const ne: LocaleTree = {
     "slots": "स्लटहरू",
     "liveCasino": "प्रत्यक्ष क्यासिनो",
     "jackpots": "Jackpots",
-    "account": "Account",
-    "support": "Support",
+    "account": "खाता",
+    "support": "सहायता",
     "messages": "सन्देशहरू",
     "tickets": "Tickets",
     "legal": "कानुनी",
@@ -164,7 +166,7 @@ export const ne: LocaleTree = {
   },
   "liveBetFeed": {
     "title": "प्रत्यक्ष बाजी",
-    "game": "Game",
+    "game": "गेम",
     "user": "प्रयोगकर्ता",
     "time": "समय",
     "betAmount": "शर्त रकम",
@@ -208,7 +210,8 @@ export const ne: LocaleTree = {
     "crypto": "क्रिप्टोकरेन्सी",
     "crypto_payment": "क्रिप्टो भुक्तानी",
     "bank": "बैंक रकमान्तर",
-    "bank_transfer": "बैंक रकमान्तर"
+    "bank_transfer": "बैंक रकमान्तर",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "क्रिप्टोकरेन्सी",
@@ -222,7 +225,7 @@ export const ne: LocaleTree = {
     "withdraw": "(फिर्ता लिनुहोस् ।)",
     "bet": "बाजी",
     "win": "विजयी",
-    "bonus": "Bonus",
+    "bonus": "बोनस",
     "rollback": "रोलब्याक"
   },
   "auth": {
@@ -316,7 +319,7 @@ export const ne: LocaleTree = {
     "passwordUpdateFailed": "पासवर्ड अद्यावधिक गर्न असफल भयो ।",
     "editProfile": "प्रोफाइल सम्पादन गर",
     "quickActions": "द्रुत कार्यहरू",
-    "account": "Account",
+    "account": "खाता",
     "saveChanges": "परिवर्तनहरू सुरक्षित गर्नुहोस",
     "updateSuccess": "प्रोफाइल सफलतापूर्वक अद्यावधिक गरियो!",
     "updateFailed": "प्रोफाइल अद्यावधिक गर्न असफल भयो ।",
@@ -410,7 +413,7 @@ export const ne: LocaleTree = {
   },
   "wallet": {
     "cashBalance": "Cash",
-    "bonusBalance": "Bonus",
+    "bonusBalance": "बोनस",
     "totalPlayable": "Total playable",
     "withdrawableBalance": "Withdrawable balance",
     "withdrawableCash": "Withdrawable cash",
@@ -424,13 +427,13 @@ export const ne: LocaleTree = {
     "bonusAfter": "Bonus after",
     "funding": {
       "cash": "Cash",
-      "bonus": "Bonus",
+      "bonus": "बोनस",
       "mixed": "Mixed",
       "free_spin": "Free spin"
     },
     "bucket": {
       "cash": "Cash",
-      "bonus": "Bonus"
+      "bonus": "बोनस"
     }
   },
   "paymentInfoFields": {
@@ -464,7 +467,7 @@ export const ne: LocaleTree = {
     "noActive": "कुनै सक्रिय बोनस छैन ।",
     "availableBonuses": "उपलब्ध बोनसहरू",
     "noAvailable": "हाल कुनै बोनस उपलब्ध छैन ।",
-    "defaultName": "Bonus",
+    "defaultName": "बोनस",
     "percentMatch": "{{value }}% मिलान",
     "fixedMatch": "{{value}} स्थिर",
     "wageringMultiplier": "{{value}}x wagering",
@@ -500,13 +503,19 @@ export const ne: LocaleTree = {
     "showDetails": "सन्देश विवरण देखाउनुहोस्",
     "hideDetails": "सन्देश विवरण लुकाउनुहोस्"
   },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
+  },
   "betHistory": {
     "title": "बेट इतिहास",
     "subtitle": "तपाईंको खेल बाजी लगाउँछ र राउन्डमा जित्छ",
     "allTransactions": "सबै कारोबारहरू →",
     "noBets": "अहिलेसम्म कुनै बाजी छैन । यहाँ आफ्नो इतिहास हेर्नको लागि खेल खेल्नुहोस् ।",
     "browseGames": "खेलहरू ब्राउज गर्नुहोस्",
-    "game": "Game",
+    "game": "गेम",
     "bet": "बाजी",
     "win": "विजयी",
     "net": "nonet",
@@ -548,14 +557,14 @@ export const ne: LocaleTree = {
     "tryAgain": "कृपया फेरि प्रयास गर्नुहोस् वा सहायतालाई सम्पर्क गर्नुहोस् ।",
     "goBack": "जगेडा",
     "backToLobby": "लबीमा ← फर्कनुहोस्",
-    "defaultName": "Game",
+    "defaultName": "गेम",
     "launchError": "खेल सुरु गर्न असफल भयो ।",
-    "closeWindow": "बन्द गर्नुहोस्",
+    "closeWindow": "Close",
     "loginRequired": "कृपया खेल्न लग इन गर्नुहोस् ।"
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "बोनस"
   },
   "modal": {
     "comingSoon": "चाँडै आउँदै छ"

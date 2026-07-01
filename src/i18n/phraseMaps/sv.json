@@ -408,5 +408,7 @@
   "Open": "Aktiv",
   "Pending": "väntande",
   "Resolved": "Löst",
-  "Closed": "stängd"
+  "Closed": "stängd",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

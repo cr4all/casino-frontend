@@ -408,5 +408,7 @@
   "Open": "Aktif",
   "Pending": "beklemede",
   "Resolved": "Hal qilindi",
-  "Closed": "kapalı"
+  "Closed": "kapalı",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

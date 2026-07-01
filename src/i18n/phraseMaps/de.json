@@ -74,5 +74,11 @@
   "Open": "Offen",
   "Pending": "Ausstehend",
   "Resolved": "Gelöst",
-  "Closed": "Geschlossen"
+  "Closed": "Geschlossen",
+  "NOTICES": "MITTEILUNGEN",
+  "Notices": "Hinweise",
+  "Announcement": "Mitteilung",
+  "Close": "Schließen",
+  "OK": "OK",
+  "Don't show again today": "Heute nicht mehr anzeigen"
 }

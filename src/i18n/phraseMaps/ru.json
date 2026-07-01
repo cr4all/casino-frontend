@@ -74,5 +74,11 @@
   "Open": "Активна",
   "Pending": "ожидает",
   "Resolved": "Решено",
-  "Closed": "закрыто"
+  "Closed": "закрыто",
+  "NOTICES": "NOTICES",
+  "Notices": "Notices",
+  "Announcement": "Announcement",
+  "Close": "Close",
+  "OK": "OK",
+  "Don't show again today": "Don't show again today"
 }

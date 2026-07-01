@@ -24,12 +24,14 @@ export const af: LocaleTree = {
     "ok": "OK",
     "yes": "Ja",
     "no": "Wees 'n goeie kind",
-    "close": "Maak toe",
+    "close": "Close",
     "copy": "Kopie",
     "copied": "Afgerolde",
     "games": "televisie program",
     "gamesCount": "{{count}} speletjies",
     "noLimit": "Geen limiet",
+    "minLabel": "Min",
+    "maxLabel": "Maks",
     "maxOnly": "maksimum {{amount}}",
     "notAvailable": "—",
     "minMax": "Min: {{min}} · Max: {{max}}",
@@ -44,9 +46,7 @@ export const af: LocaleTree = {
     "fieldPasswordMismatch": "Wagwoorde stem nie ooreen nie.",
     "fieldSelectRequired": "Selekteer asseblief",
     "fieldCodeInvalid": "Voer asseblief die 6-syfer-verifikasiekode in.",
-    "language": "taal",
-    "minLabel": "Min",
-    "maxLabel": "Maks"
+    "language": "taal"
   },
   "nav": {
     "allGames": "Alle speletjies",
@@ -59,8 +59,8 @@ export const af: LocaleTree = {
     "gameBets": "Spelweddenskappe",
     "history": "Geskiedenis",
     "transactions": "Transaksies",
-    "notices": "Kennisgewings",
-    "noticesLabel": "Kennisgewings",
+    "notices": "NOTICES",
+    "noticesLabel": "Notices",
     "bonuses": "Bonusse",
     "bonusesLabel": "Bonusse",
     "profile": "Profiel",
@@ -70,9 +70,9 @@ export const af: LocaleTree = {
     "balance": "Balans",
     "playResponsibly": "18+ - Speel verantwoord",
     "liveChat": "Regstreekse klets",
-    "liveChatLabel": "Support",
-    "supportTickets": "ONDERSTEUNING TICKETS",
-    "supportTicketsLabel": "Ondersteuning"
+    "liveChatLabel": "Ondersteuning",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -122,8 +122,8 @@ export const af: LocaleTree = {
     "slots": "Slaan uit Teks",
     "liveCasino": "Live Casino",
     "jackpots": "Boerpot",
-    "account": "Account",
-    "support": "Support",
+    "account": "rekening",
+    "support": "Ondersteuning",
     "messages": "Boodskappe",
     "tickets": "Tickets",
     "legal": "Reg",
@@ -166,7 +166,7 @@ export const af: LocaleTree = {
   },
   "liveBetFeed": {
     "title": "Regstreekse weddenskappe",
-    "game": "Game",
+    "game": "Spel",
     "user": "Gebruiker",
     "time": "Tyd",
     "betAmount": "Bet bedrag",
@@ -225,7 +225,7 @@ export const af: LocaleTree = {
     "withdraw": "Onttrek",
     "bet": "Wette",
     "win": "Win win",
-    "bonus": "Bonus",
+    "bonus": "Bonuss",
     "rollback": "Terugrol"
   },
   "auth": {
@@ -319,7 +319,7 @@ export const af: LocaleTree = {
     "passwordUpdateFailed": "Kon nie wagwoord opdateer nie.",
     "editProfile": " Vim Kleure",
     "quickActions": "Vinnige Aksies",
-    "account": "Account",
+    "account": "rekening",
     "saveChanges": "Stoor veranderinge",
     "updateSuccess": "Profiel suksesvol opgedateer.",
     "updateFailed": "Kon nie profiel opdateer nie.",
@@ -413,7 +413,7 @@ export const af: LocaleTree = {
   },
   "wallet": {
     "cashBalance": "Kontant",
-    "bonusBalance": "Bonus",
+    "bonusBalance": "Bonuss",
     "totalPlayable": "Totaal speelbaar",
     "withdrawableBalance": "Onttrekbare balans",
     "withdrawableCash": "Onttrekbare kontant",
@@ -427,13 +427,13 @@ export const af: LocaleTree = {
     "bonusAfter": "Bonus na",
     "funding": {
       "cash": "Kontant",
-      "bonus": "Bonus",
+      "bonus": "Bonuss",
       "mixed": "Gemengde",
       "free_spin": "Gratis draai"
     },
     "bucket": {
       "cash": "Kontant",
-      "bonus": "Bonus"
+      "bonus": "Bonuss"
     }
   },
   "paymentInfoFields": {
@@ -467,7 +467,7 @@ export const af: LocaleTree = {
     "noActive": "Geen aktiewe bonusse nie.",
     "availableBonuses": "Beskikbare Bonusse",
     "noAvailable": "Geen bonusse is op die oomblik beskikbaar nie.",
-    "defaultName": "Bonus",
+    "defaultName": "Bonuss",
     "percentMatch": "{{value}}% match",
     "fixedMatch": "{{value}} vaste",
     "wageringMultiplier": "{{value}}x weddenskappe",
@@ -503,13 +503,19 @@ export const af: LocaleTree = {
     "showDetails": "Wys boodskapbesonderhede",
     "hideDetails": "Versteek boodskapbesonderhede"
   },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
+  },
   "betHistory": {
     "title": "Weddenskap Geskiedenis",
     "subtitle": "Jou spel verbintenis en wen deur ronde",
     "allTransactions": "Alle transaksies →",
     "noBets": "Geen weddenskappe nog nie. Speel 'n speletjie om jou geskiedenis hier te sien.",
     "browseGames": "Blaai deur speletjies",
-    "game": "Game",
+    "game": "Spel",
     "bet": "Wette",
     "win": "Win win",
     "net": "Net",
@@ -551,14 +557,14 @@ export const af: LocaleTree = {
     "tryAgain": "Probeer weer of kontak die steundiens.",
     "goBack": "Gaan Terug",
     "backToLobby": "← Terug na die lobby",
-    "defaultName": "Game",
+    "defaultName": "Spel",
     "launchError": "Kon nie die speletjie lanseer nie.",
-    "closeWindow": "Maak toe",
+    "closeWindow": "Close",
     "loginRequired": "Meld asseblief aan om te speel."
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonuss"
   },
   "modal": {
     "comingSoon": "Kom binnekort"

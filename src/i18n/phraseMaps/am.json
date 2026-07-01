@@ -317,8 +317,8 @@
   "DEPOSIT": "DEPOSIT",
   "Deposit": "ተቀማጭ",
   "HISTORY": "HISTORY",
-  "NOTICES": "NOTICES",
-  "Notices": "Notices",
+  "NOTICES": "ማሳወቂያዎች",
+  "Notices": "ማሳወቂያዎች",
   "BONUSES": "BONUSES",
   "Bonuses": "ጉርሻዎች",
   "Profile": "Profile",
@@ -466,5 +466,7 @@
   "Account number": "የመለያ ቁጥር",
   "Wallet address": "የኪስ ቦርሳ አድራሻ",
   "Account / wallet ID": "መለያ / የኪስ ቦርሳ መታወቂያ",
-  "Bank account": "የባንክ ሂሳብ"
+  "Bank account": "የባንክ ሂሳብ",
+  "Announcement": "ማስታወቂያ",
+  "Don't show again today": "ዛሬም ደግመህ አታሳይ"
 }

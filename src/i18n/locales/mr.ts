@@ -30,6 +30,8 @@ export const mr: LocaleTree = {
     "games": "games",
     "gamesCount": "{{count}} games",
     "noLimit": "No limit",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "किमान: {{min}} · कमाल: {{max}}",
@@ -68,9 +70,9 @@ export const mr: LocaleTree = {
     "balance": "Balance",
     "playResponsibly": "18+ जबाबदारीने प्ले करा",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "Support",
-    "supportTickets": "समर्थन संभाषणे",
-    "supportTicketsLabel": "समर्थन"
+    "liveChatLabel": "समर्थन",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -120,8 +122,8 @@ export const mr: LocaleTree = {
     "slots": "Slots",
     "liveCasino": "Live Casino",
     "jackpots": "Jackpots",
-    "account": "Account",
-    "support": "Support",
+    "account": "खाता",
+    "support": "समर्थन",
     "messages": "Messages",
     "tickets": "Tickets",
     "legal": "Legal",
@@ -164,7 +166,7 @@ export const mr: LocaleTree = {
   },
   "liveBetFeed": {
     "title": "Live bets",
-    "game": "Game",
+    "game": "गेम",
     "user": "User",
     "time": "Time",
     "betAmount": "Bet amount",
@@ -208,7 +210,8 @@ export const mr: LocaleTree = {
     "crypto": "Cryptocurrency",
     "crypto_payment": "Crypto Payment",
     "bank": "Bank Transfer",
-    "bank_transfer": "Bank Transfer"
+    "bank_transfer": "Bank Transfer",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Cryptocurrency",
@@ -222,7 +225,7 @@ export const mr: LocaleTree = {
     "withdraw": "Withdraw",
     "bet": "Bet",
     "win": "Win",
-    "bonus": "Bonus",
+    "bonus": "बोनस",
     "rollback": "Rollback"
   },
   "auth": {
@@ -316,7 +319,7 @@ export const mr: LocaleTree = {
     "passwordUpdateFailed": "पासवर्ड अपडेट करण्यात अयशस्वी.",
     "editProfile": "Edit profile",
     "quickActions": "Quick actions",
-    "account": "Account",
+    "account": "खाता",
     "saveChanges": "Save Changes",
     "updateSuccess": "प्रोफाइल यशस्वीरित्या अपडेट केले.",
     "updateFailed": "प्रोफाइल अपडेट करण्यात अयशस्वी.",
@@ -410,7 +413,7 @@ export const mr: LocaleTree = {
   },
   "wallet": {
     "cashBalance": "Cash",
-    "bonusBalance": "Bonus",
+    "bonusBalance": "बोनस",
     "totalPlayable": "Total playable",
     "withdrawableBalance": "Withdrawable balance",
     "withdrawableCash": "Withdrawable cash",
@@ -424,13 +427,13 @@ export const mr: LocaleTree = {
     "bonusAfter": "Bonus after",
     "funding": {
       "cash": "Cash",
-      "bonus": "Bonus",
+      "bonus": "बोनस",
       "mixed": "Mixed",
       "free_spin": "Free spin"
     },
     "bucket": {
       "cash": "Cash",
-      "bonus": "Bonus"
+      "bonus": "बोनस"
     }
   },
   "paymentInfoFields": {
@@ -464,7 +467,7 @@ export const mr: LocaleTree = {
     "noActive": "No active bonuses.",
     "availableBonuses": "Available Bonuses",
     "noAvailable": "याक्षणी कोणतेही बोनस उपलब्ध नाहीत.",
-    "defaultName": "Bonus",
+    "defaultName": "बोनस",
     "percentMatch": "{{value}}% match",
     "fixedMatch": "{{value}} fixed",
     "wageringMultiplier": "{{value}}x wagering",
@@ -500,13 +503,19 @@ export const mr: LocaleTree = {
     "showDetails": "संदेश तपशील दर्शवा",
     "hideDetails": "संदेश तपशील लपवा"
   },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
+  },
   "betHistory": {
     "title": "Bet History",
     "subtitle": "आपले गेम बेट्स आणि राउंडद्वारे जिंकतात",
     "allTransactions": "All transactions →",
     "noBets": "No bets yet. Play a game to see your history here.",
     "browseGames": "Browse games",
-    "game": "Game",
+    "game": "गेम",
     "bet": "Bet",
     "win": "Win",
     "net": "Net",
@@ -548,14 +557,14 @@ export const mr: LocaleTree = {
     "tryAgain": "कृपया पुन्हा प्रयत्न करा किंवा सहाय्यकाशी संपर्क साधा.",
     "goBack": "Go Back",
     "backToLobby": "← Back to lobby",
-    "defaultName": "Game",
+    "defaultName": "गेम",
     "launchError": "खेळ सुरू करण्यात अयशस्वी.",
     "closeWindow": "Close",
     "loginRequired": "कृपया खेळण्यासाठी लॉग इन करा."
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "बोनस"
   },
   "modal": {
     "comingSoon": "Coming Soon"

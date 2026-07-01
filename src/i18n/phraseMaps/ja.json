@@ -74,5 +74,11 @@
   "Open": "オープン",
   "Pending": "保留",
   "Resolved": "解決済み",
-  "Closed": "クローズ"
+  "Closed": "クローズ",
+  "NOTICES": "お知らせ",
+  "Notices": "お知らせ",
+  "Announcement": "お知らせ",
+  "Close": "閉じる",
+  "OK": "OK",
+  "Don't show again today": "今日は再表示しない"
 }

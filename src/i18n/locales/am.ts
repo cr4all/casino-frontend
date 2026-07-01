@@ -30,6 +30,8 @@ export const am: LocaleTree = {
     "games": "ጨዋታዎች",
     "gamesCount": "{{count}} ጨዋታዎች",
     "noLimit": "ምንም ገደብ የለውም",
+    "minLabel": "ትንሹ",
+    "maxLabel": "Max",
     "maxOnly": "ከፍተኛ {{መጠን}}",
     "notAvailable": "—",
     "minMax": "ደቂቃ: {{min}} · ማክስ: {{max}}",
@@ -44,25 +46,23 @@ export const am: LocaleTree = {
     "fieldPasswordMismatch": "የይለፍ ቃላት አይዛመዱም",
     "fieldSelectRequired": "-- ይምረጡ --",
     "fieldCodeInvalid": "እባክዎ የ 6 አሃዝ የማረጋገጫ ኮድ ያስገቡ ።",
-    "language": "ቋንቋ",
-    "minLabel": "ትንሹ",
-    "maxLabel": "Max"
+    "language": "ቋንቋ"
   },
   "nav": {
     "allGames": "ALL GAMES",
     "browseAll": "Browse all",
     "deposit": "DEPOSIT",
-    "depositLabel": "Deposit",
+    "depositLabel": "ተቀማጭ",
     "withdraw": "WITHDRAW",
-    "withdrawLabel": "Withdraw",
+    "withdrawLabel": "ወጪ",
     "betHistory": "BET HISTORY",
     "gameBets": "Game bets",
     "history": "HISTORY",
     "transactions": "Transactions",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "ማሳወቂያዎች",
+    "noticesLabel": "ማሳወቂያዎች",
     "bonuses": "BONUSES",
-    "bonusesLabel": "Bonuses",
+    "bonusesLabel": "ጉርሻዎች",
     "profile": "Profile",
     "logout": "ውጣ",
     "login": "Login",
@@ -70,9 +70,9 @@ export const am: LocaleTree = {
     "balance": "Balance",
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "Support",
-    "supportTickets": "ድጋፍ ንግግሮች",
-    "supportTicketsLabel": "ድጋፍ"
+    "liveChatLabel": "ድጋፍ",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -122,8 +122,8 @@ export const am: LocaleTree = {
     "slots": "Slots",
     "liveCasino": "Live Casino",
     "jackpots": "Jackpots",
-    "account": "Account",
-    "support": "Support",
+    "account": "መለያ",
+    "support": "ድጋፍ",
     "messages": "Messages",
     "tickets": "Tickets",
     "legal": "Legal",
@@ -166,7 +166,7 @@ export const am: LocaleTree = {
   },
   "liveBetFeed": {
     "title": "Live bets",
-    "game": "Game",
+    "game": "ጨዋታ",
     "user": "User",
     "time": "Time",
     "betAmount": "Bet amount",
@@ -221,11 +221,11 @@ export const am: LocaleTree = {
     "manual": "በእጅ ማስተላለፍ"
   },
   "txTypes": {
-    "deposit": "Deposit",
-    "withdraw": "Withdraw",
+    "deposit": "ተቀማጭ",
+    "withdraw": "ወጪ",
     "bet": "Bet",
     "win": "Win",
-    "bonus": "Bonus",
+    "bonus": "ጉርሻ",
     "rollback": "Rollback"
   },
   "auth": {
@@ -273,7 +273,7 @@ export const am: LocaleTree = {
     "phoneCodeSearchPlaceholder": "Search country or code",
     "phoneCodeNoResults": "No countries found.",
     "country": "Country",
-    "currency": "Currency",
+    "currency": "ምንዛሪ",
     "confirmPassword": "Confirm Password",
     "loginError": "Invalid email, username, or password.",
     "riskBlocked": "This action was blocked for security reasons.",
@@ -287,7 +287,7 @@ export const am: LocaleTree = {
     "title": "My Profile",
     "email": "ኢሜይል",
     "status": "ሁኔታ",
-    "currency": "Currency",
+    "currency": "ምንዛሪ",
     "country": "Country",
     "phone": "Phone",
     "kycStatus": "KYC Status",
@@ -319,11 +319,11 @@ export const am: LocaleTree = {
     "passwordUpdateFailed": "የይለፍ ቃል ማዘመን አልተሳካም ።",
     "editProfile": "Edit profile",
     "quickActions": "Quick actions",
-    "account": "Account",
+    "account": "መለያ",
     "saveChanges": "Save Changes",
     "updateSuccess": "Profile updated successfully.",
     "updateFailed": "Failed to update profile.",
-    "language": "Language"
+    "language": "ቋንቋ"
   },
   "risk": {
     "challengeTitle": "ሰው መሆናችሁን አረጋግጡ",
@@ -461,13 +461,13 @@ export const am: LocaleTree = {
     "bank_account": "የባንክ ሂሳብ"
   },
   "bonus": {
-    "title": "Bonuses",
+    "title": "ጉርሻዎች",
     "wageringProgress": "Wagering progress",
     "activeBonuses": "Active Bonuses",
     "noActive": "No active bonuses.",
     "availableBonuses": "Available Bonuses",
     "noAvailable": "No bonuses available at the moment.",
-    "defaultName": "Bonus",
+    "defaultName": "ጉርሻ",
     "percentMatch": "{{value}}% match",
     "fixedMatch": "{{value}} fixed",
     "wageringMultiplier": "{{value}}x wagering",
@@ -503,13 +503,19 @@ export const am: LocaleTree = {
     "showDetails": "Show message details",
     "hideDetails": "Hide message details"
   },
+  "announcement": {
+    "popupBadge": "ማስታወቂያ",
+    "popupClose": "ዝጋ",
+    "popupConfirm": "እሺ",
+    "hideForToday": "ዛሬም ደግመህ አታሳይ"
+  },
   "betHistory": {
     "title": "Bet History",
     "subtitle": "Your game bets and wins by round",
     "allTransactions": "All transactions →",
     "noBets": "No bets yet. Play a game to see your history here.",
     "browseGames": "Browse games",
-    "game": "Game",
+    "game": "ጨዋታ",
     "bet": "Bet",
     "win": "Win",
     "net": "Net",
@@ -525,14 +531,14 @@ export const am: LocaleTree = {
   "transactions": {
     "title": "Transaction History",
     "depositLink": "+ Deposit",
-    "withdrawLink": "Withdraw",
+    "withdrawLink": "ወጪ",
     "bets": "Bets",
     "deposits": "Deposits",
     "withdrawals": "Withdrawals",
     "wallet": "Wallet",
-    "noDeposits": "No deposit requests yet.",
+    "noDeposits": "እስካሁን ምንም ተቀማጭ ጥያቄዎች የሉም ።",
     "makeDeposit": "Make a deposit",
-    "noWithdrawals": "No withdrawal requests yet.",
+    "noWithdrawals": "እስካሁን ምንም የመውጣት ጥያቄዎች የሉም ።",
     "requestWithdrawal": "Request withdrawal",
     "noWalletTx": "No wallet transactions yet.",
     "type": "ዓይነት",
@@ -540,7 +546,7 @@ export const am: LocaleTree = {
     "balanceAfter": "Balance After",
     "reference": "ምርጫዎች",
     "date": "ቀን",
-    "method": "Method",
+    "method": "ዘዴ",
     "status": "ሁኔታ",
     "requestedAmount": "Requested",
     "receivedAmount": "Received"
@@ -551,14 +557,14 @@ export const am: LocaleTree = {
     "tryAgain": "Please try again or contact support.",
     "goBack": "Go Back",
     "backToLobby": "← Back to lobby",
-    "defaultName": "Game",
+    "defaultName": "ጨዋታ",
     "launchError": "Failed to launch game.",
-    "closeWindow": "Close",
+    "closeWindow": "ዝጋ",
     "loginRequired": "Please log in to play."
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "ጉርሻ"
   },
   "modal": {
     "comingSoon": "Coming Soon"

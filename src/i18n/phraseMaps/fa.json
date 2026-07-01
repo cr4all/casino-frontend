@@ -408,5 +408,7 @@
   "Open": "فعال",
   "Pending": "در انتظار",
   "Resolved": "حل شد",
-  "Closed": "بسته"
+  "Closed": "بسته",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

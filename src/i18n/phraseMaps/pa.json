@@ -424,5 +424,7 @@
   "Open": "सक्रिय",
   "Pending": "लंबित",
   "Resolved": "ਹੱਲ ਹੋ ਗਿਆ",
-  "Closed": "बंद"
+  "Closed": "बंद",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

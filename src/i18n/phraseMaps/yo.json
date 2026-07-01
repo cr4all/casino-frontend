@@ -421,5 +421,7 @@
   "Open": "Mai aiki",
   "Pending": "ana jira",
   "Resolved": "Ti yan",
-  "Closed": "an rufe"
+  "Closed": "an rufe",
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

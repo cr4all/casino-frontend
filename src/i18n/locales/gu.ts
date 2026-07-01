@@ -21,15 +21,17 @@ export const gu: LocaleTree = {
     "previous": "Previous",
     "next": "Next",
     "showMore": "Show more",
-    "ok": "OK",
+    "ok": "ઠીક છે",
     "yes": "Yes",
     "no": "No",
-    "close": "Close",
+    "close": "બંધ કરો",
     "copy": "Copy",
     "copied": "Copied",
     "games": "games",
     "gamesCount": "{{count}} games",
     "noLimit": "No limit",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Min: {{min}} · Max: {{max}}",
@@ -44,9 +46,7 @@ export const gu: LocaleTree = {
     "fieldPasswordMismatch": "પાસવર્ડસ બંધબેસતાં નથી.",
     "fieldSelectRequired": "કૃપા કરીને બેંક પસંદ કરો",
     "fieldCodeInvalid": "કૃપા કરીને 6-અંકનો ચકાસણી કોડ દાખલ કરો.",
-    "language": "Language",
-    "minLabel": "Min",
-    "maxLabel": "Max"
+    "language": "Language"
   },
   "nav": {
     "allGames": "ALL GAMES",
@@ -59,8 +59,8 @@ export const gu: LocaleTree = {
     "gameBets": "Game bets",
     "history": "HISTORY",
     "transactions": "Transactions",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "સૂચનાઓ",
+    "noticesLabel": "સૂચનાઓ",
     "bonuses": "BONUSES",
     "bonusesLabel": "Bonuses",
     "profile": "Profile",
@@ -70,9 +70,9 @@ export const gu: LocaleTree = {
     "balance": "Balance",
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
-    "liveChatLabel": "Support",
-    "supportTickets": "સહાય વાતચીત",
-    "supportTicketsLabel": "સહાય"
+    "liveChatLabel": "સહાય",
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -122,8 +122,8 @@ export const gu: LocaleTree = {
     "slots": "Slots",
     "liveCasino": "Live Casino",
     "jackpots": "Jackpots",
-    "account": "Account",
-    "support": "Support",
+    "account": "એકાઉન્ટ",
+    "support": "સહાય",
     "messages": "Messages",
     "tickets": "Tickets",
     "legal": "Legal",
@@ -166,7 +166,7 @@ export const gu: LocaleTree = {
   },
   "liveBetFeed": {
     "title": "Live bets",
-    "game": "Game",
+    "game": "રમત",
     "user": "User",
     "time": "Time",
     "betAmount": "Bet amount",
@@ -225,7 +225,7 @@ export const gu: LocaleTree = {
     "withdraw": "Withdraw",
     "bet": "Bet",
     "win": "Win",
-    "bonus": "Bonus",
+    "bonus": "બોનસ",
     "rollback": "Rollback"
   },
   "auth": {
@@ -319,7 +319,7 @@ export const gu: LocaleTree = {
     "passwordUpdateFailed": "પાસવર્ડ અપડેટ કરવામાં નિષ્ફળ.",
     "editProfile": "Edit profile",
     "quickActions": "Quick actions",
-    "account": "Account",
+    "account": "એકાઉન્ટ",
     "saveChanges": "Save Changes",
     "updateSuccess": "Profile updated successfully.",
     "updateFailed": "Failed to update profile.",
@@ -413,7 +413,7 @@ export const gu: LocaleTree = {
   },
   "wallet": {
     "cashBalance": "Cash",
-    "bonusBalance": "Bonus",
+    "bonusBalance": "બોનસ",
     "totalPlayable": "Total playable",
     "withdrawableBalance": "Withdrawable balance",
     "withdrawableCash": "Withdrawable cash",
@@ -427,13 +427,13 @@ export const gu: LocaleTree = {
     "bonusAfter": "Bonus after",
     "funding": {
       "cash": "Cash",
-      "bonus": "Bonus",
+      "bonus": "બોનસ",
       "mixed": "Mixed",
       "free_spin": "Free spin"
     },
     "bucket": {
       "cash": "Cash",
-      "bonus": "Bonus"
+      "bonus": "બોનસ"
     }
   },
   "paymentInfoFields": {
@@ -467,7 +467,7 @@ export const gu: LocaleTree = {
     "noActive": "No active bonuses.",
     "availableBonuses": "Available Bonuses",
     "noAvailable": "No bonuses available at the moment.",
-    "defaultName": "Bonus",
+    "defaultName": "બોનસ",
     "percentMatch": "{{value}}% match",
     "fixedMatch": "{{value}} fixed",
     "wageringMultiplier": "{{value}}x wagering",
@@ -503,13 +503,19 @@ export const gu: LocaleTree = {
     "showDetails": "Show message details",
     "hideDetails": "Hide message details"
   },
+  "announcement": {
+    "popupBadge": "જાહેરાત",
+    "popupClose": "બંધ કરો",
+    "popupConfirm": "ઠીક છે",
+    "hideForToday": "આજે ફરીથી બતાવશો નહીં"
+  },
   "betHistory": {
     "title": "Bet History",
     "subtitle": "Your game bets and wins by round",
     "allTransactions": "All transactions →",
     "noBets": "No bets yet. Play a game to see your history here.",
     "browseGames": "Browse games",
-    "game": "Game",
+    "game": "રમત",
     "bet": "Bet",
     "win": "Win",
     "net": "Net",
@@ -551,14 +557,14 @@ export const gu: LocaleTree = {
     "tryAgain": "Please try again or contact support.",
     "goBack": "Go Back",
     "backToLobby": "← Back to lobby",
-    "defaultName": "Game",
+    "defaultName": "રમત",
     "launchError": "Failed to launch game.",
-    "closeWindow": "Close",
+    "closeWindow": "બંધ કરો",
     "loginRequired": "Please log in to play."
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "બોનસ"
   },
   "modal": {
     "comingSoon": "Coming Soon"

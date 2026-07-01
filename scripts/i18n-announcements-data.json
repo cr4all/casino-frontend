@@ -1,0 +1,666 @@
+{
+  "de": {
+    "nav.notices": "MITTEILUNGEN",
+    "nav.noticesLabel": "Hinweise",
+    "announcement.popupBadge": "Mitteilung",
+    "announcement.popupClose": "Schließen",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Heute nicht mehr anzeigen"
+  },
+  "cs": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "am": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "bg": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "af": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "az": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "bn": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "cy": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "el": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "be": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "da": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "ar": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "es": {
+    "nav.notices": "AVISOS",
+    "nav.noticesLabel": "Avisos",
+    "announcement.popupBadge": "Anuncio",
+    "announcement.popupClose": "Cerrar",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "No volver a mostrar hoy"
+  },
+  "fr": {
+    "nav.notices": "AVIS",
+    "nav.noticesLabel": "Avis",
+    "announcement.popupBadge": "Annonce",
+    "announcement.popupClose": "Fermer",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Ne plus afficher aujourd'hui"
+  },
+  "ga": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "gu": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "fi": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "et": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "he": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "hu": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "fil": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "ha": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "hi": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "fa": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "ko": {
+    "nav.notices": "알림",
+    "nav.noticesLabel": "알림",
+    "announcement.popupBadge": "공지",
+    "announcement.popupClose": "닫기",
+    "announcement.popupConfirm": "확인",
+    "announcement.hideForToday": "하루동안 표시하지 않기"
+  },
+  "hr": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "hy": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "ja": {
+    "nav.notices": "お知らせ",
+    "nav.noticesLabel": "お知らせ",
+    "announcement.popupBadge": "お知らせ",
+    "announcement.popupClose": "閉じる",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "今日は再表示しない"
+  },
+  "id": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "is": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "ig": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "it": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "kk": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "ka": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "lb": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "km": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "kn": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "lo": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "lt": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "lv": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "mn": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "mr": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "ml": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "mk": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "ms": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "no": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "my": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "nl": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "mt": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "ne": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "pl": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "pa": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "si": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "sv": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "ro": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "sl": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "sk": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "pt": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "sq": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "sr": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "ru": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "so": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "ta": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "sw": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "zh": {
+    "nav.notices": "通知",
+    "nav.noticesLabel": "通知",
+    "announcement.popupBadge": "公告",
+    "announcement.popupClose": "关闭",
+    "announcement.popupConfirm": "确定",
+    "announcement.hideForToday": "今天不再显示"
+  },
+  "ur": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "yo": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "te": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "tr": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "uk": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "uz": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "vi": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "tg": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "th": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "zu": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "ar-ma": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "ar-dz": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "ar-tn": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "de-be": {
+    "nav.notices": "MITTEILUNGEN",
+    "nav.noticesLabel": "Hinweise",
+    "announcement.popupBadge": "Mitteilung",
+    "announcement.popupClose": "Schließen",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Heute nicht mehr anzeigen"
+  },
+  "fr-be": {
+    "nav.notices": "AVIS",
+    "nav.noticesLabel": "Avis",
+    "announcement.popupBadge": "Annonce",
+    "announcement.popupClose": "Fermer",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Ne plus afficher aujourd'hui"
+  },
+  "nl-be": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "pt-br": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "zh-tw": {
+    "nav.notices": "通知",
+    "nav.noticesLabel": "通知",
+    "announcement.popupBadge": "公告",
+    "announcement.popupClose": "關閉",
+    "announcement.popupConfirm": "確定",
+    "announcement.hideForToday": "今天不再顯示"
+  }
+}

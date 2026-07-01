@@ -21,15 +21,17 @@ export const zh: LocaleTree = {
     "previous": "Previous",
     "next": "Next",
     "showMore": "Show more",
-    "ok": "OK",
+    "ok": "确定",
     "yes": "Yes",
     "no": "No",
-    "close": "Close",
+    "close": "关闭",
     "copy": "Copy",
     "copied": "Copied",
     "games": "games",
     "gamesCount": "{{count}} games",
     "noLimit": "No limit",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "最高 {{amount}}",
     "notAvailable": "—",
     "minMax": "Min: {{min}} · Max: {{max}}",
@@ -57,8 +59,8 @@ export const zh: LocaleTree = {
     "gameBets": "Game bets",
     "history": "HISTORY",
     "transactions": "Transactions",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "通知",
+    "noticesLabel": "通知",
     "bonuses": "BONUSES",
     "bonusesLabel": "Bonuses",
     "profile": "Profile",
@@ -69,8 +71,8 @@ export const zh: LocaleTree = {
     "playResponsibly": "18+ · Play Responsibly",
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "支持",
-    "supportTickets": "支持工单",
-    "supportTicketsLabel": "帮助台"
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -208,7 +210,8 @@ export const zh: LocaleTree = {
     "crypto": "Cryptocurrency",
     "crypto_payment": "Crypto Payment",
     "bank": "Bank Transfer",
-    "bank_transfer": "Bank Transfer"
+    "bank_transfer": "Bank Transfer",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Cryptocurrency",
@@ -500,6 +503,12 @@ export const zh: LocaleTree = {
     "showDetails": "Show message details",
     "hideDetails": "Hide message details"
   },
+  "announcement": {
+    "popupBadge": "公告",
+    "popupClose": "关闭",
+    "popupConfirm": "确定",
+    "hideForToday": "今天不再显示"
+  },
   "betHistory": {
     "title": "Bet History",
     "subtitle": "Your game bets and wins by round",
@@ -550,7 +559,7 @@ export const zh: LocaleTree = {
     "backToLobby": "← Back to lobby",
     "defaultName": "游戏",
     "launchError": "Failed to launch game.",
-    "closeWindow": "Close",
+    "closeWindow": "关闭",
     "loginRequired": "Please log in to play."
   },
   "gameCard": {

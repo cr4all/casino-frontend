@@ -30,6 +30,8 @@ export const uz: LocaleTree = {
     "games": "o'yinlar",
     "gamesCount": "{{count}} o'yin",
     "noLimit": "Cheklovsiz",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Min: {{min}} · Maks: {{max}}",
@@ -69,8 +71,8 @@ export const uz: LocaleTree = {
     "playResponsibly": "18+ · Mas'uliyat bilan o'ynang",
     "liveChat": "JONLI CHAT",
     "liveChatLabel": "Qo'llab-quvvatlash",
-    "supportTickets": "DESTEK SUHBATLAR",
-    "supportTicketsLabel": "Qo'llab-quvvatlash"
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Jonli chat",
@@ -100,13 +102,13 @@ export const uz: LocaleTree = {
     "replyPlaceholder": "Javobingizni yozing...",
     "sendReply": "Gönder reply",
     "replyFailed": "Xabarni yuborib bo'lmadi. Qayta urinib ko'ring.",
-    "supportTeam": "Destek",
+    "supportTeam": "Qo'llab-quvvatlash",
     "you": "Siz",
     "categories": {
-      "account": "hesap",
+      "account": "Hisob",
       "payment": "Para Çekme",
-      "bonus": "Bonuslar",
-      "game": "Oyun",
+      "bonus": "Mukofot",
+      "game": "O'yin",
       "other": "Other"
     },
     "status": {
@@ -208,7 +210,8 @@ export const uz: LocaleTree = {
     "crypto": "Kriptovalyuta",
     "crypto_payment": "Kripto to'lov",
     "bank": "Bank o'tkazmasi",
-    "bank_transfer": "Bank o'tkazmasi"
+    "bank_transfer": "Bank o'tkazmasi",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Kriptovalyuta",
@@ -499,6 +502,12 @@ export const uz: LocaleTree = {
     "noMessagesHint": "Depozit tasdiqlari va bonus bildirishnomalari shu yerda ko'rinadi.",
     "showDetails": "Xabar tafsilotlarini ko'rsatish",
     "hideDetails": "Xabar tafsilotlarini yashirish"
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Yopish",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   },
   "betHistory": {
     "title": "Tikishlar tarixi",

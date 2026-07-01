@@ -30,6 +30,8 @@ export const vi: LocaleTree = {
     "games": "game",
     "gamesCount": "{{count}} game",
     "noLimit": "Không giới hạn",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Tối thiểu: {{min}} · Tối đa: {{max}}",
@@ -69,8 +71,8 @@ export const vi: LocaleTree = {
     "playResponsibly": "18+ · Chơi có trách nhiệm",
     "liveChat": "CHAT TRỰC TUYẾN",
     "liveChatLabel": "Hỗ trợ",
-    "supportTickets": "HỖ TRỢ CUỘC TRÒ CHUYỆN",
-    "supportTicketsLabel": "Hỗ trợ"
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Chat trực tuyến",
@@ -103,9 +105,9 @@ export const vi: LocaleTree = {
     "supportTeam": "Hỗ trợ",
     "you": "Bạn",
     "categories": {
-      "account": "tại",
+      "account": "Tài khoản",
       "payment": "Rút tiền",
-      "bonus": "Tiền thưởng",
+      "bonus": "Thưởng",
       "game": "Trò chơi",
       "other": "Khác"
     },
@@ -208,7 +210,8 @@ export const vi: LocaleTree = {
     "crypto": "Tiền mã hóa",
     "crypto_payment": "Thanh toán crypto",
     "bank": "Chuyển khoản ngân hàng",
-    "bank_transfer": "Chuyển khoản ngân hàng"
+    "bank_transfer": "Chuyển khoản ngân hàng",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Tiền mã hóa",
@@ -499,6 +502,12 @@ export const vi: LocaleTree = {
     "noMessagesHint": "Xác nhận nạp tiền và thông báo thưởng sẽ hiển thị tại đây.",
     "showDetails": "Hiện chi tiết tin nhắn",
     "hideDetails": "Ẩn chi tiết tin nhắn"
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Đóng",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   },
   "betHistory": {
     "title": "Lịch sử cược",

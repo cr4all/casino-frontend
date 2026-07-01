@@ -30,6 +30,8 @@ export const sv: LocaleTree = {
     "games": "spel",
     "gamesCount": "{{count}} spel",
     "noLimit": "Ingen gräns",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Min: {{min}} · Max: {{max}}",
@@ -69,8 +71,8 @@ export const sv: LocaleTree = {
     "playResponsibly": "18+ · Spela ansvarsfullt",
     "liveChat": "LIVECHATT",
     "liveChatLabel": "Support",
-    "supportTickets": "KUNDSUPPORT TICKETER",
-    "supportTicketsLabel": "Kundsupport"
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Livechatt",
@@ -100,12 +102,12 @@ export const sv: LocaleTree = {
     "replyPlaceholder": "Skriv ditt svar...",
     "sendReply": "Skicka svar",
     "replyFailed": "Kunde inte skicka meddelandet. Försök igen.",
-    "supportTeam": "Kundsupport",
+    "supportTeam": "Support",
     "you": "Du",
     "categories": {
-      "account": "konto",
+      "account": "Konto",
       "payment": "Uttag",
-      "bonus": "Bonusar",
+      "bonus": "Bonus",
       "game": "Spel",
       "other": "Other"
     },
@@ -208,7 +210,8 @@ export const sv: LocaleTree = {
     "crypto": "Kryptovaluta",
     "crypto_payment": "Kryptobetalning",
     "bank": "Banköverföring",
-    "bank_transfer": "Banköverföring"
+    "bank_transfer": "Banköverföring",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Kryptovaluta",
@@ -499,6 +502,12 @@ export const sv: LocaleTree = {
     "noMessagesHint": "Insättningsbekräftelser och bonusaviseringar visas här.",
     "showDetails": "Visa meddelandedetaljer",
     "hideDetails": "Dölj meddelandedetaljer"
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Stäng",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   },
   "betHistory": {
     "title": "Spelhistorik",

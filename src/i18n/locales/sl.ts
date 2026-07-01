@@ -57,8 +57,8 @@ export const sl: LocaleTree = {
     "gameBets": "Stave na igre",
     "history": "ZGODOVINA",
     "transactions": "Transakcije",
-    "notices": "OBVESTILA",
-    "noticesLabel": "Obvestila",
+    "notices": "NOTICES",
+    "noticesLabel": "Notices",
     "bonuses": "BONUSI",
     "bonusesLabel": "Bonusi",
     "profile": "Profil",
@@ -623,5 +623,11 @@ export const sl: LocaleTree = {
       "resolved": "Rešeno",
       "closed": "zaprto"
     }
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Close",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   }
 };

@@ -30,6 +30,8 @@ export const uk: LocaleTree = {
     "games": "ігри",
     "gamesCount": "{{count}} ігор",
     "noLimit": "Без ліміту",
+    "minLabel": "Min",
+    "maxLabel": "Max",
     "maxOnly": "max {{amount}}",
     "notAvailable": "—",
     "minMax": "Мін: {{min}} · Макс: {{max}}",
@@ -69,8 +71,8 @@ export const uk: LocaleTree = {
     "playResponsibly": "18+ · Грайте відповідально",
     "liveChat": "ОНЛАЙН-ЧАТ",
     "liveChatLabel": "Підтримка",
-    "supportTickets": "ПІДТРИМКА РОЗМОВИ",
-    "supportTicketsLabel": "Підтримка"
+    "supportTickets": "SUPPORT TICKETS",
+    "supportTicketsLabel": "Help desk"
   },
   "liveChat": {
     "title": "Онлайн-чат",
@@ -103,9 +105,9 @@ export const uk: LocaleTree = {
     "supportTeam": "Підтримка",
     "you": "Ви",
     "categories": {
-      "account": "запис",
+      "account": "Акаунт",
       "payment": "Зняття",
-      "bonus": "Бонуси",
+      "bonus": "Бонус",
       "game": "Гра",
       "other": "Other"
     },
@@ -208,7 +210,8 @@ export const uk: LocaleTree = {
     "crypto": "Криптовалюта",
     "crypto_payment": "Крипто-платіж",
     "bank": "Банківський переказ",
-    "bank_transfer": "Банківський переказ"
+    "bank_transfer": "Банківський переказ",
+    "manual_bank_transfer": "Manual Bank Transfer"
   },
   "paymentTypes": {
     "crypto": "Криптовалюта",
@@ -499,6 +502,12 @@ export const uk: LocaleTree = {
     "noMessagesHint": "Підтвердження депозитів і сповіщення про бонуси з'являться тут.",
     "showDetails": "Показати деталі повідомлення",
     "hideDetails": "Приховати деталі повідомлення"
+  },
+  "announcement": {
+    "popupBadge": "Announcement",
+    "popupClose": "Закрити",
+    "popupConfirm": "OK",
+    "hideForToday": "Don't show again today"
   },
   "betHistory": {
     "title": "Історія ставок",
