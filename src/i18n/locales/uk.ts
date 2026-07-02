@@ -504,10 +504,10 @@ export const uk: LocaleTree = {
     "hideDetails": "Приховати деталі повідомлення"
   },
   "announcement": {
-    "popupBadge": "Announcement",
+    "popupBadge": "Оголошення",
     "popupClose": "Закрити",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Не показувати сьогодні"
   },
   "betHistory": {
     "title": "Історія ставок",

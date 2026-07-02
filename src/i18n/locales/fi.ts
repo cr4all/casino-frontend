@@ -59,8 +59,8 @@ export const fi: LocaleTree = {
     "gameBets": "Pelivedot",
     "history": "HISTORIA",
     "transactions": "Tapahtumat",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "ILMOITUKSET",
+    "noticesLabel": "Ilmoitukset",
     "bonuses": "BONUKSET",
     "bonusesLabel": "Bonukset",
     "profile": "Profiili",
@@ -628,9 +628,9 @@ export const fi: LocaleTree = {
     }
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
+    "popupBadge": "Ilmoitus",
+    "popupClose": "Sulje",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Älä näytä uudelleen tänään"
   }
 };

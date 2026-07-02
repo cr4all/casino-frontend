@@ -317,8 +317,8 @@
   "DEPOSIT": "DEPOSIT",
   "Deposit": "Deposit",
   "HISTORY": "HISTORY",
-  "NOTICES": "NOTICES",
-  "Notices": "Notices",
+  "NOTICES": "Ịma Ọkwa",
+  "Notices": "Ịma Ọkwa",
   "BONUSES": "BONUSES",
   "Bonuses": "Bonuses",
   "Profile": "Profile",
@@ -351,7 +351,7 @@
   "closed": "closed",
   "Player": "Onye na-egwu egwu",
   "Hybrid": "Ngwakọ",
-  "Close": "Close",
+  "Close": "Mechie",
   "games": "games",
   "Login": "Login",
   "Slots": "Slots",
@@ -428,6 +428,6 @@
   "Pending": "na-echere",
   "Resolved": "Edozila",
   "Closed": "emechiri",
-  "Announcement": "Announcement",
-  "Don't show again today": "Don't show again today"
+  "Announcement": "Ịma Ọkwa",
+  "Don't show again today": "Egosila ọzọ taa"
 }

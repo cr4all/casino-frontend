@@ -59,8 +59,8 @@ export const da: LocaleTree = {
     "gameBets": "Spilindsatser",
     "history": "HISTORIK",
     "transactions": "Transaktioner",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "MEDDELELSER",
+    "noticesLabel": "Meddelelser",
     "bonuses": "BONUSSER",
     "bonusesLabel": "Bonusser",
     "profile": "Profil",
@@ -628,9 +628,9 @@ export const da: LocaleTree = {
     }
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
+    "popupBadge": "Meddelelse",
+    "popupClose": "Luk",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": " Vis ikke igen i dag"
   }
 };

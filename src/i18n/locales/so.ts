@@ -59,8 +59,8 @@ export const so: LocaleTree = {
     "gameBets": "Game bets",
     "history": "HISTORY",
     "transactions": "Transactions",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "OGEYSIISYO",
+    "noticesLabel": "Ogeysiisyada",
     "bonuses": "BONUSES",
     "bonusesLabel": "Bonuses",
     "profile": "Profile",
@@ -504,10 +504,10 @@ export const so: LocaleTree = {
     "hideDetails": "Hide message details"
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
+    "popupBadge": "Ogeysiis",
+    "popupClose": "Xir",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Ha muujin mar kale maanta"
   },
   "betHistory": {
     "title": "Bet History",

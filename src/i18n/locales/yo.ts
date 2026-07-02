@@ -59,8 +59,8 @@ export const yo: LocaleTree = {
     "gameBets": "Game bets",
     "history": "HISTORY",
     "transactions": "Transactions",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "IKILọ",
+    "noticesLabel": "Ikilọ",
     "bonuses": "BONUSES",
     "bonusesLabel": "Bonuses",
     "profile": "Profile",
@@ -504,10 +504,10 @@ export const yo: LocaleTree = {
     "hideDetails": "Hide message details"
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
+    "popupBadge": "Ipolowo",
+    "popupClose": "Pa",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Ma ṣe fi hàn loni mo"
   },
   "betHistory": {
     "title": "Bet History",

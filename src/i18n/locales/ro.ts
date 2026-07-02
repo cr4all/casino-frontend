@@ -504,10 +504,10 @@ export const ro: LocaleTree = {
     "hideDetails": "Ascundeți detaliile mesajului"
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Închideți",
+    "popupBadge": "Anunț",
+    "popupClose": "Închide",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Nu mai afișa astăzi"
   },
   "betHistory": {
     "title": "Istoric pariuri",

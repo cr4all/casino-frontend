@@ -59,8 +59,8 @@ export const tr: LocaleTree = {
     "gameBets": "Game bets",
     "history": "HISTORY",
     "transactions": "Transactions",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "BİLDİRİMLER",
+    "noticesLabel": "Bildirimler",
     "bonuses": "BONUSES",
     "bonusesLabel": "Bonuses",
     "profile": "Profile",
@@ -504,10 +504,10 @@ export const tr: LocaleTree = {
     "hideDetails": "Hide message details"
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
-    "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "popupBadge": "Duyuru",
+    "popupClose": "Kapat",
+    "popupConfirm": "Tamam",
+    "hideForToday": "Bugün tekrar gösterme"
   },
   "betHistory": {
     "title": "Bet History",

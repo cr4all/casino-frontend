@@ -59,8 +59,8 @@ export const zu: LocaleTree = {
     "gameBets": "Ukubheja kwemidlalo",
     "history": "Umlandu",
     "transactions": "Ukuthengiselana",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "IZAZISO",
+    "noticesLabel": "Izaziso",
     "bonuses": "AMABHONASI",
     "bonusesLabel": "Amabhonasi",
     "profile": "Iprofayela",
@@ -504,10 +504,10 @@ export const zu: LocaleTree = {
     "hideDetails": "Fihla imininingwane yomlayezo"
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
-    "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "popupBadge": "Isimemezelo",
+    "popupClose": "Vala",
+    "popupConfirm": "KULUNGILE",
+    "hideForToday": "Ungabonisi futhi namuhla"
   },
   "betHistory": {
     "title": "Umlando Wokubheja",

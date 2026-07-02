@@ -504,10 +504,10 @@ export const nl: LocaleTree = {
     "hideDetails": "Berichtdetails verbergen"
   },
   "announcement": {
-    "popupBadge": "Announcement",
+    "popupBadge": "Mededeling",
     "popupClose": "Sluiten",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Vandaag niet meer tonen"
   },
   "betHistory": {
     "title": "Inzetgeschiedenis",

@@ -504,10 +504,10 @@ export const vi: LocaleTree = {
     "hideDetails": "Ẩn chi tiết tin nhắn"
   },
   "announcement": {
-    "popupBadge": "Announcement",
+    "popupBadge": "Thông báo",
     "popupClose": "Đóng",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Không hiển thị lại hôm nay"
   },
   "betHistory": {
     "title": "Lịch sử cược",

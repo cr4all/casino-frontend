@@ -59,8 +59,8 @@ export const km: LocaleTree = {
     "gameBets": "ការភ្នាល់ហ្គេម",
     "history": "ប្រវត្តិសាស្ត្រ",
     "transactions": "ប្រតិបត្តិការ",
-    "notices": "សេចក្តីជូនដំណឹង",
-    "noticesLabel": "សេចក្ដីជូនដំណឹង",
+    "notices": "ការជូនដំណឹង",
+    "noticesLabel": "ការជូនដំណឹង",
     "bonuses": "ប្រាក់រង្វាន់",
     "bonusesLabel": "ប្រាក់រង្វាន់",
     "profile": "ប្រវត្តិព័ត៌មាន",
@@ -504,10 +504,10 @@ export const km: LocaleTree = {
     "hideDetails": "លាក់ព័ត៌មានលម្អិតនៃសារជូន"
   },
   "announcement": {
-    "popupBadge": "Announcement",
+    "popupBadge": "ប្រកាស",
     "popupClose": "បិទ",
-    "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "popupConfirm": "យល់ព្រម",
+    "hideForToday": "កុំបង្ហាញម្តងទៀតថ្ងៃនេះ"
   },
   "betHistory": {
     "title": "ប្រវត្តិការគប់ឆ្នោត",

@@ -59,7 +59,7 @@ export const tg: LocaleTree = {
     "gameBets": "Шартҳои бозӣ",
     "history": "ТАЪРИХ",
     "transactions": "Транзаксияҳо",
-    "notices": "ОГОҲИҲО",
+    "notices": "ОГОHIҲO",
     "noticesLabel": "Огоҳиҳо",
     "bonuses": "БОНУСҲО",
     "bonusesLabel": "Бонусҳо",
@@ -504,10 +504,10 @@ export const tg: LocaleTree = {
     "hideDetails": "Пинҳон кардани тафсилоти паём"
   },
   "announcement": {
-    "popupBadge": "Announcement",
+    "popupBadge": "Эълон",
     "popupClose": "Пӯшидан",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Имрӯз дубора нишон надиҳед"
   },
   "betHistory": {
     "title": "Таърихи шартҳо",

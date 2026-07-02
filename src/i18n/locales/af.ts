@@ -24,7 +24,7 @@ export const af: LocaleTree = {
     "ok": "OK",
     "yes": "Ja",
     "no": "Wees 'n goeie kind",
-    "close": "Close",
+    "close": "Sluit",
     "copy": "Kopie",
     "copied": "Afgerolde",
     "games": "televisie program",
@@ -59,8 +59,8 @@ export const af: LocaleTree = {
     "gameBets": "Spelweddenskappe",
     "history": "Geskiedenis",
     "transactions": "Transaksies",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "Kennisgewings",
+    "noticesLabel": "Kennisgewings",
     "bonuses": "Bonusse",
     "bonusesLabel": "Bonusse",
     "profile": "Profiel",
@@ -504,10 +504,10 @@ export const af: LocaleTree = {
     "hideDetails": "Versteek boodskapbesonderhede"
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
+    "popupBadge": "Aankondiging",
+    "popupClose": "Sluit",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Moenie vandag weer wys nie"
   },
   "betHistory": {
     "title": "Weddenskap Geskiedenis",
@@ -559,7 +559,7 @@ export const af: LocaleTree = {
     "backToLobby": "← Terug na die lobby",
     "defaultName": "Spel",
     "launchError": "Kon nie die speletjie lanseer nie.",
-    "closeWindow": "Close",
+    "closeWindow": "Sluit",
     "loginRequired": "Meld asseblief aan om te speel."
   },
   "gameCard": {

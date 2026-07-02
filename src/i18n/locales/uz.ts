@@ -59,8 +59,8 @@ export const uz: LocaleTree = {
     "gameBets": "O'yin tikishlari",
     "history": "TARIX",
     "transactions": "Tranzaksiyalar",
-    "notices": "BILDIRISHNOMALAR",
-    "noticesLabel": "Bildirishnomalar",
+    "notices": "XABARLAR",
+    "noticesLabel": "Xabarlar",
     "bonuses": "BONUSLAR",
     "bonusesLabel": "Bonuslar",
     "profile": "Profil",
@@ -504,10 +504,10 @@ export const uz: LocaleTree = {
     "hideDetails": "Xabar tafsilotlarini yashirish"
   },
   "announcement": {
-    "popupBadge": "Announcement",
+    "popupBadge": "E'lon",
     "popupClose": "Yopish",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Bugun yana ko'rsatmaslik"
   },
   "betHistory": {
     "title": "Tikishlar tarixi",

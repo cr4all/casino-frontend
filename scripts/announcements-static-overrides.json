@@ -1,0 +1,346 @@
+{
+  "pt": {
+    "nav.notices": "AVISOS",
+    "nav.noticesLabel": "Avisos",
+    "announcement.popupBadge": "Anúncio",
+    "announcement.popupClose": "Fechar",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Não mostrar novamente hoje"
+  },
+  "ru": {
+    "nav.notices": "УВЕДОМЛЕНИЯ",
+    "nav.noticesLabel": "Уведомления",
+    "announcement.popupBadge": "Объявление",
+    "announcement.popupClose": "Закрыть",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Не показывать сегодня"
+  },
+  "pl": {
+    "nav.notices": "POWIADOMIENIA",
+    "nav.noticesLabel": "Powiadomienia",
+    "announcement.popupBadge": "Ogłoszenie",
+    "announcement.popupClose": "Zamknij",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Nie pokazuj dziś ponownie"
+  },
+  "nl": {
+    "nav.notices": "MELDINGEN",
+    "nav.noticesLabel": "Meldingen",
+    "announcement.popupBadge": "Mededeling",
+    "announcement.popupClose": "Sluiten",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Vandaag niet meer tonen"
+  },
+  "it": {
+    "nav.notices": "AVVISI",
+    "nav.noticesLabel": "Avvisi",
+    "announcement.popupBadge": "Annuncio",
+    "announcement.popupClose": "Chiudi",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Non mostrare più oggi"
+  },
+  "no": {
+    "nav.notices": "VARSLER",
+    "nav.noticesLabel": "Varsler",
+    "announcement.popupBadge": "Kunngjøring",
+    "announcement.popupClose": "Lukk",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Ikke vis igjen i dag"
+  },
+  "sv": {
+    "nav.notices": "MEDDELANDEN",
+    "nav.noticesLabel": "Meddelanden",
+    "announcement.popupBadge": "Meddelande",
+    "announcement.popupClose": "Stäng",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Visa inte igen idag"
+  },
+  "tr": {
+    "nav.notices": "BİLDİRİMLER",
+    "nav.noticesLabel": "Bildirimler",
+    "announcement.popupBadge": "Duyuru",
+    "announcement.popupClose": "Kapat",
+    "announcement.popupConfirm": "Tamam",
+    "announcement.hideForToday": "Bugün tekrar gösterme"
+  },
+  "uk": {
+    "nav.notices": "СПОВІЩЕННЯ",
+    "nav.noticesLabel": "Сповіщення",
+    "announcement.popupBadge": "Оголошення",
+    "announcement.popupClose": "Закрити",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Не показувати сьогодні"
+  },
+  "vi": {
+    "nav.notices": "THÔNG BÁO",
+    "nav.noticesLabel": "Thông báo",
+    "announcement.popupBadge": "Thông báo",
+    "announcement.popupClose": "Đóng",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Không hiển thị lại hôm nay"
+  },
+  "th": {
+    "nav.notices": "ประกาศ",
+    "nav.noticesLabel": "ประกาศ",
+    "announcement.popupBadge": "ประกาศ",
+    "announcement.popupClose": "ปิด",
+    "announcement.popupConfirm": "ตกลง",
+    "announcement.hideForToday": "ไม่แสดงอีกในวันนี้"
+  },
+  "ro": {
+    "nav.notices": "NOTIFICĂRI",
+    "nav.noticesLabel": "Notificări",
+    "announcement.popupBadge": "Anunț",
+    "announcement.popupClose": "Închide",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Nu mai afișa astăzi"
+  },
+  "id": {
+    "nav.notices": "PEMBERITAHUAN",
+    "nav.noticesLabel": "Pemberitahuan",
+    "announcement.popupBadge": "Pengumuman",
+    "announcement.popupClose": "Tutup",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Jangan tampilkan lagi hari ini"
+  },
+  "ms": {
+    "nav.notices": "NOTIS",
+    "nav.noticesLabel": "Notis",
+    "announcement.popupBadge": "Pengumuman",
+    "announcement.popupClose": "Tutup",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Jangan tunjuk lagi hari ini"
+  },
+  "lt": {
+    "nav.notices": "PRANEŠIMAI",
+    "nav.noticesLabel": "Pranešimai",
+    "announcement.popupBadge": "Pranešimas",
+    "announcement.popupClose": "Uždaryti",
+    "announcement.popupConfirm": "Gerai",
+    "announcement.hideForToday": "Šiandien neberodyti"
+  },
+  "lv": {
+    "nav.notices": "PAZIŅOJUMI",
+    "nav.noticesLabel": "Paziņojumi",
+    "announcement.popupBadge": "Paziņojums",
+    "announcement.popupClose": "Aizvērt",
+    "announcement.popupConfirm": "Labi",
+    "announcement.hideForToday": "Šodien vairs nerādīt"
+  },
+  "sk": {
+    "nav.notices": "OZNÁMENIA",
+    "nav.noticesLabel": "Oznámenia",
+    "announcement.popupBadge": "Oznámenie",
+    "announcement.popupClose": "Zavrieť",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Dnes už nezobrazovať"
+  },
+  "sl": {
+    "nav.notices": "OBVESTILA",
+    "nav.noticesLabel": "Obvestila",
+    "announcement.popupBadge": "Obvestilo",
+    "announcement.popupClose": "Zapri",
+    "announcement.popupConfirm": "V redu",
+    "announcement.hideForToday": "Danes ne prikazuj več"
+  },
+  "sr": {
+    "nav.notices": "ОБАВЕШТЕЊА",
+    "nav.noticesLabel": "Обавештења",
+    "announcement.popupBadge": "Обавештење",
+    "announcement.popupClose": "Затвори",
+    "announcement.popupConfirm": "У redu",
+    "announcement.hideForToday": "Не приказуј данас поново"
+  },
+  "hu": {
+    "nav.notices": "ÉRTESÍTÉSEK",
+    "nav.noticesLabel": "Értesítések",
+    "announcement.popupBadge": "Közlemény",
+    "announcement.popupClose": "Bezárás",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Ma ne jelenjen meg újra"
+  },
+  "km": {
+    "nav.notices": "ការជូនដំណឹង",
+    "nav.noticesLabel": "ការជូនដំណឹង",
+    "announcement.popupBadge": "ប្រកាស",
+    "announcement.popupClose": "បិទ",
+    "announcement.popupConfirm": "យល់ព្រម",
+    "announcement.hideForToday": "កុំបង្ហាញម្តងទៀតថ្ងៃនេះ"
+  },
+  "kn": {
+    "nav.notices": "ಸೂಚನೆಗಳು",
+    "nav.noticesLabel": "ಸೂಚನೆಗಳು",
+    "announcement.popupBadge": "ಪ್ರಕಟಣೆ",
+    "announcement.popupClose": "ಮುಚ್ಚಿ",
+    "announcement.popupConfirm": "ಸರಿ",
+    "announcement.hideForToday": "ಇಂದು ಮತ್ತೆ ತೋರಿಸಬೇಡಿ"
+  },
+  "lo": {
+    "nav.notices": "ແຈ້ງການ",
+    "nav.noticesLabel": "ແຈ້ງການ",
+    "announcement.popupBadge": "ປະກາດ",
+    "announcement.popupClose": "ປິດ",
+    "announcement.popupConfirm": "ຕົກລົງ",
+    "announcement.hideForToday": "ບໍ່ສະແດງອີກມື້ນີ້"
+  },
+  "lb": {
+    "nav.notices": "NOTIZEN",
+    "nav.noticesLabel": "Notizen",
+    "announcement.popupBadge": "Ukënnegung",
+    "announcement.popupClose": "Zoumaachen",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Haut net nach eng Kéier weisen"
+  },
+  "mk": {
+    "nav.notices": "ИЗВЕСТУВАЊА",
+    "nav.noticesLabel": "Известувања",
+    "announcement.popupBadge": "Најава",
+    "announcement.popupClose": "Затвори",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Не прикажувај повторно денес"
+  },
+  "ml": {
+    "nav.notices": "അറിയിപ്പുകൾ",
+    "nav.noticesLabel": "അറിയിപ്പുകൾ",
+    "announcement.popupBadge": "പ്രഖ്യാപനം",
+    "announcement.popupClose": "അടയ്ക്കുക",
+    "announcement.popupConfirm": "ശരി",
+    "announcement.hideForToday": "ഇന്ന് വീണ്ടും കാണിക്കരുത്"
+  },
+  "mn": {
+    "nav.notices": "МЭДЭГДЭЛ",
+    "nav.noticesLabel": "Мэдэгдэл",
+    "announcement.popupBadge": "Зар",
+    "announcement.popupClose": "Хаах",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Өнөөдөр дахин бүү харуул"
+  },
+  "mr": {
+    "nav.notices": "सूचना",
+    "nav.noticesLabel": "सूचना",
+    "announcement.popupBadge": "घोषणा",
+    "announcement.popupClose": "बंद करा",
+    "announcement.popupConfirm": "ठीक आहे",
+    "announcement.hideForToday": "आज पुन्हा दाखवू नका"
+  },
+  "mt": {
+    "nav.notices": "AVVIŻI",
+    "nav.noticesLabel": "Avviżi",
+    "announcement.popupBadge": "Avviż",
+    "announcement.popupClose": "Agħlaq",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Turixx iżjed illum"
+  },
+  "my": {
+    "nav.notices": "အကြောင်းကြားချက်များ",
+    "nav.noticesLabel": "အကြောင်းကြားချက်များ",
+    "announcement.popupBadge": "ကြေညာချက်",
+    "announcement.popupClose": "ပိတ်ရန်",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "ယနေ့ ထပ်မပြပါနှင့်"
+  },
+  "ne": {
+    "nav.notices": "सूचनाहरू",
+    "nav.noticesLabel": "सूचनाहरू",
+    "announcement.popupBadge": "घोषणा",
+    "announcement.popupClose": "बन्द गर्नुहोस्",
+    "announcement.popupConfirm": "ठीक छ",
+    "announcement.hideForToday": "आज फेरि नदेखाउनुहोस्"
+  },
+  "pa": {
+    "nav.notices": "ਸੂਚਨਾਵਾਂ",
+    "nav.noticesLabel": "ਸੂਚਨਾਵਾਂ",
+    "announcement.popupBadge": "ਘੋਸ਼ਣਾ",
+    "announcement.popupClose": "ਬੰਦ ਕਰੋ",
+    "announcement.popupConfirm": "ਠੀਕ ਹੈ",
+    "announcement.hideForToday": "ਅੱਜ ਦੁਬਾਰਾ ਨਾ ਦਿਖਾਓ"
+  },
+  "si": {
+    "nav.notices": "දැනුම්දීම්",
+    "nav.noticesLabel": "දැනුම්දීම්",
+    "announcement.popupBadge": "නිවේදනය",
+    "announcement.popupClose": "වසන්න",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "අද නැවත නොපෙන්වන්න"
+  },
+  "so": {
+    "nav.notices": "OGEYSIISYO",
+    "nav.noticesLabel": "Ogeysiisyada",
+    "announcement.popupBadge": "Ogeysiis",
+    "announcement.popupClose": "Xir",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Ha muujin mar kale maanta"
+  },
+  "sq": {
+    "nav.notices": "NJOFTIME",
+    "nav.noticesLabel": "Njoftime",
+    "announcement.popupBadge": "Njoftim",
+    "announcement.popupClose": "Mbyll",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Mos e shfaq sërish sot"
+  },
+  "sw": {
+    "nav.notices": "MATANGAZO",
+    "nav.noticesLabel": "Matangazo",
+    "announcement.popupBadge": "Tangazo",
+    "announcement.popupClose": "Funga",
+    "announcement.popupConfirm": "Sawa",
+    "announcement.hideForToday": "Usionyeshe tena leo"
+  },
+  "ta": {
+    "nav.notices": "அறிவிப்புகள்",
+    "nav.noticesLabel": "அறிவிப்புகள்",
+    "announcement.popupBadge": "அறிவிப்பு",
+    "announcement.popupClose": "மூடு",
+    "announcement.popupConfirm": "சரி",
+    "announcement.hideForToday": "இன்று மீண்டும் காட்ட வேண்டாம்"
+  },
+  "te": {
+    "nav.notices": "నోటీసులు",
+    "nav.noticesLabel": "నోటీసులు",
+    "announcement.popupBadge": "ప్రకటన",
+    "announcement.popupClose": "మూసివేయి",
+    "announcement.popupConfirm": "సరే",
+    "announcement.hideForToday": "ఈ రోజు మళ్లీ చూపించవద్దు"
+  },
+  "tg": {
+    "nav.notices": "ОГОHIҲO",
+    "nav.noticesLabel": "Огоҳиҳо",
+    "announcement.popupBadge": "Эълон",
+    "announcement.popupClose": "Пӯшидан",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Имрӯз дубора нишон надиҳед"
+  },
+  "ur": {
+    "nav.notices": "نوٹس",
+    "nav.noticesLabel": "نوٹس",
+    "announcement.popupBadge": "اعلان",
+    "announcement.popupClose": "بند کریں",
+    "announcement.popupConfirm": "ٹھیک ہے",
+    "announcement.hideForToday": "آج دوبارہ نہ دکھائیں"
+  },
+  "uz": {
+    "nav.notices": "XABARLAR",
+    "nav.noticesLabel": "Xabarlar",
+    "announcement.popupBadge": "E'lon",
+    "announcement.popupClose": "Yopish",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Bugun yana ko'rsatmaslik"
+  },
+  "yo": {
+    "nav.notices": "IKILọ",
+    "nav.noticesLabel": "Ikilọ",
+    "announcement.popupBadge": "Ipolowo",
+    "announcement.popupClose": "Pa",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Ma ṣe fi hàn loni mo"
+  },
+  "zu": {
+    "nav.notices": "IZAZISO",
+    "nav.noticesLabel": "Izaziso",
+    "announcement.popupBadge": "Isimemezelo",
+    "announcement.popupClose": "Vala",
+    "announcement.popupConfirm": "KULUNGILE",
+    "announcement.hideForToday": "Ungabonisi futhi namuhla"
+  }
+}

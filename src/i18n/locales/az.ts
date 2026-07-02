@@ -21,7 +21,7 @@ export const az: LocaleTree = {
     "previous": "Əvvəlki",
     "next": "Növbəti",
     "showMore": "Daha çox göstər",
-    "ok": "Ok",
+    "ok": "Oldu",
     "yes": "Bəli",
     "no": "Sıra №",
     "close": "Bağla",
@@ -59,7 +59,7 @@ export const az: LocaleTree = {
     "gameBets": "Oyun mərcləri",
     "history": "TARİX",
     "transactions": "Əməliyyatlar",
-    "notices": "Bildirişlər",
+    "notices": "BİLDİRİŞLƏR",
     "noticesLabel": "Bildirişlər",
     "bonuses": "BONUSLAR",
     "bonusesLabel": "Bonuslar",
@@ -504,10 +504,10 @@ export const az: LocaleTree = {
     "hideDetails": "Mesaj detallarını gizlət"
   },
   "announcement": {
-    "popupBadge": "Bildiriş",
+    "popupBadge": "Elan",
     "popupClose": "Bağla",
-    "popupConfirm": "Ok",
-    "hideForToday": "Bu gün bir daha göstərməyin"
+    "popupConfirm": "Oldu",
+    "hideForToday": " Bu gün bir daha göstərməyin"
   },
   "betHistory": {
     "title": "Mərc Tarixi",

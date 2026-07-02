@@ -504,10 +504,10 @@ export const lt: LocaleTree = {
     "hideDetails": "Slėpti žinutės detales"
   },
   "announcement": {
-    "popupBadge": "Announcement",
+    "popupBadge": "Pranešimas",
     "popupClose": "Uždaryti",
-    "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "popupConfirm": "Gerai",
+    "hideForToday": "Šiandien neberodyti"
   },
   "betHistory": {
     "title": "Statymų istorija",

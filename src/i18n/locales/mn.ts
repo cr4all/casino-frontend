@@ -504,10 +504,10 @@ export const mn: LocaleTree = {
     "hideDetails": "Мессежийн дэлгэрэнгүй нуух"
   },
   "announcement": {
-    "popupBadge": "Announcement",
+    "popupBadge": "Зар",
     "popupClose": "Хаах",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Өнөөдөр дахин бүү харуул"
   },
   "betHistory": {
     "title": "Мөрийн түүх",

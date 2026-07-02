@@ -59,8 +59,8 @@ export const hr: LocaleTree = {
     "gameBets": "Oklade na igre",
     "history": "POVIJEST",
     "transactions": "Transakcije",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "OBAVIJESTI",
+    "noticesLabel": "Obavijesti",
     "bonuses": "BONUSI",
     "bonusesLabel": "Bonusi",
     "profile": "Profil",
@@ -628,9 +628,9 @@ export const hr: LocaleTree = {
     }
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
-    "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "popupBadge": "Obavijest",
+    "popupClose": "Zatvori",
+    "popupConfirm": "U redu",
+    "hideForToday": " Danas se više ne prikazuje"
   }
 };

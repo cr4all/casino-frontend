@@ -317,8 +317,8 @@
   "DEPOSIT": "DEPOSIT",
   "Deposit": "Deposit",
   "HISTORY": "HISTORY",
-  "NOTICES": "NOTICES",
-  "Notices": "Notices",
+  "NOTICES": "Შეტყობინებები",
+  "Notices": " >შეტყობინებები",
   "BONUSES": "BONUSES",
   "Bonuses": "Bonuses",
   "Profile": "Profile",
@@ -351,7 +351,7 @@
   "closed": "closed",
   "Player": "Player",
   "Hybrid": "ჰიბრიდი",
-  "Close": "Close",
+  "Close": "დახურვა",
   "games": "games",
   "Login": "Login",
   "Slots": "Slots",
@@ -376,7 +376,7 @@
   "Win": "Win",
   "Net": "Net",
   "CPA": "ცპა",
-  "OK": "OK",
+  "OK": "კარგი",
   "ID": "ID",
   "Yes": "დიახ",
   "No": "არა",
@@ -428,6 +428,6 @@
   "Pending": "მოლოდინში",
   "Resolved": "მოგვარებული",
   "Closed": "დახურული",
-  "Announcement": "Announcement",
-  "Don't show again today": "Don't show again today"
+  "Announcement": "განცხადება",
+  "Don't show again today": "აღარ გამოჩნდეთ დღეს"
 }

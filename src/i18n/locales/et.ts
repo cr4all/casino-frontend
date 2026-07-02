@@ -59,8 +59,8 @@ export const et: LocaleTree = {
     "gameBets": "Mängupanused",
     "history": "AJALUGU",
     "transactions": "Tehingud",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "TEATED",
+    "noticesLabel": "Teated",
     "bonuses": "BOONUSED",
     "bonusesLabel": "Boonused",
     "profile": "Profiil",
@@ -628,9 +628,9 @@ export const et: LocaleTree = {
     }
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
+    "popupBadge": "Teade",
+    "popupClose": "Sule",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Ära näita täna uuesti"
   }
 };

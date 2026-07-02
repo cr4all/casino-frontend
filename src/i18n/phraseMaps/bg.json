@@ -317,8 +317,8 @@
   "DEPOSIT": "ДЕПОЗИТ",
   "Deposit": "Депозит",
   "HISTORY": "ИСТОРИЯ",
-  "NOTICES": "NOTICES",
-  "Notices": "Notices",
+  "NOTICES": "Notices.",
+  "Notices": "Известия",
   "BONUSES": "БОНУСИ",
   "Bonuses": "Бонуси",
   "Profile": "Профил",
@@ -351,7 +351,7 @@
   "closed": "затворено",
   "Player": "Играч",
   "Hybrid": "Хибридно",
-  "Close": "Close",
+  "Close": "Затваряне",
   "games": "гри",
   "Login": "Вход",
   "Slots": "Слотове",
@@ -428,6 +428,6 @@
   "Pending": "чакащ",
   "Resolved": "Решен",
   "Closed": "затворен",
-  "Announcement": "Announcement",
-  "Don't show again today": "Don't show again today"
+  "Announcement": "Обявление",
+  "Don't show again today": "Да не се показва отново днес"
 }

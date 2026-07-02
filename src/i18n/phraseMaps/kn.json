@@ -317,8 +317,8 @@
   "DEPOSIT": "DEPOSIT",
   "Deposit": "Deposit",
   "HISTORY": "HISTORY",
-  "NOTICES": "ಸೂಚನೆಗಳು",
-  "Notices": "ಸೂಚನೆಗಳು",
+  "NOTICES": "NOTICES",
+  "Notices": "Notices",
   "BONUSES": "BONUSES",
   "Bonuses": "Bonuses",
   "Profile": "Profile",
@@ -351,7 +351,7 @@
   "closed": "closed",
   "Player": "Player",
   "Hybrid": "ಹೈಬ್ರಿಡ್",
-  "Close": "ಮುಚ್ಚಿ",
+  "Close": "Close",
   "games": "games",
   "Login": "Login",
   "Slots": "Slots",
@@ -376,7 +376,7 @@
   "Win": "Win",
   "Net": "Net",
   "CPA": "CPA",
-  "OK": "ಸರಿ",
+  "OK": "OK",
   "ID": "ID",
   "Yes": "ಹೌದು",
   "No": "ಇಲ್ಲ",
@@ -429,6 +429,6 @@
   "Pending": "ಬಾಕಿ",
   "Resolved": "ಪರಿಹರಿಸಲಾಗಿದೆ",
   "Closed": "ಮುಚ್ಚಲಾಗಿದೆ",
-  "Announcement": "ಪ್ರಕಟಣೆ",
-  "Don't show again today": "ಇಂದು ಮತ್ತೆ ತೋರಿಸಬೇಡಿ"
+  "Announcement": "Announcement",
+  "Don't show again today": "Don't show again today"
 }

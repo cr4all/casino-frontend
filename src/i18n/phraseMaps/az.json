@@ -317,7 +317,7 @@
   "DEPOSIT": "ƏMANƏT",
   "Deposit": "Depozit",
   "HISTORY": "TARİX",
-  "NOTICES": "Bildirişlər",
+  "NOTICES": "BİLDİRİŞLƏR",
   "Notices": "Bildirişlər",
   "BONUSES": "BONUSLAR",
   "Bonuses": "Bonuslar",
@@ -376,7 +376,7 @@
   "Win": "qalib gəlmək",
   "Net": "Xalis",
   "CPA": "İBM",
-  "OK": "Ok",
+  "OK": "Oldu",
   "ID": "Kod",
   "Verify identity (KYC)": "Şəxsiyyəti təsdiqləyin (KYC)",
   "Loading verification...": "Təsdiqləmə yüklənir...",
@@ -473,6 +473,6 @@
   "Wallet address": "Cüzdan ünvanı",
   "Account / wallet ID": "Hesab / pul kisəsi nömrəsi",
   "Bank account": "Bank hesabı",
-  "Announcement": "Bildiriş",
-  "Don't show again today": "Bu gün bir daha göstərməyin"
+  "Announcement": "Elan",
+  "Don't show again today": " Bu gün bir daha göstərməyin"
 }

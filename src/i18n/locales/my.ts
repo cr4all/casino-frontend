@@ -59,8 +59,8 @@ export const my: LocaleTree = {
     "gameBets": "Game bets",
     "history": "HISTORY",
     "transactions": "Transactions",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "အကြောင်းကြားချက်များ",
+    "noticesLabel": "အကြောင်းကြားချက်များ",
     "bonuses": "BONUSES",
     "bonusesLabel": "Bonuses",
     "profile": "Profile",
@@ -504,10 +504,10 @@ export const my: LocaleTree = {
     "hideDetails": "Hide message details"
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
+    "popupBadge": "ကြေညာချက်",
+    "popupClose": "ပိတ်ရန်",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "ယနေ့ ထပ်မပြပါနှင့်"
   },
   "betHistory": {
     "title": "Bet History",

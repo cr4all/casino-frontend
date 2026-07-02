@@ -317,8 +317,8 @@
   "DEPOSIT": "DEPOSIT",
   "Deposit": "Deposit",
   "HISTORY": "HISTORY",
-  "NOTICES": "NOTICES",
-  "Notices": "Notices",
+  "NOTICES": "ԾԱՆՈՒՑՈՒՄՆԵՐ",
+  "Notices": "ԾԱՆՈՒՑՈՒՄՆԵՐ",
   "BONUSES": "BONUSES",
   "Bonuses": "Bonuses",
   "Profile": "Profile",
@@ -351,7 +351,7 @@
   "closed": "closed",
   "Player": "Player",
   "Hybrid": "Հիբրիդ",
-  "Close": "Close",
+  "Close": "Փակել",
   "games": "games",
   "Login": "Login",
   "Slots": "Slots",
@@ -376,7 +376,7 @@
   "Win": "Win",
   "Net": "Net",
   "CPA": "ՀԿԿ",
-  "OK": "OK",
+  "OK": "ԼԱՎ",
   "ID": "ID",
   "Yes": "ԱՅՈ",
   "No": "Ոչ",
@@ -425,6 +425,6 @@
   "Pending": "սպասման",
   "Resolved": "Լուծված",
   "Closed": "փակված",
-  "Announcement": "Announcement",
-  "Don't show again today": "Don't show again today"
+  "Announcement": "Հայտարարություն",
+  "Don't show again today": "Այլևս չցուցադրեք այսօր"
 }

@@ -59,8 +59,8 @@ export const fil: LocaleTree = {
     "gameBets": "Taya sa laro",
     "history": "HISTORY",
     "transactions": "Mga transaksyon",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "MGA ABISO",
+    "noticesLabel": "Mga Abiso",
     "bonuses": "BONUS",
     "bonusesLabel": "Bonus",
     "profile": "Profile",
@@ -628,9 +628,9 @@ export const fil: LocaleTree = {
     }
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
+    "popupBadge": "Anunsyo",
+    "popupClose": "Isara ang ",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Huwag magpakita muli ngayon"
   }
 };

@@ -57,8 +57,8 @@ export const ur: LocaleTree = {
     "gameBets": "گیم بیٹس",
     "history": "تاریخ",
     "transactions": "لین دین",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "نوٹس",
+    "noticesLabel": "نوٹس",
     "bonuses": "بونس",
     "bonusesLabel": "بونس",
     "profile": "پروفائل",
@@ -625,9 +625,9 @@ export const ur: LocaleTree = {
     }
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
-    "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "popupBadge": "اعلان",
+    "popupClose": "بند کریں",
+    "popupConfirm": "ٹھیک ہے",
+    "hideForToday": "آج دوبارہ نہ دکھائیں"
   }
 };
