@@ -24,7 +24,7 @@ export const ga: LocaleTree = {
     "ok": "OK",
     "yes": "Yes",
     "no": "No",
-    "close": "Close",
+    "close": "Dún",
     "copy": "Copy",
     "copied": "Copied",
     "games": "games",
@@ -59,8 +59,8 @@ export const ga: LocaleTree = {
     "gameBets": "Game bets",
     "history": "HISTORY",
     "transactions": "Transactions",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "Fógraí",
+    "noticesLabel": "Fógraí",
     "bonuses": "BONUSES",
     "bonusesLabel": "Bonuses",
     "profile": "Profile",
@@ -504,10 +504,10 @@ export const ga: LocaleTree = {
     "hideDetails": "Hide message details"
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
+    "popupBadge": "fógra",
+    "popupClose": "Dún",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Ná taispeáin arís inniu"
   },
   "betHistory": {
     "title": "Bet History",
@@ -559,7 +559,7 @@ export const ga: LocaleTree = {
     "backToLobby": "← Back to lobby",
     "defaultName": "Cluiche",
     "launchError": "Failed to launch game.",
-    "closeWindow": "Close",
+    "closeWindow": "Dún",
     "loginRequired": "Please log in to play."
   },
   "gameCard": {

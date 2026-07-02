@@ -59,8 +59,8 @@ export const hy: LocaleTree = {
     "gameBets": "Խաղերի խաղադրույքներ",
     "history": "ՊԱՏՄՈՒԹՅՈՒՆ",
     "transactions": "Գործարքներ",
-    "notices": "ԾԱՆՈԹԱՑՈՒՄՆԵՐ",
-    "noticesLabel": "Ծանուցումներ",
+    "notices": "ԾԱՆՈՒՑՈՒՄՆԵՐ",
+    "noticesLabel": "ԾԱՆՈՒՑՈՒՄՆԵՐ",
     "bonuses": "Պարգևավճարներ",
     "bonusesLabel": "Պարգևավճարներ",
     "profile": "Պրոֆիլ",
@@ -504,10 +504,10 @@ export const hy: LocaleTree = {
     "hideDetails": "Թաքցնել հաղորդագրության մանրամասները"
   },
   "announcement": {
-    "popupBadge": "Announcement",
+    "popupBadge": "Հայտարարություն",
     "popupClose": "Փակել",
-    "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "popupConfirm": "ԼԱՎ",
+    "hideForToday": "Այլևս չցուցադրեք այսօր"
   },
   "betHistory": {
     "title": "Փաստացի Խաղադրույքներ",

@@ -59,8 +59,8 @@ export const lo: LocaleTree = {
     "gameBets": "Game bets",
     "history": "HISTORY",
     "transactions": "Transactions",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "ແຈ້ງການ",
+    "noticesLabel": "ແຈ້ງການ",
     "bonuses": "BONUSES",
     "bonusesLabel": "Bonuses",
     "profile": "Profile",
@@ -504,10 +504,10 @@ export const lo: LocaleTree = {
     "hideDetails": "Hide message details"
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
-    "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "popupBadge": "ປະກາດ",
+    "popupClose": "ປິດ",
+    "popupConfirm": "ຕົກລົງ",
+    "hideForToday": "ບໍ່ສະແດງອີກມື້ນີ້"
   },
   "betHistory": {
     "title": "Bet History",

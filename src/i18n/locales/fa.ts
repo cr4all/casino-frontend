@@ -59,8 +59,8 @@ export const fa: LocaleTree = {
     "gameBets": "شرط‌های بازی",
     "history": "تاریخچه",
     "transactions": "تراکنش‌ها",
-    "notices": "اعلان‌ها",
-    "noticesLabel": "اعلان‌ها",
+    "notices": "اطلاعیه‌ها",
+    "noticesLabel": "موارد قابل توجه",
     "bonuses": "بونوس‌ها",
     "bonusesLabel": "بونوس‌ها",
     "profile": "پروفایل",
@@ -504,10 +504,10 @@ export const fa: LocaleTree = {
     "hideDetails": "پنهان کردن جزئیات پیام"
   },
   "announcement": {
-    "popupBadge": "Announcement",
+    "popupBadge": "اعلامیه",
     "popupClose": "بستن",
-    "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "popupConfirm": "تایید",
+    "hideForToday": "امروز دیگر نمایش داده نشود"
   },
   "betHistory": {
     "title": "تاریخچه شرط‌ها",

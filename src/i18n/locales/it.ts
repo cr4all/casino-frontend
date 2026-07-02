@@ -24,7 +24,7 @@ export const it: LocaleTree = {
     "ok": "OK",
     "yes": "Yes",
     "no": "No",
-    "close": "Close",
+    "close": "Chiudi",
     "copy": "Copy",
     "copied": "Copied",
     "games": "games",
@@ -59,8 +59,8 @@ export const it: LocaleTree = {
     "gameBets": "Game bets",
     "history": "HISTORY",
     "transactions": "Transactions",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "AVVISI",
+    "noticesLabel": "Avvisi",
     "bonuses": "BONUSES",
     "bonusesLabel": "Bonuses",
     "profile": "Profile",
@@ -504,10 +504,10 @@ export const it: LocaleTree = {
     "hideDetails": "Hide message details"
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
+    "popupBadge": "Annuncio",
+    "popupClose": "Chiudi",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Non mostrare più oggi"
   },
   "betHistory": {
     "title": "Bet History",
@@ -559,7 +559,7 @@ export const it: LocaleTree = {
     "backToLobby": "← Back to lobby",
     "defaultName": "Gioco",
     "launchError": "Failed to launch game.",
-    "closeWindow": "Close",
+    "closeWindow": "Chiudi",
     "loginRequired": "Please log in to play."
   },
   "gameCard": {

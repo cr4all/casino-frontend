@@ -504,10 +504,10 @@ export const he: LocaleTree = {
     "hideDetails": "הסתר פרטי הודעה"
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "סגור",
-    "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "popupBadge": "הודעה כחולה",
+    "popupClose": "סגירה",
+    "popupConfirm": "בסדר",
+    "hideForToday": "אל תציג שוב היום"
   },
   "betHistory": {
     "title": "היסטוריית הימורים",

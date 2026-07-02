@@ -24,7 +24,7 @@ export const bn: LocaleTree = {
     "ok": "OK",
     "yes": "হ্যাঁ",
     "no": "নং",
-    "close": "Close",
+    "close": "বন্ধ",
     "copy": "কপি করুন",
     "copied": "কপি করা হয়েছে",
     "games": "গেমস",
@@ -59,8 +59,8 @@ export const bn: LocaleTree = {
     "gameBets": "গেম বেট",
     "history": "ইতিহাস",
     "transactions": "লেনদেন",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "নোটিশ",
+    "noticesLabel": "নোটিশ",
     "bonuses": "বোনাস",
     "bonusesLabel": "বোনাস",
     "profile": "প্রোফাইল",
@@ -504,10 +504,10 @@ export const bn: LocaleTree = {
     "hideDetails": "মেসেজের বিবরণ"
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
-    "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "popupBadge": "ঘোষণা",
+    "popupClose": "বন্ধ",
+    "popupConfirm": "ঠিক আছে",
+    "hideForToday": "আজ আবার এটি দেখাবেন না।"
   },
   "betHistory": {
     "title": "বেট ইতিহাস",
@@ -559,7 +559,7 @@ export const bn: LocaleTree = {
     "backToLobby": "লবিতে ফিরে যান",
     "defaultName": "গেম",
     "launchError": "খেলা আরম্ভ করতে ব্যর্থ হয়েছে ।",
-    "closeWindow": "Close",
+    "closeWindow": "বন্ধ",
     "loginRequired": "খেলতে লগ ইন করুন ।"
   },
   "gameCard": {

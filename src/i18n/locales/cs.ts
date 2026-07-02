@@ -59,8 +59,8 @@ export const cs: LocaleTree = {
     "gameBets": "Herní sázky",
     "history": "HISTORIE",
     "transactions": "Transakce",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "OZNÁMENÍ",
+    "noticesLabel": "Oznámení",
     "bonuses": "BONUSY",
     "bonusesLabel": "Bonusy",
     "profile": "Profil",
@@ -628,9 +628,9 @@ export const cs: LocaleTree = {
     }
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
+    "popupBadge": "Oznámení",
+    "popupClose": "Zavřít",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": " Dnes se již nezobrazovat"
   }
 };

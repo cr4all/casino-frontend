@@ -504,10 +504,10 @@ export const sw: LocaleTree = {
     "hideDetails": "Ficha maelezo ya ujumbe"
   },
   "announcement": {
-    "popupBadge": "Announcement",
+    "popupBadge": "Tangazo",
     "popupClose": "Funga",
-    "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "popupConfirm": "Sawa",
+    "hideForToday": "Usionyeshe tena leo"
   },
   "betHistory": {
     "title": "Historia ya dau",

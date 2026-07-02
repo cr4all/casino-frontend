@@ -59,8 +59,8 @@ export const el: LocaleTree = {
     "gameBets": "Στοιχήματα παιχνιδιού",
     "history": "ΙΣΤΟΡΙΚΟ",
     "transactions": "Συναλλαγές",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "ΕΙΔΟΠΟΙΗΣΕΙΣ",
+    "noticesLabel": "Ειδοποιήσεις",
     "bonuses": "ΜΠΟΝΟΥΣ",
     "bonusesLabel": "Μπόνους",
     "profile": "Προφίλ",
@@ -628,9 +628,9 @@ export const el: LocaleTree = {
     }
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
+    "popupBadge": "Ανακοίνωση",
+    "popupClose": "Κλείσιμο",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Να μην εμφανιστεί ξανά σήμερα"
   }
 };

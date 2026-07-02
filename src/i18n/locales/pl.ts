@@ -57,8 +57,8 @@ export const pl: LocaleTree = {
     "gameBets": "Zakłady w grach",
     "history": "HISTORIA",
     "transactions": "Transakcje",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "POWIADOMIENIA",
+    "noticesLabel": "Powiadomienia",
     "bonuses": "BONUSY",
     "bonusesLabel": "Bonusy",
     "profile": "Profil",
@@ -625,9 +625,9 @@ export const pl: LocaleTree = {
     }
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
+    "popupBadge": "Ogłoszenie",
+    "popupClose": "Zamknij",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Nie pokazuj dziś ponownie"
   }
 };

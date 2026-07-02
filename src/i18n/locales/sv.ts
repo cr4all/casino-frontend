@@ -504,10 +504,10 @@ export const sv: LocaleTree = {
     "hideDetails": "Dölj meddelandedetaljer"
   },
   "announcement": {
-    "popupBadge": "Announcement",
+    "popupBadge": "Meddelande",
     "popupClose": "Stäng",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Visa inte igen idag"
   },
   "betHistory": {
     "title": "Spelhistorik",

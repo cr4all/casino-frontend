@@ -317,8 +317,8 @@
   "DEPOSIT": "DEPOSIT",
   "Deposit": "Deposit",
   "HISTORY": "HISTORY",
-  "NOTICES": "NOTICES",
-  "Notices": "Notices",
+  "NOTICES": "Fógraí",
+  "Notices": "Fógraí",
   "BONUSES": "BONUSES",
   "Bonuses": "Bonuses",
   "Profile": "Profile",
@@ -351,7 +351,7 @@
   "closed": "closed",
   "Player": "Player",
   "Hybrid": "cros-síolrach",
-  "Close": "Close",
+  "Close": "Dún",
   "games": "games",
   "Login": "Login",
   "Slots": "Slots",
@@ -409,6 +409,6 @@
   "Pending": "ar feitheamh",
   "Resolved": "Réitithe",
   "Closed": "dúnta",
-  "Announcement": "Announcement",
-  "Don't show again today": "Don't show again today"
+  "Announcement": "fógra",
+  "Don't show again today": "Ná taispeáin arís inniu"
 }

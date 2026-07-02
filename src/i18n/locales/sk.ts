@@ -57,8 +57,8 @@ export const sk: LocaleTree = {
     "gameBets": "Stávky v hrách",
     "history": "HISTÓRIA",
     "transactions": "Transakcie",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "OZNÁMENIA",
+    "noticesLabel": "Oznámenia",
     "bonuses": "BONUSY",
     "bonusesLabel": "Bonusy",
     "profile": "Profil",
@@ -625,9 +625,9 @@ export const sk: LocaleTree = {
     }
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
+    "popupBadge": "Oznámenie",
+    "popupClose": "Zavrieť",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Dnes už nezobrazovať"
   }
 };

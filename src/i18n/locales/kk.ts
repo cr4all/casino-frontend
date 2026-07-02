@@ -59,8 +59,8 @@ export const kk: LocaleTree = {
     "gameBets": "Ойын бәстері",
     "history": "ТАРИХ",
     "transactions": "Транзакциялар",
-    "notices": "ХАБАРЛАНДЫРУЛАР",
-    "noticesLabel": "Хабарландырулар",
+    "notices": "Ескертпелер:",
+    "noticesLabel": "Ескертпелер:",
     "bonuses": "БОНУСТАР",
     "bonusesLabel": "Бонустар",
     "profile": "Профиль",
@@ -504,10 +504,10 @@ export const kk: LocaleTree = {
     "hideDetails": "Хабарламаның егжей- тегжейін жас"
   },
   "announcement": {
-    "popupBadge": "Announcement",
+    "popupBadge": "Хабарландыру",
     "popupClose": "Жабу",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Бүгін қайта көрсетпеңіз"
   },
   "betHistory": {
     "title": "Ставкалар тарихы",

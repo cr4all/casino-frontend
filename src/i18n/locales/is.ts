@@ -24,7 +24,7 @@ export const is: LocaleTree = {
     "ok": "OK",
     "yes": "Já",
     "no": "Nei",
-    "close": "Close",
+    "close": "Loka",
     "copy": "Copy",
     "copied": "Copied",
     "games": "games",
@@ -59,8 +59,8 @@ export const is: LocaleTree = {
     "gameBets": "Game bets",
     "history": "HISTORY",
     "transactions": "Transactions",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "Athugasemdir",
+    "noticesLabel": "Athugasemdir",
     "bonuses": "BONUSES",
     "bonusesLabel": "Bonuses",
     "profile": "Profile",
@@ -504,10 +504,10 @@ export const is: LocaleTree = {
     "hideDetails": "Upplýsingar Skilaboða"
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
+    "popupBadge": "Tilkynning",
+    "popupClose": "Loka",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Ekki sýna aftur í dag"
   },
   "betHistory": {
     "title": "Bet History",
@@ -559,7 +559,7 @@ export const is: LocaleTree = {
     "backToLobby": "← Til baka í anddyri",
     "defaultName": "Leikur",
     "launchError": "Ekki tókst að ræsa leikinn.",
-    "closeWindow": "Close",
+    "closeWindow": "Loka",
     "loginRequired": "Please log in to play."
   },
   "gameCard": {

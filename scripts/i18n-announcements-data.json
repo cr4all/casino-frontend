@@ -1,61 +1,85 @@
 {
-  "de": {
-    "nav.notices": "MITTEILUNGEN",
-    "nav.noticesLabel": "Hinweise",
-    "announcement.popupBadge": "Mitteilung",
-    "announcement.popupClose": "Schließen",
+  "af": {
+    "nav.notices": "Kennisgewings",
+    "nav.noticesLabel": "Kennisgewings",
+    "announcement.popupBadge": "Aankondiging",
+    "announcement.popupClose": "Sluit",
     "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Heute nicht mehr anzeigen"
-  },
-  "cs": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
+    "announcement.hideForToday": "Moenie vandag weer wys nie"
   },
   "am": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
+    "nav.notices": "ማሳወቂያዎች",
+    "nav.noticesLabel": "ማሳወቂያዎች",
+    "announcement.popupBadge": "ማስታወቂያ",
+    "announcement.popupClose": "ዝጋ",
+    "announcement.popupConfirm": "እሺ",
+    "announcement.hideForToday": "ዛሬም ደግመህ አታሳይ"
   },
-  "bg": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "af": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
+  "ar": {
+    "nav.notices": "الإشعارات",
+    "nav.noticesLabel": "الإخطارات",
+    "announcement.popupBadge": "إعلان",
+    "announcement.popupClose": "خاتمة",
+    "announcement.popupConfirm": "مؤكد",
+    "announcement.hideForToday": "عدم إظهار هذا مرة أخرى"
   },
   "az": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
+    "nav.notices": "BİLDİRİŞLƏR",
+    "nav.noticesLabel": "Bildirişlər",
+    "announcement.popupBadge": "Elan",
+    "announcement.popupClose": "Bağla",
+    "announcement.popupConfirm": "Oldu",
+    "announcement.hideForToday": " Bu gün bir daha göstərməyin"
+  },
+  "be": {
+    "nav.notices": "Сінхранізацыя ў рэжыме падвойнага прагляду",
+    "nav.noticesLabel": "Сінхранізацыя ў рэжыме падвойнага прагляду",
+    "announcement.popupBadge": "Аб'ява",
+    "announcement.popupClose": "Закрыць",
+    "announcement.popupConfirm": "ДОБРА",
+    "announcement.hideForToday": "Не паказваць сёння зноў"
+  },
+  "bg": {
+    "nav.notices": "Notices.",
+    "nav.noticesLabel": "Известия",
+    "announcement.popupBadge": "Обявление",
+    "announcement.popupClose": "Затваряне",
     "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
+    "announcement.hideForToday": "Да не се показва отново днес"
   },
   "bn": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
+    "nav.notices": "নোটিশ",
+    "nav.noticesLabel": "নোটিশ",
+    "announcement.popupBadge": "ঘোষণা",
+    "announcement.popupClose": "বন্ধ",
+    "announcement.popupConfirm": "ঠিক আছে",
+    "announcement.hideForToday": "আজ আবার এটি দেখাবেন না।"
+  },
+  "cs": {
+    "nav.notices": "OZNÁMENÍ",
+    "nav.noticesLabel": "Oznámení",
+    "announcement.popupBadge": "Oznámení",
+    "announcement.popupClose": "Zavřít",
     "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
+    "announcement.hideForToday": " Dnes se již nezobrazovat"
   },
   "cy": {
+    "nav.notices": "Hysbysiadau",
+    "nav.noticesLabel": "Hysbysiadau",
+    "announcement.popupBadge": "cyhoeddiad",
+    "announcement.popupClose": "Cau",
+    "announcement.popupConfirm": "Iawn",
+    "announcement.hideForToday": "Peidiwch â'i ddangos eto heddiw"
+  },
+  "da": {
+    "nav.notices": "MEDDELELSER",
+    "nav.noticesLabel": "Meddelelser",
+    "announcement.popupBadge": "Meddelelse",
+    "announcement.popupClose": "Luk",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": " Vis ikke igen i dag"
+  },
+  "de": {
     "nav.notices": "NOTICES",
     "nav.noticesLabel": "Notices",
     "announcement.popupBadge": "Announcement",
@@ -64,70 +88,14 @@
     "announcement.hideForToday": "Don't show again today"
   },
   "el": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
+    "nav.notices": "ΕΙΔΟΠΟΙΗΣΕΙΣ",
+    "nav.noticesLabel": "Ειδοποιήσεις",
+    "announcement.popupBadge": "Ανακοίνωση",
+    "announcement.popupClose": "Κλείσιμο",
     "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "be": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "da": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "ar": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
+    "announcement.hideForToday": "Να μην εμφανιστεί ξανά σήμερα"
   },
   "es": {
-    "nav.notices": "AVISOS",
-    "nav.noticesLabel": "Avisos",
-    "announcement.popupBadge": "Anuncio",
-    "announcement.popupClose": "Cerrar",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "No volver a mostrar hoy"
-  },
-  "fr": {
-    "nav.notices": "AVIS",
-    "nav.noticesLabel": "Avis",
-    "announcement.popupBadge": "Annonce",
-    "announcement.popupClose": "Fermer",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Ne plus afficher aujourd'hui"
-  },
-  "ga": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "gu": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "fi": {
     "nav.notices": "NOTICES",
     "nav.noticesLabel": "Notices",
     "announcement.popupBadge": "Announcement",
@@ -136,54 +104,38 @@
     "announcement.hideForToday": "Don't show again today"
   },
   "et": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
+    "nav.notices": "TEATED",
+    "nav.noticesLabel": "Teated",
+    "announcement.popupBadge": "Teade",
+    "announcement.popupClose": "Sule",
     "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "he": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "hu": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "fil": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "ha": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "hi": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
+    "announcement.hideForToday": "Ära näita täna uuesti"
   },
   "fa": {
+    "nav.notices": "اطلاعیه‌ها",
+    "nav.noticesLabel": "موارد قابل توجه",
+    "announcement.popupBadge": "اعلامیه",
+    "announcement.popupClose": "بستن",
+    "announcement.popupConfirm": "تایید",
+    "announcement.hideForToday": "امروز دیگر نمایش داده نشود"
+  },
+  "fi": {
+    "nav.notices": "ILMOITUKSET",
+    "nav.noticesLabel": "Ilmoitukset",
+    "announcement.popupBadge": "Ilmoitus",
+    "announcement.popupClose": "Sulje",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Älä näytä uudelleen tänään"
+  },
+  "fil": {
+    "nav.notices": "MGA ABISO",
+    "nav.noticesLabel": "Mga Abiso",
+    "announcement.popupBadge": "Anunsyo",
+    "announcement.popupClose": "Isara ang ",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Huwag magpakita muli ngayon"
+  },
+  "fr": {
     "nav.notices": "NOTICES",
     "nav.noticesLabel": "Notices",
     "announcement.popupBadge": "Announcement",
@@ -191,71 +143,103 @@
     "announcement.popupConfirm": "OK",
     "announcement.hideForToday": "Don't show again today"
   },
-  "ko": {
-    "nav.notices": "알림",
-    "nav.noticesLabel": "알림",
-    "announcement.popupBadge": "공지",
-    "announcement.popupClose": "닫기",
-    "announcement.popupConfirm": "확인",
-    "announcement.hideForToday": "하루동안 표시하지 않기"
+  "ga": {
+    "nav.notices": "Fógraí",
+    "nav.noticesLabel": "Fógraí",
+    "announcement.popupBadge": "fógra",
+    "announcement.popupClose": "Dún",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Ná taispeáin arís inniu"
+  },
+  "gu": {
+    "nav.notices": "સૂચનાઓ",
+    "nav.noticesLabel": "સૂચનાઓ",
+    "announcement.popupBadge": "જાહેરાત",
+    "announcement.popupClose": "બંધ કરો",
+    "announcement.popupConfirm": "ઠીક છે",
+    "announcement.hideForToday": "આજે ફરીથી બતાવશો નહીં"
+  },
+  "ha": {
+    "nav.notices": "Sanarwa",
+    "nav.noticesLabel": "Sanarwa",
+    "announcement.popupBadge": "Sanarwa",
+    "announcement.popupClose": "Kulle",
+    "announcement.popupConfirm": "QDialogButtonBox",
+    "announcement.hideForToday": "Kada ku sake nunawa a yau"
+  },
+  "he": {
+    "nav.notices": "הודעות",
+    "nav.noticesLabel": "הודעות",
+    "announcement.popupBadge": "הודעה כחולה",
+    "announcement.popupClose": "סגירה",
+    "announcement.popupConfirm": "בסדר",
+    "announcement.hideForToday": "אל תציג שוב היום"
+  },
+  "hi": {
+    "nav.notices": "सूचनाएँ",
+    "nav.noticesLabel": "सूचनाएँ",
+    "announcement.popupBadge": "घोषणा ........",
+    "announcement.popupClose": "बंद करें",
+    "announcement.popupConfirm": "ठीक",
+    "announcement.hideForToday": "आज फिर से न दिखाएँ"
   },
   "hr": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
+    "nav.notices": "OBAVIJESTI",
+    "nav.noticesLabel": "Obavijesti",
+    "announcement.popupBadge": "Obavijest",
+    "announcement.popupClose": "Zatvori",
+    "announcement.popupConfirm": "U redu",
+    "announcement.hideForToday": " Danas se više ne prikazuje"
+  },
+  "hu": {
+    "nav.notices": "ÉRTESÍTÉSEK",
+    "nav.noticesLabel": "Értesítések",
+    "announcement.popupBadge": "Közlemény",
+    "announcement.popupClose": "Bezárás",
     "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
+    "announcement.hideForToday": " Ma ne jelenjen meg újra"
   },
   "hy": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "ja": {
-    "nav.notices": "お知らせ",
-    "nav.noticesLabel": "お知らせ",
-    "announcement.popupBadge": "お知らせ",
-    "announcement.popupClose": "閉じる",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "今日は再表示しない"
+    "nav.notices": "ԾԱՆՈՒՑՈՒՄՆԵՐ",
+    "nav.noticesLabel": "ԾԱՆՈՒՑՈՒՄՆԵՐ",
+    "announcement.popupBadge": "Հայտարարություն",
+    "announcement.popupClose": "Փակել",
+    "announcement.popupConfirm": "ԼԱՎ",
+    "announcement.hideForToday": "Այլևս չցուցադրեք այսօր"
   },
   "id": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
+    "nav.notices": "PEMBERITAHUAN",
+    "nav.noticesLabel": "Pemberitahuan",
+    "announcement.popupBadge": "Pengumuman",
+    "announcement.popupClose": "Tutup",
     "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "is": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
+    "announcement.hideForToday": "Jangan tampilkan lagi hari ini"
   },
   "ig": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
+    "nav.notices": "Ịma Ọkwa",
+    "nav.noticesLabel": "Ịma Ọkwa",
+    "announcement.popupBadge": "Ịma Ọkwa",
+    "announcement.popupClose": "Mechie",
     "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
+    "announcement.hideForToday": "Egosila ọzọ taa"
+  },
+  "is": {
+    "nav.notices": "Athugasemdir",
+    "nav.noticesLabel": "Athugasemdir",
+    "announcement.popupBadge": "Tilkynning",
+    "announcement.popupClose": "Loka",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Ekki sýna aftur í dag"
   },
   "it": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
+    "nav.notices": "AVVISI",
+    "nav.noticesLabel": "Avvisi",
+    "announcement.popupBadge": "Annuncio",
+    "announcement.popupClose": "Chiudi",
     "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
+    "announcement.hideForToday": "Non mostrare più oggi"
   },
-  "kk": {
+  "ja": {
     "nav.notices": "NOTICES",
     "nav.noticesLabel": "Notices",
     "announcement.popupBadge": "Announcement",
@@ -264,6 +248,30 @@
     "announcement.hideForToday": "Don't show again today"
   },
   "ka": {
+    "nav.notices": "Შეტყობინებები",
+    "nav.noticesLabel": " >შეტყობინებები",
+    "announcement.popupBadge": "განცხადება",
+    "announcement.popupClose": "დახურვა",
+    "announcement.popupConfirm": "კარგი",
+    "announcement.hideForToday": "აღარ გამოჩნდეთ დღეს"
+  },
+  "kk": {
+    "nav.notices": "Ескертпелер:",
+    "nav.noticesLabel": "Ескертпелер:",
+    "announcement.popupBadge": "Хабарландыру",
+    "announcement.popupClose": "Жабу",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Бүгін қайта көрсетпеңіз"
+  },
+  "km": {
+    "nav.notices": "សេចក្តីជូនដំណឹង",
+    "nav.noticesLabel": "ចំណាំ",
+    "announcement.popupBadge": "ប្រកាសអោយប្រើ",
+    "announcement.popupClose": "បិទ​",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "kn": {
     "nav.notices": "NOTICES",
     "nav.noticesLabel": "Notices",
     "announcement.popupBadge": "Announcement",
@@ -272,22 +280,6 @@
     "announcement.hideForToday": "Don't show again today"
   },
   "lb": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "km": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "kn": {
     "nav.notices": "NOTICES",
     "nav.noticesLabel": "Notices",
     "announcement.popupBadge": "Announcement",
@@ -319,6 +311,22 @@
     "announcement.popupConfirm": "OK",
     "announcement.hideForToday": "Don't show again today"
   },
+  "mk": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "ml": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
   "mn": {
     "nav.notices": "NOTICES",
     "nav.noticesLabel": "Notices",
@@ -335,47 +343,7 @@
     "announcement.popupConfirm": "OK",
     "announcement.hideForToday": "Don't show again today"
   },
-  "ml": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "mk": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
   "ms": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "no": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "my": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "nl": {
     "nav.notices": "NOTICES",
     "nav.noticesLabel": "Notices",
     "announcement.popupBadge": "Announcement",
@@ -391,6 +359,14 @@
     "announcement.popupConfirm": "OK",
     "announcement.hideForToday": "Don't show again today"
   },
+  "my": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
   "ne": {
     "nav.notices": "NOTICES",
     "nav.noticesLabel": "Notices",
@@ -399,7 +375,15 @@
     "announcement.popupConfirm": "OK",
     "announcement.hideForToday": "Don't show again today"
   },
-  "pl": {
+  "nl": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "no": {
     "nav.notices": "NOTICES",
     "nav.noticesLabel": "Notices",
     "announcement.popupBadge": "Announcement",
@@ -415,7 +399,7 @@
     "announcement.popupConfirm": "OK",
     "announcement.hideForToday": "Don't show again today"
   },
-  "si": {
+  "pl": {
     "nav.notices": "NOTICES",
     "nav.noticesLabel": "Notices",
     "announcement.popupBadge": "Announcement",
@@ -423,7 +407,7 @@
     "announcement.popupConfirm": "OK",
     "announcement.hideForToday": "Don't show again today"
   },
-  "sv": {
+  "pt": {
     "nav.notices": "NOTICES",
     "nav.noticesLabel": "Notices",
     "announcement.popupBadge": "Announcement",
@@ -439,7 +423,15 @@
     "announcement.popupConfirm": "OK",
     "announcement.hideForToday": "Don't show again today"
   },
-  "sl": {
+  "ru": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "si": {
     "nav.notices": "NOTICES",
     "nav.noticesLabel": "Notices",
     "announcement.popupBadge": "Announcement",
@@ -455,7 +447,15 @@
     "announcement.popupConfirm": "OK",
     "announcement.hideForToday": "Don't show again today"
   },
-  "pt": {
+  "sl": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "so": {
     "nav.notices": "NOTICES",
     "nav.noticesLabel": "Notices",
     "announcement.popupBadge": "Announcement",
@@ -479,23 +479,7 @@
     "announcement.popupConfirm": "OK",
     "announcement.hideForToday": "Don't show again today"
   },
-  "ru": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "so": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "ta": {
+  "sv": {
     "nav.notices": "NOTICES",
     "nav.noticesLabel": "Notices",
     "announcement.popupBadge": "Announcement",
@@ -511,23 +495,7 @@
     "announcement.popupConfirm": "OK",
     "announcement.hideForToday": "Don't show again today"
   },
-  "zh": {
-    "nav.notices": "通知",
-    "nav.noticesLabel": "通知",
-    "announcement.popupBadge": "公告",
-    "announcement.popupClose": "关闭",
-    "announcement.popupConfirm": "确定",
-    "announcement.hideForToday": "今天不再显示"
-  },
-  "ur": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "yo": {
+  "ta": {
     "nav.notices": "NOTICES",
     "nav.noticesLabel": "Notices",
     "announcement.popupBadge": "Announcement",
@@ -536,38 +504,6 @@
     "announcement.hideForToday": "Don't show again today"
   },
   "te": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "tr": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "uk": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "uz": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "vi": {
     "nav.notices": "NOTICES",
     "nav.noticesLabel": "Notices",
     "announcement.popupBadge": "Announcement",
@@ -591,6 +527,54 @@
     "announcement.popupConfirm": "OK",
     "announcement.hideForToday": "Don't show again today"
   },
+  "tr": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "uk": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "ur": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "uz": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "vi": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
+  "yo": {
+    "nav.notices": "NOTICES",
+    "nav.noticesLabel": "Notices",
+    "announcement.popupBadge": "Announcement",
+    "announcement.popupClose": "Close",
+    "announcement.popupConfirm": "OK",
+    "announcement.hideForToday": "Don't show again today"
+  },
   "zu": {
     "nav.notices": "NOTICES",
     "nav.noticesLabel": "Notices",
@@ -598,69 +582,5 @@
     "announcement.popupClose": "Close",
     "announcement.popupConfirm": "OK",
     "announcement.hideForToday": "Don't show again today"
-  },
-  "ar-ma": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "ar-dz": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "ar-tn": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "de-be": {
-    "nav.notices": "MITTEILUNGEN",
-    "nav.noticesLabel": "Hinweise",
-    "announcement.popupBadge": "Mitteilung",
-    "announcement.popupClose": "Schließen",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Heute nicht mehr anzeigen"
-  },
-  "fr-be": {
-    "nav.notices": "AVIS",
-    "nav.noticesLabel": "Avis",
-    "announcement.popupBadge": "Annonce",
-    "announcement.popupClose": "Fermer",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Ne plus afficher aujourd'hui"
-  },
-  "nl-be": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "pt-br": {
-    "nav.notices": "NOTICES",
-    "nav.noticesLabel": "Notices",
-    "announcement.popupBadge": "Announcement",
-    "announcement.popupClose": "Close",
-    "announcement.popupConfirm": "OK",
-    "announcement.hideForToday": "Don't show again today"
-  },
-  "zh-tw": {
-    "nav.notices": "通知",
-    "nav.noticesLabel": "通知",
-    "announcement.popupBadge": "公告",
-    "announcement.popupClose": "關閉",
-    "announcement.popupConfirm": "確定",
-    "announcement.hideForToday": "今天不再顯示"
   }
 }

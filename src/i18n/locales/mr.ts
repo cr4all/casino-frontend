@@ -59,8 +59,8 @@ export const mr: LocaleTree = {
     "gameBets": "Game bets",
     "history": "HISTORY",
     "transactions": "Transactions",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "सूचना",
+    "noticesLabel": "सूचना",
     "bonuses": "BONUSES",
     "bonusesLabel": "Bonuses",
     "profile": "Profile",
@@ -504,10 +504,10 @@ export const mr: LocaleTree = {
     "hideDetails": "संदेश तपशील लपवा"
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
-    "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "popupBadge": "घोषणा",
+    "popupClose": "बंद करा",
+    "popupConfirm": "ठीक आहे",
+    "hideForToday": "आज पुन्हा दाखवू नका"
   },
   "betHistory": {
     "title": "Bet History",

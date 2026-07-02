@@ -59,8 +59,8 @@ export const id: LocaleTree = {
     "gameBets": "Taruhan permainan",
     "history": "RIWAYAT",
     "transactions": "Transaksi",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "PEMBERITAHUAN",
+    "noticesLabel": "Pemberitahuan",
     "bonuses": "BONUS",
     "bonusesLabel": "Bonus",
     "profile": "Profil",
@@ -628,9 +628,9 @@ export const id: LocaleTree = {
     }
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
+    "popupBadge": "Pengumuman",
+    "popupClose": "Tutup",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Jangan tampilkan lagi hari ini"
   }
 };

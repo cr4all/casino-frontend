@@ -24,7 +24,7 @@ export const ig: LocaleTree = {
     "ok": "OK",
     "yes": "Ee.",
     "no": "Mba",
-    "close": "Close",
+    "close": "Mechie",
     "copy": "Copy",
     "copied": "Copied",
     "games": "games",
@@ -59,8 +59,8 @@ export const ig: LocaleTree = {
     "gameBets": "Game bets",
     "history": "HISTORY",
     "transactions": "Transactions",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "Ịma Ọkwa",
+    "noticesLabel": "Ịma Ọkwa",
     "bonuses": "BONUSES",
     "bonusesLabel": "Bonuses",
     "profile": "Profile",
@@ -504,10 +504,10 @@ export const ig: LocaleTree = {
     "hideDetails": "Hide message details"
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
+    "popupBadge": "Ịma Ọkwa",
+    "popupClose": "Mechie",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Egosila ọzọ taa"
   },
   "betHistory": {
     "title": "Bet History",
@@ -559,7 +559,7 @@ export const ig: LocaleTree = {
     "backToLobby": "← Back to lobby",
     "defaultName": "Egwuregwu",
     "launchError": "Failed to launch game.",
-    "closeWindow": "Close",
+    "closeWindow": "Mechie",
     "loginRequired": "Please log in to play."
   },
   "gameCard": {

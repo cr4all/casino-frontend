@@ -24,7 +24,7 @@ export const bg: LocaleTree = {
     "ok": "OK",
     "yes": "Да",
     "no": "Не",
-    "close": "Close",
+    "close": "Затваряне",
     "copy": "Копиране",
     "copied": "Копирано",
     "games": "гри",
@@ -59,8 +59,8 @@ export const bg: LocaleTree = {
     "gameBets": "Залози на игри",
     "history": "ИСТОРИЯ",
     "transactions": "Транзакции",
-    "notices": "NOTICES",
-    "noticesLabel": "Notices",
+    "notices": "Notices.",
+    "noticesLabel": "Известия",
     "bonuses": "БОНУСИ",
     "bonusesLabel": "Бонуси",
     "profile": "Профил",
@@ -504,10 +504,10 @@ export const bg: LocaleTree = {
     "hideDetails": "Скрий детайли на съобщението"
   },
   "announcement": {
-    "popupBadge": "Announcement",
-    "popupClose": "Close",
+    "popupBadge": "Обявление",
+    "popupClose": "Затваряне",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Да не се показва отново днес"
   },
   "betHistory": {
     "title": "История на залозите",
@@ -559,7 +559,7 @@ export const bg: LocaleTree = {
     "backToLobby": "← Назад към лобито",
     "defaultName": "Игра",
     "launchError": "Стартирането на играта не бе успешно.",
-    "closeWindow": "Close",
+    "closeWindow": "Затваряне",
     "loginRequired": "Моля, влезте, за да играете."
   },
   "gameCard": {

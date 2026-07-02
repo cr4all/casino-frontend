@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 /**
- * Sync player nav.notices + announcement popup strings across all locales.
+ * Sync nav.notices + announcement popup strings across all locales.
  *
  * Usage:
  *   node scripts/sync-announcements-i18n.mjs
  *   node scripts/sync-announcements-i18n.mjs --langs=de,fr,ja
+ *   node scripts/sync-announcements-i18n.mjs --force
  */
 import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -54,6 +55,19 @@ const googleLocaleMap = {
   'ar-tn': 'ar',
 };
 
+const MYMEMORY_TARGETS = {
+  fil: 'tl',
+  'pt-br': 'pt',
+  zh: 'zh-CN',
+  'zh-tw': 'zh-TW',
+  'de-be': 'de',
+  'fr-be': 'fr',
+  'nl-be': 'nl',
+  'ar-ma': 'ar',
+  'ar-dz': 'ar',
+  'ar-tn': 'ar',
+};
+
 const VARIANT_PARENT = {
   'ar-dz': 'ar',
   'ar-ma': 'ar',
@@ -65,15 +79,20 @@ const VARIANT_PARENT = {
   'zh-tw': 'zh',
 };
 
-const ENGLISH_PATHS = {
-  'nav.notices': en.nav.notices,
-  'nav.noticesLabel': en.nav.noticesLabel,
-  'announcement.popupBadge': en.announcement.popupBadge,
-  'announcement.popupClose': en.announcement.popupClose,
-  'announcement.popupConfirm': en.announcement.popupConfirm,
-  'announcement.hideForToday': en.announcement.hideForToday,
-};
+function buildEnglishPaths() {
+  return {
+    'nav.notices': en.nav.notices,
+    'nav.noticesLabel': en.nav.noticesLabel,
+    'announcement.popupBadge': en.announcement.popupBadge,
+    'announcement.popupClose': en.announcement.popupClose,
+    'announcement.popupConfirm': en.announcement.popupConfirm,
+    'announcement.hideForToday': en.announcement.hideForToday,
+  };
+}
 
+const ENGLISH_PATHS = buildEnglishPaths();
+
+/** Curated translations (from ko.ts and major locales). */
 const MANUAL = {
   ko: {
     'nav.notices': '알림',
@@ -97,7 +116,7 @@ const MANUAL = {
     'announcement.popupBadge': 'Annonce',
     'announcement.popupClose': 'Fermer',
     'announcement.popupConfirm': 'OK',
-    'announcement.hideForToday': 'Ne plus afficher aujourd\'hui',
+    'announcement.hideForToday': "Ne plus afficher aujourd'hui",
   },
   es: {
     'nav.notices': 'AVISOS',
@@ -141,33 +160,19 @@ function getGoogleTranslate() {
   return googleTranslate;
 }
 
-function setNested(obj, pathParts, value) {
-  let cur = obj;
-  for (let i = 0; i < pathParts.length - 1; i++) {
-    if (!cur[pathParts[i]] || typeof cur[pathParts[i]] !== 'object') {
-      cur[pathParts[i]] = {};
-    }
-    cur = cur[pathParts[i]];
-  }
-  cur[pathParts[pathParts.length - 1]] = value;
-}
-
-function getNested(obj, path) {
-  const parts = path.split('.');
-  let cur = obj;
-  for (const part of parts) {
-    cur = cur?.[part];
-  }
-  return cur;
-}
-
 function protectPlaceholders(text) {
   const tokens = [];
-  const protectedText = text.replace(/\{\{(\w+)\}\}/g, (match) => {
-    const token = `__PH_${tokens.length}__`;
-    tokens.push(match);
-    return token;
-  });
+  const protectedText = text
+    .replace(/\{\{(\w+)\}\}/g, (match) => {
+      const token = `__PH_${tokens.length}__`;
+      tokens.push(match);
+      return token;
+    })
+    .replace(/:\w+/g, (match) => {
+      const token = `__PH_${tokens.length}__`;
+      tokens.push(match);
+      return token;
+    });
   return { protectedText, tokens };
 }
 
@@ -183,37 +188,61 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function translateWithLingva(text, to, attempt = 1) {
-  const target = googleLocaleMap[to] ?? to;
-  const url = `${LINGVA_HOST}/api/v1/en/${target}/${encodeURIComponent(text)}`;
+function myMemoryTarget(code) {
+  return MYMEMORY_TARGETS[code] ?? googleLocaleMap[code] ?? code;
+}
+
+async function translateWithMyMemory(text, code, attempt = 1) {
+  const target = myMemoryTarget(code);
+  const url = new URL('https://api.mymemory.translated.net/get');
+  url.searchParams.set('q', text.slice(0, 500));
+  url.searchParams.set('langpair', `en|${target}`);
 
   try {
-    const response = await fetch(url, { signal: AbortSignal.timeout(45000) });
-
-    if (response.status === 429 && attempt <= 6) {
-      await sleep(10000 * attempt);
-      return translateWithLingva(text, to, attempt + 1);
-    }
-
-    if (!response.ok) {
-      if (attempt <= 3) {
-        await sleep(2000 * attempt);
-        return translateWithLingva(text, to, attempt + 1);
+    const response = await fetch(url, { signal: AbortSignal.timeout(30000) });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data = await response.json();
+    if (String(data?.responseDetails ?? '').includes('MYMEMORY WARNING')) {
+      if (attempt <= 4) {
+        await sleep(1500 * attempt);
+        return translateWithMyMemory(text, code, attempt + 1);
       }
       return null;
     }
-
-    const data = await response.json();
-    const translated = data?.translation?.trim();
+    const translated = data?.responseData?.translatedText?.trim();
     if (!translated || translated === text) return null;
     return translated;
   } catch {
-    if (attempt <= 2) {
+    if (attempt <= 4) {
+      await sleep(1500 * attempt);
+      return translateWithMyMemory(text, code, attempt + 1);
+    }
+    return null;
+  }
+}
+
+async function translateWithLingva(text, to, attempt = 1) {
+  const target = googleLocaleMap[to] ?? to;
+  const url = `${LINGVA_HOST}/api/v1/en/${target}/${encodeURIComponent(text)}`;
+  const response = await fetch(url, { signal: AbortSignal.timeout(45000) });
+
+  if (response.status === 429 && attempt <= 6) {
+    await sleep(10000 * attempt);
+    return translateWithLingva(text, to, attempt + 1);
+  }
+
+  if (!response.ok) {
+    if (attempt <= 3) {
       await sleep(2000 * attempt);
       return translateWithLingva(text, to, attempt + 1);
     }
     return null;
   }
+
+  const data = await response.json();
+  const translated = data?.translation?.trim();
+  if (!translated || translated === text) return null;
+  return translated;
 }
 
 async function translateWithGoogle(text, to) {
@@ -231,7 +260,10 @@ async function translateWithGoogle(text, to) {
 
 async function translateText(text, code) {
   const { protectedText, tokens } = protectPlaceholders(text);
-  let translated = await translateWithLingva(protectedText, code);
+  let translated = await translateWithMyMemory(protectedText, code);
+  if (!translated) {
+    translated = await translateWithLingva(protectedText, code);
+  }
   if (!translated) {
     translated = await translateWithGoogle(protectedText, code);
   }
@@ -262,7 +294,10 @@ function buildBatches(entries) {
 async function translateBatchEntries(batch, code) {
   const combined = batch.map(([, value]) => value).join(SPLIT);
   const { protectedText, tokens } = protectPlaceholders(combined);
-  let translatedCombined = await translateWithLingva(protectedText, code);
+  let translatedCombined = await translateWithMyMemory(protectedText, code);
+  if (!translatedCombined) {
+    translatedCombined = await translateWithLingva(protectedText, code);
+  }
   if (!translatedCombined) {
     translatedCombined = await translateWithGoogle(protectedText, code);
   }
@@ -289,6 +324,7 @@ function loadCache() {
 
 function saveCache(cache) {
   writeFileSync(cachePath, JSON.stringify(cache, null, 2));
+  console.log(`Wrote cache: ${cachePath}`);
 }
 
 function needsUpdate(path, current, english) {
@@ -297,9 +333,19 @@ function needsUpdate(path, current, english) {
   return false;
 }
 
+function getPathValue(locale, path) {
+  if (path.startsWith('nav.')) {
+    return locale.nav?.[path.slice(4)];
+  }
+  if (path.startsWith('announcement.')) {
+    return locale.announcement?.[path.slice('announcement.'.length)];
+  }
+  return undefined;
+}
+
 function pathsNeedUpdate(locale, pathsToCheck) {
   for (const [path, english] of Object.entries(pathsToCheck)) {
-    const current = getNested(locale, path);
+    const current = getPathValue(locale, path);
     if (needsUpdate(path, current, english)) return true;
   }
   return false;
@@ -312,7 +358,8 @@ async function resolvePaths(langCode, cache) {
   if (!force && cache[langCode]) return cache[langCode];
 
   const entries = Object.entries(ENGLISH_PATHS);
-  const batches = buildBatches(entries);
+  const toTranslate = entries.filter(([, english]) => english);
+  const batches = buildBatches(toTranslate);
   const resolved = {};
 
   for (const batch of batches) {
@@ -329,19 +376,32 @@ async function resolvePaths(langCode, cache) {
 }
 
 function applyPathsToLocale(locale, paths) {
-  const next = { ...locale, nav: { ...locale.nav }, announcement: { ...(locale.announcement ?? {}) } };
+  const nav = { ...locale.nav };
+  const announcement = { ...(locale.announcement ?? {}) };
+
   for (const [path, value] of Object.entries(paths)) {
-    setNested(next, path.split('.'), value);
+    if (path.startsWith('nav.')) {
+      nav[path.slice(4)] = value;
+    } else if (path.startsWith('announcement.')) {
+      announcement[path.slice('announcement.'.length)] = value;
+    }
   }
-  return next;
+
+  return {
+    ...locale,
+    nav,
+    announcement,
+  };
 }
 
 function writeLocaleFile(langCode, tree) {
   const exportName = EXPORT_NAMES[langCode] ?? langCode.replace(/-/g, '');
+  const filePath = join(localesDir, `${langCode}.ts`);
   writeFileSync(
-    join(localesDir, `${langCode}.ts`),
+    filePath,
     `import type { LocaleTree } from './en';\n\nexport const ${exportName}: LocaleTree = ${JSON.stringify(tree, null, 2)};\n`,
   );
+  console.log(`Wrote locale: ${filePath}`);
 }
 
 async function loadLocale(langCode) {
@@ -363,7 +423,7 @@ function copyRegionalVariants() {
         new RegExp(`export const ${EXPORT_NAMES[parent] ?? parent.replace(/-/g, '')}`),
         `export const ${EXPORT_NAMES[child] ?? child.replace(/-/g, '')}`,
       ));
-      console.log(`${child}: copied from ${parent}`);
+      console.log(`Wrote locale: ${childPath} (copied from ${parent})`);
     }
   }
 }
@@ -398,6 +458,7 @@ for (const langCode of localeCodes) {
     const map = JSON.parse(readFileSync(mapPath, 'utf8'));
     Object.assign(map, phraseEntries);
     writeFileSync(mapPath, JSON.stringify(map, null, 2));
+    console.log(`Wrote phrase map: ${mapPath}`);
 
     const overridePath = join(overridesDir, `${langCode}.json`);
     const overrides = existsSync(overridePath) ? JSON.parse(readFileSync(overridePath, 'utf8')) : {};
@@ -412,7 +473,7 @@ for (const langCode of localeCodes) {
   }
 
   writeLocaleFile(langCode, applyPathsToLocale(locale, paths));
-  console.log(`${langCode}: announcement strings patched`);
+  console.log(`${langCode}: announcements patched`);
 }
 
 copyRegionalVariants();

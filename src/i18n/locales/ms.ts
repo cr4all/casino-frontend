@@ -504,10 +504,10 @@ export const ms: LocaleTree = {
     "hideDetails": "Sembunyikan butiran mesej"
   },
   "announcement": {
-    "popupBadge": "Announcement",
+    "popupBadge": "Pengumuman",
     "popupClose": "Tutup",
     "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "hideForToday": "Jangan tunjuk lagi hari ini"
   },
   "betHistory": {
     "title": "Sejarah Pertaruhan",

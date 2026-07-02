@@ -504,10 +504,10 @@ export const th: LocaleTree = {
     "hideDetails": "ซ่อนรายละเอียดข้อความ"
   },
   "announcement": {
-    "popupBadge": "Announcement",
+    "popupBadge": "ประกาศ",
     "popupClose": "ปิด",
-    "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "popupConfirm": "ตกลง",
+    "hideForToday": "ไม่แสดงอีกในวันนี้"
   },
   "betHistory": {
     "title": "ประวัติเดิมพัน",

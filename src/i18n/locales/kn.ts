@@ -21,10 +21,10 @@ export const kn: LocaleTree = {
     "previous": "Previous",
     "next": "Next",
     "showMore": "Show more",
-    "ok": "ಸರಿ",
+    "ok": "OK",
     "yes": "ಹೌದು",
     "no": "ಇಲ್ಲ",
-    "close": "ಮುಚ್ಚಿ",
+    "close": "Close",
     "copy": "Copy",
     "copied": "Copied",
     "games": "games",
@@ -559,7 +559,7 @@ export const kn: LocaleTree = {
     "backToLobby": "← Back to lobby",
     "defaultName": "ಆಟ",
     "launchError": "Failed to launch game.",
-    "closeWindow": "ಮುಚ್ಚಿ",
+    "closeWindow": "Close",
     "loginRequired": "Please log in to play."
   },
   "gameCard": {

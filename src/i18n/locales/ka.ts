@@ -59,8 +59,8 @@ export const ka: LocaleTree = {
     "gameBets": "სათამაშო წ ставка",
     "history": "ისტორია",
     "transactions": "გარიგებები",
-    "notices": "განცხადებები",
-    "noticesLabel": "განცხადებები",
+    "notices": "Შეტყობინებები",
+    "noticesLabel": " >შეტყობინებები",
     "bonuses": "ბონუსები",
     "bonusesLabel": "ბონუსები",
     "profile": "პროფილი",
@@ -504,10 +504,10 @@ export const ka: LocaleTree = {
     "hideDetails": "მესიჯის დეტალების დამალვა"
   },
   "announcement": {
-    "popupBadge": "Announcement",
+    "popupBadge": "განცხადება",
     "popupClose": "დახურვა",
-    "popupConfirm": "OK",
-    "hideForToday": "Don't show again today"
+    "popupConfirm": "კარგი",
+    "hideForToday": "აღარ გამოჩნდეთ დღეს"
   },
   "betHistory": {
     "title": "სათამაშო წარსული",
