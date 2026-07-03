@@ -44,9 +44,6 @@ export function Footer() {
                 <Link to={typePath('live_casino')} className="site-footer__col-link">
                   {t('footer.liveCasino')}
                 </Link>
-                <Link to="/category/jackpots" className="site-footer__col-link">
-                  {t('footer.jackpots')}
-                </Link>
               </nav>
             </div>
 
