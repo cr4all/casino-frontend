@@ -84,14 +84,14 @@ export function GameCard({ game, variant = 'slider', isNew = false }: GameCardPr
           </span>
         )}
         {showBonusBadge && (
-          <span className="pointer-events-none absolute right-0 top-0 z-10 block h-[4.25rem] w-[4.25rem] overflow-hidden">
-            <span className="absolute right-[-1.65rem] top-[1.15rem] w-[7.25rem] rotate-45 bg-gradient-to-r from-accent-gold to-amber-500 py-1.5 text-center text-[11px] font-extrabold uppercase tracking-wider text-background shadow-[0_2px_8px_rgba(0,0,0,0.35)]">
+          <span className="pointer-events-none absolute right-0 top-0 z-10 block h-[2.75rem] w-[2.75rem] overflow-hidden sm:h-[4.25rem] sm:w-[4.25rem]">
+            <span className="absolute right-[-0.95rem] top-[0.72rem] w-[4.5rem] rotate-45 bg-gradient-to-r from-accent-gold to-amber-500 py-0.5 text-center text-[8px] font-extrabold uppercase tracking-wide text-background shadow-[0_2px_8px_rgba(0,0,0,0.35)] sm:right-[-1.65rem] sm:top-[1.15rem] sm:w-[7.25rem] sm:py-1.5 sm:text-[11px] sm:tracking-wider">
               {t('gameCard.bonusBadge')}
             </span>
           </span>
         )}
       </div>
-      <div className="mt-2 px-0.5">
+      <div className={`px-0.5 ${variant === 'grid' ? 'mt-1.5 sm:mt-2' : 'mt-2'}`}>
         <p className="text-sm font-semibold text-white truncate">{game.name}</p>
         <p className="text-[11px] text-muted truncate">{game.vendor?.name ?? game.type?.name ?? 'Casino'}</p>
       </div>
