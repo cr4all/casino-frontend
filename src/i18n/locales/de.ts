@@ -84,7 +84,12 @@ export const de: LocaleTree = {
     "placeholder": "Geben Sie Ihre Nachricht ein...",
     "send": "Senden",
     "sendFailed": "Ihre Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
-    "loadFailed": "Chat-Nachrichten konnten nicht geladen werden."
+    "loadFailed": "Chat-Nachrichten konnten nicht geladen werden.",
+    "attach": "Anhängen",
+    "attachedFile": "Angehängte Datei",
+    "loadOlder": "Ältere Nachrichten laden",
+    "attachFileTypeNotAllowed": "Dieser Dateityp wird nicht unterstützt. Senden Sie ein Bild oder Dokument (PDF, Word, Excel usw.).",
+    "attachFileTooLarge": "Die Datei ist zu groß. Die maximale Größe beträgt 5 MB."
   },
   "supportTickets": {
     "title": "Support-Tickets",
@@ -102,6 +107,9 @@ export const de: LocaleTree = {
     "replyPlaceholder": "Antwort eingeben...",
     "sendReply": "Antwort senden",
     "replyFailed": "Ihre Antwort konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+    "attach": "Anhängen",
+    "attachedFile": "Angehängte Datei",
+    "loadOlder": "Ältere Nachrichten laden",
     "supportTeam": "Kundendienst",
     "you": "Sie",
     "categories": {
@@ -141,20 +149,20 @@ export const de: LocaleTree = {
     "backHome": "Zurück zur Startseite"
   },
   "hero": {
-    "welcomeTagline": "Das weltweit größte Sportwetten- und Online-Casino",
+    "welcomeTagline": "Das weltweit größte Online-Casino und Slot-Angebot",
     "playNow": "Jetzt spielen",
     "registerPromo": "Jetzt registrieren",
     "pragmaticLine1": "Spielen",
-    "pragmaticAccent": "Pragmatische Slots",
-    "pragmaticLine2": "Premium-Erlebnis:",
+    "pragmaticAccent": "Pragmatic Slots",
+    "pragmaticLine2": "Premium-Erlebnis",
     "liveCasinoLine1": "Spielen",
     "liveCasinoAccent": "Live-Casino",
-    "liveCasinoLine2": "Premium-Erlebnis:",
+    "liveCasinoLine2": "Premium-Erlebnis",
     "firstDepositRegister": "JETZT REGISTRIEREN",
-    "firstDepositTitle": "Erste Einzahlung",
+    "firstDepositTitle": "ERSTE EINZAHLUNG",
     "firstDepositBonus": "100 % BONUS",
-    "firstDepositUpTo": "Bis ZU 250 $",
-    "firstDepositFreeSpins": "50 Freispiele"
+    "firstDepositUpTo": "BIS ZU 250 USD",
+    "firstDepositFreeSpins": "+ 50 FREISPIELE"
   },
   "home": {
     "topGames": "Top Spiele",
@@ -182,7 +190,7 @@ export const de: LocaleTree = {
     "searchPlaceholder": "Spiele suchen...",
     "noGamesFound": "Keine Spiele gefunden",
     "noProvidersFound": "Keine Dienstleister gefunden",
-    "collectionGames": "Namensspiele"
+    "collectionGames": "{{name}} Spiele"
   },
   "collections": {
     "top": "Top Spiele",
@@ -281,7 +289,11 @@ export const de: LocaleTree = {
     "registerError": "Registrierung fehlgeschlagen. Bitte überprüfen Sie Ihre Angaben.",
     "noAccount": "Sie haben noch kein Benutzerkonto?",
     "hasAccount": "Haben Sie ein Konto?",
-    "emailPlaceholder": "spieler@beispiel.de"
+    "emailPlaceholder": "spieler@beispiel.de",
+    "emailVerificationCode": "Verifizierungscode",
+    "emailVerificationHint": "Geben Sie den 6-stelligen Code ein, der an Ihre E-Mail gesendet wurde.",
+    "emailVerificationRequestFailed": "Verifizierungscode konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+    "emailVerificationRequired": "Bitte verifizieren Sie Ihre E-Mail-Adresse vor der Registrierung."
   },
   "profile": {
     "title": "Mein Profil",
@@ -463,9 +475,9 @@ export const de: LocaleTree = {
   "bonus": {
     "title": "Tantiemen",
     "wageringProgress": "Wettfortschritt",
-    "activeBonuses": "DE: Aktive Boni",
-    "noActive": "Aktive Boni",
-    "availableBonuses": "DE: Verfügbare Boni",
+    "activeBonuses": "Aktive Boni",
+    "noActive": "Keine aktiven Boni.",
+    "availableBonuses": "Verfügbare Boni",
     "noAvailable": "Derzeit sind keine Boni verfügbar.",
     "defaultName": "Bonus",
     "percentMatch": "{{value}}% Übereinstimmung",
@@ -497,7 +509,7 @@ export const de: LocaleTree = {
   },
   "messages": {
     "title": "Nachrichten",
-    "unread": "%{count} ungelesen",
+    "unread": "{{count}} ungelesen",
     "noMessages": "Noch keine Nachrichten",
     "noMessagesHint": "Einzahlungsbestätigungen und Bonusbenachrichtigungen werden hier angezeigt.",
     "showDetails": "Daten der Nachricht",

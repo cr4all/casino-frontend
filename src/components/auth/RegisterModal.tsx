@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, type FormEvent } from 'react';
 import { Modal } from '@/components/common/Modal';
 import { Button } from '@/components/common/Button';
 import { FormSelect, FormTextField } from '@/components/common/FormTextField';
+import { FieldError, fieldControlClassName } from '@/components/common/FieldError';
 import { PasswordInput } from '@/components/auth/PasswordInput';
 import { useAuthStore } from '@/stores/authStore';
 import { useUiStore } from '@/stores/uiStore';
@@ -17,6 +18,7 @@ import {
 } from '@/data/phoneDialCodes';
 import {
   getAuthApiErrorMessage,
+  getApiValidationFieldErrors,
   isPostRegisterLoginChallengeError,
   isRiskChallengeError,
 } from '@/utils/apiError';
@@ -54,6 +56,10 @@ export function RegisterModal() {
     affiliate_code: '' as string | undefined,
   });
   const [phoneCountryCode, setPhoneCountryCode] = useState('US');
+  const [emailOtp, setEmailOtp] = useState('');
+  const [emailOtpSent, setEmailOtpSent] = useState(false);
+  const [emailVerifyLoading, setEmailVerifyLoading] = useState(false);
+  const [emailVerifyMessage, setEmailVerifyMessage] = useState('');
   const [error, setError] = useState('');
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [challengeError, setChallengeError] = useState('');
@@ -103,7 +109,18 @@ export function RegisterModal() {
 
   const update = (field: string, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
-    setFieldErrors((prev) => omitFieldError(prev, field));
+    setFieldErrors((prev) => {
+      let next = omitFieldError(prev, field);
+      if (field === 'email') {
+        next = omitFieldError(next, 'email_verification_code');
+      }
+      return next;
+    });
+    if (field === 'email') {
+      setEmailOtp('');
+      setEmailOtpSent(false);
+      setEmailVerifyMessage('');
+    }
   };
 
   const handlePhoneCountryChange = (code: string) => {
@@ -132,6 +149,10 @@ export function RegisterModal() {
       affiliate_code: getStoredAffiliateCode() ?? undefined,
     });
     setPhoneCountryCode('US');
+    setEmailOtp('');
+    setEmailOtpSent(false);
+    setEmailVerifyLoading(false);
+    setEmailVerifyMessage('');
     setFieldErrors({});
     setChallengeError('');
     resetChallenge();
@@ -145,6 +166,7 @@ export function RegisterModal() {
     phone: form.phone,
     country: phoneCountryCode,
     currency: form.currency,
+    email_verification_code: emailOtp,
     ...(form.affiliate_code ? { affiliate_code: form.affiliate_code } : {}),
     ...(turnstileToken ? { turnstileToken } : {}),
   });
@@ -257,6 +279,13 @@ export function RegisterModal() {
       ['currency', required(t('auth.currency'), form.currency)],
       ['password', passwordError],
       ['password_confirmation', confirmError],
+      ['email_verification_code', !emailOtpSent
+        ? t('auth.emailVerificationRequired')
+        : !requiredValue(emailOtp)
+          ? t('common.fieldRequired', { field: t('auth.emailVerificationCode') })
+          : emailOtp.length !== 6
+            ? t('common.fieldCodeInvalid')
+            : undefined],
     ]);
 
     setFieldErrors(errors);
@@ -279,13 +308,66 @@ export function RegisterModal() {
       if (handleChallengeFlowError(err)) {
         return;
       }
+
+      const apiFieldErrors = getApiValidationFieldErrors(err);
+      if (Object.keys(apiFieldErrors).length > 0) {
+        setFieldErrors(apiFieldErrors);
+        return;
+      }
+
       setError(getAuthApiErrorMessage(err, t('auth.registerError'), t));
     } finally {
       setLoading(false);
     }
   };
 
+  const handleRequestEmailVerification = async () => {
+    setError('');
+    setEmailVerifyMessage('');
+    setFieldErrors((prev) => omitFieldError(prev, 'email'));
+
+    if (!requiredValue(form.email)) {
+      setFieldErrors((prev) => ({
+        ...prev,
+        email: t('common.fieldRequired', { field: t('auth.email') }),
+      }));
+      return;
+    }
+
+    if (!isValidEmail(form.email)) {
+      setFieldErrors((prev) => ({
+        ...prev,
+        email: t('common.fieldEmailInvalid'),
+      }));
+      return;
+    }
+
+    setEmailVerifyLoading(true);
+    try {
+      await authApi.requestRegistrationEmailVerification(form.email.trim());
+      setEmailOtp('');
+      setEmailOtpSent(true);
+      setEmailVerifyMessage(t('auth.emailVerificationHint'));
+      setFieldErrors((prev) => omitFieldError(prev, 'email_verification_code'));
+    } catch (err) {
+      const apiFieldErrors = getApiValidationFieldErrors(err);
+
+      if (apiFieldErrors.email) {
+        setEmailOtp('');
+        setEmailOtpSent(false);
+        setEmailVerifyMessage('');
+        setFieldErrors((prev) => ({ ...prev, email: apiFieldErrors.email }));
+        return;
+      }
+
+      setEmailVerifyMessage(getAuthApiErrorMessage(err, t('auth.emailVerificationRequestFailed'), t));
+    } finally {
+      setEmailVerifyLoading(false);
+    }
+  };
+
   const optionsLoading = activeModal === 'register' && options === null;
+  const emailErrorId = fieldErrors.email ? 'reg-email-error' : undefined;
 
   return (
     <Modal isOpen={activeModal === 'register'} onClose={closeModal} title={t('auth.registerTitle')}>
@@ -293,15 +375,34 @@ export function RegisterModal() {
         {error && (
           <p className="rounded-md bg-accent/10 px-3 py-2 text-sm text-accent">{error}</p>
         )}
-        <FormTextField
-          id="reg-email"
-          label={t('auth.email')}
-          type="email"
-          autoComplete="email"
-          value={form.email}
-          onChange={(e) => update('email', e.target.value)}
-          error={fieldErrors.email}
-        />
+        <div>
+          <label htmlFor="reg-email" className="mb-1 block text-xs text-muted">
+            {t('auth.email')}
+          </label>
+          <div className="flex gap-2">
+            <input
+              id="reg-email"
+              type="email"
+              autoComplete="email"
+              value={form.email}
+              onChange={(e) => update('email', e.target.value)}
+              aria-invalid={fieldErrors.email ? true : undefined}
+              aria-describedby={emailErrorId}
+              placeholder={t('auth.emailPlaceholder')}
+              className={`${fieldControlClassName(Boolean(fieldErrors.email))} min-w-0 flex-1`}
+            />
+            <Button
+              type="button"
+              variant="secondary"
+              disabled={emailVerifyLoading || optionsLoading}
+              onClick={() => void handleRequestEmailVerification()}
+              className="h-[42px] shrink-0 px-4"
+            >
+              {emailVerifyLoading ? t('common.loading') : t('profile.verifyNow')}
+            </Button>
+          </div>
+          <FieldError id={emailErrorId} message={fieldErrors.email} />
+        </div>
         <FormTextField
           id="reg-username"
           label={t('auth.username')}
@@ -359,6 +460,25 @@ export function RegisterModal() {
           onChange={(e) => update('password_confirmation', e.target.value)}
           error={fieldErrors.password_confirmation}
         />
+        <FormTextField
+          id="reg-email-otp"
+          label={t('auth.emailVerificationCode')}
+          type="text"
+          inputMode="numeric"
+          maxLength={6}
+          autoComplete="one-time-code"
+          value={emailOtp}
+          onChange={(e) => {
+            setEmailOtp(e.target.value.replace(/\D/g, '').slice(0, 6));
+            setFieldErrors((prev) => omitFieldError(prev, 'email_verification_code'));
+          }}
+          placeholder="000000"
+          disabled={!emailOtpSent}
+          error={fieldErrors.email_verification_code}
+        />
+        {emailVerifyMessage && !fieldErrors.email_verification_code && !fieldErrors.email && (
+          <p className={`text-xs ${emailOtpSent ? 'text-accent' : 'text-red-400'}`}>{emailVerifyMessage}</p>
+        )}
         {challengeRequired && (
           <RiskChallengePanel
             onSuccess={handleTurnstileSuccess}

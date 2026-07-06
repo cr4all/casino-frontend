@@ -47,6 +47,39 @@ function collectValidationMessages(data: unknown): string[] {
   return messages;
 }
 
+export function getApiValidationFieldErrors(err: unknown): Record<string, string> {
+  const apiErr = err as { response?: { data?: unknown } };
+  const data = apiErr.response?.data;
+
+  if (!data || typeof data !== 'object') {
+    return {};
+  }
+
+  const record = data as Record<string, unknown>;
+  const result: Record<string, string> = {};
+
+  const assignErrors = (errors: ValidationErrors) => {
+    for (const [field, messages] of Object.entries(errors)) {
+      if (Array.isArray(messages) && typeof messages[0] === 'string') {
+        result[field] = messages[0];
+      }
+    }
+  };
+
+  if (record.errors && typeof record.errors === 'object') {
+    assignErrors(record.errors as ValidationErrors);
+  }
+
+  if (record.error && typeof record.error === 'object') {
+    const error = record.error as { details?: ValidationErrors };
+    if (error.details) {
+      assignErrors(error.details);
+    }
+  }
+
+  return result;
+}
+
 export function getApiErrorMessage(err: unknown, fallback = 'Something went wrong.'): string {
   const apiErr = err as { response?: { data?: unknown } };
   const messages = collectValidationMessages(apiErr.response?.data);
