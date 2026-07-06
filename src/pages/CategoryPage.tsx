@@ -71,6 +71,7 @@ export function CategoryPage() {
 
   useEffect(() => {
     setPage(1);
+    setLoadingMore(false);
     setSearch(searchParams.get('q') ?? '');
     setSelectedVendorId(null);
   }, [category]);
@@ -88,10 +89,12 @@ export function CategoryPage() {
     setSelectedVendorId(vendorId);
     setSearch('');
     setPage(1);
+    setLoadingMore(false);
   }, []);
 
   useEffect(() => {
     setPage(1);
+    setLoadingMore(false);
   }, [debouncedSearch]);
 
   useEffect(() => {
@@ -117,6 +120,7 @@ export function CategoryPage() {
 
     if (isFirstPage) {
       setLoading(true);
+      setLoadingMore(false);
     } else {
       setLoadingMore(true);
     }
@@ -150,9 +154,8 @@ export function CategoryPage() {
         if (!cancelled) {
           if (isFirstPage) {
             setLoading(false);
-          } else {
-            setLoadingMore(false);
           }
+          setLoadingMore(false);
         }
       });
 
