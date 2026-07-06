@@ -322,7 +322,7 @@ for (const [path, map] of Object.entries(i18nPhraseMaps)) {
   ).length;
   if (translatedCount === 0) continue;
 
-  translations[code] = applyPhraseMapToValues(en, mergedMap);
+  translations[code] = applyPhraseMapToValues(translations[code] ?? en, mergedMap);
 }
 
 for (const [path, overrides] of Object.entries(i18nOverrideMaps)) {
@@ -336,7 +336,7 @@ for (const [path, overrides] of Object.entries(i18nOverrideMaps)) {
   ).length;
   if (translatedCount === 0) continue;
 
-  translations[code] = applyPhraseMapToValues(en, overrides);
+  translations[code] = applyPhraseMapToValues(translations[code] ?? en, overrides);
 }
 
 const LOCALE_VARIANT_PARENT: Partial<Record<Language, Language>> = {
