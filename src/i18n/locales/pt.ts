@@ -35,7 +35,7 @@ export const pt: LocaleTree = {
     "maxOnly": "máx. {{amount}}",
     "notAvailable": "—",
     "minMax": "Mín.: {{min}} · Máx.: {{max}}",
-    "currencyIdr": "· Currency: IDR",
+    "currencyIdr": "· Moeda: IDR",
     "pageOf": "Página {{page}} de {{last}}",
     "openMenu": "Abrir menu",
     "actions": "Ações",
@@ -84,7 +84,12 @@ export const pt: LocaleTree = {
     "placeholder": "Escreva a sua mensagem...",
     "send": "Enviar",
     "sendFailed": "Não foi possível enviar a sua mensagem. Tente novamente.",
-    "loadFailed": "Não foi possível carregar as mensagens do chat."
+    "loadFailed": "Não foi possível carregar as mensagens do chat.",
+    "attach": "Anexar",
+    "attachedFile": "Ficheiro anexo",
+    "loadOlder": "Carregar mensagens anteriores",
+    "attachFileTypeNotAllowed": "Este tipo de ficheiro não é suportado. Envie uma imagem ou documento (PDF, Word, Excel, etc.).",
+    "attachFileTooLarge": "O ficheiro é demasiado grande. O tamanho máximo é 5 MB."
   },
   "supportTickets": {
     "title": "Tickets de apoio",
@@ -102,8 +107,11 @@ export const pt: LocaleTree = {
     "replyPlaceholder": "Escreva a sua resposta...",
     "sendReply": "Enviar resposta",
     "replyFailed": "Não foi possível enviar a sua resposta. Tente novamente.",
+    "attach": "Anexar",
+    "attachedFile": "Ficheiro anexo",
+    "loadOlder": "Carregar mensagens anteriores",
     "supportTeam": "Apoio",
-    "you": "Si",
+    "you": "Tu",
     "categories": {
       "account": "Conta",
       "payment": "Pagamento",
@@ -141,7 +149,7 @@ export const pt: LocaleTree = {
     "backHome": "← Voltar ao início"
   },
   "hero": {
-    "welcomeTagline": "O maior sportsbook e casino online do mundo",
+    "welcomeTagline": "O maior casino online e slots do mundo",
     "playNow": "Jogar agora",
     "registerPromo": "Registar agora",
     "pragmaticLine1": "Jogar",
@@ -152,9 +160,9 @@ export const pt: LocaleTree = {
     "liveCasinoLine2": "Experiência premium",
     "firstDepositRegister": "REGISTAR AGORA",
     "firstDepositTitle": "PRIMEIRO DEPÓSITO",
-    "firstDepositBonus": "100% BONUS",
+    "firstDepositBonus": "100% DE BÓNUS",
     "firstDepositUpTo": "ATÉ 250 USD",
-    "firstDepositFreeSpins": "+ 50 FREE SPINS"
+    "firstDepositFreeSpins": "+ 50 RODADAS GRÁTIS"
   },
   "home": {
     "topGames": "Jogos top",
@@ -281,7 +289,11 @@ export const pt: LocaleTree = {
     "registerError": "Registo falhou. Verifique os seus dados.",
     "noAccount": "Não tem uma conta?",
     "hasAccount": "Já tem uma conta?",
-    "emailPlaceholder": "player@example.com"
+    "emailPlaceholder": "jogador@exemplo.com",
+    "emailVerificationCode": "Código de verificação",
+    "emailVerificationHint": "Introduza o código de 6 dígitos enviado para o seu email.",
+    "emailVerificationRequestFailed": "Não foi possível enviar o código de verificação. Tente novamente.",
+    "emailVerificationRequired": "Verifique o seu email antes de se registar."
   },
   "profile": {
     "title": "O meu perfil",

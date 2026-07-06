@@ -35,7 +35,7 @@ export const ptBr: LocaleTree = {
     "maxOnly": "máx. {{amount}}",
     "notAvailable": "—",
     "minMax": "Mín.: {{min}} · Máx.: {{max}}",
-    "currencyIdr": "· Currency: IDR",
+    "currencyIdr": "· Moeda: IDR",
     "pageOf": "Página {{page}} de {{last}}",
     "openMenu": "Abrir menu",
     "actions": "Ações",
@@ -84,7 +84,12 @@ export const ptBr: LocaleTree = {
     "placeholder": "Digite sua mensagem...",
     "send": "Enviar",
     "sendFailed": "Não foi possível enviar a sua mensagem. Tente novamente.",
-    "loadFailed": "Não foi possível carregar as mensagens do chat."
+    "loadFailed": "Não foi possível carregar as mensagens do chat.",
+    "attach": "Anexar",
+    "attachedFile": "Arquivo anexado",
+    "loadOlder": "Carregar mensagens anteriores",
+    "attachFileTypeNotAllowed": "Este tipo de arquivo não é compatível. Envie uma imagem ou documento (PDF, Word, Excel etc.).",
+    "attachFileTooLarge": "O arquivo é muito grande. O tamanho máximo é 5 MB."
   },
   "supportTickets": {
     "title": "Tickets de apoio",
@@ -102,6 +107,9 @@ export const ptBr: LocaleTree = {
     "replyPlaceholder": "Digite sua resposta...",
     "sendReply": "Enviar resposta",
     "replyFailed": "Não foi possível enviar a sua resposta. Tente novamente.",
+    "attach": "Anexar",
+    "attachedFile": "Arquivo anexado",
+    "loadOlder": "Carregar mensagens anteriores",
     "supportTeam": "Apoio",
     "you": "Você",
     "categories": {
@@ -141,20 +149,20 @@ export const ptBr: LocaleTree = {
     "backHome": "← Voltar ao início"
   },
   "hero": {
-    "welcomeTagline": "O maior sportsbook e casino online do mundo",
+    "welcomeTagline": "O maior cassino online e slots do mundo",
     "playNow": "Jogar agora",
     "registerPromo": "Cadastre-se agora",
     "pragmaticLine1": "Jogar",
     "pragmaticAccent": "Pragmatic Slots",
     "pragmaticLine2": "Experiência premium",
     "liveCasinoLine1": "Jogar",
-    "liveCasinoAccent": "Casino ao vivo",
+    "liveCasinoAccent": "Cassino ao vivo",
     "liveCasinoLine2": "Experiência premium",
     "firstDepositRegister": "CADASTRE-SE AGORA",
     "firstDepositTitle": "PRIMEIRO DEPÓSITO",
-    "firstDepositBonus": "100% BONUS",
+    "firstDepositBonus": "100% DE BÔNUS",
     "firstDepositUpTo": "ATÉ 250 USD",
-    "firstDepositFreeSpins": "+ 50 FREE SPINS"
+    "firstDepositFreeSpins": "+ 50 GIROS GRÁTIS"
   },
   "home": {
     "topGames": "Jogos top",
@@ -281,7 +289,11 @@ export const ptBr: LocaleTree = {
     "registerError": "Registo falhou. Verifique os seus dados.",
     "noAccount": "Não tem uma conta?",
     "hasAccount": "Já tem uma conta?",
-    "emailPlaceholder": "player@example.com"
+    "emailPlaceholder": "jogador@exemplo.com",
+    "emailVerificationCode": "Código de verificação",
+    "emailVerificationHint": "Digite o código de 6 dígitos enviado para o seu e-mail.",
+    "emailVerificationRequestFailed": "Não foi possível enviar o código de verificação. Tente novamente.",
+    "emailVerificationRequired": "Verifique seu e-mail antes de se cadastrar."
   },
   "profile": {
     "title": "O meu perfil",

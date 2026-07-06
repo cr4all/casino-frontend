@@ -1,4 +1,5 @@
 import api from '@/api/axios';
+import type { SupportAttachment } from '@/api/liveChat.api';
 import type { ApiResponse } from '@/types';
 
 export type SupportTicketCategory = 'account' | 'payment' | 'bonus' | 'game' | 'other';
@@ -19,6 +20,7 @@ export interface SupportTicketMessage {
   id: number;
   sender_type: 'player' | 'admin';
   body: string;
+  attachments?: SupportAttachment[];
   created_at: string | null;
 }
 
@@ -47,17 +49,25 @@ export const supportTicketsApi = {
     return data.data.ticket;
   },
 
-  get: async (id: number) => {
+  get: async (id: number, params?: { after_id?: number; before_id?: number }) => {
     const { data } = await api.get<
-      ApiResponse<{ ticket: SupportTicketDetail; messages: SupportTicketMessage[] }>
-    >(`/support-tickets/${id}`);
+      ApiResponse<{ ticket: SupportTicketDetail; messages: SupportTicketMessage[]; has_more: boolean }>
+    >(`/support-tickets/${id}`, { params });
     return data.data;
   },
 
-  reply: async (id: number, body: string) => {
+  reply: async (id: number, payload: { body?: string; file?: File }) => {
+    const formData = new FormData();
+    if (payload.body?.trim()) {
+      formData.append('body', payload.body.trim());
+    }
+    if (payload.file) {
+      formData.append('file', payload.file);
+    }
+
     const { data } = await api.post<ApiResponse<{ message: SupportTicketMessage }>>(
       `/support-tickets/${id}/messages`,
-      { body },
+      formData,
     );
     return data.data.message;
   },

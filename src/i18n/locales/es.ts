@@ -84,7 +84,12 @@ export const es: LocaleTree = {
     "placeholder": "Escriba su mensaje...",
     "send": "Enviar",
     "sendFailed": "No se puede enviar el mensaje. Por favor, inténtelo de nuevo",
-    "loadFailed": "No se han podido cargar los mensajes de chat."
+    "loadFailed": "No se han podido cargar los mensajes de chat.",
+    "attach": "Adjuntar",
+    "attachedFile": "Archivo adjunto",
+    "loadOlder": "Cargar mensajes anteriores",
+    "attachFileTypeNotAllowed": "Este tipo de archivo no es compatible. Envía una imagen o un documento (PDF, Word, Excel, etc.).",
+    "attachFileTooLarge": "El archivo es demasiado grande. El tamaño máximo es de 5 MB."
   },
   "supportTickets": {
     "title": "Tickets de soporte",
@@ -102,6 +107,9 @@ export const es: LocaleTree = {
     "replyPlaceholder": "Escribe tu respuesta...",
     "sendReply": "Enviar respuesta",
     "replyFailed": "No se pudo enviar tu respuesta. Inténtalo de nuevo.",
+    "attach": "Adjuntar",
+    "attachedFile": "Archivo adjunto",
+    "loadOlder": "Cargar mensajes anteriores",
     "supportTeam": "Soporte",
     "you": "Tú",
     "categories": {
@@ -141,20 +149,20 @@ export const es: LocaleTree = {
     "backHome": "Volver al Inicio"
   },
   "hero": {
-    "welcomeTagline": "El casino online y de apuestas deportivas más grande del mundo",
+    "welcomeTagline": "El casino online y las tragamonedas más grandes del mundo",
     "playNow": "Juega ahora",
-    "registerPromo": "Crea una cuenta ahora",
+    "registerPromo": "Regístrate ahora",
     "pragmaticLine1": "Jugar",
-    "pragmaticAccent": "Tragamonedas pragmáticas",
-    "pragmaticLine2": "Experiencia Premium:",
+    "pragmaticAccent": "Pragmatic Slots",
+    "pragmaticLine2": "Experiencia premium",
     "liveCasinoLine1": "Jugar",
     "liveCasinoAccent": "Casino en directo",
-    "liveCasinoLine2": "Experiencia Premium:",
-    "firstDepositRegister": "REGÍSTRESE AHORA",
+    "liveCasinoLine2": "Experiencia premium",
+    "firstDepositRegister": "REGÍSTRATE AHORA",
     "firstDepositTitle": "PRIMER DEPÓSITO",
-    "firstDepositBonus": "100 % de Bonificación",
-    "firstDepositUpTo": "Hasta $ 250 USD",
-    "firstDepositFreeSpins": "50 tiradas gratis"
+    "firstDepositBonus": "100% DE BONO",
+    "firstDepositUpTo": "HASTA 250 USD",
+    "firstDepositFreeSpins": "+ 50 TIROS GRATIS"
   },
   "home": {
     "topGames": "Principales juegos",
@@ -281,7 +289,11 @@ export const es: LocaleTree = {
     "registerError": "Error en el registro. Comprueba tus datos.",
     "noAccount": "¿No tienes una cuenta?",
     "hasAccount": "¿Ya tiene una cuenta?",
-    "emailPlaceholder": "player@example.com"
+    "emailPlaceholder": "jugador@ejemplo.com",
+    "emailVerificationCode": "Código de verificación",
+    "emailVerificationHint": "Introduce el código de 6 dígitos enviado a tu correo electrónico.",
+    "emailVerificationRequestFailed": "No se pudo enviar el código de verificación. Inténtalo de nuevo.",
+    "emailVerificationRequired": "Verifica tu correo electrónico antes de registrarte."
   },
   "profile": {
     "title": "Mi perfil",
@@ -464,7 +476,7 @@ export const es: LocaleTree = {
     "title": "Bonificaciones",
     "wageringProgress": "Progreso de las apuestas",
     "activeBonuses": "Bonos activos",
-    "noActive": "Bonos activos",
+    "noActive": "No hay bonos activos.",
     "availableBonuses": "Bonos disponibles",
     "noAvailable": "No hay bonificaciones disponibles en este momento.",
     "defaultName": "Bono",

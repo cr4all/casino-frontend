@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import axios from 'axios';
 import { liveChatApi, type LiveChatConfig, type LiveChatMessage } from '@/api/liveChat.api';
 import { subscribeLiveChat } from '@/api/liveChatRealtime';
 import { useAuthStore } from '@/stores/authStore';
@@ -45,20 +46,24 @@ export function useLiveChat(active: boolean) {
   const playerId = usePlayerStore((s) => s.profile?.id);
   const [messages, setMessages] = useState<LiveChatMessage[]>([]);
   const [loading, setLoading] = useState(false);
+  const [loadingOlder, setLoadingOlder] = useState(false);
+  const [hasMore, setHasMore] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const messagesRef = useRef<LiveChatMessage[]>([]);
 
-  const mergeMessages = useCallback((incoming: LiveChatMessage[]) => {
+  const mergeMessages = useCallback((incoming: LiveChatMessage[], prepend = false) => {
     if (!incoming.length) return;
 
     setMessages((current) => {
       const known = new Set(current.map((m) => m.id));
-      const next = [...current];
+      const next = prepend ? [...incoming.filter((m) => !known.has(m.id)), ...current] : [...current];
 
-      for (const message of incoming) {
-        if (!known.has(message.id)) {
-          next.push(message);
+      if (!prepend) {
+        for (const message of incoming) {
+          if (!known.has(message.id)) {
+            next.push(message);
+          }
         }
       }
 
@@ -79,6 +84,7 @@ export function useLiveChat(active: boolean) {
       const result = await liveChatApi.getMessages();
       messagesRef.current = result.items;
       setMessages(result.items);
+      setHasMore(Boolean(result.has_more));
       useLiveChatStore.getState().setUnreadCount(0);
     } catch {
       setError('load_failed');
@@ -86,6 +92,26 @@ export function useLiveChat(active: boolean) {
       setLoading(false);
     }
   }, [isAuthenticated]);
+
+  const loadOlderMessages = useCallback(async () => {
+    if (!isAuthenticated || loadingOlder || !hasMore) return;
+
+    const oldestId = messagesRef.current[0]?.id;
+    if (!oldestId) return;
+
+    setLoadingOlder(true);
+    setError(null);
+
+    try {
+      const result = await liveChatApi.getMessages({ before_id: oldestId });
+      mergeMessages(result.items, true);
+      setHasMore(Boolean(result.has_more));
+    } catch {
+      setError('load_failed');
+    } finally {
+      setLoadingOlder(false);
+    }
+  }, [hasMore, isAuthenticated, loadingOlder, mergeMessages]);
 
   useEffect(() => {
     if (!active || !isAuthenticated) return;
@@ -111,7 +137,7 @@ export function useLiveChat(active: boolean) {
         return;
       }
 
-      void liveChatApi.getMessages(messagesRef.current.at(-1)?.id).then((result) => {
+      void liveChatApi.getMessages({ after_id: messagesRef.current.at(-1)?.id }).then((result) => {
         mergeMessages(result.items);
       }).catch(() => undefined);
     }, 3000);
@@ -122,19 +148,29 @@ export function useLiveChat(active: boolean) {
     };
   }, [active, isAuthenticated, mergeMessages, playerId]);
 
-  const sendMessage = useCallback(async (body: string) => {
-    const trimmed = body.trim();
-    if (!trimmed || sending) return false;
+  const sendMessage = useCallback(async (payload: { body?: string; file?: File }) => {
+    const trimmed = payload.body?.trim() ?? '';
+    if ((!trimmed && !payload.file) || sending) return false;
 
     setSending(true);
     setError(null);
 
     try {
-      const result = await liveChatApi.sendMessage(trimmed);
+      const result = await liveChatApi.sendMessage(payload);
       mergeMessages([result.message]);
       return true;
-    } catch {
-      setError('send_failed');
+    } catch (err) {
+      if (axios.isAxiosError(err) && err.response?.status === 422) {
+        const fileErrors = err.response.data?.errors?.file;
+        const message = Array.isArray(fileErrors) ? fileErrors[0] : '';
+        if (typeof message === 'string' && message.toLowerCase().includes('larger')) {
+          setError('file_too_large');
+        } else {
+          setError('file_invalid');
+        }
+      } else {
+        setError('send_failed');
+      }
       return false;
     } finally {
       setSending(false);
@@ -144,9 +180,12 @@ export function useLiveChat(active: boolean) {
   return {
     messages,
     loading,
+    loadingOlder,
+    hasMore,
     sending,
     error,
     sendMessage,
+    loadOlderMessages,
     reload: loadMessages,
   };
-}
+};

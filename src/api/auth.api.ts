@@ -26,6 +26,7 @@ export interface RegisterPayload {
   country: string;
   currency: string;
   affiliate_code?: string;
+  email_verification_code: string;
   turnstileToken?: string;
   risk_context?: ClientRiskContext;
 }
@@ -96,6 +97,11 @@ export const authApi = {
 
   requestPasswordRecovery: async (payload: PasswordRecoveryRequestPayload) => {
     const { data } = await api.post<ApiResponse<null>>('/auth/password-recovery/request', payload);
+    return data;
+  },
+
+  requestRegistrationEmailVerification: async (email: string) => {
+    const { data } = await api.post<ApiResponse<null>>('/auth/register/verify-email/request', { email });
     return data;
   },
 

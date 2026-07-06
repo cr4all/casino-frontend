@@ -83,6 +83,11 @@ export const en = {
     send: 'Send',
     sendFailed: 'Could not send your message. Please try again.',
     loadFailed: 'Could not load chat messages.',
+    attach: 'Attach',
+    attachedFile: 'Attached file',
+    loadOlder: 'Load older messages',
+    attachFileTypeNotAllowed: 'This file type is not supported. Send an image or document (PDF, Word, Excel, etc.).',
+    attachFileTooLarge: 'The file is too large. Maximum size is 5 MB.',
   },
   supportTickets: {
     title: 'Support Tickets',
@@ -100,6 +105,9 @@ export const en = {
     replyPlaceholder: 'Type your reply...',
     sendReply: 'Send reply',
     replyFailed: 'Could not send your reply. Please try again.',
+    attach: 'Attach',
+    attachedFile: 'Attached file',
+    loadOlder: 'Load older messages',
     supportTeam: 'Support',
     you: 'You',
     categories: {
@@ -139,7 +147,7 @@ export const en = {
     backHome: '← Back to home',
   },
   hero: {
-    welcomeTagline: "The world's largest sportsbook and online casino",
+    welcomeTagline: "The world's largest online casino and slot",
     playNow: 'Play Now',
     registerPromo: 'Register Now',
     pragmaticLine1: 'Play',
@@ -281,6 +289,10 @@ export const en = {
     noAccount: "Don't have an account?",
     hasAccount: 'Already have an account?',
     emailPlaceholder: 'player@example.com',
+    emailVerificationCode: 'Verification code',
+    emailVerificationHint: 'Enter the 6-digit code sent to your email.',
+    emailVerificationRequestFailed: 'Could not send verification code. Please try again.',
+    emailVerificationRequired: 'Please verify your email before registering.',
   },
   profile: {
     title: 'My Profile',

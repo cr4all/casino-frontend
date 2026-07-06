@@ -11,10 +11,19 @@ export interface LiveChatConfig {
   };
 }
 
+export interface SupportAttachment {
+  id: number;
+  original_name: string;
+  mime_type: string;
+  size_bytes: number;
+  url: string;
+}
+
 export interface LiveChatMessage {
   id: number;
   sender_type: 'player' | 'admin';
   body: string;
+  attachments?: SupportAttachment[];
   created_at: string | null;
 }
 
@@ -36,18 +45,26 @@ export const liveChatApi = {
     return data.data;
   },
 
-  getMessages: async (afterId?: number) => {
-    const { data } = await api.get<ApiResponse<{ conversation_id: number; items: LiveChatMessage[] }>>(
+  getMessages: async (params?: { after_id?: number; before_id?: number }) => {
+    const { data } = await api.get<ApiResponse<{ conversation_id: number; items: LiveChatMessage[]; has_more: boolean }>>(
       '/live-chat/messages',
-      { params: afterId ? { after_id: afterId } : undefined },
+      { params },
     );
     return data.data;
   },
 
-  sendMessage: async (body: string) => {
+  sendMessage: async (payload: { body?: string; file?: File }) => {
+    const formData = new FormData();
+    if (payload.body?.trim()) {
+      formData.append('body', payload.body.trim());
+    }
+    if (payload.file) {
+      formData.append('file', payload.file);
+    }
+
     const { data } = await api.post<ApiResponse<{ conversation_id: number; message: LiveChatMessage }>>(
       '/live-chat/messages',
-      { body },
+      formData,
     );
     return data.data;
   },

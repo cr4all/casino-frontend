@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { authApi } from '@/api/auth.api';
+import { authApi, type RegisterPayload } from '@/api/auth.api';
 import { disconnectEcho } from '@/lib/echo';
 import { isRiskChallengeError, PostRegisterLoginChallengeError } from '@/utils/apiError';
 import type { User } from '@/types';
@@ -19,17 +19,7 @@ interface AuthState {
     password: string;
     turnstileToken?: string;
   }) => Promise<void>;
-  register: (payload: {
-    email: string;
-    password: string;
-    password_confirmation: string;
-    nickname: string;
-    phone: string;
-    country: string;
-    currency: string;
-    affiliate_code?: string;
-    turnstileToken?: string;
-  }) => Promise<void>;
+  register: (payload: RegisterPayload) => Promise<void>;
   logout: () => void;
 }
 

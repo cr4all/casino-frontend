@@ -160,7 +160,7 @@ export const ko: LocaleTree = {
     "helpText": "도움이 필요하신가요?"
   },
   "hero": {
-    "welcomeTagline": "세계 최대 규모의 스포츠북 및 온라인 카지노",
+    "welcomeTagline": "세계 최대 규모의 온라인 카지노 및 슬롯",
     "playNow": "지금 플레이",
     "registerPromo": "지금 가입하기",
     "pragmaticLine1": "플레이",
@@ -286,7 +286,11 @@ export const ko: LocaleTree = {
     "registerError": "회원가입에 실패했습니다. 정보를 확인하세요.",
     "noAccount": "계정이 없으신가요?",
     "hasAccount": "이미 계정이 있으신가요?",
-    "emailPlaceholder": "player@example.com"
+    "emailPlaceholder": "player@example.com",
+    "emailVerificationCode": "인증 코드",
+    "emailVerificationHint": "이메일로 전송된 6자리 코드를 입력하세요.",
+    "emailVerificationRequestFailed": "인증 코드를 보낼 수 없습니다. 다시 시도해 주세요.",
+    "emailVerificationRequired": "회원가입 전에 이메일을 인증해 주세요."
   },
   "profile": {
     "title": "내 프로필",

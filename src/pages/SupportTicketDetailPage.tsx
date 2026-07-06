@@ -2,27 +2,24 @@ import {
   Fragment,
   FormEvent,
   KeyboardEvent,
+  useCallback,
   useEffect,
   useLayoutEffect,
   useRef,
   useState,
 } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
+import { AttachIcon } from '@/components/common/AttachIcon';
+import type { SupportAttachment } from '@/api/liveChat.api';
 import {
   supportTicketsApi,
   type SupportTicketDetail,
   type SupportTicketMessage,
 } from '@/api/supportTickets.api';
+import { MessageAttachments } from '@/components/support/MessageAttachments';
 import { useAuthStore } from '@/stores/authStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { formatChatDateLabel, getChatDateKey } from '@/utils/formatDateTime';
-import {
-  collectFieldErrors,
-  hasFieldErrors,
-  omitFieldError,
-  requiredValue,
-  type FieldErrors,
-} from '@/utils/formValidation';
 
 function formatTime(value: string | null): string {
   if (!value) return '';
@@ -41,10 +38,12 @@ function ChatDateSeparator({ label }: { label: string }) {
 
 function ChatMessageBubble({
   body,
+  attachments,
   time,
   isOwn,
 }: {
   body: string;
+  attachments?: SupportAttachment[];
   time: string;
   isOwn: boolean;
 }) {
@@ -54,7 +53,8 @@ function ChatMessageBubble({
         isOwn ? 'bg-accent-gold/15 text-white' : 'bg-card/80 text-white'
       }`}
     >
-      <span className="whitespace-pre-wrap break-words">{body}</span>
+      {body ? <span className="whitespace-pre-wrap break-words">{body}</span> : null}
+      <MessageAttachments attachments={attachments} />
       <span className="relative top-[3px] float-right ml-2.5 select-none text-[11px] leading-none text-white/45">
         {time}
       </span>
@@ -69,24 +69,69 @@ export function SupportTicketDetailPage() {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const [ticket, setTicket] = useState<SupportTicketDetail | null>(null);
   const [messages, setMessages] = useState<SupportTicketMessage[]>([]);
+  const [hasMore, setHasMore] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [loadingOlder, setLoadingOlder] = useState(false);
   const [body, setBody] = useState('');
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const messagesRef = useRef<SupportTicketMessage[]>([]);
+
+  const mergeMessages = useCallback((incoming: SupportTicketMessage[], prepend = false) => {
+    if (!incoming.length) return;
+
+    setMessages((current) => {
+      const known = new Set(current.map((m) => m.id));
+      const next = prepend ? [...incoming.filter((m) => !known.has(m.id)), ...current] : [...current];
+
+      if (!prepend) {
+        for (const message of incoming) {
+          if (!known.has(message.id)) {
+            next.push(message);
+          }
+        }
+      }
+
+      next.sort((a, b) => a.id - b.id);
+      messagesRef.current = next;
+      return next;
+    });
+  }, []);
+
+  const loadTicket = useCallback(async () => {
+    const data = await supportTicketsApi.get(ticketId);
+    setTicket(data.ticket);
+    messagesRef.current = data.messages;
+    setMessages(data.messages);
+    setHasMore(Boolean(data.has_more));
+  }, [ticketId]);
 
   useEffect(() => {
     if (!isAuthenticated || !Number.isFinite(ticketId)) return;
-    supportTicketsApi
-      .get(ticketId)
-      .then((data) => {
-        setTicket(data.ticket);
-        setMessages(data.messages);
-      })
+    loadTicket()
+      .catch(() => setTicket(null))
       .finally(() => setLoading(false));
-  }, [isAuthenticated, ticketId]);
+  }, [isAuthenticated, loadTicket, ticketId]);
+
+  useEffect(() => {
+    if (!isAuthenticated || !Number.isFinite(ticketId)) return;
+
+    const pollTimer = window.setInterval(() => {
+      void supportTicketsApi
+        .get(ticketId, { after_id: messagesRef.current.at(-1)?.id })
+        .then((data) => {
+          setTicket(data.ticket);
+          mergeMessages(data.messages);
+        })
+        .catch(() => undefined);
+    }, 3000);
+
+    return () => window.clearInterval(pollTimer);
+  }, [isAuthenticated, mergeMessages, ticketId]);
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight });
@@ -112,31 +157,44 @@ export function SupportTicketDetailPage() {
   }
 
   const isClosed = ticket?.status === 'closed';
+  const canSend = Boolean(body.trim() || selectedFile);
+
+  const loadOlderMessages = async () => {
+    if (loadingOlder || !hasMore) return;
+
+    const oldestId = messagesRef.current[0]?.id;
+    if (!oldestId) return;
+
+    setLoadingOlder(true);
+    try {
+      const data = await supportTicketsApi.get(ticketId, { before_id: oldestId });
+      mergeMessages(data.messages, true);
+      setHasMore(Boolean(data.has_more));
+    } catch {
+      setError(t('liveChat.loadFailed'));
+    } finally {
+      setLoadingOlder(false);
+    }
+  };
 
   const handleReply = async (event?: FormEvent) => {
     event?.preventDefault();
-    if (isClosed || submitting) return;
+    if (isClosed || submitting || !canSend) return;
 
     setError(null);
-    setFieldErrors({});
-
-    const errors = collectFieldErrors([
-      [
-        'body',
-        requiredValue(body) ? undefined : t('common.fieldRequired', { field: t('supportTickets.message') }),
-      ],
-    ]);
-
-    if (hasFieldErrors(errors)) {
-      setFieldErrors(errors);
-      return;
-    }
-
     setSubmitting(true);
+
     try {
-      const message = await supportTicketsApi.reply(ticketId, body.trim());
-      setMessages((prev) => [...prev, message]);
+      const message = await supportTicketsApi.reply(ticketId, {
+        body: body.trim() || undefined,
+        file: selectedFile ?? undefined,
+      });
+      mergeMessages([message]);
       setBody('');
+      setSelectedFile(null);
+      if (fileInputRef.current) {
+        fileInputRef.current.value = '';
+      }
       if (inputRef.current) {
         inputRef.current.style.height = 'auto';
       }
@@ -178,6 +236,18 @@ export function SupportTicketDetailPage() {
               ref={scrollRef}
               className="scrollbar-dark max-h-[min(60vh,520px)] space-y-3 overflow-y-auto overscroll-contain px-4 py-4"
             >
+              {hasMore && (
+                <div className="flex justify-center">
+                  <button
+                    type="button"
+                    onClick={() => void loadOlderMessages()}
+                    disabled={loadingOlder}
+                    className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/80 transition hover:bg-white/5 disabled:opacity-50"
+                  >
+                    {loadingOlder ? t('common.loading') : t('supportTickets.loadOlder')}
+                  </button>
+                </div>
+              )}
               {messages.length === 0 ? (
                 <p className="text-sm text-muted">{t('liveChat.empty')}</p>
               ) : (
@@ -198,6 +268,7 @@ export function SupportTicketDetailPage() {
                       <div className={`flex ${isOwn ? 'justify-end' : 'justify-start'}`}>
                         <ChatMessageBubble
                           body={message.body}
+                          attachments={message.attachments}
                           time={formatTime(message.created_at)}
                           isOwn={isOwn}
                         />
@@ -215,16 +286,23 @@ export function SupportTicketDetailPage() {
             ) : (
               <form onSubmit={(event) => void handleReply(event)} noValidate className="border-t border-white/10 p-4">
                 {error && <p className="mb-2 text-xs text-red-400">{error}</p>}
-                {fieldErrors.body && <p className="mb-2 text-xs text-red-400">{fieldErrors.body}</p>}
-                <div className="flex items-end gap-2">
+                {selectedFile && (
+                  <p className="mb-2 text-xs text-white/70">
+                    {t('supportTickets.attachedFile')}: {selectedFile.name}
+                  </p>
+                )}
+                <div className="flex items-center gap-2">
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    className="hidden"
+                    onChange={(event) => setSelectedFile(event.target.files?.[0] ?? null)}
+                  />
                   <textarea
                     ref={inputRef}
                     id="ticket-reply-body"
                     value={body}
-                    onChange={(event) => {
-                      setBody(event.target.value);
-                      setFieldErrors((prev) => omitFieldError(prev, 'body'));
-                    }}
+                    onChange={(event) => setBody(event.target.value)}
                     onKeyDown={handleInputKeyDown}
                     placeholder={t('supportTickets.replyPlaceholder')}
                     maxLength={5000}
@@ -232,8 +310,17 @@ export function SupportTicketDetailPage() {
                     className="min-h-10 flex-1 resize-none overflow-hidden rounded-lg border border-white/10 bg-background px-3 py-2 text-sm leading-5 text-white outline-none focus:border-accent-gold/50"
                   />
                   <button
+                    type="button"
+                    onClick={() => fileInputRef.current?.click()}
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/10 text-white/80 transition hover:bg-white/5"
+                    aria-label={t('supportTickets.attach')}
+                    title={t('supportTickets.attach')}
+                  >
+                    <AttachIcon />
+                  </button>
+                  <button
                     type="submit"
-                    disabled={submitting || !body.trim()}
+                    disabled={submitting || !canSend}
                     className="h-10 shrink-0 rounded-lg bg-accent-gold px-4 text-sm font-semibold text-black transition enabled:hover:brightness-110 disabled:opacity-50"
                   >
                     {submitting ? t('common.loading') : t('supportTickets.sendReply')}
