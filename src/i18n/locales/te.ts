@@ -21,7 +21,7 @@ export const te: LocaleTree = {
     "previous": "మునుపటి",
     "next": "తదుపరి",
     "showMore": "మరిన్ని చూపు",
-    "ok": "OK",
+    "ok": "సరే",
     "yes": "అవును",
     "no": "లేదు",
     "close": "మూసివేయి",
@@ -35,7 +35,7 @@ export const te: LocaleTree = {
     "maxOnly": "గరిష్టం {{amount}}",
     "notAvailable": "—",
     "minMax": "కనీసం: {{min}} · గరిష్టం: {{max}}",
-    "currencyIdr": "· Currency: IDR",
+    "currencyIdr": "· కరెన్సీ: IDR",
     "pageOf": "పేజీ {{page}} / {{last}}",
     "openMenu": "మెనూ తెరువు",
     "actions": "చర్యలు",
@@ -84,7 +84,12 @@ export const te: LocaleTree = {
     "placeholder": "మీ సందేశాన్ని టైప్ చేయండి...",
     "send": "పంపు",
     "sendFailed": "మీ సందేశం పంపలేకపోయాము. దయచేసి మళ్లీ ప్రయత్నించండి.",
-    "loadFailed": "చాట్ సందేశాలను లోడ్ చేయలేకపోయాము."
+    "loadFailed": "చాట్ సందేశాలను లోడ్ చేయలేకపోయాము.",
+    "attach": "అటాచ్ చేయి",
+    "attachedFile": "అటాచ్ చేసిన ఫైల్",
+    "loadOlder": "పాత సందేశాలను లోడ్ చేయి",
+    "attachFileTypeNotAllowed": "ఈ ఫైల్ రకం మద్దతు లేదు. చిత్రం లేదా డాక్యుమెంట్ (PDF, Word, Excel మొదలైనవి) పంపండి.",
+    "attachFileTooLarge": "ఫైల్ చాలా పెద్దది. గరిష్ట పరిమాణం 5 MB."
   },
   "supportTickets": {
     "title": "సపోర్ట్ టికెట్‌లు",
@@ -102,6 +107,9 @@ export const te: LocaleTree = {
     "replyPlaceholder": "మీ ప్రతిస్పందనను టైప్ చేయండి...",
     "sendReply": "ప్రతిస్పందన పంపు",
     "replyFailed": "మీ ప్రతిస్పందన పంపలేకపోయాము. దయచేసి మళ్లీ ప్రయత్నించండి.",
+    "attach": "అటాచ్ చేయి",
+    "attachedFile": "అటాచ్ చేసిన ఫైల్",
+    "loadOlder": "పాత సందేశాలను లోడ్ చేయి",
     "supportTeam": "సపోర్ట్",
     "you": "మీరు",
     "categories": {
@@ -131,7 +139,7 @@ export const te: LocaleTree = {
     "terms": "నిబంధనలు & షరతులు",
     "privacy": "గోప్యతా విధానం",
     "responsibleGaming": "బాధ్యతాయుత గేమింగ్",
-    "faq": "FAQ",
+    "faq": "తరచుగా అడిగే ప్రశ్నలు",
     "contact": "మమ్మల్ని సంప్రదించండి",
     "aml": "AML విధానం",
     "disclaimer": "18+ | బాధ్యతాయుతంగా ఆడండి. జూదం అలవాటుగా మారవచ్చు.",
@@ -141,14 +149,14 @@ export const te: LocaleTree = {
     "backHome": "← హోమ్‌కు తిరిగి"
   },
   "hero": {
-    "welcomeTagline": "ప్రపంచంలోనే అతిపెద్ద స్పోర్ట్స్‌బుక్ మరియు ఆన్‌లైన్ క్యాసినో",
+    "welcomeTagline": "ప్రపంచంలోనే అతిపెద్ద ఆన్‌లైన్ క్యాసినో మరియు స్లాట్",
     "playNow": "ఇప్పుడు ఆడు",
     "registerPromo": "ఇప్పుడు నమోదు చేయి",
     "pragmaticLine1": "ఆడు",
     "pragmaticAccent": "Pragmatic Slots",
     "pragmaticLine2": "ప్రీమియం అనుభవం",
     "liveCasinoLine1": "ఆడు",
-    "liveCasinoAccent": "లైవ్ క్యాసినో",
+    "liveCasinoAccent": "Live Casino",
     "liveCasinoLine2": "ప్రీమియం అనుభవం",
     "firstDepositRegister": "ఇప్పుడే నమోదు చేయండి",
     "firstDepositTitle": "మొదటి డిపాజిట్",
@@ -281,7 +289,11 @@ export const te: LocaleTree = {
     "registerError": "నమోదు విఫలమైంది. దయచేసి మీ వివరాలను తనిఖీ చేయండి.",
     "noAccount": "ఖాతా లేదా?",
     "hasAccount": "ఇప్పటికే ఖాతా ఉందా?",
-    "emailPlaceholder": "player@example.com"
+    "emailPlaceholder": "player@example.com",
+    "emailVerificationCode": "ధృవీకరణ కోడ్",
+    "emailVerificationHint": "మీ ఇమెయిల్‌కు పంపిన 6 అంకెల కోడ్‌ను నమోదు చేయండి.",
+    "emailVerificationRequestFailed": "ధృవీకరణ కోడ్ పంపలేకపోయాము. దయచేసి మళ్లీ ప్రయత్నించండి.",
+    "emailVerificationRequired": "నమోదు చేయే ముందు దయచేసి మీ ఇమెయిల్‌ను ధృవీకరించండి."
   },
   "profile": {
     "title": "నా ప్రొఫైల్",
@@ -444,6 +456,9 @@ export const te: LocaleTree = {
     "pay_amount": "చెల్లింపు మొత్తం",
     "payment_url": "చెల్లింపు పేజీ",
     "qr_string": "QR కోడ్",
+    "payment_method": "చెల్లింపు పద్ధతి",
+    "payment_system": "చెల్లింపు వ్యవస్థ",
+    "payment_requisite": "చెల్లింపు ఫోన్ నంబర్",
     "memo": "మెమో",
     "tag": "ట్యాగ్",
     "destination_tag": "గమ్యం ట్యాగ్",
@@ -506,7 +521,7 @@ export const te: LocaleTree = {
   "announcement": {
     "popupBadge": "ప్రకటన",
     "popupClose": "మూసివేయి",
-    "popupConfirm": "OK",
+    "popupConfirm": "సరే",
     "hideForToday": "ఈరోజు మళ్లీ చూపవద్దు"
   },
   "betHistory": {

@@ -43,19 +43,72 @@ body {
   background-color: var(--color-background);
   color: #ffffff;
   font-family: var(--font-sans);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
+#root {
+  min-height: 100vh;
+  font-weight: 700;
+}
+
+/* Player platform — all UI copy renders bold (including payment option cards). */
+#root :where(
+  p,
+  span,
+  a,
+  button,
+  label,
+  input,
+  textarea,
+  select,
+  td,
+  th,
+  li,
+  dt,
+  dd,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  div,
+  strong,
+  em,
+  small
+) {
+  font-weight: inherit;
+}
+
 .font-condensed {
   font-family: var(--font-condensed);
 }
 
-#root {
-  min-height: 100vh;
+#root .font-light,
+#root .font-normal,
+#root .font-medium,
+#root .font-semibold,
+#root .font-mono {
+  font-weight: 700 !important;
+}
+
+/* Numeric displays — balances, limits, IDs, form inputs */
+#root input,
+#root textarea,
+#root select,
+#root option,
+#root code,
+#root kbd {
+  font-weight: 700;
+}
+
+#root input::placeholder,
+#root textarea::placeholder {
+  font-weight: 700;
 }
 
 .sidebar-active {
@@ -948,7 +1001,7 @@ body {
   padding: 0.75rem 1rem;
   text-align: left;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.02em;
   color: rgba(255, 255, 255, 0.45);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -1054,11 +1107,11 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .live-bet-feed__username {
-  font-weight: 600;
+  font-weight: 700;
   color: #fff;
 }
 
@@ -1077,10 +1130,11 @@ body {
 .live-bet-feed__money,
 .live-bet-feed__payout {
   font-variant-numeric: tabular-nums;
+  font-weight: 700;
 }
 
 .live-bet-feed__payout--win {
-  font-weight: 600;
+  font-weight: 700;
   color: #4ade80;
 }
 

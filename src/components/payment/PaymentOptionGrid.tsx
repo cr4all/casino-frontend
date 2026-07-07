@@ -26,7 +26,7 @@ export function PaymentOptionLogo({ option, className }: { option: PaymentOption
   const initials = option.label.slice(0, 2).toUpperCase();
 
   return (
-    <span className={`flex ${logoClass} shrink-0 items-center justify-center rounded-md bg-white/10 text-xs font-semibold text-white`}>
+    <span className={`flex ${logoClass} shrink-0 items-center justify-center rounded-md bg-white/10 text-xs font-bold text-white`}>
       {initials}
     </span>
   );
@@ -39,11 +39,11 @@ function PaymentOptionMinMax({ option }: { option: PaymentOption }) {
     : '';
 
   return (
-    <p className="text-xs text-muted sm:shrink-0 sm:text-right">
+    <p className="text-xs font-bold text-muted sm:shrink-0 sm:text-right">
       {t('common.minMax', {
-        min: `${t('common.minLabel')}: ${formatPaymentLimit(option.min_amount)}${currencySuffix}`,
+        min: `${formatPaymentLimit(option.min_amount)}${currencySuffix}`,
         max: option.max_amount
-          ? `${t('common.maxLabel')}: ${formatPaymentLimit(option.max_amount)}${currencySuffix}`
+          ? `${formatPaymentLimit(option.max_amount)}${currencySuffix}`
           : t('common.noLimit'),
       })}
     </p>
@@ -67,9 +67,9 @@ export function PaymentOptionSummary({
       <div className="min-w-0 flex-1">
         <div className="flex min-w-0 flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
           <div className="min-w-0">
-            <p className="truncate text-sm font-medium text-white">{tPaymentOptionLabel(option.label)}</p>
+            <p className="truncate text-sm font-bold text-white">{tPaymentOptionLabel(option.label)}</p>
             {option.payment_currency && (
-              <p className="text-xs text-muted">
+              <p className="text-xs font-bold text-muted">
                 {t('deposit.paymentCurrency', { currency: option.payment_currency })}
               </p>
             )}
@@ -139,8 +139,8 @@ export function PaymentOptionGrid({
             <div className="min-w-0 flex-1">
               <div className="flex min-w-0 flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
                 <div className="min-w-0">
-                  <p className="truncate text-sm font-medium text-white">{tPaymentOptionLabel(option.label)}</p>
-                  <p className="text-xs text-muted">{option.payment_currency}</p>
+                  <p className="truncate text-sm font-bold text-white">{tPaymentOptionLabel(option.label)}</p>
+                  <p className="text-xs font-bold text-muted">{option.payment_currency}</p>
                 </div>
                 <PaymentOptionMinMax option={option} />
               </div>

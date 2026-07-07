@@ -46,7 +46,7 @@ export const ko: LocaleTree = {
     "fieldSelectRequired": "{{field}}을(를) 선택해 주세요.",
     "fieldCodeInvalid": "6자리 인증 코드를 입력해 주세요.",
     "language": "언어",
-    "actions": "Actions"
+    "actions": "작업"
   },
   "nav": {
     "allGames": "전체 게임",
@@ -84,7 +84,12 @@ export const ko: LocaleTree = {
     "placeholder": "메시지를 입력하세요...",
     "send": "보내기",
     "sendFailed": "메시지를 보내지 못했습니다. 다시 시도해 주세요.",
-    "loadFailed": "채팅 메시지를 불러오지 못했습니다."
+    "loadFailed": "채팅 메시지를 불러오지 못했습니다.",
+    "attach": "첨부",
+    "attachedFile": "첨부 파일",
+    "loadOlder": "이전 메시지 불러오기",
+    "attachFileTypeNotAllowed": "지원하지 않는 파일 형식입니다. 이미지 또는 문서(PDF, Word, Excel 등)를 보내 주세요.",
+    "attachFileTooLarge": "파일이 너무 큽니다. 최대 크기는 5MB입니다."
   },
   "supportTickets": {
     "title": "지원 티켓",
@@ -102,6 +107,9 @@ export const ko: LocaleTree = {
     "replyPlaceholder": "답장을 입력하세요...",
     "sendReply": "답장 보내기",
     "replyFailed": "답장을 보내지 못했습니다. 다시 시도해 주세요.",
+    "attach": "첨부",
+    "attachedFile": "첨부 파일",
+    "loadOlder": "이전 메시지 불러오기",
     "supportTeam": "지원팀",
     "you": "나",
     "categories": {
@@ -135,7 +143,7 @@ export const ko: LocaleTree = {
     "contact": "문의하기",
     "aml": "AML 정책",
     "disclaimer": "18+ | 책임감 있게 플레이하세요. 도박은 중독을 유발할 수 있습니다.",
-    "copyright": "© {{year}} iBets24. All rights reserved."
+    "copyright": "© {{year}} iBets24. 모든 권리 보유."
   },
   "liveBetFeed": {
     "title": "실시간 베팅",
@@ -266,6 +274,8 @@ export const ko: LocaleTree = {
     "loginErrorPhone": "전화번호 또는 비밀번호가 올바르지 않습니다.",
     "rememberMe": "로그인 상태 유지",
     "affiliatePortalLoginTitle": "어필리에이트 포털 로그인",
+    "showPassword": "비밀번호 표시",
+    "hidePassword": "비밀번호 숨기기",
     "registerTitle": "회원가입",
     "email": "이메일",
     "password": "비밀번호",
@@ -283,6 +293,8 @@ export const ko: LocaleTree = {
     "currency": "통화",
     "confirmPassword": "비밀번호 확인",
     "loginError": "이메일, 사용자명 또는 비밀번호가 올바르지 않습니다.",
+    "riskBlocked": "보안상의 이유로 이 작업이 차단되었습니다.",
+    "riskChallenge": "계속하려면 추가 인증이 필요합니다.",
     "registerError": "회원가입에 실패했습니다. 정보를 확인하세요.",
     "noAccount": "계정이 없으신가요?",
     "hasAccount": "이미 계정이 있으신가요?",
@@ -495,6 +507,7 @@ export const ko: LocaleTree = {
     "freeSpinWinnings": "당첨금: {{amount}}",
     "depositRequired": "이 보너스를 받으려면 최소 1회 입금이 필요합니다.",
     "firstDepositAfterValidFromRequired": "프로모션 시작일 이후 첫 충전을 완료한 플레이어만 이 보너스를 받을 수 있습니다.",
+    "depositAfterValidFromRequired": "프로모션 시작일 이후 첫 충전을 완료한 플레이어만 이 보너스를 받을 수 있습니다.",
     "depositCta": "입금하러 가기",
     "alreadyClaimed": "이미 받은 보너스입니다.",
     "providerNotSupported": "아직 지원되지 않는 프리스핀 프로바이더입니다."
@@ -534,7 +547,7 @@ export const ko: LocaleTree = {
     "date": "날짜",
     "spinType": "스핀 형태",
     "fundingSource": "스핀 형태",
-    "fundingCash": "Cash 스핀",
+    "fundingCash": "현금 스핀",
     "fundingBonus": "보너스 스핀",
     "fundingMixed": "혼합 스핀",
     "fundingFreeSpin": "프리스핀"
@@ -574,8 +587,8 @@ export const ko: LocaleTree = {
     "loginRequired": "게임을 하려면 로그인해 주세요."
   },
   "gameCard": {
-    "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "newBadge": "신규",
+    "bonusBadge": "보너스"
   },
   "modal": {
     "comingSoon": "곧 출시"
@@ -615,7 +628,7 @@ export const ko: LocaleTree = {
     "active": "활성",
     "completed": "완료",
     "wagering": "베팅",
-    "verified": "verified",
+    "verified": "인증됨",
     "suspended": "정지",
     "closed": "종료"
   },
