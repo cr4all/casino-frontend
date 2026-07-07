@@ -563,14 +563,17 @@ export function DepositPage() {
                 {Object.entries(lastDeposit.payment_info).map(([key, value]) => {
                   if (key === 'payment_url' || key === 'qr_string') return null;
                   const display = typeof value === 'object' ? JSON.stringify(value) : String(value);
-                  const isAddress = key === 'address' || key === 'pay_address';
+                  const isCopyable = key === 'address'
+                    || key === 'pay_address'
+                    || key === 'account_number'
+                    || key === 'payment_requisite';
 
                   return (
                     <div key={key}>
                       <dt className="text-xs capitalize text-muted">{tPaymentInfoField(key)}</dt>
                       <dd className="text-sm text-white break-all">
                         {display}
-                        {isAddress && display && <CopyButton value={display} />}
+                        {isCopyable && display && <CopyButton value={display} />}
                       </dd>
                     </div>
                   );
