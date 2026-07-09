@@ -72,7 +72,18 @@ export const uk: LocaleTree = {
     "liveChat": "ОНЛАЙН-ЧАТ",
     "liveChatLabel": "Підтримка",
     "supportTickets": "ЗВЕРНЕННЯ В ПІДТРИМКУ",
-    "supportTicketsLabel": "Служба підтримки"
+    "supportTicketsLabel": "Служба підтримки",
+    "casino": "CASINO",
+    "sports": "SPORTS",
+    "platformSection": "Platform section",
+    "prematch": "PREMATCH",
+    "prematchLabel": "Pre-match betting",
+    "inLive": "IN LIVE",
+    "inLiveLabel": "Live betting",
+    "sportsHistory": "ІСТОРІЯ",
+    "sportsHistoryLabel": "My sports bets",
+    "casinoHistory": "ІСТОРІЯ",
+    "casinoHistoryLabel": "Game bet history"
   },
   "liveChat": {
     "title": "Онлайн-чат",
@@ -156,13 +167,16 @@ export const uk: LocaleTree = {
     "pragmaticAccent": "Pragmatic Slots",
     "pragmaticLine2": "Преміальний досвід",
     "liveCasinoLine1": "Грати",
-    "liveCasinoAccent": "Live Casino",
+    "liveCasinoAccent": "Live-казино",
     "liveCasinoLine2": "Преміальний досвід",
     "firstDepositRegister": "ЗАРЕЄСТРУВАТИСЯ ЗАРАЗ",
     "firstDepositTitle": "ПЕРШИЙ ДЕПОЗИТ",
     "firstDepositBonus": "БОНУС 100%",
     "firstDepositUpTo": "ДО $250 USD",
-    "firstDepositFreeSpins": "+ 50 БЕЗКОШТОВНИХ ОБЕРТІВ"
+    "firstDepositFreeSpins": "+ 50 БЕЗКОШТОВНИХ ОБЕРТІВ",
+    "betNow": "Bet Now",
+    "sportsbookLine1": "Bet on",
+    "sportsbookAccent": "Sports book"
   },
   "home": {
     "topGames": "Топ ігри",
@@ -710,5 +724,23 @@ export const uk: LocaleTree = {
     "passwordUpdateFailed": "Не вдалося оновити пароль.",
     "verificationCodeSent": "Код підтвердження надіслано.",
     "verificationCodeRequestFailed": "Не вдалося надіслати код підтвердження."
+  },
+  "sports": {
+    "launching": "Loading sportsbook...",
+    "error": "Unable to load sportsbook.",
+    "loginRequired": "Sign in to access sports betting."
+  },
+  "sportsBetHistory": {
+    "title": "Sports Bets",
+    "noBets": "No sports bets yet. Place a bet in the sportsbook to see your history here.",
+    "browseSports": "Go to sportsbook",
+    "roundId": "Round ID",
+    "paymentId": "Payment ID",
+    "type": "Тип",
+    "stake": "Stake",
+    "oddFactor": "Odds",
+    "win": "Виграш",
+    "status": "Статус",
+    "date": "Дата"
   }
 };

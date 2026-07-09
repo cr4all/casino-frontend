@@ -1,0 +1,23 @@
+{
+  "SPORTS": "ΑΘΛΗΜΑΤΑ",
+  "Platform section": "Ενότητα πλατφόρμας",
+  "PREMATCH": "PREMATCH",
+  "Pre-match betting": "Στοιχήματα πριν από τον αγώνα",
+  "IN LIVE": "IN LIVE",
+  "Live betting": "Ζωντανό στοίχημα",
+  "My sports bets": "Τα αθλητικά μου στοιχήματα",
+  "Loading sportsbook...": "Φόρτωση αθλητικού στοιχήματος...",
+  "Unable to load sportsbook.": "Δεν είναι δυνατή η φόρτωση του αθλητικού στοιχήματος.",
+  "Sign in to access sports betting.": "Συνδεθείτε για να αποκτήσετε πρόσβαση σε αθλητικά στοιχήματα.",
+  "Bet Now": "Στοιχημάτισε τώρα",
+  "Bet on": "Στοιχηματίστε σε",
+  "Sports book": "Βιβλίο αθλημάτων",
+  "Casino Bets": "Στοιχήματα Καζίνο",
+  "Sports Bets": "Αθλητικά στοιχήματα",
+  "No sports bets yet. Place a bet in the sportsbook to see your history here.": "Δεν υπάρχουν αθλητικά στοιχήματα ακόμα. Τοποθετήστε ένα στοίχημα στο αθλητικό στοίχημα για να δείτε το ιστορικό σας εδώ.",
+  "Go to sportsbook": "Μετάβαση στο αθλητικό στοίχημα",
+  "Round ID": "Στρογγυλή ταυτότητα",
+  "Payment ID": "ID πληρωμής",
+  "Stake": "Ποντάρισμα",
+  "Odds": "Αποδόσεις"
+}

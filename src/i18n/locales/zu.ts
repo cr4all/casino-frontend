@@ -72,7 +72,18 @@ export const zu: LocaleTree = {
     "liveChat": "INGXOXO EBUKHOMA",
     "liveChatLabel": "Ukwesekwa",
     "supportTickets": "AMATHEKHETHI WOSIZO",
-    "supportTicketsLabel": "Ideski losizo"
+    "supportTicketsLabel": "Ideski losizo",
+    "casino": "CASINO",
+    "sports": "SPORTS",
+    "platformSection": "Platform section",
+    "prematch": "PREMATCH",
+    "prematchLabel": "Pre-match betting",
+    "inLive": "IN LIVE",
+    "inLiveLabel": "Live betting",
+    "sportsHistory": "Umlandu",
+    "sportsHistoryLabel": "My sports bets",
+    "casinoHistory": "Umlandu",
+    "casinoHistoryLabel": "Game bet history"
   },
   "liveChat": {
     "title": "Ingxoxo ebukhoma",
@@ -153,16 +164,19 @@ export const zu: LocaleTree = {
     "playNow": "Dlala manje",
     "registerPromo": "Bhalisa manje",
     "pragmaticLine1": "Dlala",
-    "pragmaticAccent": "Pragmatic Slots",
+    "pragmaticAccent": "Ama-Pragmatic Slots",
     "pragmaticLine2": "Isipiliyoni Esiphezulu",
     "liveCasinoLine1": "Dlala",
-    "liveCasinoAccent": "Live Casino",
+    "liveCasinoAccent": "Ikhasino Ebukhoma",
     "liveCasinoLine2": "Isipiliyoni Esiphezulu",
     "firstDepositRegister": "BHALISA MANJE",
     "firstDepositTitle": "IDIPHOZITHI YOKUQALA",
     "firstDepositBonus": "IBHONASI ENGU-100%",
     "firstDepositUpTo": "KUFIKA KU-250 USD",
-    "firstDepositFreeSpins": "+ 50 UMAYISIYO WAMAHLE"
+    "firstDepositFreeSpins": "+ 50 UMAYISIYO WAMAHLE",
+    "betNow": "Bet Now",
+    "sportsbookLine1": "Bet on",
+    "sportsbookAccent": "Sports book"
   },
   "home": {
     "topGames": "Imidlalo ehamba phambili",
@@ -707,5 +721,23 @@ export const zu: LocaleTree = {
     "passwordUpdateFailed": "Yehlulekile ukubuyekeza iphasiwedi.",
     "verificationCodeSent": "Ikhodi yokuqinisekisa ithunyelwe.",
     "verificationCodeRequestFailed": "Yehlulekile ukuthumela ikhodi yokuqinisekisa."
+  },
+  "sports": {
+    "launching": "Loading sportsbook...",
+    "error": "Unable to load sportsbook.",
+    "loginRequired": "Sign in to access sports betting."
+  },
+  "sportsBetHistory": {
+    "title": "Sports Bets",
+    "noBets": "No sports bets yet. Place a bet in the sportsbook to see your history here.",
+    "browseSports": "Go to sportsbook",
+    "roundId": "Round ID",
+    "paymentId": "Payment ID",
+    "type": "Uhlobo",
+    "stake": "Stake",
+    "oddFactor": "Odds",
+    "win": "nqoba",
+    "status": "Isimo",
+    "date": "Usuku"
   }
 };

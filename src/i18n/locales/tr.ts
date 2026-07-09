@@ -72,7 +72,18 @@ export const tr: LocaleTree = {
     "liveChat": "CANLI SOHBET",
     "liveChatLabel": "Destek",
     "supportTickets": "DESTEK TALEPLERİ",
-    "supportTicketsLabel": "Yardım masası"
+    "supportTicketsLabel": "Yardım masası",
+    "casino": "CASINO",
+    "sports": "SPORTS",
+    "platformSection": "Platform section",
+    "prematch": "PREMATCH",
+    "prematchLabel": "Pre-match betting",
+    "inLive": "IN LIVE",
+    "inLiveLabel": "Live betting",
+    "sportsHistory": "HISTORY",
+    "sportsHistoryLabel": "My sports bets",
+    "casinoHistory": "HISTORY",
+    "casinoHistoryLabel": "Game bet history"
   },
   "liveChat": {
     "title": "Canlı Sohbet",
@@ -162,7 +173,10 @@ export const tr: LocaleTree = {
     "firstDepositTitle": "İLK YATIRIM",
     "firstDepositBonus": "%100 BONUS",
     "firstDepositUpTo": "250 USD'YE KADAR",
-    "firstDepositFreeSpins": "+ 50 ÜCRETSİZ SPİN"
+    "firstDepositFreeSpins": "+ 50 ÜCRETSİZ SPİN",
+    "betNow": "Bet Now",
+    "sportsbookLine1": "Bet on",
+    "sportsbookAccent": "Sports book"
   },
   "home": {
     "topGames": "En İyi Oyunlar",
@@ -707,5 +721,23 @@ export const tr: LocaleTree = {
     "passwordUpdateFailed": "Şifre güncellenemedi.",
     "verificationCodeSent": "Doğrulama kodu gönderildi.",
     "verificationCodeRequestFailed": "Doğrulama kodu gönderilemedi."
+  },
+  "sports": {
+    "launching": "Loading sportsbook...",
+    "error": "Unable to load sportsbook.",
+    "loginRequired": "Sign in to access sports betting."
+  },
+  "sportsBetHistory": {
+    "title": "Sports Bets",
+    "noBets": "No sports bets yet. Place a bet in the sportsbook to see your history here.",
+    "browseSports": "Go to sportsbook",
+    "roundId": "Round ID",
+    "paymentId": "Payment ID",
+    "type": "Type",
+    "stake": "Stake",
+    "oddFactor": "Odds",
+    "win": "Win",
+    "status": "Status",
+    "date": "Date"
   }
 };

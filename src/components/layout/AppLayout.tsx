@@ -31,6 +31,7 @@ import { useAuthStore } from '@/stores/authStore';
 import { usePlayerStore } from '@/stores/playerStore';
 import { useGameStore } from '@/stores/gameStore';
 import { captureAffiliateReferralFromUrl } from '@/utils/affiliateReferral';
+import { usePlatformSectionStore } from '@/stores/platformSectionStore';
 
 export function AppLayout() {
   const { loadSessionPolicy } = useSessionPolicy();
@@ -59,6 +60,11 @@ export function AppLayout() {
   const user = useAuthStore((s) => s.user);
   const profile = usePlayerStore((s) => s.profile);
   const isAffiliateUser = user?.role === 'affiliate';
+  const syncPlatformSection = usePlatformSectionStore((s) => s.syncFromPathname);
+
+  useEffect(() => {
+    syncPlatformSection(location.pathname);
+  }, [location.pathname, syncPlatformSection]);
 
   useEffect(() => {
     void loadSessionPolicy();
@@ -73,6 +79,8 @@ export function AppLayout() {
   if (isAffiliateUser && !location.pathname.startsWith('/affiliate')) {
     return <Navigate to="/affiliate" replace />;
   }
+
+  const isSportsIframeRoute = location.pathname.startsWith('/sports');
 
   if (isAffiliateUser) {
     return (
@@ -113,14 +121,11 @@ export function AppLayout() {
       )}
 
       <div className="flex min-w-0 flex-1 flex-col">
-        <Header
-          onMenuToggle={() => setMobileOpen(true)}
-          onOpenVipLevels={() => setVipBenefitsOpen(true)}
-        />
-        <main className="flex-1 overflow-x-hidden p-4 md:p-6">
+        <Header onMenuToggle={() => setMobileOpen(true)} />
+        <main className={`flex-1 overflow-x-hidden ${isSportsIframeRoute ? 'p-0' : 'p-4 md:p-6'}`}>
           <Outlet />
         </main>
-        <Footer />
+        {!isSportsIframeRoute && <Footer />}
       </div>
 
       <LoginModal />

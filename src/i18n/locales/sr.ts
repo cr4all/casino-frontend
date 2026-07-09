@@ -72,7 +72,18 @@ export const sr: LocaleTree = {
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Подршка",
     "supportTickets": "ТИКЕТИ ПОДРШКЕ",
-    "supportTicketsLabel": "Центар за помоћ"
+    "supportTicketsLabel": "Центар за помоћ",
+    "casino": "CASINO",
+    "sports": "SPORTS",
+    "platformSection": "Platform section",
+    "prematch": "PREMATCH",
+    "prematchLabel": "Pre-match betting",
+    "inLive": "IN LIVE",
+    "inLiveLabel": "Live betting",
+    "sportsHistory": "HISTORY",
+    "sportsHistoryLabel": "My sports bets",
+    "casinoHistory": "HISTORY",
+    "casinoHistoryLabel": "Game bet history"
   },
   "liveChat": {
     "title": "Live chat",
@@ -162,7 +173,10 @@ export const sr: LocaleTree = {
     "firstDepositTitle": "ПРВИ ДЕПОЗИТ",
     "firstDepositBonus": "100% БОНУС",
     "firstDepositUpTo": "ДО $250 USD",
-    "firstDepositFreeSpins": "+ 50 БЕСПЛАТНИХ СПИНОВА"
+    "firstDepositFreeSpins": "+ 50 БЕСПЛАТНИХ СПИНОВА",
+    "betNow": "Bet Now",
+    "sportsbookLine1": "Bet on",
+    "sportsbookAccent": "Sports book"
   },
   "home": {
     "topGames": "Најбоље игре",
@@ -710,5 +724,23 @@ export const sr: LocaleTree = {
     "passwordUpdateFailed": "Лозинка није ажурирана.",
     "verificationCodeSent": "Верификацијски код послан.",
     "verificationCodeRequestFailed": "Верификацијски код није послат."
+  },
+  "sports": {
+    "launching": "Loading sportsbook...",
+    "error": "Unable to load sportsbook.",
+    "loginRequired": "Sign in to access sports betting."
+  },
+  "sportsBetHistory": {
+    "title": "Sports Bets",
+    "noBets": "No sports bets yet. Place a bet in the sportsbook to see your history here.",
+    "browseSports": "Go to sportsbook",
+    "roundId": "Round ID",
+    "paymentId": "Payment ID",
+    "type": "Type",
+    "stake": "Stake",
+    "oddFactor": "Odds",
+    "win": "Win",
+    "status": "Status",
+    "date": "Date"
   }
 };

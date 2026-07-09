@@ -72,7 +72,18 @@ export const fil: LocaleTree = {
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Suporta",
     "supportTickets": "MGA TICKET NG SUPORTA",
-    "supportTicketsLabel": "Mesa ng tulong"
+    "supportTicketsLabel": "Mesa ng tulong",
+    "casino": "CASINO",
+    "sports": "SPORTS",
+    "platformSection": "Seksyon ng platform",
+    "prematch": "Instagram",
+    "prematchLabel": "Pagtaya bago ang match",
+    "inLive": "LIVE",
+    "inLiveLabel": "Live na pagtaya",
+    "sportsHistory": "HISTORY",
+    "sportsHistoryLabel": "Aking mga taya sa sports",
+    "casinoHistory": "HISTORY",
+    "casinoHistoryLabel": "Game bet history"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -162,7 +173,10 @@ export const fil: LocaleTree = {
     "firstDepositTitle": "UNANG DEPOSIT",
     "firstDepositBonus": "100% BONUS",
     "firstDepositUpTo": "HANGGANG $250 USD",
-    "firstDepositFreeSpins": "+ 50 LIBRENG SPINS"
+    "firstDepositFreeSpins": "+ 50 LIBRENG SPINS",
+    "betNow": "Tumaya Ngayon",
+    "sportsbookLine1": "Taya sa",
+    "sportsbookAccent": "Aklat na pang - isports"
   },
   "home": {
     "topGames": "Nangungunang laro",
@@ -707,5 +721,23 @@ export const fil: LocaleTree = {
     "passwordUpdateFailed": "Nabigo ang pag-update ng password.",
     "verificationCodeSent": "Naipadala ang verification code.",
     "verificationCodeRequestFailed": "Nabigo ang pagpapadala ng verification code."
+  },
+  "sports": {
+    "launching": "Naglo - load ang sportsbook...",
+    "error": "Hindi ma - load ang sportsbook.",
+    "loginRequired": "Mag - sign in upang ma - access ang pagtaya sa sports."
+  },
+  "sportsBetHistory": {
+    "title": "Mga Taya sa Palakasan",
+    "noBets": "Wala pang taya sa sports. Maglagay ng taya sa sportsbook upang makita ang iyong kasaysayan dito.",
+    "browseSports": "Pumunta sa sportsbook",
+    "roundId": "Round ID",
+    "paymentId": "ID ng Pagbabayad",
+    "type": "Type",
+    "stake": "Stake",
+    "oddFactor": "Mga Odd",
+    "win": "Win",
+    "status": "Status",
+    "date": "Date"
   }
 };

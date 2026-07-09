@@ -72,7 +72,23 @@ export const ko: LocaleTree = {
     "liveChat": "라이브 채팅",
     "liveChatLabel": "고객 지원",
     "supportTickets": "지원 티켓",
-    "supportTicketsLabel": "헬프데스크"
+    "supportTicketsLabel": "헬프데스크",
+    "casino": "카지노",
+    "sports": "스포츠",
+    "platformSection": "플랫폼 섹션",
+    "prematch": "프리매치",
+    "prematchLabel": "프리매치 베팅",
+    "inLive": "인플레이",
+    "inLiveLabel": "라이브 베팅",
+    "sportsHistory": "내역",
+    "sportsHistoryLabel": "스포츠 베팅 내역",
+    "casinoHistory": "내역",
+    "casinoHistoryLabel": "게임 베팅 내역"
+  },
+  "sports": {
+    "launching": "스포츠북 로딩 중...",
+    "error": "스포츠북을 불러올 수 없습니다.",
+    "loginRequired": "스포츠 베팅을 이용하려면 로그인해 주세요."
   },
   "liveChat": {
     "title": "라이브 채팅",
@@ -170,10 +186,13 @@ export const ko: LocaleTree = {
   "hero": {
     "welcomeTagline": "세계 최대 규모의 온라인 카지노 및 슬롯",
     "playNow": "지금 플레이",
+    "betNow": "지금 베팅",
     "registerPromo": "지금 가입하기",
     "pragmaticLine1": "플레이",
     "pragmaticAccent": "Pragmatic 슬롯",
     "pragmaticLine2": "프리미엄 경험",
+    "sportsbookLine1": "베팅",
+    "sportsbookAccent": "스포츠북",
     "liveCasinoLine1": "플레이",
     "liveCasinoAccent": "라이브 카지노",
     "liveCasinoLine2": "프리미엄 경험",
@@ -534,7 +553,7 @@ export const ko: LocaleTree = {
     "hideForToday": "하루동안 표시하지 않기"
   },
   "betHistory": {
-    "title": "베팅 내역",
+    "title": "카지노 베팅",
     "subtitle": "라운드별 베팅 및 승리",
     "allTransactions": "전체 거래 →",
     "noBets": "베팅이 없습니다. 게임을 플레이하여 내역을 확인하세요.",
@@ -551,6 +570,19 @@ export const ko: LocaleTree = {
     "fundingBonus": "보너스 스핀",
     "fundingMixed": "혼합 스핀",
     "fundingFreeSpin": "프리스핀"
+  },
+  "sportsBetHistory": {
+    "title": "스포츠 베팅",
+    "noBets": "스포츠 베팅 내역이 없습니다. 스포츠북에서 베팅하면 여기에 표시됩니다.",
+    "browseSports": "스포츠북으로 이동",
+    "roundId": "라운드 ID",
+    "paymentId": "결제 ID",
+    "type": "유형",
+    "stake": "베팅금",
+    "oddFactor": "배당",
+    "win": "당첨금",
+    "status": "상태",
+    "date": "날짜"
   },
   "transactions": {
     "title": "거래 내역",

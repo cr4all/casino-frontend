@@ -72,7 +72,23 @@ export const ptBr: LocaleTree = {
     "liveChat": "CHAT AO VIVO",
     "liveChatLabel": "Apoio",
     "supportTickets": "TICKETS DE APOIO",
-    "supportTicketsLabel": "Apoio ao cliente"
+    "supportTicketsLabel": "Apoio ao cliente",
+    "casino": "CASINO",
+    "sports": "SPORTS",
+    "platformSection": "Platform section",
+    "prematch": "PREMATCH",
+    "prematchLabel": "Pre-match betting",
+    "inLive": "IN LIVE",
+    "inLiveLabel": "Live betting",
+    "sportsHistory": "HISTÓRICO",
+    "sportsHistoryLabel": "My sports bets",
+    "casinoHistory": "HISTÓRICO",
+    "casinoHistoryLabel": "Game bet history"
+  },
+  "sports": {
+    "launching": "Loading sportsbook...",
+    "error": "Unable to load sportsbook.",
+    "loginRequired": "Sign in to access sports betting."
   },
   "liveChat": {
     "title": "Chat ao vivo",
@@ -151,12 +167,15 @@ export const ptBr: LocaleTree = {
   "hero": {
     "welcomeTagline": "O maior cassino online e slots do mundo",
     "playNow": "Jogar agora",
+    "betNow": "Bet Now",
     "registerPromo": "Cadastre-se agora",
     "pragmaticLine1": "Jogar",
     "pragmaticAccent": "Pragmatic Slots",
     "pragmaticLine2": "Experiência premium",
+    "sportsbookLine1": "Bet on",
+    "sportsbookAccent": "Sports book",
     "liveCasinoLine1": "Jogar",
-    "liveCasinoAccent": "Cassino ao vivo",
+    "liveCasinoAccent": "Casino ao vivo",
     "liveCasinoLine2": "Experiência premium",
     "firstDepositRegister": "CADASTRE-SE AGORA",
     "firstDepositTitle": "PRIMEIRO DEPÓSITO",
@@ -456,6 +475,9 @@ export const ptBr: LocaleTree = {
     "pay_amount": "Montante de pagamento",
     "payment_url": "Página de pagamento",
     "qr_string": "Código QR",
+    "payment_method": "Payment method",
+    "payment_system": "Payment system",
+    "payment_requisite": "Payment phone number",
     "memo": "Nota",
     "tag": "Etichetta",
     "destination_tag": "Tag de destino",
@@ -522,7 +544,7 @@ export const ptBr: LocaleTree = {
     "hideForToday": "Não mostrar novamente hoje"
   },
   "betHistory": {
-    "title": "Histórico de apostas",
+    "title": "Casino Bets",
     "subtitle": "Apostas e ganhos de jogo por ronda",
     "allTransactions": "Todas as transações →",
     "noBets": "Ainda sem apostas. Jogue para ver o histórico aqui.",
@@ -539,6 +561,19 @@ export const ptBr: LocaleTree = {
     "fundingBonus": "Giro de bônus",
     "fundingMixed": "Giro misto",
     "fundingFreeSpin": "Giro grátis"
+  },
+  "sportsBetHistory": {
+    "title": "Sports Bets",
+    "noBets": "No sports bets yet. Place a bet in the sportsbook to see your history here.",
+    "browseSports": "Go to sportsbook",
+    "roundId": "Round ID",
+    "paymentId": "Payment ID",
+    "type": "Tipo",
+    "stake": "Stake",
+    "oddFactor": "Odds",
+    "win": "Ganho",
+    "status": "Estado",
+    "date": "Data"
   },
   "transactions": {
     "title": "Histórico de transações",

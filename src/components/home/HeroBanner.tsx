@@ -6,10 +6,42 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { isRtlLanguage } from '@/stores/languageStore';
 import { useAuthStore } from '@/stores/authStore';
 import { typePath } from '@/stores/gameStore';
+import { usePlatformSectionStore } from '@/stores/platformSectionStore';
 import { useUiStore } from '@/stores/uiStore';
 import { Button } from '@/components/common/Button';
 import { FirstDepositBonusText, firstDepositBannerAriaLabel } from '@/components/home/FirstDepositBonusText';
 import { HeroBannerText } from '@/components/home/HeroBannerText';
+
+function HeroSportsCtaButton() {
+  const { t } = useTranslation();
+  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
+  const openModal = useUiStore((s) => s.openModal);
+  const setSection = usePlatformSectionStore((s) => s.setSection);
+
+  if (!isAuthenticated) {
+    return (
+      <Button
+        variant="gold"
+        className="hero-banner-text__cta-link hero-banner-text__cta"
+        onClick={() => openModal('register')}
+      >
+        {t('hero.registerPromo')}
+      </Button>
+    );
+  }
+
+  return (
+    <Link
+      to="/sports/prematch"
+      className="hero-banner-text__cta-link"
+      onClick={() => setSection('sports')}
+    >
+      <Button variant="gold" className="hero-banner-text__cta">
+        {t('hero.betNow')}
+      </Button>
+    </Link>
+  );
+}
 
 function HeroCtaButton({ playTo }: { playTo: string }) {
   const { t } = useTranslation();
@@ -106,11 +138,21 @@ interface PromoHeroSlideProps {
   imageSrc: string;
   line1: string;
   line1Accent: string;
-  line2: string;
+  line2?: string;
   to: string;
+  cta?: 'default' | 'sports';
+  accentAsHero?: boolean;
 }
 
-function PromoHeroSlide({ imageSrc, line1, line1Accent, line2, to }: PromoHeroSlideProps) {
+function PromoHeroSlide({
+  imageSrc,
+  line1,
+  line1Accent,
+  line2,
+  to,
+  cta = 'default',
+  accentAsHero = false,
+}: PromoHeroSlideProps) {
   return (
     <div className="hero-banner hero-banner--promo relative overflow-hidden">
       <img src={imageSrc} alt="" className="hero-banner__scene" loading="lazy" />
@@ -118,8 +160,12 @@ function PromoHeroSlide({ imageSrc, line1, line1Accent, line2, to }: PromoHeroSl
       <HeroSlideDecorations showOnMobile />
 
       <HeroSlideContent>
-        <HeroBannerText topLine={line1} titleLine={line1Accent} heroLine={line2} />
-        <HeroCtaButton playTo={to} />
+        <HeroBannerText
+          topLine={line1}
+          titleLine={accentAsHero ? undefined : line1Accent}
+          heroLine={accentAsHero ? line1Accent : line2}
+        />
+        {cta === 'sports' ? <HeroSportsCtaButton /> : <HeroCtaButton playTo={to} />}
       </HeroSlideContent>
     </div>
   );
@@ -178,6 +224,16 @@ export function HeroBanner() {
             line1Accent={t('hero.pragmaticAccent')}
             line2={t('hero.pragmaticLine2')}
             to={typePath('slot')}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <PromoHeroSlide
+            imageSrc="/hero-slides/sportsbook.jpg"
+            line1={t('hero.sportsbookLine1')}
+            line1Accent={t('hero.sportsbookAccent')}
+            to="/sports/prematch"
+            cta="sports"
+            accentAsHero
           />
         </SwiperSlide>
         <SwiperSlide>

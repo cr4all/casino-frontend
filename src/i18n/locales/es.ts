@@ -72,7 +72,23 @@ export const es: LocaleTree = {
     "liveChat": "CHAT EN VIVO ",
     "liveChatLabel": "Soporte",
     "supportTickets": "TICKETS DE SOPORTE",
-    "supportTicketsLabel": "Centro de ayuda"
+    "supportTicketsLabel": "Centro de ayuda",
+    "casino": "CASINO",
+    "sports": "Deportes",
+    "platformSection": "Plataforma (Sección)",
+    "prematch": "Antes del partido",
+    "prematchLabel": "Apuestas previas al partido",
+    "inLive": "¡En Vivo!",
+    "inLiveLabel": "Apuestas en tiempo real",
+    "sportsHistory": "HISTORIA",
+    "sportsHistoryLabel": "Apuestas deportivas",
+    "casinoHistory": "HISTORIA",
+    "casinoHistoryLabel": "Game bet history"
+  },
+  "sports": {
+    "launching": "Cargando casa de apuestas...",
+    "error": "No se puede cargar la casa de apuestas.",
+    "loginRequired": "Inicia sesión para acceder a las apuestas deportivas."
   },
   "liveChat": {
     "title": "Chat en Vivo",
@@ -151,10 +167,13 @@ export const es: LocaleTree = {
   "hero": {
     "welcomeTagline": "El casino online y las tragamonedas más grandes del mundo",
     "playNow": "Juega ahora",
+    "betNow": "Apostar ahora",
     "registerPromo": "Regístrate ahora",
     "pragmaticLine1": "Jugar",
     "pragmaticAccent": "Pragmatic Slots",
     "pragmaticLine2": "Experiencia premium",
+    "sportsbookLine1": "Apuesta por",
+    "sportsbookAccent": "Libro de deportes",
     "liveCasinoLine1": "Jugar",
     "liveCasinoAccent": "Casino en directo",
     "liveCasinoLine2": "Experiencia premium",
@@ -289,7 +308,7 @@ export const es: LocaleTree = {
     "registerError": "Error en el registro. Comprueba tus datos.",
     "noAccount": "¿No tienes una cuenta?",
     "hasAccount": "¿Ya tiene una cuenta?",
-    "emailPlaceholder": "jugador@ejemplo.com",
+    "emailPlaceholder": "player@example.com",
     "emailVerificationCode": "Código de verificación",
     "emailVerificationHint": "Introduce el código de 6 dígitos enviado a tu correo electrónico.",
     "emailVerificationRequestFailed": "No se pudo enviar el código de verificación. Inténtalo de nuevo.",
@@ -456,6 +475,9 @@ export const es: LocaleTree = {
     "pay_amount": "Importe de pago",
     "payment_url": "Página de pago",
     "qr_string": "Código QR",
+    "payment_method": "Payment method",
+    "payment_system": "Payment system",
+    "payment_requisite": "Payment phone number",
     "memo": "Nota",
     "tag": "Etiqueta",
     "destination_tag": "Etiqueta de destino",
@@ -522,7 +544,7 @@ export const es: LocaleTree = {
     "hideForToday": "No volver a mostrar hoy"
   },
   "betHistory": {
-    "title": "Historial de apuestas",
+    "title": "Apuestas de casino",
     "subtitle": "Sus apuestas de juego y victorias por ronda",
     "allTransactions": "Todas las transacciones",
     "noBets": "Todavía no hay apuestas. Juega un partido para ver tu historial aquí.",
@@ -539,6 +561,19 @@ export const es: LocaleTree = {
     "fundingBonus": "Giro de bono",
     "fundingMixed": "Giro mixto",
     "fundingFreeSpin": "Giro gratis"
+  },
+  "sportsBetHistory": {
+    "title": "Apuestas deportivas",
+    "noBets": "Todavía no hay apuestas deportivas. Haz una apuesta en la casa de apuestas para ver tu historial aquí.",
+    "browseSports": "Ir a la casa de apuestas",
+    "roundId": "ID de la ronda",
+    "paymentId": "ID de Pago",
+    "type": "Tipo",
+    "stake": "Participación",
+    "oddFactor": "Posibilidades",
+    "win": "Ganancia",
+    "status": "Estado",
+    "date": "Fecha"
   },
   "transactions": {
     "title": "Historial de transacciones",

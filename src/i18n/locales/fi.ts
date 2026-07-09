@@ -72,7 +72,18 @@ export const fi: LocaleTree = {
     "liveChat": "LIVE-CHAT",
     "liveChatLabel": "Tuki",
     "supportTickets": "TUKITIKETIT",
-    "supportTicketsLabel": "Tukipalvelu"
+    "supportTicketsLabel": "Tukipalvelu",
+    "casino": "CASINO",
+    "sports": "URHEILU",
+    "platformSection": "Alustaosio",
+    "prematch": "PREMATCH",
+    "prematchLabel": "Vedonlyönti ennen ottelua",
+    "inLive": "IN LIVE",
+    "inLiveLabel": "Live-vedonlyönti",
+    "sportsHistory": "HISTORY",
+    "sportsHistoryLabel": "Urheiluvedonlyöntini",
+    "casinoHistory": "HISTORY",
+    "casinoHistoryLabel": "Game bet history"
   },
   "liveChat": {
     "title": "Live-chat",
@@ -162,7 +173,10 @@ export const fi: LocaleTree = {
     "firstDepositTitle": "ENSIMMÄINEN TALLETUS",
     "firstDepositBonus": "100 % BONUS",
     "firstDepositUpTo": "JOPA 250 USD",
-    "firstDepositFreeSpins": "+ 50 ILMAISKIERROSTA"
+    "firstDepositFreeSpins": "+ 50 ILMAISKIERROSTA",
+    "betNow": "Panosta nyt",
+    "sportsbookLine1": "Lyö vetoa",
+    "sportsbookAccent": "Urheiluvedonlyönti"
   },
   "home": {
     "topGames": "Parhaat pelit",
@@ -707,5 +721,23 @@ export const fi: LocaleTree = {
     "passwordUpdateFailed": "Salasanan päivitys epäonnistui.",
     "verificationCodeSent": "Vahvistuskoodi lähetetty.",
     "verificationCodeRequestFailed": "Vahvistuskoodin lähetys epäonnistui."
+  },
+  "sports": {
+    "launching": "Ladataan urheiluvedonlyöntiä...",
+    "error": "Urheiluvedonlyöntiä ei voida ladata.",
+    "loginRequired": "Kirjaudu sisään päästäksesi urheiluvedonlyöntiin."
+  },
+  "sportsBetHistory": {
+    "title": "Urheiluvedot",
+    "noBets": "Ei vielä urheiluvetoja. Aseta veto urheiluvedonlyöntiin nähdäksesi historiasi täällä.",
+    "browseSports": "Siirry urheiluvedonlyöntiin",
+    "roundId": "Pyöreä tunnus",
+    "paymentId": "Maksun tunnus:",
+    "type": "Type",
+    "stake": "Panos",
+    "oddFactor": "Mahdollisuudet",
+    "win": "Win",
+    "status": "Status",
+    "date": "Date"
   }
 };

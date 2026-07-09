@@ -72,7 +72,23 @@ export const lo: LocaleTree = {
     "liveChat": "LIVE CHAT",
     "liveChatLabel": "Support",
     "supportTickets": "ປີ້ສະໜັບສະໜູນ",
-    "supportTicketsLabel": "Help desk"
+    "supportTicketsLabel": "Help desk",
+    "casino": "CASINO",
+    "sports": "ກິລາ",
+    "platformSection": "ພາກສ່ວນ Platform",
+    "prematch": "PREMATCH",
+    "prematchLabel": "ການເດີມພັນກ່ອນການແຂ່ງຂັນ",
+    "inLive": "ໃນ LIVE",
+    "inLiveLabel": "ການເດີມພັນສົດ",
+    "sportsHistory": "HISTORY",
+    "sportsHistoryLabel": "ການເດີມພັນກິລາຂອງຂ້ອຍ",
+    "casinoHistory": "HISTORY",
+    "casinoHistoryLabel": "Game bet history"
+  },
+  "sports": {
+    "launching": "ກໍາລັງໂຫລດ sportsbook...",
+    "error": "ບໍ່ສາມາດໂຫຼດປື້ມກິລາໄດ້.",
+    "loginRequired": "ເຂົ້າສູ່ລະບົບເພື່ອເຂົ້າເຖິງການພະນັນກິລາ."
   },
   "liveChat": {
     "title": "Live Chat",
@@ -151,10 +167,13 @@ export const lo: LocaleTree = {
   "hero": {
     "welcomeTagline": "ຄາສິໂນແລະສະລັອດຕິງ Online ທີ່ໃຫຍ່ທີ່ສຸດໃນໂລກ",
     "playNow": "Play Now",
+    "betNow": "ການເດີມພັນດຽວນີ້",
     "registerPromo": "Register Now",
     "pragmaticLine1": "ຫຼິ້ນ",
     "pragmaticAccent": "ສະລັອດຕິງ Pragmatic",
     "pragmaticLine2": "ປະສົບການພຣີມຽມ",
+    "sportsbookLine1": "ການເດີມພັນ",
+    "sportsbookAccent": "ຫນັງ ສືກິລາ",
     "liveCasinoLine1": "ຫຼິ້ນ",
     "liveCasinoAccent": "Live Casino",
     "liveCasinoLine2": "ປະສົບການພຣີມຽມ",
@@ -456,6 +475,9 @@ export const lo: LocaleTree = {
     "pay_amount": "ມູນຄ່າຕ້ອງຈ່າຍ",
     "payment_url": "Payment page",
     "qr_string": "QR code",
+    "payment_method": "Payment method",
+    "payment_system": "Payment system",
+    "payment_requisite": "Payment phone number",
     "memo": "ບັນທຶກ",
     "tag": "Tag",
     "destination_tag": "ປ້າຍຈຸດໝາຍປາຍທາງ",
@@ -522,7 +544,7 @@ export const lo: LocaleTree = {
     "hideForToday": "ຢວນ ການ ກີບລາວ ອັດຕາແລກປ່ຽນໃນມື້ນີ້"
   },
   "betHistory": {
-    "title": "Bet History",
+    "title": "ຄາສິໂນ Bet",
     "subtitle": "ການພະນັນເກມຂອງທ່ານແລະ win ໂດຍຮອບ",
     "allTransactions": "ທຸລະກຳທັງໝົດ →",
     "noBets": "ຍັງບໍ່ມີການເດີມພັນເທື່ອ. ຫຼິ້ນເກມເພື່ອເບິ່ງປະຫວັດຂອງທ່ານທີ່ນີ້.",
@@ -539,6 +561,19 @@ export const lo: LocaleTree = {
     "fundingBonus": "Bonus Spin",
     "fundingMixed": "Mixed Spin",
     "fundingFreeSpin": "Free Spin"
+  },
+  "sportsBetHistory": {
+    "title": "ການເດີມພັນກິລາ",
+    "noBets": "ບໍ່ມີການພະນັນກິລາເທື່ອ. ວາງເດີມພັນໃນປື້ມກິລາເພື່ອເບິ່ງປະຫວັດຂອງທ່ານທີ່ນີ້.",
+    "browseSports": "ໄປທີ່ Sportsbook",
+    "roundId": "ລະຫັດຮອບ",
+    "paymentId": "ລະຫັດການຊໍາລະເງິນ",
+    "type": "ປະເພດ",
+    "stake": "ສະເຕກ",
+    "oddFactor": "ໂອກາດ",
+    "win": "ຊະນະ",
+    "status": "Status",
+    "date": "ວັນທີ"
   },
   "transactions": {
     "title": "ປະຫວັດການເຮັດທຸລະກຳ",
