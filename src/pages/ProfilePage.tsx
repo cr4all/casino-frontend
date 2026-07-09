@@ -1,5 +1,7 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { Link, Navigate } from 'react-router-dom';
+import { PlayerLevelBadge } from '@/components/player/PlayerLevelBadge';
+import { VipLevelsModal } from '@/components/player/VipLevelsModal';
 import { playerApi } from '@/api/wallet.api';
 import { useAuthStore } from '@/stores/authStore';
 import { usePlayerStore } from '@/stores/playerStore';
@@ -58,6 +60,7 @@ export function ProfilePage() {
   const [loading, setLoading] = useState(true);
   const [verifyChannel, setVerifyChannel] = useState<'email' | 'phone' | null>(null);
   const [kycModalOpen, setKycModalOpen] = useState(false);
+  const [vipModalOpen, setVipModalOpen] = useState(false);
 
   useEffect(() => {
     if (!isAuthenticated) return;
@@ -113,6 +116,29 @@ export function ProfilePage() {
 
       <div className="grid gap-6 lg:grid-cols-3">
         <div className="space-y-6 lg:col-span-2">
+          <section className="rounded-xl border border-white/10 bg-surface/90 p-6 shadow-card">
+            <h2 className="mb-4 text-sm font-semibold text-white">{t('profile.vipStatus')}</h2>
+            <div className="flex flex-wrap items-center gap-4">
+              <PlayerLevelBadge
+                slug={profile?.vip_level_slug ?? 'regular'}
+                name={profile?.vip_level_name ?? 'Regular'}
+                size={40}
+              />
+              <div>
+                <p className="text-lg font-semibold text-white">
+                  {profile?.vip_level_name ?? 'Regular'}
+                </p>
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={() => setVipModalOpen(true)}
+              className="mt-4 text-sm text-accent-gold hover:underline"
+            >
+              {t('profile.viewAllVipLevels')}
+            </button>
+          </section>
+
           <section className="rounded-xl border border-white/10 bg-surface/90 p-6 shadow-card">
             <h2 className="mb-4 text-sm font-semibold text-white">{t('profile.accountDetails')}</h2>
             <div className="space-y-3">
@@ -211,6 +237,13 @@ export function ProfilePage() {
           </section>
         </aside>
       </div>
+
+      {vipModalOpen && (
+        <VipLevelsModal
+          currentLevel={profile?.vip_level ?? 0}
+          onClose={() => setVipModalOpen(false)}
+        />
+      )}
     </div>
   );
 }

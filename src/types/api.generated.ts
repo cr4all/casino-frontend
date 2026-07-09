@@ -116,6 +116,7 @@ export interface paths {
                         };
                     };
                 };
+                403: components["responses"]["RiskBlocked"];
                 422: components["responses"]["ValidationError"];
             };
         };
@@ -159,6 +160,7 @@ export interface paths {
                         };
                     };
                 };
+                403: components["responses"]["RiskBlocked"];
                 422: components["responses"]["ValidationError"];
             };
         };
@@ -385,6 +387,44 @@ export interface paths {
                     };
                 };
                 401: components["responses"]["Unauthorized"];
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/player-levels/tiers": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** List VIP tier catalog (0=Regular .. 6=VIP) */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description VIP tier catalog */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: components["schemas"]["PlayerLevelTier"][];
+                        };
+                    };
+                };
             };
         };
         put?: never;
@@ -823,6 +863,7 @@ export interface paths {
                     };
                 };
                 401: components["responses"]["Unauthorized"];
+                403: components["responses"]["RiskBlocked"];
                 422: components["responses"]["ValidationError"];
             };
         };
@@ -907,6 +948,7 @@ export interface paths {
                     };
                 };
                 401: components["responses"]["Unauthorized"];
+                403: components["responses"]["RiskBlocked"];
                 422: components["responses"]["ValidationError"];
             };
         };
@@ -1171,11 +1213,7 @@ export interface paths {
         get: {
             parameters: {
                 query?: {
-                    period?: "today" | "last_week" | "last_month" | "custom";
-                    /** @description Start date (YYYY-MM-DD) when period=custom */
-                    from?: string;
-                    /** @description End date (YYYY-MM-DD) when period=custom */
-                    to?: string;
+                    period?: "today" | "week" | "30days" | "month";
                     per_page?: components["parameters"]["PerPage"];
                 };
                 header?: never;
@@ -1777,12 +1815,19 @@ export interface components {
             success: false;
             error: {
                 /** @enum {string} */
-                code: "VALIDATION_ERROR" | "NOT_FOUND" | "LAUNCH_ERROR" | "UNAUTHORIZED" | "FORBIDDEN";
+                code: "VALIDATION_ERROR" | "NOT_FOUND" | "LAUNCH_ERROR" | "UNAUTHORIZED" | "FORBIDDEN" | "RISK_BLOCKED" | "RISK_CHALLENGE";
                 message: string;
                 details?: {
                     [key: string]: unknown;
                 };
             };
+        };
+        RiskEvaluationDetails: {
+            /** Format: uuid */
+            event_id?: string;
+            final_score?: number;
+            /** @enum {string} */
+            risk_level?: "low" | "medium" | "high" | "critical";
         };
         Pagination: {
             current_page: number;
@@ -1961,6 +2006,29 @@ export interface components {
              * @example pending
              */
             kyc_status?: string | null;
+            /**
+             * @description Current VIP tier level (0=Regular .. 6=VIP)
+             * @example 0
+             */
+            vip_level?: number;
+            /**
+             * @description Human-readable VIP tier name
+             * @example Regular
+             */
+            vip_level_name?: string;
+            /**
+             * @description VIP tier slug for icon mapping
+             * @example regular
+             */
+            vip_level_slug?: string;
+        };
+        PlayerLevelTier: {
+            level: number;
+            /** @example Gold */
+            name: string;
+            /** @example gold */
+            slug: string;
+            sort_order: number;
         };
         PlayerProfileUpdate: components["schemas"]["PlayerMe"];
         ChangePlayerPasswordBody: {
@@ -1968,18 +2036,56 @@ export interface components {
             password: string;
             password_confirmation: string;
         };
+        /**
+         * @description Source of funds for a bet or related ledger entry.
+         * @enum {string}
+         */
+        BetFundingSource: "cash" | "bonus" | "mixed" | "free_spin";
+        /**
+         * @description Wallet bucket affected by a ledger entry.
+         * @enum {string}
+         */
+        WalletBucket: "cash" | "bonus";
         WalletBalance: {
             wallet_id: number;
             player_id: number;
             currency: string;
-            /** @example 1250.0000 */
+            /**
+             * @description Total playable balance (cash + bonus).
+             * @example 1250.0000
+             */
             balance: string;
+            /** @example 1000.0000 */
+            cash_balance: string;
+            /** @example 250.0000 */
+            bonus_balance: string;
+            /**
+             * @description Total amount eligible for withdrawal (cash + unlocked bonus).
+             * @example 1000.0000
+             */
+            withdrawable_balance: string;
+            /** @example 1000.0000 */
+            withdrawable_cash_balance: string;
+            /**
+             * @description Bonus balance eligible for withdrawal when wagering is complete.
+             * @example 0.0000
+             */
+            withdrawable_bonus_balance: string;
+            /** @description True when active bonus wagering prevents bonus withdrawal. */
+            bonus_locked: boolean;
             status: string;
         };
         WalletBalanceEvent: components["schemas"]["WalletBalance"] & {
             ledger_id?: number | null;
             /** @example payment.deposit */
             event_type?: string;
+        };
+        PlayerVipLevelEvent: {
+            player_id: number;
+            previous_level: number;
+            vip_level: number;
+            vip_level_name: string;
+            vip_level_slug: string;
         };
         WalletTransaction: {
             id: number;
@@ -1990,6 +2096,10 @@ export interface components {
             description?: string | null;
             reference_type?: string | null;
             reference_id?: string | null;
+            funding_source?: components["schemas"]["BetFundingSource"];
+            wallet_bucket?: components["schemas"]["WalletBucket"];
+            cash_balance_after?: string | null;
+            bonus_balance_after?: string | null;
             /** Format: date-time */
             created_at?: string | null;
         };
@@ -2003,14 +2113,15 @@ export interface components {
             round_id: string;
             game?: components["schemas"]["BetHistoryGame"];
             bet_amount: string;
+            /** @description Portion of the bet funded from cash balance. */
+            bet_cash_amount?: string;
+            /** @description Portion of the bet funded from bonus balance. */
+            bet_bonus_amount?: string;
             win_amount: string;
             net_amount: string;
             status: string;
-            /**
-             * @description Spin funding source — cash wallet or free spin bonus.
-             * @enum {string}
-             */
-            funding_source: "cash" | "free_spin";
+            /** @description Spin funding source — cash, bonus, mixed, or free spin. */
+            funding_source: components["schemas"]["BetFundingSource"];
             /** @description Human-readable spin type label (e.g. Cash Spin, Free Spin). */
             spin_type?: string;
             currency: string;
@@ -2288,14 +2399,12 @@ export interface components {
             pagination: components["schemas"]["Pagination"];
         };
         PlayerStatisticsMetrics: {
+            total_bet: string;
+            total_win: string;
             deposits: string;
             withdrawals: string;
             cash_turnover: string;
             bonus_turnover: string;
-            cash_win: string;
-            bonus_win: string;
-            total_turnover: string;
-            total_win: string;
             ggr: string;
             bonus_cost: string;
             affiliate_cost: string;
@@ -2310,11 +2419,7 @@ export interface components {
         };
         AffiliatePlayerStatisticsList: {
             /** @enum {string} */
-            period: "today" | "last_week" | "last_month" | "custom";
-            /** Format: date */
-            from?: string | null;
-            /** Format: date */
-            to?: string | null;
+            period: "today" | "week" | "30days" | "month";
             items: components["schemas"]["AffiliatePlayerStatistics"][];
             pagination: components["schemas"]["Pagination"];
         };
@@ -2400,6 +2505,43 @@ export interface components {
             };
             content: {
                 "application/json": components["schemas"]["ErrorEnvelope"];
+            };
+        };
+        /**
+         * @description Request denied by anti-fraud sync gate (`POST /evaluate`).
+         *     `error.code` is `RISK_BLOCKED` when blocked, or `RISK_CHALLENGE` when step-up verification is required.
+         */
+        RiskBlocked: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                "application/json": components["schemas"]["ErrorEnvelope"] & {
+                    error?: {
+                        /** @enum {string} */
+                        code?: "RISK_BLOCKED";
+                        /** @example Request blocked by risk evaluation. */
+                        message?: string;
+                        details?: components["schemas"]["RiskEvaluationDetails"];
+                    };
+                };
+            };
+        };
+        /** @description Additional verification required by anti-fraud risk evaluation */
+        RiskChallenge: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                "application/json": components["schemas"]["ErrorEnvelope"] & {
+                    error?: {
+                        /** @enum {string} */
+                        code?: "RISK_CHALLENGE";
+                        /** @example Additional verification is required. */
+                        message?: string;
+                        details?: components["schemas"]["RiskEvaluationDetails"];
+                    };
+                };
             };
         };
     };

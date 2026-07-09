@@ -6,7 +6,7 @@ interface PlayerState {
   profile: PlayerProfile | null;
   isLoading: boolean;
   fetchProfile: (force?: boolean) => Promise<PlayerProfile | null>;
-  setProfile: (profile: PlayerProfile | null) => void;
+  setProfile: (profile: Partial<PlayerProfile> | null) => void;
   clear: () => void;
 }
 
@@ -45,7 +45,7 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
   setProfile: (profile) =>
     set((state) => {
       if (!profile) return { profile: null };
-      if (!state.profile) return { profile };
+      if (!state.profile) return { profile: profile as PlayerProfile };
       return { profile: { ...state.profile, ...profile } };
     }),
   clear: () => set({ profile: null, isLoading: false }),

@@ -46,6 +46,16 @@ export interface PlayerProfile {
   status: string;
   kyc_status: string;
   withdrawal_eligibility?: WithdrawalEligibility | null;
+  vip_level?: number;
+  vip_level_name?: string;
+  vip_level_slug?: string;
+}
+
+export interface PlayerLevelTier {
+  level: number;
+  name: string;
+  slug: string;
+  sort_order: number;
 }
 
 export interface AuthTokens {

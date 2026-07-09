@@ -10,6 +10,8 @@ import { CookieConsentBanner } from '@/components/common/CookieConsentBanner';
 import { CookieSettingsModal } from '@/components/common/CookieSettingsModal';
 import { ComingSoonModal } from '@/components/common/Modal';
 import { AnnouncementPopupModal } from '@/components/announcement/AnnouncementPopupModal';
+import { LevelUpModal } from '@/components/player/LevelUpModal';
+import { VipLevelsModal } from '@/components/player/VipLevelsModal';
 import { useAuthInit } from '@/hooks/useAuthInit';
 import { prefetchDeviceContext } from '@/lib/deviceContext';
 import { useCloseLiveChatOnNavigate } from '@/hooks/useCloseLiveChatOnNavigate';
@@ -21,10 +23,12 @@ import { useSupportTicketSync } from '@/hooks/useSupportTicketSync';
 import { useNotificationSync } from '@/hooks/useNotificationSync';
 import { useBonusSync } from '@/hooks/useBonusSync';
 import { usePlayerProfileSync } from '@/hooks/usePlayerProfileSync';
+import { usePlayerLevelSync } from '@/hooks/usePlayerLevelSync';
 import { useSessionPolicy } from '@/hooks/useSessionPolicy';
 import { usePopupAnnouncements } from '@/hooks/usePopupAnnouncements';
 import { useWalletSync } from '@/hooks/useWalletSync';
 import { useAuthStore } from '@/stores/authStore';
+import { usePlayerStore } from '@/stores/playerStore';
 import { useGameStore } from '@/stores/gameStore';
 import { captureAffiliateReferralFromUrl } from '@/utils/affiliateReferral';
 
@@ -38,6 +42,8 @@ export function AppLayout() {
   useAuthInit();
   useWalletSync();
   usePlayerProfileSync();
+  const { levelUpNotice, dismissLevelUpNotice } = usePlayerLevelSync();
+  const [vipBenefitsOpen, setVipBenefitsOpen] = useState(false);
   useNotificationSync();
   useBonusSync();
   useLiveChatSync();
@@ -51,6 +57,7 @@ export function AppLayout() {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const user = useAuthStore((s) => s.user);
+  const profile = usePlayerStore((s) => s.profile);
   const isAffiliateUser = user?.role === 'affiliate';
 
   useEffect(() => {
@@ -106,7 +113,10 @@ export function AppLayout() {
       )}
 
       <div className="flex min-w-0 flex-1 flex-col">
-        <Header onMenuToggle={() => setMobileOpen(true)} />
+        <Header
+          onMenuToggle={() => setMobileOpen(true)}
+          onOpenVipLevels={() => setVipBenefitsOpen(true)}
+        />
         <main className="flex-1 overflow-x-hidden p-4 md:p-6">
           <Outlet />
         </main>
@@ -121,6 +131,20 @@ export function AppLayout() {
       <CookieSettingsModal />
       {activePopup && userId != null && (
         <AnnouncementPopupModal popup={activePopup} userId={userId} onDismiss={dismissPopup} />
+      )}
+      {levelUpNotice && (
+        <LevelUpModal
+          levelName={levelUpNotice.levelName}
+          levelSlug={levelUpNotice.levelSlug}
+          onClose={dismissLevelUpNotice}
+          onViewBenefits={() => setVipBenefitsOpen(true)}
+        />
+      )}
+      {vipBenefitsOpen && (
+        <VipLevelsModal
+          currentLevel={profile?.vip_level ?? 0}
+          onClose={() => setVipBenefitsOpen(false)}
+        />
       )}
     </div>
   );
