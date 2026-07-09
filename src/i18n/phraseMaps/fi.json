@@ -1,0 +1,23 @@
+{
+  "SPORTS": "URHEILU",
+  "Platform section": "Alustaosio",
+  "PREMATCH": "PREMATCH",
+  "Pre-match betting": "Vedonlyönti ennen ottelua",
+  "IN LIVE": "IN LIVE",
+  "Live betting": "Live-vedonlyönti",
+  "My sports bets": "Urheiluvedonlyöntini",
+  "Loading sportsbook...": "Ladataan urheiluvedonlyöntiä...",
+  "Unable to load sportsbook.": "Urheiluvedonlyöntiä ei voida ladata.",
+  "Sign in to access sports betting.": "Kirjaudu sisään päästäksesi urheiluvedonlyöntiin.",
+  "Bet Now": "Panosta nyt",
+  "Bet on": "Lyö vetoa",
+  "Sports book": "Urheiluvedonlyönti",
+  "Casino Bets": "Kasinovedot",
+  "Sports Bets": "Urheiluvedot",
+  "No sports bets yet. Place a bet in the sportsbook to see your history here.": "Ei vielä urheiluvetoja. Aseta veto urheiluvedonlyöntiin nähdäksesi historiasi täällä.",
+  "Go to sportsbook": "Siirry urheiluvedonlyöntiin",
+  "Round ID": "Pyöreä tunnus",
+  "Payment ID": "Maksun tunnus:",
+  "Stake": "Panos",
+  "Odds": "Mahdollisuudet"
+}

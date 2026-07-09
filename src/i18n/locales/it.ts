@@ -72,7 +72,23 @@ export const it: LocaleTree = {
     "liveChat": "CHAT LIVE",
     "liveChatLabel": "Assistenza",
     "supportTickets": "TICKET DI ASSISTENZA",
-    "supportTicketsLabel": "Assistenza"
+    "supportTicketsLabel": "Assistenza",
+    "casino": "CASINO",
+    "sports": "SPORT",
+    "platformSection": "Sezione piattaforma",
+    "prematch": "Pre-partita",
+    "prematchLabel": "Scommesse pre match",
+    "inLive": "IN DIRETTA",
+    "inLiveLabel": "Scommesse in tempo reale",
+    "sportsHistory": "CRONOLOGIA",
+    "sportsHistoryLabel": "Le mie scommesse sportive",
+    "casinoHistory": "CRONOLOGIA",
+    "casinoHistoryLabel": "Game bet history"
+  },
+  "sports": {
+    "launching": "Caricamento bookmaker in corso...",
+    "error": "Impossibile caricare le scommesse sportive.",
+    "loginRequired": "Accedi per accedere alle scommesse sportive."
   },
   "liveChat": {
     "title": "Chat live",
@@ -151,10 +167,13 @@ export const it: LocaleTree = {
   "hero": {
     "welcomeTagline": "Il più grande casinò online e le slot al mondo",
     "playNow": "Gioca ora",
+    "betNow": "Scommetti ORA",
     "registerPromo": "Registrati ora",
     "pragmaticLine1": "Gioca",
     "pragmaticAccent": "Pragmatic Slots",
     "pragmaticLine2": "Esperienza premium",
+    "sportsbookLine1": "Scommetti su",
+    "sportsbookAccent": "Libro sportivo",
     "liveCasinoLine1": "Gioca",
     "liveCasinoAccent": "Casinò live",
     "liveCasinoLine2": "Esperienza premium",
@@ -456,6 +475,9 @@ export const it: LocaleTree = {
     "pay_amount": "Importo pagamento",
     "payment_url": "Pagina pagamento",
     "qr_string": "Codice QR",
+    "payment_method": "Payment method",
+    "payment_system": "Payment system",
+    "payment_requisite": "Payment phone number",
     "memo": "Nota",
     "tag": "Etichetta",
     "destination_tag": "Tag destinazione",
@@ -522,7 +544,7 @@ export const it: LocaleTree = {
     "hideForToday": "Non mostrare più oggi"
   },
   "betHistory": {
-    "title": "Cronologia scommesse",
+    "title": "Scommesse Casinò",
     "subtitle": "Scommesse e vincite di gioco per round",
     "allTransactions": "Tutte le transazioni →",
     "noBets": "Nessuna scommessa. Gioca per vedere la cronologia qui.",
@@ -539,6 +561,19 @@ export const it: LocaleTree = {
     "fundingBonus": "Giro bonus",
     "fundingMixed": "Giro misto",
     "fundingFreeSpin": "Giro gratis"
+  },
+  "sportsBetHistory": {
+    "title": "Scommesse sportive",
+    "noBets": "Ancora nessuna scommessa sportiva. Piazza una scommessa nel bookmaker per vedere la tua cronologia qui.",
+    "browseSports": "Vai al bookmaker",
+    "roundId": "Round ID",
+    "paymentId": "Codice pagamento",
+    "type": "Tipo",
+    "stake": "Posta",
+    "oddFactor": "Quota",
+    "win": "Vincita",
+    "status": "Stato",
+    "date": "Data"
   },
   "transactions": {
     "title": "Cronologia transazioni",

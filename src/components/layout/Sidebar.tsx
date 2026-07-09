@@ -10,11 +10,13 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { GameTypeIcon } from '@/components/common/GameTypeIcon';
 import { typePath } from '@/stores/gameStore';
 import { Logo } from '@/components/common/Logo';
-import { NavBadgeIcon, sidebarBadgeIconClassName, type NavIconName } from '@/components/common/NavIcon';
+import { NavBadgeIcon, NavIcon, sidebarBadgeIconClassName, sidebarIconClassName, type NavIconName } from '@/components/common/NavIcon';
 import { hideTawkWidget, showTawkWidget } from '@/utils/tawkWidget';
 import { useLiveChatConfig } from '@/hooks/useLiveChat';
 import { useLiveChatStore } from '@/stores/liveChatStore';
 import { useSupportTicketStore } from '@/stores/supportTicketStore';
+import { usePlatformSectionStore } from '@/stores/platformSectionStore';
+import { PlatformSectionToggle } from '@/components/layout/PlatformSectionToggle';
 
 interface StaticNavItem {
   id: string;
@@ -32,6 +34,12 @@ const accountItems: StaticNavItem[] = [
   { id: 'notices', labelKey: 'nav.notices', sublabelKey: 'nav.noticesLabel', icon: 'notices', path: '/notifications', auth: true },
   { id: 'supportTickets', labelKey: 'nav.supportTickets', sublabelKey: 'nav.supportTicketsLabel', icon: 'supportTickets', path: '/support-tickets', auth: true },
   { id: 'bonus', labelKey: 'nav.bonuses', sublabelKey: 'nav.bonusesLabel', icon: 'bonus', path: '/bonus', auth: true },
+];
+
+const sportsItems: StaticNavItem[] = [
+  { id: 'prematch', labelKey: 'nav.prematch', sublabelKey: 'nav.prematchLabel', icon: 'prematch', path: '/sports/prematch', auth: true },
+  { id: 'inLive', labelKey: 'nav.inLive', sublabelKey: 'nav.inLiveLabel', icon: 'inLive', path: '/sports/live', auth: true },
+  { id: 'sportsHistory', labelKey: 'nav.sportsHistory', sublabelKey: 'nav.sportsHistoryLabel', icon: 'sportsHistory', path: '/sports/history', auth: true },
 ];
 
 interface SidebarProps {
@@ -56,6 +64,8 @@ export function Sidebar({ onNavigate }: SidebarProps) {
   const { nativeEnabled } = useLiveChatConfig();
   const liveChatUnreadCount = useLiveChatStore((s) => s.unreadCount);
   const supportTicketUnreadCount = useSupportTicketStore((s) => s.unreadCount);
+  const section = usePlatformSectionStore((s) => s.section);
+  const setSection = usePlatformSectionStore((s) => s.setSection);
 
   const isPathActive = (path: string) =>
     location.pathname === path || location.pathname.startsWith(`${path}/`);
@@ -64,6 +74,11 @@ export function Sidebar({ onNavigate }: SidebarProps) {
     closeLiveChat();
     hideTawkWidget();
     onNavigate?.();
+  };
+
+  const handleCasinoNavClick = () => {
+    setSection('casino');
+    handleNavClick();
   };
 
   const handleAuthClick = (item: StaticNavItem, e: MouseEvent<HTMLAnchorElement>) => {
@@ -87,54 +102,98 @@ export function Sidebar({ onNavigate }: SidebarProps) {
     onNavigate?.();
   };
 
+  const renderNavLink = (item: StaticNavItem, active: boolean, useInlineIcon = false) => (
+    <Link
+      key={item.id}
+      to={item.path}
+      onClick={(e) => {
+        setSection('sports');
+        handleAuthClick(item, e);
+        if (!item.auth || isAuthenticated) {
+          handleNavClick();
+        }
+      }}
+      className={`group relative flex items-center gap-3 rounded-md px-3 py-3 transition-all ${
+        active ? 'sidebar-active text-accent-gold' : 'text-white hover:bg-card/60'
+      }`}
+    >
+      {useInlineIcon ? (
+        <NavIcon name={item.icon} className={`${sidebarIconClassName} text-accent-gold`} />
+      ) : (
+        <NavBadgeIcon name={item.icon} />
+      )}
+      <div className="min-w-0 flex-1">
+        <p className={`text-xs font-bold tracking-wide truncate ${active ? 'text-accent-gold' : 'text-white'}`}>
+          {t(item.labelKey)}
+        </p>
+        <p className="text-[10px] text-muted truncate">{t(item.sublabelKey)}</p>
+      </div>
+    </Link>
+  );
+
   return (
     <aside className="flex h-full w-[220px] shrink-0 flex-col border-r border-white/[0.06] bg-sidebar">
       <div className="px-4 py-5">
         <Logo fill onClick={handleNavClick} />
       </div>
 
-      <nav className="flex flex-1 flex-col gap-0.5 overflow-y-auto px-2">
-        <Link
-          to="/category/all"
-          onClick={handleNavClick}
-          className={`group relative flex items-center gap-3 rounded-md px-3 py-3 transition-all ${
-            location.pathname === '/category/all' || location.pathname === '/'
-              ? 'sidebar-active text-accent-gold'
-              : 'text-white hover:bg-card/60'
-          }`}
-        >
-          <NavBadgeIcon name="home" />
-          <div>
-            <p className="text-xs font-bold tracking-wide">{t('nav.allGames')}</p>
-            <p className="text-[10px] text-muted">{t('nav.browseAll')}</p>
-          </div>
-        </Link>
+      <div className="px-3 pb-3">
+        <PlatformSectionToggle section={section} onChange={setSection} />
+      </div>
 
-        {types.map((type) => {
-          const path = typePath(type.slug);
-          const active = isPathActive(path);
-          const typeName = tGameType(type.slug, type.name);
-          return (
+      <nav
+        id={section === 'casino' ? 'sidebar-panel-casino' : 'sidebar-panel-sports'}
+        role="tabpanel"
+        aria-labelledby={section === 'casino' ? 'sidebar-tab-casino' : 'sidebar-tab-sports'}
+        className="flex flex-1 flex-col gap-0.5 overflow-y-auto px-2"
+      >
+        {section === 'casino' ? (
+          <>
             <Link
-              key={type.id}
-              to={path}
-              onClick={handleNavClick}
+              to="/category/all"
+              onClick={handleCasinoNavClick}
               className={`group relative flex items-center gap-3 rounded-md px-3 py-3 transition-all ${
-                active ? 'sidebar-active text-accent-gold' : 'text-white hover:bg-card/60'
+                location.pathname === '/category/all' || location.pathname === '/'
+                  ? 'sidebar-active text-accent-gold'
+                  : 'text-white hover:bg-card/60'
               }`}
             >
-              <GameTypeIcon slug={type.slug} icon={type.icon} className={sidebarBadgeIconClassName} />
-              <div className="min-w-0 flex-1">
-                <p className={`text-xs font-bold tracking-wide truncate ${active ? 'text-accent-gold' : 'text-white'}`}>
-                  {typeName}
-                </p>
-                <p className="text-[10px] text-muted">
-                  {t('common.gamesCount', { count: type.game_count })}
-                </p>
+              <NavBadgeIcon name="home" />
+              <div>
+                <p className="text-xs font-bold tracking-wide">{t('nav.allGames')}</p>
+                <p className="text-[10px] text-muted">{t('nav.browseAll')}</p>
               </div>
             </Link>
-          );
-        })}
+
+            {types.map((type) => {
+              const path = typePath(type.slug);
+              const active = isPathActive(path);
+              const typeName = tGameType(type.slug, type.name);
+              return (
+                <Link
+                  key={type.id}
+                  to={path}
+                  onClick={handleCasinoNavClick}
+                  className={`group relative flex items-center gap-3 rounded-md px-3 py-3 transition-all ${
+                    active ? 'sidebar-active text-accent-gold' : 'text-white hover:bg-card/60'
+                  }`}
+                >
+                  <GameTypeIcon slug={type.slug} icon={type.icon} className={sidebarBadgeIconClassName} />
+                  <div className="min-w-0 flex-1">
+                    <p className={`text-xs font-bold tracking-wide truncate ${active ? 'text-accent-gold' : 'text-white'}`}>
+                      {typeName}
+                    </p>
+                    <p className="text-[10px] text-muted">
+                      {t('common.gamesCount', { count: type.game_count })}
+                    </p>
+                  </div>
+                </Link>
+              );
+            })}
+          </>
+        ) : (
+          sportsItems.map((item) => renderNavLink(item, isPathActive(item.path), true))
+        )}
 
         <div className="my-2 border-t border-white/[0.06]" />
 

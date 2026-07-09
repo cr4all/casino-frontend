@@ -72,7 +72,18 @@ export const yo: LocaleTree = {
     "liveChat": "ÌFỌ̀RỌ̀WỌ́RỌ̀ BÍBÍ",
     "liveChatLabel": "Àtìlẹ́yìn",
     "supportTickets": "ÀWỌN TÍKẸ̀TÌ ÀTÌLẸ́YÌN",
-    "supportTicketsLabel": "Ilé ìrànlọ́wọ́"
+    "supportTicketsLabel": "Ilé ìrànlọ́wọ́",
+    "casino": "CASINO",
+    "sports": "SPORTS",
+    "platformSection": "Platform section",
+    "prematch": "PREMATCH",
+    "prematchLabel": "Pre-match betting",
+    "inLive": "IN LIVE",
+    "inLiveLabel": "Live betting",
+    "sportsHistory": "HISTORY",
+    "sportsHistoryLabel": "My sports bets",
+    "casinoHistory": "HISTORY",
+    "casinoHistoryLabel": "Game bet history"
   },
   "liveChat": {
     "title": "Ìfọ̀rọ̀wọ̀rọ̀ bíbí",
@@ -162,7 +173,10 @@ export const yo: LocaleTree = {
     "firstDepositTitle": "ÌFÍ OWÓ SÍLẸ̀ AKÓKỌ",
     "firstDepositBonus": "100% Ẹ̀BÙN",
     "firstDepositUpTo": "TÓ É ṢE 250 USD",
-    "firstDepositFreeSpins": "+ 50 YÍYÍ PADÀ ÀÌSÀN"
+    "firstDepositFreeSpins": "+ 50 YÍYÍ PADÀ ÀÌSÀN",
+    "betNow": "Bet Now",
+    "sportsbookLine1": "Bet on",
+    "sportsbookAccent": "Sports book"
   },
   "home": {
     "topGames": "Àwọn eré tó ga jù",
@@ -707,5 +721,23 @@ export const yo: LocaleTree = {
     "passwordUpdateFailed": "Kùnà láti ṣe àtúnṣe ọ̀rọ̀ ìgbaniwọlé.",
     "verificationCodeSent": "A ti fi kọ́ọ̀dì ìdánimọ̀ ránṣẹ́.",
     "verificationCodeRequestFailed": "Kùnà láti fi kọ́ọ̀dì ìdánimọ̀ ránṣẹ́."
+  },
+  "sports": {
+    "launching": "Loading sportsbook...",
+    "error": "Unable to load sportsbook.",
+    "loginRequired": "Sign in to access sports betting."
+  },
+  "sportsBetHistory": {
+    "title": "Sports Bets",
+    "noBets": "No sports bets yet. Place a bet in the sportsbook to see your history here.",
+    "browseSports": "Go to sportsbook",
+    "roundId": "Round ID",
+    "paymentId": "Payment ID",
+    "type": "Type",
+    "stake": "Stake",
+    "oddFactor": "Odds",
+    "win": "Win",
+    "status": "Status",
+    "date": "Date"
   }
 };

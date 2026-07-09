@@ -72,7 +72,18 @@ export const te: LocaleTree = {
     "liveChat": "లైవ్ చాట్",
     "liveChatLabel": "సపోర్ట్",
     "supportTickets": "సపోర్ట్ టికెట్‌లు",
-    "supportTicketsLabel": "సహాయ డెస్క్"
+    "supportTicketsLabel": "సహాయ డెస్క్",
+    "casino": "CASINO",
+    "sports": "SPORTS",
+    "platformSection": "Platform section",
+    "prematch": "PREMATCH",
+    "prematchLabel": "Pre-match betting",
+    "inLive": "IN LIVE",
+    "inLiveLabel": "Live betting",
+    "sportsHistory": "చరిత్ర",
+    "sportsHistoryLabel": "My sports bets",
+    "casinoHistory": "చరిత్ర",
+    "casinoHistoryLabel": "Game bet history"
   },
   "liveChat": {
     "title": "లైవ్ చాట్",
@@ -156,13 +167,16 @@ export const te: LocaleTree = {
     "pragmaticAccent": "Pragmatic Slots",
     "pragmaticLine2": "ప్రీమియం అనుభవం",
     "liveCasinoLine1": "ఆడు",
-    "liveCasinoAccent": "Live Casino",
+    "liveCasinoAccent": "లైవ్ క్యాసినో",
     "liveCasinoLine2": "ప్రీమియం అనుభవం",
     "firstDepositRegister": "ఇప్పుడే నమోదు చేయండి",
     "firstDepositTitle": "మొదటి డిపాజిట్",
     "firstDepositBonus": "100% బోనస్",
     "firstDepositUpTo": "$250 USD వరకు",
-    "firstDepositFreeSpins": "+ 50 ఉచిత స్పిన్లు"
+    "firstDepositFreeSpins": "+ 50 ఉచిత స్పిన్లు",
+    "betNow": "Bet Now",
+    "sportsbookLine1": "Bet on",
+    "sportsbookAccent": "Sports book"
   },
   "home": {
     "topGames": "టాప్ గేమ్‌లు",
@@ -710,5 +724,23 @@ export const te: LocaleTree = {
     "passwordUpdateFailed": "పాస్‌వర్డ్ నవీకరించడంలో విఫలమైంది.",
     "verificationCodeSent": "ధృవీకరణ కోడ్ పంపబడింది.",
     "verificationCodeRequestFailed": "ధృవీకరణ కోడ్ పంపడంలో విఫలమైంది."
+  },
+  "sports": {
+    "launching": "Loading sportsbook...",
+    "error": "Unable to load sportsbook.",
+    "loginRequired": "Sign in to access sports betting."
+  },
+  "sportsBetHistory": {
+    "title": "Sports Bets",
+    "noBets": "No sports bets yet. Place a bet in the sportsbook to see your history here.",
+    "browseSports": "Go to sportsbook",
+    "roundId": "Round ID",
+    "paymentId": "Payment ID",
+    "type": "రకం",
+    "stake": "Stake",
+    "oddFactor": "Odds",
+    "win": "విజయం",
+    "status": "స్థితి",
+    "date": "తేదీ"
   }
 };

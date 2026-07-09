@@ -2,8 +2,10 @@ import { useCallback, useEffect, useState } from 'react';
 import { Link, Navigate, useSearchParams } from 'react-router-dom';
 import { gameApi } from '@/api/game.api';
 import { paymentApi, type DepositItem, type WithdrawalItem } from '@/api/payment.api';
+import { sportsApi, type SportsBetItem } from '@/api/sports.api';
 import { walletApi } from '@/api/wallet.api';
 import { BetHistoryTable } from '@/components/account/BetHistoryTable';
+import { SportsBetHistoryTable } from '@/components/account/SportsBetHistoryTable';
 import { Pagination } from '@/components/common/Pagination';
 import { StatusBadge } from '@/components/common/StatusBadge';
 import { useAuthStore } from '@/stores/authStore';
@@ -12,9 +14,9 @@ import type { BetHistoryItem, PaginationMeta, Transaction } from '@/types';
 import { formatBalance } from '@/utils/formatBalance';
 import { formatDepositCurrencyAmount, formatDepositReceivedAmount } from '@/utils/formatDepositDisplay';
 
-type Tab = 'bets' | 'deposits' | 'withdrawals' | 'wallet';
+type Tab = 'bets' | 'sports_bets' | 'deposits' | 'withdrawals' | 'wallet';
 
-const VALID_TABS: Tab[] = ['bets', 'deposits', 'withdrawals', 'wallet'];
+const VALID_TABS: Tab[] = ['bets', 'sports_bets', 'deposits', 'withdrawals', 'wallet'];
 
 const EMPTY_PAGINATION: PaginationMeta = {
   current_page: 1,
@@ -31,6 +33,7 @@ export function TransactionsPage() {
   const tab: Tab = VALID_TABS.includes(tabParam as Tab) ? (tabParam as Tab) : 'bets';
 
   const [bets, setBets] = useState<BetHistoryItem[]>([]);
+  const [sportsBets, setSportsBets] = useState<SportsBetItem[]>([]);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [deposits, setDeposits] = useState<DepositItem[]>([]);
   const [withdrawals, setWithdrawals] = useState<WithdrawalItem[]>([]);
@@ -50,6 +53,10 @@ export function TransactionsPage() {
       if (tab === 'bets') {
         const data = await gameApi.getBets(page);
         setBets(data.items);
+        setPagination(data.pagination);
+      } else if (tab === 'sports_bets') {
+        const data = await sportsApi.getBets(page);
+        setSportsBets(data.items);
         setPagination(data.pagination);
       } else if (tab === 'deposits') {
         const data = await paymentApi.getDeposits(page);
@@ -92,6 +99,7 @@ export function TransactionsPage() {
 
   const tabs: { id: Tab; label: string }[] = [
     { id: 'bets', label: t('betHistory.title') },
+    { id: 'sports_bets', label: t('sportsBetHistory.title') },
     { id: 'deposits', label: t('transactions.deposits') },
     { id: 'withdrawals', label: t('transactions.withdrawals') },
     { id: 'wallet', label: t('transactions.wallet') },
@@ -127,6 +135,13 @@ export function TransactionsPage() {
       {tab === 'bets' ? (
         <BetHistoryTable
           bets={bets}
+          pagination={pagination}
+          loading={loading}
+          onPageChange={setPage}
+        />
+      ) : tab === 'sports_bets' ? (
+        <SportsBetHistoryTable
+          bets={sportsBets}
           pagination={pagination}
           loading={loading}
           onPageChange={setPage}

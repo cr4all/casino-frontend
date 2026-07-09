@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { AppLayout } from '@/components/layout/AppLayout';
 import { AffiliateDashboardPage } from '@/pages/AffiliateDashboardPage';
 import { HomePage } from '@/pages/HomePage';
@@ -11,6 +11,7 @@ import { NotificationsPage } from '@/pages/NotificationsPage';
 import { SupportTicketsPage } from '@/pages/SupportTicketsPage';
 import { SupportTicketDetailPage } from '@/pages/SupportTicketDetailPage';
 import { BetHistoryPage } from '@/pages/BetHistoryPage';
+import { SportsIframePage } from '@/pages/SportsIframePage';
 import { TransactionsPage } from '@/pages/TransactionsPage';
 import { GamePlayPage } from '@/pages/GamePlayPage';
 import { CookiePolicyPage } from '@/pages/CookiePolicyPage';
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: 'category/:category', element: <CategoryPage /> },
+      { path: 'sports', element: <Navigate to="/sports/prematch" replace /> },
+      { path: 'sports/prematch', element: <SportsIframePage mode="prematch" /> },
+      { path: 'sports/live', element: <SportsIframePage mode="live" /> },
+      { path: 'sports/history', element: <SportsIframePage mode="history" /> },
       { path: 'profile', element: <ProfilePage /> },
       { path: 'deposit', element: <DepositPage /> },
       { path: 'withdraw', element: <WithdrawPage /> },

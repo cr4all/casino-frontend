@@ -72,7 +72,18 @@ export const tg: LocaleTree = {
     "liveChat": "ЧАТИ ЗИНДА",
     "liveChatLabel": "Дастгирӣ",
     "supportTickets": "ЧИПТАҲОИ ДАСТГИРӢ",
-    "supportTicketsLabel": "Маркази кӯмак"
+    "supportTicketsLabel": "Маркази кӯмак",
+    "casino": "CASINO",
+    "sports": "SPORTS",
+    "platformSection": "Platform section",
+    "prematch": "PREMATCH",
+    "prematchLabel": "Pre-match betting",
+    "inLive": "IN LIVE",
+    "inLiveLabel": "Live betting",
+    "sportsHistory": "ТАЪРИХ",
+    "sportsHistoryLabel": "My sports bets",
+    "casinoHistory": "ТАЪРИХ",
+    "casinoHistoryLabel": "Game bet history"
   },
   "liveChat": {
     "title": "Чати зинда",
@@ -156,13 +167,16 @@ export const tg: LocaleTree = {
     "pragmaticAccent": "Pragmatic Slots",
     "pragmaticLine2": "Таҷрибаи премиум",
     "liveCasinoLine1": "Бозӣ",
-    "liveCasinoAccent": "Live Casino",
+    "liveCasinoAccent": "Казинои зинда",
     "liveCasinoLine2": "Таҷрибаи премиум",
     "firstDepositRegister": "ҲОЗИР БАҚАЙД ГИРЕД",
     "firstDepositTitle": "ДЕПОЗИТИ АВВАЛ",
     "firstDepositBonus": "БОНУСИ 100%",
     "firstDepositUpTo": "ТО $250 USD",
-    "firstDepositFreeSpins": "+ 50 ЧАРХИ БЕПУЛ"
+    "firstDepositFreeSpins": "+ 50 ЧАРХИ БЕПУЛ",
+    "betNow": "Bet Now",
+    "sportsbookLine1": "Bet on",
+    "sportsbookAccent": "Sports book"
   },
   "home": {
     "topGames": "Бозиҳои беҳтарин",
@@ -710,5 +724,23 @@ export const tg: LocaleTree = {
     "passwordUpdateFailed": "Паролро навсозӣ карда нашуд.",
     "verificationCodeSent": "Рамзи тасдиқ фиристода шуд.",
     "verificationCodeRequestFailed": "Фиристодани рамзи тасдиқ ноком шуд."
+  },
+  "sports": {
+    "launching": "Loading sportsbook...",
+    "error": "Unable to load sportsbook.",
+    "loginRequired": "Sign in to access sports betting."
+  },
+  "sportsBetHistory": {
+    "title": "Sports Bets",
+    "noBets": "No sports bets yet. Place a bet in the sportsbook to see your history here.",
+    "browseSports": "Go to sportsbook",
+    "roundId": "Round ID",
+    "paymentId": "Payment ID",
+    "type": "Навъ",
+    "stake": "Stake",
+    "oddFactor": "Odds",
+    "win": "Бурд",
+    "status": "Ҳолат",
+    "date": "Сана"
   }
 };

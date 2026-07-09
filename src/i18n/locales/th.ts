@@ -72,7 +72,18 @@ export const th: LocaleTree = {
     "liveChat": "แชทสด",
     "liveChatLabel": "สนับสนุน",
     "supportTickets": "ตั๋วสนับสนุน",
-    "supportTicketsLabel": "ศูนย์ช่วยเหลือ"
+    "supportTicketsLabel": "ศูนย์ช่วยเหลือ",
+    "casino": "CASINO",
+    "sports": "SPORTS",
+    "platformSection": "Platform section",
+    "prematch": "PREMATCH",
+    "prematchLabel": "Pre-match betting",
+    "inLive": "IN LIVE",
+    "inLiveLabel": "Live betting",
+    "sportsHistory": "ประวัติ",
+    "sportsHistoryLabel": "My sports bets",
+    "casinoHistory": "ประวัติ",
+    "casinoHistoryLabel": "Game bet history"
   },
   "liveChat": {
     "title": "แชทสด",
@@ -153,16 +164,19 @@ export const th: LocaleTree = {
     "playNow": "เล่นเลย",
     "registerPromo": "ลงทะเบียนเลย",
     "pragmaticLine1": "เล่น",
-    "pragmaticAccent": "Pragmatic Slots",
+    "pragmaticAccent": "สล็อต Pragmatic",
     "pragmaticLine2": "ประสบการณ์ระดับพรีเมียม",
     "liveCasinoLine1": "เล่น",
-    "liveCasinoAccent": "Live Casino",
+    "liveCasinoAccent": "คาสิโนสด",
     "liveCasinoLine2": "ประสบการณ์ระดับพรีเมียม",
     "firstDepositRegister": "ลงทะเบียนเลย",
     "firstDepositTitle": "ฝากครั้งแรก",
     "firstDepositBonus": "โบนัส 100%",
     "firstDepositUpTo": "สูงสุด $250 USD",
-    "firstDepositFreeSpins": "+ 50 ฟรีสปิน"
+    "firstDepositFreeSpins": "+ 50 ฟรีสปิน",
+    "betNow": "Bet Now",
+    "sportsbookLine1": "Bet on",
+    "sportsbookAccent": "Sports book"
   },
   "home": {
     "topGames": "เกมยอดนิยม",
@@ -710,5 +724,23 @@ export const th: LocaleTree = {
     "passwordUpdateFailed": "อัปเดตรหัสผ่านไม่สำเร็จ",
     "verificationCodeSent": "ส่งรหัสยืนยันแล้ว",
     "verificationCodeRequestFailed": "ส่งรหัสยืนยันไม่สำเร็จ"
+  },
+  "sports": {
+    "launching": "Loading sportsbook...",
+    "error": "Unable to load sportsbook.",
+    "loginRequired": "Sign in to access sports betting."
+  },
+  "sportsBetHistory": {
+    "title": "Sports Bets",
+    "noBets": "No sports bets yet. Place a bet in the sportsbook to see your history here.",
+    "browseSports": "Go to sportsbook",
+    "roundId": "Round ID",
+    "paymentId": "Payment ID",
+    "type": "ประเภท",
+    "stake": "Stake",
+    "oddFactor": "Odds",
+    "win": "ชนะ",
+    "status": "สถานะ",
+    "date": "วันที่"
   }
 };

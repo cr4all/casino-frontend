@@ -72,7 +72,23 @@ export const hy: LocaleTree = {
     "liveChat": "ՈՒՂԻՂ ԶՐՈՒՅՑ",
     "liveChatLabel": "Համակարգել",
     "supportTickets": "ԱՋԱԿՑՈՒԹՅԱՆ ԴԻՄՈՒՄՆԵՐ",
-    "supportTicketsLabel": "Աջակցության սեղան"
+    "supportTicketsLabel": "Աջակցության սեղան",
+    "casino": "CASINO",
+    "sports": "ՍՊՈՐՏԻ",
+    "platformSection": "Հարթակի բաժին",
+    "prematch": "PREMATCH",
+    "prematchLabel": "Նախախաղային խաղադրույք",
+    "inLive": "ՈՒՂԻՂ ՀԵՌԱՐՁԱԿՄԱՄԲ",
+    "inLiveLabel": "Կենդանի խաղադրույքներ",
+    "sportsHistory": "ՊԱՏՄՈՒԹՅՈՒՆ",
+    "sportsHistoryLabel": "Իմ սպորտային խաղադրույքները",
+    "casinoHistory": "ՊԱՏՄՈՒԹՅՈՒՆ",
+    "casinoHistoryLabel": "Game bet history"
+  },
+  "sports": {
+    "launching": "Բեռնվում է սպորտային գրքույկը...",
+    "error": "Չհաջողվեց բեռնել սպորտային գրքույկը:",
+    "loginRequired": "Մուտք գործեք սպորտային խաղադրույքներ ստանալու համար:"
   },
   "liveChat": {
     "title": "Ուղիղ զրույց",
@@ -151,10 +167,13 @@ export const hy: LocaleTree = {
   "hero": {
     "welcomeTagline": "Աշխարհի ամենամեծ առցանց կազինոն և սլոտը",
     "playNow": "Խաղալ հիմա",
+    "betNow": "Խաղադրույք հիմա",
     "registerPromo": "Գրանցվեք հիմա",
     "pragmaticLine1": "Խաղալ",
     "pragmaticAccent": "Pragmatic Slots",
     "pragmaticLine2": "Պրեմիում փորձառություն",
+    "sportsbookLine1": "Խաղադրույք",
+    "sportsbookAccent": "Սպորտային ամրագրում",
     "liveCasinoLine1": "Խաղալ",
     "liveCasinoAccent": "Ուղիղ կազինո",
     "liveCasinoLine2": "Պրեմիում փորձառություն",
@@ -456,6 +475,9 @@ export const hy: LocaleTree = {
     "pay_amount": "Վճարման գումար",
     "payment_url": "Վճարման էջ",
     "qr_string": "QR կոդ",
+    "payment_method": "Payment method",
+    "payment_system": "Payment system",
+    "payment_requisite": "Payment phone number",
     "memo": "Նշում",
     "tag": "Պիտակ",
     "destination_tag": "Նպատակային պիտակ",
@@ -522,7 +544,7 @@ export const hy: LocaleTree = {
     "hideForToday": "Don't show again today"
   },
   "betHistory": {
-    "title": "Փաստացի Խաղադրույքներ",
+    "title": "Խաղատան խաղադրույքներ",
     "subtitle": "Ձեր խաղի գծերը և հաղթանակները ըստ զանգվածի",
     "allTransactions": "Բոլոր գործարքները →",
     "noBets": "Դեռևս ոչ մի խաղադրույք չկա։ Խաղացեք խաղ, որպեսզի այստեղ տեսնեք ձեր պատմությունը։",
@@ -539,6 +561,19 @@ export const hy: LocaleTree = {
     "fundingBonus": "Բոնուսային պտույթ",
     "fundingMixed": "Խառը պտույթ",
     "fundingFreeSpin": "Անվճար պտույթ"
+  },
+  "sportsBetHistory": {
+    "title": "Սպորտային խաղադրույքներ",
+    "noBets": "Սպորտային խաղադրույքներ դեռ չկան: Ձեր պատմությունը տեսնելու համար խաղադրույք կատարեք սպորտային գրքում ՝ այստեղ:",
+    "browseSports": "Բացել սպորտային գրքույկը",
+    "roundId": "Կլոր անձը հաստատող փաստաթուղ",
+    "paymentId": "Վճարման ID",
+    "type": "Տիպ",
+    "stake": "Խաղադրույք",
+    "oddFactor": "Տարաձայնություններ",
+    "win": "Հաղթել",
+    "status": "Կարգավիճակ",
+    "date": "Ամսաթիվ"
   },
   "transactions": {
     "title": "Գործարքների պատմություն",

@@ -72,7 +72,23 @@ export const he: LocaleTree = {
     "liveChat": "צ'אט חי",
     "liveChatLabel": "תמיכה",
     "supportTickets": "קריאות שירות",
-    "supportTicketsLabel": "האלפ דסק"
+    "supportTicketsLabel": "האלפ דסק",
+    "casino": "CASINO",
+    "sports": "ספורט",
+    "platformSection": "קטע פלטפורמה",
+    "prematch": "PREMATCH",
+    "prematchLabel": "הימורים לפני משחק",
+    "inLive": "בשידור חי",
+    "inLiveLabel": "הימורים בשידור חי",
+    "sportsHistory": "היסטוריה",
+    "sportsHistoryLabel": "הימורי הספורט שלי",
+    "casinoHistory": "היסטוריה",
+    "casinoHistoryLabel": "Game bet history"
+  },
+  "sports": {
+    "launching": "טוען את ספר הספורט...",
+    "error": "לא ניתן לטעון את ספר הספורט.",
+    "loginRequired": "היכנס כדי לגשת להימורי ספורט."
   },
   "liveChat": {
     "title": "צ'אט חי",
@@ -151,10 +167,13 @@ export const he: LocaleTree = {
   "hero": {
     "welcomeTagline": "קזינו האינטרנטי והסלוט הגדולים בעולם",
     "playNow": "שחק עכשיו",
+    "betNow": "להמר עכשיו",
     "registerPromo": "הירשם עכשיו",
     "pragmaticLine1": "שחק",
     "pragmaticAccent": "Pragmatic Slots",
     "pragmaticLine2": "חוויה פרימיום",
+    "sportsbookLine1": "הימור על",
+    "sportsbookAccent": "ספר ספורט",
     "liveCasinoLine1": "שחק",
     "liveCasinoAccent": "קזינו חי",
     "liveCasinoLine2": "חוויה פרימיום",
@@ -456,6 +475,9 @@ export const he: LocaleTree = {
     "pay_amount": "סכום התשלום",
     "payment_url": "מספר מזהה של דף התשלום",
     "qr_string": "קוד QR",
+    "payment_method": "Payment method",
+    "payment_system": "Payment system",
+    "payment_requisite": "Payment phone number",
     "memo": "תזכיר",
     "tag": "תג",
     "destination_tag": "תג יעד",
@@ -522,7 +544,7 @@ export const he: LocaleTree = {
     "hideForToday": "אל תציג שוב היום"
   },
   "betHistory": {
-    "title": "היסטוריית הימורים",
+    "title": "הימורים בקזינו",
     "subtitle": "הימורי המשחקים והזכיות שלך לפי סיבוב",
     "allTransactions": "כל העסקאות →",
     "noBets": "אין הימורים עדיין. שחק משחק כדי לראות את ההיסטוריה שלך כאן.",
@@ -539,6 +561,19 @@ export const he: LocaleTree = {
     "fundingBonus": "סיבוב בונוס",
     "fundingMixed": "סיבוב מעורב",
     "fundingFreeSpin": "סיבוב חינם"
+  },
+  "sportsBetHistory": {
+    "title": "הימורי ספורט",
+    "noBets": "עדיין אין הימורים בספורט. הימר בספר הספורט כדי לראות את ההיסטוריה שלך כאן.",
+    "browseSports": "מעבר אל Sportsbook",
+    "roundId": "מזהה עגול",
+    "paymentId": "מזהה תשלום",
+    "type": "סוג",
+    "stake": "סיכון",
+    "oddFactor": "סיכויים",
+    "win": "זכייה",
+    "status": "סטטוס",
+    "date": "תאריך"
   },
   "transactions": {
     "title": "היסטוריית עסקאות",
