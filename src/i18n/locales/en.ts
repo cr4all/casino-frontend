@@ -354,6 +354,16 @@ export const en = {
     updateSuccess: 'Profile updated successfully.',
     updateFailed: 'Failed to update profile.',
     language: 'Language',
+    vipStatus: 'VIP Status',
+    viewAllVipLevels: 'View all VIP levels',
+  },
+  vip: {
+    currentLevel: 'Current level: {{level}}',
+    levelUpTitle: 'Level Up!',
+    levelUpMessage: 'Congratulations! You have reached {{level}}.',
+    viewBenefits: 'View VIP benefits',
+    allLevels: 'VIP Levels',
+    current: 'Current',
   },
   risk: {
     challengeTitle: 'Verify you are human',

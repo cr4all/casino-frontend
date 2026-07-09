@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { PlayerLevelBadge } from '@/components/player/PlayerLevelBadge';
 import { useAuthStore } from '@/stores/authStore';
+import { usePlayerStore } from '@/stores/playerStore';
 import { useWalletStore } from '@/stores/walletStore';
 import { useUiStore } from '@/stores/uiStore';
 import { useUnreadNotifications } from '@/hooks/useUnreadNotifications';
@@ -12,13 +14,15 @@ import { WalletBalanceBreakdown } from '@/components/wallet/WalletBalanceBreakdo
 
 interface HeaderProps {
   onMenuToggle?: () => void;
+  onOpenVipLevels?: () => void;
 }
 
-export function Header({ onMenuToggle }: HeaderProps) {
+export function Header({ onMenuToggle, onOpenVipLevels }: HeaderProps) {
   const { t } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const logout = useAuthStore((s) => s.logout);
   const balance = useWalletStore((s) => s.balance);
+  const profile = usePlayerStore((s) => s.profile);
   const openModal = useUiStore((s) => s.openModal);
   const unreadCount = useUnreadNotifications();
   const [userMenuOpen, setUserMenuOpen] = useState(false);
@@ -59,7 +63,13 @@ export function Header({ onMenuToggle }: HeaderProps) {
 
         {isAuthenticated ? (
           <>
-            <div className="flex h-9 max-w-[7.5rem] shrink-0 items-center rounded-lg border border-white/10 bg-card px-2 sm:max-w-none sm:px-4 sm:py-2 sm:h-auto">
+            <div className="flex h-9 max-w-[9rem] shrink-0 items-center gap-1.5 rounded-lg border border-white/10 bg-card px-2 sm:max-w-none sm:gap-2 sm:px-3 sm:py-2 sm:h-auto">
+              <PlayerLevelBadge
+                slug={profile?.vip_level_slug ?? 'regular'}
+                name={profile?.vip_level_name ?? 'Regular'}
+                size={22}
+                onClick={() => onOpenVipLevels?.()}
+              />
               <WalletBalanceBreakdown balance={balance} compact showLabel />
             </div>
 

@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Casino Platform Player API
-  version: 1.6.0
+  version: 1.8.0
   description: |
     Player-facing REST API for the casino platform.
     Source of truth derived from `routes/api.php` and Feature Tests.
@@ -90,6 +90,8 @@ paths:
                         example: Registration successful.
         '422':
           $ref: '#/components/responses/ValidationError'
+        '403':
+          $ref: '#/components/responses/RiskBlocked'
 
   /auth/login:
     post:
@@ -116,6 +118,8 @@ paths:
                         $ref: '#/components/schemas/LoginResponseData'
         '422':
           $ref: '#/components/responses/ValidationError'
+        '403':
+          $ref: '#/components/responses/RiskBlocked'
 
   /auth/refresh:
     post:
@@ -265,6 +269,25 @@ paths:
                         $ref: '#/components/schemas/PlayerMe'
         '401':
           $ref: '#/components/responses/Unauthorized'
+
+  /player-levels/tiers:
+    get:
+      tags: [Player]
+      summary: List VIP tier catalog (0=Regular .. 6=VIP)
+      responses:
+        '200':
+          description: VIP tier catalog
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessEnvelope'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/PlayerLevelTier'
 
   /player/profile:
     patch:
@@ -583,6 +606,8 @@ paths:
                         $ref: '#/components/schemas/DepositCreated'
         '401':
           $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/RiskBlocked'
         '422':
           $ref: '#/components/responses/ValidationError'
 
@@ -649,6 +674,8 @@ paths:
                         $ref: '#/components/schemas/WithdrawalCreated'
         '401':
           $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/RiskBlocked'
         '422':
           $ref: '#/components/responses/ValidationError'
 
@@ -798,20 +825,8 @@ paths:
           in: query
           schema:
             type: string
-            enum: [today, last_week, last_month, custom]
-            default: today
-        - name: from
-          in: query
-          description: Start date (YYYY-MM-DD) when period=custom
-          schema:
-            type: string
-            format: date
-        - name: to
-          in: query
-          description: End date (YYYY-MM-DD) when period=custom
-          schema:
-            type: string
-            format: date
+            enum: [today, week, 30days, month]
+            default: week
         - $ref: '#/components/parameters/PerPage'
       responses:
         '200':
@@ -1263,6 +1278,48 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorEnvelope'
+    RiskBlocked:
+      description: |
+        Request denied by anti-fraud sync gate (`POST /evaluate`).
+        `error.code` is `RISK_BLOCKED` when blocked, or `RISK_CHALLENGE` when step-up verification is required.
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/ErrorEnvelope'
+              - type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                        enum: [RISK_BLOCKED]
+                      message:
+                        type: string
+                        example: Request blocked by risk evaluation.
+                      details:
+                        $ref: '#/components/schemas/RiskEvaluationDetails'
+    RiskChallenge:
+      description: Additional verification required by anti-fraud risk evaluation
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/ErrorEnvelope'
+              - type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                        enum: [RISK_CHALLENGE]
+                      message:
+                        type: string
+                        example: Additional verification is required.
+                      details:
+                        $ref: '#/components/schemas/RiskEvaluationDetails'
 
   schemas:
     SuccessEnvelope:
@@ -1296,11 +1353,27 @@ components:
                 - LAUNCH_ERROR
                 - UNAUTHORIZED
                 - FORBIDDEN
+                - RISK_BLOCKED
+                - RISK_CHALLENGE
             message:
               type: string
             details:
               type: object
               additionalProperties: true
+
+    RiskEvaluationDetails:
+      type: object
+      properties:
+        event_id:
+          type: string
+          format: uuid
+        final_score:
+          type: integer
+          minimum: 0
+          maximum: 100
+        risk_level:
+          type: string
+          enum: [low, medium, high, critical]
 
     Pagination:
       type: object
@@ -1617,6 +1690,38 @@ components:
           nullable: true
           description: KYC verification status
           example: pending
+        vip_level:
+          type: integer
+          minimum: 0
+          maximum: 6
+          description: Current VIP tier level (0=Regular .. 6=VIP)
+          example: 0
+        vip_level_name:
+          type: string
+          description: Human-readable VIP tier name
+          example: Regular
+        vip_level_slug:
+          type: string
+          description: VIP tier slug for icon mapping
+          example: regular
+
+    PlayerLevelTier:
+      type: object
+      required: [level, name, slug, sort_order]
+      properties:
+        level:
+          type: integer
+          minimum: 0
+          maximum: 6
+        name:
+          type: string
+          example: Gold
+        slug:
+          type: string
+          example: gold
+        sort_order:
+          type: integer
+          minimum: 0
 
     PlayerProfileUpdate:
       allOf:
@@ -1635,9 +1740,30 @@ components:
           type: string
           minLength: 8
 
+    BetFundingSource:
+      type: string
+      description: Source of funds for a bet or related ledger entry.
+      enum: [cash, bonus, mixed, free_spin]
+
+    WalletBucket:
+      type: string
+      description: Wallet bucket affected by a ledger entry.
+      enum: [cash, bonus]
+
     WalletBalance:
       type: object
-      required: [wallet_id, player_id, currency, balance, status]
+      required:
+        - wallet_id
+        - player_id
+        - currency
+        - balance
+        - cash_balance
+        - bonus_balance
+        - withdrawable_balance
+        - withdrawable_cash_balance
+        - withdrawable_bonus_balance
+        - bonus_locked
+        - status
       properties:
         wallet_id:
           type: integer
@@ -1647,7 +1773,28 @@ components:
           type: string
         balance:
           type: string
+          description: Total playable balance (cash + bonus).
           example: '1250.0000'
+        cash_balance:
+          type: string
+          example: '1000.0000'
+        bonus_balance:
+          type: string
+          example: '250.0000'
+        withdrawable_balance:
+          type: string
+          description: Total amount eligible for withdrawal (cash + unlocked bonus).
+          example: '1000.0000'
+        withdrawable_cash_balance:
+          type: string
+          example: '1000.0000'
+        withdrawable_bonus_balance:
+          type: string
+          description: Bonus balance eligible for withdrawal when wagering is complete.
+          example: '0.0000'
+        bonus_locked:
+          type: boolean
+          description: True when active bonus wagering prevents bonus withdrawal.
         status:
           type: string
 
@@ -1662,6 +1809,25 @@ components:
             event_type:
               type: string
               example: payment.deposit
+
+    PlayerVipLevelEvent:
+      type: object
+      required: [player_id, previous_level, vip_level, vip_level_name, vip_level_slug]
+      properties:
+        player_id:
+          type: integer
+        previous_level:
+          type: integer
+          minimum: 0
+          maximum: 6
+        vip_level:
+          type: integer
+          minimum: 0
+          maximum: 6
+        vip_level_name:
+          type: string
+        vip_level_slug:
+          type: string
 
     WalletTransaction:
       type: object
@@ -1685,6 +1851,18 @@ components:
           type: string
           nullable: true
         reference_id:
+          type: string
+          nullable: true
+        funding_source:
+          $ref: '#/components/schemas/BetFundingSource'
+          nullable: true
+        wallet_bucket:
+          $ref: '#/components/schemas/WalletBucket'
+          nullable: true
+        cash_balance_after:
+          type: string
+          nullable: true
+        bonus_balance_after:
           type: string
           nullable: true
         created_at:
@@ -1716,6 +1894,12 @@ components:
           $ref: '#/components/schemas/BetHistoryGame'
         bet_amount:
           type: string
+        bet_cash_amount:
+          type: string
+          description: Portion of the bet funded from cash balance.
+        bet_bonus_amount:
+          type: string
+          description: Portion of the bet funded from bonus balance.
         win_amount:
           type: string
         net_amount:
@@ -1723,9 +1907,8 @@ components:
         status:
           type: string
         funding_source:
-          type: string
-          enum: [cash, free_spin]
-          description: Spin funding source — cash wallet or free spin bonus.
+          $ref: '#/components/schemas/BetFundingSource'
+          description: Spin funding source — cash, bonus, mixed, or free spin.
         spin_type:
           type: string
           description: Human-readable spin type label (e.g. Cash Spin, Free Spin).
@@ -2335,19 +2518,21 @@ components:
     PlayerStatisticsMetrics:
       type: object
       required:
+        - total_bet
+        - total_win
         - deposits
         - withdrawals
         - cash_turnover
         - bonus_turnover
-        - cash_win
-        - bonus_win
-        - total_turnover
-        - total_win
         - ggr
         - bonus_cost
         - affiliate_cost
         - ngr
       properties:
+        total_bet:
+          type: string
+        total_win:
+          type: string
         deposits:
           type: string
         withdrawals:
@@ -2355,14 +2540,6 @@ components:
         cash_turnover:
           type: string
         bonus_turnover:
-          type: string
-        cash_win:
-          type: string
-        bonus_win:
-          type: string
-        total_turnover:
-          type: string
-        total_win:
           type: string
         ggr:
           type: string
@@ -2394,15 +2571,7 @@ components:
       properties:
         period:
           type: string
-          enum: [today, last_week, last_month, custom]
-        from:
-          type: string
-          format: date
-          nullable: true
-        to:
-          type: string
-          format: date
-          nullable: true
+          enum: [today, week, 30days, month]
         items:
           type: array
           items:
@@ -2513,3 +2682,23 @@ x-realtime:
     event: balance.updated
     payload:
       $ref: '#/components/schemas/WalletBalanceEvent'
+  playerVipLevel:
+    summary: Real-time VIP level updates (WebSocket)
+    description: |
+      Subscribe via Laravel Reverb (Pusher protocol) for live VIP level changes.
+      Initial level should be fetched with `GET /player/me`.
+    connection:
+      url: "ws(s)://{REVERB_HOST}:{REVERB_PORT}/app/{REVERB_APP_KEY}"
+      protocol: websocket
+    auth:
+      method: POST
+      url: /api/broadcasting/auth
+      security:
+        - bearerAuth: []
+      body:
+        channel_name: private-player.{playerId}
+        socket_id: string
+    channel: private-player.{playerId}
+    event: vip.level.updated
+    payload:
+      $ref: '#/components/schemas/PlayerVipLevelEvent'
