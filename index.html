@@ -11,8 +11,66 @@
       rel="stylesheet"
     />
     <title>ibets24-Sports Betting, Online Casino,Poker & Live Casino</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        background: #0b101b;
+      }
+
+      #site-splash {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background:
+          radial-gradient(ellipse 70% 55% at 50% 45%, rgba(255, 193, 7, 0.1) 0%, transparent 65%),
+          #0b101b;
+        opacity: 1;
+        transition: opacity 0.45s ease;
+      }
+
+      #site-splash.site-splash--hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      #site-splash svg {
+        display: block;
+        width: min(62vw, 243px);
+        height: auto;
+        filter: drop-shadow(0 8px 28px rgba(0, 0, 0, 0.45));
+      }
+    </style>
   </head>
   <body>
+    <div id="site-splash" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 162 52" fill="none" role="img" aria-label="IBETS24">
+        <defs>
+          <linearGradient id="ibets24-splash-gold" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#FFD54F" />
+            <stop offset="45%" stop-color="#FFB300" />
+            <stop offset="100%" stop-color="#F57C00" />
+          </linearGradient>
+        </defs>
+        <text
+          x="0"
+          y="40"
+          text-anchor="start"
+          font-family="Montserrat, 'Arial Black', Arial, sans-serif"
+          font-size="36"
+          font-weight="800"
+          font-style="italic"
+          letter-spacing="-0.08em"
+        >
+          <tspan fill="#FFFFFF">IBETS</tspan>
+          <tspan fill="url(#ibets24-splash-gold)">24</tspan>
+        </text>
+      </svg>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
