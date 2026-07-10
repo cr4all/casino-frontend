@@ -50,6 +50,32 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+.site-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 45%, rgba(255, 193, 7, 0.1) 0%, transparent 65%),
+    var(--color-background);
+  opacity: 1;
+  transition: opacity 0.45s ease;
+}
+
+.site-splash--hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.site-splash__logo {
+  display: block;
+  width: min(62vw, 243px);
+  height: auto;
+  filter: drop-shadow(0 8px 28px rgba(0, 0, 0, 0.45));
+}
+
 #root {
   min-height: 100vh;
   font-weight: 700;
