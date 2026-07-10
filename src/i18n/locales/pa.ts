@@ -165,7 +165,7 @@ export const pa: LocaleTree = {
     "backHome": "ਘਰ ← ਵਾਪਸ"
   },
   "hero": {
-    "welcomeTagline": "ਵਿਸ਼ਵ ਦੇ ਵੱਡੇ ਆਨਲਾਈਨ ਕੈਸੀਨੋ ਅਤੇ ਸਲਾਟ",
+    "welcomeTagline": "ਵਿਸ਼ਵ ਦੀ ਵੱਡੀ Sportsbook & ਆਨਲਾਈਨ ਕੈਸੀਨੋ",
     "playNow": "ਹੁਣੇ ਚਲਾਓ",
     "betNow": "Bet Now",
     "registerPromo": "ਹੁਣੇ ਰਜਿਸਟਰ ਕਰੋ",
@@ -176,7 +176,7 @@ export const pa: LocaleTree = {
     "sportsbookAccent": "Sports book",
     "liveCasinoLine1": "ਪਲੇ ਕਰੋ",
     "liveCasinoAccent": "ਲਾਈਵ ਕੈਸੀਨੋ",
-    "liveCasinoLine2": "ਪ੍ਰੀਮੀਅਮ ਅਨੁਭਵ",
+    "liveCasinoLine2": "5% Cashback ਬੋਨਸ ਹਰ ਮੰਗਲਵਾਰ",
     "firstDepositRegister": "ਹੁਣ ਰਜਿਸਟਰ ਕਰੋ",
     "firstDepositTitle": "ਪਹਿਲੀ ਡਿਪਾਜ਼ਿਟ",
     "firstDepositBonus": "100% ਬੋਨਸ",

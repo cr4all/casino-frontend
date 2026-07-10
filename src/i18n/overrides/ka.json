@@ -33,7 +33,6 @@
   "No bets yet. Play a game to see your history here.": "ჯერ არაფერი არის დადებული. ითამაშე თამაში, რათა აქ იხილო შენი ისტორია.",
   "Send {{amount}} {{currency}} to the address below": "გაგზავნეთ {{amount}} {{currency}} ქვემოთ მოცემულ მისამართზე",
   "Applied automatically on your first deposit only.": "თავიდან ეცემა ავტომატურად მხოლოდ თქვენს პირველ დეპოზიტზე.",
-  "The world's largest sportsbook and online casino": "მსოფლიოს უდიდესი სხრიკბუქი და ონლაინ კაზინო",
   "Choose which optional cookies you want to allow.": "აირჩიეთ რომელ დამატებით კუკიებს აპირებთ დაუშვათ.",
   "Registration failed. Please check your details.": "რეგისტრაცია ვერ შესრულდა. გთხოვთ, გადაამოწმოთ თქვენი მონაცემები.",
   "Enter the 6-digit code sent to {{destination}}.": "შეიყვანეთ 6-ნიშნა კოდი, გაგზავნილი {{destination}}-ზე.",
@@ -377,5 +376,7 @@
   "Net": "ნეტი",
   "CPA": "CPA",
   "OK": "OK",
-  "ID": "ID"
+  "ID": "ID",
+  "The World's Largest Sportsbook & Online Casino": "Მსოფლიოს უმსხვილესი სპორტული წიგნაკი და ონლაინ კაზინო",
+  "5% Cashback Bonus Every Tuesday": "5% -იანი ქეშბექის ბონუსი ყოველ სამშაბათს"
 }

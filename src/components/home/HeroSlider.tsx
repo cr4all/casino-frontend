@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 import { heroBanners } from '@/data/mockData';
 import { useAuthStore } from '@/stores/authStore';
@@ -11,10 +11,9 @@ export function HeroSlider() {
   return (
     <section className="py-4">
       <Swiper
-        modules={[Autoplay, Pagination, Navigation]}
+        modules={[Autoplay, Pagination]}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
-        navigation
         loop
         className="rounded-lg overflow-hidden"
       >

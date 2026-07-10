@@ -165,7 +165,7 @@ export const af: LocaleTree = {
     "backHome": "Terug na Tuis"
   },
   "hero": {
-    "welcomeTagline": "The world's largest online casino and slot",
+    "welcomeTagline": "Die wêreld se grootste Sportsbook & Online Casino",
     "playNow": "Speel nou",
     "betNow": "WET NOU",
     "registerPromo": "Registreer nou",
@@ -176,7 +176,7 @@ export const af: LocaleTree = {
     "sportsbookAccent": "Sportboek",
     "liveCasinoLine1": "Speel ",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Premium Experience",
+    "liveCasinoLine2": "5% Cashback Bonus Elke Dinsdag",
     "firstDepositRegister": "Registreer nou",
     "firstDepositTitle": "Eerste deposito",
     "firstDepositBonus": "100% BONUS",

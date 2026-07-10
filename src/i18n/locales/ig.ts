@@ -165,7 +165,7 @@ export const ig: LocaleTree = {
     "backHome": "← Back to home"
   },
   "hero": {
-    "welcomeTagline": "The world's largest online casino and slot",
+    "welcomeTagline": "The World Kasị Ukwuu Sportsbook & Online cha cha",
     "playNow": "Play Now",
     "betNow": "Bet Ugbu a",
     "registerPromo": "Register Now",
@@ -176,7 +176,7 @@ export const ig: LocaleTree = {
     "sportsbookAccent": "Sports akwụkwọ",
     "liveCasinoLine1": "Play",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Premium Experience",
+    "liveCasinoLine2": "5% Cashback daashi ọ bụla Tuesday",
     "firstDepositRegister": "REGISTER NOW",
     "firstDepositTitle": "FIRST DEPOSIT",
     "firstDepositBonus": "100% BONUS",

@@ -165,7 +165,7 @@ export const km: LocaleTree = {
     "backHome": "← ត្រឡប់ទៅផ្ទៃផ្ទះ"
   },
   "hero": {
-    "welcomeTagline": "The world's largest online casino and slot",
+    "welcomeTagline": "សៀវភៅកីឡាដ៏ធំបំផុតរបស់ពិភពលោក & កាស៊ីណូអនឡាញ",
     "playNow": "លេងឥឡូវ",
     "betNow": "ភ្នាល់ឥឡូវនេះ",
     "registerPromo": "ចុះឈ្មោះឥឡូវនេះ",
@@ -176,7 +176,7 @@ export const km: LocaleTree = {
     "sportsbookAccent": "សៀវភៅកីឡា",
     "liveCasinoLine1": "លេង",
     "liveCasinoAccent": "កាស៊ីណូផ្ទាល់ខ្លួន",
-    "liveCasinoLine2": "បទពិសោធន៍ប្រណីត",
+    "liveCasinoLine2": "5% ប្រាក់រង្វាន់ Cashback រៀងរាល់ថ្ងៃអង្គារ",
     "firstDepositRegister": "ចុះឈ្មោះឥឡូវនេះ",
     "firstDepositTitle": "ការដាក់ប្រាក់ដំបូង",
     "firstDepositBonus": "អត្រា​បញ្ចុះ​តម្លៃ 100%",

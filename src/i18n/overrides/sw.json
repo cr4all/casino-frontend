@@ -33,7 +33,6 @@
   "No bets yet. Play a game to see your history here.": "Hakuna dau bado. Cheza mchezo kuona historia yako hapa.",
   "Send {{amount}} {{currency}} to the address below": "Tuma {{amount}} {{currency}} kwenye anwani hapa chini",
   "Applied automatically on your first deposit only.": "Inatumika kiotomatiki kwenye amana yako ya kwanza pekee.",
-  "The world's largest sportsbook and online casino": "Kitabu cha michezo na kasino mkubwa zaidi duniani",
   "Choose which optional cookies you want to allow.": "Chagua vidakuzi vya hiari unavyotaka kuruhusu.",
   "Registration failed. Please check your details.": "Usajili umeshindwa. Tafadhali angalia maelezo yako.",
   "Enter the 6-digit code sent to {{destination}}.": "Weka msimbo wa tarakimu 6 uliotumwa kwa {{destination}}.",
@@ -377,5 +376,7 @@
   "Net": "Wavu",
   "CPA": "CPA",
   "OK": "OK",
-  "ID": "ID"
+  "ID": "ID",
+  "The World's Largest Sportsbook & Online Casino": "Kitabu cha Michezo Kubwa Zaidi Duniani na Kasino ya Mtandaoni",
+  "5% Cashback Bonus Every Tuesday": "Bonasi ya Kurudishiwa Pesa ya 5% Kila Juman"
 }

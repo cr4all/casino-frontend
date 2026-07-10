@@ -349,8 +349,6 @@
   "The exact crypto amount may vary with exchange rates at transfer time.": "סכום הקריפטו המדויק עשוי להשתנות בהתאם לשערי החליפין בעת ההעברה.",
   "The file is too large. Maximum size is 5 MB.": "הקובץ גדול מדי. הגודל המקסימלי הוא 5 מ״ב.",
   "The page you’re looking for doesn’t exist, or the link may be outdated. Check the URL or head back to the lobby.": "הדף שאתה מחפש אינו קיים, או שהקישור עשוי להיות לא מעודכן. בדוק את כתובת ה-URL או חזור ללובי.",
-  "The world's largest online casino and slot": "קזינו האינטרנטי והסלוט הגדולים בעולם",
-  "The world's largest sportsbook and online casino": "קזינו האינטרנטי והסלוט הגדולים בעולם",
   "This action was blocked for security reasons.": "פעולה זו נחסמה מסיבות אבטחה.",
   "This area is for affiliate accounts only.": "אזור זה מיועד לחשבונות שותפים בלבד.",
   "This bonus is only available if your first deposit is completed after the promotion start date.": "בונוס זה זמין רק אם ההפקדה הראשונה שלך הושלמה לאחר תאריך תחילת המבצע.",
@@ -408,5 +406,7 @@
   "Your game bets and wins by round": "הימורי המשחקים והזכיות שלך לפי סיבוב",
   "Your maximum withdrawal amount is {{amount}} based on your current verification level.": "סכום המשיכה המקסימלי שלך הוא {{amount}} בהתאם לרמת האימות הנוכחית שלך.",
   "Your password has been reset. You can now log in with your new password.": "הסיסמה שלך אופסה. כעת תוכל להתחבר עם הסיסמה החדשה.",
-  "Your username": "שם המשתמש שלך"
+  "Your username": "שם המשתמש שלך",
+  "The World's Largest Sportsbook & Online Casino": "ספר הספורט והקזינו המקוון הגדול בעולם",
+  "5% Cashback Bonus Every Tuesday": "בונוס של 5% להחזר כספי בכל יום שלישי"
 }

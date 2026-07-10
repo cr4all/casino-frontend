@@ -160,7 +160,7 @@ export const mk: LocaleTree = {
     "backHome": "← Назад на почетна"
   },
   "hero": {
-    "welcomeTagline": "Најголемото online casino и slot на светот",
+    "welcomeTagline": "Најголемата спортска обложувалница и онлајн казино во светот",
     "playNow": "Играј сега",
     "registerPromo": "Регистрирај се сега",
     "pragmaticLine1": "Играј",
@@ -168,7 +168,7 @@ export const mk: LocaleTree = {
     "pragmaticLine2": "Премиум искуство",
     "liveCasinoLine1": "Играј",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Премиум искуство",
+    "liveCasinoLine2": "5% бонус за поврат на готовина секој вторник",
     "firstDepositRegister": "РЕГИСТРИРАЈ СЕ СЕГА",
     "firstDepositTitle": "ПРВ ДЕПОЗИТ",
     "firstDepositBonus": "100% БОНУС",

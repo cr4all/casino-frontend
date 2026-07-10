@@ -165,7 +165,7 @@ export const ha: LocaleTree = {
     "backHome": "← Back to home"
   },
   "hero": {
-    "welcomeTagline": "Babban casino na kan layi da slots a duniya",
+    "welcomeTagline": "Littafin Wasanni Mafi Girma a Duniya & Casino Online",
     "playNow": "Play Now",
     "betNow": "Bet Yanzu",
     "registerPromo": "Register Now",
@@ -176,7 +176,7 @@ export const ha: LocaleTree = {
     "sportsbookAccent": "Littafin wasanni",
     "liveCasinoLine1": "Play",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Premium Experience",
+    "liveCasinoLine2": "5% Cashback Bonus Kowace Talata",
     "firstDepositRegister": "REGISTER NOW",
     "firstDepositTitle": "FIRST DEPOSIT",
     "firstDepositBonus": "100% BONUS",

@@ -165,7 +165,7 @@ export const ja: LocaleTree = {
     "backHome": "← Back to home"
   },
   "hero": {
-    "welcomeTagline": "The world's largest online casino and slot",
+    "welcomeTagline": "世界最大のスポーツブック＆オンラインカジノ",
     "playNow": "Play Now",
     "betNow": "今すぐベットする",
     "registerPromo": "Register Now",
@@ -176,7 +176,7 @@ export const ja: LocaleTree = {
     "sportsbookAccent": "スポーツブック",
     "liveCasinoLine1": "Play",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Premium Experience",
+    "liveCasinoLine2": "毎週火曜日に5%キャッシュバックボーナス",
     "firstDepositRegister": "REGISTER NOW",
     "firstDepositTitle": "FIRST DEPOSIT",
     "firstDepositBonus": "100% BONUS",

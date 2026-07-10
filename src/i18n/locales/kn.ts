@@ -165,7 +165,7 @@ export const kn: LocaleTree = {
     "backHome": "← Back to home"
   },
   "hero": {
-    "welcomeTagline": "The world's largest online casino and slot",
+    "welcomeTagline": "ವಿಶ್ವದ ಅತಿದೊಡ್ಡ ಸ್ಪೋರ್ಟ್ಸ್‌ಬುಕ್ ಮತ್ತು ಆನ್‌ಲೈನ್ ಕ್ಯಾಸಿನೊ",
     "playNow": "Play Now",
     "betNow": "ಈಗ ಬೆಟ್ ಮಾಡಿ",
     "registerPromo": "Register Now",
@@ -176,7 +176,7 @@ export const kn: LocaleTree = {
     "sportsbookAccent": "ಕ್ರೀಡಾ ಪುಸ್ತಕ",
     "liveCasinoLine1": "Play",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Premium Experience",
+    "liveCasinoLine2": "ಪ್ರತಿ ಮಂಗಳವಾರ 5% ಕ್ಯಾಶ್‌ಬ್ಯಾಕ್ ಬೋನಸ್",
     "firstDepositRegister": "REGISTER NOW",
     "firstDepositTitle": "FIRST DEPOSIT",
     "firstDepositBonus": "100% BONUS",

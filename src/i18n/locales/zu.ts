@@ -160,7 +160,7 @@ export const zu: LocaleTree = {
     "backHome": "Buyela ekhaya"
   },
   "hero": {
-    "welcomeTagline": "Ikhasino le-inthanethi nenhlalambazo enkulu kunazo zonke emhlabeni",
+    "welcomeTagline": "Incwadi Yezemidlalo Enkulu Kunazo Zonke Emhlabeni & Amakhasino aku-inthanethi",
     "playNow": "Dlala manje",
     "registerPromo": "Bhalisa manje",
     "pragmaticLine1": "Dlala",
@@ -168,7 +168,7 @@ export const zu: LocaleTree = {
     "pragmaticLine2": "Isipiliyoni Esiphezulu",
     "liveCasinoLine1": "Dlala",
     "liveCasinoAccent": "Ikhasino Ebukhoma",
-    "liveCasinoLine2": "Isipiliyoni Esiphezulu",
+    "liveCasinoLine2": "Ibhonasi Yokubuyiselwa Imali engu-5% Njalo NgoLwesibili",
     "firstDepositRegister": "BHALISA MANJE",
     "firstDepositTitle": "IDIPHOZITHI YOKUQALA",
     "firstDepositBonus": "IBHONASI ENGU-100%",

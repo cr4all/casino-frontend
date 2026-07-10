@@ -33,7 +33,6 @@
   "No bets yet. Play a game to see your history here.": "尚無投注紀錄，請開始遊玩以在此查看歷史。",
   "Send {{amount}} {{currency}} to the address below": "請將 {{amount}} {{currency}} 匯至下方地址",
   "Applied automatically on your first deposit only.": "僅在首次存款時自動套用。",
-  "The world's largest sportsbook and online casino": "全球最大的体育博彩與線上娛樂城",
   "Choose which optional cookies you want to allow.": "請選擇要允許的選用 Cookie。",
   "Registration failed. Please check your details.": "註冊失敗，請檢查您的資料。",
   "Enter the 6-digit code sent to {{destination}}.": "請輸入寄至 {{destination}} 的 6 位數驗證碼。",
@@ -377,5 +376,7 @@
   "Net": "淨額",
   "CPA": "CPA",
   "OK": "OK",
-  "ID": "ID"
+  "ID": "ID",
+  "The World's Largest Sportsbook & Online Casino": "全球最大的體育博彩和網上賭場",
+  "5% Cashback Bonus Every Tuesday": "每週二5%現金回饋獎勵"
 }

@@ -160,7 +160,7 @@ export const lv: LocaleTree = {
     "backHome": "← Atpakaļ uz sākumlapu"
   },
   "hero": {
-    "welcomeTagline": "Pasaulē lielākais tiešsaistes kazino un spēļu automāti",
+    "welcomeTagline": "Pasaulē lielākā sporta grāmata un tiešsaistes kazino",
     "playNow": "Spēlēt tagad",
     "registerPromo": "Reģistrēties tagad",
     "pragmaticLine1": "Spēlējiet",
@@ -168,7 +168,7 @@ export const lv: LocaleTree = {
     "pragmaticLine2": "Premium pieredze",
     "liveCasinoLine1": "Spēlējiet",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Premium pieredze",
+    "liveCasinoLine2": "5% naudas atmaksas bonuss katru otrdienu",
     "firstDepositRegister": "REĢISTRĒTIES TAGAD",
     "firstDepositTitle": "PIRMAIS DEPOZĪTS",
     "firstDepositBonus": "100% BONUSS",

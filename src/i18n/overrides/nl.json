@@ -33,7 +33,6 @@
   "No bets yet. Play a game to see your history here.": "Nog geen inzetten. Speel een spel om uw geschiedenis hier te zien.",
   "Send {{amount}} {{currency}} to the address below": "Stuur {{amount}} {{currency}} naar het onderstaande adres",
   "Applied automatically on your first deposit only.": "Alleen automatisch toegepast op uw eerste storting.",
-  "The world's largest sportsbook and online casino": "Het grootste sportsbook en online casino ter wereld",
   "Choose which optional cookies you want to allow.": "Kies welke optionele cookies u wilt toestaan.",
   "Registration failed. Please check your details.": "Registratie mislukt. Controleer uw gegevens.",
   "Enter the 6-digit code sent to {{destination}}.": "Voer de 6-cijferige code in die naar {{destination}} is gestuurd.",
@@ -377,5 +376,7 @@
   "Net": "Netto",
   "CPA": "CPA",
   "OK": "OK",
-  "ID": "ID"
+  "ID": "ID",
+  "The World's Largest Sportsbook & Online Casino": "Het grootste sportsbook en online casino ter wereld",
+  "5% Cashback Bonus Every Tuesday": "5% cashbackbonus elke dinsdag"
 }

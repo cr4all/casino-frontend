@@ -165,7 +165,7 @@ export const he: LocaleTree = {
     "backHome": "← חזרה לדף הבית"
   },
   "hero": {
-    "welcomeTagline": "קזינו האינטרנטי והסלוט הגדולים בעולם",
+    "welcomeTagline": "ספר הספורט והקזינו המקוון הגדול בעולם",
     "playNow": "שחק עכשיו",
     "betNow": "להמר עכשיו",
     "registerPromo": "הירשם עכשיו",
@@ -176,7 +176,7 @@ export const he: LocaleTree = {
     "sportsbookAccent": "ספר ספורט",
     "liveCasinoLine1": "שחק",
     "liveCasinoAccent": "קזינו חי",
-    "liveCasinoLine2": "חוויה פרימיום",
+    "liveCasinoLine2": "בונוס של 5% להחזר כספי בכל יום שלישי",
     "firstDepositRegister": "הירשם עכשיו",
     "firstDepositTitle": "הפקדה ראשונה",
     "firstDepositBonus": "בונוס 100%",

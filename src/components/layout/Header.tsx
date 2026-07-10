@@ -11,6 +11,7 @@ import { Button } from '@/components/common/Button';
 import { LanguageSelector } from '@/components/common/LanguageSelector';
 import { Logo } from '@/components/common/Logo';
 import { WalletBalanceBreakdown } from '@/components/wallet/WalletBalanceBreakdown';
+import { WalletActionButtons } from '@/components/layout/WalletActionButtons';
 
 interface HeaderProps {
   onMenuToggle?: () => void;
@@ -72,6 +73,8 @@ export function Header({ onMenuToggle, onOpenVipLevels }: HeaderProps) {
               />
               <WalletBalanceBreakdown balance={balance} compact showLabel />
             </div>
+
+            <WalletActionButtons layout="header" />
 
             <div ref={userMenuRef} className="relative shrink-0">
               <button

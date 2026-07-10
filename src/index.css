@@ -422,6 +422,15 @@ body {
   max-width: min(94%, 820px);
 }
 
+.hero-banner-text__hero--nowrap {
+  white-space: nowrap;
+}
+
+.hero-banner-text__hero--title-case {
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
 .hero-banner-text__subtitle {
   margin: clamp(0.1rem, 0.6vw, 0.25rem) 0 0;
   font-size: clamp(0.85rem, 2.8vw, 1.35rem);
@@ -431,6 +440,12 @@ body {
   color: rgba(255, 255, 255, 0.95);
   max-width: min(100%, 560px);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+}
+
+.hero-banner-text__subtitle--large {
+  font-size: clamp(1rem, 3.4vw, 1.65rem);
+  font-weight: 700;
+  max-width: min(100%, 640px);
 }
 
 .hero-banner-text__hero--compact {
@@ -765,22 +780,6 @@ body {
   }
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  color: #ffc107 !important;
-  width: 32px !important;
-  height: 32px !important;
-  background: rgba(21, 27, 40, 0.95);
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  font-size: 12px !important;
-  font-weight: bold;
-}
-
 .swiper-pagination-bullet {
   background: rgba(255, 255, 255, 0.3) !important;
 }
@@ -835,6 +834,19 @@ body {
 
 .scrollbar-dark::-webkit-scrollbar-corner {
   background: transparent;
+}
+
+/* Offset for fixed mobile deposit/withdraw bar */
+@media (max-width: 1023px) {
+  .has-mobile-wallet-bar {
+    --mobile-wallet-bar-offset: calc(3.75rem + max(0.5rem, env(safe-area-inset-bottom)) + 0.5rem);
+    padding-bottom: var(--mobile-wallet-bar-offset);
+  }
+
+  .sports-iframe-viewport--with-wallet-bar {
+    min-height: calc(100dvh - 3.5rem - var(--mobile-wallet-bar-offset, 0px));
+    height: calc(100dvh - 3.5rem - var(--mobile-wallet-bar-offset, 0px));
+  }
 }
 
 /* Site footer — columns + legal bar + payment methods */

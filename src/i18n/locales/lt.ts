@@ -165,7 +165,7 @@ export const lt: LocaleTree = {
     "backHome": "← Atgal į pradžią"
   },
   "hero": {
-    "welcomeTagline": "The world's largest online casino and slot",
+    "welcomeTagline": "Didžiausia pasaulyje sporto lažybų ir internetinio kazino platforma",
     "playNow": "Žaisti dabar",
     "betNow": "Statyti dabar",
     "registerPromo": "Registruotis dabar",
@@ -176,7 +176,7 @@ export const lt: LocaleTree = {
     "sportsbookAccent": "Sporto knyga",
     "liveCasinoLine1": "Žaisti",
     "liveCasinoAccent": "Tiesioginis kazino",
-    "liveCasinoLine2": "Premium patirtis",
+    "liveCasinoLine2": "5% pinigų grąžinimo premija kiekvieną antradienį",
     "firstDepositRegister": "REGISTRUOTIS DABAR",
     "firstDepositTitle": "PIRMAS INDĖLIS",
     "firstDepositBonus": "100% PREMIJA",

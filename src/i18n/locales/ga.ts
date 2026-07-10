@@ -165,7 +165,7 @@ export const ga: LocaleTree = {
     "backHome": "← Back to home"
   },
   "hero": {
-    "welcomeTagline": "An ceasaíneo ar líne agus sliotán is mó ar domhan",
+    "welcomeTagline": "An Domhain Sportsbook is mó & Casino ar líne",
     "playNow": "Play Now",
     "betNow": "Geall Anois",
     "registerPromo": "Register Now",
@@ -176,7 +176,7 @@ export const ga: LocaleTree = {
     "sportsbookAccent": "Leabhar spóirt",
     "liveCasinoLine1": "Play",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Premium Experience",
+    "liveCasinoLine2": "5% Bónas Cashback Gach Máirt",
     "firstDepositRegister": "REGISTER NOW",
     "firstDepositTitle": "FIRST DEPOSIT",
     "firstDepositBonus": "100% BONUS",

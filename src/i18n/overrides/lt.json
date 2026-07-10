@@ -33,7 +33,6 @@
   "No bets yet. Play a game to see your history here.": "Statymų dar nėra. Žaiskite, kad čia matytumėte savo istoriją.",
   "Send {{amount}} {{currency}} to the address below": "Siųskite {{amount}} {{currency}} toliau nurodytu adresu",
   "Applied automatically on your first deposit only.": "Taikoma automatiškai tik pirmam indėliui.",
-  "The world's largest sportsbook and online casino": "Didžiausia pasaulyje sporto lažybų ir internetinio kazino platforma",
   "Choose which optional cookies you want to allow.": "Pasirinkite, kuriuos neprivalomus slapukus leisti.",
   "Registration failed. Please check your details.": "Registracija nepavyko. Patikrinkite savo duomenis.",
   "Enter the 6-digit code sent to {{destination}}.": "Įveskite 6 skaitmenų kodą, išsiųstą į {{destination}}.",
@@ -377,5 +376,7 @@
   "Net": "Grynasis",
   "CPA": "CPA",
   "OK": "OK",
-  "ID": "ID"
+  "ID": "ID",
+  "The World's Largest Sportsbook & Online Casino": "Didžiausia pasaulyje sporto lažybų ir internetinio kazino platforma",
+  "5% Cashback Bonus Every Tuesday": "5% pinigų grąžinimo premija kiekvieną antradienį"
 }

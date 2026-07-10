@@ -165,7 +165,7 @@ export const arMa: LocaleTree = {
     "backHome": "← Back to home"
   },
   "hero": {
-    "welcomeTagline": "The world's largest online casino and slot",
+    "welcomeTagline": "أكبر كازينو رياضي وكازينو على الإنترنت في العالم",
     "playNow": "Play Now",
     "betNow": "راهن الآن",
     "registerPromo": "Register Now",
@@ -176,7 +176,7 @@ export const arMa: LocaleTree = {
     "sportsbookAccent": "كتاب الرياضة",
     "liveCasinoLine1": "Play",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Premium Experience",
+    "liveCasinoLine2": "مكافأة استرداد نقدي بنسبة 5% كل ثلاثاء",
     "firstDepositRegister": "REGISTER NOW",
     "firstDepositTitle": "FIRST DEPOSIT",
     "firstDepositBonus": "100% BONUS",

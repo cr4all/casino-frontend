@@ -160,7 +160,7 @@ export const te: LocaleTree = {
     "backHome": "← హోమ్‌కు తిరిగి"
   },
   "hero": {
-    "welcomeTagline": "ప్రపంచంలోనే అతిపెద్ద ఆన్‌లైన్ క్యాసినో మరియు స్లాట్",
+    "welcomeTagline": "ప్రపంచంలోనే అతిపెద్ద స్పోర్ట్స్ ‌ బుక్ & ఆన్ ‌ లైన్ క్యాసినో",
     "playNow": "ఇప్పుడు ఆడు",
     "registerPromo": "ఇప్పుడు నమోదు చేయి",
     "pragmaticLine1": "ఆడు",
@@ -168,7 +168,7 @@ export const te: LocaleTree = {
     "pragmaticLine2": "ప్రీమియం అనుభవం",
     "liveCasinoLine1": "ఆడు",
     "liveCasinoAccent": "లైవ్ క్యాసినో",
-    "liveCasinoLine2": "ప్రీమియం అనుభవం",
+    "liveCasinoLine2": "ప్రతి మంగళవారం 5% క్యాష్ ‌ బ్యాక్ బోనస్",
     "firstDepositRegister": "ఇప్పుడే నమోదు చేయండి",
     "firstDepositTitle": "మొదటి డిపాజిట్",
     "firstDepositBonus": "100% బోనస్",

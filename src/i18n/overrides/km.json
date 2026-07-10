@@ -33,7 +33,6 @@
   "No bets yet. Play a game to see your history here.": "មិនទាន់មានការភ្នាល់នៅឡើយទេ។ លេងហ្គេម្ដើម្បីមើលប្រវត្តិរបស់អ្នកនៅទីនេះ។",
   "Send {{amount}} {{currency}} to the address below": "ផ្ញើ {{amount}} {{currency}} ទៅអាសយដ្ឋានខាងក្រោម",
   "Applied automatically on your first deposit only.": "អនុវត្តដោយស្វ័យប្រវត្តិលើការដាក់ទុនដំបូងរបស់អ្នកតែប៉ុណ្ណោះ។",
-  "The world's largest sportsbook and online casino": "ស្គរប៊ុយកីឡាធំនិងកាស៊ីណូអនឡាញធំជាងគេនៅលើពិភពលោក",
   "Choose which optional cookies you want to allow.": "ជ្រើសរើសនំខូកិចជាច្រើនដែលអ្នកចង់អនុញ្ញាត។",
   "Registration failed. Please check your details.": "ការចុះឈ្មោះបរាជ័យ។ សូមពិនិត្យព័ត៌មានរបស់អ្នក។",
   "Enter the 6-digit code sent to {{destination}}.": "បញ្ចូលលេខកូដ 6 ខ្ទង់ដែលបានផ្ញើទៅ {{destination}}។",
@@ -377,5 +376,7 @@
   "Net": "បំណែកសុទ្ធ",
   "CPA": "CPA",
   "OK": "OK",
-  "ID": "ID"
+  "ID": "ID",
+  "The World's Largest Sportsbook & Online Casino": "សៀវភៅកីឡាដ៏ធំបំផុតរបស់ពិភពលោក & កាស៊ីណូអនឡាញ",
+  "5% Cashback Bonus Every Tuesday": "5% ប្រាក់រង្វាន់ Cashback រៀងរាល់ថ្ងៃអង្គារ"
 }

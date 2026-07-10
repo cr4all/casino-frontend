@@ -165,7 +165,7 @@ export const it: LocaleTree = {
     "backHome": "← Torna alla home"
   },
   "hero": {
-    "welcomeTagline": "Il più grande casinò online e le slot al mondo",
+    "welcomeTagline": "Il più grande bookmaker e casinò online del mondo",
     "playNow": "Gioca ora",
     "betNow": "Scommetti ORA",
     "registerPromo": "Registrati ora",
@@ -176,7 +176,7 @@ export const it: LocaleTree = {
     "sportsbookAccent": "Libro sportivo",
     "liveCasinoLine1": "Gioca",
     "liveCasinoAccent": "Casinò live",
-    "liveCasinoLine2": "Esperienza premium",
+    "liveCasinoLine2": "Bonus Cashback del 5% ogni martedì",
     "firstDepositRegister": "REGISTRATI ORA",
     "firstDepositTitle": "PRIMO DEPOSITO",
     "firstDepositBonus": "100% DI BONUS",

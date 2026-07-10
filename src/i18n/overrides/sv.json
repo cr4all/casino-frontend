@@ -33,7 +33,6 @@
   "No bets yet. Play a game to see your history here.": "Inga spel ännu. Spela ett spel för att se din historik här.",
   "Send {{amount}} {{currency}} to the address below": "Skicka {{amount}} {{currency}} till adressen nedan",
   "Applied automatically on your first deposit only.": "Tillämpas automatiskt endast vid din första insättning.",
-  "The world's largest sportsbook and online casino": "Världens största sportsbook och onlinecasino",
   "Choose which optional cookies you want to allow.": "Välj vilka valfria cookies du vill tillåta.",
   "Registration failed. Please check your details.": "Registreringen misslyckades. Kontrollera dina uppgifter.",
   "Enter the 6-digit code sent to {{destination}}.": "Ange den 6-siffriga koden som skickats till {{destination}}.",
@@ -377,5 +376,7 @@
   "Net": "Netto",
   "CPA": "CPA",
   "OK": "OK",
-  "ID": "ID"
+  "ID": "ID",
+  "The World's Largest Sportsbook & Online Casino": "Världens största sportsbook och online casino",
+  "5% Cashback Bonus Every Tuesday": "5% cashbackbonus varje tisdag"
 }

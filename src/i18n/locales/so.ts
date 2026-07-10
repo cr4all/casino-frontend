@@ -160,7 +160,7 @@ export const so: LocaleTree = {
     "backHome": "← Ku noqo guriga"
   },
   "hero": {
-    "welcomeTagline": "Casino-ga internetka iyo slot-ka ugu weyn adduunka",
+    "welcomeTagline": "Buugga isboortiga ee ugu weyn adduunka & Casino Online",
     "playNow": "Hadda ciyaar",
     "registerPromo": "Hadda is diiwaangeli",
     "pragmaticLine1": "Ciyaar",
@@ -168,7 +168,7 @@ export const so: LocaleTree = {
     "pragmaticLine2": "Khibrad heer sare ah",
     "liveCasinoLine1": "Ciyaar",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Khibrad heer sare ah",
+    "liveCasinoLine2": "5% Cashback Bonus Talaadada kasta",
     "firstDepositRegister": "HADDA IS DIIWAANGELI",
     "firstDepositTitle": "DEEQDA KOOWAAD",
     "firstDepositBonus": "100% GUNNO",

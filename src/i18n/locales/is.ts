@@ -165,7 +165,7 @@ export const is: LocaleTree = {
     "backHome": "Aftur á upphafssíðu"
   },
   "hero": {
-    "welcomeTagline": "The world's largest online casino and slot",
+    "welcomeTagline": "Heimsins stærsta íþróttabók og spilavíti á netinu",
     "playNow": "Play Now",
     "betNow": "Veðja núna",
     "registerPromo": "Nýskráðu þig núna",
@@ -176,7 +176,7 @@ export const is: LocaleTree = {
     "sportsbookAccent": "Íþróttabók",
     "liveCasinoLine1": "Play",
     "liveCasinoAccent": "Spilavíti í beinni",
-    "liveCasinoLine2": "Forgangsupplifun",
+    "liveCasinoLine2": "5% endurgreiðslubónus alla þriðjudaga",
     "firstDepositRegister": "Nýskráðu þig núna",
     "firstDepositTitle": "Fyrsta innborgun",
     "firstDepositBonus": "100% BÓNUS",

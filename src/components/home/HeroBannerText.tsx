@@ -5,6 +5,9 @@ interface HeroBannerTextProps {
   subtitleLine?: string;
   heroVariant?: 'gradient' | 'light';
   heroSize?: 'default' | 'compact';
+  heroNowrap?: boolean;
+  heroCase?: 'uppercase' | 'title';
+  subtitleSize?: 'default' | 'large';
   badgeGold?: string;
   badgeWhite?: string;
 }
@@ -16,6 +19,9 @@ export function HeroBannerText({
   subtitleLine,
   heroVariant = 'gradient',
   heroSize = 'default',
+  heroNowrap = false,
+  heroCase = 'uppercase',
+  subtitleSize = 'default',
   badgeGold,
   badgeWhite,
 }: HeroBannerTextProps) {
@@ -23,6 +29,15 @@ export function HeroBannerText({
     'hero-banner-text__hero',
     heroVariant === 'light' ? 'hero-banner-text__hero--light' : '',
     heroSize === 'compact' ? 'hero-banner-text__hero--compact' : '',
+    heroNowrap ? 'hero-banner-text__hero--nowrap' : '',
+    heroCase === 'title' ? 'hero-banner-text__hero--title-case' : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  const subtitleClass = [
+    'hero-banner-text__subtitle',
+    subtitleSize === 'large' ? 'hero-banner-text__subtitle--large' : '',
   ]
     .filter(Boolean)
     .join(' ');
@@ -49,7 +64,7 @@ export function HeroBannerText({
 
       {heroLine && <p className={heroClass}>{heroLine}</p>}
 
-      {subtitleLine && <p className="hero-banner-text__subtitle">{subtitleLine}</p>}
+      {subtitleLine && <p className={subtitleClass}>{subtitleLine}</p>}
 
       {badgeGold && (
         <div className="hero-banner-text__badge hero-banner-text__badge--gold">{badgeGold}</div>

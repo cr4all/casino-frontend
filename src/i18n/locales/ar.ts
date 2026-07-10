@@ -165,7 +165,7 @@ export const ar: LocaleTree = {
     "backHome": "← Back to home"
   },
   "hero": {
-    "welcomeTagline": "أكبر كازينو وسلوت أونلاين في العالم",
+    "welcomeTagline": "أكبر كازينو رياضي وكازينو على الإنترنت في العالم",
     "playNow": "العب الآن",
     "betNow": "راهن الآن",
     "registerPromo": "سجّل الآن",
@@ -176,7 +176,7 @@ export const ar: LocaleTree = {
     "sportsbookAccent": "كتاب الرياضة",
     "liveCasinoLine1": "Play",
     "liveCasinoAccent": "كازينو مباشر",
-    "liveCasinoLine2": "تجربة مميزة",
+    "liveCasinoLine2": "مكافأة استرداد نقدي بنسبة 5% كل ثلاثاء",
     "firstDepositRegister": "سجّل الآن",
     "firstDepositTitle": "الإيداع الأول",
     "firstDepositBonus": "100% مكافأة",

@@ -165,7 +165,7 @@ export const lo: LocaleTree = {
     "backHome": "← ກັບໄປຫາ ເຮືອນ."
   },
   "hero": {
-    "welcomeTagline": "ຄາສິໂນແລະສະລັອດຕິງ Online ທີ່ໃຫຍ່ທີ່ສຸດໃນໂລກ",
+    "welcomeTagline": "ປື້ມບັນທຶກກິລາ & ຄາສິໂນ Online ທີ່ໃຫຍ່ທີ່ສຸດໃນໂລກ",
     "playNow": "Play Now",
     "betNow": "ການເດີມພັນດຽວນີ້",
     "registerPromo": "Register Now",
@@ -176,7 +176,7 @@ export const lo: LocaleTree = {
     "sportsbookAccent": "ຫນັງ ສືກິລາ",
     "liveCasinoLine1": "ຫຼິ້ນ",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "ປະສົບການພຣີມຽມ",
+    "liveCasinoLine2": "ໂບນັດ 5% Cashback ທຸກໆວັນອັງຄານ",
     "firstDepositRegister": "ລົງທະບຽນດຽວນີ້",
     "firstDepositTitle": "ເງິນຝາກຄັ້ງ ທໍາ ອິດ",
     "firstDepositBonus": "100% BONUS",

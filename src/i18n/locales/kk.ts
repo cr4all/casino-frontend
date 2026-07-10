@@ -165,7 +165,7 @@ export const kk: LocaleTree = {
     "backHome": "Басты бетке өту"
   },
   "hero": {
-    "welcomeTagline": "The world's largest online casino and slot",
+    "welcomeTagline": "Әлемдегі ең ірі спорт кітабы және онлайн-казино",
     "playNow": "Ойнау",
     "betNow": "Қазір бәс тігу",
     "registerPromo": "Қазір тіркелу",
@@ -176,7 +176,7 @@ export const kk: LocaleTree = {
     "sportsbookAccent": "Спорт кітабы",
     "liveCasinoLine1": "Ойнау",
     "liveCasinoAccent": "Лайв казино",
-    "liveCasinoLine2": "Премиум тәжірибе",
+    "liveCasinoLine2": "5% қолма-қол ақшаны қайтару бонусы әр сейсенбі сайын",
     "firstDepositRegister": "Қазір тіркеліңіз",
     "firstDepositTitle": "Алғашқы депозит",
     "firstDepositBonus": "100% бонус",

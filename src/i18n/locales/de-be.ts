@@ -160,7 +160,7 @@ export const deBe: LocaleTree = {
     "backHome": "← Zurück zur Startseite"
   },
   "hero": {
-    "welcomeTagline": "Das weltweit größte Online-Casino und Slot-Angebot",
+    "welcomeTagline": "Das größte Sportwetten- und Online-Casino der Welt",
     "playNow": "Jetzt spielen",
     "registerPromo": "Jetzt registrieren",
     "pragmaticLine1": "Spielen",
@@ -168,7 +168,7 @@ export const deBe: LocaleTree = {
     "pragmaticLine2": "Premium-Erlebnis",
     "liveCasinoLine1": "Spielen",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Premium-Erlebnis",
+    "liveCasinoLine2": "Jeden Dienstag 5 % Cashback-Bonus",
     "firstDepositRegister": "JETZT REGISTRIEREN",
     "firstDepositTitle": "ERSTE EINZAHLUNG",
     "firstDepositBonus": "100 % BONUS",

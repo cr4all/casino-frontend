@@ -165,7 +165,7 @@ export const ms: LocaleTree = {
     "backHome": "← Kembali ke laman utama"
   },
   "hero": {
-    "welcomeTagline": "The world's largest online casino and slot",
+    "welcomeTagline": "Buku Sukan & Kasino Dalam Talian Terbesar di Dunia",
     "playNow": "Main Sekarang",
     "betNow": "Bet Now",
     "registerPromo": "Daftar Sekarang",
@@ -176,7 +176,7 @@ export const ms: LocaleTree = {
     "sportsbookAccent": "Sports book",
     "liveCasinoLine1": "Main",
     "liveCasinoAccent": "Kasino Langsung",
-    "liveCasinoLine2": "Pengalaman Premium",
+    "liveCasinoLine2": "Bonus Pulangan Tunai 5% Setiap Selasa",
     "firstDepositRegister": "DAFTAR SEKARANG",
     "firstDepositTitle": "DEPOSIT PERTAMA",
     "firstDepositBonus": "BONUS 100%",

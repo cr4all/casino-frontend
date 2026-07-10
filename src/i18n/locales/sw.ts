@@ -160,7 +160,7 @@ export const sw: LocaleTree = {
     "backHome": "← Rudi nyumbani"
   },
   "hero": {
-    "welcomeTagline": "Kasino na sloti kubwa zaidi ya mtandaoni duniani",
+    "welcomeTagline": "Kitabu cha Michezo Kubwa Zaidi Duniani na Kasino ya Mtandaoni",
     "playNow": "Cheza sasa",
     "registerPromo": "Jisajili sasa",
     "pragmaticLine1": "Cheza",
@@ -168,7 +168,7 @@ export const sw: LocaleTree = {
     "pragmaticLine2": "Uzoefu wa Premium",
     "liveCasinoLine1": "Cheza",
     "liveCasinoAccent": "Kasino ya moja kwa moja",
-    "liveCasinoLine2": "Uzoefu wa Premium",
+    "liveCasinoLine2": "Bonasi ya Kurudishiwa Pesa ya 5% Kila Juman",
     "firstDepositRegister": "JISAJILI",
     "firstDepositTitle": "WEKA KWANZA",
     "firstDepositBonus": "BONASI YA 100%",

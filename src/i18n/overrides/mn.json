@@ -33,7 +33,6 @@
   "No bets yet. Play a game to see your history here.": "Одоогоор мөр байхгүй. Түүхээ энд харахын тулд тоглоом тоглоорой.",
   "Send {{amount}} {{currency}} to the address below": "Доорх хаяг руу {{amount}} {{currency}} илгээнэ үү",
   "Applied automatically on your first deposit only.": "Зөвхөн анхны deposit дээр автоматаар хэрэглэгдэнэ.",
-  "The world's largest sportsbook and online casino": "Дэлхийн хамгийн том sportsbook болон online casino",
   "Choose which optional cookies you want to allow.": "Зөвшөөрөх сонголттой cookie-үүдийг сонгоно уу.",
   "Registration failed. Please check your details.": "Бүртгэл амжилтгүй. Мэдээллээ шалгана уу.",
   "Enter the 6-digit code sent to {{destination}}.": "{{destination}} руу илгээсэн 6 оронтой кодыг оруулна уу.",
@@ -377,5 +376,7 @@
   "Net": "Цэвэр",
   "CPA": "CPA",
   "OK": "OK",
-  "ID": "ID"
+  "ID": "ID",
+  "The World's Largest Sportsbook & Online Casino": "Дэлхийн хамгийн том sportsbook болон online casino",
+  "5% Cashback Bonus Every Tuesday": "Мягмар гараг бүр 5% Cashback урамшуулал"
 }

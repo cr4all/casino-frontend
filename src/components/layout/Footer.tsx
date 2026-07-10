@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
 import { PaymentMethodsMarquee } from '@/components/layout/PaymentMethodsMarquee';
 import { Logo } from '@/components/common/Logo';
+import { useAuthStore } from '@/stores/authStore';
 import { useCookieConsentStore } from '@/stores/cookieConsentStore';
 import { useUiStore } from '@/stores/uiStore';
 import { typePath } from '@/stores/gameStore';
@@ -27,11 +28,12 @@ function FooterLinkList({ title, children }: FooterLinkListProps) {
 
 export function Footer() {
   const { t } = useTranslation();
+  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const openSettings = useCookieConsentStore((s) => s.openSettings);
   const openLiveChat = useUiStore((s) => s.openLiveChat);
 
   return (
-    <footer className="site-footer mt-auto">
+    <footer className={`site-footer mt-auto ${isAuthenticated ? 'has-mobile-wallet-bar lg:pb-0' : ''}`}>
       <div className="site-footer__columns">
         <div className="site-footer__inner">
           <div className="site-footer__grid">

@@ -165,7 +165,7 @@ export const ru: LocaleTree = {
     "backHome": "← Back to home"
   },
   "hero": {
-    "welcomeTagline": "The world's largest online casino and slot",
+    "welcomeTagline": "Самая большая в мире букмекерская контора и онлайн-казино",
     "playNow": "Play Now",
     "betNow": "Bet Now",
     "registerPromo": "Register Now",
@@ -176,7 +176,7 @@ export const ru: LocaleTree = {
     "sportsbookAccent": "Sports book",
     "liveCasinoLine1": "Play",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Premium Experience",
+    "liveCasinoLine2": "5% кэшбэк-бонус каждый вторник",
     "firstDepositRegister": "REGISTER NOW",
     "firstDepositTitle": "FIRST DEPOSIT",
     "firstDepositBonus": "100% BONUS",

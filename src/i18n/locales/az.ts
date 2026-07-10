@@ -165,7 +165,7 @@ export const az: LocaleTree = {
     "backHome": "← Evə qayıt"
   },
   "hero": {
-    "welcomeTagline": "The world's largest online casino and slot",
+    "welcomeTagline": "Dünyanın ən böyük idman kitabçası və onlayn kazinosu",
     "playNow": "İndi Oyna",
     "betNow": "İndi mərc et",
     "registerPromo": "İndi Qeydiyyatdan Keçin",
@@ -176,7 +176,7 @@ export const az: LocaleTree = {
     "sportsbookAccent": "İdman kitabı",
     "liveCasinoLine1": "Oyna",
     "liveCasinoAccent": "Canlı Casino",
-    "liveCasinoLine2": "Premium təcrübə",
+    "liveCasinoLine2": "Hər çərşənbə axşamı 5% keşbek bonusu",
     "firstDepositRegister": "İNDİ QEYDİYYATDAN KEÇİN",
     "firstDepositTitle": "İLK ƏMANƏT",
     "firstDepositBonus": "100% BONUS",

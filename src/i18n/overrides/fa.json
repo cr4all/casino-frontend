@@ -33,7 +33,6 @@
   "No bets yet. Play a game to see your history here.": "هنوز شرطی ثبت نشده. برای دیدن تاریخچه، یک بازی انجام دهید.",
   "Send {{amount}} {{currency}} to the address below": "{{amount}} {{currency}} را به آدرس زیر ارسال کنید",
   "Applied automatically on your first deposit only.": "فقط در اولین واریز شما به‌طور خودکار اعمال می‌شود.",
-  "The world's largest sportsbook and online casino": "بزرگ‌ترین سایت شرط‌بندی ورزشی و کازینوی آنلاین جهان",
   "Choose which optional cookies you want to allow.": "کوکی‌های اختیاری مورد نظر برای مجاز کردن را انتخاب کنید.",
   "Registration failed. Please check your details.": "ثبت‌نام ناموفق بود. لطفاً اطلاعات خود را بررسی کنید.",
   "Enter the 6-digit code sent to {{destination}}.": "کد ۶ رقمی ارسال‌شده به {{destination}} را وارد کنید.",
@@ -377,5 +376,7 @@
   "Net": "خالص",
   "CPA": "CPA",
   "OK": "OK",
-  "ID": "ID"
+  "ID": "ID",
+  "The World's Largest Sportsbook & Online Casino": "بزرگترین سایت شرط بندی ورزشی و کازینو آنلاین جهان",
+  "5% Cashback Bonus Every Tuesday": "5% بونوس بازگشت وجه هر سه‌شنبه"
 }
