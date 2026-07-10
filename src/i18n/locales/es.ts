@@ -165,7 +165,7 @@ export const es: LocaleTree = {
     "backHome": "Volver al Inicio"
   },
   "hero": {
-    "welcomeTagline": "El casino online y las tragamonedas más grandes del mundo",
+    "welcomeTagline": "El casino online y de apuestas deportivas más grande del mundo",
     "playNow": "Juega ahora",
     "betNow": "Apostar ahora",
     "registerPromo": "Regístrate ahora",
@@ -176,7 +176,7 @@ export const es: LocaleTree = {
     "sportsbookAccent": "Libro de deportes",
     "liveCasinoLine1": "Jugar",
     "liveCasinoAccent": "Casino en directo",
-    "liveCasinoLine2": "Experiencia premium",
+    "liveCasinoLine2": "Bono de reembolso del 5% todos los martes",
     "firstDepositRegister": "REGÍSTRATE AHORA",
     "firstDepositTitle": "PRIMER DEPÓSITO",
     "firstDepositBonus": "100% DE BONO",

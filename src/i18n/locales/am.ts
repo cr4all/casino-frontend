@@ -165,7 +165,7 @@ export const am: LocaleTree = {
     "backHome": "← Back to home"
   },
   "hero": {
-    "welcomeTagline": "The world's largest online casino and slot",
+    "welcomeTagline": "በዓለም ትልቁ የስፖርት መጽሐፍ & የመስመር ላይ ካዚኖ",
     "playNow": "Play Now",
     "betNow": "ይወራረዱ",
     "registerPromo": "Register Now",
@@ -176,7 +176,7 @@ export const am: LocaleTree = {
     "sportsbookAccent": "የስፖርት መጽሐፍ",
     "liveCasinoLine1": "Play",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Premium Experience",
+    "liveCasinoLine2": "5% Cashback ጉርሻ በየሳምንቱ ማክሰኞ",
     "firstDepositRegister": "REGISTER NOW",
     "firstDepositTitle": "FIRST DEPOSIT",
     "firstDepositBonus": "100% BONUS",

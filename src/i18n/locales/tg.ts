@@ -160,7 +160,7 @@ export const tg: LocaleTree = {
     "backHome": "← Ба асосӣ"
   },
   "hero": {
-    "welcomeTagline": "Бузургтарин казинои онлайн ва слот дар ҷаҳон",
+    "welcomeTagline": "Бузургтарин Sportsbook дар ҷаҳон & онлайн Казино",
     "playNow": "Ҳозир бозӣ кунед",
     "registerPromo": "Ҳозир бақайд гиред",
     "pragmaticLine1": "Бозӣ",
@@ -168,7 +168,7 @@ export const tg: LocaleTree = {
     "pragmaticLine2": "Таҷрибаи премиум",
     "liveCasinoLine1": "Бозӣ",
     "liveCasinoAccent": "Казинои зинда",
-    "liveCasinoLine2": "Таҷрибаи премиум",
+    "liveCasinoLine2": "5% Бонус Cashback ҳар сешанбе",
     "firstDepositRegister": "ҲОЗИР БАҚАЙД ГИРЕД",
     "firstDepositTitle": "ДЕПОЗИТИ АВВАЛ",
     "firstDepositBonus": "БОНУСИ 100%",

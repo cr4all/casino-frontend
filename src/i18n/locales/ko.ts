@@ -184,7 +184,7 @@ export const ko: LocaleTree = {
     "helpText": "도움이 필요하신가요?"
   },
   "hero": {
-    "welcomeTagline": "세계 최대 규모의 온라인 카지노 및 슬롯",
+    "welcomeTagline": "세계 최대 규모의 스포츠북 & 온라인 카지노",
     "playNow": "지금 플레이",
     "betNow": "지금 베팅",
     "registerPromo": "지금 가입하기",
@@ -195,7 +195,7 @@ export const ko: LocaleTree = {
     "sportsbookAccent": "스포츠북",
     "liveCasinoLine1": "플레이",
     "liveCasinoAccent": "라이브 카지노",
-    "liveCasinoLine2": "프리미엄 경험",
+    "liveCasinoLine2": "매주 화요일 5% 캐시백 보너스",
     "firstDepositRegister": "지금 가입하기",
     "firstDepositTitle": "첫 입금",
     "firstDepositBonus": "100% 보너스",

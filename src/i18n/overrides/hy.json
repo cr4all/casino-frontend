@@ -409,8 +409,6 @@
   "The exact crypto amount may vary with exchange rates at transfer time.": "Ճշգրիտ կրիպտո գումարը կարող է տարբեր լինել փոխանցման պահին արժութային փոխարժեքներից կախված։",
   "The file is too large. Maximum size is 5 MB.": "Ֆայլը չափազանց մեծ է: Առավելագույն չափսը 5 ՄԲ է:",
   "The page you’re looking for doesn’t exist, or the link may be outdated. Check the URL or head back to the lobby.": "Այն էջը, որը դուք փնտրում եք, գոյություն չունի կամ հղումը կարող է հնացած լինել։ Ստուգեք URL-ը կամ վերադարձրեք ցուցասրահ։",
-  "The world's largest online casino and slot": "Աշխարհի ամենամեծ առցանց կազինոն և սլոտը",
-  "The world's largest sportsbook and online casino": "Աշխարհի ամենամեծ առցանց կազինոն և սլոտը",
   "This action was blocked for security reasons.": "Այս գործողությունը արգելափակվել է անվտանգության նկատառումներով:",
   "This area is for affiliate accounts only.": "Այս տարածքը միայն գործընկերային հաշիվների համար է:",
   "This bonus is only available if your first deposit is completed after the promotion start date.": "Այս բոնուսը հասանելի է միայն այն դեպքում, եթե ձեր առաջին ավանդը կատարվել է ակցիայի մեկնարկի ամսաթվից հետո:",
@@ -477,5 +475,7 @@
   "Your email or username": "Ձեր էլ.փոստը կամ օգտանունը",
   "Your game bets and wins by round": "Ձեր խաղի գծերը և հաղթանակները ըստ զանգվածի",
   "Your password has been reset. You can now log in with your new password.": "Ձեր գաղտնաբառը վերականգնվել է։ Այժմ կարող եք մուտք գործել նոր գաղտնաբառով։",
-  "Your username": "Ձեր օգտանունը"
+  "Your username": "Ձեր օգտանունը",
+  "The World's Largest Sportsbook & Online Casino": "Աշխարհի ամենամեծ սպորտային գրքույկը և առցանց կազինոն",
+  "5% Cashback Bonus Every Tuesday": "5% Cashback բոնուս ամեն երեքշաբթի"
 }

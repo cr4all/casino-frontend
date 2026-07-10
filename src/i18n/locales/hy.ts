@@ -165,7 +165,7 @@ export const hy: LocaleTree = {
     "backHome": "← Խնդրում ենք վերադառնալ գլխավոր էջ"
   },
   "hero": {
-    "welcomeTagline": "Աշխարհի ամենամեծ առցանց կազինոն և սլոտը",
+    "welcomeTagline": "Աշխարհի ամենամեծ սպորտային գրքույկը և առցանց կազինոն",
     "playNow": "Խաղալ հիմա",
     "betNow": "Խաղադրույք հիմա",
     "registerPromo": "Գրանցվեք հիմա",
@@ -176,7 +176,7 @@ export const hy: LocaleTree = {
     "sportsbookAccent": "Սպորտային ամրագրում",
     "liveCasinoLine1": "Խաղալ",
     "liveCasinoAccent": "Ուղիղ կազինո",
-    "liveCasinoLine2": "Պրեմիում փորձառություն",
+    "liveCasinoLine2": "5% Cashback բոնուս ամեն երեքշաբթի",
     "firstDepositRegister": "ԳՐԱՆՑՎԵԼ ՀԻՄԱ",
     "firstDepositTitle": "ԱԿՆԱՆ ԱՄԱՑՈՒՄ",
     "firstDepositBonus": "100% Բոնուս",

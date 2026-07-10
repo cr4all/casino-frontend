@@ -160,7 +160,7 @@ export const ur: LocaleTree = {
     "backHome": "← ہوم پر واپس"
   },
   "hero": {
-    "welcomeTagline": "دنیا کا سب سے بڑا آن لائن کیسینو اور سلاٹ",
+    "welcomeTagline": "دنیا کی سب سے بڑی اسپورٹس بک اور آن لائن کیسینو",
     "playNow": "ابھی کھیلیں",
     "registerPromo": "ابھی رجسٹر کریں",
     "pragmaticLine1": "کھیلیں",
@@ -168,7 +168,7 @@ export const ur: LocaleTree = {
     "pragmaticLine2": "پریمیم تجربہ",
     "liveCasinoLine1": "کھیلیں",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "پریمیم تجربہ",
+    "liveCasinoLine2": "ہر منگل کو 5% کیش بیک بونس",
     "firstDepositRegister": "ابھی رجسٹر کریں",
     "firstDepositTitle": "پہلی جمع",
     "firstDepositBonus": "100% بونس",

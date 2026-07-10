@@ -160,7 +160,7 @@ export const th: LocaleTree = {
     "backHome": "← กลับหน้าแรก"
   },
   "hero": {
-    "welcomeTagline": "คาสิโนออนไลน์และสล็อตที่ใหญ่ที่สุดในโลก",
+    "welcomeTagline": "สปอร์ตบุ๊คและคาสิโนออนไลน์ที่ใหญ่ที่สุดในโลก",
     "playNow": "เล่นเลย",
     "registerPromo": "ลงทะเบียนเลย",
     "pragmaticLine1": "เล่น",
@@ -168,7 +168,7 @@ export const th: LocaleTree = {
     "pragmaticLine2": "ประสบการณ์ระดับพรีเมียม",
     "liveCasinoLine1": "เล่น",
     "liveCasinoAccent": "คาสิโนสด",
-    "liveCasinoLine2": "ประสบการณ์ระดับพรีเมียม",
+    "liveCasinoLine2": "โบนัสเงินคืน 5% ทุกวันอังคาร",
     "firstDepositRegister": "ลงทะเบียนเลย",
     "firstDepositTitle": "ฝากครั้งแรก",
     "firstDepositBonus": "โบนัส 100%",

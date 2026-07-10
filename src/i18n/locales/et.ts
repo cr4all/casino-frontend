@@ -160,7 +160,7 @@ export const et: LocaleTree = {
     "backHome": "← Tagasi avalehele"
   },
   "hero": {
-    "welcomeTagline": "Maailma suurim online-kasiino ja slotid",
+    "welcomeTagline": "Maailma suurim spordikihlvedu ja veebikasiino",
     "playNow": "Mängi kohe",
     "registerPromo": "Registreeru kohe",
     "pragmaticLine1": "Mängi",
@@ -168,7 +168,7 @@ export const et: LocaleTree = {
     "pragmaticLine2": "Premium kogemus",
     "liveCasinoLine1": "Mängi",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Premium kogemus",
+    "liveCasinoLine2": "5% Cashbacki boonus igal teisipäeval",
     "firstDepositRegister": "REGISTREERU KOHE",
     "firstDepositTitle": "ESIMENE SISEMAKSE",
     "firstDepositBonus": "100% BOONUS",

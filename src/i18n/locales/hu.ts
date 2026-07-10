@@ -165,7 +165,7 @@ export const hu: LocaleTree = {
     "backHome": "← Back to home"
   },
   "hero": {
-    "welcomeTagline": "A világ legnagyobb online kaszinója és nyerőgépe",
+    "welcomeTagline": "A világ legnagyobb sportfogadási és online kaszinója",
     "playNow": "Play Now",
     "betNow": "Fogadjon most!",
     "registerPromo": "Register Now",
@@ -176,7 +176,7 @@ export const hu: LocaleTree = {
     "sportsbookAccent": "Sportkönyv",
     "liveCasinoLine1": "Play",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Premium Experience",
+    "liveCasinoLine2": "5% -os pénzvisszafizetési bónusz minden kedden",
     "firstDepositRegister": "REGISTER NOW",
     "firstDepositTitle": "FIRST DEPOSIT",
     "firstDepositBonus": "100% BONUS",

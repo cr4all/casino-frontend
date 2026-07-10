@@ -160,7 +160,7 @@ export const yo: LocaleTree = {
     "backHome": "Padà sí ilé"
   },
   "hero": {
-    "welcomeTagline": "Kásínò àti slọ́tì iná-internet tí ó tóbi jùlọ lo àgbáyé",
+    "welcomeTagline": "Ìwé eré ìdárayá tí ó tóbi jùlọ ní ayé àti ilé ìṣòwò orí ayélujára",
     "playNow": "Ṣe eré báyìí",
     "registerPromo": "Forúkọ sílẹ̀ báyìí",
     "pragmaticLine1": "Ṣe eré",
@@ -168,7 +168,7 @@ export const yo: LocaleTree = {
     "pragmaticLine2": "Iririsi Ààlà",
     "liveCasinoLine1": "Ṣe eré",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Iririsi Ààlà",
+    "liveCasinoLine2": "5% Cashback Bonus ní gbogbo ọjọ́ Tuesday",
     "firstDepositRegister": "FORÚKỌ SÍLẸ̀ BÁYÌÍ",
     "firstDepositTitle": "ÌFÍ OWÓ SÍLẸ̀ AKÓKỌ",
     "firstDepositBonus": "100% Ẹ̀BÙN",

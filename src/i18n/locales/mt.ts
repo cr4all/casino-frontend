@@ -165,7 +165,7 @@ export const mt: LocaleTree = {
     "backHome": "← Back to home"
   },
   "hero": {
-    "welcomeTagline": "The world's largest online casino and slot",
+    "welcomeTagline": "L-akbar ktieb tal-isport u każinò onlajn fid-dinja",
     "playNow": "Play Now",
     "betNow": "Bet Now",
     "registerPromo": "Register Now",
@@ -176,7 +176,7 @@ export const mt: LocaleTree = {
     "sportsbookAccent": "Sports book",
     "liveCasinoLine1": "Play",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Premium Experience",
+    "liveCasinoLine2": "Bonus ta' 5% Cashback Kull nhar ta' Tlieta",
     "firstDepositRegister": "REGISTER NOW",
     "firstDepositTitle": "FIRST DEPOSIT",
     "firstDepositBonus": "100% BONUS",

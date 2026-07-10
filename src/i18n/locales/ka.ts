@@ -165,7 +165,7 @@ export const ka: LocaleTree = {
     "backHome": "← დაბრუნება მთავარ გვერდზე"
   },
   "hero": {
-    "welcomeTagline": "The world's largest online casino and slot",
+    "welcomeTagline": "Მსოფლიოს უმსხვილესი სპორტული წიგნაკი და ონლაინ კაზინო",
     "playNow": "ვითამაშოთ ახლა",
     "betNow": "Ფსონი ახლა",
     "registerPromo": "დარეგისტრირდი ახლა",
@@ -176,7 +176,7 @@ export const ka: LocaleTree = {
     "sportsbookAccent": "Სპორტული დაჯავშნა",
     "liveCasinoLine1": "ნამუშევარი",
     "liveCasinoAccent": "სათამაშო კაზინო პირდაპირ ეთერში",
-    "liveCasinoLine2": "პრემიორ წვდომა",
+    "liveCasinoLine2": "5% -იანი ქეშბექის ბონუსი ყოველ სამშაბათს",
     "firstDepositRegister": "დარეგისტრირდი ახლა",
     "firstDepositTitle": "პირველი დეპოზიტი",
     "firstDepositBonus": "100% ბონუსი",

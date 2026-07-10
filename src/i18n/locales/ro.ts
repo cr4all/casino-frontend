@@ -165,7 +165,7 @@ export const ro: LocaleTree = {
     "backHome": "← Înapoi acasă"
   },
   "hero": {
-    "welcomeTagline": "The world's largest online casino and slot",
+    "welcomeTagline": "Cea mai mare platformă de pariuri sportive și cazinou online din lume",
     "playNow": "Joacă acum",
     "betNow": "Bet Now",
     "registerPromo": "Înregistrați-vă acum",
@@ -176,7 +176,7 @@ export const ro: LocaleTree = {
     "sportsbookAccent": "Sports book",
     "liveCasinoLine1": "Joacă",
     "liveCasinoAccent": "Cazinou live",
-    "liveCasinoLine2": "Experiență premium",
+    "liveCasinoLine2": "Bonus Cashback 5% în fiecare marți",
     "firstDepositRegister": "ÎNREGISTRAȚI-VĂ ACUM",
     "firstDepositTitle": "PRIMUL DEPOZIT",
     "firstDepositBonus": "100% BONUS",

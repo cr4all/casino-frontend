@@ -160,7 +160,7 @@ export const el: LocaleTree = {
     "backHome": "← Επιστροφή στην αρχική"
   },
   "hero": {
-    "welcomeTagline": "Το μεγαλύτερο online καζίνο και φρουτάκια στον κόσμο",
+    "welcomeTagline": "Το Μεγαλύτερο Αθλητικό Στοίχημα & Online Καζίνο στον Κόσμο",
     "playNow": "Παίξτε τώρα",
     "registerPromo": "Εγγραφή τώρα",
     "pragmaticLine1": "Παίξτε",
@@ -168,7 +168,7 @@ export const el: LocaleTree = {
     "pragmaticLine2": "Premium εμπειρία",
     "liveCasinoLine1": "Παίξτε",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Premium εμπειρία",
+    "liveCasinoLine2": "Μπόνους επιστροφής χρημάτων 5% κάθε Τρίτη",
     "firstDepositRegister": "ΕΓΓΡΑΦΗ ΤΩΡΑ",
     "firstDepositTitle": "ΠΡΩΤΗ ΚΑΤΑΘΕΣΗ",
     "firstDepositBonus": "100% ΜΠΟΝΟΥΣ",

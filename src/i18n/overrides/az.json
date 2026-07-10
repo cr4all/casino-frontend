@@ -33,7 +33,6 @@
   "No bets yet. Play a game to see your history here.": "Hələ mərc yoxdur. Tarixçənizi görmək üçün oyun oynayın.",
   "Send {{amount}} {{currency}} to the address below": "Aşağıdakı ünvana {{amount}} {{currency}} göndərin",
   "Applied automatically on your first deposit only.": "Yalnız ilk depozitinizdə avtomatik tətbiq olunur.",
-  "The world's largest sportsbook and online casino": "Dünyanın ən böyük idman mərc və onlayn kazinosu",
   "Choose which optional cookies you want to allow.": "Hansı isteğe bağlı kukilərə icazə vermək istədiyinizi seçin.",
   "Registration failed. Please check your details.": "Qeydiyyat uğursuz oldu. Zəhmət olmasa məlumatlarınızı yoxlayın.",
   "Enter the 6-digit code sent to {{destination}}.": "{{destination}} ünvanına göndərilən 6 rəqəmli kodu daxil edin.",
@@ -171,5 +170,7 @@
   "TRC20, ERC20...": "TRC20, ERC20...",
   "100% BONUS": "100% BONUS",
   "XXXX XXXX": "XXXX XXXX",
-  "Bonus": "Bonus"
+  "Bonus": "Bonus",
+  "The World's Largest Sportsbook & Online Casino": "Dünyanın ən böyük idman kitabçası və onlayn kazinosu",
+  "5% Cashback Bonus Every Tuesday": "Hər çərşənbə axşamı 5% keşbek bonusu"
 }

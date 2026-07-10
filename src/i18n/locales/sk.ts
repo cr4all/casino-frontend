@@ -160,7 +160,7 @@ export const sk: LocaleTree = {
     "backHome": "← Späť na domovskú stránku"
   },
   "hero": {
-    "welcomeTagline": "Najväčšie online kasíno a slot na svete",
+    "welcomeTagline": "Najväčšia stávková kancelária a online kasíno na svete",
     "playNow": "Hrať teraz",
     "registerPromo": "Registrujte sa teraz",
     "pragmaticLine1": "Hrajte",
@@ -168,7 +168,7 @@ export const sk: LocaleTree = {
     "pragmaticLine2": "Prémiový zážitok",
     "liveCasinoLine1": "Hrajte",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Prémiový zážitok",
+    "liveCasinoLine2": "5% Cashback Bonus každý utorok",
     "firstDepositRegister": "REGISTRUJTE SA",
     "firstDepositTitle": "PRVÝ VKLAD",
     "firstDepositBonus": "100% BONUS",

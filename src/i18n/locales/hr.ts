@@ -165,7 +165,7 @@ export const hr: LocaleTree = {
     "backHome": "← Back to home"
   },
   "hero": {
-    "welcomeTagline": "Najveći online casino i slot na svijetu",
+    "welcomeTagline": "Najveća sportska kladionica i online kasino na svijetu",
     "playNow": "Play Now",
     "betNow": "Kladite se sada",
     "registerPromo": "Register Now",
@@ -176,7 +176,7 @@ export const hr: LocaleTree = {
     "sportsbookAccent": "Sportska knjiga",
     "liveCasinoLine1": "Play",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Premium Experience",
+    "liveCasinoLine2": "5% bonusa za povrat novca svakog utorka",
     "firstDepositRegister": "REGISTER NOW",
     "firstDepositTitle": "FIRST DEPOSIT",
     "firstDepositBonus": "100% BONUS",

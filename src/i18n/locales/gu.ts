@@ -165,7 +165,7 @@ export const gu: LocaleTree = {
     "backHome": "← Back to home"
   },
   "hero": {
-    "welcomeTagline": "વિશ્વનું સૌથી મોટું ઓનલાઇન કેસિનો અને સ્લોટ",
+    "welcomeTagline": "વિશ્વની સૌથી મોટી સ્પોર્ટ્સબુક અને ઓનલાઈન કેસિનો",
     "playNow": "Play Now",
     "betNow": "હવે શરત લગાવો",
     "registerPromo": "Register Now",
@@ -176,7 +176,7 @@ export const gu: LocaleTree = {
     "sportsbookAccent": "રમતગમતનું પુસ્તક",
     "liveCasinoLine1": "Play",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Premium Experience",
+    "liveCasinoLine2": "દર મંગળવારે 5% કેશબેક બોનસ",
     "firstDepositRegister": "REGISTER NOW",
     "firstDepositTitle": "FIRST DEPOSIT",
     "firstDepositBonus": "100% BONUS",

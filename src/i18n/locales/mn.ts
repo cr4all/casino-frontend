@@ -165,7 +165,7 @@ export const mn: LocaleTree = {
     "backHome": "← Нүүр рүү буцах"
   },
   "hero": {
-    "welcomeTagline": "The world's largest online casino and slot",
+    "welcomeTagline": "Дэлхийн хамгийн том sportsbook болон online casino",
     "playNow": "Одоо тоглох",
     "betNow": "Bet Now",
     "registerPromo": "Одоо бүртгүүлэх",
@@ -176,7 +176,7 @@ export const mn: LocaleTree = {
     "sportsbookAccent": "Sports book",
     "liveCasinoLine1": "Тоглох",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Premium туршлага",
+    "liveCasinoLine2": "Мягмар гараг бүр 5% Cashback урамшуулал",
     "firstDepositRegister": "ОДОО БҮРТГҮҮЛЭХ",
     "firstDepositTitle": "АНХНЫ DEPOSIT",
     "firstDepositBonus": "100% BONUS",

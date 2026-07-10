@@ -160,7 +160,7 @@ export const uz: LocaleTree = {
     "backHome": "← Bosh sahifaga"
   },
   "hero": {
-    "welcomeTagline": "Dunyodagi eng yirik onlayn kazino va slot",
+    "welcomeTagline": "Dunyodagi eng katta sport bukmekerlik va onlayn kazino",
     "playNow": "Hozir o'ynang",
     "registerPromo": "Hozir ro'yxatdan o'ting",
     "pragmaticLine1": "O'ynash",
@@ -168,7 +168,7 @@ export const uz: LocaleTree = {
     "pragmaticLine2": "Premium tajriba",
     "liveCasinoLine1": "O'ynash",
     "liveCasinoAccent": "Jonli kazino",
-    "liveCasinoLine2": "Premium tajriba",
+    "liveCasinoLine2": "Har seshanba kuni 5% naqd pul qaytarib beriladi",
     "firstDepositRegister": "HOZIR RO'YXATDAN O'TING",
     "firstDepositTitle": "BIRINCHI DEPOZIT",
     "firstDepositBonus": "100% MUKOFOT",

@@ -160,7 +160,7 @@ export const sv: LocaleTree = {
     "backHome": "← Tillbaka till startsidan"
   },
   "hero": {
-    "welcomeTagline": "Världens största onlinecasino och slot",
+    "welcomeTagline": "Världens största sportsbook och online casino",
     "playNow": "Spela nu",
     "registerPromo": "Registrera dig nu",
     "pragmaticLine1": "Spela",
@@ -168,7 +168,7 @@ export const sv: LocaleTree = {
     "pragmaticLine2": "Premiumupplevelse",
     "liveCasinoLine1": "Spela",
     "liveCasinoAccent": "Livecasino",
-    "liveCasinoLine2": "Premiumupplevelse",
+    "liveCasinoLine2": "5% cashbackbonus varje tisdag",
     "firstDepositRegister": "REGISTRERA DIG",
     "firstDepositTitle": "FÖRSTA INSÄTTNINGEN",
     "firstDepositBonus": "100% BONUS",

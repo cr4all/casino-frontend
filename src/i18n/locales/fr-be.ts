@@ -165,7 +165,7 @@ export const frBe: LocaleTree = {
     "backHome": "← Back to home"
   },
   "hero": {
-    "welcomeTagline": "Le plus grand casino en ligne et de machines à sous au monde",
+    "welcomeTagline": "Le plus grand casino en ligne et paris sportifs au monde",
     "playNow": "Play Now",
     "betNow": "Pariez maintenant",
     "registerPromo": "Register Now",
@@ -176,7 +176,7 @@ export const frBe: LocaleTree = {
     "sportsbookAccent": "Livre de sport",
     "liveCasinoLine1": "Play",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Premium Experience",
+    "liveCasinoLine2": "Bonus de remise de 5 % tous les mardis",
     "firstDepositRegister": "REGISTER NOW",
     "firstDepositTitle": "FIRST DEPOSIT",
     "firstDepositBonus": "100% BONUS",

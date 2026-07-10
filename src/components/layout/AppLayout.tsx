@@ -3,6 +3,7 @@ import { Navigate, Outlet, useLocation, useSearchParams } from 'react-router-dom
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
+import { MobileWalletActionBar } from '@/components/layout/MobileWalletActionBar';
 import { ForgotPasswordModal } from '@/components/auth/ForgotPasswordModal';
 import { LoginModal } from '@/components/auth/LoginModal';
 import { RegisterModal } from '@/components/auth/RegisterModal';
@@ -58,6 +59,7 @@ export function AppLayout() {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const user = useAuthStore((s) => s.user);
+  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const profile = usePlayerStore((s) => s.profile);
   const isAffiliateUser = user?.role === 'affiliate';
   const syncPlatformSection = usePlatformSectionStore((s) => s.syncFromPathname);
@@ -122,10 +124,15 @@ export function AppLayout() {
 
       <div className="flex min-w-0 flex-1 flex-col">
         <Header onMenuToggle={() => setMobileOpen(true)} />
-        <main className={`flex-1 overflow-x-hidden ${isSportsIframeRoute ? 'p-0' : 'p-4 md:p-6'}`}>
+        <main
+          className={`flex-1 overflow-x-hidden ${
+            isSportsIframeRoute ? 'p-0' : 'p-4 md:p-6'
+          } ${isAuthenticated ? 'has-mobile-wallet-bar lg:pb-0' : ''}`}
+        >
           <Outlet />
         </main>
         {!isSportsIframeRoute && <Footer />}
+        <MobileWalletActionBar />
       </div>
 
       <LoginModal />

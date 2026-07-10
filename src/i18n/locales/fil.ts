@@ -160,7 +160,7 @@ export const fil: LocaleTree = {
     "backHome": "← Bumalik sa home"
   },
   "hero": {
-    "welcomeTagline": "Ang pinakamalaking online casino at slot sa mundo",
+    "welcomeTagline": "Pinakamalaking Sportsbook at Online Casino sa Mundo",
     "playNow": "Maglaro ngayon",
     "registerPromo": "Magrehistro ngayon",
     "pragmaticLine1": "Maglaro",
@@ -168,7 +168,7 @@ export const fil: LocaleTree = {
     "pragmaticLine2": "Premium na karanasan",
     "liveCasinoLine1": "Maglaro",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Premium na karanasan",
+    "liveCasinoLine2": "5% Cashback Bonus Tuwing Martes",
     "firstDepositRegister": "MAGREHISTRO NGAYON",
     "firstDepositTitle": "UNANG DEPOSIT",
     "firstDepositBonus": "100% BONUS",

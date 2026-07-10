@@ -160,7 +160,7 @@ export const pl: LocaleTree = {
     "backHome": "← Powrót do strony głównej"
   },
   "hero": {
-    "welcomeTagline": "Największe kasyno online i sloty na świecie",
+    "welcomeTagline": "Największy na świecie zakład sportowy i kasyno online",
     "playNow": "Graj teraz",
     "registerPromo": "Zarejestruj się teraz",
     "pragmaticLine1": "Graj",
@@ -168,7 +168,7 @@ export const pl: LocaleTree = {
     "pragmaticLine2": "Doświadczenie premium",
     "liveCasinoLine1": "Graj",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Doświadczenie premium",
+    "liveCasinoLine2": "5% premii Cashback w każdy wtorek",
     "firstDepositRegister": "ZAREJESTRUJ SIĘ",
     "firstDepositTitle": "PIERWSZA WPŁATA",
     "firstDepositBonus": "100% BONUS",

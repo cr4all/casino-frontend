@@ -53,7 +53,9 @@ export function SportsIframePage({ mode }: SportsIframePageProps) {
     };
   }, [isAuthenticated, mode, openModal, t]);
 
-  const sportsViewportHeight = 'min-h-[calc(100dvh-3.5rem)]';
+  const sportsViewportHeight = isAuthenticated
+    ? 'sports-iframe-viewport--with-wallet-bar lg:min-h-[calc(100dvh-3.5rem)] lg:h-auto'
+    : 'min-h-[calc(100dvh-3.5rem)]';
 
   if (loading) {
     return (

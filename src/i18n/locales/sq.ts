@@ -160,7 +160,7 @@ export const sq: LocaleTree = {
     "backHome": "← Kthehu në faqen kryesore"
   },
   "hero": {
-    "welcomeTagline": "Kazinoja online dhe slote më të mëdha në botë",
+    "welcomeTagline": "Libri sportiv dhe kazinoja online më e madhe në botë",
     "playNow": "Luaj tani",
     "registerPromo": "Regjistrohu tani",
     "pragmaticLine1": "Luaj",
@@ -168,7 +168,7 @@ export const sq: LocaleTree = {
     "pragmaticLine2": "Përvojë premium",
     "liveCasinoLine1": "Luaj",
     "liveCasinoAccent": "Kazino live",
-    "liveCasinoLine2": "Përvojë premium",
+    "liveCasinoLine2": "Bonus cashback prej 5% çdo të martë",
     "firstDepositRegister": "REGJISTROHU TANI",
     "firstDepositTitle": "DEPOZITI I PARË",
     "firstDepositBonus": "100% BONUS",

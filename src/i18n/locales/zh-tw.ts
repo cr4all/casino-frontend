@@ -160,7 +160,7 @@ export const zhTw: LocaleTree = {
     "backHome": "← 返回首頁"
   },
   "hero": {
-    "welcomeTagline": "全球最大的線上賭場與老虎機平台",
+    "welcomeTagline": "全球最大的體育博彩和網上賭場",
     "playNow": "立即遊戲",
     "registerPromo": "立即註冊",
     "pragmaticLine1": "暢玩",
@@ -168,7 +168,7 @@ export const zhTw: LocaleTree = {
     "pragmaticLine2": "尊享體驗",
     "liveCasinoLine1": "暢玩",
     "liveCasinoAccent": "真人娛樂城",
-    "liveCasinoLine2": "尊享體驗",
+    "liveCasinoLine2": "每週二5%現金回饋獎勵",
     "firstDepositRegister": "立即註冊",
     "firstDepositTitle": "首存優惠",
     "firstDepositBonus": "100% 獎金",

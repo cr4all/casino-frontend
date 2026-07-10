@@ -1,7 +1,7 @@
 import { type CSSProperties, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import { useTranslation } from '@/hooks/useTranslation';
 import { isRtlLanguage } from '@/stores/languageStore';
 import { useAuthStore } from '@/stores/authStore';
@@ -142,6 +142,10 @@ interface PromoHeroSlideProps {
   to: string;
   cta?: 'default' | 'sports';
   accentAsHero?: boolean;
+  layout?: 'promo' | 'welcome';
+  heroNowrap?: boolean;
+  heroCase?: 'uppercase' | 'title';
+  subtitleSize?: 'default' | 'large';
 }
 
 function PromoHeroSlide({
@@ -152,19 +156,34 @@ function PromoHeroSlide({
   to,
   cta = 'default',
   accentAsHero = false,
+  layout = 'promo',
+  heroNowrap = false,
+  heroCase = 'uppercase',
+  subtitleSize = 'default',
 }: PromoHeroSlideProps) {
   return (
-    <div className="hero-banner hero-banner--promo relative overflow-hidden">
+    <div className={`hero-banner hero-banner--promo relative overflow-hidden${layout === 'welcome' ? ' hero-banner--welcome' : ''}`}>
       <img src={imageSrc} alt="" className="hero-banner__scene" loading="lazy" />
 
       <HeroSlideDecorations showOnMobile />
 
       <HeroSlideContent>
-        <HeroBannerText
-          topLine={line1}
-          titleLine={accentAsHero ? undefined : line1Accent}
-          heroLine={accentAsHero ? line1Accent : line2}
-        />
+        {layout === 'welcome' ? (
+          <HeroBannerText
+            topLine={line1}
+            heroLine={line1Accent}
+            subtitleLine={line2}
+            heroNowrap={heroNowrap}
+            heroCase={heroCase}
+            subtitleSize={subtitleSize}
+          />
+        ) : (
+          <HeroBannerText
+            topLine={line1}
+            titleLine={accentAsHero ? undefined : line1Accent}
+            heroLine={accentAsHero ? line1Accent : line2}
+          />
+        )}
         {cta === 'sports' ? <HeroSportsCtaButton /> : <HeroCtaButton playTo={to} />}
       </HeroSlideContent>
     </div>
@@ -203,10 +222,9 @@ export function HeroBanner() {
       <Swiper
         key={language}
         dir={isRtl ? 'rtl' : 'ltr'}
-        modules={[Autoplay, Pagination, Navigation]}
+        modules={[Autoplay, Pagination]}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
-        navigation
         loop
         autoHeight={false}
         className="hero-slider__swiper overflow-hidden rounded-xl border border-white/[0.08]"
@@ -222,7 +240,7 @@ export function HeroBanner() {
             imageSrc="/hero-slides/pragmatic-slots.jpg"
             line1={t('hero.pragmaticLine1')}
             line1Accent={t('hero.pragmaticAccent')}
-            line2={t('hero.pragmaticLine2')}
+            line2={t('nav.bonusesLabel')}
             to={typePath('slot')}
           />
         </SwiperSlide>
@@ -243,6 +261,10 @@ export function HeroBanner() {
             line1Accent={t('hero.liveCasinoAccent')}
             line2={t('hero.liveCasinoLine2')}
             to={typePath('live_casino')}
+            layout="welcome"
+            heroNowrap
+            heroCase="title"
+            subtitleSize="large"
           />
         </SwiperSlide>
       </Swiper>

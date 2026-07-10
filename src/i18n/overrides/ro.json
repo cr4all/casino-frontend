@@ -33,7 +33,6 @@
   "No bets yet. Play a game to see your history here.": "Niciun pariu încă. Jucați un joc pentru a vedea istoricul aici.",
   "Send {{amount}} {{currency}} to the address below": "Trimiteți {{amount}} {{currency}} la adresa de mai jos",
   "Applied automatically on your first deposit only.": "Se aplică automat doar la primul depozit.",
-  "The world's largest sportsbook and online casino": "Cea mai mare platformă de pariuri sportive și cazinou online din lume",
   "Choose which optional cookies you want to allow.": "Alegeți ce cookie-uri opționale doriți să permiteți.",
   "Registration failed. Please check your details.": "Înregistrarea a eșuat. Vă rugăm să verificați datele.",
   "Enter the 6-digit code sent to {{destination}}.": "Introduceți codul de 6 cifre trimis la {{destination}}.",
@@ -377,5 +376,7 @@
   "Net": "Net",
   "CPA": "CPA",
   "OK": "OK",
-  "ID": "ID"
+  "ID": "ID",
+  "The World's Largest Sportsbook & Online Casino": "Cea mai mare platformă de pariuri sportive și cazinou online din lume",
+  "5% Cashback Bonus Every Tuesday": "Bonus Cashback 5% în fiecare marți"
 }

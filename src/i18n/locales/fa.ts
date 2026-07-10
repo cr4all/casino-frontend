@@ -165,7 +165,7 @@ export const fa: LocaleTree = {
     "backHome": "← بازگشت به خانه"
   },
   "hero": {
-    "welcomeTagline": "The world's largest online casino and slot",
+    "welcomeTagline": "بزرگترین سایت شرط بندی ورزشی و کازینو آنلاین جهان",
     "playNow": "همین حالا بازی کنید",
     "betNow": "همین حالا شرط بندی کنید",
     "registerPromo": "همین حالا ثبت‌نام کنید",
@@ -176,7 +176,7 @@ export const fa: LocaleTree = {
     "sportsbookAccent": "کتاب ورزشی",
     "liveCasinoLine1": "بازی",
     "liveCasinoAccent": "کازینوی زنده",
-    "liveCasinoLine2": "تجربه ممتاز",
+    "liveCasinoLine2": "5% بونوس بازگشت وجه هر سه‌شنبه",
     "firstDepositRegister": "همین حالا ثبت‌نام کنید",
     "firstDepositTitle": "اولین واریز",
     "firstDepositBonus": "بونوس ۱۰۰٪",

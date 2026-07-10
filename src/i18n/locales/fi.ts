@@ -160,7 +160,7 @@ export const fi: LocaleTree = {
     "backHome": "← Takaisin etusivulle"
   },
   "hero": {
-    "welcomeTagline": "Maailman suurin nettikasino ja kolikkopelit",
+    "welcomeTagline": "Maailman suurin urheiluvedonlyönti ja online-kasino",
     "playNow": "Pelaa nyt",
     "registerPromo": "Rekisteröidy nyt",
     "pragmaticLine1": "Pelaa",
@@ -168,7 +168,7 @@ export const fi: LocaleTree = {
     "pragmaticLine2": "Premium-kokemus",
     "liveCasinoLine1": "Pelaa",
     "liveCasinoAccent": "Live-kasino",
-    "liveCasinoLine2": "Premium-kokemus",
+    "liveCasinoLine2": "5% käteispalautusbonus joka tiistai",
     "firstDepositRegister": "REKISTERÖIDY NYT",
     "firstDepositTitle": "ENSIMMÄINEN TALLETUS",
     "firstDepositBonus": "100 % BONUS",

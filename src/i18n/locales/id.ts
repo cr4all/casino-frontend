@@ -160,7 +160,7 @@ export const id: LocaleTree = {
     "backHome": "← Kembali ke beranda"
   },
   "hero": {
-    "welcomeTagline": "Kasino online dan slot terbesar di dunia",
+    "welcomeTagline": "Sportsbook & Kasino Online Terbesar di Dunia",
     "playNow": "Main sekarang",
     "registerPromo": "Daftar sekarang",
     "pragmaticLine1": "Main",
@@ -168,7 +168,7 @@ export const id: LocaleTree = {
     "pragmaticLine2": "Pengalaman premium",
     "liveCasinoLine1": "Main",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Pengalaman premium",
+    "liveCasinoLine2": "Bonus Cashback 5% Setiap Selasa",
     "firstDepositRegister": "DAFTAR SEKARANG",
     "firstDepositTitle": "DEPOSIT PERTAMA",
     "firstDepositBonus": "100% BONUS",

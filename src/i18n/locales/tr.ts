@@ -160,7 +160,7 @@ export const tr: LocaleTree = {
     "backHome": "← Ana sayfaya dön"
   },
   "hero": {
-    "welcomeTagline": "Dünyanın en büyük çevrimiçi casino ve slot platformu",
+    "welcomeTagline": "Dünyanın En Büyük Bahis Merkezi ve Online Casino",
     "playNow": "Hemen Oyna",
     "registerPromo": "Hemen Kayıt Ol",
     "pragmaticLine1": "Oyna",
@@ -168,7 +168,7 @@ export const tr: LocaleTree = {
     "pragmaticLine2": "Premium Deneyim",
     "liveCasinoLine1": "Oyna",
     "liveCasinoAccent": "Canlı Casino",
-    "liveCasinoLine2": "Premium Deneyim",
+    "liveCasinoLine2": "Her Salı % 5 Para Puan Bonusu",
     "firstDepositRegister": "HEMEN KAYIT OL",
     "firstDepositTitle": "İLK YATIRIM",
     "firstDepositBonus": "%100 BONUS",

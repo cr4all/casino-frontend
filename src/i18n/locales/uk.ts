@@ -160,7 +160,7 @@ export const uk: LocaleTree = {
     "backHome": "← На головну"
   },
   "hero": {
-    "welcomeTagline": "Найбільше онлайн-казино та слот у світі",
+    "welcomeTagline": "Найбільша у світі букмекерська контора та онлайн-казино",
     "playNow": "Грати зараз",
     "registerPromo": "Зареєструватися",
     "pragmaticLine1": "Грати",
@@ -168,7 +168,7 @@ export const uk: LocaleTree = {
     "pragmaticLine2": "Преміальний досвід",
     "liveCasinoLine1": "Грати",
     "liveCasinoAccent": "Live-казино",
-    "liveCasinoLine2": "Преміальний досвід",
+    "liveCasinoLine2": "Бонус кешбеку 5% щовівторка",
     "firstDepositRegister": "ЗАРЕЄСТРУВАТИСЯ ЗАРАЗ",
     "firstDepositTitle": "ПЕРШИЙ ДЕПОЗИТ",
     "firstDepositBonus": "БОНУС 100%",

@@ -160,7 +160,7 @@ export const vi: LocaleTree = {
     "backHome": "← Về trang chủ"
   },
   "hero": {
-    "welcomeTagline": "Casino trực tuyến và slot lớn nhất thế giới",
+    "welcomeTagline": "Sòng bạc trực tuyến & cá cược thể thao lớn nhất thế giới",
     "playNow": "Chơi ngay",
     "registerPromo": "Đăng ký ngay",
     "pragmaticLine1": "Chơi",
@@ -168,7 +168,7 @@ export const vi: LocaleTree = {
     "pragmaticLine2": "Trải nghiệm cao cấp",
     "liveCasinoLine1": "Chơi",
     "liveCasinoAccent": "Casino trực tiếp",
-    "liveCasinoLine2": "Trải nghiệm cao cấp",
+    "liveCasinoLine2": "Tiền thưởng hoàn tiền 5% vào thứ Ba hàng tuần",
     "firstDepositRegister": "ĐĂNG KÝ NGAY",
     "firstDepositTitle": "NẠP LẦN ĐẦU",
     "firstDepositBonus": "THƯỞNG 100%",

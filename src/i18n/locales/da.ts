@@ -160,7 +160,7 @@ export const da: LocaleTree = {
     "backHome": "← Tilbage til forsiden"
   },
   "hero": {
-    "welcomeTagline": "Verdens største online casino og spilleautomater",
+    "welcomeTagline": "Verdens største sportsbook og online casino",
     "playNow": "Spil nu",
     "registerPromo": "Registrer dig nu",
     "pragmaticLine1": "Spil",
@@ -168,7 +168,7 @@ export const da: LocaleTree = {
     "pragmaticLine2": "Premiumoplevelse",
     "liveCasinoLine1": "Spil",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Premiumoplevelse",
+    "liveCasinoLine2": "5% cashback-bonus hver tirsdag",
     "firstDepositRegister": "REGISTRER NU",
     "firstDepositTitle": "FØRSTE INDBETALING",
     "firstDepositBonus": "100 % BONUS",

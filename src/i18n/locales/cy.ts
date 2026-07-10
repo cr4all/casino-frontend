@@ -165,7 +165,7 @@ export const cy: LocaleTree = {
     "backHome": "← Back to home"
   },
   "hero": {
-    "welcomeTagline": "The world's largest online casino and slot",
+    "welcomeTagline": "Sportsbook Mwyaf y Byd & Casino Ar - lein",
     "playNow": "Play Now",
     "betNow": "Bet Nawr",
     "registerPromo": "Register Now",
@@ -176,7 +176,7 @@ export const cy: LocaleTree = {
     "sportsbookAccent": "Llyfr chwaraeon",
     "liveCasinoLine1": "Play",
     "liveCasinoAccent": "Live Casino",
-    "liveCasinoLine2": "Premium Experience",
+    "liveCasinoLine2": "5% Bonws Arian yn ôl Bob dydd Mawrth",
     "firstDepositRegister": "REGISTER NOW",
     "firstDepositTitle": "FIRST DEPOSIT",
     "firstDepositBonus": "100% BONUS",
