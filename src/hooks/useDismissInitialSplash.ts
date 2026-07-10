@@ -9,7 +9,7 @@ export function useDismissInitialSplash() {
     if (!splash) return undefined;
 
     let cancelled = false;
-    let fadeTimer: ReturnType<typeof setTimeout> | undefined;
+    let fadeTimer: number | undefined;
 
     const minDelay = new Promise<void>((resolve) => {
       window.setTimeout(resolve, MIN_SPLASH_MS);
