@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { sportsApi, type SportsIframeMode } from '@/api/sports.api';
 import { useAuthStore } from '@/stores/authStore';
 import { useUiStore } from '@/stores/uiStore';
+import { useLanguageStore } from '@/stores/languageStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getApiErrorMessage } from '@/utils/apiError';
 
@@ -12,13 +13,14 @@ interface SportsIframePageProps {
 export function SportsIframePage({ mode }: SportsIframePageProps) {
   const { t } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
+  const language = useLanguageStore((s) => s.language);
   const openModal = useUiStore((s) => s.openModal);
   const [launchUrl, setLaunchUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!isAuthenticated) {
+    if (mode === 'history' && !isAuthenticated) {
       setLoading(false);
       setError(t('sports.loginRequired'));
       openModal('login');
@@ -31,7 +33,7 @@ export function SportsIframePage({ mode }: SportsIframePageProps) {
     setLaunchUrl(null);
 
     sportsApi
-      .launch(mode)
+      .launch(mode, { language })
       .then((result) => {
         if (!cancelled) {
           setLaunchUrl(result.launch_url);
@@ -51,7 +53,7 @@ export function SportsIframePage({ mode }: SportsIframePageProps) {
     return () => {
       cancelled = true;
     };
-  }, [isAuthenticated, mode, openModal, t]);
+  }, [isAuthenticated, language, mode, openModal, t]);
 
   const sportsViewportHeight = isAuthenticated
     ? 'sports-iframe-viewport--with-wallet-bar lg:min-h-[calc(100dvh-3.5rem)] lg:h-auto'
