@@ -26,10 +26,14 @@ export interface PaginatedSportsBets {
 }
 
 export const sportsApi = {
-  launch: async (mode: SportsIframeMode, oddFormat?: string) => {
+  launch: async (
+    mode: SportsIframeMode,
+    options?: { oddFormat?: string; language?: string },
+  ) => {
     const { data } = await api.post<ApiResponse<SportsLaunchResult>>('/sports/launch', {
       mode,
-      odd_format: oddFormat,
+      odd_format: options?.oddFormat,
+      language: options?.language,
     });
     return data.data;
   },

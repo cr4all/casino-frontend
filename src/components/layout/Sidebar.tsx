@@ -37,8 +37,8 @@ const accountItems: StaticNavItem[] = [
 ];
 
 const sportsItems: StaticNavItem[] = [
-  { id: 'prematch', labelKey: 'nav.prematch', sublabelKey: 'nav.prematchLabel', icon: 'prematch', path: '/sports/prematch', auth: true },
-  { id: 'inLive', labelKey: 'nav.inLive', sublabelKey: 'nav.inLiveLabel', icon: 'inLive', path: '/sports/live', auth: true },
+  { id: 'prematch', labelKey: 'nav.prematch', sublabelKey: 'nav.prematchLabel', icon: 'prematch', path: '/sports/prematch' },
+  { id: 'inLive', labelKey: 'nav.inLive', sublabelKey: 'nav.inLiveLabel', icon: 'inLive', path: '/sports/live' },
   { id: 'sportsHistory', labelKey: 'nav.sportsHistory', sublabelKey: 'nav.sportsHistoryLabel', icon: 'sportsHistory', path: '/sports/history', auth: true },
 ];
 
