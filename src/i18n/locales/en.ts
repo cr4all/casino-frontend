@@ -668,6 +668,8 @@ export const en = {
     verified: 'verified',
     suspended: 'suspended',
     closed: 'closed',
+    won: 'Won',
+    lost: 'Loss',
   },
   notFound: {
     code: '404',
