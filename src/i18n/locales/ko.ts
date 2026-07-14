@@ -261,6 +261,8 @@ export const ko: LocaleTree = {
     "withdraw": "출금",
     "bet": "베팅",
     "win": "승리",
+    "loss": "Loss",
+    "cashout": "Cashout",
     "bonus": "보너스",
     "rollback": "롤백"
   },
@@ -664,7 +666,8 @@ export const ko: LocaleTree = {
     "suspended": "정지",
     "closed": "종료",
     "won": "Won",
-    "lost": "Loss"
+    "lost": "Loss",
+    "cashout": "Cashout"
   },
   "affiliate": {
     "title": "제휴 대시보드",

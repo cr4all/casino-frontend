@@ -85,6 +85,7 @@ export type WalletBucket = 'cash' | 'bonus';
 export interface Transaction {
   id: number;
   type: string;
+  display_type?: string;
   amount: string;
   balance_after?: string | null;
   cash_balance_after?: string | null;
@@ -95,6 +96,7 @@ export interface Transaction {
   description: string | null;
   reference_type?: string | null;
   reference_id?: string | null;
+  is_cashout?: boolean;
   created_at: string | null;
 }
 

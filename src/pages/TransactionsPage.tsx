@@ -93,8 +93,27 @@ export function TransactionsPage() {
     withdraw: 'text-red-400',
     bet: 'text-accent',
     win: 'text-accent-gold',
+    cashout: 'text-sky-400',
+    loss: 'text-red-400',
     bonus: 'text-accent-purple',
     rollback: 'text-muted',
+  };
+
+  const walletDisplayType = (tx: Transaction): string => {
+    if (tx.display_type) {
+      return tx.display_type;
+    }
+
+    if (tx.type === 'win') {
+      if (tx.is_cashout) {
+        return 'cashout';
+      }
+      if (Number(tx.amount) <= 0) {
+        return 'loss';
+      }
+    }
+
+    return tx.type;
   };
 
   const tabs: { id: Tab; label: string }[] = [
@@ -191,10 +210,13 @@ export function TransactionsPage() {
               </tr>
             </thead>
             <tbody>
-              {transactions.map((tx) => (
+              {transactions.map((tx) => {
+                const displayType = walletDisplayType(tx);
+
+                return (
                 <tr key={tx.id} className="border-b border-white/5 hover:bg-surface/50">
-                  <td className={`px-4 py-3 capitalize font-medium ${typeColors[tx.type] ?? 'text-white'}`}>
-                    {tTxType(tx.type)}
+                  <td className={`px-4 py-3 capitalize font-medium ${typeColors[displayType] ?? 'text-white'}`}>
+                    {tTxType(displayType)}
                   </td>
                   <td className="px-4 py-3 font-mono text-white">{formatBalance(tx.amount)}</td>
                   <td className="px-4 py-3 text-xs text-muted hidden lg:table-cell">
@@ -219,7 +241,8 @@ export function TransactionsPage() {
                     {formatDate(tx.created_at)}
                   </td>
                 </tr>
-              ))}
+                );
+              })}
             </tbody>
           </Table>
           <Pagination pagination={pagination} onPageChange={setPage} />

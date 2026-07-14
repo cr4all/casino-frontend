@@ -7,6 +7,10 @@ import type { PaginationMeta } from '@/types';
 import { formatBalance } from '@/utils/formatBalance';
 
 function sportsBetDisplayStatus(bet: SportsBetItem): string {
+  if (bet.status === 'cashout') {
+    return 'cashout';
+  }
+
   if (bet.status === 'won' && Number(bet.win_amount) <= 0) {
     return 'lost';
   }
