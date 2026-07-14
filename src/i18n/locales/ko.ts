@@ -662,7 +662,9 @@ export const ko: LocaleTree = {
     "wagering": "베팅",
     "verified": "인증됨",
     "suspended": "정지",
-    "closed": "종료"
+    "closed": "종료",
+    "won": "Won",
+    "lost": "Loss"
   },
   "affiliate": {
     "title": "제휴 대시보드",

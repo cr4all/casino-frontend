@@ -6,6 +6,14 @@ import { useTranslation } from '@/hooks/useTranslation';
 import type { PaginationMeta } from '@/types';
 import { formatBalance } from '@/utils/formatBalance';
 
+function sportsBetDisplayStatus(bet: SportsBetItem): string {
+  if (bet.status === 'won' && Number(bet.win_amount) <= 0) {
+    return 'lost';
+  }
+
+  return bet.status;
+}
+
 interface SportsBetHistoryTableProps {
   bets: SportsBetItem[];
   pagination: PaginationMeta;
@@ -64,7 +72,7 @@ export function SportsBetHistoryTable({
                 </td>
                 <td className="px-4 py-3 font-mono text-accent-gold">{formatBalance(bet.win_amount)}</td>
                 <td className="px-4 py-3">
-                  <StatusBadge status={bet.status} />
+                  <StatusBadge status={sportsBetDisplayStatus(bet)} />
                 </td>
                 <td className="px-4 py-3 text-xs text-muted hidden sm:table-cell">
                   {formatDate(bet.created_at)}
