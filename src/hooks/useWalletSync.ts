@@ -9,6 +9,14 @@ const POLL_INTERVAL_PLAYING_MS = 5_000;
 const POLL_INTERVAL_DEFAULT_MS = 30_000;
 const WS_RETRY_LIMIT = 3;
 
+function isPlayingPath(pathname: string): boolean {
+  return (
+    pathname.startsWith('/sports') ||
+    /\/games\/\d+\/play$/.test(pathname) ||
+    pathname.endsWith('/play')
+  );
+}
+
 export function useWalletSync() {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const user = useAuthStore((s) => s.user);
@@ -42,18 +50,40 @@ export function useWalletSync() {
     }, intervalMs);
   };
 
-  useEffect(() => {
-    isPlayingRef.current =
-      /\/games\/\d+\/play$/.test(location.pathname) ||
-      location.pathname.endsWith('/play');
+  /** While playing (sports / game), keep REST poll as a safety net even if Echo is up. */
+  const syncPollingAfterRealtime = () => {
+    wsFailuresRef.current = 0;
 
-    if (!pollRef.current) {
+    if (isPlayingRef.current) {
+      if (!pollRef.current) {
+        startPolling();
+      }
       return;
     }
 
     stopPolling();
-    startPolling();
-  }, [location.pathname]);
+  };
+
+  useEffect(() => {
+    isPlayingRef.current = isPlayingPath(location.pathname);
+
+    if (!enabled) {
+      return;
+    }
+
+    if (isPlayingRef.current) {
+      stopPolling();
+      startPolling();
+      return;
+    }
+
+    if (pollRef.current) {
+      stopPolling();
+      if (wsFailuresRef.current >= WS_RETRY_LIMIT) {
+        startPolling();
+      }
+    }
+  }, [location.pathname, enabled, fetchBalance]);
 
   useEffect(() => {
     if (!enabled) {
@@ -74,12 +104,10 @@ export function useWalletSync() {
         playerId: resolvedPlayerId,
         onBalance: (update) => {
           applyBalanceUpdate(update);
-          wsFailuresRef.current = 0;
-          stopPolling();
+          syncPollingAfterRealtime();
         },
         onConnected: () => {
-          wsFailuresRef.current = 0;
-          stopPolling();
+          syncPollingAfterRealtime();
         },
         onError: () => {
           wsFailuresRef.current += 1;
@@ -108,6 +136,10 @@ export function useWalletSync() {
       }
 
       connectWebSocket(resolvedPlayerId);
+
+      if (isPlayingRef.current) {
+        startPolling();
+      }
     };
 
     void bootstrap();
@@ -121,6 +153,11 @@ export function useWalletSync() {
       wsFailuresRef.current = 0;
       connectWebSocket(activePlayerIdRef.current);
       void fetchBalance();
+
+      if (isPlayingRef.current) {
+        stopPolling();
+        startPolling();
+      }
     };
 
     document.addEventListener('visibilitychange', handleVisibility);
