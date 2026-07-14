@@ -250,6 +250,8 @@ export const en = {
     withdraw: 'Withdraw',
     bet: 'Bet',
     win: 'Win',
+    loss: 'Loss',
+    cashout: 'Cashout',
     bonus: 'Bonus',
     rollback: 'Rollback',
   },
@@ -670,6 +672,7 @@ export const en = {
     closed: 'closed',
     won: 'Won',
     lost: 'Loss',
+    cashout: 'Cashout',
   },
   notFound: {
     code: '404',

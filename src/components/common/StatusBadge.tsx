@@ -15,6 +15,7 @@ const statusStyles: Record<string, string> = {
   wagering: 'bg-accent-gold/10 text-accent-gold border border-accent-gold/20',
   won: 'bg-green-500/15 text-green-400 border border-green-500/30',
   lost: 'bg-red-500/15 text-red-400 border border-red-500/30',
+  cashout: 'bg-sky-500/15 text-sky-400 border border-sky-500/30',
 };
 
 interface StatusBadgeProps {
