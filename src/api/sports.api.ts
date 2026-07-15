@@ -12,6 +12,10 @@ export interface SportsBetItem {
   id: number;
   round_id: number;
   payment_id: number;
+  sport_name: string | null;
+  event_name: string | null;
+  bet_type_name: string | null;
+  odd_type_name: string | null;
   stake: string;
   win_amount: string;
   odd_factor: string | null;
