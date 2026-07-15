@@ -12,6 +12,7 @@ const statusStyles: Record<string, string> = {
   suspended: 'bg-orange-500/15 text-orange-300 border border-orange-500/30',
   closed: 'bg-white/5 text-muted border border-white/10',
   completed: 'bg-green-500/15 text-green-400 border border-green-500/30',
+  paid: 'bg-green-500/15 text-green-400 border border-green-500/30',
   wagering: 'bg-accent-gold/10 text-accent-gold border border-accent-gold/20',
   won: 'bg-green-500/15 text-green-400 border border-green-500/30',
   lost: 'bg-red-500/15 text-red-400 border border-red-500/30',
