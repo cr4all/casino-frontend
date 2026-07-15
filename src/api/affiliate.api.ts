@@ -20,10 +20,49 @@ export interface AffiliateStats {
   commissions_count: number;
   total_commission: string;
   pending_commission: string;
+  available_payout: string;
+  accruing_commission: string;
   sub_affiliates_count?: number;
   downline_players_count?: number;
   override_commission?: string;
   pending_override_commission?: string;
+}
+
+export interface AffiliatePayoutAvailability {
+  available_amount: string;
+  accruing_amount: string;
+  currency: string;
+  min_payout_amount: string;
+  can_request: boolean;
+  has_pending_request: boolean;
+  has_payout_details: boolean;
+  period_end: string;
+  reason: string | null;
+}
+
+export interface AffiliatePayoutDetails {
+  payout_details: Record<string, string>;
+}
+
+export interface UpdateAffiliatePayoutDetailsPayload {
+  payout_details: {
+    account_wallet_id: string;
+    note?: string;
+  };
+}
+
+export interface AffiliatePayout {
+  id: number;
+  period_start: string;
+  period_end: string;
+  total_amount: string;
+  currency: string;
+  status: 'requested' | 'paid' | 'rejected';
+  payout_details: Record<string, string>;
+  rejection_reason: string | null;
+  paid_at: string | null;
+  rejected_at: string | null;
+  created_at: string | null;
 }
 
 export interface AffiliateReferredPlayer {
@@ -194,5 +233,38 @@ export const affiliateApi = {
   }) => {
     const { data } = await api.put<ApiResponse<null>>('/affiliate/password', payload);
     return data;
+  },
+
+  getPayoutAvailability: async () => {
+    const { data } = await api.get<ApiResponse<AffiliatePayoutAvailability>>(
+      '/affiliate/payouts/availability',
+    );
+    return data.data;
+  },
+
+  getPayoutDetails: async () => {
+    const { data } = await api.get<ApiResponse<AffiliatePayoutDetails>>('/affiliate/payout-details');
+    return data.data;
+  },
+
+  updatePayoutDetails: async (payload: UpdateAffiliatePayoutDetailsPayload) => {
+    const { data } = await api.put<ApiResponse<AffiliatePayoutDetails>>(
+      '/affiliate/payout-details',
+      payload,
+    );
+    return data.data;
+  },
+
+  getPayouts: async (page = 1) => {
+    const { data } = await api.get<ApiResponse<Paginated<AffiliatePayout>>>(
+      '/affiliate/payouts',
+      { params: { page } },
+    );
+    return data.data;
+  },
+
+  requestPayout: async () => {
+    const { data } = await api.post<ApiResponse<AffiliatePayout>>('/affiliate/payouts');
+    return data.data;
   },
 };

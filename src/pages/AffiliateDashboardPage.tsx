@@ -10,6 +10,7 @@ import {
   type PlayerStatisticsPeriod,
 } from '@/api/affiliate.api';
 import { AffiliatePlayerStatisticsTable, type PlayerStatisticsPeriodChange } from '@/components/affiliate/AffiliatePlayerStatisticsTable';
+import { AffiliatePayoutSection } from '@/components/affiliate/AffiliatePayoutSection';
 import { Button } from '@/components/common/Button';
 import { FormTextField } from '@/components/common/FormTextField';
 import { LanguageSelector } from '@/components/common/LanguageSelector';
@@ -356,6 +357,8 @@ export function AffiliateDashboardPage() {
               <StatCard label={t('affiliate.commissions')} value={stats.commissions_count} />
               <StatCard label={t('affiliate.totalCommission')} value={formatBalance(stats.total_commission)} />
               <StatCard label={t('affiliate.pendingCommission')} value={formatBalance(stats.pending_commission)} />
+              <StatCard label={t('affiliate.availablePayout')} value={formatBalance(stats.available_payout)} />
+              <StatCard label={t('affiliate.accruingCommission')} value={formatBalance(stats.accruing_commission)} />
               {stats.sub_affiliates_count !== undefined && (
                 <StatCard label={t('affiliate.subAffiliatesCount')} value={stats.sub_affiliates_count} />
               )}
@@ -387,6 +390,13 @@ export function AffiliateDashboardPage() {
               </div>
             </div>
           )}
+
+          <AffiliatePayoutSection
+            onChanged={async () => {
+              const statsData = await affiliateApi.getStats();
+              setStats(statsData);
+            }}
+          />
 
           {me?.can_manage_sub_affiliates && (
             <section className="rounded-lg border border-white/10 bg-card p-4">
