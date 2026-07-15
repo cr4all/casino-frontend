@@ -41,7 +41,10 @@ export interface AffiliatePayoutAvailability {
 }
 
 export interface AffiliatePayoutDetails {
-  payout_details: Record<string, string>;
+  payout_details: {
+    account_wallet_id?: string;
+    note?: string;
+  } | null;
 }
 
 export interface UpdateAffiliatePayoutDetailsPayload {

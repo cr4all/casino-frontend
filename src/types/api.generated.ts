@@ -1449,6 +1449,182 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/affiliate/payouts/availability": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Get available closed-month commission for payout */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Payout availability */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: components["schemas"]["AffiliatePayoutAvailability"];
+                        };
+                    };
+                };
+                401: components["responses"]["Unauthorized"];
+                403: components["responses"]["Forbidden"];
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/affiliate/payout-details": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Get saved payout destination details */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Payout details */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: components["schemas"]["AffiliatePayoutDetails"];
+                        };
+                    };
+                };
+                401: components["responses"]["Unauthorized"];
+                403: components["responses"]["Forbidden"];
+            };
+        };
+        /** Update payout destination details */
+        put: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["UpdateAffiliatePayoutDetailsRequest"];
+                };
+            };
+            responses: {
+                /** @description Payout details updated */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: components["schemas"]["AffiliatePayoutDetails"];
+                        };
+                    };
+                };
+                401: components["responses"]["Unauthorized"];
+                403: components["responses"]["Forbidden"];
+                422: components["responses"]["ValidationError"];
+            };
+        };
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/affiliate/payouts": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** List affiliate payout requests */
+        get: {
+            parameters: {
+                query?: {
+                    per_page?: components["parameters"]["PerPage"];
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Paginated payout requests */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: components["schemas"]["AffiliatePayoutList"];
+                        };
+                    };
+                };
+                401: components["responses"]["Unauthorized"];
+                403: components["responses"]["Forbidden"];
+            };
+        };
+        put?: never;
+        /** Request payout of available closed-month commission */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Payout requested */
+                201: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: components["schemas"]["AffiliatePayout"];
+                        };
+                    };
+                };
+                401: components["responses"]["Unauthorized"];
+                403: components["responses"]["Forbidden"];
+                422: components["responses"]["ValidationError"];
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/notifications/messages": {
         parameters: {
             query?: never;
@@ -2366,10 +2542,68 @@ export interface components {
             commissions_count: number;
             total_commission: string;
             pending_commission: string;
+            available_payout: string;
+            accruing_commission: string;
             sub_affiliates_count?: number;
             downline_players_count?: number;
             override_commission?: string;
             pending_override_commission?: string;
+        };
+        AffiliatePayoutAvailability: {
+            available_amount: string;
+            accruing_amount: string;
+            /** @example USD */
+            currency: string;
+            min_payout_amount: string;
+            can_request: boolean;
+            has_pending_request: boolean;
+            has_payout_details: boolean;
+            /** Format: date */
+            period_end: string;
+            /** @enum {string|null} */
+            reason?: "payout_details_required" | "pending_request_exists" | "no_available_balance" | "below_minimum" | null;
+        };
+        AffiliatePayoutDetails: {
+            payout_details: {
+                account_wallet_id?: string;
+                note?: string;
+            } & {
+                [key: string]: unknown;
+            };
+        };
+        UpdateAffiliatePayoutDetailsRequest: {
+            payout_details: {
+                account_wallet_id: string;
+                note?: string;
+            };
+        };
+        AffiliatePayout: {
+            id: number;
+            /** Format: date */
+            period_start: string;
+            /** Format: date */
+            period_end: string;
+            total_amount: string;
+            currency: string;
+            /** @enum {string} */
+            status: "requested" | "paid" | "rejected";
+            payout_details: {
+                account_wallet_id?: string;
+                note?: string;
+            } & {
+                [key: string]: unknown;
+            };
+            rejection_reason?: string | null;
+            /** Format: date-time */
+            paid_at?: string | null;
+            /** Format: date-time */
+            rejected_at?: string | null;
+            /** Format: date-time */
+            created_at?: string | null;
+        };
+        AffiliatePayoutList: {
+            items: components["schemas"]["AffiliatePayout"][];
+            pagination: components["schemas"]["Pagination"];
         };
         AffiliateReferredPlayer: {
             player_id: number;
@@ -2390,7 +2624,7 @@ export interface components {
             reference_type: string;
             reference_id: string;
             /** @enum {string} */
-            status: "pending" | "paid";
+            status: "pending" | "reserved" | "paid";
             /** Format: date-time */
             created_at?: string | null;
         };

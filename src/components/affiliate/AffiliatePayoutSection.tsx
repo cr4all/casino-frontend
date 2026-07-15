@@ -110,7 +110,10 @@ export function AffiliatePayoutSection({ onChanged }: AffiliatePayoutSectionProp
 
     setSavingDetails(true);
     try {
-      const payout_details: Record<string, string> = {
+      const payout_details: {
+        account_wallet_id: string;
+        note?: string;
+      } = {
         account_wallet_id: accountWalletId.trim(),
       };
       if (note.trim() !== '') {
