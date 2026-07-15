@@ -18,6 +18,13 @@ function sportsBetDisplayStatus(bet: SportsBetItem): string {
   return bet.status;
 }
 
+function selectionLabel(bet: SportsBetItem): string | null {
+  const parts = [bet.bet_type_name, bet.odd_type_name].filter(
+    (part): part is string => !!part && part.trim() !== '',
+  );
+  return parts.length > 0 ? parts.join(' · ') : null;
+}
+
 interface SportsBetHistoryTableProps {
   bets: SportsBetItem[];
   pagination: PaginationMeta;
@@ -56,6 +63,8 @@ export function SportsBetHistoryTable({
             <tr className="border-b border-white/5 bg-surface text-left">
               <th className="px-4 py-3 text-xs font-medium text-muted">{t('sportsBetHistory.roundId')}</th>
               <th className="px-4 py-3 text-xs font-medium text-muted">{t('sportsBetHistory.paymentId')}</th>
+              <th className="px-4 py-3 text-xs font-medium text-muted">{t('sportsBetHistory.event')}</th>
+              <th className="px-4 py-3 text-xs font-medium text-muted">{t('sportsBetHistory.selection')}</th>
               <th className="px-4 py-3 text-xs font-medium text-muted">{t('sportsBetHistory.type')}</th>
               <th className="px-4 py-3 text-xs font-medium text-muted">{t('sportsBetHistory.stake')}</th>
               <th className="px-4 py-3 text-xs font-medium text-muted">{t('sportsBetHistory.oddFactor')}</th>
@@ -65,24 +74,35 @@ export function SportsBetHistoryTable({
             </tr>
           </thead>
           <tbody>
-            {bets.map((bet) => (
-              <tr key={bet.id} className="border-b border-white/5 hover:bg-surface/50">
-                <td className="px-4 py-3 font-mono text-muted">{bet.round_id}</td>
-                <td className="px-4 py-3 font-mono text-muted">{bet.payment_id}</td>
-                <td className="px-4 py-3 capitalize text-white">{bet.type ?? '—'}</td>
-                <td className="px-4 py-3 font-mono text-white">{formatBalance(bet.stake)}</td>
-                <td className="px-4 py-3 font-mono text-white">
-                  {bet.odd_factor != null ? formatBalance(bet.odd_factor) : '—'}
-                </td>
-                <td className="px-4 py-3 font-mono text-accent-gold">{formatBalance(bet.win_amount)}</td>
-                <td className="px-4 py-3">
-                  <StatusBadge status={sportsBetDisplayStatus(bet)} />
-                </td>
-                <td className="px-4 py-3 text-xs text-muted hidden sm:table-cell">
-                  {formatDate(bet.created_at)}
-                </td>
-              </tr>
-            ))}
+            {bets.map((bet) => {
+              const selection = selectionLabel(bet);
+
+              return (
+                <tr key={bet.id} className="border-b border-white/5 hover:bg-surface/50">
+                  <td className="px-4 py-3 font-mono text-muted">{bet.round_id}</td>
+                  <td className="px-4 py-3 font-mono text-muted">{bet.payment_id}</td>
+                  <td className="px-4 py-3 text-white">
+                    <div>{bet.event_name?.trim() ? bet.event_name : '—'}</div>
+                    {bet.sport_name?.trim() ? (
+                      <div className="text-xs text-muted">{bet.sport_name}</div>
+                    ) : null}
+                  </td>
+                  <td className="px-4 py-3 text-white">{selection ?? '—'}</td>
+                  <td className="px-4 py-3 capitalize text-white">{bet.type ?? '—'}</td>
+                  <td className="px-4 py-3 font-mono text-white">{formatBalance(bet.stake)}</td>
+                  <td className="px-4 py-3 font-mono text-white">
+                    {bet.odd_factor != null ? formatBalance(bet.odd_factor) : '—'}
+                  </td>
+                  <td className="px-4 py-3 font-mono text-accent-gold">{formatBalance(bet.win_amount)}</td>
+                  <td className="px-4 py-3">
+                    <StatusBadge status={sportsBetDisplayStatus(bet)} />
+                  </td>
+                  <td className="px-4 py-3 text-xs text-muted hidden sm:table-cell">
+                    {formatDate(bet.created_at)}
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
