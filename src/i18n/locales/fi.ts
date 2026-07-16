@@ -758,9 +758,9 @@ export const fi: LocaleTree = {
     "cryptoCurrency": "Currency",
     "ewalletProvider": "Provider",
     "ewalletAccountId": "Account ID",
-    "payoutInstructions": "Payment instructions",
+    "payoutInstructions": "MAKSUOHJEET",
     "notes": "Notes",
-    "rejectionReason": "Rejection reason"
+    "rejectionReason": "Hylkäämisen syy"
   },
   "sports": {
     "launching": "Ladataan urheiluvedonlyöntiä...",
