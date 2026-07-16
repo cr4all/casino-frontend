@@ -253,7 +253,9 @@ export const arTn: LocaleTree = {
     "bet": "Bet",
     "win": "Win",
     "bonus": "المكافآت",
-    "rollback": "Rollback"
+    "rollback": "Rollback",
+    "loss": "خسارة",
+    "cashout": "كاش أوت"
   },
   "auth": {
     "loginTitle": "Log in",
@@ -663,11 +665,14 @@ export const arTn: LocaleTree = {
     "cancelled": "cancelled",
     "active": "active",
     "completed": "completed",
-    "paid": "paid",
+    "paid": "مدفوع",
     "wagering": "wagering",
     "verified": "verified",
     "suspended": "suspended",
-    "closed": "closed"
+    "closed": "closed",
+    "won": "فوز",
+    "lost": "خسارة",
+    "cashout": "كاش أوت"
   },
   "notFound": {
     "code": "404",
@@ -693,8 +698,8 @@ export const arTn: LocaleTree = {
     "payouts": "المدفوعات",
     "payoutDetails": "تفاصيل المدفوعات",
     "payoutHistory": "سجل الدفعات",
-    "accountWalletId": "Account / Wallet ID",
-    "note": "Note",
+    "accountWalletId": "معرّف الحساب / المحفظة",
+    "note": "[ترجمة المصطلح: Note]",
     "payoutMethod": "طريقة الدّفع",
     "requestPayout": "طلب دفع",
     "payoutRequested": "تم إرسال طلب دفع العائد.",

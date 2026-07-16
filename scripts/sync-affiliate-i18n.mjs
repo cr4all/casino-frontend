@@ -253,18 +253,14 @@ async function syncLanguage(langCode, phrases) {
   }
 
   if (PRESERVE_LOCALE_AFFILIATE.has(langCode)) {
-    console.log(`${langCode}: preserved manual affiliate translations`);
-    return;
-  }
-
-  if (existsSync(mapPath)) {
-    const tree = applyPhraseMapToValues(en, merged);
+    // Keep curated locale trees; runtime still merges phraseMaps for missing affiliate keys.
     const affiliate = buildAffiliateSection(locale.affiliate, merged);
-    writeLocaleFile(langCode, { ...tree, affiliate });
-    console.log(`${langCode}: rebuilt locale from phrase map`);
+    writeLocaleFile(langCode, { ...locale, affiliate });
+    console.log(`${langCode}: updated affiliate (preserved locale tree)`);
     return;
   }
 
+  // Only update affiliate — do not rebuild the whole locale from (often sparse) phrase maps.
   const affiliate = buildAffiliateSection(locale.affiliate, merged);
   writeLocaleFile(langCode, { ...locale, affiliate });
   console.log(`${langCode}: updated affiliate section`);

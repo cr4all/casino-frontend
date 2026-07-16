@@ -693,7 +693,7 @@ export const da: LocaleTree = {
     "payouts": "Udbetalinger",
     "payoutDetails": "Udbetalingsoplysninger",
     "payoutHistory": "Udbetalingshistorik",
-    "accountWalletId": "Account / Wallet ID",
+    "accountWalletId": "Konto-/tegnebogs-id",
     "note": "Note",
     "payoutMethod": "Udbetalingsmetode",
     "requestPayout": "Anmod om udbetaling",
@@ -726,7 +726,7 @@ export const da: LocaleTree = {
     "ewalletAccountId": "Konto-id",
     "payoutInstructions": "Betalingsinstrukser",
     "notes": "Noter",
-    "rejectionReason": "Rejection reason",
+    "rejectionReason": "Årsag til afvisning",
     "playerStatistics": "Spillerstatistik",
     "statsPeriodToday": "I dag",
     "statsPeriodLastWeek": "Sidste uge",
@@ -743,10 +743,10 @@ export const da: LocaleTree = {
     "bonusWin": "Bonusgevinst",
     "totalTurnover": "Samlet omsætning",
     "totalWin": "Samlet gevinst",
-    "ggr": "GGR",
+    "ggr": "Ggr",
     "bonusCost": "Bonusomkostning",
     "affiliateCost": "Partneromkostning",
-    "ngr": "NGR",
+    "ngr": "1.1.1991",
     "noPlayerStats": "Ingen henviste spillere endnu.",
     "player": "Spiller",
     "nickname": "Kaldenavn",
@@ -797,4 +797,3 @@ export const da: LocaleTree = {
     "verificationCodeRequestFailed": "Bekræftelseskode kunne ikke sendes."
   }
 };
-

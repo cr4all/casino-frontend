@@ -112,9 +112,14 @@ function listMissingKeys(affiliate) {
 
 async function finishLanguage(langCode, localeCache) {
   const targetLang = LANG_TARGETS[langCode] ?? langCode;
-  const locale = localeCache.get(langCode);
+  // Always reload from disk so manual edits (e.g. ko) are preserved.
+  const locale = await loadLocale(langCode);
+  localeCache.set(langCode, locale);
   const parentCode = LOCALE_VARIANT_PARENT[langCode];
-  const parentAffiliate = parentCode ? localeCache.get(parentCode)?.affiliate : undefined;
+  const parentAffiliate = parentCode ? (localeCache.get(parentCode) ?? await loadLocale(parentCode))?.affiliate : undefined;
+  if (parentCode && !localeCache.has(parentCode)) {
+    localeCache.set(parentCode, await loadLocale(parentCode));
+  }
   const { map, merged, mapPath } = loadMergedMap(langCode);
   const affiliate = buildResolvedAffiliate(langCode, locale, parentAffiliate, merged);
   const missing = listMissingKeys(affiliate);
@@ -162,13 +167,9 @@ async function finishLanguage(langCode, localeCache) {
     writeFileSync(mapPath, JSON.stringify(map, null, 2));
   }
 
-  if (existsSync(mapPath)) {
-    const tree = applyPhraseMapToValues(en, merged);
-    writeLocaleFile(langCode, { ...tree, affiliate });
-  } else {
-    writeLocaleFile(langCode, { ...locale, affiliate });
-  }
-
+  // Only update the affiliate section — never rebuild the whole locale from phrase maps
+  // (many priority locales have sparse phraseMaps and would lose curated translations).
+  writeLocaleFile(langCode, { ...locale, affiliate });
   console.log(`${langCode}: updated`);
 }
 

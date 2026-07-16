@@ -21,5 +21,17 @@
   "Stake": "KINNITUS-",
   "Odds": "Koefitsiendid",
   "The World's Largest Sportsbook & Online Casino": "Maailma suurim spordikihlvedu ja veebikasiino",
-  "5% Cashback Bonus Every Tuesday": "5% Cashbacki boonus igal teisipäeval"
+  "5% Cashback Bonus Every Tuesday": "5% Cashbacki boonus igal teisipäeval",
+  "Available to Withdraw": "Tühistamiseks saadaval",
+  "Accruing (Current Month)": "Kogunemine (jooksev kuu)",
+  "Payouts": "Maksed",
+  "Payout Details": "Väljamakse üksikasjad",
+  "Payout History": "Väljamaksete ajalugu",
+  "Account / Wallet ID": "Konto / rahakoti ID",
+  "Note": "Märkus",
+  "Payout Method": "Väljamakseviis",
+  "Request Payout": "Taotle väljamakset",
+  "Payout request submitted.": "Väljamakse taotlus on esitatud.",
+  "Failed to request payout.": "Väljamakse taotlemine ebaõnnestus.",
+  "Payout details saved.": "Väljamakse andmed on salvestatud."
 }

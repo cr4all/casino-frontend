@@ -693,8 +693,8 @@ export const cs: LocaleTree = {
     "payouts": "Výplaty",
     "payoutDetails": "Výplatní údaje",
     "payoutHistory": "Historie výplat",
-    "accountWalletId": "Account / Wallet ID",
-    "note": "Note",
+    "accountWalletId": "ID účtu / peněženky",
+    "note": "Poznámka",
     "payoutMethod": "Schvalování a vyplácení provizí",
     "requestPayout": "Požádat o výplatu",
     "payoutRequested": "Žádost o výplatu odeslána.",
@@ -797,4 +797,3 @@ export const cs: LocaleTree = {
     "verificationCodeRequestFailed": "Ověřovací kód se nepodařilo odeslat."
   }
 };
-
