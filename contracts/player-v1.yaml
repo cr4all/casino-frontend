@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Casino Platform Player API
-  version: 1.9.0
+  version: 1.10.0
   description: |
     Player-facing REST API for the casino platform.
     Source of truth derived from `routes/api.php` and Feature Tests.
@@ -1121,6 +1121,132 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 
+  /notifications/messages/{id}/read:
+    post:
+      tags: [Notification]
+      summary: Mark internal message as read
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Message marked as read
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessEnvelope'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        required: [id, is_read]
+                        properties:
+                          id:
+                            type: integer
+                          is_read:
+                            type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /notifications/announcements/{id}/read:
+    post:
+      tags: [Notification]
+      summary: Mark notice announcement as read
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Announcement marked as read
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessEnvelope'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        required: [id, is_read]
+                        properties:
+                          id:
+                            type: integer
+                          is_read:
+                            type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /notifications/popups:
+    get:
+      tags: [Notification]
+      summary: List active popup announcements
+      responses:
+        '200':
+          description: Active popups for the authenticated player
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessEnvelope'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        required: [items]
+                        properties:
+                          items:
+                            type: array
+                            items:
+                              $ref: '#/components/schemas/AnnouncementPopup'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /notifications/popups/{id}/dismiss:
+    post:
+      tags: [Notification]
+      summary: Dismiss popup announcement
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Popup dismissed
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessEnvelope'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        required: [id, dismissed_at]
+                        properties:
+                          id:
+                            type: integer
+                          dismissed_at:
+                            type: string
+                            format: date-time
+                            nullable: true
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
   /games/vendors:
     get:
       tags: [Game]
@@ -1284,6 +1410,37 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
+  /games/favorites:
+    get:
+      tags: [Game]
+      summary: List player favorite games
+      parameters:
+        - $ref: '#/components/parameters/PerPage'
+      responses:
+        '200':
+          description: Paginated favorite games
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessEnvelope'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        required: [items, pagination]
+                        properties:
+                          items:
+                            type: array
+                            items:
+                              $ref: '#/components/schemas/Game'
+                          pagination:
+                            $ref: '#/components/schemas/Pagination'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
   /games/{id}:
     get:
       tags: [Game]
@@ -1307,6 +1464,72 @@ paths:
                     properties:
                       data:
                         $ref: '#/components/schemas/Game'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /games/{id}/favorite:
+    post:
+      tags: [Game]
+      summary: Add a game to favorites (idempotent)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Favorite added
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessEnvelope'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        required: [game_id, favorited]
+                        properties:
+                          game_id:
+                            type: integer
+                          favorited:
+                            type: boolean
+                            enum: [true]
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      tags: [Game]
+      summary: Remove a game from favorites
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Favorite removed
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessEnvelope'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        required: [game_id, favorited]
+                        properties:
+                          game_id:
+                            type: integer
+                          favorited:
+                            type: boolean
+                            enum: [false]
+        '401':
+          $ref: '#/components/responses/Unauthorized'
         '404':
           $ref: '#/components/responses/NotFound'
 
@@ -2399,7 +2622,33 @@ components:
           type: string
         is_read:
           type: boolean
+        source:
+          type: string
+          enum: [system, announcement]
         created_at:
+          type: string
+          format: date-time
+          nullable: true
+
+    AnnouncementPopup:
+      type: object
+      required: [id, title, body]
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        body:
+          type: string
+        starts_at:
+          type: string
+          format: date-time
+          nullable: true
+        ends_at:
+          type: string
+          format: date-time
+          nullable: true
+        published_at:
           type: string
           format: date-time
           nullable: true

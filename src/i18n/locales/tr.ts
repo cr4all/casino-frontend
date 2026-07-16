@@ -83,7 +83,9 @@ export const tr: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "FAVORİLER",
+    "favoritesLabel": "Kaydedilen oyunlar"
   },
   "liveChat": {
     "title": "Canlı Sohbet",
@@ -204,12 +206,14 @@ export const tr: LocaleTree = {
     "searchPlaceholder": "Oyun ara...",
     "noGamesFound": "Oyun bulunamadı.",
     "noProvidersFound": "Sağlayıcı bulunamadı.",
-    "collectionGames": "{{name}} Oyunları"
+    "collectionGames": "{{name}} Oyunları",
+    "noFavoritesYet": "Henüz favori oyun yok. Kaydetmek için oyundaki kalbe dokunun."
   },
   "collections": {
     "top": "En İyi Oyunlar",
     "popular": "Popüler Oyunlar",
-    "new": "Yeni Oyunlar"
+    "new": "Yeni Oyunlar",
+    "favorites": "Favoriler"
   },
   "gameTypes": {
     "slot": "Slotlar",
@@ -592,7 +596,9 @@ export const tr: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "Yeni",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Favorilere ekle",
+    "removeFavorite": "Favorilerden kaldır"
   },
   "modal": {
     "comingSoon": "Yakında"

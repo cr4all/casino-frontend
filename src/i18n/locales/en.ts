@@ -49,6 +49,8 @@ export const en = {
   nav: {
     allGames: 'ALL GAMES',
     browseAll: 'Browse all',
+    favorites: 'FAVORITES',
+    favoritesLabel: 'Saved games',
     deposit: 'DEPOSIT',
     depositLabel: 'Deposit',
     withdraw: 'WITHDRAW',
@@ -206,6 +208,7 @@ export const en = {
     viewBonuses: 'View Bonuses →',
     searchPlaceholder: 'Search games...',
     noGamesFound: 'No games found.',
+    noFavoritesYet: 'No favorite games yet. Tap the heart on a game to save it.',
     noProvidersFound: 'No providers found.',
     collectionGames: '{{name}} Games',
   },
@@ -213,6 +216,7 @@ export const en = {
     top: 'Top Games',
     popular: 'Popular Games',
     new: 'New Games',
+    favorites: 'Favorites',
   },
   gameTypes: {
     slot: 'Slots',
@@ -626,6 +630,8 @@ export const en = {
   gameCard: {
     newBadge: 'New',
     bonusBadge: 'Bonus',
+    addFavorite: 'Add to favorites',
+    removeFavorite: 'Remove from favorites',
   },
   modal: {
     comingSoon: 'Coming Soon',

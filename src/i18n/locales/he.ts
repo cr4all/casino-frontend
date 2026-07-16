@@ -83,7 +83,9 @@ export const he: LocaleTree = {
     "sportsHistory": "היסטוריה",
     "sportsHistoryLabel": "הימורי הספורט שלי",
     "casinoHistory": "היסטוריה",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "מועדפים",
+    "favoritesLabel": "משחקים שמורים"
   },
   "sports": {
     "launching": "טוען את ספר הספורט...",
@@ -209,12 +211,14 @@ export const he: LocaleTree = {
     "searchPlaceholder": "חפש משחקים...",
     "noGamesFound": "לא נמצאו משחקים.",
     "noProvidersFound": "לא נמצאו ספקים.",
-    "collectionGames": "משחקי {{name}}"
+    "collectionGames": "משחקי {{name}}",
+    "noFavoritesYet": "עדיין אין משחקים מועדפים. הקישו על הלב במשחק כדי לשמור אותו."
   },
   "collections": {
     "top": "משחקים מובילים",
     "popular": "משחקים פופולריים",
-    "new": "משחקים חדשים"
+    "new": "משחקים חדשים",
+    "favorites": "מועדפים"
   },
   "gameTypes": {
     "slot": "סלוטים",
@@ -614,7 +618,9 @@ export const he: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "חדש",
-    "bonusBadge": "בונוס"
+    "bonusBadge": "בונוס",
+    "addFavorite": "הוסף למועדפים",
+    "removeFavorite": "הסר מהמועדפים"
   },
   "modal": {
     "comingSoon": "בקרוב"

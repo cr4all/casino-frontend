@@ -83,7 +83,9 @@ export const af: LocaleTree = {
     "sportsHistory": "Geskiedenis",
     "sportsHistoryLabel": "My sportweddenskappe",
     "casinoHistory": "Geskiedenis",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "GUNSTELINGE",
+    "favoritesLabel": "Gestoorde speletjies"
   },
   "sports": {
     "launching": "Laai tans sportboek...",
@@ -209,12 +211,14 @@ export const af: LocaleTree = {
     "searchPlaceholder": "Word Search Games",
     "noGamesFound": "Geen speletjies gevind nie.",
     "noProvidersFound": "Geen verskaffers gevind nie.",
-    "collectionGames": "{{name}} Speletjies"
+    "collectionGames": "{{name}} Speletjies",
+    "noFavoritesYet": "Nog geen gunsteling speletjies nie. Tik die hartjie op ’n speletjie om dit te stoor."
   },
   "collections": {
     "top": "Top Speletjies",
     "popular": "Gewilde Speletjies",
-    "new": "Nuwe Speletjies "
+    "new": "Nuwe Speletjies ",
+    "favorites": "Gunstelinge"
   },
   "gameTypes": {
     "slot": "Slaan uit Teks",
@@ -624,7 +628,9 @@ export const af: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonuss"
+    "bonusBadge": "Bonuss",
+    "addFavorite": "Voeg by gunstelinge",
+    "removeFavorite": "Verwyder uit gunstelinge"
   },
   "modal": {
     "comingSoon": "Kom binnekort"

@@ -83,7 +83,9 @@ export const gu: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "મારી સ્પોર્ટ્સ બેટ્સ",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "મનપસંદ",
+    "favoritesLabel": "સાચવેલી રમતો"
   },
   "sports": {
     "launching": "સ્પોર્ટ્સબુક લોડ થઈ રહી છે...",
@@ -209,12 +211,14 @@ export const gu: LocaleTree = {
     "searchPlaceholder": "Search games...",
     "noGamesFound": "No games found.",
     "noProvidersFound": "No providers found.",
-    "collectionGames": "{{name}} Games"
+    "collectionGames": "{{name}} Games",
+    "noFavoritesYet": "હજુ કોઈ મનપસંદ રમત નથી. સાચવવા માટે રમત પરના હૃદયને ટેપ કરો."
   },
   "collections": {
     "top": "Top Games",
     "popular": "Popular Games",
-    "new": "New Games"
+    "new": "New Games",
+    "favorites": "મનપસંદ"
   },
   "gameTypes": {
     "slot": "Slots",
@@ -614,7 +618,9 @@ export const gu: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "મનપસંદમાં ઉમેરો",
+    "removeFavorite": "મનપસંદમાંથી કાઢો"
   },
   "modal": {
     "comingSoon": "Coming Soon"

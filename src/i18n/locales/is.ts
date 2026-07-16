@@ -83,7 +83,9 @@ export const is: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "Íþróttaveðmálin mín",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "UPPÁHALD",
+    "favoritesLabel": "Vistaðir leikir"
   },
   "sports": {
     "launching": "Hleð inn íþróttabók...",
@@ -209,12 +211,14 @@ export const is: LocaleTree = {
     "searchPlaceholder": "Leita í leikjum...",
     "noGamesFound": "Engir leikir fundust.",
     "noProvidersFound": "No providers found.",
-    "collectionGames": "{{name}} Leikir"
+    "collectionGames": "{{name}} Leikir",
+    "noFavoritesYet": "Engir uppáhaldsleikir enn. Ýttu á hjartað á leik til að vista hann."
   },
   "collections": {
     "top": "Toppleikir",
     "popular": "Vinsælir leikir",
-    "new": "Nýir Leikir"
+    "new": "Nýir Leikir",
+    "favorites": "Uppáhald"
   },
   "gameTypes": {
     "slot": "Slots",
@@ -614,7 +618,9 @@ export const is: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Bæta við uppáhald",
+    "removeFavorite": "Fjarlægja úr uppáhaldi"
   },
   "modal": {
     "comingSoon": "Kemur bráðum"

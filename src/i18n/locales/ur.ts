@@ -83,7 +83,9 @@ export const ur: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "پسندیدہ",
+    "favoritesLabel": "محفوظ کردہ گیمز"
   },
   "liveChat": {
     "title": "لائیو چیٹ",
@@ -204,12 +206,14 @@ export const ur: LocaleTree = {
     "searchPlaceholder": "گیمز تلاش کریں...",
     "noGamesFound": "کوئی گیم نہیں ملی۔",
     "noProvidersFound": "کوئی فراہم کنندہ نہیں ملا۔",
-    "collectionGames": "{{name}} گیمز"
+    "collectionGames": "{{name}} گیمز",
+    "noFavoritesYet": "ابھی کوئی پسندیدہ گیم نہیں۔ محفوظ کرنے کے لیے گیم پر دل کو چھوئیں۔"
   },
   "collections": {
     "top": "ٹاپ گیمز",
     "popular": "مقبول گیمز",
-    "new": "نئی گیمز"
+    "new": "نئی گیمز",
+    "favorites": "پسندیدہ"
   },
   "gameTypes": {
     "slot": "سلاٹس",
@@ -590,7 +594,9 @@ export const ur: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "نیا",
-    "bonusBadge": "بونس"
+    "bonusBadge": "بونس",
+    "addFavorite": "پسندیدہ میں شامل کریں",
+    "removeFavorite": "پسندیدہ سے ہٹائیں"
   },
   "modal": {
     "comingSoon": "جلد آ رہا ہے"

@@ -83,7 +83,9 @@ export const th: LocaleTree = {
     "sportsHistory": "ประวัติ",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "ประวัติ",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "รายการโปรด",
+    "favoritesLabel": "เกมที่บันทึกไว้"
   },
   "liveChat": {
     "title": "แชทสด",
@@ -204,12 +206,14 @@ export const th: LocaleTree = {
     "searchPlaceholder": "ค้นหาเกม...",
     "noGamesFound": "ไม่พบเกม",
     "noProvidersFound": "ไม่พบผู้ให้บริการ",
-    "collectionGames": "เกม {{name}}"
+    "collectionGames": "เกม {{name}}",
+    "noFavoritesYet": "ยังไม่มีเกมรายการโปรด แตะหัวใจบนเกมเพื่อบันทึก"
   },
   "collections": {
     "top": "เกมยอดนิยม",
     "popular": "เกมยอดนิยม",
-    "new": "เกมใหม่"
+    "new": "เกมใหม่",
+    "favorites": "รายการโปรด"
   },
   "gameTypes": {
     "slot": "สล็อต",
@@ -595,7 +599,9 @@ export const th: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "ใหม่",
-    "bonusBadge": "โบนัส"
+    "bonusBadge": "โบนัส",
+    "addFavorite": "เพิ่มในรายการโปรด",
+    "removeFavorite": "ลบออกจากรายการโปรด"
   },
   "modal": {
     "comingSoon": "เร็ว ๆ นี้"

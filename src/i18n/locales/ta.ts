@@ -83,7 +83,9 @@ export const ta: LocaleTree = {
     "sportsHistory": "வரலாறு",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "வரலாறு",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "பிடித்தவை",
+    "favoritesLabel": "சேமித்த விளையாட்டுகள்"
   },
   "liveChat": {
     "title": "நேரடி அரட்டை",
@@ -204,12 +206,14 @@ export const ta: LocaleTree = {
     "searchPlaceholder": "விளையாட்டுகளைத் தேடு...",
     "noGamesFound": "விளையாட்டுகள் கிடைக்கவில்லை.",
     "noProvidersFound": "வழங்குநர்கள் கிடைக்கவில்லை.",
-    "collectionGames": "{{name}} விளையாட்டுகள்"
+    "collectionGames": "{{name}} விளையாட்டுகள்",
+    "noFavoritesYet": "இன்னும் பிடித்த விளையாட்டுகள் இல்லை. சேமிக்க விளையாட்டின் இதயத்தைத் தட்டவும்."
   },
   "collections": {
     "top": "சிறந்த விளையாட்டுகள்",
     "popular": "பிரபலமான விளையாட்டுகள்",
-    "new": "புதிய விளையாட்டுகள்"
+    "new": "புதிய விளையாட்டுகள்",
+    "favorites": "பிடித்தவை"
   },
   "gameTypes": {
     "slot": "ஸ்லாட்கள்",
@@ -590,7 +594,9 @@ export const ta: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "புதிய",
-    "bonusBadge": "போனஸ்"
+    "bonusBadge": "போனஸ்",
+    "addFavorite": "பிடித்தவையில் சேர்",
+    "removeFavorite": "பிடித்தவையிலிருந்து நீக்கு"
   },
   "modal": {
     "comingSoon": "விரைவில்"

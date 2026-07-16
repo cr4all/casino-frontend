@@ -83,7 +83,9 @@ export const fi: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "Urheiluvedonlyöntini",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "SUOSIKIT",
+    "favoritesLabel": "Tallennetut pelit"
   },
   "liveChat": {
     "title": "Live-chat",
@@ -204,12 +206,14 @@ export const fi: LocaleTree = {
     "searchPlaceholder": "Hae pelejä...",
     "noGamesFound": "Ei pelejä löytynyt.",
     "noProvidersFound": "Ei tarjoajia löytynyt.",
-    "collectionGames": "{{name}}-pelit"
+    "collectionGames": "{{name}}-pelit",
+    "noFavoritesYet": "Ei vielä suosikkpelejä. Napauta pelin sydäntä tallentaaksesi sen."
   },
   "collections": {
     "top": "Parhaat pelit",
     "popular": "Suositut pelit",
-    "new": "Uudet pelit"
+    "new": "Uudet pelit",
+    "favorites": "Suosikit"
   },
   "gameTypes": {
     "slot": "Kolikkopelit",
@@ -590,7 +594,9 @@ export const fi: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "Uusi",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Lisää suosikkeihin",
+    "removeFavorite": "Poista suosikeista"
   },
   "modal": {
     "comingSoon": "Tulossa pian"

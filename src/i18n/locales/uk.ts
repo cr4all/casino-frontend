@@ -83,7 +83,9 @@ export const uk: LocaleTree = {
     "sportsHistory": "ІСТОРІЯ",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "ІСТОРІЯ",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "ОБРАНЕ",
+    "favoritesLabel": "Збережені ігри"
   },
   "liveChat": {
     "title": "Онлайн-чат",
@@ -204,12 +206,14 @@ export const uk: LocaleTree = {
     "searchPlaceholder": "Пошук ігор...",
     "noGamesFound": "Ігор не знайдено.",
     "noProvidersFound": "Постачальників не знайдено.",
-    "collectionGames": "Ігри {{name}}"
+    "collectionGames": "Ігри {{name}}",
+    "noFavoritesYet": "Поки немає обраних ігор. Натисніть серце на грі, щоб зберегти її."
   },
   "collections": {
     "top": "Топ ігри",
     "popular": "Популярні ігри",
-    "new": "Нові ігри"
+    "new": "Нові ігри",
+    "favorites": "Обране"
   },
   "gameTypes": {
     "slot": "Слоти",
@@ -593,7 +597,9 @@ export const uk: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "Нове",
-    "bonusBadge": "Бонус"
+    "bonusBadge": "Бонус",
+    "addFavorite": "Додати до обраного",
+    "removeFavorite": "Видалити з обраного"
   },
   "modal": {
     "comingSoon": "Незабаром"

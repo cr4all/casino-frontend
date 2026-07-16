@@ -83,7 +83,9 @@ export const es: LocaleTree = {
     "sportsHistory": "HISTORIA",
     "sportsHistoryLabel": "Apuestas deportivas",
     "casinoHistory": "HISTORIA",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "FAVORITOS",
+    "favoritesLabel": "Juegos guardados"
   },
   "sports": {
     "launching": "Cargando casa de apuestas...",
@@ -209,12 +211,14 @@ export const es: LocaleTree = {
     "searchPlaceholder": "Buscar juegos",
     "noGamesFound": "No se encontraron juegos.",
     "noProvidersFound": "No se encontraron proveedores",
-    "collectionGames": "Juegos de {{name}}"
+    "collectionGames": "Juegos de {{name}}",
+    "noFavoritesYet": "Aún no hay juegos favoritos. Toca el corazón de un juego para guardarlo."
   },
   "collections": {
     "top": "Principales juegos",
     "popular": "Juegos populares",
-    "new": "Nuevos juegos"
+    "new": "Nuevos juegos",
+    "favorites": "Favoritos"
   },
   "gameTypes": {
     "slot": "Tragamonedas",
@@ -616,7 +620,9 @@ export const es: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "Nuevo",
-    "bonusBadge": "Bono"
+    "bonusBadge": "Bono",
+    "addFavorite": "Añadir a favoritos",
+    "removeFavorite": "Quitar de favoritos"
   },
   "modal": {
     "comingSoon": "Próximamente"

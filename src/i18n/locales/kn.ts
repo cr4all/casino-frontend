@@ -83,7 +83,9 @@ export const kn: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "ನನ್ನ ಕ್ರೀಡಾ ಪಂತಗಳು",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "ಮೆಚ್ಚಿನವು",
+    "favoritesLabel": "ಉಳಿಸಿದ ಆಟಗಳು"
   },
   "sports": {
     "launching": "ಕ್ರೀಡಾ ಪುಸ್ತಕವನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...",
@@ -209,12 +211,14 @@ export const kn: LocaleTree = {
     "searchPlaceholder": "Search games...",
     "noGamesFound": "No games found.",
     "noProvidersFound": "No providers found.",
-    "collectionGames": "{{name}} Games"
+    "collectionGames": "{{name}} Games",
+    "noFavoritesYet": "ಇನ್ನೂ ಮೆಚ್ಚಿನ ಆಟಗಳಿಲ್ಲ. ಉಳಿಸಲು ಆಟದ ಹೃದಯವನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ."
   },
   "collections": {
     "top": "Top Games",
     "popular": "Popular Games",
-    "new": "New Games"
+    "new": "New Games",
+    "favorites": "ಮೆಚ್ಚಿನವು"
   },
   "gameTypes": {
     "slot": "Slots",
@@ -614,7 +618,9 @@ export const kn: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "ಮೆಚ್ಚಿನವುಗಳಿಗೆ ಸೇರಿಸಿ",
+    "removeFavorite": "ಮೆಚ್ಚಿನವುಗಳಿಂದ ತೆಗೆದುಹಾಕಿ"
   },
   "modal": {
     "comingSoon": "Coming Soon"

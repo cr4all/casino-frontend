@@ -83,7 +83,9 @@ export const zu: LocaleTree = {
     "sportsHistory": "Umlandu",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "Umlandu",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "IZINTANDAZO",
+    "favoritesLabel": "Imidlalo egciniwe"
   },
   "liveChat": {
     "title": "Ingxoxo ebukhoma",
@@ -204,12 +206,14 @@ export const zu: LocaleTree = {
     "searchPlaceholder": "Sesha imidlalo...",
     "noGamesFound": "Ayikho imidlalo etholiwe.",
     "noProvidersFound": "Abekho abahlinzeki abatholiwe.",
-    "collectionGames": "Imidlalo ye-{{name}}"
+    "collectionGames": "Imidlalo ye-{{name}}",
+    "noFavoritesYet": "Ayikho imidalo ethandwayo okwamanje. Thepha inhliziyo emdlalweni ukuze uyigcine."
   },
   "collections": {
     "top": "Imidlalo ehamba phambili",
     "popular": "Imidlalo ethandwayo",
-    "new": "Imidlalo emisha"
+    "new": "Imidlalo emisha",
+    "favorites": "Izintandazo"
   },
   "gameTypes": {
     "slot": "Ama-slots",
@@ -590,7 +594,9 @@ export const zu: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "Okusha",
-    "bonusBadge": "Ibhonasi"
+    "bonusBadge": "Ibhonasi",
+    "addFavorite": "Engeza kuzintandazo",
+    "removeFavorite": "Susa kuzintandazo"
   },
   "modal": {
     "comingSoon": "Iyeza maduzane"

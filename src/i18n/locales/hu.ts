@@ -83,7 +83,9 @@ export const hu: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "Sportfogadásaim",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "KEDVENCEK",
+    "favoritesLabel": "Mentett játékok"
   },
   "sports": {
     "launching": "Sportfogadás betöltése...",
@@ -209,12 +211,14 @@ export const hu: LocaleTree = {
     "searchPlaceholder": "Search games...",
     "noGamesFound": "No games found.",
     "noProvidersFound": "No providers found.",
-    "collectionGames": "{{name}} Games"
+    "collectionGames": "{{name}} Games",
+    "noFavoritesYet": "Még nincsenek kedvenc játékok. Érintse meg a szívet a mentéshez."
   },
   "collections": {
     "top": "Top Games",
     "popular": "Popular Games",
-    "new": "New Games"
+    "new": "New Games",
+    "favorites": "Kedvencek"
   },
   "gameTypes": {
     "slot": "Slots",
@@ -614,7 +618,9 @@ export const hu: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Hozzáadás a kedvencekhez",
+    "removeFavorite": "Eltávolítás a kedvencekből"
   },
   "modal": {
     "comingSoon": "Coming Soon"

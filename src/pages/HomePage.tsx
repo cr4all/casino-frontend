@@ -9,6 +9,7 @@ import { gameApi } from '@/api/game.api';
 import { useDebouncedValue } from '@/hooks/useDebouncedValue';
 import { useProvidersForCategory } from '@/hooks/useProvidersForCategory';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useFavoritesStore } from '@/stores/favoritesStore';
 import type { Game } from '@/types';
 
 const PER_PAGE = 24;
@@ -64,9 +65,23 @@ export function HomePage() {
 
     const loadGames = async () => {
       try {
+        if (activeCategory === 'favorites') {
+          const data = await gameApi.getFavorites(page, PER_PAGE);
+          if (cancelled) return;
+          setLastPage(data.pagination.last_page);
+          if (isFirstPage) {
+            setGames(data.items);
+          } else {
+            setGames((prev) => [...prev, ...data.items]);
+          }
+          return;
+        }
+
         const typeSlug = isTypeCategory(activeCategory) ? getTypeSlug(activeCategory) : undefined;
         const collectionSlug =
-          activeCategory !== 'all' && !isTypeCategory(activeCategory) ? activeCategory : undefined;
+          activeCategory !== 'all' && !isTypeCategory(activeCategory)
+            ? activeCategory
+            : undefined;
 
         const data = await gameApi.getGames({
           vendor: selectedVendorId ?? undefined,
@@ -115,6 +130,9 @@ export function HomePage() {
   };
 
   const isSearching = debouncedSearch.length > 0;
+  const favoriteIds = useFavoritesStore((s) => s.favoriteIds);
+  const displayGames =
+    activeCategory === 'favorites' ? games.filter((game) => favoriteIds.has(game.id)) : games;
 
   return (
     <div className="space-y-5">
@@ -122,6 +140,7 @@ export function HomePage() {
 
       <HomeCategoryBar active={activeCategory} onChange={handleCategoryChange} />
 
+      {activeCategory !== 'favorites' && (
       <div className="flex flex-col gap-3 sm:flex-row">
         <div className="relative flex-1">
           <svg
@@ -154,20 +173,23 @@ export function HomePage() {
           loading={vendorsLoading}
         />
       </div>
+      )}
 
       {loading ? (
         <p className="text-muted px-2">{t('common.loadingGames')}</p>
-      ) : games.length === 0 ? (
+      ) : displayGames.length === 0 ? (
         <div className="rounded-xl border border-white/[0.08] bg-card p-8 text-center">
-          <p className="text-muted">{t('category.noGamesFound')}</p>
-          {isSearching && (
+          <p className="text-muted">
+            {activeCategory === 'favorites' ? t('category.noFavoritesYet') : t('category.noGamesFound')}
+          </p>
+          {isSearching && activeCategory !== 'favorites' && (
             <p className="mt-2 text-xs text-muted">&quot;{debouncedSearch}&quot;</p>
           )}
         </div>
       ) : (
         <>
           <div className="grid grid-cols-3 gap-2 sm:grid-cols-3 sm:gap-3 md:grid-cols-4 md:gap-4 lg:grid-cols-5 xl:grid-cols-6">
-            {games.map((game) => (
+            {displayGames.map((game) => (
               <GameCard
                 key={game.id}
                 game={game}
@@ -183,7 +205,7 @@ export function HomePage() {
             onClick={handleShowMore}
           />
 
-          <LiveBetFeed games={games} />
+          <LiveBetFeed games={displayGames} />
         </>
       )}
     </div>

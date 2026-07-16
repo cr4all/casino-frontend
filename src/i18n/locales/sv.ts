@@ -83,7 +83,9 @@ export const sv: LocaleTree = {
     "sportsHistory": "HISTORIK",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "HISTORIK",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "FAVORITER",
+    "favoritesLabel": "Sparade spel"
   },
   "liveChat": {
     "title": "Livechatt",
@@ -204,12 +206,14 @@ export const sv: LocaleTree = {
     "searchPlaceholder": "Sök spel...",
     "noGamesFound": "Inga spel hittades.",
     "noProvidersFound": "Inga leverantörer hittades.",
-    "collectionGames": "{{name}} spel"
+    "collectionGames": "{{name}} spel",
+    "noFavoritesYet": "Inga favoritspel ännu. Tryck på hjärtat på ett spel för att spara det."
   },
   "collections": {
     "top": "Toppspel",
     "popular": "Populära spel",
-    "new": "Nya spel"
+    "new": "Nya spel",
+    "favorites": "Favoriter"
   },
   "gameTypes": {
     "slot": "Spelautomater",
@@ -590,7 +594,9 @@ export const sv: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "Ny",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Lägg till i favoriter",
+    "removeFavorite": "Ta bort från favoriter"
   },
   "modal": {
     "comingSoon": "Kommer snart"

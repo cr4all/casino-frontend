@@ -83,7 +83,9 @@ export const mn: LocaleTree = {
     "sportsHistory": "ТҮҮХ",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "ТҮҮХ",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "ДУРТАЙ",
+    "favoritesLabel": "Хадгалсан тоглоомууд"
   },
   "sports": {
     "launching": "Loading sportsbook...",
@@ -209,12 +211,14 @@ export const mn: LocaleTree = {
     "searchPlaceholder": "Тоглоом хайх...",
     "noGamesFound": "Тоглоом олдсонгүй.",
     "noProvidersFound": "Provider олдсонгүй.",
-    "collectionGames": "{{name}} тоглоомууд"
+    "collectionGames": "{{name}} тоглоомууд",
+    "noFavoritesYet": "Одоогоор дуртай тоглоом байхгүй. Хадгалахын тулд зүрхэнд дарна уу."
   },
   "collections": {
     "top": "Шилдэг тоглоомууд",
     "popular": "Алдартай тоглоомууд",
-    "new": "Шинэ тоглоомууд"
+    "new": "Шинэ тоглоомууд",
+    "favorites": "Дуртай"
   },
   "gameTypes": {
     "slot": "Slots",
@@ -614,7 +618,9 @@ export const mn: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Дуртайд нэмэх",
+    "removeFavorite": "Дуртайгаас хасах"
   },
   "modal": {
     "comingSoon": "Удахгүй"

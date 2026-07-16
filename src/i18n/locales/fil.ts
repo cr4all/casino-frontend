@@ -83,7 +83,9 @@ export const fil: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "Aking mga taya sa sports",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "MGA PAVORITO",
+    "favoritesLabel": "Mga naka-save na laro"
   },
   "liveChat": {
     "title": "Live Chat",
@@ -204,12 +206,14 @@ export const fil: LocaleTree = {
     "searchPlaceholder": "Maghanap ng laro...",
     "noGamesFound": "Walang nahanap na laro.",
     "noProvidersFound": "Walang nahanap na provider.",
-    "collectionGames": "Mga laro ng {{name}}"
+    "collectionGames": "Mga laro ng {{name}}",
+    "noFavoritesYet": "Wala pang paboritong laro. I-tap ang puso sa isang laro para i-save ito."
   },
   "collections": {
     "top": "Nangungunang laro",
     "popular": "Sikat na laro",
-    "new": "Bagong laro"
+    "new": "Bagong laro",
+    "favorites": "Mga Paborito"
   },
   "gameTypes": {
     "slot": "Mga slot",
@@ -590,7 +594,9 @@ export const fil: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "Bago",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Idagdag sa mga paborito",
+    "removeFavorite": "Alisin sa mga paborito"
   },
   "modal": {
     "comingSoon": "Malapit na"

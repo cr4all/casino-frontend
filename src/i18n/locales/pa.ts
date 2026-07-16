@@ -83,7 +83,9 @@ export const pa: LocaleTree = {
     "sportsHistory": "ਅਤੀਤ",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "ਅਤੀਤ",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "ਮਨਪਸੰਦ",
+    "favoritesLabel": "ਸੰਭਾਲੇ ਗਏ ਗੇਮ"
   },
   "sports": {
     "launching": "Loading sportsbook...",
@@ -209,12 +211,14 @@ export const pa: LocaleTree = {
     "searchPlaceholder": "ਖੇਡਾਂ ਖੋਜੋ...",
     "noGamesFound": "ਕੋਈ ਗੇਮ ਨਹੀਂ ਲੱਭੀ ।",
     "noProvidersFound": "ਕੋਈ ਪ੍ਰਦਾਤਾ ਨਹੀਂ ਲੱਭਿਆ ।",
-    "collectionGames": "{{name}} ਖੇਡਾਂ"
+    "collectionGames": "{{name}} ਖੇਡਾਂ",
+    "noFavoritesYet": "ਹਾਲੇ ਕੋਈ ਮਨਪਸੰਦ ਗੇਮ ਨਹੀਂ। ਸੰਭਾਲਣ ਲਈ ਗੇਮ ’ਤੇ ਦਿਲ ਟੈਪ ਕਰੋ।"
   },
   "collections": {
     "top": "ਸਿਖਰ ਗੇਮਜ਼",
     "popular": "ਪ੍ਰਸਿੱਧ ਗੇਮਜ਼",
-    "new": "ਨਵੀਆਂ ਖੇਡਾਂ"
+    "new": "ਨਵੀਆਂ ਖੇਡਾਂ",
+    "favorites": "ਮਨਪਸੰਦ"
   },
   "gameTypes": {
     "slot": "ਸਲਾਟ",
@@ -614,7 +618,9 @@ export const pa: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "_ਨਵਾਂ",
-    "bonusBadge": "ਬੋਨਸ"
+    "bonusBadge": "ਬੋਨਸ",
+    "addFavorite": "ਮਨਪਸੰਦ ਵਿੱਚ ਜੋੜੋ",
+    "removeFavorite": "ਮਨਪਸੰਦ ਤੋਂ ਹਟਾਓ"
   },
   "modal": {
     "comingSoon": "ਜਲਦੀ ਆ ਰਿਹਾ ਹੈ"

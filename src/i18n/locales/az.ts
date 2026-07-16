@@ -83,7 +83,9 @@ export const az: LocaleTree = {
     "sportsHistory": "TARİX",
     "sportsHistoryLabel": "İdman mərclərim",
     "casinoHistory": "TARİX",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "SEÇİLMİŞLƏR",
+    "favoritesLabel": "Saxlanılmış oyunlar"
   },
   "sports": {
     "launching": "İdman kitabçası yüklənir...",
@@ -209,12 +211,14 @@ export const az: LocaleTree = {
     "searchPlaceholder": "Axtarış oyunları...",
     "noGamesFound": "Heç bir oyun tapılmadı.",
     "noProvidersFound": "Provayder tapılmadı.",
-    "collectionGames": "{{name}} Oyunlar"
+    "collectionGames": "{{name}} Oyunlar",
+    "noFavoritesYet": "Hələ seçilmiş oyun yoxdur. Saxlamaq üçün oyundakı ürəyə toxunun."
   },
   "collections": {
     "top": "Ən Yaxşı Oyunlar",
     "popular": "Populyar Oyunlar",
-    "new": "Yeni Oyunlar"
+    "new": "Yeni Oyunlar",
+    "favorites": "Seçilmişlər"
   },
   "gameTypes": {
     "slot": "Slotlar",
@@ -624,7 +628,9 @@ export const az: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Seçilmişlərə əlavə et",
+    "removeFavorite": "Seçilmişlərdən sil"
   },
   "modal": {
     "comingSoon": "Tezliklə"

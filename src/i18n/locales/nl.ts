@@ -83,7 +83,9 @@ export const nl: LocaleTree = {
     "sportsHistory": "GESCHIEDENIS",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "GESCHIEDENIS",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "FAVORIETEN",
+    "favoritesLabel": "Opgeslagen spellen"
   },
   "sports": {
     "launching": "Loading sportsbook...",
@@ -209,12 +211,14 @@ export const nl: LocaleTree = {
     "searchPlaceholder": "Spellen zoeken...",
     "noGamesFound": "Geen spellen gevonden.",
     "noProvidersFound": "Geen providers gevonden.",
-    "collectionGames": "{{name}}-spellen"
+    "collectionGames": "{{name}}-spellen",
+    "noFavoritesYet": "Nog geen favoriete spellen. Tik op het hart om een spel op te slaan."
   },
   "collections": {
     "top": "Topspellen",
     "popular": "Populaire spellen",
-    "new": "Nieuwe spellen"
+    "new": "Nieuwe spellen",
+    "favorites": "Favorieten"
   },
   "gameTypes": {
     "slot": "Gokkasten",
@@ -616,7 +620,9 @@ export const nl: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Toevoegen aan favorieten",
+    "removeFavorite": "Verwijderen uit favorieten"
   },
   "modal": {
     "comingSoon": "Binnenkort beschikbaar"

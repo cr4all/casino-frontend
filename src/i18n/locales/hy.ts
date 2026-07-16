@@ -83,7 +83,9 @@ export const hy: LocaleTree = {
     "sportsHistory": "ՊԱՏՄՈՒԹՅՈՒՆ",
     "sportsHistoryLabel": "Իմ սպորտային խաղադրույքները",
     "casinoHistory": "ՊԱՏՄՈՒԹՅՈՒՆ",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "ՆԱԽԸՆՏՐԱԾՆԵՐ",
+    "favoritesLabel": "Պահված խաղեր"
   },
   "sports": {
     "launching": "Բեռնվում է սպորտային գրքույկը...",
@@ -209,12 +211,14 @@ export const hy: LocaleTree = {
     "searchPlaceholder": "Որոնել խաղերը...",
     "noGamesFound": "Ընտրված խաղեր չեն գտնվել։",
     "noProvidersFound": "Պատվիրատուներ չեն գտնվել։",
-    "collectionGames": "{{name}} Խաղեր"
+    "collectionGames": "{{name}} Խաղեր",
+    "noFavoritesYet": "Դեռ նախընտրած խաղեր չկան։ Պահելու համար հպեք խաղի սրտին։"
   },
   "collections": {
     "top": "Արտոնյալ Խաղեր",
     "popular": "Հանրաճանաչ Խաղեր",
-    "new": "Նոր խաղեր"
+    "new": "Նոր խաղեր",
+    "favorites": "Նախընտրածներ"
   },
   "gameTypes": {
     "slot": "Սլոթեր",
@@ -614,7 +618,9 @@ export const hy: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "Նոր",
-    "bonusBadge": "Պարգևավճար"
+    "bonusBadge": "Պարգևավճար",
+    "addFavorite": "Ավելացնել նախընտրածներին",
+    "removeFavorite": "Հեռացնել նախընտրածներից"
   },
   "modal": {
     "comingSoon": "Շուտով հասանելի"

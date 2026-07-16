@@ -83,7 +83,9 @@ export const ga: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "Mo gheallta spóirt",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "CEANÁIN",
+    "favoritesLabel": "Cluichí sábháilte"
   },
   "sports": {
     "launching": "Leabhar spóirt á luchtú...",
@@ -209,12 +211,14 @@ export const ga: LocaleTree = {
     "searchPlaceholder": "Search games...",
     "noGamesFound": "No games found.",
     "noProvidersFound": "No providers found.",
-    "collectionGames": "{{name}} Games"
+    "collectionGames": "{{name}} Games",
+    "noFavoritesYet": "Níl aon chluiche ceanáin fós. Tapáil an croí ar chluiche chun é a shábháil."
   },
   "collections": {
     "top": "Top Games",
     "popular": "Popular Games",
-    "new": "New Games"
+    "new": "New Games",
+    "favorites": "Ceanáin"
   },
   "gameTypes": {
     "slot": "Slots",
@@ -614,7 +618,9 @@ export const ga: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Cuir leis na ceanáin",
+    "removeFavorite": "Bain de na ceanáin"
   },
   "modal": {
     "comingSoon": "Coming Soon"

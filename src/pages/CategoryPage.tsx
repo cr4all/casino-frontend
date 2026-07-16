@@ -17,6 +17,7 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { getVendorBannerUrl } from '@/data/providerBanners';
 import { mockPromotions } from '@/data/mockData';
 import { vendorGradient, vendorPath } from '@/stores/gameStore';
+import { useFavoritesStore } from '@/stores/favoritesStore';
 import type { Game } from '@/types';
 
 function parseCategoryFilters(category: string) {
@@ -28,6 +29,7 @@ function parseCategoryFilters(category: string) {
     vendorId: vendorMatch ? Number(vendorMatch[1]) : undefined,
     typeSlug: typeMatch ? typeMatch[1] : undefined,
     collectionSlug: collectionMatch ? collectionMatch[1] : undefined,
+    isFavorites: category === 'favorites',
   };
 }
 
@@ -46,7 +48,7 @@ export function CategoryPage() {
   const [selectedVendorId, setSelectedVendorId] = useState<number | null>(null);
   const debouncedSearch = useDebouncedValue(search.trim(), 400, [category, selectedVendorId]);
 
-  const { vendorId, typeSlug, collectionSlug } = parseCategoryFilters(category);
+  const { vendorId, typeSlug, collectionSlug, isFavorites } = parseCategoryFilters(category);
   const effectiveVendorId = selectedVendorId ?? vendorId;
   const { vendors: filteredVendors, loading: filteredVendorsLoading } = useProvidersForCategory(
     typeSlug ?? null,
@@ -55,6 +57,9 @@ export function CategoryPage() {
   const providerVendorsLoading = typeSlug ? filteredVendorsLoading : vendorsLoading;
 
   const title = useMemo(() => {
+    if (isFavorites) {
+      return tCollection('favorites');
+    }
     if (vendorId) {
       const vendor = vendors.find((v) => v.id === vendorId);
       return vendor?.name ?? t('category.games');
@@ -67,7 +72,7 @@ export function CategoryPage() {
       return tCollection(collectionSlug);
     }
     return t('category.allGames');
-  }, [vendorId, typeSlug, collectionSlug, vendors, types, t, tGameType, tCollection]);
+  }, [isFavorites, vendorId, typeSlug, collectionSlug, vendors, types, t, tGameType, tCollection]);
 
   useEffect(() => {
     setPage(1);
@@ -125,15 +130,18 @@ export function CategoryPage() {
       setLoadingMore(true);
     }
 
-    gameApi
-      .getGames({
-        vendor: effectiveVendorId,
-        type: typeSlug,
-        collection: collectionSlug,
-        search: debouncedSearch || undefined,
-        page,
-        per_page: 24,
-      })
+    const request = isFavorites
+      ? gameApi.getFavorites(page, 24)
+      : gameApi.getGames({
+          vendor: effectiveVendorId,
+          type: typeSlug,
+          collection: collectionSlug,
+          search: debouncedSearch || undefined,
+          page,
+          per_page: 24,
+        });
+
+    request
       .then((data) => {
         if (cancelled) return;
         setLastPage(data.pagination.last_page);
@@ -162,12 +170,15 @@ export function CategoryPage() {
     return () => {
       cancelled = true;
     };
-  }, [category, effectiveVendorId, typeSlug, collectionSlug, page, debouncedSearch]);
+  }, [category, isFavorites, effectiveVendorId, typeSlug, collectionSlug, page, debouncedSearch]);
 
   const handleShowMore = () => {
     if (loadingMore || page >= lastPage) return;
     setPage((p) => p + 1);
   };
+
+  const favoriteIds = useFavoritesStore((s) => s.favoriteIds);
+  const displayGames = isFavorites ? games.filter((game) => favoriteIds.has(game.id)) : games;
 
   if (category === 'providers') {
     return (
@@ -217,6 +228,7 @@ export function CategoryPage() {
 
       <SectionTitle title={title} showArrows={false} />
 
+      {!isFavorites && (
       <div className="flex flex-col gap-3 sm:flex-row">
         <div className="relative flex-1">
           <svg
@@ -249,17 +261,20 @@ export function CategoryPage() {
           loading={providerVendorsLoading}
         />
       </div>
+      )}
 
       {loading ? (
         <p className="text-muted">{t('common.loadingGames')}</p>
-      ) : games.length === 0 ? (
+      ) : displayGames.length === 0 ? (
         <div className="rounded-xl border border-white/[0.08] bg-card p-8 text-center">
-          <p className="text-muted">{t('category.noGamesFound')}</p>
+          <p className="text-muted">
+            {isFavorites ? t('category.noFavoritesYet') : t('category.noGamesFound')}
+          </p>
         </div>
       ) : (
         <>
           <div className="grid grid-cols-3 gap-2 sm:grid-cols-3 sm:gap-3 md:grid-cols-4 md:gap-4 lg:grid-cols-5 xl:grid-cols-6">
-            {games.map((game) => (
+            {displayGames.map((game) => (
               <GameCard key={game.id} game={game} variant="grid" />
             ))}
           </div>
@@ -270,7 +285,7 @@ export function CategoryPage() {
             onClick={handleShowMore}
           />
 
-          <LiveBetFeed games={games} />
+          <LiveBetFeed games={displayGames} />
         </>
       )}
     </div>

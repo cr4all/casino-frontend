@@ -83,7 +83,9 @@ export const vi: LocaleTree = {
     "sportsHistory": "LỊCH SỬ",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "LỊCH SỬ",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "YÊU THÍCH",
+    "favoritesLabel": "Trò chơi đã lưu"
   },
   "liveChat": {
     "title": "Chat trực tuyến",
@@ -204,12 +206,14 @@ export const vi: LocaleTree = {
     "searchPlaceholder": "Tìm game...",
     "noGamesFound": "Không tìm thấy game.",
     "noProvidersFound": "Không tìm thấy nhà cung cấp.",
-    "collectionGames": "Game {{name}}"
+    "collectionGames": "Game {{name}}",
+    "noFavoritesYet": "Chưa có trò chơi yêu thích. Chạm vào trái tim trên trò chơi để lưu."
   },
   "collections": {
     "top": "Game hàng đầu",
     "popular": "Game phổ biến",
-    "new": "Game mới"
+    "new": "Game mới",
+    "favorites": "Yêu thích"
   },
   "gameTypes": {
     "slot": "Slot",
@@ -592,7 +596,9 @@ export const vi: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "Mới",
-    "bonusBadge": "Thưởng"
+    "bonusBadge": "Thưởng",
+    "addFavorite": "Thêm vào yêu thích",
+    "removeFavorite": "Xóa khỏi yêu thích"
   },
   "modal": {
     "comingSoon": "Sắp ra mắt"

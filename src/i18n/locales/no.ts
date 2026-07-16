@@ -83,7 +83,9 @@ export const no: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "FAVORITTER",
+    "favoritesLabel": "Lagrede spill"
   },
   "liveChat": {
     "title": "Live-chat",
@@ -204,12 +206,14 @@ export const no: LocaleTree = {
     "searchPlaceholder": "Søk etter spill...",
     "noGamesFound": "Ingen spill funnet.",
     "noProvidersFound": "Ingen leverandører funnet.",
-    "collectionGames": "{{name}}-spill"
+    "collectionGames": "{{name}}-spill",
+    "noFavoritesYet": "Ingen favorittspill ennå. Trykk på hjertet på et spill for å lagre det."
   },
   "collections": {
     "top": "Topp spill",
     "popular": "Populære spill",
-    "new": "Nye spill"
+    "new": "Nye spill",
+    "favorites": "Favoritter"
   },
   "gameTypes": {
     "slot": "Spilleautomater",
@@ -593,7 +597,9 @@ export const no: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "Ny",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Legg til i favoritter",
+    "removeFavorite": "Fjern fra favoritter"
   },
   "modal": {
     "comingSoon": "Kommer snart"

@@ -83,7 +83,9 @@ export const ro: LocaleTree = {
     "sportsHistory": "ISTORIC",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "ISTORIC",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "FAVORITE",
+    "favoritesLabel": "Jocuri salvate"
   },
   "sports": {
     "launching": "Loading sportsbook...",
@@ -209,12 +211,14 @@ export const ro: LocaleTree = {
     "searchPlaceholder": "Căutați jocuri...",
     "noGamesFound": "Niciun joc găsit.",
     "noProvidersFound": "Niciun furnizor găsit.",
-    "collectionGames": "Jocuri {{name}}"
+    "collectionGames": "Jocuri {{name}}",
+    "noFavoritesYet": "Nu există încă jocuri favorite. Atingeți inima unui joc pentru a-l salva."
   },
   "collections": {
     "top": "Jocuri de top",
     "popular": "Jocuri populare",
-    "new": "Jocuri noi"
+    "new": "Jocuri noi",
+    "favorites": "Favorite"
   },
   "gameTypes": {
     "slot": "Sloturi",
@@ -614,7 +618,9 @@ export const ro: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Adaugă la favorite",
+    "removeFavorite": "Elimină din favorite"
   },
   "modal": {
     "comingSoon": "În curând"

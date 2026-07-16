@@ -83,7 +83,9 @@ export const te: LocaleTree = {
     "sportsHistory": "చరిత్ర",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "చరిత్ర",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "ఇష్టమైనవి",
+    "favoritesLabel": "సేవ్ చేసిన గేమ్‌లు"
   },
   "liveChat": {
     "title": "లైవ్ చాట్",
@@ -204,12 +206,14 @@ export const te: LocaleTree = {
     "searchPlaceholder": "గేమ్‌లు వెతకండి...",
     "noGamesFound": "గేమ్‌లు కనుగొనబడలేదు.",
     "noProvidersFound": "ప్రొవైడర్‌లు కనుగొనబడలేదు.",
-    "collectionGames": "{{name}} గేమ్‌లు"
+    "collectionGames": "{{name}} గేమ్‌లు",
+    "noFavoritesYet": "ఇంకా ఇష్టమైన గేమ్‌లు లేవు. సేవ్ చేయడానికి గేమ్‌పై హృదయాన్ని ట్యాప్ చేయండి."
   },
   "collections": {
     "top": "టాప్ గేమ్‌లు",
     "popular": "జనాదరణ గేమ్‌లు",
-    "new": "కొత్త గేమ్‌లు"
+    "new": "కొత్త గేమ్‌లు",
+    "favorites": "ఇష్టమైనవి"
   },
   "gameTypes": {
     "slot": "స్లాట్‌లు",
@@ -593,7 +597,9 @@ export const te: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "కొత్త",
-    "bonusBadge": "బోనస్"
+    "bonusBadge": "బోనస్",
+    "addFavorite": "ఇష్టమైనవాటికి జోడించు",
+    "removeFavorite": "ఇష్టమైనవాటి నుండి తొలగించు"
   },
   "modal": {
     "comingSoon": "త్వరలో"

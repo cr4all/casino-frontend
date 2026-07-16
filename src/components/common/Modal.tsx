@@ -24,7 +24,7 @@ export function Modal({ isOpen, onClose, title, titleIcon, size = 'md', children
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto overscroll-contain">
+    <div className="fixed inset-0 z-[80] overflow-y-auto overscroll-contain">
       <div
         className="fixed inset-0 bg-black/70 backdrop-blur-sm"
         onClick={onClose}

@@ -83,7 +83,9 @@ export const am: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "የእኔ የስፖርት ውርርድ",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "ተወዳጆች",
+    "favoritesLabel": "የተቀመጡ ጨዋታዎች"
   },
   "sports": {
     "launching": "የስፖርት መጽሃፍ በመጫን ላይ...",
@@ -209,12 +211,14 @@ export const am: LocaleTree = {
     "searchPlaceholder": "Search games...",
     "noGamesFound": "No games found.",
     "noProvidersFound": "No providers found.",
-    "collectionGames": "{{name}} Games"
+    "collectionGames": "{{name}} Games",
+    "noFavoritesYet": "እስካሁን ተወዳጅ ጨዋታ የለም። ለማስቀመጥ በጨዋታው ላይ ያለውን ልብ ይንኩ።"
   },
   "collections": {
     "top": "Top Games",
     "popular": "Popular Games",
-    "new": "New Games"
+    "new": "New Games",
+    "favorites": "ተወዳጆች"
   },
   "gameTypes": {
     "slot": "Slots",
@@ -624,7 +628,9 @@ export const am: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "ጉርሻ"
+    "bonusBadge": "ጉርሻ",
+    "addFavorite": "ወደ ተወዳጆች ጨምር",
+    "removeFavorite": "ከተወዳጆች አስወግድ"
   },
   "modal": {
     "comingSoon": "Coming Soon"

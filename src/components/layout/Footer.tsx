@@ -5,7 +5,7 @@ import { PaymentMethodsMarquee } from '@/components/layout/PaymentMethodsMarquee
 import { Logo } from '@/components/common/Logo';
 import { useAuthStore } from '@/stores/authStore';
 import { useCookieConsentStore } from '@/stores/cookieConsentStore';
-import { useUiStore } from '@/stores/uiStore';
+import { useRequestLiveChat } from '@/hooks/useRequestLiveChat';
 import { typePath } from '@/stores/gameStore';
 
 const SUPPORT_EMAIL = 'support@ibets24.com';
@@ -30,7 +30,7 @@ export function Footer() {
   const { t } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const openSettings = useCookieConsentStore((s) => s.openSettings);
-  const openLiveChat = useUiStore((s) => s.openLiveChat);
+  const requestLiveChat = useRequestLiveChat();
 
   return (
     <footer className={`site-footer mt-auto ${isAuthenticated ? 'has-mobile-wallet-bar lg:pb-0' : ''}`}>
@@ -57,7 +57,7 @@ export function Footer() {
             </FooterLinkList>
 
             <FooterLinkList title={t('footer.support')}>
-              <button type="button" onClick={openLiveChat} className="site-footer__col-link">
+              <button type="button" onClick={requestLiveChat} className="site-footer__col-link">
                 {t('footer.messages')}
               </button>
               <Link to="/support-tickets" className="site-footer__col-link">{t('footer.tickets')}</Link>

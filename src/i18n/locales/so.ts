@@ -83,7 +83,9 @@ export const so: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "LA JECEL YAHAY",
+    "favoritesLabel": "Ciyaaraha la keydiyay"
   },
   "liveChat": {
     "title": "Wada hadal toos ah",
@@ -204,12 +206,14 @@ export const so: LocaleTree = {
     "searchPlaceholder": "Raadi ciyaaro...",
     "noGamesFound": "Ciyaaro lama helin.",
     "noProvidersFound": "Bixiyeyaal lama helin.",
-    "collectionGames": "Ciyaaraha {{name}}"
+    "collectionGames": "Ciyaaraha {{name}}",
+    "noFavoritesYet": "Weli ma jiraan ciyaaro la jecel yahay. Taabo wadnaha ciyaarta si aad u keydiso."
   },
   "collections": {
     "top": "Ciyaaraha ugu fiican",
     "popular": "Ciyaaraha caanka ah",
-    "new": "Ciyaaraha cusub"
+    "new": "Ciyaaraha cusub",
+    "favorites": "La jecel yahay"
   },
   "gameTypes": {
     "slot": "Slot-yada",
@@ -593,7 +597,9 @@ export const so: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "Cusub",
-    "bonusBadge": "Gunno"
+    "bonusBadge": "Gunno",
+    "addFavorite": "Ku dar kuwa la jecel yahay",
+    "removeFavorite": "Ka saar kuwa la jecel yahay"
   },
   "modal": {
     "comingSoon": "Dhawaan imanaya"

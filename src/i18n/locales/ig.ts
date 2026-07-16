@@ -83,7 +83,9 @@ export const ig: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "My sports nzo",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "ỌKARA",
+    "favoritesLabel": "Egwuregwu echekwara"
   },
   "sports": {
     "launching": "Na-ebugote sportsbook...",
@@ -209,12 +211,14 @@ export const ig: LocaleTree = {
     "searchPlaceholder": "Search games...",
     "noGamesFound": "No games found.",
     "noProvidersFound": "No providers found.",
-    "collectionGames": "{{name}} Games"
+    "collectionGames": "{{name}} Games",
+    "noFavoritesYet": "Enweghị egwuregwu ọkara ugbu a. Pịa obi n’egwuregwu iji chekwaa ya."
   },
   "collections": {
     "top": "Top Games",
     "popular": "Popular Games",
-    "new": "New Games"
+    "new": "New Games",
+    "favorites": "Ọkara"
   },
   "gameTypes": {
     "slot": "Slots",
@@ -614,7 +618,9 @@ export const ig: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Tinye na ọkara",
+    "removeFavorite": "Wepụ na ọkara"
   },
   "modal": {
     "comingSoon": "Coming Soon"

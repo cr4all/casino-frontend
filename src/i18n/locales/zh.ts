@@ -83,7 +83,9 @@ export const zh: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "收藏",
+    "favoritesLabel": "已保存的游戏"
   },
   "liveChat": {
     "title": "在线客服",
@@ -204,12 +206,14 @@ export const zh: LocaleTree = {
     "searchPlaceholder": "搜索游戏...",
     "noGamesFound": "未找到游戏。",
     "noProvidersFound": "未找到供应商。",
-    "collectionGames": "{{name}} 游戏"
+    "collectionGames": "{{name}} 游戏",
+    "noFavoritesYet": "暂无收藏游戏。点击游戏上的心形即可保存。"
   },
   "collections": {
     "top": "热门游戏",
     "popular": "人气游戏",
-    "new": "新游戏"
+    "new": "新游戏",
+    "favorites": "收藏"
   },
   "gameTypes": {
     "slot": "老虎机",
@@ -592,7 +596,9 @@ export const zh: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "新",
-    "bonusBadge": "奖金"
+    "bonusBadge": "奖金",
+    "addFavorite": "添加到收藏",
+    "removeFavorite": "从收藏中移除"
   },
   "modal": {
     "comingSoon": "即将上线"
