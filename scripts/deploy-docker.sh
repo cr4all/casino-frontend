@@ -19,7 +19,7 @@ echo "Pulling latest code..."
 git pull origin main
 
 echo "Building frontend image..."
-echo "  (VITE_REVERB_*, VITE_TURNSTILE_SITE_KEY from env — rebuild when those change)"
+echo "  (VITE_REVERB_*, VITE_TURNSTILE_SITE_KEY, VITE_SENTRY_*, VITE_POSTHOG_* from env — rebuild when those change)"
 "${COMPOSE[@]}" build frontend
 
 echo "Starting frontend..."
