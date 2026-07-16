@@ -324,9 +324,8 @@ export function DepositPage() {
 
   const paymentInfo = lastDeposit?.payment_info ?? {};
   const isCryptoPayment = confirmedOption?.kind === 'crypto' || Boolean(paymentInfo.pay_address || paymentInfo.address);
-  const paymentUrl = typeof paymentInfo.payment_url === 'string' ? paymentInfo.payment_url : null;
   const qrString = typeof paymentInfo.qr_string === 'string' ? paymentInfo.qr_string : null;
-  const isRedirectPayment = Boolean(paymentUrl);
+  const isRedirectPayment = typeof paymentInfo.payment_url === 'string' && Boolean(paymentInfo.payment_url);
   const payCurrencyCode = String(paymentInfo.pay_currency ?? paymentInfo.currency ?? confirmedOption?.pay_currency ?? '');
   const payAmountRaw = paymentInfo.pay_amount != null && paymentInfo.pay_amount !== ''
     ? String(paymentInfo.pay_amount)
@@ -534,19 +533,6 @@ export function DepositPage() {
                       <p className="mt-1 text-xs text-muted">{t('deposit.sendToAddressFiatDisclaimer')}</p>
                     </>
                   )}
-                </div>
-              )}
-
-              {paymentUrl && (
-                <div className="mb-3">
-                  <a
-                    href={paymentUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex rounded-md bg-accent-gold px-4 py-2 text-sm font-semibold text-background hover:bg-accent-gold/90"
-                  >
-                    {t('deposit.openPaymentPage')}
-                  </a>
                 </div>
               )}
 
