@@ -90,8 +90,12 @@ export const useCookieConsentStore = create<CookieConsentState>()(
           },
         };
       },
+      // Defer past create() TDZ: sync localStorage rehydrate can finish during create(),
+      // and referencing useCookieConsentStore inline would throw before setHasHydrated runs.
       onRehydrateStorage: () => () => {
-        useCookieConsentStore.getState().setHasHydrated(true);
+        queueMicrotask(() => {
+          useCookieConsentStore.getState().setHasHydrated(true);
+        });
       },
     },
   ),
