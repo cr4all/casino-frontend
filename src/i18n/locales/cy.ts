@@ -83,7 +83,9 @@ export const cy: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "Fy betiau chwaraeon",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "FFEFRYNNU",
+    "favoritesLabel": "Gemau wedi’u cadw"
   },
   "sports": {
     "launching": "Yn llwytho llyfr chwaraeon...",
@@ -209,12 +211,14 @@ export const cy: LocaleTree = {
     "searchPlaceholder": "Search games...",
     "noGamesFound": "No games found.",
     "noProvidersFound": "No providers found.",
-    "collectionGames": "{{name}} Games"
+    "collectionGames": "{{name}} Games",
+    "noFavoritesYet": "Dim gemau ffefryn eto. Tapiwch y galon ar gêm i’w chadw."
   },
   "collections": {
     "top": "Top Games",
     "popular": "Popular Games",
-    "new": "New Games"
+    "new": "New Games",
+    "favorites": "Ffefrynnau"
   },
   "gameTypes": {
     "slot": "Slots",
@@ -624,7 +628,9 @@ export const cy: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonws"
+    "bonusBadge": "Bonws",
+    "addFavorite": "Ychwanegu at ffefrynnau",
+    "removeFavorite": "Dileu o ffefrynnau"
   },
   "modal": {
     "comingSoon": "Coming Soon"

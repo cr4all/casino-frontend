@@ -85,16 +85,23 @@ function TawkToChatInner() {
   const chatAllowed = canLoadChat(level, preferences);
 
   useEffect(() => {
-    if (nativeEnabled || configLoading) {
+    if (configLoading) {
       hideTawkWidget();
       return;
     }
 
+    // Native and Tawk both require chat cookie consent.
     if (!chatAllowed) {
       hideTawkWidget();
       closeLiveChat();
       return;
     }
+
+    if (nativeEnabled) {
+      hideTawkWidget();
+      return;
+    }
+
     loadTawkScript();
   }, [chatAllowed, closeLiveChat, configLoading, nativeEnabled]);
 

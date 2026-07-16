@@ -83,7 +83,9 @@ export const el: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "Τα αθλητικά μου στοιχήματα",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "ΑΓΑΠΗΜΕΝΑ",
+    "favoritesLabel": "Αποθηκευμένα παιχνίδια"
   },
   "sports": {
     "launching": "Φόρτωση αθλητικού στοιχήματος...",
@@ -209,12 +211,14 @@ export const el: LocaleTree = {
     "searchPlaceholder": "Search games...",
     "noGamesFound": "No games found.",
     "noProvidersFound": "No providers found.",
-    "collectionGames": "{{name}} Games"
+    "collectionGames": "{{name}} Games",
+    "noFavoritesYet": "Δεν υπάρχουν ακόμα αγαπημένα παιχνίδια. Πατήστε την καρδιά για αποθήκευση."
   },
   "collections": {
     "top": "Top Games",
     "popular": "Popular Games",
-    "new": "New Games"
+    "new": "New Games",
+    "favorites": "Αγαπημένα"
   },
   "gameTypes": {
     "slot": "Slots",
@@ -624,7 +628,9 @@ export const el: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Προσθήκη στα αγαπημένα",
+    "removeFavorite": "Αφαίρεση από τα αγαπημένα"
   },
   "modal": {
     "comingSoon": "Coming Soon"

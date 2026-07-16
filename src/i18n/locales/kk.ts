@@ -83,7 +83,9 @@ export const kk: LocaleTree = {
     "sportsHistory": "ТАРИХ",
     "sportsHistoryLabel": "Менің спорттық ставкаларым",
     "casinoHistory": "ТАРИХ",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "ТАҢДАУЛЫЛАР",
+    "favoritesLabel": "Сақталған ойындар"
   },
   "sports": {
     "launching": "Спорт кітабы жүктелуде...",
@@ -209,12 +211,14 @@ export const kk: LocaleTree = {
     "searchPlaceholder": "Ойындарды іздеу...",
     "noGamesFound": "Ойындар табылмады.",
     "noProvidersFound": "Жеткізушілер табылмады.",
-    "collectionGames": "{{name}} Ойындар"
+    "collectionGames": "{{name}} Ойындар",
+    "noFavoritesYet": "Әзірге таңдаулы ойын жоқ. Сақтау үшін ойын жүрегін басыңыз."
   },
   "collections": {
     "top": "Үздік ойындар",
     "popular": "Танымал ойындар",
-    "new": "Жаңа ойындар"
+    "new": "Жаңа ойындар",
+    "favorites": "Таңдаулылар"
   },
   "gameTypes": {
     "slot": "Слоттар",
@@ -614,7 +618,9 @@ export const kk: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Бонус"
+    "bonusBadge": "Бонус",
+    "addFavorite": "Таңдаулыларға қосу",
+    "removeFavorite": "Таңдаулылардан алып тастау"
   },
   "modal": {
     "comingSoon": "Жақында шығады"

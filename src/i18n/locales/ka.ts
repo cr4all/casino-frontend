@@ -83,7 +83,9 @@ export const ka: LocaleTree = {
     "sportsHistory": "ისტორია",
     "sportsHistoryLabel": "Ჩემი სპორტული ფსონები",
     "casinoHistory": "ისტორია",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "რჩეულები",
+    "favoritesLabel": "შენახული თამაშები"
   },
   "sports": {
     "launching": "Მიმდინარეობს სპორტული წიგნაკის ჩატვირთვა...",
@@ -209,12 +211,14 @@ export const ka: LocaleTree = {
     "searchPlaceholder": "ძიება თამაშები...",
     "noGamesFound": "გეიმები არ მოიძებნა.",
     "noProvidersFound": "მომსახურებელი ვერ მოიძებნა.",
-    "collectionGames": "{{name}} თამაშები"
+    "collectionGames": "{{name}} თამაშები",
+    "noFavoritesYet": "რჩეული თამაშები ჯერ არ არის. შესანახად შეეხეთ გულს თამაშზე."
   },
   "collections": {
     "top": "ტოპ თამაშები",
     "popular": "პოპულარული თამაშები",
-    "new": "ახალი თამაშები"
+    "new": "ახალი თამაშები",
+    "favorites": "რჩეულები"
   },
   "gameTypes": {
     "slot": "სლოტები",
@@ -614,7 +618,9 @@ export const ka: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "ბონუსი"
+    "bonusBadge": "ბონუსი",
+    "addFavorite": "რჩეულებში დამატება",
+    "removeFavorite": "რჩეულებიდან ამოშლა"
   },
   "modal": {
     "comingSoon": "მოკ σύν მალე"

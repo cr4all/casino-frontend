@@ -1,18 +1,18 @@
 import { type MouseEvent } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuthStore } from '@/stores/authStore';
-import { canLoadChat, useCookieConsentStore } from '@/stores/cookieConsentStore';
 import { useUiStore } from '@/stores/uiStore';
 import { useUnreadNotifications } from '@/hooks/useUnreadNotifications';
 import { useClaimableFreeSpinCount } from '@/hooks/useClaimableFreeSpinCount';
 import { useGameTypes } from '@/hooks/useGameTypes';
+import { useLiveChatConfig } from '@/hooks/useLiveChat';
+import { useRequestLiveChat } from '@/hooks/useRequestLiveChat';
 import { useTranslation } from '@/hooks/useTranslation';
 import { GameTypeIcon } from '@/components/common/GameTypeIcon';
 import { typePath } from '@/stores/gameStore';
 import { Logo } from '@/components/common/Logo';
 import { NavBadgeIcon, NavIcon, sidebarBadgeIconClassName, sidebarIconClassName, type NavIconName } from '@/components/common/NavIcon';
-import { hideTawkWidget, showTawkWidget } from '@/utils/tawkWidget';
-import { useLiveChatConfig } from '@/hooks/useLiveChat';
+import { hideTawkWidget } from '@/utils/tawkWidget';
 import { useLiveChatStore } from '@/stores/liveChatStore';
 import { useSupportTicketStore } from '@/stores/supportTicketStore';
 import { usePlatformSectionStore } from '@/stores/platformSectionStore';
@@ -52,15 +52,11 @@ export function Sidebar({ onNavigate }: SidebarProps) {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const openModal = useUiStore((s) => s.openModal);
   const liveChatOpen = useUiStore((s) => s.liveChatOpen);
-  const openLiveChat = useUiStore((s) => s.openLiveChat);
   const closeLiveChat = useUiStore((s) => s.closeLiveChat);
-  const level = useCookieConsentStore((s) => s.level);
-  const preferences = useCookieConsentStore((s) => s.preferences);
-  const openCookieSettings = useCookieConsentStore((s) => s.openSettings);
+  const requestLiveChat = useRequestLiveChat();
   const unreadCount = useUnreadNotifications();
   const claimableFreeSpinCount = useClaimableFreeSpinCount();
   const { types } = useGameTypes();
-  const chatAllowed = canLoadChat(level, preferences);
   const { nativeEnabled } = useLiveChatConfig();
   const liveChatUnreadCount = useLiveChatStore((s) => s.unreadCount);
   const supportTicketUnreadCount = useSupportTicketStore((s) => s.unreadCount);
@@ -90,15 +86,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
   };
 
   const handleLiveChatClick = () => {
-    if (!chatAllowed) {
-      openCookieSettings();
-      onNavigate?.();
-      return;
-    }
-    openLiveChat();
-    if (!nativeEnabled) {
-      showTawkWidget();
-    }
+    requestLiveChat();
     onNavigate?.();
   };
 
@@ -162,6 +150,30 @@ export function Sidebar({ onNavigate }: SidebarProps) {
               <div>
                 <p className="text-xs font-bold tracking-wide">{t('nav.allGames')}</p>
                 <p className="text-[10px] text-muted">{t('nav.browseAll')}</p>
+              </div>
+            </Link>
+
+            <Link
+              to="/category/favorites"
+              onClick={(e) => {
+                if (!isAuthenticated) {
+                  e.preventDefault();
+                  openModal('login');
+                  handleNavClick();
+                  return;
+                }
+                handleCasinoNavClick();
+              }}
+              className={`group relative flex items-center gap-3 rounded-md px-3 py-3 transition-all ${
+                isPathActive('/category/favorites')
+                  ? 'sidebar-active text-accent-gold'
+                  : 'text-white hover:bg-card/60'
+              }`}
+            >
+              <NavIcon name="favorites" className={`${sidebarIconClassName} text-accent-gold`} />
+              <div>
+                <p className="text-xs font-bold tracking-wide">{t('nav.favorites')}</p>
+                <p className="text-[10px] text-muted">{t('nav.favoritesLabel')}</p>
               </div>
             </Link>
 

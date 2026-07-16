@@ -83,7 +83,9 @@ export const mt: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "FAVORITI",
+    "favoritesLabel": "Logħob salvati"
   },
   "sports": {
     "launching": "Loading sportsbook...",
@@ -209,12 +211,14 @@ export const mt: LocaleTree = {
     "searchPlaceholder": "Search games...",
     "noGamesFound": "No games found.",
     "noProvidersFound": "No providers found.",
-    "collectionGames": "{{name}} Games"
+    "collectionGames": "{{name}} Games",
+    "noFavoritesYet": "Għad m’hemmx logħob favoriti. Agħfas il-qalb fuq logħba biex issalvaha."
   },
   "collections": {
     "top": "Top Games",
     "popular": "Popular Games",
-    "new": "New Games"
+    "new": "New Games",
+    "favorites": "Favoriti"
   },
   "gameTypes": {
     "slot": "Slots",
@@ -614,7 +618,9 @@ export const mt: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonusi"
+    "bonusBadge": "Bonusi",
+    "addFavorite": "Żid mal-favoriti",
+    "removeFavorite": "Neħħi mill-favoriti"
   },
   "modal": {
     "comingSoon": "Coming Soon"

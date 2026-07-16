@@ -83,7 +83,9 @@ export const bn: LocaleTree = {
     "sportsHistory": "ইতিহাস",
     "sportsHistoryLabel": "আমার স্পোর্টস বেট",
     "casinoHistory": "ইতিহাস",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "পছন্দসমূহ",
+    "favoritesLabel": "সংরক্ষিত গেম"
   },
   "sports": {
     "launching": "স্পোর্টসবুক লোড হচ্ছে...",
@@ -209,12 +211,14 @@ export const bn: LocaleTree = {
     "searchPlaceholder": "গেম অনুসন্ধান করুন...",
     "noGamesFound": "কোনও গেম পাওয়া যায়নি ।",
     "noProvidersFound": "কোনও সরবরাহকারী পাওয়া যায়নি ।",
-    "collectionGames": "{{name}} গেমস"
+    "collectionGames": "{{name}} গেমস",
+    "noFavoritesYet": "এখনও কোনো পছন্দের গেম নেই। সংরক্ষণ করতে গেমের হার্টে ট্যাপ করুন।"
   },
   "collections": {
     "top": "শীর্ষ গেমস",
     "popular": "জনপ্রিয় গেমস",
-    "new": "নতুন গেম"
+    "new": "নতুন গেম",
+    "favorites": "পছন্দসমূহ"
   },
   "gameTypes": {
     "slot": "স্লটগুলো",
@@ -624,7 +628,9 @@ export const bn: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "বোনাস"
+    "bonusBadge": "বোনাস",
+    "addFavorite": "পছন্দে যোগ করুন",
+    "removeFavorite": "পছন্দ থেকে সরান"
   },
   "modal": {
     "comingSoon": "শীঘ্রই আসছে"

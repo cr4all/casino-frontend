@@ -83,7 +83,9 @@ export const ne: LocaleTree = {
     "sportsHistory": "इतिहास",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "इतिहास",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "मनपर्ने",
+    "favoritesLabel": "सुरक्षित गरिएका खेलहरू"
   },
   "sports": {
     "launching": "Loading sportsbook...",
@@ -209,12 +211,14 @@ export const ne: LocaleTree = {
     "searchPlaceholder": "खेलहरू खोजी गर्नुहोस्...",
     "noGamesFound": "कुनै खेल फेला परेन ।",
     "noProvidersFound": "कुनै प्रदायकहरू भेटिएनन् ।",
-    "collectionGames": "{{name}} खेलहरू"
+    "collectionGames": "{{name}} खेलहरू",
+    "noFavoritesYet": "अहिलेसम्म मनपर्ने खेल छैन। सुरक्षित गर्न खेलको मुटुमा ट्याप गर्नुहोस्।"
   },
   "collections": {
     "top": "शीर्ष खेलहरू",
     "popular": "लोकप्रिय खेलहरू",
-    "new": "नयाँ खेलहरू"
+    "new": "नयाँ खेलहरू",
+    "favorites": "मनपर्ने"
   },
   "gameTypes": {
     "slot": "स्लटहरू",
@@ -614,7 +618,9 @@ export const ne: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "बोनस"
+    "bonusBadge": "बोनस",
+    "addFavorite": "मनपर्नेमा थप्नुहोस्",
+    "removeFavorite": "मनपर्नेबाट हटाउनुहोस्"
   },
   "modal": {
     "comingSoon": "चाँडै आउँदै छ"

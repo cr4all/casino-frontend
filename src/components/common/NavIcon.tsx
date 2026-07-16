@@ -2,6 +2,7 @@ import type { ReactNode, SVGProps } from 'react';
 
 export type NavIconName =
   | 'home'
+  | 'favorites'
   | 'deposit'
   | 'withdraw'
   | 'transactions'
@@ -41,6 +42,9 @@ const icons: Record<NavIconName, ReactNode> = {
       <path d="M4 10.5 12 4l8 6.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8.5Z" />
       <path d="M9 20v-7h6v7" />
     </>
+  ),
+  favorites: (
+    <path d="M12 21s-6.5-4.35-9.33-8.08C.8 10.5 1.24 6.9 4.05 5.2c2.1-1.27 4.68-.7 6.2 1.2 1.52-1.9 4.1-2.47 6.2-1.2 2.81 1.7 3.25 5.3 1.38 7.72C18.5 16.65 12 21 12 21z" />
   ),
   deposit: (
     <>
@@ -124,6 +128,7 @@ export function NavIcon({ name, className = 'h-5 w-5', ...props }: NavIconProps)
 
 const NAV_ICON_FILES: Record<NavIconName, string> = {
   home: 'home',
+  favorites: 'home',
   deposit: 'deposit',
   withdraw: 'withdraw',
   transactions: 'transactions',

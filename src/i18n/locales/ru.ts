@@ -83,7 +83,9 @@ export const ru: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "ИЗБРАННОЕ",
+    "favoritesLabel": "Сохранённые игры"
   },
   "sports": {
     "launching": "Loading sportsbook...",
@@ -209,12 +211,14 @@ export const ru: LocaleTree = {
     "searchPlaceholder": "Search games...",
     "noGamesFound": "No games found.",
     "noProvidersFound": "No providers found.",
-    "collectionGames": "{{name}} Games"
+    "collectionGames": "{{name}} Games",
+    "noFavoritesYet": "Пока нет избранных игр. Нажмите на сердце, чтобы сохранить игру."
   },
   "collections": {
     "top": "Top Games",
     "popular": "Popular Games",
-    "new": "New Games"
+    "new": "New Games",
+    "favorites": "Избранное"
   },
   "gameTypes": {
     "slot": "Slots",
@@ -616,7 +620,9 @@ export const ru: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Бонус"
+    "bonusBadge": "Бонус",
+    "addFavorite": "Добавить в избранное",
+    "removeFavorite": "Удалить из избранного"
   },
   "modal": {
     "comingSoon": "Coming Soon"

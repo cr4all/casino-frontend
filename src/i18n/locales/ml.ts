@@ -83,7 +83,9 @@ export const ml: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "എന്റെ സ്പോർട്സ് പന്തയങ്ങൾ",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "പ്രിയപ്പെട്ടവ",
+    "favoritesLabel": "സേവ് ചെയ്ത ഗെയിമുകൾ"
   },
   "sports": {
     "launching": "സ്പോർട്സ് ബുക്ക് ലോഡുചെയ്യുന്നു...",
@@ -209,12 +211,14 @@ export const ml: LocaleTree = {
     "searchPlaceholder": "Search games...",
     "noGamesFound": "No games found.",
     "noProvidersFound": "No providers found.",
-    "collectionGames": "{{name}} Games"
+    "collectionGames": "{{name}} Games",
+    "noFavoritesYet": "ഇതുവരെ പ്രിയപ്പെട്ട ഗെയിമുകളില്ല. സേവ് ചെയ്യാൻ ഹൃദയം ടാപ്പ് ചെയ്യുക."
   },
   "collections": {
     "top": "Top Games",
     "popular": "Popular Games",
-    "new": "New Games"
+    "new": "New Games",
+    "favorites": "പ്രിയപ്പെട്ടവ"
   },
   "gameTypes": {
     "slot": "Slots",
@@ -614,7 +618,9 @@ export const ml: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "ബോണസ്"
+    "bonusBadge": "ബോണസ്",
+    "addFavorite": "പ്രിയപ്പെട്ടവയിലേക്ക് ചേർക്കുക",
+    "removeFavorite": "പ്രിയപ്പെട്ടവയിൽ നിന്ന് നീക്കം ചെയ്യുക"
   },
   "modal": {
     "comingSoon": "Coming Soon"

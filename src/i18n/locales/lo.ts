@@ -83,7 +83,9 @@ export const lo: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "ການເດີມພັນກິລາຂອງຂ້ອຍ",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "ລາຍການທີ່ມັກ",
+    "favoritesLabel": "ເກມທີ່ບັນທຶກໄວ້"
   },
   "sports": {
     "launching": "ກໍາລັງໂຫລດ sportsbook...",
@@ -209,12 +211,14 @@ export const lo: LocaleTree = {
     "searchPlaceholder": "ຄົ້ນຫາເກມ...",
     "noGamesFound": "ບໍ່ພົບເກມ.",
     "noProvidersFound": "ບໍ່ມີຜູ້ໃຊ້ທີ່ພົບເຫັນ.",
-    "collectionGames": "{{name}} ເກມ"
+    "collectionGames": "{{name}} ເກມ",
+    "noFavoritesYet": "ຍັງບໍ່ມີເກມທີ່ມັກ. ແຕະຫົວໃຈເທິງເກມເພື່ອບັນທຶກ."
   },
   "collections": {
     "top": "Top Games",
     "popular": "ເກມຍອດນິຍົມ",
-    "new": "New Games"
+    "new": "New Games",
+    "favorites": "ລາຍການທີ່ມັກ"
   },
   "gameTypes": {
     "slot": "Slots",
@@ -614,7 +618,9 @@ export const lo: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "ໃໝ່",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "ເພີ່ມໃສ່ລາຍການທີ່ມັກ",
+    "removeFavorite": "ລຶບອອກຈາກລາຍການທີ່ມັກ"
   },
   "modal": {
     "comingSoon": "Coming Soon"

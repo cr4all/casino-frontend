@@ -83,7 +83,9 @@ export const my: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "အကြိုက်ဆုံး",
+    "favoritesLabel": "သိမ်းထားသောဂိမ်းများ"
   },
   "sports": {
     "launching": "Loading sportsbook...",
@@ -209,12 +211,14 @@ export const my: LocaleTree = {
     "searchPlaceholder": "Search games...",
     "noGamesFound": "No games found.",
     "noProvidersFound": "No providers found.",
-    "collectionGames": "{{name}} Games"
+    "collectionGames": "{{name}} Games",
+    "noFavoritesYet": "အကြိုက်ဆုံးဂိမ်း မရှိသေးပါ။ သိမ်းရန် ဂိမ်းပေါ်ရှိ နှလုံးကို နှိပ်ပါ။"
   },
   "collections": {
     "top": "Top Games",
     "popular": "Popular Games",
-    "new": "New Games"
+    "new": "New Games",
+    "favorites": "အကြိုက်ဆုံး"
   },
   "gameTypes": {
     "slot": "Slots",
@@ -614,7 +618,9 @@ export const my: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "ဘောနပ်စ်"
+    "bonusBadge": "ဘောနပ်စ်",
+    "addFavorite": "အကြိုက်ဆုံးသို့ ထည့်ရန်",
+    "removeFavorite": "အကြိုက်ဆုံးမှ ဖယ်ရှားရန်"
   },
   "modal": {
     "comingSoon": "Coming Soon"

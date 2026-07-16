@@ -83,7 +83,9 @@ export const zhTw: LocaleTree = {
     "sportsHistory": "紀錄",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "紀錄",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "收藏",
+    "favoritesLabel": "已儲存的遊戲"
   },
   "liveChat": {
     "title": "線上客服",
@@ -204,12 +206,14 @@ export const zhTw: LocaleTree = {
     "searchPlaceholder": "搜尋遊戲...",
     "noGamesFound": "未找到遊戲。",
     "noProvidersFound": "未找到供應商。",
-    "collectionGames": "{{name}} 遊戲"
+    "collectionGames": "{{name}} 遊戲",
+    "noFavoritesYet": "尚無收藏遊戲。點擊遊戲上的愛心即可儲存。"
   },
   "collections": {
     "top": "熱門遊戲",
     "popular": "人氣遊戲",
-    "new": "新遊戲"
+    "new": "新遊戲",
+    "favorites": "收藏"
   },
   "gameTypes": {
     "slot": "老虎機",
@@ -592,7 +596,9 @@ export const zhTw: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "新",
-    "bonusBadge": "獎金"
+    "bonusBadge": "獎金",
+    "addFavorite": "加入收藏",
+    "removeFavorite": "從收藏移除"
   },
   "modal": {
     "comingSoon": "即將上線"

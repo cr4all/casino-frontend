@@ -83,7 +83,9 @@ export const et: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "Minu spordipanused",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "LEMMIKUD",
+    "favoritesLabel": "Salvestatud mängud"
   },
   "liveChat": {
     "title": "Reaalajas vestlus",
@@ -204,12 +206,14 @@ export const et: LocaleTree = {
     "searchPlaceholder": "Otsi mänge...",
     "noGamesFound": "Mänge ei leitud.",
     "noProvidersFound": "Pakkujaid ei leitud.",
-    "collectionGames": "{{name}} mängud"
+    "collectionGames": "{{name}} mängud",
+    "noFavoritesYet": "Lemmikmänge pole veel. Salvestamiseks puudutage mängu südant."
   },
   "collections": {
     "top": "Parimad mängud",
     "popular": "Populaarsed mängud",
-    "new": "Uued mängud"
+    "new": "Uued mängud",
+    "favorites": "Lemmikud"
   },
   "gameTypes": {
     "slot": "Slotid",
@@ -590,7 +594,9 @@ export const et: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "Uus",
-    "bonusBadge": "Boonus"
+    "bonusBadge": "Boonus",
+    "addFavorite": "Lisa lemmikutesse",
+    "removeFavorite": "Eemalda lemmikutest"
   },
   "modal": {
     "comingSoon": "Peagi tulekul"

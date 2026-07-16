@@ -1,11 +1,14 @@
 import { useGameTypes } from '@/hooks/useGameTypes';
 import { useTranslation } from '@/hooks/useTranslation';
 import { GameTypeIcon } from '@/components/common/GameTypeIcon';
+import { useAuthStore } from '@/stores/authStore';
+import { useUiStore } from '@/stores/uiStore';
 
-export type HomeCategory = 'all' | 'top' | 'popular' | 'new' | `type-${string}`;
+export type HomeCategory = 'all' | 'top' | 'popular' | 'new' | 'favorites' | `type-${string}`;
 
 const COLLECTION_CATEGORIES: { id: HomeCategory; icon: string }[] = [
   { id: 'all', icon: '▦' },
+  { id: 'favorites', icon: '♥' },
   { id: 'top', icon: '👑' },
   { id: 'popular', icon: '✨' },
   { id: 'new', icon: '🚀' },
@@ -27,6 +30,8 @@ interface HomeCategoryBarProps {
 export function HomeCategoryBar({ active, onChange }: HomeCategoryBarProps) {
   const { t, tCollection, tGameType } = useTranslation();
   const { types, loading } = useGameTypes();
+  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
+  const openModal = useUiStore((s) => s.openModal);
 
   const labelFor = (id: HomeCategory) => {
     if (id === 'all') return t('category.allGames');
@@ -64,7 +69,13 @@ export function HomeCategoryBar({ active, onChange }: HomeCategoryBarProps) {
           <button
             key={id}
             type="button"
-            onClick={() => onChange(id)}
+            onClick={() => {
+              if (id === 'favorites' && !isAuthenticated) {
+                openModal('login');
+                return;
+              }
+              onChange(id);
+            }}
             className={`flex w-[88px] shrink-0 flex-col items-center gap-2 rounded-xl border px-2 py-3 transition-all sm:w-[100px] ${
               isActive
                 ? 'border-accent-gold bg-accent-gold/10 text-accent-gold shadow-gold'
@@ -80,7 +91,7 @@ export function HomeCategoryBar({ active, onChange }: HomeCategoryBarProps) {
             ) : (
               <span className="text-xl leading-none sm:text-2xl">{(category as { icon: string }).icon}</span>
             )}
-            <span className="text-center text-[10px] font-bold uppercase leading-tight tracking-wide sm:text-xs">
+            <span className="w-full truncate text-center text-[10px] font-semibold leading-tight sm:text-[11px]">
               {labelFor(id)}
             </span>
           </button>

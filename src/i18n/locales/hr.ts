@@ -83,7 +83,9 @@ export const hr: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "Moji sportski ulozi",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "FAVORITI",
+    "favoritesLabel": "Spremljene igre"
   },
   "sports": {
     "launching": "Učitavanje sportske knjige...",
@@ -209,12 +211,14 @@ export const hr: LocaleTree = {
     "searchPlaceholder": "Search games...",
     "noGamesFound": "No games found.",
     "noProvidersFound": "No providers found.",
-    "collectionGames": "{{name}} Games"
+    "collectionGames": "{{name}} Games",
+    "noFavoritesYet": "Još nema omiljenih igara. Dodirnite srce na igri da je spremite."
   },
   "collections": {
     "top": "Top Games",
     "popular": "Popular Games",
-    "new": "New Games"
+    "new": "New Games",
+    "favorites": "Favoriti"
   },
   "gameTypes": {
     "slot": "Slots",
@@ -614,7 +618,9 @@ export const hr: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Dodaj u favorite",
+    "removeFavorite": "Ukloni iz favorita"
   },
   "modal": {
     "comingSoon": "Coming Soon"

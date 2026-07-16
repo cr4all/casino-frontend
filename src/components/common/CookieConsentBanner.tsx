@@ -17,7 +17,7 @@ export function CookieConsentBanner() {
     <div
       role="dialog"
       aria-labelledby="cookie-consent-title"
-      className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-card/95 p-4 shadow-card backdrop-blur-md md:p-6"
+      className="fixed inset-x-0 bottom-0 z-[80] border-t border-white/10 bg-card/95 p-4 shadow-card backdrop-blur-md md:p-6"
     >
       <div className="mx-auto flex max-w-5xl flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div className="min-w-0 flex-1">
@@ -32,24 +32,22 @@ export function CookieConsentBanner() {
           </p>
         </div>
 
-        <div className="flex w-full shrink-0 flex-col gap-2 sm:w-auto sm:min-w-[14rem]">
+        <div className="flex w-full shrink-0 flex-col gap-2 md:w-auto md:flex-row md:items-center">
           <Button
             variant="secondary"
-            fullWidth
-            className="border-white/20"
+            className="w-full border-white/20 md:w-auto"
             onClick={openSettings}
           >
             {t('cookies.settings')}
           </Button>
           <Button
             variant="secondary"
-            fullWidth
-            className="border-white/20 text-accent-gold"
+            className="w-full border-white/20 text-accent-gold md:w-auto"
             onClick={acceptNecessary}
           >
             {t('cookies.necessaryOnly')}
           </Button>
-          <Button variant="gold" fullWidth onClick={acceptAll}>
+          <Button variant="gold" className="w-full md:w-auto" onClick={acceptAll}>
             {t('cookies.accept')}
           </Button>
         </div>

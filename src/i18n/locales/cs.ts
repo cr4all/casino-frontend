@@ -83,7 +83,9 @@ export const cs: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "Moje sportovní sázky",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "OBLÍBENÉ",
+    "favoritesLabel": "Uložené hry"
   },
   "sports": {
     "launching": "Načítání sázkové kanceláře...",
@@ -209,12 +211,14 @@ export const cs: LocaleTree = {
     "searchPlaceholder": "Search games...",
     "noGamesFound": "No games found.",
     "noProvidersFound": "No providers found.",
-    "collectionGames": "{{name}} Games"
+    "collectionGames": "{{name}} Games",
+    "noFavoritesYet": "Zatím žádné oblíbené hry. Klepnutím na srdce hru uložíte."
   },
   "collections": {
     "top": "Top Games",
     "popular": "Popular Games",
-    "new": "New Games"
+    "new": "New Games",
+    "favorites": "Oblíbené"
   },
   "gameTypes": {
     "slot": "Slots",
@@ -624,7 +628,9 @@ export const cs: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Přidat do oblíbených",
+    "removeFavorite": "Odebrat z oblíbených"
   },
   "modal": {
     "comingSoon": "Coming Soon"

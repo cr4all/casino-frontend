@@ -83,7 +83,9 @@ export const ja: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "私のスポーツベット",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "お気に入り",
+    "favoritesLabel": "保存したゲーム"
   },
   "sports": {
     "launching": "スポーツブックを読み込んでいます...",
@@ -209,12 +211,14 @@ export const ja: LocaleTree = {
     "searchPlaceholder": "Search games...",
     "noGamesFound": "No games found.",
     "noProvidersFound": "No providers found.",
-    "collectionGames": "{{name}} Games"
+    "collectionGames": "{{name}} Games",
+    "noFavoritesYet": "お気に入りのゲームはまだありません。ハートをタップして保存してください。"
   },
   "collections": {
     "top": "Top Games",
     "popular": "Popular Games",
-    "new": "New Games"
+    "new": "New Games",
+    "favorites": "お気に入り"
   },
   "gameTypes": {
     "slot": "Slots",
@@ -616,7 +620,9 @@ export const ja: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "ボーナス"
+    "bonusBadge": "ボーナス",
+    "addFavorite": "お気に入りに追加",
+    "removeFavorite": "お気に入りから削除"
   },
   "modal": {
     "comingSoon": "Coming Soon"

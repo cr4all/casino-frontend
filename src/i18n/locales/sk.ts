@@ -83,7 +83,9 @@ export const sk: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "OBĽÚBENÉ",
+    "favoritesLabel": "Uložené hry"
   },
   "liveChat": {
     "title": "Živý chat",
@@ -204,12 +206,14 @@ export const sk: LocaleTree = {
     "searchPlaceholder": "Hľadať hry...",
     "noGamesFound": "Nenašli sa žiadne hry.",
     "noProvidersFound": "Nenašli sa žiadni poskytovatelia.",
-    "collectionGames": "Hry {{name}}"
+    "collectionGames": "Hry {{name}}",
+    "noFavoritesYet": "Zatiaľ žiadne obľúbené hry. Ťuknutím na srdce hru uložíte."
   },
   "collections": {
     "top": "Top hry",
     "popular": "Populárne hry",
-    "new": "Nové hry"
+    "new": "Nové hry",
+    "favorites": "Obľúbené"
   },
   "gameTypes": {
     "slot": "Automaty",
@@ -593,7 +597,9 @@ export const sk: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "Nové",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Pridať do obľúbených",
+    "removeFavorite": "Odstrániť z obľúbených"
   },
   "modal": {
     "comingSoon": "Čoskoro"

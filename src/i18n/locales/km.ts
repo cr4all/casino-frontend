@@ -83,7 +83,9 @@ export const km: LocaleTree = {
     "sportsHistory": "ប្រវត្តិសាស្ត្រ",
     "sportsHistoryLabel": "ការភ្នាល់កីឡារបស់ខ្ញុំ",
     "casinoHistory": "ប្រវត្តិសាស្ត្រ",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "សំណព្វ",
+    "favoritesLabel": "ហ្គេមដែលបានរក្សាទុក"
   },
   "sports": {
     "launching": "កំពុងផ្ទុកសៀវភៅកីឡា...",
@@ -209,12 +211,14 @@ export const km: LocaleTree = {
     "searchPlaceholder": "ស្វែងរកហ្គេម...",
     "noGamesFound": "មិនបានរកឃើញហ្គេមទេ។",
     "noProvidersFound": "មិនបានឃើញអ្នកផ្គត់ផ្គង់ណា។",
-    "collectionGames": "{{name}} ហ្គេម"
+    "collectionGames": "{{name}} ហ្គេម",
+    "noFavoritesYet": "មិនទាន់មានហ្គេមសំណព្វទេ។ ប៉ះបេះដូងលើហ្គេមដើម្បីរក្សាទុក។"
   },
   "collections": {
     "top": "ហ្គេម​ពេញនិយម",
     "popular": "ហ្គេមពេញនិយម",
-    "new": "ហ្គេមថ្មី"
+    "new": "ហ្គេមថ្មី",
+    "favorites": "សំណព្វ"
   },
   "gameTypes": {
     "slot": "ស្លុត",
@@ -614,7 +618,9 @@ export const km: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "ប្រាក់រង្វាន់"
+    "bonusBadge": "ប្រាក់រង្វាន់",
+    "addFavorite": "បន្ថែមទៅសំណព្វ",
+    "removeFavorite": "លុបចេញពីសំណព្វ"
   },
   "modal": {
     "comingSoon": "រៀបចំមុន"

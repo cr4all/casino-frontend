@@ -83,7 +83,9 @@ export const yo: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "ÀWỌN ÀYÀNFE",
+    "favoritesLabel": "Àwọn eré tí a fipamọ́"
   },
   "liveChat": {
     "title": "Ìfọ̀rọ̀wọ̀rọ̀ bíbí",
@@ -204,12 +206,14 @@ export const yo: LocaleTree = {
     "searchPlaceholder": "Wá àwọn eré …",
     "noGamesFound": "A kò rí eré kankan.",
     "noProvidersFound": "A kò rí olùpèsè kankan.",
-    "collectionGames": "Àwọn eré {{name}}"
+    "collectionGames": "Àwọn eré {{name}}",
+    "noFavoritesYet": "Kò sí eré àyànfẹ́ síbẹ̀. Tẹ ọkàn lórí eré láti fipamọ́."
   },
   "collections": {
     "top": "Àwọn eré tó ga jù",
     "popular": "Àwọn eré tó gbajúmọ̀",
-    "new": "Àwọn eré tuntun"
+    "new": "Àwọn eré tuntun",
+    "favorites": "Àwọn àyànfẹ́"
   },
   "gameTypes": {
     "slot": "Àwọn slọ́tì",
@@ -590,7 +594,9 @@ export const yo: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "Tuntun",
-    "bonusBadge": "Ẹ̀bùn"
+    "bonusBadge": "Ẹ̀bùn",
+    "addFavorite": "Fi kún àwọn àyànfẹ́",
+    "removeFavorite": "Yọ kúrò nínú àwọn àyànfẹ́"
   },
   "modal": {
     "comingSoon": "Ó ń bọ̀ láìpẹ́"

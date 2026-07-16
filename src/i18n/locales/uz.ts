@@ -83,7 +83,9 @@ export const uz: LocaleTree = {
     "sportsHistory": "TARIX",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "TARIX",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "SEVIMLILAR",
+    "favoritesLabel": "Saqlangan o‘yinlar"
   },
   "liveChat": {
     "title": "Jonli chat",
@@ -204,12 +206,14 @@ export const uz: LocaleTree = {
     "searchPlaceholder": "O'yinlarni qidirish...",
     "noGamesFound": "O'yinlar topilmadi.",
     "noProvidersFound": "Provayderlar topilmadi.",
-    "collectionGames": "{{name}} o'yinlari"
+    "collectionGames": "{{name}} o'yinlari",
+    "noFavoritesYet": "Hali sevimli o‘yinlar yo‘q. Saqlash uchun o‘yindagi yurakka bosing."
   },
   "collections": {
     "top": "Top o'yinlar",
     "popular": "Mashhur o'yinlar",
-    "new": "Yangi o'yinlar"
+    "new": "Yangi o'yinlar",
+    "favorites": "Sevimlilar"
   },
   "gameTypes": {
     "slot": "Slotlar",
@@ -590,7 +594,9 @@ export const uz: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "Yangi",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Sevimlilarga qo‘shish",
+    "removeFavorite": "Sevimlilardan olib tashlash"
   },
   "modal": {
     "comingSoon": "Tez orada"

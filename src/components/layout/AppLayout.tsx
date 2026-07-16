@@ -23,6 +23,7 @@ import { useLiveChatSync } from '@/hooks/useLiveChatSync';
 import { useSupportTicketSync } from '@/hooks/useSupportTicketSync';
 import { useNotificationSync } from '@/hooks/useNotificationSync';
 import { useBonusSync } from '@/hooks/useBonusSync';
+import { useFavoritesSync } from '@/hooks/useFavoritesSync';
 import { usePlayerProfileSync } from '@/hooks/usePlayerProfileSync';
 import { usePlayerLevelSync } from '@/hooks/usePlayerLevelSync';
 import { useSessionPolicy } from '@/hooks/useSessionPolicy';
@@ -48,6 +49,7 @@ export function AppLayout() {
   const [vipBenefitsOpen, setVipBenefitsOpen] = useState(false);
   useNotificationSync();
   useBonusSync();
+  useFavoritesSync();
   useLiveChatSync();
   useSupportTicketSync();
   useIdleLogout();

@@ -83,7 +83,9 @@ export const tg: LocaleTree = {
     "sportsHistory": "ТАЪРИХ",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "ТАЪРИХ",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "ДӮСТДОШТА",
+    "favoritesLabel": "Бозиҳои захирашуда"
   },
   "liveChat": {
     "title": "Чати зинда",
@@ -204,12 +206,14 @@ export const tg: LocaleTree = {
     "searchPlaceholder": "Ҷустуҷӯи бозиҳо...",
     "noGamesFound": "Бозиҳо ёфт нашуданд.",
     "noProvidersFound": "Таъминкунандагон ёфт нашуданд.",
-    "collectionGames": "Бозиҳои {{name}}"
+    "collectionGames": "Бозиҳои {{name}}",
+    "noFavoritesYet": "Ҳанӯз бозии дӯстдошта нест. Барои захира кардан ба дил пахш кунед."
   },
   "collections": {
     "top": "Бозиҳои беҳтарин",
     "popular": "Бозиҳои маъмул",
-    "new": "Бозиҳои нав"
+    "new": "Бозиҳои нав",
+    "favorites": "Дӯстдошта"
   },
   "gameTypes": {
     "slot": "Слотҳо",
@@ -593,7 +597,9 @@ export const tg: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "Нав",
-    "bonusBadge": "Бонус"
+    "bonusBadge": "Бонус",
+    "addFavorite": "Ба дӯстдоштаҳо илова кунед",
+    "removeFavorite": "Аз дӯстдоштаҳо хориҷ кунед"
   },
   "modal": {
     "comingSoon": "Ба зудӣ"

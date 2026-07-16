@@ -115,4 +115,28 @@ export const gameApi = {
     });
     return data.data;
   },
+
+  getFavorites: async (page = 1, perPage = 20) => {
+    const key = requestKey('favorites', { page, per_page: perPage });
+    return dedupeRequest(key, async () => {
+      const { data } = await api.get<ApiResponse<GamesListResult>>('/games/favorites', {
+        params: { page, per_page: perPage },
+      });
+      return data.data;
+    });
+  },
+
+  addFavorite: async (gameId: number) => {
+    const { data } = await api.post<ApiResponse<{ game_id: number; favorited: true }>>(
+      `/games/${gameId}/favorite`,
+    );
+    return data.data;
+  },
+
+  removeFavorite: async (gameId: number) => {
+    const { data } = await api.delete<ApiResponse<{ game_id: number; favorited: false }>>(
+      `/games/${gameId}/favorite`,
+    );
+    return data.data;
+  },
 };

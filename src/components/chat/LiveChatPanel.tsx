@@ -4,6 +4,7 @@ import type { SupportAttachment } from '@/api/liveChat.api';
 import { useAuthStore } from '@/stores/authStore';
 import { useLiveChat, useLiveChatConfig } from '@/hooks/useLiveChat';
 import { useTranslation } from '@/hooks/useTranslation';
+import { canLoadChat, useCookieConsentStore } from '@/stores/cookieConsentStore';
 import { useUiStore } from '@/stores/uiStore';
 import { MessageAttachments } from '@/components/support/MessageAttachments';
 import { formatChatDateLabel, getChatDateKey } from '@/utils/formatDateTime';
@@ -57,6 +58,11 @@ export function LiveChatPanel() {
   const closeLiveChat = useUiStore((s) => s.closeLiveChat);
   const openModal = useUiStore((s) => s.openModal);
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
+  const level = useCookieConsentStore((s) => s.level);
+  const preferences = useCookieConsentStore((s) => s.preferences);
+  const hasHydrated = useCookieConsentStore((s) => s.hasHydrated);
+  const chatAllowed = canLoadChat(level, preferences);
+  const panelActive = liveChatOpen && chatAllowed;
   const {
     messages,
     loading,
@@ -66,7 +72,7 @@ export function LiveChatPanel() {
     error,
     sendMessage,
     loadOlderMessages,
-  } = useLiveChat(liveChatOpen);
+  } = useLiveChat(panelActive);
   const [draft, setDraft] = useState('');
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -85,11 +91,17 @@ export function LiveChatPanel() {
   }, [draft, liveChatOpen]);
 
   useEffect(() => {
-    if (!liveChatOpen) return;
-    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight });
-  }, [liveChatOpen, messages]);
+    if (hasHydrated && liveChatOpen && !chatAllowed) {
+      closeLiveChat();
+    }
+  }, [hasHydrated, liveChatOpen, chatAllowed, closeLiveChat]);
 
-  if (!nativeEnabled || !liveChatOpen) return null;
+  useEffect(() => {
+    if (!panelActive) return;
+    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight });
+  }, [panelActive, messages]);
+
+  if (!nativeEnabled || !panelActive) return null;
 
   const canSend = Boolean(draft.trim() || selectedFile);
 

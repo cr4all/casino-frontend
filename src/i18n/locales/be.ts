@@ -83,7 +83,9 @@ export const be: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "Мае спартыўныя стаўкі",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "АБРАНАЕ",
+    "favoritesLabel": "Захаваныя гульні"
   },
   "sports": {
     "launching": "Загрузка спартыўнай кнігі...",
@@ -209,12 +211,14 @@ export const be: LocaleTree = {
     "searchPlaceholder": "Search games...",
     "noGamesFound": "No games found.",
     "noProvidersFound": "No providers found.",
-    "collectionGames": "{{name}} Games"
+    "collectionGames": "{{name}} Games",
+    "noFavoritesYet": "Пакуль няма абраных гульняў. Націсніце сэрца на гульні, каб захаваць."
   },
   "collections": {
     "top": "Top Games",
     "popular": "Popular Games",
-    "new": "New Games"
+    "new": "New Games",
+    "favorites": "Абранае"
   },
   "gameTypes": {
     "slot": "Slots",
@@ -624,7 +628,9 @@ export const be: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Бонус"
+    "bonusBadge": "Бонус",
+    "addFavorite": "Дадаць у абранае",
+    "removeFavorite": "Выдаліць з абранага"
   },
   "modal": {
     "comingSoon": "Coming Soon"

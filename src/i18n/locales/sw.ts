@@ -83,7 +83,9 @@ export const sw: LocaleTree = {
     "sportsHistory": "HISTORIA",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "HISTORIA",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "VIPENDWA",
+    "favoritesLabel": "Michezo iliyohifadhiwa"
   },
   "liveChat": {
     "title": "Mazungumzo ya moja kwa moja",
@@ -204,12 +206,14 @@ export const sw: LocaleTree = {
     "searchPlaceholder": "Tafuta michezo...",
     "noGamesFound": "Hakuna michezo iliyopatikana.",
     "noProvidersFound": "Hakuna watoa huduma waliopatikana.",
-    "collectionGames": "Michezo ya {{name}}"
+    "collectionGames": "Michezo ya {{name}}",
+    "noFavoritesYet": "Bado hakuna michezo vipendwa. Gusa moyo kwenye mchezo ili kuuhifadhi."
   },
   "collections": {
     "top": "Michezo bora",
     "popular": "Michezo maarufu",
-    "new": "Michezo mipya"
+    "new": "Michezo mipya",
+    "favorites": "Vipendwa"
   },
   "gameTypes": {
     "slot": "Sloti",
@@ -590,7 +594,9 @@ export const sw: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "Mpya",
-    "bonusBadge": "Bonasi"
+    "bonusBadge": "Bonasi",
+    "addFavorite": "Ongeza kwenye vipendwa",
+    "removeFavorite": "Ondoa kwenye vipendwa"
   },
   "modal": {
     "comingSoon": "Inakuja hivi karibuni"

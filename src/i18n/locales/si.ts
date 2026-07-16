@@ -83,7 +83,9 @@ export const si: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "ප්‍රියතම",
+    "favoritesLabel": "සුරකින ලද ක්‍රීඩා"
   },
   "sports": {
     "launching": "Loading sportsbook...",
@@ -209,12 +211,14 @@ export const si: LocaleTree = {
     "searchPlaceholder": "Search games...",
     "noGamesFound": "No games found.",
     "noProvidersFound": "No providers found.",
-    "collectionGames": "{{name}} Games"
+    "collectionGames": "{{name}} Games",
+    "noFavoritesYet": "තවම ප්‍රියතම ක්‍රීඩා නැත. සුරැකීමට ක්‍රීඩාවේ හදවත තට්ටු කරන්න."
   },
   "collections": {
     "top": "Top Games",
     "popular": "Popular Games",
-    "new": "New Games"
+    "new": "New Games",
+    "favorites": "ප්‍රියතම"
   },
   "gameTypes": {
     "slot": "Slots",
@@ -614,7 +618,9 @@ export const si: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "ප්‍රියතම වෙත එක් කරන්න",
+    "removeFavorite": "ප්‍රියතම වෙතින් ඉවත් කරන්න"
   },
   "modal": {
     "comingSoon": "Coming Soon"

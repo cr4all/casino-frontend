@@ -83,7 +83,9 @@ export const lb: LocaleTree = {
     "sportsHistory": "Geschicht",
     "sportsHistoryLabel": "Meng Sportwetten",
     "casinoHistory": "Geschicht",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "FAVORITTEN",
+    "favoritesLabel": "Gespäichert Spiller"
   },
   "sports": {
     "launching": "Sportbuch lueden...",
@@ -209,12 +211,14 @@ export const lb: LocaleTree = {
     "searchPlaceholder": "Search games...",
     "noGamesFound": "No games found.",
     "noProvidersFound": "No providers found.",
-    "collectionGames": "{{name}} Games"
+    "collectionGames": "{{name}} Games",
+    "noFavoritesYet": "Nach keng Favorittespiller. Tippt op d’Häerz fir e Spill ze späicheren."
   },
   "collections": {
     "top": "Benieuwd naar jouw mening laat het me weten in",
     "popular": "Popular Games",
-    "new": "Nei Spiller"
+    "new": "Nei Spiller",
+    "favorites": "Favoritten"
   },
   "gameTypes": {
     "slot": "CAA -",
@@ -614,7 +618,9 @@ export const lb: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "Nei",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Bei Favoritten dobäisetzen",
+    "removeFavorite": "Aus Favoritten ewechhuelen"
   },
   "modal": {
     "comingSoon": "Coming Soon"

@@ -83,7 +83,9 @@ export const lt: LocaleTree = {
     "sportsHistory": "ISTORIJA",
     "sportsHistoryLabel": "Mano sporto lažybos",
     "casinoHistory": "ISTORIJA",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "MĖGSTAMIAUSI",
+    "favoritesLabel": "Išsaugoti žaidimai"
   },
   "sports": {
     "launching": "Įkeliama sporto knyga...",
@@ -209,12 +211,14 @@ export const lt: LocaleTree = {
     "searchPlaceholder": "Ieškoti žaidimų...",
     "noGamesFound": "Žaidimų nerasta.",
     "noProvidersFound": "Tiekėjų nerasta.",
-    "collectionGames": "{{name}} žaidimai"
+    "collectionGames": "{{name}} žaidimai",
+    "noFavoritesYet": "Kol kas nėra mėgstamų žaidimų. Bakstelėkite širdelę, kad išsaugotumėte."
   },
   "collections": {
     "top": "Top žaidimai",
     "popular": "Populiarūs žaidimai",
-    "new": "Nauji žaidimai"
+    "new": "Nauji žaidimai",
+    "favorites": "Mėgstamiausi"
   },
   "gameTypes": {
     "slot": "Lošimo automatai",
@@ -614,7 +618,9 @@ export const lt: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Premija"
+    "bonusBadge": "Premija",
+    "addFavorite": "Pridėti prie mėgstamiausių",
+    "removeFavorite": "Pašalinti iš mėgstamiausių"
   },
   "modal": {
     "comingSoon": "Netrukus"

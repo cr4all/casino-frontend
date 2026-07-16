@@ -83,7 +83,9 @@ export const fa: LocaleTree = {
     "sportsHistory": "تاریخچه",
     "sportsHistoryLabel": "شرط بندی های ورزشی من",
     "casinoHistory": "تاریخچه",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "علاقه‌مندی‌ها",
+    "favoritesLabel": "بازی‌های ذخیره‌شده"
   },
   "sports": {
     "launching": "در حال بارگذاری سایت شرط بندی ورزشی...",
@@ -209,12 +211,14 @@ export const fa: LocaleTree = {
     "searchPlaceholder": "جستجوی بازی‌ها...",
     "noGamesFound": "بازی‌ای یافت نشد.",
     "noProvidersFound": "ارائه‌دهنده‌ای یافت نشد.",
-    "collectionGames": "بازی‌های {{name}}"
+    "collectionGames": "بازی‌های {{name}}",
+    "noFavoritesYet": "هنوز بازی مورد علاقه‌ای ندارید. برای ذخیره روی قلب بازی ضربه بزنید."
   },
   "collections": {
     "top": "بازی‌های برتر",
     "popular": "بازی‌های محبوب",
-    "new": "بازی‌های جدید"
+    "new": "بازی‌های جدید",
+    "favorites": "علاقه‌مندی‌ها"
   },
   "gameTypes": {
     "slot": "اسلات‌ها",
@@ -614,7 +618,9 @@ export const fa: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "بونوس"
+    "bonusBadge": "بونوس",
+    "addFavorite": "افزودن به علاقه‌مندی‌ها",
+    "removeFavorite": "حذف از علاقه‌مندی‌ها"
   },
   "modal": {
     "comingSoon": "به‌زودی"

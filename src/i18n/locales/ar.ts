@@ -83,7 +83,9 @@ export const ar: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "رهاناتي الرياضية",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "المفضلة",
+    "favoritesLabel": "الألعاب المحفوظة"
   },
   "sports": {
     "launching": "جارٍ تحميل الرهانات الرياضية...",
@@ -209,12 +211,14 @@ export const ar: LocaleTree = {
     "searchPlaceholder": "Search games...",
     "noGamesFound": "No games found.",
     "noProvidersFound": "No providers found.",
-    "collectionGames": "{{name}} Games"
+    "collectionGames": "{{name}} Games",
+    "noFavoritesYet": "لا توجد ألعاب مفضلة بعد. اضغط على القلب لحفظ اللعبة."
   },
   "collections": {
     "top": "Top Games",
     "popular": "Popular Games",
-    "new": "New Games"
+    "new": "New Games",
+    "favorites": "المفضلة"
   },
   "gameTypes": {
     "slot": "Slots",
@@ -616,7 +620,9 @@ export const ar: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "المكافآت"
+    "bonusBadge": "المكافآت",
+    "addFavorite": "إضافة إلى المفضلة",
+    "removeFavorite": "إزالة من المفضلة"
   },
   "modal": {
     "comingSoon": "Coming Soon"

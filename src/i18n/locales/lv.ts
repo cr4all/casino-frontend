@@ -83,7 +83,9 @@ export const lv: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "Manas sporta likmes",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "IZLASE",
+    "favoritesLabel": "Saglabātās spēles"
   },
   "liveChat": {
     "title": "Tiešraides čats",
@@ -204,12 +206,14 @@ export const lv: LocaleTree = {
     "searchPlaceholder": "Meklēt spēles...",
     "noGamesFound": "Spēles nav atrastas.",
     "noProvidersFound": "Sniedzēji nav atrasti.",
-    "collectionGames": "{{name}} spēles"
+    "collectionGames": "{{name}} spēles",
+    "noFavoritesYet": "Vēl nav izlases spēļu. Pieskarieties sirdij, lai saglabātu spēli."
   },
   "collections": {
     "top": "Labākās spēles",
     "popular": "Populārās spēles",
-    "new": "Jaunās spēles"
+    "new": "Jaunās spēles",
+    "favorites": "Izlase"
   },
   "gameTypes": {
     "slot": "Spēļu automāti",
@@ -593,7 +597,9 @@ export const lv: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "Jauns",
-    "bonusBadge": "Bonuss"
+    "bonusBadge": "Bonuss",
+    "addFavorite": "Pievienot izlasei",
+    "removeFavorite": "Noņemt no izlases"
   },
   "modal": {
     "comingSoon": "Drīzumā"

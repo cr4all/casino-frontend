@@ -83,7 +83,9 @@ export const ko: LocaleTree = {
     "sportsHistory": "내역",
     "sportsHistoryLabel": "스포츠 베팅 내역",
     "casinoHistory": "내역",
-    "casinoHistoryLabel": "게임 베팅 내역"
+    "casinoHistoryLabel": "게임 베팅 내역",
+    "favorites": "즐겨찾기",
+    "favoritesLabel": "저장한 게임"
   },
   "sports": {
     "launching": "스포츠북 로딩 중...",
@@ -218,12 +220,14 @@ export const ko: LocaleTree = {
     "searchPlaceholder": "게임 검색...",
     "noGamesFound": "게임을 찾을 수 없습니다.",
     "noProvidersFound": "제공사를 찾을 수 없습니다.",
-    "collectionGames": "{{name}} 게임"
+    "collectionGames": "{{name}} 게임",
+    "noFavoritesYet": "즐겨찾기한 게임이 없습니다. 하트를 눌러 게임을 저장하세요."
   },
   "collections": {
     "top": "인기 게임",
     "popular": "인기 게임",
-    "new": "새 게임"
+    "new": "새 게임",
+    "favorites": "즐겨찾기"
   },
   "gameTypes": {
     "slots": "슬롯",
@@ -625,7 +629,9 @@ export const ko: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "신규",
-    "bonusBadge": "보너스"
+    "bonusBadge": "보너스",
+    "addFavorite": "즐겨찾기에 추가",
+    "removeFavorite": "즐겨찾기에서 제거"
   },
   "modal": {
     "comingSoon": "곧 출시"
@@ -792,4 +798,3 @@ export const ko: LocaleTree = {
     "rejectionReason": "거절 사유"
   }
 };
-

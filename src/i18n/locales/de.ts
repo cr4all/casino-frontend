@@ -83,7 +83,9 @@ export const de: LocaleTree = {
     "sportsHistory": "GESCHICHTE",
     "sportsHistoryLabel": "Meine Sportwetten",
     "casinoHistory": "GESCHICHTE",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "FAVORITEN",
+    "favoritesLabel": "Gespeicherte Spiele"
   },
   "sports": {
     "launching": "Sportwetten werden geladen...",
@@ -209,12 +211,14 @@ export const de: LocaleTree = {
     "searchPlaceholder": "Spiele suchen...",
     "noGamesFound": "Keine Spiele gefunden",
     "noProvidersFound": "Keine Dienstleister gefunden",
-    "collectionGames": "Namensspiele"
+    "collectionGames": "Namensspiele",
+    "noFavoritesYet": "Noch keine Favoritenspiele. Tippen Sie auf das Herz, um ein Spiel zu speichern."
   },
   "collections": {
     "top": "Top Spiele",
     "popular": "Beliebte Spiele",
-    "new": "Neue Spiele"
+    "new": "Neue Spiele",
+    "favorites": "Favoriten"
   },
   "gameTypes": {
     "slot": "Spielautomaten",
@@ -616,7 +620,9 @@ export const de: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "Neu",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Zu Favoriten hinzufügen",
+    "removeFavorite": "Aus Favoriten entfernen"
   },
   "modal": {
     "comingSoon": "Demnächst verfügbar"

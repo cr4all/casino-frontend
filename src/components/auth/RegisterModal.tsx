@@ -98,6 +98,8 @@ export function RegisterModal() {
       })
       .catch(() => {
         if (!cancelled) {
+          // Unlock the form even when options fail — email verify does not need currencies.
+          setOptions({ currencies: [] });
           setError(t('auth.registerError'));
         }
       });
@@ -394,7 +396,7 @@ export function RegisterModal() {
             <Button
               type="button"
               variant="secondary"
-              disabled={emailVerifyLoading || optionsLoading}
+              disabled={emailVerifyLoading}
               onClick={() => void handleRequestEmailVerification()}
               className="h-[42px] shrink-0 px-4"
             >

@@ -83,7 +83,9 @@ export const ms: LocaleTree = {
     "sportsHistory": "SEJARAH",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "SEJARAH",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "KEGEMARAN",
+    "favoritesLabel": "Permainan disimpan"
   },
   "sports": {
     "launching": "Loading sportsbook...",
@@ -209,12 +211,14 @@ export const ms: LocaleTree = {
     "searchPlaceholder": "Cari permainan...",
     "noGamesFound": "Tiada permainan ditemui.",
     "noProvidersFound": "Tiada penyedia ditemui.",
-    "collectionGames": "Permainan {{name}}"
+    "collectionGames": "Permainan {{name}}",
+    "noFavoritesYet": "Belum ada permainan kegemaran. Ketik hati pada permainan untuk menyimpannya."
   },
   "collections": {
     "top": "Permainan Teratas",
     "popular": "Permainan Popular",
-    "new": "Permainan Baharu"
+    "new": "Permainan Baharu",
+    "favorites": "Kegemaran"
   },
   "gameTypes": {
     "slot": "Slot",
@@ -614,7 +618,9 @@ export const ms: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Ganjaran"
+    "bonusBadge": "Ganjaran",
+    "addFavorite": "Tambah ke kegemaran",
+    "removeFavorite": "Buang dari kegemaran"
   },
   "modal": {
     "comingSoon": "Akan Datang"

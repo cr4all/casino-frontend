@@ -83,7 +83,9 @@ export const sq: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "TË PREFERUARAT",
+    "favoritesLabel": "Lojëra të ruajtura"
   },
   "liveChat": {
     "title": "Chat live",
@@ -204,12 +206,14 @@ export const sq: LocaleTree = {
     "searchPlaceholder": "Kërko lojëra...",
     "noGamesFound": "Nuk u gjetën lojëra.",
     "noProvidersFound": "Nuk u gjetën ofrues.",
-    "collectionGames": "Lojëra {{name}}"
+    "collectionGames": "Lojëra {{name}}",
+    "noFavoritesYet": "Ende nuk ka lojëra të preferuara. Prekni zemrën te një lojë për ta ruajtur."
   },
   "collections": {
     "top": "Lojërat kryesore",
     "popular": "Lojëra popullore",
-    "new": "Lojëra të reja"
+    "new": "Lojëra të reja",
+    "favorites": "Të preferuarat"
   },
   "gameTypes": {
     "slot": "Slote",
@@ -592,7 +596,9 @@ export const sq: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "E re",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Shto te të preferuarat",
+    "removeFavorite": "Hiq nga të preferuarat"
   },
   "modal": {
     "comingSoon": "Së shpejti"

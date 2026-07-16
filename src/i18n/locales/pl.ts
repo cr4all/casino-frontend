@@ -83,7 +83,9 @@ export const pl: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "My sports bets",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "ULUBIONE",
+    "favoritesLabel": "Zapisane gry"
   },
   "liveChat": {
     "title": "Czat na żywo",
@@ -204,12 +206,14 @@ export const pl: LocaleTree = {
     "searchPlaceholder": "Szukaj gier...",
     "noGamesFound": "Nie znaleziono gier.",
     "noProvidersFound": "Nie znaleziono dostawców.",
-    "collectionGames": "Gry {{name}}"
+    "collectionGames": "Gry {{name}}",
+    "noFavoritesYet": "Brak ulubionych gier. Dotknij serca na grze, aby ją zapisać."
   },
   "collections": {
     "top": "Najlepsze gry",
     "popular": "Popularne gry",
-    "new": "Nowe gry"
+    "new": "Nowe gry",
+    "favorites": "Ulubione"
   },
   "gameTypes": {
     "slot": "Automaty",
@@ -595,7 +599,9 @@ export const pl: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "Nowy",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Dodaj do ulubionych",
+    "removeFavorite": "Usuń z ulubionych"
   },
   "modal": {
     "comingSoon": "Wkrótce"

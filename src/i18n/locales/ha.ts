@@ -83,7 +83,9 @@ export const ha: LocaleTree = {
     "sportsHistory": "HISTORY",
     "sportsHistoryLabel": "Wasanni na Fare",
     "casinoHistory": "HISTORY",
-    "casinoHistoryLabel": "Game bet history"
+    "casinoHistoryLabel": "Game bet history",
+    "favorites": "FAVORITES",
+    "favoritesLabel": "Wasannin da aka adana"
   },
   "sports": {
     "launching": "Loading wasanni littafin...",
@@ -209,12 +211,14 @@ export const ha: LocaleTree = {
     "searchPlaceholder": "Search games...",
     "noGamesFound": "No games found.",
     "noProvidersFound": "No providers found.",
-    "collectionGames": "{{name}} Games"
+    "collectionGames": "{{name}} Games",
+    "noFavoritesYet": "Babu wasannin da aka fi so tukuna. Taɓa zuciya akan wasa don adana shi."
   },
   "collections": {
     "top": "Top Games",
     "popular": "Popular Games",
-    "new": "New Games"
+    "new": "New Games",
+    "favorites": "Favorites"
   },
   "gameTypes": {
     "slot": "Slots",
@@ -614,7 +618,9 @@ export const ha: LocaleTree = {
   },
   "gameCard": {
     "newBadge": "New",
-    "bonusBadge": "Bonus"
+    "bonusBadge": "Bonus",
+    "addFavorite": "Ƙara zuwa favorites",
+    "removeFavorite": "Cire daga favorites"
   },
   "modal": {
     "comingSoon": "Coming Soon"
