@@ -1,4 +1,5 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
+import * as Sentry from '@sentry/react';
 import { AppLayout } from '@/components/layout/AppLayout';
 import { AffiliateDashboardPage } from '@/pages/AffiliateDashboardPage';
 import { HomePage } from '@/pages/HomePage';
@@ -18,7 +19,7 @@ import { CookiePolicyPage } from '@/pages/CookiePolicyPage';
 import { LegalDocumentPage } from '@/pages/legal/LegalDocumentPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 
-export const router = createBrowserRouter([
+export const router = Sentry.wrapCreateBrowserRouterV7(createBrowserRouter)([
   {
     path: '/games/:id/play',
     element: <GamePlayPage />,

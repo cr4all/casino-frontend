@@ -24,6 +24,7 @@
     "@fontsource/roboto": "^5.2.10",
     "@fontsource/roboto-condensed": "^5.2.8",
     "@marsidev/react-turnstile": "^1.5.3",
+    "@sentry/react": "^10.65.0",
     "@sumsub/websdk-react": "^2.6.3",
     "axios": "^1.9.0",
     "framer-motion": "^12.15.0",
@@ -37,6 +38,7 @@
     "zustand": "^5.0.5"
   },
   "devDependencies": {
+    "@sentry/vite-plugin": "^5.4.0",
     "@tailwindcss/vite": "^4.1.8",
     "@types/node": "^22.15.0",
     "@types/react": "^19.1.4",
