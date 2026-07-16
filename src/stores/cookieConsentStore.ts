@@ -100,7 +100,7 @@ export const useCookieConsentStore = create<CookieConsentState>()(
       },
       // Defer past create() TDZ: sync localStorage rehydrate can finish during create(),
       // and referencing useCookieConsentStore inline would throw before setHasHydrated runs.
-      onRehydrateStorage: () => (state, error) => {
+      onRehydrateStorage: () => (_state, error) => {
         if (error) {
           console.error('Cookie consent rehydration failed', error);
         }
