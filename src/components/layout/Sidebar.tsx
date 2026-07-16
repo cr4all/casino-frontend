@@ -192,7 +192,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
                 >
                   <GameTypeIcon slug={type.slug} icon={type.icon} className={sidebarBadgeIconClassName} />
                   <div className="min-w-0 flex-1">
-                    <p className={`text-xs font-bold tracking-wide truncate ${active ? 'text-accent-gold' : 'text-white'}`}>
+                    <p className={`text-xs font-bold tracking-wide truncate uppercase ${active ? 'text-accent-gold' : 'text-white'}`}>
                       {typeName}
                     </p>
                     <p className="text-[10px] text-muted">
