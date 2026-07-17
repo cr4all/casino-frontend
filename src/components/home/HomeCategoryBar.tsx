@@ -1,14 +1,15 @@
 import { useGameTypes } from '@/hooks/useGameTypes';
 import { useTranslation } from '@/hooks/useTranslation';
 import { GameTypeIcon } from '@/components/common/GameTypeIcon';
+import { NavIcon } from '@/components/common/NavIcon';
 import { useAuthStore } from '@/stores/authStore';
 import { useUiStore } from '@/stores/uiStore';
 
 export type HomeCategory = 'all' | 'top' | 'popular' | 'new' | 'favorites' | `type-${string}`;
 
-const COLLECTION_CATEGORIES: { id: HomeCategory; icon: string }[] = [
+const COLLECTION_CATEGORIES: { id: HomeCategory; icon?: string }[] = [
   { id: 'all', icon: '▦' },
-  { id: 'favorites', icon: '♥' },
+  { id: 'favorites' },
   { id: 'top', icon: '👑' },
   { id: 'popular', icon: '✨' },
   { id: 'new', icon: '🚀' },
@@ -88,8 +89,14 @@ export function HomeCategoryBar({ active, onChange }: HomeCategoryBarProps) {
                 icon={(category as { slug: string; icon: string | null }).icon}
                 className="h-7 w-7 object-contain sm:h-8 sm:w-8"
               />
+            ) : id === 'favorites' ? (
+              <NavIcon
+                name="favorites"
+                className="h-7 w-7 shrink-0 sm:h-8 sm:w-8"
+                fill="var(--color-accent-gold)"
+              />
             ) : (
-              <span className="text-xl leading-none sm:text-2xl">{(category as { icon: string }).icon}</span>
+              <span className="text-xl leading-none sm:text-2xl">{(category as { icon?: string }).icon}</span>
             )}
             <span className="w-full truncate text-center text-[10px] font-semibold leading-tight sm:text-[11px]">
               {labelFor(id)}

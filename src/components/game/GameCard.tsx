@@ -6,6 +6,7 @@ import { useFavoritesStore } from '@/stores/favoritesStore';
 import { useUiStore } from '@/stores/uiStore';
 import { useBonusProviderSlugs } from '@/hooks/useBonusProviderSlugs';
 import { useTranslation } from '@/hooks/useTranslation';
+import { NavIcon } from '@/components/common/NavIcon';
 import { getGameThumbnailCandidates } from '@/data/gameThumbnails';
 import { gameHasProviderBonus } from '@/utils/bonusAvailability';
 import { GameService } from '@/services/GameService';
@@ -117,8 +118,8 @@ export function GameCard({ game, variant = 'slider', isNew = false }: GameCardPr
           </span>
         )}
         {showBonusBadge && (
-          <span className="pointer-events-none absolute right-0 top-0 z-10 block h-[2.75rem] w-[2.75rem] overflow-hidden sm:h-[4.25rem] sm:w-[4.25rem]">
-            <span className="absolute right-[-0.95rem] top-[0.72rem] w-[4.5rem] rotate-45 bg-gradient-to-r from-accent-gold to-amber-500 py-0.5 text-center text-[8px] font-extrabold uppercase tracking-wide text-background shadow-[0_2px_8px_rgba(0,0,0,0.35)] sm:right-[-1.65rem] sm:top-[1.15rem] sm:w-[7.25rem] sm:py-1.5 sm:text-[11px] sm:tracking-wider">
+          <span className="pointer-events-none absolute left-0 top-0 z-10 block h-[2.75rem] w-[2.75rem] overflow-hidden sm:h-[4.25rem] sm:w-[4.25rem]">
+            <span className="absolute left-[-0.95rem] top-[0.72rem] w-[4.5rem] -rotate-45 bg-gradient-to-r from-accent-gold to-amber-500 py-0.5 text-center text-[8px] font-extrabold uppercase tracking-wide text-background shadow-[0_2px_8px_rgba(0,0,0,0.35)] sm:left-[-1.65rem] sm:top-[1.15rem] sm:w-[7.25rem] sm:py-1.5 sm:text-[11px] sm:tracking-wider">
               {t('gameCard.bonusBadge')}
             </span>
           </span>
@@ -129,26 +130,18 @@ export function GameCard({ game, variant = 'slider', isNew = false }: GameCardPr
           aria-pressed={isFavorite}
           disabled={toggling}
           onClick={handleFavoriteClick}
-          className={`absolute left-2 top-2 z-20 flex h-7 w-7 items-center justify-center rounded-full border bg-black/55 backdrop-blur-sm transition-colors disabled:opacity-60 ${
+          className={`absolute right-2 top-2 z-20 flex h-7 w-7 items-center justify-center rounded-full border bg-black/55 backdrop-blur-sm transition-colors disabled:opacity-60 ${
             isFavorite
               ? 'border-white/80 text-red-500 hover:border-white hover:text-red-400'
               : 'border-white/15 text-white hover:border-accent-gold/50 hover:text-accent-gold'
           }`}
         >
-          <svg
-            viewBox="0 0 24 24"
-            className="h-3.5 w-3.5"
+          <NavIcon
+            name="favorites"
+            className="h-3.5 w-3.5 shrink-0"
             fill={isFavorite ? 'currentColor' : 'none'}
             stroke={isFavorite ? '#ffffff' : 'currentColor'}
-            strokeWidth="2"
-            aria-hidden
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M12 21s-6.5-4.35-9.33-8.08C.8 10.5 1.24 6.9 4.05 5.2c2.1-1.27 4.68-.7 6.2 1.2 1.52-1.9 4.1-2.47 6.2-1.2 2.81 1.7 3.25 5.3 1.38 7.72C18.5 16.65 12 21 12 21z"
-            />
-          </svg>
+          />
         </button>
       </div>
       <div
