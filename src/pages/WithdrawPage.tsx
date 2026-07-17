@@ -6,6 +6,7 @@ import {
   type PaymentOption,
   type WithdrawalItem,
 } from '@/api/payment.api';
+import { WithdrawService } from '@/services/WithdrawService';
 import { useAuthStore } from '@/stores/authStore';
 import { DEFAULT_CURRENCY, useWalletStore } from '@/stores/walletStore';
 import { usePlayerStore } from '@/stores/playerStore';
@@ -247,7 +248,7 @@ export function WithdrawPage() {
       return;
     }
 
-    const result = await paymentApi.createWithdrawal(
+    const result = await WithdrawService.create(
       optionKey,
       amount,
       country,

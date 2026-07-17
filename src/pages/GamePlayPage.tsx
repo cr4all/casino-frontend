@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { gameApi } from '@/api/game.api';
 import { useAuthStore } from '@/stores/authStore';
 import { useLanguageInit } from '@/hooks/useLanguageInit';
 import { useScrollToTopOnNavigate } from '@/hooks/useScrollToTopOnNavigate';
 import { useTranslation } from '@/hooks/useTranslation';
+import { GameService } from '@/services/GameService';
 import { getApiErrorMessage } from '@/utils/apiError';
 import { fitGameWindow } from '@/utils/gameWindow';
 import { GAME_FOCUS_CHANNEL } from '@/utils/openGameWindow';
@@ -55,7 +55,7 @@ export function GamePlayPage() {
 
     const gameId = Number(id);
 
-    Promise.all([gameApi.getGame(gameId), gameApi.launch(gameId)])
+    Promise.all([GameService.getGame(gameId), GameService.launch(gameId)])
       .then(([gameData, launchResult]) => {
         setGame(gameData);
         setLaunchUrl(launchResult.launch_url);

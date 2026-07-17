@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import SumsubWebSdk from '@sumsub/websdk-react';
 import { Modal } from '@/components/common/Modal';
-import { playerApi } from '@/api/wallet.api';
+import { ProfileService } from '@/services/ProfileService';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getApiErrorMessage } from '@/utils/apiError';
 import type { PlayerProfile } from '@/types';
@@ -30,16 +30,16 @@ export function KycVerificationModal({
   const [error, setError] = useState('');
 
   const refreshProfile = useCallback(async () => {
-    const updated = await playerApi.getMe();
+    const updated = await ProfileService.refreshProfileAfterKyc(profile?.kyc_status);
     onUpdated(updated);
     return updated;
-  }, [onUpdated]);
+  }, [onUpdated, profile?.kyc_status]);
 
   const loadAccessToken = useCallback(async () => {
     setLoading(true);
     setError('');
     try {
-      const result = await playerApi.createKycAccessToken();
+      const result = await ProfileService.createKycAccessToken(profile?.kyc_status ?? 'pending');
       setAccessToken(result.token);
     } catch (err) {
       setAccessToken(null);
@@ -47,7 +47,7 @@ export function KycVerificationModal({
     } finally {
       setLoading(false);
     }
-  }, [t]);
+  }, [profile?.kyc_status, t]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -61,7 +61,7 @@ export function KycVerificationModal({
   }, [isOpen, loadAccessToken]);
 
   const handleExpiration = async () => {
-    const result = await playerApi.createKycAccessToken();
+    const result = await ProfileService.refreshKycAccessToken();
     return result.token;
   };
 

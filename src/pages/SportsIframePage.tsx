@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { sportsApi, type SportsIframeMode } from '@/api/sports.api';
+import { type SportsIframeMode } from '@/api/sports.api';
+import { SportsService } from '@/services/SportsService';
 import { useAuthStore } from '@/stores/authStore';
 import { useUiStore } from '@/stores/uiStore';
 import { useLanguageStore } from '@/stores/languageStore';
@@ -32,8 +33,7 @@ export function SportsIframePage({ mode }: SportsIframePageProps) {
     setError(null);
     setLaunchUrl(null);
 
-    sportsApi
-      .launch(mode, { language })
+    SportsService.launch(mode, { language })
       .then((result) => {
         if (!cancelled) {
           setLaunchUrl(result.launch_url);

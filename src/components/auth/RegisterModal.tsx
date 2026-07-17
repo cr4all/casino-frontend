@@ -4,11 +4,11 @@ import { Button } from '@/components/common/Button';
 import { FormSelect, FormTextField } from '@/components/common/FormTextField';
 import { FieldError, fieldControlClassName } from '@/components/common/FieldError';
 import { PasswordInput } from '@/components/auth/PasswordInput';
-import { useAuthStore } from '@/stores/authStore';
 import { useUiStore } from '@/stores/uiStore';
 import { useWalletStore } from '@/stores/walletStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { authApi, type RegisterOptions } from '@/api/auth.api';
+import { AuthService } from '@/services/AuthService';
 import { PhoneNumberInput } from '@/components/auth/PhoneNumberInput';
 import {
   buildFullPhoneNumber,
@@ -41,8 +41,6 @@ export function RegisterModal() {
   const activeModal = useUiStore((s) => s.activeModal);
   const closeModal = useUiStore((s) => s.closeModal);
   const openModal = useUiStore((s) => s.openModal);
-  const register = useAuthStore((s) => s.register);
-  const login = useAuthStore((s) => s.login);
   const fetchBalance = useWalletStore((s) => s.fetchBalance);
 
   const [options, setOptions] = useState<RegisterOptions | null>(null);
@@ -197,12 +195,12 @@ export function RegisterModal() {
   };
 
   const performRegister = async (turnstileToken?: string) => {
-    await register(buildRegisterPayload(turnstileToken));
+    await AuthService.register(buildRegisterPayload(turnstileToken));
     await completeRegistration();
   };
 
   const performLoginAfterRegister = async (turnstileToken: string) => {
-    await login({
+    await AuthService.login({
       email: form.email,
       password: form.password,
       turnstileToken,

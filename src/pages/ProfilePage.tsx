@@ -2,7 +2,7 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { PlayerLevelBadge } from '@/components/player/PlayerLevelBadge';
 import { VipLevelsModal } from '@/components/player/VipLevelsModal';
-import { playerApi } from '@/api/wallet.api';
+import { ProfileService } from '@/services/ProfileService';
 import { useAuthStore } from '@/stores/authStore';
 import { usePlayerStore } from '@/stores/playerStore';
 import { DEFAULT_CURRENCY } from '@/stores/walletStore';
@@ -207,7 +207,7 @@ export function ProfilePage() {
 
           <section className="rounded-xl border border-white/10 bg-surface/90 p-6 shadow-card">
             <h2 className="mb-4 text-sm font-semibold text-white">{t('profile.changePassword')}</h2>
-            <ChangePasswordForm onChangePassword={playerApi.changePassword} />
+            <ChangePasswordForm onChangePassword={ProfileService.changePassword} />
           </section>
         </div>
 

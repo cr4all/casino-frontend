@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { playerApi } from '@/api/wallet.api';
+import { ProfileService } from '@/services/ProfileService';
 import { useAuthStore } from '@/stores/authStore';
 import { usePlayerStore } from '@/stores/playerStore';
 import {
@@ -38,7 +38,7 @@ export function useTranslation() {
       }
 
       try {
-        const updated = await playerApi.updateProfile({ language: next });
+        const updated = await ProfileService.updateProfile({ language: next });
         usePlayerStore.getState().setProfile(updated);
       } catch {
         // keep local preference even if sync fails

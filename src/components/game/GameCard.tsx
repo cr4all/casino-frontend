@@ -8,7 +8,7 @@ import { useBonusProviderSlugs } from '@/hooks/useBonusProviderSlugs';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getGameThumbnailCandidates } from '@/data/gameThumbnails';
 import { gameHasProviderBonus } from '@/utils/bonusAvailability';
-import { openGameWindow } from '@/utils/openGameWindow';
+import { GameService } from '@/services/GameService';
 
 interface GameCardProps {
   game: Game;
@@ -40,7 +40,7 @@ export function GameCard({ game, variant = 'slider', isNew = false }: GameCardPr
       openModal('login');
       return;
     }
-    openGameWindow(game.id);
+    GameService.openGameWindow(game.id);
   };
 
   const handleFavoriteClick = async (e: MouseEvent) => {

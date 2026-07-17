@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useAuthStore } from '@/stores/authStore';
 import { useSessionPolicy } from '@/hooks/useSessionPolicy';
+import { AuthService } from '@/services/AuthService';
 import { subscribeUserActivity } from '@/utils/userActivity';
 
 const ACTIVITY_EVENTS = ['mousedown', 'keydown', 'touchstart', 'scroll', 'click'] as const;
@@ -8,7 +9,6 @@ const ACTIVITY_EVENTS = ['mousedown', 'keydown', 'touchstart', 'scroll', 'click'
 export function useIdleLogout() {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const user = useAuthStore((s) => s.user);
-  const logout = useAuthStore((s) => s.logout);
   const { idleTimeoutMinutes, isLoaded } = useSessionPolicy();
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -31,7 +31,7 @@ export function useIdleLogout() {
         clearTimeout(timerRef.current);
       }
       timerRef.current = setTimeout(() => {
-        logout();
+        AuthService.logout();
       }, timeoutMs);
     };
 
@@ -57,5 +57,5 @@ export function useIdleLogout() {
       }
       unsubscribeActivity();
     };
-  }, [enabled, idleTimeoutMinutes, logout]);
+  }, [enabled, idleTimeoutMinutes]);
 }

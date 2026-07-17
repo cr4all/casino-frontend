@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, type ReactNode } from 'react';
+import { PostHogProvider } from '@posthog/react';
 import { router } from '@/router';
 import {
   canLoadAnalytics,
@@ -6,22 +7,9 @@ import {
 } from '@/stores/cookieConsentStore';
 import { useAuthStore } from '@/stores/authStore';
 import { usePlayerStore } from '@/stores/playerStore';
-import {
-  capturePageview,
-  disablePostHog,
-  enablePostHog,
-  identifyPlayer,
-  isPostHogConfigured,
-  resetPostHog,
-} from '@/lib/posthog';
+import { AnalyticsService } from './AnalyticsService';
 
-export function PostHogAnalytics() {
-  if (!isPostHogConfigured()) return null;
-
-  return <PostHogAnalyticsInner />;
-}
-
-function PostHogAnalyticsInner() {
+function AnalyticsLifecycle() {
   const hasHydrated = useCookieConsentStore((s) => s.hasHydrated);
   const level = useCookieConsentStore((s) => s.level);
   const preferences = useCookieConsentStore((s) => s.preferences);
@@ -36,9 +24,9 @@ function PostHogAnalyticsInner() {
     if (!hasHydrated) return;
 
     if (analyticsAllowed) {
-      enablePostHog();
+      AnalyticsService.enable();
     } else {
-      disablePostHog();
+      AnalyticsService.disable();
     }
   }, [analyticsAllowed, hasHydrated]);
 
@@ -47,10 +35,10 @@ function PostHogAnalyticsInner() {
 
     const captureCurrent = () => {
       const { pathname, search } = window.location;
-      const key = `${pathname}${search}`;
-      if (lastPathRef.current === key) return;
-      lastPathRef.current = key;
-      capturePageview(pathname, search);
+      const pathKey = `${pathname}${search}`;
+      if (lastPathRef.current === pathKey) return;
+      lastPathRef.current = pathKey;
+      AnalyticsService.capturePageview(pathname, search);
     };
 
     captureCurrent();
@@ -65,7 +53,7 @@ function PostHogAnalyticsInner() {
 
     if (!isAuthenticated) {
       if (wasAuthenticatedRef.current) {
-        resetPostHog();
+        AnalyticsService.reset();
         wasAuthenticatedRef.current = false;
       }
       return;
@@ -75,8 +63,25 @@ function PostHogAnalyticsInner() {
 
     if (playerId == null) return;
 
-    identifyPlayer(playerId, userEmail ? { email: userEmail } : undefined);
+    AnalyticsService.identify(playerId, userEmail ? { email: userEmail } : undefined);
   }, [analyticsAllowed, hasHydrated, isAuthenticated, playerId, userEmail]);
 
   return null;
+}
+
+interface AnalyticsProviderProps {
+  children: ReactNode;
+}
+
+export function AnalyticsProvider({ children }: AnalyticsProviderProps) {
+  if (!AnalyticsService.isConfigured()) {
+    return <>{children}</>;
+  }
+
+  return (
+    <PostHogProvider client={AnalyticsService.getClient()}>
+      {children}
+      <AnalyticsLifecycle />
+    </PostHogProvider>
+  );
 }

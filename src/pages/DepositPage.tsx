@@ -10,6 +10,7 @@ import {
   type PaymentCountry,
   type PaymentOption,
 } from '@/api/payment.api';
+import { DepositService } from '@/services/DepositService';
 import { useAuthStore } from '@/stores/authStore';
 import { useWalletStore } from '@/stores/walletStore';
 import { Button } from '@/components/common/Button';
@@ -258,7 +259,7 @@ export function DepositPage() {
 
   const performDeposit = async (turnstileToken?: string) => {
     if (!optionKey || !amount || !effectiveCountry) return;
-    const result = await paymentApi.createDeposit(optionKey, amount, effectiveCountry, turnstileToken);
+    const result = await DepositService.create(optionKey, amount, effectiveCountry, turnstileToken);
     setLastDeposit(result);
     setMessage(t('deposit.submitted', { id: result.deposit_id, status: tStatus(result.status) }));
     setAmount('');

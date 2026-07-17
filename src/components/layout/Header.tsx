@@ -7,6 +7,7 @@ import { useWalletStore } from '@/stores/walletStore';
 import { useUiStore } from '@/stores/uiStore';
 import { useUnreadNotifications } from '@/hooks/useUnreadNotifications';
 import { useTranslation } from '@/hooks/useTranslation';
+import { AuthService } from '@/services/AuthService';
 import { Button } from '@/components/common/Button';
 import { LanguageSelector } from '@/components/common/LanguageSelector';
 import { Logo } from '@/components/common/Logo';
@@ -21,7 +22,7 @@ interface HeaderProps {
 export function Header({ onMenuToggle, onOpenVipLevels }: HeaderProps) {
   const { t } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
-  const logout = useAuthStore((s) => s.logout);
+  const logout = AuthService.logout;
   const balance = useWalletStore((s) => s.balance);
   const profile = usePlayerStore((s) => s.profile);
   const openModal = useUiStore((s) => s.openModal);

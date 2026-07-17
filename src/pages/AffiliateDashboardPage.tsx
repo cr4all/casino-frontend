@@ -19,6 +19,7 @@ import { ChangePasswordForm } from '@/components/profile/ChangePasswordForm';
 import { StatusBadge } from '@/components/common/StatusBadge';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useAuthStore } from '@/stores/authStore';
+import { AuthService } from '@/services/AuthService';
 import type { PaginationMeta } from '@/types';
 import {
   getAllowedSubAffiliateCommissionModels,
@@ -82,7 +83,7 @@ export function AffiliateDashboardPage() {
   const { t } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const user = useAuthStore((s) => s.user);
-  const logout = useAuthStore((s) => s.logout);
+  const logout = AuthService.logout;
 
   const [me, setMe] = useState<AffiliateMe | null>(null);
   const [stats, setStats] = useState<AffiliateStats | null>(null);

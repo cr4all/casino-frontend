@@ -10,6 +10,7 @@ import { useAuthStore } from '@/stores/authStore';
 import { useUiStore } from '@/stores/uiStore';
 import { useWalletStore } from '@/stores/walletStore';
 import { useTranslation } from '@/hooks/useTranslation';
+import { AuthService } from '@/services/AuthService';
 import { isLocalPhoneValid, parsePhoneNumber } from '@/data/phoneDialCodes';
 import { getAuthApiErrorMessage, isRiskChallengeError } from '@/utils/apiError';
 import { RiskChallengePanel } from '@/components/risk/RiskChallengePanel';
@@ -42,7 +43,6 @@ export function LoginModal() {
   const activeModal = useUiStore((s) => s.activeModal);
   const closeModal = useUiStore((s) => s.closeModal);
   const openModal = useUiStore((s) => s.openModal);
-  const login = useAuthStore((s) => s.login);
   const fetchBalance = useWalletStore((s) => s.fetchBalance);
 
   const [method, setMethod] = useState<LoginMethod>('username');
@@ -126,11 +126,11 @@ export function LoginModal() {
 
   const performLogin = async (turnstileToken?: string) => {
     if (method === 'username') {
-      await login({ username: username.trim(), password, turnstileToken });
+      await AuthService.login({ username: username.trim(), password, turnstileToken });
     } else if (method === 'email') {
-      await login({ email: email.trim(), password, turnstileToken });
+      await AuthService.login({ email: email.trim(), password, turnstileToken });
     } else {
-      await login({ phone, password, turnstileToken });
+      await AuthService.login({ phone, password, turnstileToken });
     }
   };
 

@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Link, Navigate, useSearchParams } from 'react-router-dom';
-import { gameApi } from '@/api/game.api';
 import { paymentApi, type DepositItem, type WithdrawalItem } from '@/api/payment.api';
-import { sportsApi, type SportsBetItem } from '@/api/sports.api';
+import { type SportsBetItem } from '@/api/sports.api';
 import { walletApi } from '@/api/wallet.api';
+import { BetService } from '@/services/BetService';
 import { BetHistoryTable } from '@/components/account/BetHistoryTable';
 import { SportsBetHistoryTable } from '@/components/account/SportsBetHistoryTable';
 import { Pagination } from '@/components/common/Pagination';
@@ -51,11 +51,11 @@ export function TransactionsPage() {
     setLoading(true);
     try {
       if (tab === 'bets') {
-        const data = await gameApi.getBets(page);
+        const data = await BetService.getCasinoBets(page);
         setBets(data.items);
         setPagination(data.pagination);
       } else if (tab === 'sports_bets') {
-        const data = await sportsApi.getBets(page);
+        const data = await BetService.getSportsBets(page);
         setSportsBets(data.items);
         setPagination(data.pagination);
       } else if (tab === 'deposits') {

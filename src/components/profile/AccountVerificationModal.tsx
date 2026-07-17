@@ -1,7 +1,7 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import { Modal } from '@/components/common/Modal';
 import { FormTextField } from '@/components/common/FormTextField';
-import { playerApi } from '@/api/wallet.api';
+import { ProfileService } from '@/services/ProfileService';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getApiErrorMessage } from '@/utils/apiError';
 import type { PlayerProfile } from '@/types';
@@ -51,9 +51,9 @@ export function AccountVerificationModal({
 
     try {
       if (isEmail) {
-        await playerApi.requestEmailVerification();
+        await ProfileService.requestEmailVerification();
       } else {
-        await playerApi.requestPhoneVerification();
+        await ProfileService.requestPhoneVerification();
       }
       setCodeSent(true);
       setStep('verify');
@@ -107,8 +107,8 @@ export function AccountVerificationModal({
 
     try {
       const profile = isEmail
-        ? await playerApi.confirmEmailVerification(code.trim())
-        : await playerApi.confirmPhoneVerification(code.trim());
+        ? await ProfileService.confirmEmailVerification(code.trim())
+        : await ProfileService.confirmPhoneVerification(code.trim());
       setStep('success');
       onVerified(profile);
     } catch (err) {

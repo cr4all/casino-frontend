@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { bonusApi, type ActiveBonus, type BonusPolicy } from '@/api/bonus.api';
+import { BonusService } from '@/services/BonusService';
 import { useAuthStore } from '@/stores/authStore';
 import { useBonusStore } from '@/stores/bonusStore';
 import { useNotificationStore } from '@/stores/notificationStore';
@@ -89,7 +90,7 @@ export function BonusPage() {
     setError(null);
     setMessage(null);
     try {
-      const result = await bonusApi.claim(policy.policy_id);
+      const result = await BonusService.claim(policy.policy_id);
       if (policy.type === 'free_spin' && result.spin_count != null) {
         setMessage(
           t('bonus.freeSpinClaimed', {
