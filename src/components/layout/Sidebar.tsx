@@ -170,7 +170,11 @@ export function Sidebar({ onNavigate }: SidebarProps) {
                   : 'text-white hover:bg-card/60'
               }`}
             >
-              <NavIcon name="favorites" className={`${sidebarIconClassName} text-accent-gold`} />
+              <NavIcon
+                name="favorites"
+                className={`${sidebarIconClassName} text-accent-gold`}
+                fill="var(--color-accent-gold)"
+              />
               <div>
                 <p className="text-xs font-bold tracking-wide">{t('nav.favorites')}</p>
                 <p className="text-[10px] text-muted">{t('nav.favoritesLabel')}</p>
