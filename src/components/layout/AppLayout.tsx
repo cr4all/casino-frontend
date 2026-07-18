@@ -17,6 +17,7 @@ import { useAuthInit } from '@/hooks/useAuthInit';
 import { prefetchDeviceContext } from '@/lib/deviceContext';
 import { useCloseLiveChatOnNavigate } from '@/hooks/useCloseLiveChatOnNavigate';
 import { useScrollToTopOnNavigate } from '@/hooks/useScrollToTopOnNavigate';
+import { usePageMeta } from '@/hooks/usePageMeta';
 import { useIdleLogout } from '@/hooks/useIdleLogout';
 import { useLanguageInit } from '@/hooks/useLanguageInit';
 import { useLiveChatSync } from '@/hooks/useLiveChatSync';
@@ -59,6 +60,7 @@ export function AppLayout() {
   const { activePopup, dismissPopup, userId } = usePopupAnnouncements();
   const [searchParams] = useSearchParams();
   const location = useLocation();
+  usePageMeta(location.pathname);
   const [mobileOpen, setMobileOpen] = useState(false);
   const user = useAuthStore((s) => s.user);
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);

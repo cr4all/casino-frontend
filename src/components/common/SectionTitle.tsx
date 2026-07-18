@@ -7,6 +7,7 @@ interface SectionTitleProps {
   onPrev?: () => void;
   onNext?: () => void;
   showArrows?: boolean;
+  as?: 'h1' | 'h2';
 }
 
 export function SectionTitle({
@@ -15,6 +16,7 @@ export function SectionTitle({
   onPrev,
   onNext,
   showArrows = true,
+  as: Heading = 'h2',
 }: SectionTitleProps) {
   const { t } = useTranslation();
 
@@ -22,9 +24,9 @@ export function SectionTitle({
     <div className="mb-4 flex items-center justify-between gap-4">
       <div className="flex items-center gap-2">
         <span className="h-5 w-1 rounded-full bg-accent-gold" />
-        <h2 className="text-sm font-bold uppercase tracking-wider text-white md:text-base">
+        <Heading className="text-sm font-bold uppercase tracking-wider text-white md:text-base">
           {title}
-        </h2>
+        </Heading>
       </div>
       <div className="flex items-center gap-2">
         {showAllPath && (

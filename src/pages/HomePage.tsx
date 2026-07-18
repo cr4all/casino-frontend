@@ -136,6 +136,7 @@ export function HomePage() {
 
   return (
     <div className="space-y-5">
+      <h1 className="sr-only">Online Casino, Live Casino & Sports Betting</h1>
       <HeroBanner />
 
       <HomeCategoryBar active={activeCategory} onChange={handleCategoryChange} />

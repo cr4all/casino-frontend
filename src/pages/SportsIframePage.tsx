@@ -59,9 +59,17 @@ export function SportsIframePage({ mode }: SportsIframePageProps) {
     ? 'sports-iframe-viewport--with-wallet-bar lg:min-h-[calc(100dvh-3.5rem)] lg:h-auto'
     : 'min-h-[calc(100dvh-3.5rem)]';
 
+  const pageHeading =
+    mode === 'live'
+      ? 'Live Sports Betting'
+      : mode === 'history'
+        ? t('nav.sportsHistory')
+        : 'Pre-Match Sports Betting';
+
   if (loading) {
     return (
       <div className={`flex ${sportsViewportHeight} flex-col items-center justify-center gap-3 bg-background`}>
+        <h1 className="sr-only">{pageHeading}</h1>
         <div className="h-8 w-8 animate-spin rounded-full border-2 border-accent-gold border-t-transparent" />
         <p className="text-sm text-muted">{t('sports.launching')}</p>
       </div>
@@ -71,6 +79,7 @@ export function SportsIframePage({ mode }: SportsIframePageProps) {
   if (error || !launchUrl) {
     return (
       <div className={`flex ${sportsViewportHeight} flex-col items-center justify-center gap-3 bg-background px-4 text-center`}>
+        <h1 className="sr-only">{pageHeading}</h1>
         <p className="text-sm text-red-400">{error ?? t('sports.error')}</p>
       </div>
     );
@@ -78,6 +87,7 @@ export function SportsIframePage({ mode }: SportsIframePageProps) {
 
   return (
     <div className={`flex ${sportsViewportHeight} flex-col bg-background`}>
+      <h1 className="sr-only">{pageHeading}</h1>
       <iframe
         title={t(`nav.${mode === 'live' ? 'inLive' : mode === 'history' ? 'sportsHistory' : 'prematch'}`)}
         src={launchUrl}

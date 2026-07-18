@@ -184,7 +184,7 @@ export function CategoryPage() {
     return (
       <div className="space-y-5">
         <GameCategoryTabs />
-        <SectionTitle title={t('home.browseByProvider')} showArrows={false} />
+        <SectionTitle title={t('home.browseByProvider')} showArrows={false} as="h1" />
         {vendorsLoading ? (
           <p className="text-muted">{t('common.loadingGames')}</p>
         ) : vendors.length === 0 ? (
@@ -213,7 +213,7 @@ export function CategoryPage() {
     return (
       <div className="space-y-5">
         <GameCategoryTabs />
-        <SectionTitle title={t('category.promotions')} showAllPath="/bonus" showArrows={false} />
+        <SectionTitle title={t('category.promotions')} showAllPath="/bonus" showArrows={false} as="h1" />
         <Link to="/bonus" className="inline-flex rounded-lg bg-accent-gold px-6 py-2.5 text-sm font-bold text-background">
           {t('category.viewBonuses')}
         </Link>
@@ -226,7 +226,7 @@ export function CategoryPage() {
     <div className="space-y-5">
       <GameCategoryTabs />
 
-      <SectionTitle title={title} showArrows={false} />
+      <SectionTitle title={title} showArrows={false} as="h1" />
 
       {!isFavorites && (
       <div className="flex flex-col gap-3 sm:flex-row">
