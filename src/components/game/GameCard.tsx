@@ -130,7 +130,7 @@ export function GameCard({ game, variant = 'slider', isNew = false }: GameCardPr
           aria-pressed={isFavorite}
           disabled={toggling}
           onClick={handleFavoriteClick}
-          className={`absolute right-2 top-2 z-20 flex h-7 w-7 items-center justify-center rounded-full border bg-black/55 backdrop-blur-sm transition-colors disabled:opacity-60 ${
+          className={`absolute right-0 top-0 z-20 flex h-6 w-6 items-center justify-center rounded-full border bg-black/55 backdrop-blur-sm transition-colors disabled:opacity-60 ${
             isFavorite
               ? 'border-white/80 text-red-500 hover:border-white hover:text-red-400'
               : 'border-white/15 text-white hover:border-accent-gold/50 hover:text-accent-gold'
@@ -138,7 +138,7 @@ export function GameCard({ game, variant = 'slider', isNew = false }: GameCardPr
         >
           <NavIcon
             name="favorites"
-            className="h-3.5 w-3.5 shrink-0"
+            className="h-3 w-3 shrink-0"
             fill={isFavorite ? 'currentColor' : 'none'}
             stroke={isFavorite ? '#ffffff' : 'currentColor'}
           />
