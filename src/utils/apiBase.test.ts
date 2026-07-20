@@ -13,6 +13,12 @@ describe('apiHostname', () => {
     expect(apiHostname('www.ibets24.eu')).toBe('api.ibets24.eu');
     expect(apiHostname('api.ibets24.com')).toBe('api.ibets24.com');
   });
+
+  it('maps dev. hosts to api-dev. (not api.dev.)', () => {
+    expect(apiHostname('dev.ibets24.com')).toBe('api-dev.ibets24.com');
+    expect(apiHostname('www.dev.ibets24.com')).toBe('api-dev.ibets24.com');
+    expect(apiHostname('api-dev.ibets24.com')).toBe('api-dev.ibets24.com');
+  });
 });
 
 describe('resolveApiBaseUrl', () => {
@@ -35,6 +41,16 @@ describe('resolveApiBaseUrl', () => {
         isDev: false,
       }),
     ).toBe('https://api.ibets24.eu/api/v1');
+  });
+
+  it('derives api-dev host for deployed dev. domains', () => {
+    expect(
+      resolveApiBaseUrl({
+        hostname: 'dev.ibets24.com',
+        protocol: 'https:',
+        isDev: false,
+      }),
+    ).toBe('https://api-dev.ibets24.com/api/v1');
   });
 
   it('uses override for localhost / IP even when not DEV', () => {
