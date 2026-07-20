@@ -1,9 +1,10 @@
 import axios, { type AxiosError, type InternalAxiosRequestConfig } from 'axios';
 import { refreshEchoToken } from '@/lib/echo';
 import { useAuthStore } from '@/stores/authStore';
+import { getApiBaseUrl } from '@/utils/apiBase';
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL ?? 'http://localhost:8000/api/v1',
+  baseURL: getApiBaseUrl(),
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
@@ -11,6 +12,9 @@ const api = axios.create({
 });
 
 api.interceptors.request.use((config: InternalAxiosRequestConfig) => {
+  // Multi-domain: resolve from current host on each request.
+  config.baseURL = getApiBaseUrl();
+
   const token = useAuthStore.getState().accessToken;
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
@@ -68,7 +72,7 @@ api.interceptors.response.use(
 
     try {
       const { data } = await axios.post(
-        `${import.meta.env.VITE_API_URL ?? 'http://localhost:8000/api/v1'}/auth/refresh`,
+        `${getApiBaseUrl()}/auth/refresh`,
         { refresh_token: refreshToken },
         { headers: { Accept: 'application/json', 'Content-Type': 'application/json' } },
       );

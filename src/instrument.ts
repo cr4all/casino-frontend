@@ -3,7 +3,7 @@ import * as Sentry from '@sentry/react';
 const dsn = import.meta.env.VITE_SENTRY_DSN;
 
 function getTracePropagationTargets(): (string | RegExp)[] {
-  const targets: (string | RegExp)[] = [/^\//];
+  const targets: (string | RegExp)[] = [/^\//, /^https?:\/\/api\./];
 
   const apiUrl = import.meta.env.VITE_API_URL;
   if (!apiUrl) {
