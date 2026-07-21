@@ -31,6 +31,7 @@ const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }
   { test: (s, n) => s.includes('hacksaw') || n.includes('hacksaw'), url: '/providers/hacksaw.png' },
   { test: (s, n) => s.includes('pgsoft') || n.includes('pgsoft'), url: '/providers/pgsoft.png' },
   { test: (s, n) => s.includes('cq9') || n.includes('cq9'), url: '/providers/cq9.png' },
+  { test: (s, n) => s.includes('vagaming') || n.includes('vagaming') || n.includes('va gaming'), url: '/providers/vagaming.png' },
   { test: (s, n) => s.includes('jili') || n.includes('jili'), url: '/providers/jili.png' },
   {
     test: (s, n) => s.includes('jdbfish') || n.includes('jdbfish') || s === 'jdb-fishing' || n.includes('jdbfish'),
