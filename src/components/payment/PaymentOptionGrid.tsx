@@ -34,9 +34,9 @@ export function PaymentOptionLogo({ option, className }: { option: PaymentOption
 
 function PaymentOptionMinMax({ option }: { option: PaymentOption }) {
   const { t } = useTranslation();
-  const currencySuffix = option.kind === 'local' && option.payment_currency
-    ? ` ${option.payment_currency}`
-    : '';
+  const limitCurrency = option.limits_currency
+    ?? (option.kind === 'local' || option.kind === 'credit_card' ? option.payment_currency : '');
+  const currencySuffix = limitCurrency ? ` ${limitCurrency}` : '';
 
   return (
     <p className="text-xs font-bold text-muted sm:shrink-0 sm:text-right">

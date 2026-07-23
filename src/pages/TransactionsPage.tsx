@@ -187,7 +187,7 @@ export function TransactionsPage() {
           />
         ) : (
           <>
-            <PaymentTable items={withdrawals} amountHeader={t('transactions.amount')} />
+            <PaymentTable items={withdrawals} amountHeader={t('transactions.amount')} showLocalPayout />
             <Pagination pagination={pagination} onPageChange={setPage} />
           </>
         )
@@ -296,9 +296,11 @@ function DepositHistoryTable({ deposits }: { deposits: DepositItem[] }) {
 function PaymentTable({
   items,
   amountHeader,
+  showLocalPayout = false,
 }: {
   items: (DepositItem | WithdrawalItem)[];
   amountHeader: string;
+  showLocalPayout?: boolean;
 }) {
   const { t, tPaymentMethod, formatDate } = useTranslation();
 
@@ -314,19 +316,35 @@ function PaymentTable({
         </tr>
       </thead>
       <tbody>
-        {items.map((item) => (
-          <tr key={item.id} className="border-b border-white/5 hover:bg-surface/50">
-            <td className="px-4 py-3 text-white">#{item.id}</td>
-            <td className="px-4 py-3 font-mono text-white">
-              {item.currency} {formatBalance(item.amount)}
-            </td>
-            <td className="px-4 py-3 text-muted">{tPaymentMethod(item.payment_method)}</td>
-            <td className="px-4 py-3"><StatusBadge status={item.status} /></td>
-            <td className="px-4 py-3 text-xs text-muted hidden sm:table-cell">
-              {formatDate(item.created_at)}
-            </td>
-          </tr>
-        ))}
+        {items.map((item) => {
+          const localPayout =
+            showLocalPayout &&
+            'payment_amount' in item &&
+            item.payment_amount &&
+            item.payment_currency &&
+            item.payment_currency !== item.currency
+              ? `${item.payment_currency} ${formatBalance(item.payment_amount)}`
+              : null;
+
+          return (
+            <tr key={item.id} className="border-b border-white/5 hover:bg-surface/50">
+              <td className="px-4 py-3 text-white">#{item.id}</td>
+              <td className="px-4 py-3 font-mono text-white">
+                {item.currency} {formatBalance(item.amount)}
+                {localPayout && (
+                  <span className="mt-0.5 block text-[10px] text-muted">
+                    ≈ {localPayout}
+                  </span>
+                )}
+              </td>
+              <td className="px-4 py-3 text-muted">{tPaymentMethod(item.payment_method)}</td>
+              <td className="px-4 py-3"><StatusBadge status={item.status} /></td>
+              <td className="px-4 py-3 text-xs text-muted hidden sm:table-cell">
+                {formatDate(item.created_at)}
+              </td>
+            </tr>
+          );
+        })}
       </tbody>
     </Table>
   );

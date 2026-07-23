@@ -325,8 +325,9 @@ export function DepositPage() {
 
   const paymentInfo = lastDeposit?.payment_info ?? {};
   const isCryptoPayment = confirmedOption?.kind === 'crypto' || Boolean(paymentInfo.pay_address || paymentInfo.address);
+  const paymentUrl = typeof paymentInfo.payment_url === 'string' ? paymentInfo.payment_url : null;
   const qrString = typeof paymentInfo.qr_string === 'string' ? paymentInfo.qr_string : null;
-  const isRedirectPayment = typeof paymentInfo.payment_url === 'string' && Boolean(paymentInfo.payment_url);
+  const isRedirectPayment = Boolean(paymentUrl);
   const payCurrencyCode = String(paymentInfo.pay_currency ?? paymentInfo.currency ?? confirmedOption?.pay_currency ?? '');
   const payAmountRaw = paymentInfo.pay_amount != null && paymentInfo.pay_amount !== ''
     ? String(paymentInfo.pay_amount)
@@ -340,6 +341,7 @@ export function DepositPage() {
   const kindCounts: Record<PaymentKind, number> = {
     crypto: groupedOptions.crypto.length,
     local: groupedOptions.local.length,
+    credit_card: groupedOptions.credit_card.length,
     manual: groupedOptions.manual.length,
   };
 
@@ -347,7 +349,9 @@ export function DepositPage() {
     ? t('deposit.selectCrypto')
     : selectedKind === 'local'
       ? t('deposit.selectBank')
-      : '';
+      : selectedKind === 'credit_card'
+        ? t('deposit.selectCreditCardCurrency')
+        : '';
 
   return (
     <div className="mx-auto max-w-7xl py-4 sm:py-8">
@@ -537,6 +541,19 @@ export function DepositPage() {
                 </div>
               )}
 
+              {paymentUrl && !qrString && (
+                <div className="mb-3">
+                  <a
+                    href={paymentUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex rounded-md bg-accent-gold px-4 py-2 text-sm font-semibold text-background hover:bg-accent-gold/90"
+                  >
+                    {t('deposit.openPaymentPage')}
+                  </a>
+                </div>
+              )}
+
               {qrString && (
                 <div className="mb-3 flex flex-col items-center gap-2">
                   <div className="w-full max-w-[200px] rounded-lg bg-white p-3">
@@ -569,7 +586,7 @@ export function DepositPage() {
               <p className="mt-3 text-xs text-muted">
                 {isCryptoPayment
                   ? t('deposit.cryptoConfirmHint')
-                  : isRedirectPayment || qrString || confirmedOption?.kind === 'local'
+                  : isRedirectPayment || qrString || confirmedOption?.kind === 'local' || confirmedOption?.kind === 'credit_card'
                     ? t('deposit.redirectConfirmHint')
                     : t('deposit.adminConfirmHint')}
               </p>

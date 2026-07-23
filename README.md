@@ -30,8 +30,8 @@ API proxy: `/api` → `http://localhost:8000`
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `VITE_API_URL` | `http://localhost:8000/api/v1` | Dev/IP override for API base. In production, API is derived as `https://api.{page-host}/api/v1` |
-| `VITE_REVERB_HOST` | `localhost` | Dev override for WebSocket host. Production uses `api.{page-host}` |
+| `VITE_API_URL` | `http://localhost:8000/api/v1` | Local/IP override for API base. Deployed sites derive `https://api.{host}/api/v1`, or `https://api-dev.{rest}/api/v1` when the page host is `dev.*` |
+| `VITE_REVERB_HOST` | `localhost` | Local/IP override for WebSocket host. Deployed sites use the same `api.` / `api-dev.` rule |
 | `VITE_TAWK_PROPERTY_ID` | — | tawk.to Property ID (Chat Widget embed) |
 | `VITE_TAWK_WIDGET_ID` | — | tawk.to Widget ID (Chat Widget embed) |
 

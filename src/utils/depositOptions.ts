@@ -1,6 +1,6 @@
 import type { PaymentOption } from '@/api/payment.api';
 
-export type PaymentKind = 'crypto' | 'local' | 'manual';
+export type PaymentKind = 'crypto' | 'local' | 'manual' | 'credit_card';
 
 export const POPULAR_CRYPTO_CODES = ['btc', 'eth', 'usdt', 'usdc', 'ltc', 'trx', 'bnb', 'sol'];
 
@@ -8,6 +8,7 @@ export function groupOptionsByKind(options: PaymentOption[]) {
   return {
     crypto: options.filter((o) => o.kind === 'crypto'),
     local: options.filter((o) => o.kind === 'local'),
+    credit_card: options.filter((o) => o.kind === 'credit_card'),
     manual: options.filter((o) => o.kind === 'manual'),
   };
 }

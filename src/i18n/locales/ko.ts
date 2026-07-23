@@ -265,6 +265,7 @@ export const ko: LocaleTree = {
     "bank": "계좌 이체",
     "redirect": "온라인 결제",
     "local": "현지 결제",
+    "credit_card": "신용카드",
     "manual": "수동 이체"
   },
   "txTypes": {
@@ -399,8 +400,10 @@ export const ko: LocaleTree = {
     "selectPaymentKind": "입금 방법을 선택하세요",
     "selectCrypto": "암호화폐 선택",
     "selectBank": "결제 방법 선택",
+    "selectCreditCardCurrency": "카드 결제 통화 선택",
     "kindCountCrypto": "암호화폐 {{count}}개",
     "kindCountLocal": "결제 방법 {{count}}개",
+    "kindCountCreditCard": "통화 {{count}}개",
     "kindCountManual": "계좌 이체",
     "kindUnavailable": "이용 불가",
     "paymentMethod": "결제 방법",
@@ -440,7 +443,13 @@ export const ko: LocaleTree = {
   "withdraw": {
     "title": "출금",
     "backToDeposit": "← 입금",
+    "selectPaymentKind": "출금 방법을 선택하세요",
     "availableBalance": "사용 가능 잔액:",
+    "estimatedPayout": "예상 출금액: {{amount}} {{currency}}",
+    "exchangeRate": "환율: {{rate}}",
+    "estimateDisclaimer": "최종 출금액은 지급 시점에 계산됩니다.",
+    "loadingQuote": "예상 금액 계산 중...",
+    "quoteFailed": "환율 예상을 가져올 수 없습니다.",
     "walletAddress": "지갑 주소",
     "destinationAccount": "받는 계좌",
     "networkOptional": "네트워크 (선택)",

@@ -2,10 +2,11 @@
  * Resolves player API / Reverb endpoints from the browser host.
  *
  * Production (Cloudflare multi-domain):
- *   ibets24.eu      → https://api.ibets24.eu/api/v1
- *   www.ibets24.eu  → https://api.ibets24.eu/api/v1
+ *   ibets24.eu       → https://api.ibets24.eu/api/v1
+ *   www.ibets24.eu   → https://api.ibets24.eu/api/v1
+ *   dev.ibets24.com  → https://api-dev.ibets24.com/api/v1  (avoids nested *.*.TLD CF SSL gap)
  *
- * Dev / IP / localhost keeps VITE_* overrides.
+ * Local Vite DEV / IP / localhost keeps VITE_* overrides.
  */
 
 export function isLocalOrIpHost(hostname: string): boolean {
@@ -23,7 +24,18 @@ export function apexHostname(hostname: string): string {
 
 export function apiHostname(hostname: string): string {
   const apex = apexHostname(hostname);
-  return apex.startsWith('api.') ? apex : `api.${apex}`;
+
+  // Already on the API host.
+  if (apex.startsWith('api.') || apex.startsWith('api-')) {
+    return apex;
+  }
+
+  // dev.example.com → api-dev.example.com (single-label subdomain for CF Universal SSL)
+  if (apex.startsWith('dev.')) {
+    return `api-${apex}`;
+  }
+
+  return `api.${apex}`;
 }
 
 export function resolveApiBaseUrl(options: {
