@@ -10,6 +10,18 @@ import { typePath } from '@/stores/gameStore';
 
 const SUPPORT_EMAIL = 'support@ibets24.com';
 
+/** Regulator public-register links — industry-standard footer disclosure. */
+const LICENSE_LINKS = [
+  {
+    key: 'licenseUkGamblingCommission' as const,
+    href: 'https://www.gamblingcommission.gov.uk/licensees-and-businesses/licences-and-fees/sector/remote',
+  },
+  {
+    key: 'licenseAnjouan' as const,
+    href: 'https://anjouangaming.com/license-register/',
+  },
+] as const;
+
 interface FooterLinkListProps {
   title: string;
   children: ReactNode;
@@ -86,6 +98,22 @@ export function Footer() {
       </div>
 
       <div className="site-footer__dark">
+        <nav className="site-footer__links" aria-label={t('footer.licensing')}>
+          {LICENSE_LINKS.map((link) => (
+            <a
+              key={link.key}
+              href={link.href}
+              className="site-footer__link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t(`footer.${link.key}`)}
+              <span className="site-footer__link-external" aria-hidden="true">
+                ↗
+              </span>
+            </a>
+          ))}
+        </nav>
         <p className="site-footer__disclaimer">{t('footer.disclaimer')}</p>
         <p className="site-footer__copyright">
           {t('footer.copyright', { year: new Date().getFullYear() })}
