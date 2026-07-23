@@ -5,6 +5,7 @@ import {
   type PaymentCountry,
   type PaymentOption,
   type WithdrawalItem,
+  type WithdrawQuote,
 } from '@/api/payment.api';
 import { WithdrawService } from '@/services/WithdrawService';
 import { useAuthStore } from '@/stores/authStore';
@@ -69,6 +70,9 @@ export function WithdrawPage() {
   const [confirmedOption, setConfirmedOption] = useState<PaymentOption | null>(null);
   const [optionKey, setOptionKey] = useState('');
   const [amount, setAmount] = useState('');
+  const [quote, setQuote] = useState<WithdrawQuote | null>(null);
+  const [quoteLoading, setQuoteLoading] = useState(false);
+  const [quoteError, setQuoteError] = useState(false);
   const [destinationValues, setDestinationValues] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
@@ -135,6 +139,8 @@ export function WithdrawPage() {
   const handleBackToMethods = () => {
     setStep(1);
     setAmount('');
+    setQuote(null);
+    setQuoteError(false);
     setDestinationValues({});
     setError(null);
   };
@@ -162,6 +168,36 @@ export function WithdrawPage() {
       .catch(() => setOptions([]))
       .finally(() => setOptionsLoading(false));
   }, [country]);
+
+  useEffect(() => {
+    if (step !== 2 || !optionKey || !amount || Number(amount) <= 0 || !country) {
+      setQuote(null);
+      setQuoteError(false);
+      return;
+    }
+
+    if (confirmedOption?.kind !== 'local') {
+      setQuote(null);
+      setQuoteError(false);
+      return;
+    }
+
+    setQuoteLoading(true);
+    setQuoteError(false);
+
+    const timer = setTimeout(() => {
+      paymentApi
+        .getWithdrawQuote(optionKey, amount, country)
+        .then(setQuote)
+        .catch(() => {
+          setQuote(null);
+          setQuoteError(true);
+        })
+        .finally(() => setQuoteLoading(false));
+    }, 400);
+
+    return () => clearTimeout(timer);
+  }, [step, optionKey, amount, country, confirmedOption?.kind]);
 
   useEffect(() => {
     if (!confirmedOption) {
@@ -503,6 +539,33 @@ export function WithdrawPage() {
                 inputClassName="bg-background py-2"
               />
 
+              {confirmedOption?.kind === 'local' && amount && Number(amount) > 0 && (
+                <div className="rounded-lg border border-white/10 bg-background/50 p-3 text-sm">
+                  {quoteLoading && (
+                    <p className="text-muted">{t('withdraw.loadingQuote')}</p>
+                  )}
+                  {!quoteLoading && quote && (
+                    <>
+                      <p className="font-medium text-accent-gold">
+                        {t('withdraw.estimatedPayout', {
+                          amount: formatBalance(quote.payment_amount),
+                          currency: quote.payment_currency,
+                        })}
+                      </p>
+                      {quote.rate_display && (
+                        <p className="mt-1 text-xs text-muted">
+                          {t('withdraw.exchangeRate', { rate: quote.rate_display })}
+                        </p>
+                      )}
+                      <p className="mt-2 text-xs text-muted">{t('withdraw.estimateDisclaimer')}</p>
+                    </>
+                  )}
+                  {!quoteLoading && quoteError && (
+                    <p className="text-xs text-red-400">{t('withdraw.quoteFailed')}</p>
+                  )}
+                </div>
+              )}
+
               {confirmedOption?.destination_fields.map((field) => (
                 <FormTextField
                   key={field.name}
@@ -573,6 +636,11 @@ export function WithdrawPage() {
                         <td className="px-3 py-3 text-white sm:px-4">#{w.id}</td>
                         <td className="px-3 py-3 font-mono text-xs text-white sm:px-4">
                           {formatPaymentAmount(w.currency, w.amount)}
+                          {w.payment_amount && w.payment_currency && w.payment_currency !== w.currency && (
+                            <span className="mt-0.5 block text-[10px] text-muted">
+                              ≈ {formatPaymentAmount(w.payment_currency, w.payment_amount)}
+                            </span>
+                          )}
                         </td>
                         <td className="hidden px-3 py-3 text-muted sm:table-cell sm:px-4">{tPaymentMethod(w.payment_method)}</td>
                         <td className="px-3 py-3 sm:px-4"><StatusBadge status={w.status} /></td>

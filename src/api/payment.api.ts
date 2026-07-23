@@ -74,10 +74,23 @@ export interface DepositItem {
   confirmed_at: string | null;
 }
 
+export interface WithdrawQuote {
+  wallet_amount: string;
+  wallet_currency: string;
+  payment_amount: string;
+  payment_currency: string;
+  exchange_rate: string;
+  exchange_rate_at?: string;
+  rate_display?: string;
+  is_estimate: boolean;
+}
+
 export interface WithdrawalItem {
   id: number;
   amount: string;
   currency: string;
+  payment_amount?: string | null;
+  payment_currency?: string | null;
   status: string;
   payment_method: string | null;
   created_at: string | null;
@@ -111,6 +124,13 @@ export const paymentApi = {
     return data.data;
   },
 
+  getWithdrawQuote: async (optionKey: string, amount: string, country: string) => {
+    const { data } = await api.get<ApiResponse<WithdrawQuote>>('/payment/withdrawals/quote', {
+      params: { option_key: optionKey, amount, country },
+    });
+    return data.data;
+  },
+
   createDeposit: async (optionKey: string, amount: string, country: string, turnstileToken?: string) => {
     const risk_context = await buildRiskContext(turnstileToken);
     const { data } = await api.post<ApiResponse<DepositRequest>>('/payment/deposits', {
@@ -138,7 +158,13 @@ export const paymentApi = {
     turnstileToken?: string,
   ) => {
     const risk_context = await buildRiskContext(turnstileToken);
-    const { data } = await api.post<ApiResponse<{ withdrawal_id: number; status: string; amount: string }>>(
+    const { data } = await api.post<ApiResponse<{
+      withdrawal_id: number;
+      status: string;
+      amount: string;
+      currency?: string;
+      estimated_payout?: WithdrawQuote | null;
+    }>>(
       '/payment/withdrawals',
       { option_key: optionKey, amount, country, destination, risk_context },
     );
