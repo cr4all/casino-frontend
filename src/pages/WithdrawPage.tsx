@@ -16,6 +16,9 @@ import { Button } from '@/components/common/Button';
 import { FormTextField } from '@/components/common/FormTextField';
 import { Modal } from '@/components/common/Modal';
 import { StatusBadge } from '@/components/common/StatusBadge';
+import { CryptoAmountInput } from '@/components/deposit/CryptoAmountInput';
+import { DepositStepIndicator } from '@/components/deposit/DepositStepIndicator';
+import { PaymentKindGrid } from '@/components/deposit/PaymentKindGrid';
 import { PaymentCountrySelect } from '@/components/payment/PaymentCountrySelect';
 import { PaymentOptionGrid, PaymentOptionSummary } from '@/components/payment/PaymentOptionGrid';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -30,12 +33,20 @@ import { RiskChallengePanel } from '@/components/risk/RiskChallengePanel';
 import { useRiskChallenge } from '@/hooks/useRiskChallenge';
 import type { WithdrawalEligibility } from '@/types';
 import {
+  filterCryptoOptions,
+  groupOptionsByKind,
+  sortCryptoOptionsPopularFirst,
+  type PaymentKind,
+} from '@/utils/depositOptions';
+import {
   collectFieldErrors,
   hasFieldErrors,
   omitFieldError,
   requiredValue,
   type FieldErrors,
 } from '@/utils/formValidation';
+
+type WithdrawStep = 1 | 2 | 3;
 
 function formatPaymentAmount(currency: string, amount: string): string {
   return `${currency} ${formatBalance(amount)}`;
@@ -62,13 +73,16 @@ export function WithdrawPage() {
   const profile = usePlayerStore((s) => s.profile);
   const fetchProfile = usePlayerStore((s) => s.fetchProfile);
   const [countries, setCountries] = useState<PaymentCountry[]>([]);
+  const [defaultCountry, setDefaultCountry] = useState('');
   const [country, setCountry] = useState('');
   const [options, setOptions] = useState<PaymentOption[]>([]);
   const [optionsLoading, setOptionsLoading] = useState(false);
   const [withdrawals, setWithdrawals] = useState<WithdrawalItem[]>([]);
-  const [step, setStep] = useState<1 | 2>(1);
+  const [step, setStep] = useState<WithdrawStep>(1);
+  const [selectedKind, setSelectedKind] = useState<PaymentKind | null>(null);
   const [confirmedOption, setConfirmedOption] = useState<PaymentOption | null>(null);
   const [optionKey, setOptionKey] = useState('');
+  const [cryptoSearch, setCryptoSearch] = useState('');
   const [amount, setAmount] = useState('');
   const [quote, setQuote] = useState<WithdrawQuote | null>(null);
   const [quoteLoading, setQuoteLoading] = useState(false);
@@ -94,6 +108,22 @@ export function WithdrawPage() {
   const eligibility = profile?.withdrawal_eligibility;
   const walletCurrency = balance?.currency ?? profile?.currency ?? DEFAULT_CURRENCY;
 
+  const effectiveCountry = selectedKind === 'local' ? country : defaultCountry;
+  const optionsCountry = step === 1 || selectedKind !== 'local' ? defaultCountry : country;
+
+  const groupedOptions = useMemo(() => groupOptionsByKind(options), [options]);
+
+  const step2Options = useMemo(() => {
+    if (!selectedKind || selectedKind === 'manual') return [];
+
+    const kindOptions = groupedOptions[selectedKind];
+    if (selectedKind === 'crypto') {
+      const filtered = filterCryptoOptions(kindOptions, cryptoSearch);
+      return sortCryptoOptionsPopularFirst(filtered);
+    }
+    return kindOptions;
+  }, [groupedOptions, selectedKind, cryptoSearch]);
+
   const maxWithdrawAmount = useMemo(() => {
     if (!eligibility || eligibility.unlimited || !eligibility.max_amount) {
       return null;
@@ -106,19 +136,59 @@ export function WithdrawPage() {
 
   const resetToStep1 = () => {
     setStep(1);
+    setSelectedKind(null);
     setConfirmedOption(null);
     setOptionKey('');
+    setCryptoSearch('');
     setAmount('');
+    setQuote(null);
+    setQuoteError(false);
     setDestinationValues({});
     setError(null);
+    setFieldErrors({});
     setChallengeError(null);
+    setCountry(defaultCountry);
     resetChallenge();
   };
 
-  const handleCountryChange = (code: string) => {
-    setCountry(code);
-    resetToStep1();
+  const handleKindSelect = (kind: PaymentKind) => {
+    setError(null);
     setMessage(null);
+
+    if (kind === 'manual') {
+      if (eligibility?.requires_verification) {
+        setVerificationModalOpen(true);
+        return;
+      }
+
+      const manualOption = groupedOptions.manual[0];
+      if (!manualOption) return;
+      setSelectedKind('manual');
+      setConfirmedOption(manualOption);
+      setOptionKey(manualOption.key);
+      setAmount('');
+      setQuote(null);
+      setQuoteError(false);
+      setDestinationValues({});
+      setStep(3);
+      return;
+    }
+
+    setSelectedKind(kind);
+    setConfirmedOption(null);
+    setOptionKey('');
+    setCryptoSearch('');
+    if (kind === 'local') {
+      setCountry(defaultCountry);
+    }
+    setStep(2);
+  };
+
+  const handleLocalCountryChange = (code: string) => {
+    setCountry(code);
+    setConfirmedOption(null);
+    setOptionKey('');
+    setError(null);
   };
 
   const handleOptionSelect = (option: PaymentOption) => {
@@ -130,19 +200,40 @@ export function WithdrawPage() {
     setConfirmedOption(option);
     setOptionKey(option.key);
     setAmount('');
+    setQuote(null);
+    setQuoteError(false);
     setDestinationValues({});
     setError(null);
     setMessage(null);
-    setStep(2);
+    setStep(3);
   };
 
-  const handleBackToMethods = () => {
+  const handleBackFromStep2 = () => {
     setStep(1);
+    setSelectedKind(null);
+    setConfirmedOption(null);
+    setOptionKey('');
+    setCryptoSearch('');
+    setCountry(defaultCountry);
+    setError(null);
+  };
+
+  const handleBackFromStep3 = () => {
     setAmount('');
     setQuote(null);
     setQuoteError(false);
     setDestinationValues({});
     setError(null);
+    setFieldErrors({});
+
+    if (selectedKind === 'manual') {
+      resetToStep1();
+      return;
+    }
+
+    setConfirmedOption(null);
+    setOptionKey('');
+    setStep(2);
   };
 
   useEffect(() => {
@@ -151,26 +242,27 @@ export function WithdrawPage() {
       .then(([data]) => {
         setCountries(data.countries);
         const initial = data.default_country ?? data.countries[0]?.code ?? '';
+        setDefaultCountry(initial);
         setCountry(initial);
       })
       .finally(() => setLoading(false));
   }, [isAuthenticated, fetchBalance, fetchProfile]);
 
   useEffect(() => {
-    if (!country) {
+    if (!optionsCountry) {
       setOptions([]);
       return;
     }
 
     setOptionsLoading(true);
-    paymentApi.getWithdrawOptions(country)
+    paymentApi.getWithdrawOptions(optionsCountry)
       .then((data) => setOptions(data.items))
       .catch(() => setOptions([]))
       .finally(() => setOptionsLoading(false));
-  }, [country]);
+  }, [optionsCountry]);
 
   useEffect(() => {
-    if (step !== 2 || !optionKey || !amount || Number(amount) <= 0 || !country) {
+    if (step !== 3 || !optionKey || !amount || Number(amount) <= 0 || !effectiveCountry) {
       setQuote(null);
       setQuoteError(false);
       return;
@@ -187,7 +279,7 @@ export function WithdrawPage() {
 
     const timer = setTimeout(() => {
       paymentApi
-        .getWithdrawQuote(optionKey, amount, country)
+        .getWithdrawQuote(optionKey, amount, effectiveCountry)
         .then(setQuote)
         .catch(() => {
           setQuote(null);
@@ -197,7 +289,7 @@ export function WithdrawPage() {
     }, 400);
 
     return () => clearTimeout(timer);
-  }, [step, optionKey, amount, country, confirmedOption?.kind]);
+  }, [step, optionKey, amount, effectiveCountry, confirmedOption?.kind]);
 
   useEffect(() => {
     if (!confirmedOption) {
@@ -272,7 +364,7 @@ export function WithdrawPage() {
   };
 
   const performWithdrawal = async (turnstileToken?: string) => {
-    if (!optionKey || !amount || !country) return;
+    if (!optionKey || !amount || !effectiveCountry) return;
 
     if (eligibility?.requires_verification) {
       setVerificationModalOpen(true);
@@ -287,7 +379,7 @@ export function WithdrawPage() {
     const result = await WithdrawService.create(
       optionKey,
       amount,
-      country,
+      effectiveCountry,
       destinationValues,
       turnstileToken,
     );
@@ -324,7 +416,7 @@ export function WithdrawPage() {
     setError(null);
     setFieldErrors({});
 
-    if (!optionKey || !country || !confirmedOption) return;
+    if (!optionKey || !effectiveCountry || !confirmedOption) return;
 
     if (!validateWithdrawForm()) {
       return;
@@ -363,6 +455,18 @@ export function WithdrawPage() {
         amount: formatPaymentAmount(walletCurrency, limitAlertAmount),
       })
     : '';
+
+  const kindCounts: Record<PaymentKind, number> = {
+    crypto: groupedOptions.crypto.length,
+    local: groupedOptions.local.length,
+    manual: groupedOptions.manual.length,
+  };
+
+  const step2Title = selectedKind === 'crypto'
+    ? t('deposit.selectCrypto')
+    : selectedKind === 'local'
+      ? t('deposit.selectBank')
+      : '';
 
   return (
     <div className="mx-auto max-w-7xl py-4 sm:py-8">
@@ -479,19 +583,55 @@ export function WithdrawPage() {
             </div>
           )}
 
-          {step === 1 ? (
-            <div className="rounded-xl border border-white/[0.08] bg-card p-4 space-y-4 sm:p-6">
-              <PaymentCountrySelect
-                countries={countries}
-                value={country}
-                onChange={handleCountryChange}
-                label={t('deposit.selectCountry')}
-              />
+          <div className="rounded-xl border border-white/[0.08] bg-card p-4 space-y-4 sm:p-6">
+            <DepositStepIndicator step={step} selectedKind={selectedKind} />
 
-              <div>
-                <p className="mb-2 text-xs text-muted">{t('deposit.selectPaymentOption')}</p>
+            {step === 1 && (
+              <div className="space-y-4">
+                <p className="text-xs text-muted">{t('withdraw.selectPaymentKind')}</p>
+                <PaymentKindGrid
+                  counts={kindCounts}
+                  onSelect={handleKindSelect}
+                  loading={optionsLoading}
+                  localEnabled={countries.length > 0}
+                />
+              </div>
+            )}
+
+            {step === 2 && selectedKind && selectedKind !== 'manual' && (
+              <div className="space-y-4">
+                <Button
+                  type="button"
+                  variant="secondary"
+                  onClick={handleBackFromStep2}
+                  className="w-fit px-3 py-1.5 text-xs"
+                >
+                  {t('deposit.backToKinds')}
+                </Button>
+
+                <p className="text-xs text-muted">{step2Title}</p>
+
+                {selectedKind === 'local' && (
+                  <PaymentCountrySelect
+                    countries={countries}
+                    value={country}
+                    onChange={handleLocalCountryChange}
+                    label={t('deposit.selectLocalCountry')}
+                  />
+                )}
+
+                {selectedKind === 'crypto' && (
+                  <input
+                    type="text"
+                    value={cryptoSearch}
+                    onChange={(e) => setCryptoSearch(e.target.value)}
+                    placeholder={t('deposit.searchCurrency')}
+                    className="w-full rounded-lg border border-white/10 bg-background/50 px-3 py-2 text-sm text-white placeholder:text-muted focus:border-accent-gold/50 focus:outline-none"
+                  />
+                )}
+
                 <PaymentOptionGrid
-                  options={options}
+                  options={step2Options}
                   value={optionKey}
                   onChange={setOptionKey}
                   onSelect={handleOptionSelect}
@@ -501,109 +641,105 @@ export function WithdrawPage() {
                   emptyLabel={t('deposit.noOptionsForCountry')}
                 />
               </div>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} noValidate className="rounded-xl border border-white/[0.08] bg-card p-4 space-y-4 sm:p-6">
-              <Button
-                type="button"
-                variant="secondary"
-                onClick={handleBackToMethods}
-                className="w-fit px-3 py-1.5 text-xs"
-              >
-                {t('deposit.backToMethods')}
-              </Button>
+            )}
 
-              {confirmedOption && <PaymentOptionSummary option={confirmedOption} />}
+            {step === 3 && (
+              <form onSubmit={handleSubmit} noValidate className="space-y-4">
+                <Button
+                  type="button"
+                  variant="secondary"
+                  onClick={handleBackFromStep3}
+                  className="w-fit px-3 py-1.5 text-xs"
+                >
+                  {selectedKind === 'manual' ? t('deposit.backToKinds') : t('deposit.backToOptions')}
+                </Button>
 
-              <FormTextField
-                id="withdraw-amount"
-                label={
-                  <>
-                    {t('deposit.amount')}
-                    {maxWithdrawAmount && (
-                      <span className="ml-2 text-muted">
-                        ({t('common.maxOnly', { amount: formatPaymentAmount(walletCurrency, maxWithdrawAmount) })})
-                      </span>
+                {confirmedOption && <PaymentOptionSummary option={confirmedOption} />}
+
+                {maxWithdrawAmount && (
+                  <p className="text-xs text-muted">
+                    {t('common.maxOnly', { amount: formatPaymentAmount(walletCurrency, maxWithdrawAmount) })}
+                  </p>
+                )}
+
+                <CryptoAmountInput
+                  value={amount}
+                  onChange={(value) => {
+                    setAmount(value);
+                    setFieldErrors((prev) => omitFieldError(prev, 'amount'));
+                  }}
+                  currencyLabel={walletCurrency}
+                  amountLabel={t('deposit.amount')}
+                  clearLabel={t('common.close')}
+                  error={fieldErrors.amount}
+                />
+
+                {confirmedOption?.kind === 'local' && amount && Number(amount) > 0 && (
+                  <div className="rounded-lg border border-white/10 bg-background/50 p-3 text-sm">
+                    {quoteLoading && (
+                      <p className="text-muted">{t('withdraw.loadingQuote')}</p>
                     )}
-                  </>
-                }
-                type="number"
-                step="0.0001"
-                min="0"
-                value={amount}
-                onChange={(e) => {
-                  setAmount(e.target.value);
-                  setFieldErrors((prev) => omitFieldError(prev, 'amount'));
-                }}
-                error={fieldErrors.amount}
-                inputClassName="bg-background py-2"
-              />
-
-              {confirmedOption?.kind === 'local' && amount && Number(amount) > 0 && (
-                <div className="rounded-lg border border-white/10 bg-background/50 p-3 text-sm">
-                  {quoteLoading && (
-                    <p className="text-muted">{t('withdraw.loadingQuote')}</p>
-                  )}
-                  {!quoteLoading && quote && (
-                    <>
-                      <p className="font-medium text-accent-gold">
-                        {t('withdraw.estimatedPayout', {
-                          amount: formatBalance(quote.payment_amount),
-                          currency: quote.payment_currency,
-                        })}
-                      </p>
-                      {quote.rate_display && (
-                        <p className="mt-1 text-xs text-muted">
-                          {t('withdraw.exchangeRate', { rate: quote.rate_display })}
+                    {!quoteLoading && quote && (
+                      <>
+                        <p className="font-medium text-accent-gold">
+                          {t('withdraw.estimatedPayout', {
+                            amount: formatBalance(quote.payment_amount),
+                            currency: quote.payment_currency,
+                          })}
                         </p>
-                      )}
-                      <p className="mt-2 text-xs text-muted">{t('withdraw.estimateDisclaimer')}</p>
-                    </>
-                  )}
-                  {!quoteLoading && quoteError && (
-                    <p className="text-xs text-red-400">{t('withdraw.quoteFailed')}</p>
-                  )}
-                </div>
-              )}
+                        {quote.rate_display && (
+                          <p className="mt-1 text-xs text-muted">
+                            {t('withdraw.exchangeRate', { rate: quote.rate_display })}
+                          </p>
+                        )}
+                        <p className="mt-2 text-xs text-muted">{t('withdraw.estimateDisclaimer')}</p>
+                      </>
+                    )}
+                    {!quoteLoading && quoteError && (
+                      <p className="text-xs text-red-400">{t('withdraw.quoteFailed')}</p>
+                    )}
+                  </div>
+                )}
 
-              {confirmedOption?.destination_fields.map((field) => (
-                <FormTextField
-                  key={field.name}
-                  id={`withdraw-${field.name}`}
-                  label={
-                    <>
-                      {tDestinationField(field.name, field.label)}
-                      {!field.required && ` (${t('withdraw.networkOptional')})`}
-                    </>
-                  }
-                  type="text"
-                  value={destinationValues[field.name] ?? ''}
-                  onChange={(e) => handleDestinationChange(field.name, e.target.value)}
-                  error={fieldErrors[field.name]}
-                  inputClassName="bg-background py-2"
-                />
-              ))}
+                {confirmedOption?.destination_fields.map((field) => (
+                  <FormTextField
+                    key={field.name}
+                    id={`withdraw-${field.name}`}
+                    label={
+                      <>
+                        {tDestinationField(field.name, field.label)}
+                        {!field.required && ` (${t('withdraw.networkOptional')})`}
+                      </>
+                    }
+                    type="text"
+                    value={destinationValues[field.name] ?? ''}
+                    onChange={(e) => handleDestinationChange(field.name, e.target.value)}
+                    error={fieldErrors[field.name]}
+                    inputClassName="bg-background py-2"
+                  />
+                ))}
 
-              {error && <p className="text-sm text-red-400">{error}</p>}
-              {challengeRequired && (
-                <RiskChallengePanel
-                  onSuccess={handleTurnstileSuccess}
-                  onError={() => setChallengeError(t('risk.challengeFailed'))}
-                  onRegisterReset={registerWidgetReset}
-                  error={challengeError ?? undefined}
-                />
-              )}
-              {message && <p className="text-sm text-green-400">{message}</p>}
+                {error && <p className="text-sm text-red-400">{error}</p>}
+                {challengeRequired && (
+                  <RiskChallengePanel
+                    onSuccess={handleTurnstileSuccess}
+                    onError={() => setChallengeError(t('risk.challengeFailed'))}
+                    onRegisterReset={registerWidgetReset}
+                    error={challengeError ?? undefined}
+                  />
+                )}
+                {message && <p className="text-sm text-green-400">{message}</p>}
 
-              <Button
-                type="submit"
-                variant="gold"
-                disabled={submitting || challengeRequired || !confirmedOption || !country}
-              >
-                {submitting ? t('common.submitting') : t('withdraw.requestWithdrawal')}
-              </Button>
-            </form>
-          )}
+                <Button
+                  type="submit"
+                  variant="gold"
+                  disabled={submitting || challengeRequired || !confirmedOption || !effectiveCountry}
+                >
+                  {submitting ? t('common.submitting') : t('withdraw.requestWithdrawal')}
+                </Button>
+              </form>
+            )}
+          </div>
           </div>
           </div>
 

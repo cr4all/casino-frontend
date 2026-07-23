@@ -433,6 +433,7 @@ export const en = {
   withdraw: {
     title: 'Withdraw',
     backToDeposit: '← Deposit',
+    selectPaymentKind: 'Choose how you want to withdraw',
     availableBalance: 'Available balance:',
     walletAddress: 'Wallet Address',
     destinationAccount: 'Destination Account',

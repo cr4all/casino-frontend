@@ -433,7 +433,13 @@ export const ko: LocaleTree = {
   "withdraw": {
     "title": "출금",
     "backToDeposit": "← 입금",
+    "selectPaymentKind": "출금 방법을 선택하세요",
     "availableBalance": "사용 가능 잔액:",
+    "estimatedPayout": "예상 출금액: {{amount}} {{currency}}",
+    "exchangeRate": "환율: {{rate}}",
+    "estimateDisclaimer": "최종 출금액은 지급 시점에 계산됩니다.",
+    "loadingQuote": "예상 금액 계산 중...",
+    "quoteFailed": "환율 예상을 가져올 수 없습니다.",
     "walletAddress": "지갑 주소",
     "destinationAccount": "받는 계좌",
     "networkOptional": "네트워크 (선택)",
