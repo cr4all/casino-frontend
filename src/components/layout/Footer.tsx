@@ -10,15 +10,19 @@ import { typePath } from '@/stores/gameStore';
 
 const SUPPORT_EMAIL = 'support@ibets24.com';
 
-/** Regulator public-register links — industry-standard footer disclosure. */
-const LICENSE_LINKS = [
+/** Regulator verification seals — VALID / Click to verify. */
+const LICENSE_SEALS = [
   {
     key: 'licenseUkGamblingCommission' as const,
     href: 'https://www.gamblingcommission.gov.uk/licensees-and-businesses/licences-and-fees/sector/remote',
+    icon: '/trust-badges/ukgc-seal.png',
+    ariaKey: 'licenseUkVerifyAria' as const,
   },
   {
     key: 'licenseAnjouan' as const,
     href: 'https://anjouangaming.com/license-register/',
+    icon: '/trust-badges/anjouan-seal.png?v=2',
+    ariaKey: 'licenseAnjouanVerifyAria' as const,
   },
 ] as const;
 
@@ -98,22 +102,37 @@ export function Footer() {
       </div>
 
       <div className="site-footer__dark">
-        <nav className="site-footer__links" aria-label={t('footer.licensing')}>
-          {LICENSE_LINKS.map((link) => (
-            <a
-              key={link.key}
-              href={link.href}
-              className="site-footer__link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t(`footer.${link.key}`)}
-              <span className="site-footer__link-external" aria-hidden="true">
-                ↗
-              </span>
-            </a>
-          ))}
-        </nav>
+        <div className="site-footer__license">
+          <Logo height={40} className="site-footer__license-logo" />
+          <nav className="site-footer__seals" aria-label={t('footer.licensing')}>
+            {LICENSE_SEALS.map((seal) => (
+              <a
+                key={seal.key}
+                href={seal.href}
+                className="site-footer__seal"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t(`footer.${seal.ariaKey}`)}
+              >
+                <span className="site-footer__seal-icon-wrap">
+                  <img
+                    src={seal.icon}
+                    alt=""
+                    className="site-footer__seal-icon"
+                    width={72}
+                    height={56}
+                  />
+                  <span className="site-footer__seal-check" aria-hidden="true">
+                    ✓
+                  </span>
+                </span>
+                <span className="site-footer__seal-name">{t(`footer.${seal.key}`)}</span>
+                <span className="site-footer__seal-valid">{t('footer.licenseValid')}</span>
+                <span className="site-footer__seal-hint">{t('footer.licenseClickToVerify')}</span>
+              </a>
+            ))}
+          </nav>
+        </div>
         <p className="site-footer__disclaimer">{t('footer.disclaimer')}</p>
         <p className="site-footer__copyright">
           {t('footer.copyright', { year: new Date().getFullYear() })}

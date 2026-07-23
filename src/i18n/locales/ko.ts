@@ -160,6 +160,13 @@ export const ko: LocaleTree = {
     "faq": "자주 묻는 질문",
     "contact": "문의하기",
     "aml": "AML 정책",
+    "licensing": "라이선스",
+    "licenseUkGamblingCommission": "UK Gambling Commission",
+    "licenseAnjouan": "Anjouan Gaming Board",
+    "licenseValid": "VALID",
+    "licenseClickToVerify": "Click to verify",
+    "licenseUkVerifyAria": "UK Gambling Commission 라이선스 확인",
+    "licenseAnjouanVerifyAria": "Anjouan Gaming Board 라이선스 확인",
     "disclaimer": "18+ | 책임감 있게 플레이하세요. 도박은 중독을 유발할 수 있습니다.",
     "copyright": "© {{year}} iBets24. 모든 권리 보유."
   },
