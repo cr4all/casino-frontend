@@ -341,6 +341,7 @@ export function DepositPage() {
   const kindCounts: Record<PaymentKind, number> = {
     crypto: groupedOptions.crypto.length,
     local: groupedOptions.local.length,
+    credit_card: groupedOptions.credit_card.length,
     manual: groupedOptions.manual.length,
   };
 
@@ -348,7 +349,9 @@ export function DepositPage() {
     ? t('deposit.selectCrypto')
     : selectedKind === 'local'
       ? t('deposit.selectBank')
-      : '';
+      : selectedKind === 'credit_card'
+        ? t('deposit.selectCreditCardCurrency')
+        : '';
 
   return (
     <div className="mx-auto max-w-7xl py-4 sm:py-8">
@@ -583,7 +586,7 @@ export function DepositPage() {
               <p className="mt-3 text-xs text-muted">
                 {isCryptoPayment
                   ? t('deposit.cryptoConfirmHint')
-                  : isRedirectPayment || qrString || confirmedOption?.kind === 'local'
+                  : isRedirectPayment || qrString || confirmedOption?.kind === 'local' || confirmedOption?.kind === 'credit_card'
                     ? t('deposit.redirectConfirmHint')
                     : t('deposit.adminConfirmHint')}
               </p>

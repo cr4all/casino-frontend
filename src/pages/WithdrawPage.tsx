@@ -459,6 +459,7 @@ export function WithdrawPage() {
   const kindCounts: Record<PaymentKind, number> = {
     crypto: groupedOptions.crypto.length,
     local: groupedOptions.local.length,
+    credit_card: groupedOptions.credit_card.length,
     manual: groupedOptions.manual.length,
   };
 

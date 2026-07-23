@@ -247,6 +247,7 @@ export const en = {
     bank: 'Bank Transfer',
     redirect: 'Online Payment',
     local: 'Local Payment',
+    credit_card: 'Credit Card',
     manual: 'Manual Transfer',
   },
   txTypes: {
@@ -392,8 +393,10 @@ export const en = {
     selectPaymentKind: 'Choose how you want to deposit',
     selectCrypto: 'Select cryptocurrency',
     selectBank: 'Select payment method',
+    selectCreditCardCurrency: 'Select card payment currency',
     kindCountCrypto: '{{count}} cryptocurrencies',
     kindCountLocal: '{{count}} payment methods',
+    kindCountCreditCard: '{{count}} currencies',
     kindCountManual: 'Bank transfer',
     kindUnavailable: 'Not available',
     paymentMethod: 'Payment Method',

@@ -258,6 +258,7 @@ export const ko: LocaleTree = {
     "bank": "계좌 이체",
     "redirect": "온라인 결제",
     "local": "현지 결제",
+    "credit_card": "신용카드",
     "manual": "수동 이체"
   },
   "txTypes": {
@@ -392,8 +393,10 @@ export const ko: LocaleTree = {
     "selectPaymentKind": "입금 방법을 선택하세요",
     "selectCrypto": "암호화폐 선택",
     "selectBank": "결제 방법 선택",
+    "selectCreditCardCurrency": "카드 결제 통화 선택",
     "kindCountCrypto": "암호화폐 {{count}}개",
     "kindCountLocal": "결제 방법 {{count}}개",
+    "kindCountCreditCard": "통화 {{count}}개",
     "kindCountManual": "계좌 이체",
     "kindUnavailable": "이용 불가",
     "paymentMethod": "결제 방법",
