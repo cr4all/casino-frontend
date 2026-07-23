@@ -21,13 +21,14 @@ export interface PaymentDestinationField {
 export interface PaymentOption {
   key: string;
   payment_method_id: number;
-  kind: 'local' | 'crypto' | 'manual';
+  kind: 'local' | 'crypto' | 'manual' | 'credit_card';
   provider: string | null;
   label: string;
   description: string | null;
   logo_url: string | null;
   logo_key: string | null;
   payment_currency: string;
+  limits_currency?: string | null;
   min_amount: string;
   max_amount: string | null;
   local_country: string | null;
