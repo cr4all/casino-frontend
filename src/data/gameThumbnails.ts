@@ -3,6 +3,8 @@ import type { Game } from '@/types';
 const THUMBNAIL_EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp'] as const;
 /** Prefer webp first when matching by game_code (VAGaming icons are *.webp). */
 const CODE_THUMBNAIL_EXTENSIONS = ['webp', 'png', 'jpg', 'jpeg'] as const;
+/** CQ9 icons are PNG under /providers/cq9/thumbs — skip webp 404 churn. */
+const CQ9_CODE_THUMBNAIL_EXTENSIONS = ['png', 'jpg', 'jpeg', 'webp'] as const;
 
 function slugifyGameName(name: string): string {
   return name
@@ -20,6 +22,11 @@ function providerFolders(game: Game): string[] {
   return [...new Set(folders)];
 }
 
+function cq9ThumbPath(fileBase: string, ext: string): string {
+  // New path breaks CDN/browser caches that still serve old VIP placeholders.
+  return `/providers/cq9/thumbs/${fileBase}.${ext}?v=5`;
+}
+
 /** API thumbnail 없을 때 시도할 로컬 경로 목록 (우선순위 순) */
 export function getLocalGameThumbnailCandidates(game: Game): string[] {
   const folders = providerFolders(game);
@@ -35,6 +42,12 @@ export function getLocalGameThumbnailCandidates(game: Game): string[] {
   const gameCode = game.game_code?.trim();
   if (gameCode) {
     for (const folder of folders) {
+      if (folder === 'cq9') {
+        for (const ext of CQ9_CODE_THUMBNAIL_EXTENSIONS) {
+          push(cq9ThumbPath(gameCode, ext));
+        }
+        continue;
+      }
       for (const ext of CODE_THUMBNAIL_EXTENSIONS) {
         push(`/providers/${folder}/${gameCode}.${ext}`);
       }
@@ -44,6 +57,12 @@ export function getLocalGameThumbnailCandidates(game: Game): string[] {
   const gameSlug = slugifyGameName(game.name);
   if (gameSlug) {
     for (const folder of folders) {
+      if (folder === 'cq9') {
+        for (const ext of THUMBNAIL_EXTENSIONS) {
+          push(cq9ThumbPath(gameSlug, ext));
+        }
+        continue;
+      }
       for (const ext of THUMBNAIL_EXTENSIONS) {
         push(`/providers/${folder}/${gameSlug}.${ext}`);
       }
