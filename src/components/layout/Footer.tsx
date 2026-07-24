@@ -9,6 +9,7 @@ import { useRequestLiveChat } from '@/hooks/useRequestLiveChat';
 import { typePath } from '@/stores/gameStore';
 
 const SUPPORT_EMAIL = 'support@ibets24.com';
+const PARTNERS_EMAIL = 'partners@ibets24.com';
 
 /** Regulator verification seals — VALID / Click to verify. */
 const LICENSE_SEALS = [
@@ -81,6 +82,14 @@ export function Footer() {
               <Link to="/contact" className="site-footer__col-link">{t('footer.contact')}</Link>
               <a href={`mailto:${SUPPORT_EMAIL}`} className="site-footer__col-link site-footer__email">
                 {SUPPORT_EMAIL}
+              </a>
+            </FooterLinkList>
+
+            <FooterLinkList title={t('footer.partners')}>
+              <Link to="/partners" className="site-footer__col-link">{t('footer.affiliateProgram')}</Link>
+              <Link to="/partners" className="site-footer__col-link">{t('footer.becomePartner')}</Link>
+              <a href={`mailto:${PARTNERS_EMAIL}`} className="site-footer__col-link site-footer__email">
+                {PARTNERS_EMAIL}
               </a>
             </FooterLinkList>
 

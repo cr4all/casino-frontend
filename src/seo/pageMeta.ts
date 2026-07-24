@@ -28,6 +28,12 @@ const PAGE_META_BY_PATH: Record<string, PageMeta> = {
       'Contact the iBets24 support team for assistance with your online casino account, live casino games, sports betting, payments and technical questions.',
     canonicalPath: '/contact',
   },
+  '/partners': {
+    title: 'Partners & Affiliates | Business Partnerships | iBets24',
+    description:
+      'Partner with iBets24 through our affiliate program and B2B partnerships. Contact partners@ibets24.com for affiliate, media, payment and technology collaboration.',
+    canonicalPath: '/partners',
+  },
   '/about': {
     title: 'About iBets24 – Trusted Online Casino Platform',
     description:

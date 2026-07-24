@@ -192,6 +192,36 @@ export const legalEn: LegalContentBundle = {
       },
     ],
   },
+  partners: {
+    title: 'Partners',
+    intro:
+      'iBets24 welcomes long-term partnerships with affiliates, media publishers, payment providers, game studios, and other B2B partners.',
+    sections: [
+      {
+        title: 'Affiliate Program',
+        paragraphs: [
+          'Our affiliate program offers competitive commissions for referring new players who meet our eligibility and compliance requirements.',
+          'Existing affiliates can access performance stats and payouts from the Affiliate Portal after signing in.',
+          'To apply or request affiliate terms, email partners@ibets24.com with your traffic sources, target markets, and promotional methods.',
+        ],
+      },
+      {
+        title: 'Business Partnerships',
+        paragraphs: [
+          'We collaborate with licensed game providers, payment solution partners, marketing agencies, and technology vendors that share our standards for fairness, security, and responsible gaming.',
+          'Send partnership proposals to partners@ibets24.com including company details, product overview, and proposed commercial model.',
+        ],
+      },
+      {
+        title: 'How to get in touch',
+        paragraphs: [
+          'Business and partnership enquiries: partners@ibets24.com',
+          'Player support (accounts, payments, bonuses): support@ibets24.com',
+          'Please do not use the partners inbox for player account issues — those requests are handled by customer support.',
+        ],
+      },
+    ],
+  },
   aml: {
     title: 'AML Policy',
     intro:

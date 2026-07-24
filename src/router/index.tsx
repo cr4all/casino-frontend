@@ -51,6 +51,7 @@ export const router = Sentry.wrapCreateBrowserRouterV7(createBrowserRouter)([
       { path: 'responsible-gaming', element: <LegalDocumentPage pageId="responsibleGaming" /> },
       { path: 'faq', element: <LegalDocumentPage pageId="faq" /> },
       { path: 'contact', element: <LegalDocumentPage pageId="contact" /> },
+      { path: 'partners', element: <LegalDocumentPage pageId="partners" /> },
       { path: 'aml', element: <LegalDocumentPage pageId="aml" /> },
       { path: '*', element: <NotFoundPage /> },
     ],

@@ -5,6 +5,7 @@ export type LegalPageId =
   | 'responsibleGaming'
   | 'faq'
   | 'contact'
+  | 'partners'
   | 'aml';
 
 export interface LegalSection {
