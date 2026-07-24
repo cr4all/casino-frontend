@@ -129,5 +129,8 @@
   "Password updated. Please sign in again.": "पासवर्ड अपडेट किया गया। कृपया फिर से साइन इन करें।",
   "Failed to update password.": "पासवर्ड अपडेट नहीं किया जा सका।",
   "Verification code sent.": "सत्यापन कोड भेजा है",
-  "Failed to send verification code.": "वेरिफ़िकेशन कोड नहीं भेजा जा सका।"
+  "Failed to send verification code.": "वेरिफ़िकेशन कोड नहीं भेजा जा सका।",
+  "Partners": "पार्टनर",
+  "Affiliate Program": "एफिलिएट प्रोग्राम",
+  "Become a Partner": "पार्टनर बनें"
 }

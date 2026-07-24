@@ -171,6 +171,7 @@ export const ko: LocaleTree = {
     "licenseUkVerifyAria": "UK Gambling Commission 라이선스 확인",
     "licenseAnjouanVerifyAria": "Anjouan Gaming Board 라이선스 확인",
     "disclaimer": "18+ | 책임감 있게 플레이하세요. 도박은 중독을 유발할 수 있습니다.",
+    "operatorInfo": "iBets24는 2024년 5월 20일 국제회사로 설립된 Novatrix Holding Ltd(등록번호 15727)가 운영합니다. The Computer Gaming Licensing Act 007 of 2005에 따라 Anjouan주 Finance Authority 라이선스(번호 ALSI-142406002-FI1)를 보유하며, 소재지는 Hamchako, Mutsamudu, Autonomous Island of Anjouan, Union of Comoros입니다.",
     "copyright": "© {{year}} iBets24. 모든 권리 보유."
   },
   "liveBetFeed": {

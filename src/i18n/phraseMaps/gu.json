@@ -129,5 +129,8 @@
   "Password updated. Please sign in again.": "પાસવર્ડ અપડેટ થયો. કૃપા કરીને ફરીથી સાઇન ઇન કરો.",
   "Failed to update password.": "પાસવર્ડ અપડેટ કરવામાં નિષ્ફળ.",
   "Verification code sent.": "ચકાસણી કોડ મોકલવામાં આવ્યો.",
-  "Failed to send verification code.": "ચકાસણી કોડ મોકલવામાં નિષ્ફળ."
+  "Failed to send verification code.": "ચકાસણી કોડ મોકલવામાં નિષ્ફળ.",
+  "Partners": "ભાગીદારો",
+  "Affiliate Program": "એફિલિએટ પ્રોગ્રામ",
+  "Become a Partner": "ભાગીદાર બનો"
 }

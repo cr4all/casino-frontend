@@ -128,5 +128,8 @@
   "Password updated. Please sign in again.": "Nuashonraíodh an pasfhocal. Sínigh isteach arís, le do thoil.",
   "Failed to update password.": "Theip ar nuashonrú an phasfhocail.",
   "Verification code sent.": "Cód fíoraithe seolta",
-  "Failed to send verification code.": "Theip ar an gcód deimhnithe a sheoladh."
+  "Failed to send verification code.": "Theip ar an gcód deimhnithe a sheoladh.",
+  "Partners": "Comhpháirtithe",
+  "Affiliate Program": "Clár affiliate",
+  "Become a Partner": "Bí i do chomhpháirtí"
 }

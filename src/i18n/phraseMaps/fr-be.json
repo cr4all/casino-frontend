@@ -124,5 +124,8 @@
   "Password updated. Please sign in again.": "Mot de passe mis à jour. Veuillez vous reconnecter.",
   "Failed to update password.": "Impossible de mettre à jour le mot de passe",
   "Verification code sent.": "Code de vérification envoyé",
-  "Failed to send verification code.": "Impossible d'envoyer le code de vérification."
+  "Failed to send verification code.": "Impossible d'envoyer le code de vérification.",
+  "Partners": "Partenaires",
+  "Affiliate Program": "Programme d'affiliation",
+  "Become a Partner": "Devenir partenaire"
 }

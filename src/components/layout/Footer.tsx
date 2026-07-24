@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
 import { PaymentMethodsMarquee } from '@/components/layout/PaymentMethodsMarquee';
@@ -32,10 +32,41 @@ interface FooterLinkListProps {
   children: ReactNode;
 }
 
-function FooterLinkList({ title, children }: FooterLinkListProps) {
+function FooterChevron() {
   return (
-    <div className="site-footer__col">
-      <h2 className="site-footer__heading">{title}</h2>
+    <svg
+      className="site-footer__accordion-chevron"
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M6 9l6 6 6-6"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function FooterLinkList({ title, children }: FooterLinkListProps) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className={`site-footer__col${open ? ' is-open' : ''}`}>
+      <button
+        type="button"
+        className="site-footer__heading site-footer__accordion-trigger"
+        aria-expanded={open}
+        onClick={() => setOpen((value) => !value)}
+      >
+        <span>{title}</span>
+        <FooterChevron />
+      </button>
       <nav className="site-footer__col-nav" aria-label={title}>
         {children}
       </nav>
@@ -53,24 +84,33 @@ export function Footer() {
     <footer className={`site-footer mt-auto ${isAuthenticated ? 'has-mobile-wallet-bar lg:pb-0' : ''}`}>
       <div className="site-footer__columns">
         <div className="site-footer__inner">
+          <div className="site-footer__brand">
+            <Logo height={36} />
+          </div>
+
           <div className="site-footer__grid">
-            <div className="site-footer__col">
-              <Logo height={36} className="mb-4" />
-              <nav className="site-footer__col-nav" aria-label={t('footer.slots')}>
-                <Link to={typePath('slot')} className="site-footer__col-link">
-                  {t('footer.slots')}
-                </Link>
-                <Link to={typePath('live_casino')} className="site-footer__col-link">
-                  {t('footer.liveCasino')}
-                </Link>
-              </nav>
-            </div>
+            <FooterLinkList title={t('nav.casino')}>
+              <Link to={typePath('slot')} className="site-footer__col-link">
+                {t('footer.slots')}
+              </Link>
+              <Link to={typePath('live_casino')} className="site-footer__col-link">
+                {t('footer.liveCasino')}
+              </Link>
+            </FooterLinkList>
 
             <FooterLinkList title={t('footer.account')}>
               <Link to="/deposit" className="site-footer__col-link">{t('nav.depositLabel')}</Link>
               <Link to="/withdraw" className="site-footer__col-link">{t('nav.withdrawLabel')}</Link>
               <Link to="/bonus" className="site-footer__col-link">{t('nav.bonusesLabel')}</Link>
               <Link to="/transactions" className="site-footer__col-link">{t('nav.transactions')}</Link>
+            </FooterLinkList>
+
+            <FooterLinkList title={t('footer.partners')}>
+              <Link to="/partners" className="site-footer__col-link">{t('footer.affiliateProgram')}</Link>
+              <Link to="/partners" className="site-footer__col-link">{t('footer.becomePartner')}</Link>
+              <a href={`mailto:${PARTNERS_EMAIL}`} className="site-footer__col-link site-footer__email">
+                {PARTNERS_EMAIL}
+              </a>
             </FooterLinkList>
 
             <FooterLinkList title={t('footer.support')}>
@@ -82,14 +122,6 @@ export function Footer() {
               <Link to="/contact" className="site-footer__col-link">{t('footer.contact')}</Link>
               <a href={`mailto:${SUPPORT_EMAIL}`} className="site-footer__col-link site-footer__email">
                 {SUPPORT_EMAIL}
-              </a>
-            </FooterLinkList>
-
-            <FooterLinkList title={t('footer.partners')}>
-              <Link to="/partners" className="site-footer__col-link">{t('footer.affiliateProgram')}</Link>
-              <Link to="/partners" className="site-footer__col-link">{t('footer.becomePartner')}</Link>
-              <a href={`mailto:${PARTNERS_EMAIL}`} className="site-footer__col-link site-footer__email">
-                {PARTNERS_EMAIL}
               </a>
             </FooterLinkList>
 
@@ -142,6 +174,7 @@ export function Footer() {
             ))}
           </nav>
         </div>
+        <p className="site-footer__operator">{t('footer.operatorInfo')}</p>
         <p className="site-footer__disclaimer">{t('footer.disclaimer')}</p>
         <p className="site-footer__copyright">
           {t('footer.copyright', { year: new Date().getFullYear() })}

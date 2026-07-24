@@ -102,5 +102,8 @@
   "Password updated. Please sign in again.": "Salasana päivitetty. Kirjaudu sisään uudelleen.",
   "Failed to update password.": "Salasanan päivittäminen epäonnistui.",
   "Verification code sent.": "Vahvistuskoodi lähetetty.",
-  "Failed to send verification code.": "Vahvistuskoodin lähettäminen epäonnistui."
+  "Failed to send verification code.": "Vahvistuskoodin lähettäminen epäonnistui.",
+  "Partners": "Kumppanit",
+  "Affiliate Program": "Affiliate-ohjelma",
+  "Become a Partner": "Ryhdy kumppaniksi"
 }

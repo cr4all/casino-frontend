@@ -58,5 +58,8 @@
   "Account ID": "รหัสบัญชี",
   "Payment instructions": "คำแนะนำการชำระเงิน",
   "Notes": "หมายเหตุ",
-  "Rejection reason": "เหตุผลที่ปฏิเสธ"
+  "Rejection reason": "เหตุผลที่ปฏิเสธ",
+  "Partners": "พาร์ทเนอร์",
+  "Affiliate Program": "โปรแกรมพันธมิตร",
+  "Become a Partner": "เป็นพาร์ทเนอร์"
 }

@@ -191,5 +191,8 @@
   "Password updated. Please sign in again.": "تم تحديث كلمة المرور. يرجى تسجيل الدخول مرة أخرى.",
   "Failed to update password.": "تعذر تحديث كلمة المرور الخاصة بك.",
   "Verification code sent.": "تم إرسال رمز التحقق.",
-  "Failed to send verification code.": "فشل في إرسال رمز التحقق"
+  "Failed to send verification code.": "فشل في إرسال رمز التحقق",
+  "Partners": "الشركاء",
+  "Affiliate Program": "برنامج الشركاء",
+  "Become a Partner": "كن شريكاً"
 }
