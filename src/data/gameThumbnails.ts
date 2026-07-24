@@ -36,7 +36,9 @@ export function getLocalGameThumbnailCandidates(game: Game): string[] {
   if (gameCode) {
     for (const folder of folders) {
       for (const ext of CODE_THUMBNAIL_EXTENSIONS) {
-        push(`/providers/${folder}/${gameCode}.${ext}`);
+        // Cache-bust when provider icon packs are updated (CQ9 circular → 4:3).
+        const bust = folder === 'cq9' ? '?v=4' : '';
+        push(`/providers/${folder}/${gameCode}.${ext}${bust}`);
       }
     }
   }
@@ -45,7 +47,8 @@ export function getLocalGameThumbnailCandidates(game: Game): string[] {
   if (gameSlug) {
     for (const folder of folders) {
       for (const ext of THUMBNAIL_EXTENSIONS) {
-        push(`/providers/${folder}/${gameSlug}.${ext}`);
+        const bust = folder === 'cq9' ? '?v=4' : '';
+        push(`/providers/${folder}/${gameSlug}.${ext}${bust}`);
       }
     }
   }

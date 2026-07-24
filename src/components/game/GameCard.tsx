@@ -104,7 +104,7 @@ export function GameCard({ game, variant = 'slider', isNew = false }: GameCardPr
             alt={game.name}
             loading="lazy"
             onError={handleImageError}
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-contain bg-black"
           />
         ) : (
           <>
