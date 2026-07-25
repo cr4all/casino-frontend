@@ -24,7 +24,7 @@ function providerFolders(game: Game): string[] {
 
 function cq9ThumbPath(fileBase: string, ext: string): string {
   // New path breaks CDN/browser caches that still serve old VIP placeholders.
-  return `/providers/cq9/thumbs/${fileBase}.${ext}?v=5`;
+  return `/providers/cq9/thumbs/${fileBase}.${ext}?v=6`;
 }
 
 /** API thumbnail 없을 때 시도할 로컬 경로 목록 (우선순위 순) */
