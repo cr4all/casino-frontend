@@ -1,9 +1,10 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { LayoutGroup, motion } from 'framer-motion';
 import type { Game } from '@/types';
 import { useLiveBetFeed } from '@/hooks/useLiveBetFeed';
 import { useTranslation } from '@/hooks/useTranslation';
-import { getGameThumbnailUrl } from '@/data/gameThumbnails';
+import { getGameThumbnailUrl, isCq9Game } from '@/data/gameThumbnails';
+import { Cq9GameThumbnail } from '@/components/game/Cq9GameThumbnail';
 import { formatUsd, maskUsername, type LiveBetEntry } from '@/utils/liveBetFeed';
 
 interface LiveBetFeedProps {
@@ -12,9 +13,11 @@ interface LiveBetFeedProps {
 
 function GameThumb({ game }: { game: Game }) {
   const [failed, setFailed] = useState(false);
-  const src = useMemo(() => getGameThumbnailUrl(game), [game]);
+  const useCq9Overlay = isCq9Game(game);
+  const src = useMemo(() => (useCq9Overlay ? null : getGameThumbnailUrl(game)), [game, useCq9Overlay]);
+  const handleCq9Failed = useCallback(() => setFailed(true), []);
 
-  if (!src || failed) {
+  if (failed || (!useCq9Overlay && !src)) {
     return (
       <span className="live-bet-feed__game-fallback" aria-hidden="true">
         🎮
@@ -22,9 +25,17 @@ function GameThumb({ game }: { game: Game }) {
     );
   }
 
+  if (useCq9Overlay) {
+    return (
+      <span className="live-bet-feed__game-thumb relative inline-block overflow-hidden">
+        <Cq9GameThumbnail game={game} alt="" onFailed={handleCq9Failed} />
+      </span>
+    );
+  }
+
   return (
     <img
-      src={src}
+      src={src!}
       alt=""
       className="live-bet-feed__game-thumb"
       loading="lazy"

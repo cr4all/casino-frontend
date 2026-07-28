@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type MouseEvent } from 'react';
+import { useCallback, useEffect, useMemo, useState, type MouseEvent } from 'react';
 import { motion } from 'framer-motion';
 import type { Game } from '@/types';
 import { useAuthStore } from '@/stores/authStore';
@@ -7,7 +7,8 @@ import { useUiStore } from '@/stores/uiStore';
 import { useBonusProviderSlugs } from '@/hooks/useBonusProviderSlugs';
 import { useTranslation } from '@/hooks/useTranslation';
 import { NavIcon } from '@/components/common/NavIcon';
-import { getGameThumbnailCandidates } from '@/data/gameThumbnails';
+import { getGameThumbnailCandidates, isCq9Game } from '@/data/gameThumbnails';
+import { Cq9GameThumbnail } from '@/components/game/Cq9GameThumbnail';
 import { gameHasProviderBonus } from '@/utils/bonusAvailability';
 import { GameService } from '@/services/GameService';
 
@@ -25,7 +26,11 @@ export function GameCard({ game, variant = 'slider', isNew = false }: GameCardPr
   const toggleFavorite = useFavoritesStore((s) => s.toggleFavorite);
   const isFavorite = favoriteIds.has(game.id);
   const bonusProviderSlugs = useBonusProviderSlugs();
-  const thumbnailCandidates = useMemo(() => getGameThumbnailCandidates(game), [game]);
+  const useCq9Overlay = isCq9Game(game);
+  const thumbnailCandidates = useMemo(
+    () => (useCq9Overlay ? [] : getGameThumbnailCandidates(game)),
+    [game, useCq9Overlay],
+  );
   const [candidateIndex, setCandidateIndex] = useState(0);
   const [thumbnailFailed, setThumbnailFailed] = useState(false);
   const [toggling, setToggling] = useState(false);
@@ -34,7 +39,7 @@ export function GameCard({ game, variant = 'slider', isNew = false }: GameCardPr
   useEffect(() => {
     setCandidateIndex(0);
     setThumbnailFailed(false);
-  }, [game.id, thumbnailCandidates]);
+  }, [game.id, thumbnailCandidates, useCq9Overlay]);
 
   const handleClick = () => {
     if (!isAuthenticated) {
@@ -66,8 +71,12 @@ export function GameCard({ game, variant = 'slider', isNew = false }: GameCardPr
   };
 
   const thumbnailSrc = thumbnailCandidates[candidateIndex] ?? null;
-  const showThumbnail = thumbnailSrc !== null && !thumbnailFailed;
+  const showThumbnail = useCq9Overlay ? !thumbnailFailed : thumbnailSrc !== null && !thumbnailFailed;
   const showBonusBadge = isAuthenticated && gameHasProviderBonus(game.provider?.slug, bonusProviderSlugs);
+
+  const handleCq9Failed = useCallback(() => {
+    setThumbnailFailed(true);
+  }, []);
 
   const handleImageError = () => {
     if (candidateIndex + 1 < thumbnailCandidates.length) {
@@ -98,7 +107,9 @@ export function GameCard({ game, variant = 'slider', isNew = false }: GameCardPr
           variant === 'slider' ? 'h-[120px]' : 'aspect-[4/3]'
         }`}
       >
-        {showThumbnail ? (
+        {showThumbnail && useCq9Overlay ? (
+          <Cq9GameThumbnail game={game} alt={game.name} onFailed={handleCq9Failed} />
+        ) : showThumbnail && thumbnailSrc ? (
           <img
             src={thumbnailSrc}
             alt={game.name}

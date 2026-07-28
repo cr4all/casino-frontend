@@ -3,8 +3,10 @@ import type { Game } from '@/types';
 const THUMBNAIL_EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp'] as const;
 /** Prefer webp first when matching by game_code (VAGaming icons are *.webp). */
 const CODE_THUMBNAIL_EXTENSIONS = ['webp', 'png', 'jpg', 'jpeg'] as const;
-/** CQ9 icons are PNG under /providers/cq9/thumbs — skip webp 404 churn. */
-const CQ9_CODE_THUMBNAIL_EXTENSIONS = ['png', 'jpg', 'jpeg', 'webp'] as const;
+const CQ9_BG_EXTENSIONS = ['jpg', 'png', 'jpeg', 'webp'] as const;
+const CQ9_ICON_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
+/** Archived single-file CQ9 assets (pre-overlay). */
+const CQ9_LEGACY_EXTENSIONS = ['png', 'jpg', 'jpeg', 'webp'] as const;
 
 function slugifyGameName(name: string): string {
   return name
@@ -22,9 +24,32 @@ function providerFolders(game: Game): string[] {
   return [...new Set(folders)];
 }
 
-function cq9ThumbPath(fileBase: string, ext: string): string {
-  // New path breaks CDN/browser caches that still serve old VIP placeholders.
-  return `/providers/cq9/thumbs/${fileBase}.${ext}?v=6`;
+export function isCq9Game(game: Game): boolean {
+  return providerFolders(game).includes('cq9');
+}
+
+export type Cq9OverlayCandidates = {
+  backgrounds: string[];
+  icons: string[];
+  /** Single-image fallbacks from archived /providers/cq9_ assets. */
+  legacy: string[];
+};
+
+/** CQ9 demo-style layered assets: background + icon overlay by gamecode. */
+export function getCq9OverlayCandidates(game: Game): Cq9OverlayCandidates | null {
+  if (!isCq9Game(game)) return null;
+
+  const gameCode = game.game_code?.trim();
+  if (!gameCode) return null;
+
+  const backgrounds = CQ9_BG_EXTENSIONS.map((ext) => `/providers/cq9/bg/${gameCode}.${ext}`);
+  const icons = CQ9_ICON_EXTENSIONS.map((ext) => `/providers/cq9/icon/${gameCode}.${ext}`);
+  const legacy = [
+    ...CQ9_LEGACY_EXTENSIONS.map((ext) => `/providers/cq9_/${gameCode}.${ext}`),
+    ...CQ9_LEGACY_EXTENSIONS.map((ext) => `/providers/cq9_/thumbs/${gameCode}.${ext}`),
+  ];
+
+  return { backgrounds, icons, legacy };
 }
 
 /** API thumbnail 없을 때 시도할 로컬 경로 목록 (우선순위 순) */
@@ -39,15 +64,18 @@ export function getLocalGameThumbnailCandidates(game: Game): string[] {
     }
   };
 
+  // CQ9 uses layered bg+icon rendering; expose icon (then legacy) for single-img callers.
+  const cq9 = getCq9OverlayCandidates(game);
+  if (cq9) {
+    for (const url of [...cq9.icons, ...cq9.legacy]) {
+      push(url);
+    }
+    return candidates;
+  }
+
   const gameCode = game.game_code?.trim();
   if (gameCode) {
     for (const folder of folders) {
-      if (folder === 'cq9') {
-        for (const ext of CQ9_CODE_THUMBNAIL_EXTENSIONS) {
-          push(cq9ThumbPath(gameCode, ext));
-        }
-        continue;
-      }
       for (const ext of CODE_THUMBNAIL_EXTENSIONS) {
         push(`/providers/${folder}/${gameCode}.${ext}`);
       }
@@ -57,12 +85,6 @@ export function getLocalGameThumbnailCandidates(game: Game): string[] {
   const gameSlug = slugifyGameName(game.name);
   if (gameSlug) {
     for (const folder of folders) {
-      if (folder === 'cq9') {
-        for (const ext of THUMBNAIL_EXTENSIONS) {
-          push(cq9ThumbPath(gameSlug, ext));
-        }
-        continue;
-      }
       for (const ext of THUMBNAIL_EXTENSIONS) {
         push(`/providers/${folder}/${gameSlug}.${ext}`);
       }

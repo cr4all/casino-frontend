@@ -1,0 +1,1423 @@
+{
+  "1": {
+    "background": "bg/1.jpg",
+    "game_id": "1",
+    "icon": "icon/1.png",
+    "largeIcon": false,
+    "name": "Fruit King"
+  },
+  "10": {
+    "background": "bg/10.jpg",
+    "game_id": "10",
+    "icon": "icon/10.png",
+    "largeIcon": false,
+    "name": "Lucky Bats"
+  },
+  "1010": {
+    "background": "bg/1010.jpg",
+    "game_id": "1010",
+    "icon": "icon/1010.png",
+    "largeIcon": false,
+    "name": "Lucky Bats JP"
+  },
+  "102": {
+    "background": "bg/102.jpg",
+    "game_id": "102",
+    "icon": "icon/102.png",
+    "largeIcon": false,
+    "name": "Fruity Carnival"
+  },
+  "103": {
+    "background": "bg/103.jpg",
+    "game_id": "103",
+    "icon": "icon/103.png",
+    "largeIcon": false,
+    "name": "Jewel Luxury"
+  },
+  "104": {
+    "background": "bg/104.jpg",
+    "game_id": "104",
+    "icon": "icon/104.png",
+    "largeIcon": false,
+    "name": "Chicky Parm Parm"
+  },
+  "105": {
+    "background": "bg/105.jpg",
+    "game_id": "105",
+    "icon": "icon/105.png",
+    "largeIcon": false,
+    "name": "Jumping Mobile"
+  },
+  "1067": {
+    "background": "bg/1067.jpg",
+    "game_id": "1067",
+    "icon": "icon/1067.png",
+    "largeIcon": false,
+    "name": "Golden Eggs JP"
+  },
+  "1074": {
+    "background": "bg/1074.jpg",
+    "game_id": "1074",
+    "icon": "icon/1074.png",
+    "largeIcon": false,
+    "name": "Treasure Bowl JP"
+  },
+  "108": {
+    "background": "bg/108.jpg",
+    "game_id": "108",
+    "icon": "icon/108.png",
+    "largeIcon": false,
+    "name": "Jump Higher Mobile"
+  },
+  "109": {
+    "background": "bg/109.jpg",
+    "game_id": "109",
+    "icon": "icon/109.png",
+    "largeIcon": false,
+    "name": "Rave Jump Mobile"
+  },
+  "111": {
+    "background": "bg/111.jpg",
+    "game_id": "111",
+    "icon": "icon/111.png",
+    "largeIcon": false,
+    "name": "Fly Out"
+  },
+  "112": {
+    "background": "bg/112.jpg",
+    "game_id": "112",
+    "icon": "icon/112.png",
+    "largeIcon": false,
+    "name": "Pyramid Raider"
+  },
+  "113": {
+    "background": "bg/113.jpg",
+    "game_id": "113",
+    "icon": "icon/113.png",
+    "largeIcon": false,
+    "name": "Flying Cai Shen"
+  },
+  "115": {
+    "background": "bg/115.jpg",
+    "game_id": "115",
+    "icon": "icon/115.png",
+    "largeIcon": false,
+    "name": "Snow Queen"
+  },
+  "116": {
+    "background": "bg/116.jpg",
+    "game_id": "116",
+    "icon": "icon/116.png",
+    "largeIcon": false,
+    "name": "Wonderland"
+  },
+  "117": {
+    "background": "bg/117.jpg",
+    "game_id": "117",
+    "icon": "icon/117.png",
+    "largeIcon": false,
+    "name": "5 God beasts"
+  },
+  "118": {
+    "background": "bg/118.jpg",
+    "game_id": "118",
+    "icon": "icon/118.png",
+    "largeIcon": false,
+    "name": "SkrSkr"
+  },
+  "12": {
+    "background": "bg/12.jpg",
+    "game_id": "12",
+    "icon": "icon/12.png",
+    "largeIcon": false,
+    "name": "Treasure House"
+  },
+  "1200": {
+    "background": "bg/1200.jpg",
+    "game_id": "1200",
+    "icon": "icon/1200.png",
+    "largeIcon": false,
+    "name": "Alice Run JP"
+  },
+  "121": {
+    "background": "bg/121.jpg",
+    "game_id": "121",
+    "icon": "icon/121.png",
+    "largeIcon": false,
+    "name": "Rave Jump 2 M"
+  },
+  "122": {
+    "background": "bg/122.jpg",
+    "game_id": "122",
+    "icon": "icon/122.png",
+    "largeIcon": false,
+    "name": "Zuma Wild"
+  },
+  "123": {
+    "background": "bg/123.jpg",
+    "game_id": "123",
+    "icon": "icon/123.png",
+    "largeIcon": false,
+    "name": "Lucky Bats M"
+  },
+  "124": {
+    "background": "bg/124.jpg",
+    "game_id": "124",
+    "icon": "icon/124.png",
+    "largeIcon": false,
+    "name": "Invincible Elephant"
+  },
+  "125": {
+    "background": "bg/125.jpg",
+    "game_id": "125",
+    "icon": "icon/125.png",
+    "largeIcon": false,
+    "name": "Zeus M"
+  },
+  "127": {
+    "background": "bg/127.jpg",
+    "game_id": "127",
+    "icon": "icon/127.png",
+    "largeIcon": false,
+    "name": "God of War M"
+  },
+  "128": {
+    "background": "bg/128.jpg",
+    "game_id": "128",
+    "icon": "icon/128.png",
+    "largeIcon": false,
+    "name": "Wheel Money"
+  },
+  "129": {
+    "background": "bg/129.jpg",
+    "game_id": "129",
+    "icon": "icon/129.png",
+    "largeIcon": false,
+    "name": "Gu Gu Gu 2 M"
+  },
+  "13": {
+    "background": "bg/13.jpg",
+    "game_id": "13",
+    "icon": "icon/13.png",
+    "largeIcon": false,
+    "name": "Sakura Legend"
+  },
+  "130": {
+    "background": "bg/130.jpg",
+    "game_id": "130",
+    "icon": "icon/130.png",
+    "largeIcon": false,
+    "name": "Gold Stealer"
+  },
+  "131": {
+    "background": "bg/131.jpg",
+    "game_id": "131",
+    "icon": "icon/131.png",
+    "largeIcon": false,
+    "name": "Fa Cai Shen M"
+  },
+  "132": {
+    "background": "bg/132.jpg",
+    "game_id": "132",
+    "icon": "icon/132.png",
+    "largeIcon": false,
+    "name": "Meow"
+  },
+  "133": {
+    "background": "bg/133.jpg",
+    "game_id": "133",
+    "icon": "icon/133.png",
+    "largeIcon": false,
+    "name": "Good Fortune M"
+  },
+  "135": {
+    "background": "bg/135.jpg",
+    "game_id": "135",
+    "icon": "icon/135.png",
+    "largeIcon": false,
+    "name": "Gu Gu Gu M"
+  },
+  "136": {
+    "background": "bg/136.jpg",
+    "game_id": "136",
+    "icon": "icon/136.png",
+    "largeIcon": false,
+    "name": "Running Animals"
+  },
+  "137": {
+    "background": "bg/137.jpg",
+    "game_id": "137",
+    "icon": "icon/137.png",
+    "largeIcon": false,
+    "name": "Disco Night M"
+  },
+  "138": {
+    "background": "bg/138.jpg",
+    "game_id": "138",
+    "icon": "icon/138.png",
+    "largeIcon": false,
+    "name": "Move n' Jump"
+  },
+  "139": {
+    "background": "bg/139.jpg",
+    "game_id": "139",
+    "icon": "icon/139.png",
+    "largeIcon": false,
+    "name": "Fire Chibi M"
+  },
+  "140": {
+    "background": "bg/140.jpg",
+    "game_id": "140",
+    "icon": "icon/140.png",
+    "largeIcon": false,
+    "name": "Fire Chibi 2"
+  },
+  "141": {
+    "background": "bg/141.jpg",
+    "game_id": "141",
+    "icon": "icon/141.png",
+    "largeIcon": false,
+    "name": "Xmas"
+  },
+  "142": {
+    "background": "bg/142.jpg",
+    "game_id": "142",
+    "icon": "icon/142.png",
+    "largeIcon": false,
+    "name": "Hephaestus"
+  },
+  "143": {
+    "background": "bg/143.jpg",
+    "game_id": "143",
+    "icon": "icon/143.png",
+    "largeIcon": false,
+    "name": "Fa Cai Fu Wa"
+  },
+  "144": {
+    "background": "bg/144.jpg",
+    "game_id": "144",
+    "icon": "icon/144.png",
+    "largeIcon": false,
+    "name": "Diamond Treasure"
+  },
+  "146": {
+    "background": "bg/146.jpg",
+    "game_id": "146",
+    "icon": "icon/146.png",
+    "largeIcon": false,
+    "name": "Sky Lanterns"
+  },
+  "147": {
+    "background": "bg/147.jpg",
+    "game_id": "147",
+    "icon": "icon/147.png",
+    "largeIcon": false,
+    "name": "Flower Fortunes"
+  },
+  "148": {
+    "background": "bg/148.jpg",
+    "game_id": "148",
+    "icon": "icon/148.png",
+    "largeIcon": false,
+    "name": "Fortune Totem"
+  },
+  "15": {
+    "background": "bg/15.jpg",
+    "game_id": "15",
+    "icon": "icon/15.png",
+    "largeIcon": false,
+    "name": "GuGuGu"
+  },
+  "150": {
+    "background": "bg/150.jpg",
+    "game_id": "150",
+    "icon": "icon/150.png",
+    "largeIcon": false,
+    "name": "Shou-Xin"
+  },
+  "152": {
+    "background": "bg/152.jpg",
+    "game_id": "152",
+    "icon": "icon/152.png",
+    "largeIcon": false,
+    "name": "Double Fly"
+  },
+  "153": {
+    "background": "bg/153.jpg",
+    "game_id": "153",
+    "icon": "icon/153.png",
+    "largeIcon": false,
+    "name": "Six Candy"
+  },
+  "154": {
+    "background": "bg/154.jpg",
+    "game_id": "154",
+    "icon": "icon/154.png",
+    "largeIcon": false,
+    "name": "Kronos"
+  },
+  "157": {
+    "background": "bg/157.jpg",
+    "game_id": "157",
+    "icon": "icon/157.png",
+    "largeIcon": false,
+    "name": "5 Boxing"
+  },
+  "158": {
+    "background": "bg/158.jpg",
+    "game_id": "158",
+    "icon": "icon/158.png",
+    "largeIcon": false,
+    "name": "Black Wukong"
+  },
+  "16": {
+    "background": "bg/16.jpg",
+    "game_id": "16",
+    "icon": "icon/16.png",
+    "largeIcon": false,
+    "name": "Super5"
+  },
+  "160": {
+    "background": "bg/160.jpg",
+    "game_id": "160",
+    "icon": "icon/160.png",
+    "largeIcon": false,
+    "name": "Fa Cai Shen2"
+  },
+  "161": {
+    "background": "bg/161.jpg",
+    "game_id": "161",
+    "icon": "icon/161.png",
+    "largeIcon": false,
+    "name": "Hercules"
+  },
+  "163": {
+    "background": "bg/163.jpg",
+    "game_id": "163",
+    "icon": "icon/163.png",
+    "largeIcon": false,
+    "name": "Ne Zha Advent"
+  },
+  "17": {
+    "background": "bg/17.jpg",
+    "game_id": "17",
+    "icon": "icon/17.png",
+    "largeIcon": false,
+    "name": "Great Lion"
+  },
+  "171": {
+    "background": "bg/171.jpg",
+    "game_id": "171",
+    "icon": "icon/171.png",
+    "largeIcon": false,
+    "name": "Greek Gods"
+  },
+  "173": {
+    "background": "bg/173.jpg",
+    "game_id": "173",
+    "icon": "icon/173.png",
+    "largeIcon": false,
+    "name": "6 Toros"
+  },
+  "177": {
+    "background": "bg/177.jpg",
+    "game_id": "177",
+    "icon": "icon/177.png",
+    "largeIcon": false,
+    "name": "Aladdin's lamp"
+  },
+  "179": {
+    "background": "bg/179.jpg",
+    "game_id": "179",
+    "icon": "icon/179.png",
+    "largeIcon": false,
+    "name": "Jump High 2"
+  },
+  "180": {
+    "background": "bg/180.jpg",
+    "game_id": "180",
+    "icon": "icon/180.png",
+    "largeIcon": false,
+    "name": "Gu Gu Gu 3"
+  },
+  "182": {
+    "background": "bg/182.jpg",
+    "game_id": "182",
+    "icon": "icon/182.png",
+    "largeIcon": false,
+    "name": "Thor 2"
+  },
+  "183": {
+    "background": "bg/183.jpg",
+    "game_id": "183",
+    "icon": "icon/183.png",
+    "largeIcon": false,
+    "name": "Wolf Disco"
+  },
+  "184": {
+    "background": "bg/184.jpg",
+    "game_id": "184",
+    "icon": "icon/184.png",
+    "largeIcon": false,
+    "name": "Six Gacha"
+  },
+  "185": {
+    "background": "bg/185.jpg",
+    "game_id": "185",
+    "icon": "icon/185.png",
+    "largeIcon": false,
+    "name": "Dragon Ball"
+  },
+  "186": {
+    "background": "bg/186.jpg",
+    "game_id": "186",
+    "icon": "icon/186.png",
+    "largeIcon": false,
+    "name": "Fire Queen 2"
+  },
+  "187": {
+    "background": "bg/187.jpg",
+    "game_id": "187",
+    "icon": "icon/187.png",
+    "largeIcon": false,
+    "name": "Wing Chun"
+  },
+  "188": {
+    "background": "bg/188.jpg",
+    "game_id": "188",
+    "icon": "icon/188.png",
+    "largeIcon": false,
+    "name": "Cricket Fever"
+  },
+  "19": {
+    "background": "bg/19.jpg",
+    "game_id": "19",
+    "icon": "icon/19.png",
+    "largeIcon": false,
+    "name": "Hot Spin"
+  },
+  "194": {
+    "background": "bg/194.jpg",
+    "game_id": "194",
+    "icon": "icon/194.png",
+    "largeIcon": false,
+    "name": "Fortune Dragon"
+  },
+  "195": {
+    "background": "bg/195.jpg",
+    "game_id": "195",
+    "icon": "icon/195.png",
+    "largeIcon": false,
+    "name": "Lord Ganesha"
+  },
+  "196": {
+    "background": "bg/196.jpg",
+    "game_id": "196",
+    "icon": "icon/196.png",
+    "largeIcon": false,
+    "name": "Tenfold Eggs"
+  },
+  "197": {
+    "background": "bg/197.jpg",
+    "game_id": "197",
+    "icon": "icon/197.png",
+    "largeIcon": false,
+    "name": "Dragon's Treasure"
+  },
+  "199": {
+    "background": "bg/199.jpg",
+    "game_id": "199",
+    "icon": "icon/199.png",
+    "largeIcon": false,
+    "name": "Songkran Festival"
+  },
+  "2": {
+    "background": "bg/2.jpg",
+    "game_id": "2",
+    "icon": "icon/2.png",
+    "largeIcon": false,
+    "name": "God Of Chess"
+  },
+  "20": {
+    "background": "bg/20.jpg",
+    "game_id": "20",
+    "icon": "icon/20.png",
+    "largeIcon": false,
+    "name": "888"
+  },
+  "200": {
+    "background": "bg/200.jpg",
+    "game_id": "200",
+    "icon": "icon/200.png",
+    "largeIcon": false,
+    "name": "Alice Run"
+  },
+  "201": {
+    "background": "bg/201.jpg",
+    "game_id": "201",
+    "icon": "icon/201.png",
+    "largeIcon": false,
+    "name": "MuayThai"
+  },
+  "202": {
+    "background": "bg/202.jpg",
+    "game_id": "202",
+    "icon": "icon/202.png",
+    "largeIcon": false,
+    "name": "OrientalBeauty"
+  },
+  "203": {
+    "background": "bg/203.jpg",
+    "game_id": "203",
+    "icon": "icon/203.png",
+    "largeIcon": false,
+    "name": "RaveHigh"
+  },
+  "204": {
+    "background": "bg/204.jpg",
+    "game_id": "204",
+    "icon": "icon/204.png",
+    "largeIcon": false,
+    "name": "LuckyBoxes"
+  },
+  "205": {
+    "background": "bg/205.jpg",
+    "game_id": "205",
+    "icon": "icon/205.png",
+    "largeIcon": false,
+    "name": "DiscoNight"
+  },
+  "206": {
+    "background": "bg/206.jpg",
+    "game_id": "206",
+    "icon": "icon/206.png",
+    "largeIcon": false,
+    "name": "Sweet POP"
+  },
+  "207": {
+    "background": "bg/207.jpg",
+    "game_id": "207",
+    "icon": "icon/207.png",
+    "largeIcon": false,
+    "name": "Thai HILO"
+  },
+  "208": {
+    "background": "bg/208.jpg",
+    "game_id": "208",
+    "icon": "icon/208.png",
+    "largeIcon": false,
+    "name": "Money Tree"
+  },
+  "209": {
+    "background": "bg/209.jpg",
+    "game_id": "209",
+    "icon": "icon/209.png",
+    "largeIcon": false,
+    "name": "The Cupids"
+  },
+  "21": {
+    "background": "bg/21.jpg",
+    "game_id": "21",
+    "icon": "icon/21.png",
+    "largeIcon": false,
+    "name": "Big Wolf"
+  },
+  "210": {
+    "background": "bg/210.jpg",
+    "game_id": "210",
+    "icon": "icon/210.png",
+    "largeIcon": false,
+    "name": "Oo Ga Cha Ka"
+  },
+  "211": {
+    "background": "bg/211.jpg",
+    "game_id": "211",
+    "icon": "icon/211.png",
+    "largeIcon": false,
+    "name": "King of Atlantis"
+  },
+  "212": {
+    "background": "bg/212.jpg",
+    "game_id": "212",
+    "icon": "icon/212.png",
+    "largeIcon": false,
+    "name": "Burning Xi-You"
+  },
+  "213": {
+    "background": "bg/213.jpg",
+    "game_id": "213",
+    "icon": "icon/213.png",
+    "largeIcon": false,
+    "name": "Mini Roulette"
+  },
+  "214": {
+    "background": "bg/214.jpg",
+    "game_id": "214",
+    "icon": "icon/214.png",
+    "largeIcon": false,
+    "name": "Ninja Raccoon"
+  },
+  "215": {
+    "background": "bg/215.jpg",
+    "game_id": "215",
+    "icon": "icon/215.png",
+    "largeIcon": false,
+    "name": "Hot Pinatas"
+  },
+  "216": {
+    "background": "bg/216.jpg",
+    "game_id": "216",
+    "icon": "icon/216.png",
+    "largeIcon": false,
+    "name": "Xoc Dia"
+  },
+  "217": {
+    "background": "bg/217.jpg",
+    "game_id": "217",
+    "icon": "icon/217.png",
+    "largeIcon": false,
+    "name": "Mahjong Fruit"
+  },
+  "218": {
+    "background": "bg/218.jpg",
+    "game_id": "218",
+    "icon": "icon/218.png",
+    "largeIcon": false,
+    "name": "Dollar Bomb"
+  },
+  "219": {
+    "background": "bg/219.jpg",
+    "game_id": "219",
+    "icon": "icon/219.png",
+    "largeIcon": false,
+    "name": "King Kong Shake"
+  },
+  "22": {
+    "background": "bg/22.jpg",
+    "game_id": "22",
+    "icon": "icon/22.png",
+    "largeIcon": false,
+    "name": "Monkey Office Legend"
+  },
+  "220": {
+    "background": "bg/220.jpg",
+    "game_id": "220",
+    "icon": "icon/220.png",
+    "largeIcon": false,
+    "name": "Floating Market"
+  },
+  "221": {
+    "background": "bg/221.jpg",
+    "game_id": "221",
+    "icon": "icon/221.png",
+    "largeIcon": false,
+    "name": "Detective Dee 2"
+  },
+  "222": {
+    "background": "bg/222.jpg",
+    "game_id": "222",
+    "icon": "icon/222.png",
+    "largeIcon": false,
+    "name": "Loy Krathong"
+  },
+  "223": {
+    "background": "bg/223.jpg",
+    "game_id": "223",
+    "icon": "icon/223.png",
+    "largeIcon": false,
+    "name": "Acrobatics"
+  },
+  "224": {
+    "background": "bg/224.jpg",
+    "game_id": "224",
+    "icon": "icon/224.png",
+    "largeIcon": false,
+    "name": "K.O. Island"
+  },
+  "225": {
+    "background": "bg/225.jpg",
+    "game_id": "225",
+    "icon": "icon/225.png",
+    "largeIcon": false,
+    "name": "Mr. Miser"
+  },
+  "226": {
+    "background": "bg/226.jpg",
+    "game_id": "226",
+    "icon": "icon/226.png",
+    "largeIcon": false,
+    "name": "Lucky Tigers"
+  },
+  "227": {
+    "background": "bg/227.jpg",
+    "game_id": "227",
+    "icon": "icon/227.png",
+    "largeIcon": false,
+    "name": "888 Cai Shen"
+  },
+  "228": {
+    "background": "bg/228.jpg",
+    "game_id": "228",
+    "icon": "icon/228.png",
+    "largeIcon": false,
+    "name": "Mirror Mirror"
+  },
+  "229": {
+    "background": "bg/229.jpg",
+    "game_id": "229",
+    "icon": "icon/229.png",
+    "largeIcon": false,
+    "name": "Night City"
+  },
+  "23": {
+    "background": "bg/23.jpg",
+    "game_id": "23",
+    "icon": "icon/23.png",
+    "largeIcon": false,
+    "name": "Yuan Bao"
+  },
+  "230": {
+    "background": "bg/230.jpg",
+    "game_id": "230",
+    "icon": "icon/230.png",
+    "largeIcon": false,
+    "name": "Baseball Fever"
+  },
+  "231": {
+    "background": "bg/231.jpg",
+    "game_id": "231",
+    "icon": "icon/231.png",
+    "largeIcon": false,
+    "name": "Striker WILD"
+  },
+  "24": {
+    "background": "bg/24.jpg",
+    "game_id": "24",
+    "icon": "icon/24.png",
+    "largeIcon": false,
+    "name": "Rave Jump2"
+  },
+  "241": {
+    "background": "bg/241.jpg",
+    "game_id": "241",
+    "icon": "icon/241.png",
+    "largeIcon": false,
+    "name": "The Chicken House"
+  },
+  "242": {
+    "background": "bg/242.jpg",
+    "game_id": "242",
+    "icon": "icon/242.png",
+    "largeIcon": false,
+    "name": "Treasure Pirate"
+  },
+  "243": {
+    "background": "bg/243.jpg",
+    "game_id": "243",
+    "icon": "icon/243.png",
+    "largeIcon": false,
+    "name": "Mafia"
+  },
+  "246": {
+    "background": "bg/246.jpg",
+    "game_id": "246",
+    "icon": "icon/246.png",
+    "largeIcon": false,
+    "name": "Go Fishing"
+  },
+  "252": {
+    "background": "bg/252.jpg",
+    "game_id": "252",
+    "icon": "icon/252.png",
+    "largeIcon": false,
+    "name": "Wild Disco Night"
+  },
+  "253": {
+    "background": "bg/253.jpg",
+    "game_id": "253",
+    "icon": "icon/253.png",
+    "largeIcon": false,
+    "name": "Sung Wukong"
+  },
+  "26": {
+    "background": "bg/26.jpg",
+    "game_id": "26",
+    "icon": "icon/26.png",
+    "largeIcon": false,
+    "name": "777"
+  },
+  "27": {
+    "background": "bg/27.jpg",
+    "game_id": "27",
+    "icon": "icon/27.png",
+    "largeIcon": false,
+    "name": "Magic World"
+  },
+  "29": {
+    "background": "bg/29.jpg",
+    "game_id": "29",
+    "icon": "icon/29.png",
+    "largeIcon": false,
+    "name": "WaterWorld"
+  },
+  "3": {
+    "background": "bg/3.jpg",
+    "game_id": "3",
+    "icon": "icon/3.png",
+    "largeIcon": false,
+    "name": "Vampire Kiss"
+  },
+  "31": {
+    "background": "bg/31.jpg",
+    "game_id": "31",
+    "icon": "icon/31.png",
+    "largeIcon": false,
+    "name": "God of War"
+  },
+  "32": {
+    "background": "bg/32.jpg",
+    "game_id": "32",
+    "icon": "icon/32.png",
+    "largeIcon": false,
+    "name": "Detective Dee"
+  },
+  "33": {
+    "background": "bg/33.jpg",
+    "game_id": "33",
+    "icon": "icon/33.png",
+    "largeIcon": false,
+    "name": "Fire Chibi"
+  },
+  "34": {
+    "background": "bg/34.jpg",
+    "game_id": "34",
+    "icon": "icon/34.png",
+    "largeIcon": false,
+    "name": "Gophers War"
+  },
+  "35": {
+    "background": "bg/35.jpg",
+    "game_id": "35",
+    "icon": "icon/35.png",
+    "largeIcon": false,
+    "name": "Crazy Nuozha"
+  },
+  "36": {
+    "background": "bg/36.jpg",
+    "game_id": "36",
+    "icon": "icon/36.png",
+    "largeIcon": false,
+    "name": "Pub Tycoon"
+  },
+  "38": {
+    "background": "bg/38.jpg",
+    "game_id": "38",
+    "icon": "icon/38.png",
+    "largeIcon": false,
+    "name": "All Wilds"
+  },
+  "39": {
+    "background": "bg/39.jpg",
+    "game_id": "39",
+    "icon": "icon/39.png",
+    "largeIcon": false,
+    "name": "Apsaras"
+  },
+  "4": {
+    "background": "bg/4.jpg",
+    "game_id": "4",
+    "icon": "icon/4.png",
+    "largeIcon": false,
+    "name": "Wild Tarzan"
+  },
+  "42": {
+    "background": "bg/42.jpg",
+    "game_id": "42",
+    "icon": "icon/42.png",
+    "largeIcon": false,
+    "name": "Sherlock Holmes"
+  },
+  "44": {
+    "background": "bg/44.jpg",
+    "game_id": "44",
+    "icon": "icon/44.png",
+    "largeIcon": false,
+    "name": "Fruit King II"
+  },
+  "46": {
+    "background": "bg/46.jpg",
+    "game_id": "46",
+    "icon": "icon/46.png",
+    "largeIcon": false,
+    "name": "Wolf Moon"
+  },
+  "47": {
+    "background": "bg/47.jpg",
+    "game_id": "47",
+    "icon": "icon/47.png",
+    "largeIcon": false,
+    "name": "Pharaoh's Gold"
+  },
+  "49": {
+    "background": "bg/49.jpg",
+    "game_id": "49",
+    "icon": "icon/49.png",
+    "largeIcon": false,
+    "name": "Lonely Planet"
+  },
+  "5": {
+    "background": "bg/5.jpg",
+    "game_id": "5",
+    "icon": "icon/5.png",
+    "largeIcon": false,
+    "name": "Mr. Rich"
+  },
+  "50": {
+    "background": "bg/50.jpg",
+    "game_id": "50",
+    "icon": "icon/50.png",
+    "largeIcon": false,
+    "name": "Good Fortune"
+  },
+  "51": {
+    "background": "bg/51.jpg",
+    "game_id": "51",
+    "icon": "icon/51.png",
+    "largeIcon": false,
+    "name": "Ecstatic Circus"
+  },
+  "52": {
+    "background": "bg/52.jpg",
+    "game_id": "52",
+    "icon": "icon/52.png",
+    "largeIcon": false,
+    "name": "Jump High"
+  },
+  "54": {
+    "background": "bg/54.jpg",
+    "game_id": "54",
+    "icon": "icon/54.png",
+    "largeIcon": false,
+    "name": "Funny Alpaca"
+  },
+  "55": {
+    "background": "bg/55.jpg",
+    "game_id": "55",
+    "icon": "icon/55.png",
+    "largeIcon": false,
+    "name": "Dragon Heart"
+  },
+  "57": {
+    "background": "bg/57.jpg",
+    "game_id": "57",
+    "icon": "icon/57.png",
+    "largeIcon": false,
+    "name": "The Beast War"
+  },
+  "58": {
+    "background": "bg/58.jpg",
+    "game_id": "58",
+    "icon": "icon/58.png",
+    "largeIcon": false,
+    "name": "Gu Gu Gu 2"
+  },
+  "59": {
+    "background": "bg/59.jpg",
+    "game_id": "59",
+    "icon": "icon/59.png",
+    "largeIcon": false,
+    "name": "Summer Mood"
+  },
+  "60": {
+    "background": "bg/60.jpg",
+    "game_id": "60",
+    "icon": "icon/60.png",
+    "largeIcon": false,
+    "name": "Jungle Party"
+  },
+  "61": {
+    "background": "bg/61.jpg",
+    "game_id": "61",
+    "icon": "icon/61.png",
+    "largeIcon": false,
+    "name": "Mr. Bean"
+  },
+  "64": {
+    "background": "bg/64.jpg",
+    "game_id": "64",
+    "icon": "icon/64.png",
+    "largeIcon": false,
+    "name": "Zeus"
+  },
+  "66": {
+    "background": "bg/66.jpg",
+    "game_id": "66",
+    "icon": "icon/66.png",
+    "largeIcon": false,
+    "name": "Fire 777"
+  },
+  "67": {
+    "background": "bg/67.jpg",
+    "game_id": "67",
+    "icon": "icon/67.png",
+    "largeIcon": false,
+    "name": "Golden Eggs"
+  },
+  "68": {
+    "background": "bg/68.jpg",
+    "game_id": "68",
+    "icon": "icon/68.png",
+    "largeIcon": false,
+    "name": "Wukong & Peaches"
+  },
+  "69": {
+    "background": "bg/69.jpg",
+    "game_id": "69",
+    "icon": "icon/69.png",
+    "largeIcon": false,
+    "name": "Fa Cai Shen"
+  },
+  "7": {
+    "background": "bg/7.jpg",
+    "game_id": "7",
+    "icon": "icon/7.png",
+    "largeIcon": false,
+    "name": "Rave Jump"
+  },
+  "70": {
+    "background": "bg/70.jpg",
+    "game_id": "70",
+    "icon": "icon/70.png",
+    "largeIcon": false,
+    "name": "Wanbao Dino"
+  },
+  "72": {
+    "background": "bg/72.jpg",
+    "game_id": "72",
+    "icon": "icon/72.png",
+    "largeIcon": false,
+    "name": "Happy Rich Year"
+  },
+  "74": {
+    "background": "bg/74.jpg",
+    "game_id": "74",
+    "icon": "icon/74.png",
+    "largeIcon": false,
+    "name": "Treasure Bowl"
+  },
+  "76": {
+    "background": "bg/76.jpg",
+    "game_id": "76",
+    "icon": "icon/76.png",
+    "largeIcon": false,
+    "name": "WonWonWon"
+  },
+  "77": {
+    "background": "bg/77.jpg",
+    "game_id": "77",
+    "icon": "icon/77.png",
+    "largeIcon": false,
+    "name": "Red Phoenix"
+  },
+  "78": {
+    "background": "bg/78.jpg",
+    "game_id": "78",
+    "icon": "icon/78.png",
+    "largeIcon": false,
+    "name": "Apollo"
+  },
+  "79": {
+    "background": "bg/79.jpg",
+    "game_id": "79",
+    "icon": "icon/79.png",
+    "largeIcon": false,
+    "name": "Chameleon"
+  },
+  "8": {
+    "background": "bg/8.jpg",
+    "game_id": "8",
+    "icon": "icon/8.png",
+    "largeIcon": false,
+    "name": "So Sweet"
+  },
+  "80": {
+    "background": "bg/80.jpg",
+    "game_id": "80",
+    "icon": "icon/80.png",
+    "largeIcon": false,
+    "name": "Poseidon"
+  },
+  "81": {
+    "background": "bg/81.jpg",
+    "game_id": "81",
+    "icon": "icon/81.png",
+    "largeIcon": false,
+    "name": "Treasure Island"
+  },
+  "83": {
+    "background": "bg/83.jpg",
+    "game_id": "83",
+    "icon": "icon/83.png",
+    "largeIcon": false,
+    "name": "Fire Queen"
+  },
+  "86": {
+    "background": "bg/86.jpg",
+    "game_id": "86",
+    "icon": "icon/86.png",
+    "largeIcon": false,
+    "name": "Running Toro"
+  },
+  "89": {
+    "background": "bg/89.jpg",
+    "game_id": "89",
+    "icon": "icon/89.png",
+    "largeIcon": false,
+    "name": "Thor"
+  },
+  "9": {
+    "background": "bg/9.jpg",
+    "game_id": "9",
+    "icon": "icon/9.png",
+    "largeIcon": false,
+    "name": "Zhong Kui"
+  },
+  "92": {
+    "background": "bg/92.jpg",
+    "game_id": "92",
+    "icon": "icon/92.png",
+    "largeIcon": false,
+    "name": "World Cup Russia2018"
+  },
+  "95": {
+    "background": "bg/95.jpg",
+    "game_id": "95",
+    "icon": "icon/95.png",
+    "largeIcon": false,
+    "name": "Football Boots"
+  },
+  "96": {
+    "background": "bg/96.jpg",
+    "game_id": "96",
+    "icon": "icon/96.png",
+    "largeIcon": false,
+    "name": "Football Baby"
+  },
+  "98": {
+    "background": "bg/98.jpg",
+    "game_id": "98",
+    "icon": "icon/98.png",
+    "largeIcon": false,
+    "name": "All Star Team"
+  },
+  "99": {
+    "background": "bg/99.jpg",
+    "game_id": "99",
+    "icon": "icon/99.png",
+    "largeIcon": false,
+    "name": "Jump Higher"
+  },
+  "AB3": {
+    "background": "bg/AB3.jpg",
+    "game_id": "AB3",
+    "icon": "icon/AB3.png",
+    "largeIcon": false,
+    "name": "Paradise"
+  },
+  "AT01": {
+    "background": "bg/AT01.jpg",
+    "game_id": "AT01",
+    "icon": "icon/AT01.png",
+    "largeIcon": false,
+    "name": "OneShotFishing"
+  },
+  "AT05": {
+    "background": "bg/AT05.png",
+    "game_id": "AT05",
+    "icon": "icon/AT05.png",
+    "largeIcon": false,
+    "name": "LuckyFishing"
+  },
+  "BT02": {
+    "background": "bg/BT02.jpg",
+    "game_id": "BT02",
+    "icon": "icon/BT02.png",
+    "largeIcon": false,
+    "name": "Banker Dice Bull-Bull"
+  },
+  "BT03": {
+    "background": "bg/BT03.jpg",
+    "game_id": "BT03",
+    "icon": "icon/BT03.png",
+    "largeIcon": false,
+    "name": "Peeking Banker Bull-Bull"
+  },
+  "CP1": {
+    "background": "bg/CP1.png",
+    "game_id": "CP1",
+    "icon": "icon/CP1.png",
+    "largeIcon": false,
+    "name": "Mahjong Break"
+  },
+  "CP2": {
+    "background": "bg/CP2.png",
+    "game_id": "CP2",
+    "icon": "icon/CP2.png",
+    "largeIcon": false,
+    "name": "Sugar Combo"
+  },
+  "CP4": {
+    "background": "bg/CP4.png",
+    "game_id": "CP4",
+    "icon": "icon/CP4.png",
+    "largeIcon": false,
+    "name": "Golden Horus"
+  },
+  "GB1": {
+    "background": "bg/GB1.jpg",
+    "game_id": "GB1",
+    "icon": "icon/GB1.png",
+    "largeIcon": false,
+    "name": "3 2 1 Go!"
+  },
+  "GB10": {
+    "background": "bg/GB10.jpg",
+    "game_id": "GB10",
+    "icon": "icon/GB10.png",
+    "largeIcon": false,
+    "name": "Seotda"
+  },
+  "GB11": {
+    "background": "bg/GB11.jpg",
+    "game_id": "GB11",
+    "icon": "icon/GB11.png",
+    "largeIcon": false,
+    "name": "Thai Fish Prawn Crab"
+  },
+  "GB12": {
+    "background": "bg/GB12.jpg",
+    "game_id": "GB12",
+    "icon": "icon/GB12.png",
+    "largeIcon": false,
+    "name": "Myeong-ryang"
+  },
+  "GB13": {
+    "background": "bg/GB13.jpg",
+    "game_id": "GB13",
+    "icon": "icon/GB13.png",
+    "largeIcon": false,
+    "name": "Football Fever M"
+  },
+  "GB14": {
+    "background": "bg/GB14.jpg",
+    "game_id": "GB14",
+    "icon": "icon/GB14.png",
+    "largeIcon": false,
+    "name": "Funky Bingo"
+  },
+  "GB15": {
+    "background": "bg/GB15.jpg",
+    "game_id": "GB15",
+    "icon": "icon/GB15.png",
+    "largeIcon": false,
+    "name": "Hero of the 3 Kingdoms - Cao Cao"
+  },
+  "GB198": {
+    "background": "bg/GB198.jpg",
+    "game_id": "GB198",
+    "icon": "icon/GB198.png",
+    "largeIcon": false,
+    "name": "Hanuman Bingo"
+  },
+  "GB2": {
+    "background": "bg/GB2.jpg",
+    "game_id": "GB2",
+    "icon": "icon/GB2.png",
+    "largeIcon": false,
+    "name": "Monster Hunter"
+  },
+  "GB3": {
+    "background": "bg/GB3.jpg",
+    "game_id": "GB3",
+    "icon": "icon/GB3.png",
+    "largeIcon": false,
+    "name": "Coin Spinner"
+  },
+  "GB5": {
+    "background": "bg/GB5.jpg",
+    "game_id": "GB5",
+    "icon": "icon/GB5.png",
+    "largeIcon": false,
+    "name": "Hot DJ"
+  },
+  "GB6": {
+    "background": "bg/GB6.jpg",
+    "game_id": "GB6",
+    "icon": "icon/GB6.png",
+    "largeIcon": false,
+    "name": "Ganesha Jr."
+  },
+  "GB7": {
+    "background": "bg/GB7.jpg",
+    "game_id": "GB7",
+    "icon": "icon/GB7.png",
+    "largeIcon": false,
+    "name": "Mummy's Treasure"
+  },
+  "GB8": {
+    "background": "bg/GB8.jpg",
+    "game_id": "GB8",
+    "icon": "icon/GB8.png",
+    "largeIcon": false,
+    "name": "Dragon Koi"
+  },
+  "GB9": {
+    "background": "bg/GB9.jpg",
+    "game_id": "GB9",
+    "icon": "icon/GB9.png",
+    "largeIcon": false,
+    "name": "Football Fever"
+  },
+  "GO01": {
+    "background": "bg/GO01.jpg",
+    "game_id": "GO01",
+    "icon": "icon/GO01.png",
+    "largeIcon": false,
+    "name": "Dragon Ball Dozer"
+  },
+  "GO02": {
+    "background": "bg/GO02.jpg",
+    "game_id": "GO02",
+    "icon": "icon/GO02.png",
+    "largeIcon": false,
+    "name": "Hero Fishing"
+  },
+  "GO03": {
+    "background": "bg/GO03.jpg",
+    "game_id": "GO03",
+    "icon": "icon/GO03.png",
+    "largeIcon": false,
+    "name": "Thai Pok Deng"
+  },
+  "GO05": {
+    "background": "bg/GO05.jpg",
+    "game_id": "GO05",
+    "icon": "icon/GO05.png",
+    "largeIcon": false,
+    "name": "Onestick Fishing"
+  },
+  "GO06": {
+    "background": "bg/GO06.jpg",
+    "game_id": "GO06",
+    "icon": "icon/GO06.png",
+    "largeIcon": false,
+    "name": "Paradise 2"
+  },
+  "GO169": {
+    "background": "bg/GO169.png",
+    "game_id": "GO169",
+    "icon": "icon/GO169.png",
+    "largeIcon": false,
+    "name": "Dragon Pachinko"
+  }
+}
