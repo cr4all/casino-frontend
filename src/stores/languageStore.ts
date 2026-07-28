@@ -1,8 +1,9 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { Language } from '@/i18n';
+import { isLanguage, type Language } from '@/i18n';
 
 const RTL_LANGUAGES = new Set<Language>(['ar', 'ar-ma', 'ar-dz', 'ar-tn', 'fa', 'he', 'ur']);
+const DEFAULT_LANGUAGE: Language = 'en';
 
 export function isRtlLanguage(language: Language): boolean {
   return RTL_LANGUAGES.has(language);
@@ -21,7 +22,7 @@ interface LanguageState {
 export const useLanguageStore = create<LanguageState>()(
   persist(
     (set) => ({
-      language: 'en',
+      language: DEFAULT_LANGUAGE,
       setLanguage: (language) => {
         applyDocumentLanguage(language);
         set({ language });
@@ -30,9 +31,13 @@ export const useLanguageStore = create<LanguageState>()(
     {
       name: 'ibets24-language',
       onRehydrateStorage: () => (state) => {
-        if (state?.language) {
-          applyDocumentLanguage(state.language);
+        if (!state?.language) return;
+
+        if (!isLanguage(state.language)) {
+          state.language = DEFAULT_LANGUAGE;
         }
+
+        applyDocumentLanguage(state.language);
       },
     },
   ),

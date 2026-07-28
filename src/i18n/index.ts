@@ -60,7 +60,6 @@ import { pl } from './locales/pl';
 import { pt } from './locales/pt';
 import { ptBr } from './locales/pt-br';
 import { ro } from './locales/ro';
-import { ru } from './locales/ru';
 import { si } from './locales/si';
 import { sk } from './locales/sk';
 import { sl } from './locales/sl';
@@ -74,7 +73,6 @@ import { te } from './locales/te';
 import { tg } from './locales/tg';
 import { th } from './locales/th';
 import { tr } from './locales/tr';
-import { uk } from './locales/uk';
 import { ur } from './locales/ur';
 import { uz } from './locales/uz';
 import { vi } from './locales/vi';
@@ -148,7 +146,6 @@ const LANGUAGE_DEFINITIONS = [
   { code: 'pt', label: 'Português (PT)', shortLabel: 'PT' },
   { code: 'pt-br', label: 'Português (Brasil)', shortLabel: 'BR' },
   { code: 'ro', label: 'Română', shortLabel: 'RO' },
-  { code: 'ru', label: 'Русский', shortLabel: 'RU' },
   { code: 'si', label: 'සිංහල', shortLabel: 'SI' },
   { code: 'sk', label: 'Slovenčina', shortLabel: 'SK' },
   { code: 'sl', label: 'Slovenščina', shortLabel: 'SL' },
@@ -162,7 +159,6 @@ const LANGUAGE_DEFINITIONS = [
   { code: 'tg', label: 'Тоҷикӣ', shortLabel: 'TG' },
   { code: 'th', label: 'ไทย', shortLabel: 'TH' },
   { code: 'tr', label: 'Türkçe', shortLabel: 'TR' },
-  { code: 'uk', label: 'Українська', shortLabel: 'UK' },
   { code: 'ur', label: 'اردو', shortLabel: 'UR' },
   { code: 'uz', label: 'Oʻzbekcha', shortLabel: 'UZ' },
   { code: 'vi', label: 'Tiếng Việt', shortLabel: 'VI' },
@@ -257,7 +253,6 @@ const translations: Record<Language, LocaleTree> = {
   pt,
   'pt-br': ptBr,
   ro,
-  ru,
   si,
   sk,
   sl,
@@ -271,7 +266,6 @@ const translations: Record<Language, LocaleTree> = {
   tg,
   th,
   tr,
-  uk,
   ur,
   uz,
   vi,
