@@ -34,6 +34,7 @@ import { useAuthStore } from '@/stores/authStore';
 import { usePlayerStore } from '@/stores/playerStore';
 import { useGameStore } from '@/stores/gameStore';
 import { captureAffiliateReferralFromUrl } from '@/utils/affiliateReferral';
+import { captureInviteReferralFromUrl } from '@/utils/inviteReferral';
 import { usePlatformSectionStore } from '@/stores/platformSectionStore';
 
 export function AppLayout() {
@@ -80,6 +81,7 @@ export function AppLayout() {
 
   useEffect(() => {
     captureAffiliateReferralFromUrl(searchParams);
+    captureInviteReferralFromUrl(searchParams);
   }, [searchParams]);
 
   if (isAffiliateUser && !location.pathname.startsWith('/affiliate')) {

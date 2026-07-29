@@ -118,25 +118,36 @@ export function BonusPage() {
   };
 
   const renderPolicyDetails = (policy: BonusPolicy) => {
+    const vendors = (policy.vendor_names ?? []).filter((name) => name.trim() !== '');
+    const vendorLine =
+      vendors.length > 0 ? (
+        <p className="mt-1 text-sm text-muted">
+          {t('bonus.usableAtVendors', { vendors: vendors.join(', ') })}
+        </p>
+      ) : null;
+
     if (policy.type === 'free_spin') {
       return (
         <>
           <p className="mt-2 text-sm text-muted">
             {t('bonus.freeSpinCount', { count: policy.spin_count ?? 0 })}
           </p>
-          
+          {vendorLine}
         </>
       );
     }
 
     return (
-      <p className="mt-2 text-sm text-muted">
-        {policy.amount_type === 'percentage'
-          ? t('bonus.percentMatch', { value: formatBalance(policy.amount_value) })
-          : t('bonus.fixedMatch', { value: formatBalance(policy.amount_value) })}
-        {' · '}
-        {t('bonus.wageringMultiplier', { value: policy.wagering_multiplier })}
-      </p>
+      <>
+        <p className="mt-2 text-sm text-muted">
+          {policy.amount_type === 'percentage'
+            ? t('bonus.percentMatch', { value: formatBalance(policy.amount_value) })
+            : t('bonus.fixedMatch', { value: formatBalance(policy.amount_value) })}
+          {' · '}
+          {t('bonus.wageringMultiplier', { value: policy.wagering_multiplier })}
+        </p>
+        {vendorLine}
+      </>
     );
   };
 

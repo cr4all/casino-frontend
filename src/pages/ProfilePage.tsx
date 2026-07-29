@@ -228,6 +228,12 @@ export function ProfilePage() {
                 {t('nav.depositLabel')}
               </Link>
               <Link
+                to="/invite"
+                className="rounded-lg border border-white/10 bg-card/50 px-4 py-3 text-sm text-white transition-colors hover:border-accent/40 hover:text-accent"
+              >
+                {t('nav.inviteLabel')}
+              </Link>
+              <Link
                 to="/withdraw"
                 className="rounded-lg border border-white/10 bg-card/50 px-4 py-3 text-sm text-white transition-colors hover:border-accent/40 hover:text-accent"
               >

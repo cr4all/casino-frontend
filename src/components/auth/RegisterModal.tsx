@@ -25,6 +25,7 @@ import {
 import { RiskChallengePanel } from '@/components/risk/RiskChallengePanel';
 import { useRiskChallenge } from '@/hooks/useRiskChallenge';
 import { clearStoredAffiliateCode, getStoredAffiliateCode } from '@/utils/affiliateReferral';
+import { clearStoredInviteCode, getStoredInviteCode } from '@/utils/inviteReferral';
 import {
   collectFieldErrors,
   hasFieldErrors,
@@ -52,6 +53,7 @@ export function RegisterModal() {
     phone: '',
     currency: '',
     affiliate_code: '' as string | undefined,
+    invite_code: '' as string | undefined,
   });
   const [phoneCountryCode, setPhoneCountryCode] = useState('US');
   const [emailOtp, setEmailOtp] = useState('');
@@ -80,6 +82,7 @@ export function RegisterModal() {
     let cancelled = false;
 
     const storedCode = getStoredAffiliateCode();
+    const storedInviteCode = getStoredInviteCode();
 
     authApi
       .getRegisterOptions()
@@ -92,6 +95,7 @@ export function RegisterModal() {
           ...prev,
           currency: prev.currency || data.currencies[0]?.code || '',
           affiliate_code: storedCode ?? prev.affiliate_code,
+          invite_code: storedInviteCode ?? prev.invite_code,
         }));
       })
       .catch(() => {
@@ -147,6 +151,7 @@ export function RegisterModal() {
       phone: '',
       currency: options?.currencies[0]?.code ?? '',
       affiliate_code: getStoredAffiliateCode() ?? undefined,
+      invite_code: getStoredInviteCode() ?? undefined,
     });
     setPhoneCountryCode('US');
     setEmailOtp('');
@@ -168,11 +173,13 @@ export function RegisterModal() {
     currency: form.currency,
     email_verification_code: emailOtp,
     ...(form.affiliate_code ? { affiliate_code: form.affiliate_code } : {}),
+    ...(form.invite_code ? { invite_code: form.invite_code } : {}),
     ...(turnstileToken ? { turnstileToken } : {}),
   });
 
   const completeRegistration = async () => {
     clearStoredAffiliateCode();
+    clearStoredInviteCode();
     await fetchBalance();
     closeModal();
     resetForm();

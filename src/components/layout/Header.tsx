@@ -133,6 +133,14 @@ export function Header({ onMenuToggle, onOpenVipLevels }: HeaderProps) {
                     {t('nav.bonusesLabel')}
                   </Link>
                   <Link
+                    to="/invite"
+                    role="menuitem"
+                    onClick={closeUserMenu}
+                    className="block px-4 py-2.5 text-sm text-white hover:bg-surface transition-colors"
+                  >
+                    {t('nav.inviteLabel')}
+                  </Link>
+                  <Link
                     to="/transactions"
                     role="menuitem"
                     onClick={closeUserMenu}

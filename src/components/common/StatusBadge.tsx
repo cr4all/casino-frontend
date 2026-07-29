@@ -3,6 +3,8 @@ import { useTranslation } from '@/hooks/useTranslation';
 const statusStyles: Record<string, string> = {
   pending: 'bg-yellow-500/15 text-accent-gold border border-accent-gold/30',
   requested: 'bg-yellow-500/15 text-accent-gold border border-accent-gold/30',
+  qualified: 'bg-sky-500/15 text-sky-400 border border-sky-500/30',
+  rewarded: 'bg-green-500/15 text-green-400 border border-green-500/30',
   confirmed: 'bg-green-500/15 text-green-400 border border-green-500/30',
   approved: 'bg-amber-500/15 text-amber-300 border border-amber-500/30',
   processing: 'bg-sky-500/15 text-sky-400 border border-sky-500/30',

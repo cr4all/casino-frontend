@@ -26,6 +26,7 @@ export interface RegisterPayload {
   country: string;
   currency: string;
   affiliate_code?: string;
+  invite_code?: string;
   email_verification_code: string;
   turnstileToken?: string;
   risk_context?: ClientRiskContext;

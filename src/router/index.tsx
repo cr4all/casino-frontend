@@ -8,6 +8,7 @@ import { ProfilePage } from '@/pages/ProfilePage';
 import { DepositPage } from '@/pages/DepositPage';
 import { WithdrawPage } from '@/pages/WithdrawPage';
 import { BonusPage } from '@/pages/BonusPage';
+import { InviteFriendPage } from '@/pages/InviteFriendPage';
 import { NotificationsPage } from '@/pages/NotificationsPage';
 import { SupportTicketsPage } from '@/pages/SupportTicketsPage';
 import { SupportTicketDetailPage } from '@/pages/SupportTicketDetailPage';
@@ -38,6 +39,7 @@ export const router = Sentry.wrapCreateBrowserRouterV7(createBrowserRouter)([
       { path: 'deposit', element: <DepositPage /> },
       { path: 'withdraw', element: <WithdrawPage /> },
       { path: 'bonus', element: <BonusPage /> },
+      { path: 'invite', element: <InviteFriendPage /> },
       { path: 'notifications', element: <NotificationsPage /> },
       { path: 'support-tickets', element: <SupportTicketsPage /> },
       { path: 'support-tickets/:id', element: <SupportTicketDetailPage /> },

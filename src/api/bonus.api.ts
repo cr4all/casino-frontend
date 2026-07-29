@@ -19,6 +19,7 @@ export interface BonusPolicy {
   spin_count?: number | null;
   provider_slug?: string | null;
   provider_name?: string | null;
+  vendor_names?: string[];
 }
 
 export interface ActiveBonus {
