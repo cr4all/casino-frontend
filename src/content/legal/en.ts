@@ -148,9 +148,43 @@ export const legalEn: LegalContentBundle = {
         ],
       },
       {
+        title: 'What do my withdrawal statuses mean?',
+        paragraphs: [
+          'Your withdrawal request may show one of the following statuses:',
+          'requested — Your withdrawal request has been received and is waiting to be reviewed and processed.',
+          'review — Your withdrawal request is under review by our team before approval.',
+          'approved — Your withdrawal has been approved and is queued for payout.',
+          'processing — Your withdrawal payout is currently being processed.',
+          'completed — Your withdrawal has been successfully processed on our side, and the funds have been released to your selected bank account or wallet.',
+          'rejected — Your withdrawal request was not approved. The held amount has been returned to your account balance.',
+          'A "completed" status means the withdrawal was successfully processed and released from our side. Even after the status changes to "completed", funds may not appear in your bank account or wallet immediately while they move through the banking or payment network.',
+          'If funds are still not received more than 24 hours after the status becomes "completed", please contact support for assistance.',
+        ],
+      },
+      {
         title: 'How long do withdrawals take?',
         paragraphs: [
-          'Processing times depend on the payment method and verification status. Crypto withdrawals are typically faster after approval.',
+          'After approval, withdrawals are usually completed within a few seconds to a few minutes. In some cases, banking network delays or payment provider processes may take up to 24 hours.',
+          'Processing times can also depend on the payment method and any verification required for your account.',
+        ],
+      },
+      {
+        title: 'What should I check before submitting a withdrawal?',
+        paragraphs: [
+          'Please carefully verify your bank account or wallet details before submitting a withdrawal request.',
+          'Once a withdrawal has been successfully processed (completed), it may not be possible to reverse, modify, or recover the transaction if incorrect payment details were provided.',
+          'We strongly recommend double-checking all payment details before confirming your withdrawal request.',
+        ],
+      },
+      {
+        title: 'What are the withdrawal limits based on verification?',
+        paragraphs: [
+          'Withdrawal limits depend on your account verification level. At least one of email verification, phone verification, or KYC is required to withdraw.',
+          'Email verified — Maximum withdrawal: {{email_verified_limit}} (wallet currency).',
+          'Phone verified — Maximum withdrawal: {{phone_verified_limit}} (wallet currency).',
+          'Email and phone both verified (without KYC) — The limits are combined (up to {{combined_verified_limit}}).',
+          'KYC completed — No withdrawal limit.',
+          'You can complete verification from your profile to increase or remove your withdrawal limit.',
         ],
       },
       {

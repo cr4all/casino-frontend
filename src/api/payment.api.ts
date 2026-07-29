@@ -42,6 +42,11 @@ export interface PaymentOptionList {
   items: PaymentOption[];
 }
 
+export interface WithdrawalVerificationLimits {
+  email_verified_limit: string;
+  phone_verified_limit: string;
+}
+
 export interface DepositQuote {
   payment_amount: string;
   payment_currency: string;
@@ -101,6 +106,13 @@ export interface WithdrawalItem {
 export const paymentApi = {
   getCountries: async () => {
     const { data } = await api.get<ApiResponse<PaymentCountryList>>('/payment/countries');
+    return data.data;
+  },
+
+  getWithdrawalVerificationLimits: async () => {
+    const { data } = await api.get<ApiResponse<WithdrawalVerificationLimits>>(
+      '/payment/withdrawal-verification-limits',
+    );
     return data.data;
   },
 
