@@ -21,7 +21,6 @@
   "Stake": "Stake",
   "Odds": "Odds",
   "The World's Largest Sportsbook & Online Casino": "Dünyanın En Büyük Bahis Merkezi ve Online Casino",
-  "5% Cashback Bonus Every Tuesday": "Her Salı % 5 Para Puan Bonusu",
   "Available to Withdraw": "Çekilebilir tutar",
   "Accruing (Current Month)": "Biriken (bu ay)",
   "Payouts": "Ödemeler",
@@ -61,5 +60,7 @@
   "Rejection reason": "Red nedeni",
   "Partners": "Ortaklar",
   "Affiliate Program": "Ortaklık Programı",
-  "Become a Partner": "Ortak Olun"
+  "Become a Partner": "Ortak Olun",
+  "Weekly, monthly up to {{percent}}% cashback": "Haftalık, aylık {{percent}}%'e varan cashback",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Günlük, haftalık, aylık {{percent}}%'e varan cashback"
 }

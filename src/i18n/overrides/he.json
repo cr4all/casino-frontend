@@ -370,7 +370,6 @@
   "Unable to reset password. Check the code and try again.": "לא ניתן לאפס את הסיסמה. בדוק את הקוד ונסה שוב.",
   "Unable to send verification code. Please try again.": "לא ניתן לשלוח קוד אימות. אנא נסה שוב.",
   "Unable to start KYC verification. Please try again later.": "לא ניתן להתחיל אימות KYC. אנא נסה שוב מאוחר יותר.",
-  "UP TO $250 USD": "עד $250 USD",
   "User": "משתמש",
   "Username": "שם משתמש",
   "UserName": "שם משתמש",
@@ -408,5 +407,7 @@
   "Your password has been reset. You can now log in with your new password.": "הסיסמה שלך אופסה. כעת תוכל להתחבר עם הסיסמה החדשה.",
   "Your username": "שם המשתמש שלך",
   "The World's Largest Sportsbook & Online Casino": "ספר הספורט והקזינו המקוון הגדול בעולם",
-  "5% Cashback Bonus Every Tuesday": "בונוס של 5% להחזר כספי בכל יום שלישי"
+  "UP TO ${{amount}} USD": "עד ${{amount}} USD",
+  "Weekly, monthly up to {{percent}}% cashback": "החזר כספי שבועי וחודשי עד {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "החזר כספי יומי, שבועי וחודשי עד {{percent}}%"
 }

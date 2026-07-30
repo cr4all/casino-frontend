@@ -344,7 +344,6 @@
   "Unable to fetch exchange estimate.": "Ayirboshlash taxminini olib bo'lmadi.",
   "Unable to reset password. Check the code and try again.": "Parolni tiklab bo'lmadi. Kodni tekshiring va qayta urinib ko'ring.",
   "Unable to send verification code. Please try again.": "Tasdiqlash kodini yuborib bo'lmadi. Qayta urinib ko'ring.",
-  "UP TO $250 USD": "$250 USD GACHA",
   "User": "Foydalanuvchi",
   "Username": "Foydalanuvchi nomi",
   "UserName": "Foydalanuvchi nomi",
@@ -378,5 +377,7 @@
   "Your password has been reset. You can now log in with your new password.": "Parolingiz tiklandi. Endi yangi parol bilan tizimga kirishingiz mumkin.",
   "Your username": "Foydalanuvchi nomingiz",
   "The World's Largest Sportsbook & Online Casino": "Dunyodagi eng katta sport bukmekerlik va onlayn kazino",
-  "5% Cashback Bonus Every Tuesday": "Har seshanba kuni 5% naqd pul qaytarib beriladi"
+  "UP TO ${{amount}} USD": "${{amount}} USD GACHA",
+  "Weekly, monthly up to {{percent}}% cashback": "Haftalik, oylik {{percent}}% gacha keshbek",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Kunlik, haftalik, oylik {{percent}}% gacha keshbek"
 }

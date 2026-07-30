@@ -89,10 +89,11 @@
   "Stake": "الحصة",
   "Odds": "الاحتمالات",
   "The World's Largest Sportsbook & Online Casino": "Dünyanın ən böyük idman kitabçası və onlayn kazinosu",
-  "5% Cashback Bonus Every Tuesday": "Hər çərşənbə axşamı 5% keşbek bonusu",
   "Account / Wallet ID": "Hesab / Pul kisəsi nömrəsi",
   "Note": "Qeyd",
   "Partners": "Tərəfdaşlar",
   "Affiliate Program": "Tərəfdaşlıq proqramı",
-  "Become a Partner": "Tərəfdaş olun"
+  "Become a Partner": "Tərəfdaş olun",
+  "Weekly, monthly up to {{percent}}% cashback": "Həftəlik, aylıq {{percent}}%-ə qədər keşbek",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Gündəlik, həftəlik, aylıq {{percent}}%-ə qədər keşbek"
 }

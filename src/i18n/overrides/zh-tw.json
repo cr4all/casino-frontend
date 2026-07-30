@@ -185,7 +185,6 @@
   "Change Password": "變更密碼",
   "Privacy Policy": "隱私權政策",
   "← Back to home": "← 返回首頁",
-  "UP TO $250 USD": "最高 $250 USD",
   "View Bonuses →": "查看獎金 →",
   "{{name}} Games": "{{name}} 遊戲",
   "Cryptocurrency": "加密貨幣",
@@ -378,5 +377,7 @@
   "OK": "OK",
   "ID": "ID",
   "The World's Largest Sportsbook & Online Casino": "全球最大的體育博彩和網上賭場",
-  "5% Cashback Bonus Every Tuesday": "每週二5%現金回饋獎勵"
+  "UP TO ${{amount}} USD": "最高 ${{amount}} USD",
+  "Weekly, monthly up to {{percent}}% cashback": "每週、每月最高{{percent}}%現金回饋",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "每日、每週、每月最高{{percent}}%現金回饋"
 }

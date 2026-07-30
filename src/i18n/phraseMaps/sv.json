@@ -21,10 +21,11 @@
   "Stake": "Stake",
   "Odds": "Odds",
   "The World's Largest Sportsbook & Online Casino": "Världens största sportsbook och online casino",
-  "5% Cashback Bonus Every Tuesday": "5% cashbackbonus varje tisdag",
   "Country": "Land",
   "Currency": "Valuta",
   "Partners": "Partners",
   "Affiliate Program": "Affiliateprogram",
-  "Become a Partner": "Bli partner"
+  "Become a Partner": "Bli partner",
+  "Weekly, monthly up to {{percent}}% cashback": "Veckovis, månadsvis upp till {{percent}}% cashback",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Dagligen, veckovis, månadsvis upp till {{percent}}% cashback"
 }

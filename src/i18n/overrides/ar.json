@@ -1,4 +1,5 @@
 {
   "The World's Largest Sportsbook & Online Casino": "أكبر كازينو رياضي وكازينو على الإنترنت في العالم",
-  "5% Cashback Bonus Every Tuesday": "مكافأة استرداد نقدي بنسبة 5% كل ثلاثاء"
+  "Weekly, monthly up to {{percent}}% cashback": "استرداد نقدي أسبوعي وشهري حتى {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "استرداد نقدي يومي وأسبوعي وشهري حتى {{percent}}%"
 }

@@ -7,16 +7,17 @@ const localesDir = join(root, 'src/i18n/locales');
 const phraseMapsDir = join(root, 'src/i18n/phraseMaps');
 const overridesDir = join(root, 'src/i18n/overrides');
 
-const NEW_EN = '5% Cashback Bonus Every Tuesday';
+const NEW_EN = 'UP TO {{percent}}% Cashback Bonus';
 const LEGACY_KEYS = [
+  '5% Cashback Bonus Every Tuesday',
   '5% Cashback Bonus Per Week',
   '5% cashback bonus per week',
   '5% Cashback Bonus',
 ];
 
+/** All locales use the English template; {{percent}} is filled at runtime. */
 const MANUAL = {
   en: NEW_EN,
-  ko: '매주 화요일 5% 캐시백 보너스',
 };
 
 const LANG_TARGETS = {

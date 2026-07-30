@@ -21,7 +21,6 @@
   "Stake": "Stake",
   "Odds": "Mga Odd",
   "The World's Largest Sportsbook & Online Casino": "Pinakamalaking Sportsbook at Online Casino sa Mundo",
-  "5% Cashback Bonus Every Tuesday": "5% Cashback Bonus Tuwing Martes",
   "Affiliate Dashboard": "Dashboard ng Affiliate",
   "Affiliate Portal": "Username or email address *",
   "Logout": "Mag-log out",
@@ -120,5 +119,7 @@
   "Failed to send verification code.": "Nabigong magpadala ng code ng beripikasyon.",
   "Partners": "Mga Partner",
   "Affiliate Program": "Programa ng Affiliate",
-  "Become a Partner": "Maging Partner"
+  "Become a Partner": "Maging Partner",
+  "Weekly, monthly up to {{percent}}% cashback": "Lingguhan, buwanang cashback hanggang {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Arawan, lingguhan, buwanang cashback hanggang {{percent}}%"
 }

@@ -89,7 +89,6 @@
   "Stake": "الحصة",
   "Odds": "الاحتمالات",
   "The World's Largest Sportsbook & Online Casino": "أكبر كازينو رياضي وكازينو على الإنترنت في العالم",
-  "5% Cashback Bonus Every Tuesday": "مكافأة استرداد نقدي بنسبة 5% كل ثلاثاء",
   "Affiliate Dashboard": "لوحة التحكم المسوق بالعمولة",
   "Affiliate Portal": "بوابة الأفلييت",
   "Logout": "تسجيل الخروج",
@@ -194,5 +193,7 @@
   "Failed to send verification code.": "فشل في إرسال رمز التحقق",
   "Partners": "الشركاء",
   "Affiliate Program": "برنامج الشركاء",
-  "Become a Partner": "كن شريكاً"
+  "Become a Partner": "كن شريكاً",
+  "Weekly, monthly up to {{percent}}% cashback": "استرداد نقدي أسبوعي وشهري حتى {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "استرداد نقدي يومي وأسبوعي وشهري حتى {{percent}}%"
 }

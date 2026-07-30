@@ -21,7 +21,6 @@
   "Stake": "Stake",
   "Odds": "Odds",
   "The World's Largest Sportsbook & Online Casino": "全球最大的体育博彩和在线赌场",
-  "5% Cashback Bonus Every Tuesday": "每周二5%返现奖励",
   "Available to Withdraw": "可提现金额",
   "Accruing (Current Month)": "累计中（本月）",
   "Payouts": "付款",
@@ -61,5 +60,7 @@
   "Rejection reason": "拒绝原因",
   "Partners": "合作伙伴",
   "Affiliate Program": "联盟计划",
-  "Become a Partner": "成为合作伙伴"
+  "Become a Partner": "成为合作伙伴",
+  "Weekly, monthly up to {{percent}}% cashback": "每周、每月最高{{percent}}%返现",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "每日、每周、每月最高{{percent}}%返现"
 }

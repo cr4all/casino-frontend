@@ -21,7 +21,6 @@
   "Stake": "Panos",
   "Odds": "Mahdollisuudet",
   "The World's Largest Sportsbook & Online Casino": "Maailman suurin urheiluvedonlyönti ja online-kasino",
-  "5% Cashback Bonus Every Tuesday": "5% käteispalautusbonus joka tiistai",
   "Available commission is below the minimum payout amount.": "Saatavilla oleva välityspalkkio on pienempi kuin majoittajan maksun vähimmäissumma.",
   "Bank transfer": "Pankkisiirto",
   "Crypto": "Kryptokokki",
@@ -105,5 +104,7 @@
   "Failed to send verification code.": "Vahvistuskoodin lähettäminen epäonnistui.",
   "Partners": "Kumppanit",
   "Affiliate Program": "Affiliate-ohjelma",
-  "Become a Partner": "Ryhdy kumppaniksi"
+  "Become a Partner": "Ryhdy kumppaniksi",
+  "Weekly, monthly up to {{percent}}% cashback": "Viikoittain, kuukausittain jopa {{percent}}% cashback",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Päivittäin, viikoittain, kuukausittain jopa {{percent}}% cashback"
 }

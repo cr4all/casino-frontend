@@ -21,7 +21,6 @@
   "Stake": "STAKE",
   "Odds": "Kemungkinan",
   "The World's Largest Sportsbook & Online Casino": "Sportsbook & Kasino Online Terbesar di Dunia",
-  "5% Cashback Bonus Every Tuesday": "Bonus Cashback 5% Setiap Selasa",
   "Available to Withdraw": "Tersedia untuk ditarik",
   "Accruing (Current Month)": "Sedang terkumpul (bulan ini)",
   "Payouts": "Pembayaran",
@@ -60,5 +59,7 @@
   "Rejection reason": "Alasan penolakan",
   "Partners": "Mitra",
   "Affiliate Program": "Program afiliasi",
-  "Become a Partner": "Jadi mitra"
+  "Become a Partner": "Jadi mitra",
+  "Weekly, monthly up to {{percent}}% cashback": "Mingguan, bulanan cashback hingga {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Harian, mingguan, bulanan cashback hingga {{percent}}%"
 }

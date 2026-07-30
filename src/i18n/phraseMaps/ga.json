@@ -21,7 +21,6 @@
   "Stake": "Stake",
   "Odds": "Mga Odd",
   "The World's Largest Sportsbook & Online Casino": "An Domhain Sportsbook is mó & Casino ar líne",
-  "5% Cashback Bonus Every Tuesday": "5% Bónas Cashback Gach Máirt",
   "Affiliate Dashboard": "Deais Chleamhnaithe",
   "Affiliate Portal": "Tairseach Chleamhnaithe",
   "Logout": "Logáil Amach",
@@ -131,5 +130,7 @@
   "Failed to send verification code.": "Theip ar an gcód deimhnithe a sheoladh.",
   "Partners": "Comhpháirtithe",
   "Affiliate Program": "Clár affiliate",
-  "Become a Partner": "Bí i do chomhpháirtí"
+  "Become a Partner": "Bí i do chomhpháirtí",
+  "Weekly, monthly up to {{percent}}% cashback": "Seachtainiúil, míosúil suas le {{percent}}% cashback",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Laethúil, seachtainiúil, míosúil suas le {{percent}}% cashback"
 }

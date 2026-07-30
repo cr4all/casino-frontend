@@ -21,7 +21,6 @@
   "Stake": "Stake",
   "Odds": "Mga Odd",
   "The World's Largest Sportsbook & Online Casino": "Najveća sportska kladionica i online kasino na svijetu",
-  "5% Cashback Bonus Every Tuesday": "5% bonusa za povrat novca svakog utorka",
   "Affiliate Dashboard": "Stranica pridružene nadzorne ploče",
   "Affiliate Portal": "Portal za partnere",
   "Logout": "Odjava (logout)",
@@ -95,5 +94,7 @@
   "No commissions yet.": "Još nema provizija.",
   "Partners": "Partneri",
   "Affiliate Program": "Partnerski program",
-  "Become a Partner": "Postanite partner"
+  "Become a Partner": "Postanite partner",
+  "Weekly, monthly up to {{percent}}% cashback": "Tjedni, mjesečni cashback do {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Dnevni, tjedni, mjesečni cashback do {{percent}}%"
 }

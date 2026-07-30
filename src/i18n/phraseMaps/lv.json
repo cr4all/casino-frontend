@@ -21,8 +21,9 @@
   "Stake": "Ieguldījums",
   "Odds": "Izredzes",
   "The World's Largest Sportsbook & Online Casino": "Pasaulē lielākā sporta grāmata un tiešsaistes kazino",
-  "5% Cashback Bonus Every Tuesday": "5% naudas atmaksas bonuss katru otrdienu",
   "Partners": "Partneri",
   "Affiliate Program": "Partneru programma",
-  "Become a Partner": "Kļūstiet par partneri"
+  "Become a Partner": "Kļūstiet par partneri",
+  "Weekly, monthly up to {{percent}}% cashback": "Iknedēļas, ikmēneša cashback līdz {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Ikdienas, iknedēļas, ikmēneša cashback līdz {{percent}}%"
 }

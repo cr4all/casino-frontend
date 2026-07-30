@@ -89,10 +89,11 @@
   "Stake": "الحصة",
   "Odds": "الاحتمالات",
   "The World's Largest Sportsbook & Online Casino": "أكبر كازينو رياضي وكازينو على الإنترنت في العالم",
-  "5% Cashback Bonus Every Tuesday": "مكافأة استرداد نقدي بنسبة 5% كل ثلاثاء",
   "Account / Wallet ID": "معرّف الحساب / المحفظة",
   "Note": "[ترجمة المصطلح: Note]",
   "Partners": "الشركاء",
   "Affiliate Program": "برنامج الشركاء",
-  "Become a Partner": "كن شريكاً"
+  "Become a Partner": "كن شريكاً",
+  "Weekly, monthly up to {{percent}}% cashback": "استرداد نقدي أسبوعي وشهري حتى {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "استرداد نقدي يومي وأسبوعي وشهري حتى {{percent}}%"
 }

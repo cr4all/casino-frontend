@@ -21,10 +21,11 @@
   "Stake": "Sázka",
   "Odds": "Kurzy",
   "The World's Largest Sportsbook & Online Casino": "Největší sázková kancelář a online kasino na světě",
-  "5% Cashback Bonus Every Tuesday": "5% Cashback Bonus každé úterý",
   "Account / Wallet ID": "ID účtu / peněženky",
   "Note": "Poznámka",
   "Partners": "Partneři",
   "Affiliate Program": "Partnerský program",
-  "Become a Partner": "Staňte se partnerem"
+  "Become a Partner": "Staňte se partnerem",
+  "Weekly, monthly up to {{percent}}% cashback": "Týdenní, měsíční cashback až {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Denní, týdenní, měsíční cashback až {{percent}}%"
 }

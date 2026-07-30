@@ -21,7 +21,6 @@
   "Stake": "Stake",
   "Odds": "Odds",
   "The World's Largest Sportsbook & Online Casino": "Libri sportiv dhe kazinoja online më e madhe në botë",
-  "5% Cashback Bonus Every Tuesday": "Bonus cashback prej 5% çdo të martë",
   "Available to Withdraw": "E disponueshme për tërheqje",
   "Accruing (Current Month)": "Në akumulim (muaji aktual)",
   "Payouts": "Pagesat",
@@ -61,5 +60,7 @@
   "Rejection reason": "Arsyeja e refuzimit",
   "Partners": "Partnerët",
   "Affiliate Program": "Programi i afiliatëve",
-  "Become a Partner": "Bëhu partner"
+  "Become a Partner": "Bëhu partner",
+  "Weekly, monthly up to {{percent}}% cashback": "Javor, mujor cashback deri në {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Ditor, javor, mujor cashback deri në {{percent}}%"
 }

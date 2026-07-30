@@ -21,7 +21,6 @@
   "Stake": "Stake",
   "Odds": "Mga Odd",
   "The World's Largest Sportsbook & Online Casino": "વિશ્વની સૌથી મોટી સ્પોર્ટ્સબુક અને ઓનલાઈન કેસિનો",
-  "5% Cashback Bonus Every Tuesday": "દર મંગળવારે 5% કેશબેક બોનસ",
   "Affiliate Dashboard": "આનુષંગિક ડેશબોર્ડ",
   "Affiliate Portal": "સંલગ્ન પોર્ટલ",
   "Logout": "લોગ આઉટ",
@@ -132,5 +131,7 @@
   "Failed to send verification code.": "ચકાસણી કોડ મોકલવામાં નિષ્ફળ.",
   "Partners": "ભાગીદારો",
   "Affiliate Program": "એફિલિએટ પ્રોગ્રામ",
-  "Become a Partner": "ભાગીદાર બનો"
+  "Become a Partner": "ભાગીદાર બનો",
+  "Weekly, monthly up to {{percent}}% cashback": "સાપ્તાહિક, માસિક {{percent}}% સુધી કેશબેક",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "દૈનિક, સાપ્તાહિક, માસિક {{percent}}% સુધી કેશબેક"
 }

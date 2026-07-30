@@ -21,10 +21,11 @@
   "Stake": "STAKE",
   "Odds": "Kemungkinan",
   "The World's Largest Sportsbook & Online Casino": "Didžiausia pasaulyje sporto lažybų ir internetinio kazino platforma",
-  "5% Cashback Bonus Every Tuesday": "5% pinigų grąžinimo premija kiekvieną antradienį",
   "Country": "Šalis",
   "Currency": "Valiuta",
   "Partners": "Partneriai",
   "Affiliate Program": "Partnerių programa",
-  "Become a Partner": "Tapkite partneriu"
+  "Become a Partner": "Tapkite partneriu",
+  "Weekly, monthly up to {{percent}}% cashback": "Savaitinis, mėnesinis cashback iki {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Kasdieninis, savaitinis, mėnesinis cashback iki {{percent}}%"
 }

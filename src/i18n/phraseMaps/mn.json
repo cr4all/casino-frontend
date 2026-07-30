@@ -21,10 +21,11 @@
   "Stake": "Влог",
   "Odds": "Коефициенти",
   "The World's Largest Sportsbook & Online Casino": "Дэлхийн хамгийн том sportsbook болон online casino",
-  "5% Cashback Bonus Every Tuesday": "Мягмар гараг бүр 5% Cashback урамшуулал",
   "Country": "Улс",
   "Currency": "Валют",
   "Partners": "Partners",
   "Affiliate Program": "Affiliate Program",
-  "Become a Partner": "Become a Partner"
+  "Become a Partner": "Become a Partner",
+  "Weekly, monthly up to {{percent}}% cashback": "Долоо хоног, сар бүр {{percent}}% хүртэл cashback",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Өдөр, долоо хоног, сар бүр {{percent}}% хүртэл cashback"
 }

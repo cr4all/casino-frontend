@@ -21,7 +21,6 @@
   "Stake": "KINNITUS-",
   "Odds": "Koefitsiendid",
   "The World's Largest Sportsbook & Online Casino": "Maailma suurim spordikihlvedu ja veebikasiino",
-  "5% Cashback Bonus Every Tuesday": "5% Cashbacki boonus igal teisipäeval",
   "Available to Withdraw": "Tühistamiseks saadaval",
   "Accruing (Current Month)": "Kogunemine (jooksev kuu)",
   "Payouts": "Maksed",
@@ -36,5 +35,7 @@
   "Payout details saved.": "Väljamakse andmed on salvestatud.",
   "Partners": "Partnerid",
   "Affiliate Program": "Partnerlusprogramm",
-  "Become a Partner": "Saa partneriks"
+  "Become a Partner": "Saa partneriks",
+  "Weekly, monthly up to {{percent}}% cashback": "Iganädalane, igakuine cashback kuni {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Igapäevane, iganädalane, igakuine cashback kuni {{percent}}%"
 }

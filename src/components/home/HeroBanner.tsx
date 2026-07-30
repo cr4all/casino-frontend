@@ -11,6 +11,10 @@ import { useUiStore } from '@/stores/uiStore';
 import { Button } from '@/components/common/Button';
 import { FirstDepositBonusText, firstDepositBannerAriaLabel } from '@/components/home/FirstDepositBonusText';
 import { HeroBannerText } from '@/components/home/HeroBannerText';
+import {
+  HERO_LIVE_CASINO_CASHBACK_PERCENT,
+  HERO_PRAGMATIC_CASHBACK_PERCENT,
+} from '@/constants/heroBannerPromo';
 
 function HeroSportsCtaButton() {
   const { t } = useTranslation();
@@ -240,8 +244,12 @@ export function HeroBanner() {
             imageSrc="/hero-slides/pragmatic-slots.jpg"
             line1={t('hero.pragmaticLine1')}
             line1Accent={t('hero.pragmaticAccent')}
-            line2={t('nav.bonusesLabel')}
+            line2={t('hero.pragmaticLine2', { percent: HERO_PRAGMATIC_CASHBACK_PERCENT })}
             to={typePath('slot')}
+            layout="welcome"
+            heroNowrap
+            heroCase="title"
+            subtitleSize="large"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -259,7 +267,7 @@ export function HeroBanner() {
             imageSrc="/hero-slides/live-casino.jpg"
             line1={t('hero.liveCasinoLine1')}
             line1Accent={t('hero.liveCasinoAccent')}
-            line2={t('hero.liveCasinoLine2')}
+            line2={t('hero.liveCasinoLine2', { percent: HERO_LIVE_CASINO_CASHBACK_PERCENT })}
             to={typePath('live_casino')}
             layout="welcome"
             heroNowrap

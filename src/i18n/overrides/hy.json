@@ -434,7 +434,6 @@
   "Unable to fetch exchange estimate.": "Չհաջողվեց ստանալ փոխանակման գնահատականը։",
   "Unable to reset password. Check the code and try again.": "Չհաջողվեց վերականգնել գաղտնաբառը։ Ստուգեք կոդը և փորձեք կրկին։",
   "Unable to send verification code. Please try again.": "Չհաջողվեց ուղարկել հաստատման կոդը։ Խնդրում ենք կրկնել փորձը։",
-  "UP TO $250 USD": "ՄԵԿՆՉԻՆ $250 ԱՄՆ դոլար",
   "User": "Օգտվող",
   "Username": "Հ gebruikersանուն",
   "UserName": "Օգտագործողի անուն",
@@ -477,5 +476,7 @@
   "Your password has been reset. You can now log in with your new password.": "Ձեր գաղտնաբառը վերականգնվել է։ Այժմ կարող եք մուտք գործել նոր գաղտնաբառով։",
   "Your username": "Ձեր օգտանունը",
   "The World's Largest Sportsbook & Online Casino": "Աշխարհի ամենամեծ սպորտային գրքույկը և առցանց կազինոն",
-  "5% Cashback Bonus Every Tuesday": "5% Cashback բոնուս ամեն երեքշաբթի"
+  "UP TO ${{amount}} USD": "ՄԵԿՆՉԻՆ ${{amount}} ԱՄՆ դոլար",
+  "Weekly, monthly up to {{percent}}% cashback": "Շաբաթական, ամսական մինչև {{percent}}% cashback",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Օրական, շաբաթական, ամսական մինչև {{percent}}% cashback"
 }

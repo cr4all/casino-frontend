@@ -21,7 +21,6 @@
   "Stake": "Stake",
   "Odds": "Odds",
   "The World's Largest Sportsbook & Online Casino": "Самая большая в мире букмекерская контора и онлайн-казино",
-  "5% Cashback Bonus Every Tuesday": "5% кэшбэк-бонус каждый вторник",
   "Available to Withdraw": "Доступно к выводу",
   "Accruing (Current Month)": "Начисление (текущий месяц)",
   "Payouts": "Выплаты",
@@ -61,5 +60,7 @@
   "Rejection reason": "Причина отклонения",
   "Partners": "Партнёры",
   "Affiliate Program": "Партнёрская программа",
-  "Become a Partner": "Стать партнёром"
+  "Become a Partner": "Стать партнёром",
+  "Weekly, monthly up to {{percent}}% cashback": "Еженедельный, ежемесячный кэшбэк до {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Ежедневный, еженедельный, ежемесячный кэшбэк до {{percent}}%"
 }

@@ -89,10 +89,11 @@
   "Stake": "الحصة",
   "Odds": "الاحتمالات",
   "The World's Largest Sportsbook & Online Casino": "বিশ্বের বৃহত্তম স্পোর্টসবুক এবং অনলাইন ক্যাসিনো",
-  "5% Cashback Bonus Every Tuesday": "প্রতি মঙ্গলবার 5% ক্যাশব্যাক বোনাস",
   "Account / Wallet ID": "অ্যাকাউন্ট / ওয়ালেট আইডি",
   "Note": "দ্রষ্টব্য",
   "Partners": "পার্টনার",
   "Affiliate Program": "অ্যাফিলিয়েট প্রোগ্রাম",
-  "Become a Partner": "পার্টনার হোন"
+  "Become a Partner": "পার্টনার হোন",
+  "Weekly, monthly up to {{percent}}% cashback": "সাপ্তাহিক, মাসিক {{percent}}% পর্যন্ত ক্যাশব্যাক",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "দৈনিক, সাপ্তাহিক, মাসিক {{percent}}% পর্যন্ত ক্যাশব্যাক"
 }

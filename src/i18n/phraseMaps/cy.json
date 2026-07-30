@@ -21,10 +21,11 @@
   "Stake": "Sázka",
   "Odds": "Kurzy",
   "The World's Largest Sportsbook & Online Casino": "Sportsbook Mwyaf y Byd & Casino Ar - lein",
-  "5% Cashback Bonus Every Tuesday": "5% Bonws Arian yn ôl Bob dydd Mawrth",
   "Account / Wallet ID": "ID Cyfrif / Waled",
   "Note": "Nodyn",
   "Partners": "Partneriaid",
   "Affiliate Program": "Rhaglen affiliate",
-  "Become a Partner": "Dod yn bartner"
+  "Become a Partner": "Dod yn bartner",
+  "Weekly, monthly up to {{percent}}% cashback": "Wythnosol, misol hyd at {{percent}}% cashback",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Dyddiol, wythnosol, misol hyd at {{percent}}% cashback"
 }

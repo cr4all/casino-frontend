@@ -21,10 +21,11 @@
   "Stake": "Stake",
   "Odds": "Odds",
   "The World's Largest Sportsbook & Online Casino": "Найбільша у світі букмекерська контора та онлайн-казино",
-  "5% Cashback Bonus Every Tuesday": "Бонус кешбеку 5% щовівторка",
   "Country": "Країна",
   "Currency": "Валюта",
   "Partners": "Партнери",
   "Affiliate Program": "Партнерська програма",
-  "Become a Partner": "Стати партнером"
+  "Become a Partner": "Стати партнером",
+  "Weekly, monthly up to {{percent}}% cashback": "Щотижневий, щомісячний кешбек до {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Щоденний, щотижневий, щомісячний кешбек до {{percent}}%"
 }

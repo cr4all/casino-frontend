@@ -21,7 +21,6 @@
   "Stake": "Stake",
   "Odds": "Mga Odd",
   "The World's Largest Sportsbook & Online Casino": "Littafin Wasanni Mafi Girma a Duniya & Casino Online",
-  "5% Cashback Bonus Every Tuesday": "5% Cashback Bonus Kowace Talata",
   "Affiliate Dashboard": "Abokin hulɗa Dashboard",
   "Affiliate Portal": "Ввввввввввввввввввввввввввввввввв",
   "Logout": "Fita",
@@ -132,5 +131,7 @@
   "Failed to send verification code.": "An kasa aika lambar tabbatarwa.",
   "Partners": "Abokan hulɗa",
   "Affiliate Program": "Shirin affiliate",
-  "Become a Partner": "Zama abokin hulɗa"
+  "Become a Partner": "Zama abokin hulɗa",
+  "Weekly, monthly up to {{percent}}% cashback": "Makon-mako, wata-wata cashback har zuwa {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Kullum, makon-mako, wata-wata cashback har zuwa {{percent}}%"
 }

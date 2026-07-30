@@ -89,10 +89,11 @@
   "Stake": "الحصة",
   "Odds": "الاحتمالات",
   "The World's Largest Sportsbook & Online Casino": "Най - голямото спортно букмейкърско и онлайн казино в света",
-  "5% Cashback Bonus Every Tuesday": "5% бонус за връщане на пари всеки вторник",
   "Account / Wallet ID": "Идентификатор на акаунт / портфейл",
   "Note": "Забел.",
   "Partners": "Партньори",
   "Affiliate Program": "Партньорска програма",
-  "Become a Partner": "Станете партньор"
+  "Become a Partner": "Станете партньор",
+  "Weekly, monthly up to {{percent}}% cashback": "Седмичен, месечен кешбек до {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Дневен, седмичен, месечен кешбек до {{percent}}%"
 }

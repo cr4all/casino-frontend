@@ -21,7 +21,6 @@
   "Stake": "STAKE",
   "Odds": "Kemungkinan",
   "The World's Largest Sportsbook & Online Casino": "世界最大のスポーツブック＆オンラインカジノ",
-  "5% Cashback Bonus Every Tuesday": "毎週火曜日に5%キャッシュバックボーナス",
   "Available to Withdraw": "出金可能額",
   "Accruing (Current Month)": "積立中（今月）",
   "Payouts": "支払い",
@@ -61,5 +60,7 @@
   "Rejection reason": "却下理由",
   "Partners": "パートナー",
   "Affiliate Program": "アフィリエイトプログラム",
-  "Become a Partner": "パートナーになる"
+  "Become a Partner": "パートナーになる",
+  "Weekly, monthly up to {{percent}}% cashback": "毎週・毎月最大{{percent}}%キャッシュバック",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "毎日・毎週・毎月最大{{percent}}%キャッシュバック"
 }

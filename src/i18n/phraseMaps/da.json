@@ -21,12 +21,13 @@
   "Stake": "Indsats",
   "Odds": "Odds",
   "The World's Largest Sportsbook & Online Casino": "Verdens største sportsbook og online casino",
-  "5% Cashback Bonus Every Tuesday": "5% cashback-bonus hver tirsdag",
   "Account / Wallet ID": "Konto-/tegnebogs-id",
   "Rejection reason": "Årsag til afvisning",
   "GGR": "Ggr",
   "NGR": "1.1.1991",
   "Partners": "Partnere",
   "Affiliate Program": "Affiliateprogram",
-  "Become a Partner": "Bliv partner"
+  "Become a Partner": "Bliv partner",
+  "Weekly, monthly up to {{percent}}% cashback": "Ugentligt, månedligt op til {{percent}}% cashback",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Dagligt, ugentligt, månedligt op til {{percent}}% cashback"
 }

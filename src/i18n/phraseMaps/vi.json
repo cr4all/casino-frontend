@@ -21,7 +21,6 @@
   "Stake": "Stake",
   "Odds": "Odds",
   "The World's Largest Sportsbook & Online Casino": "Sòng bạc trực tuyến & cá cược thể thao lớn nhất thế giới",
-  "5% Cashback Bonus Every Tuesday": "Tiền thưởng hoàn tiền 5% vào thứ Ba hàng tuần",
   "Available to Withdraw": "Có thể rút",
   "Accruing (Current Month)": "Đang tích lũy (tháng hiện tại)",
   "Payouts": "Thanh toán",
@@ -60,5 +59,7 @@
   "Rejection reason": "Lý do từ chối",
   "Partners": "Đối tác",
   "Affiliate Program": "Chương trình liên kết",
-  "Become a Partner": "Trở thành đối tác"
+  "Become a Partner": "Trở thành đối tác",
+  "Weekly, monthly up to {{percent}}% cashback": "Hàng tuần, hàng tháng hoàn tiền lên đến {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Hàng ngày, hàng tuần, hàng tháng hoàn tiền lên đến {{percent}}%"
 }

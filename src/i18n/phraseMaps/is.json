@@ -21,8 +21,9 @@
   "Stake": "STAKE",
   "Odds": "Kemungkinan",
   "The World's Largest Sportsbook & Online Casino": "Heimsins stærsta íþróttabók og spilavíti á netinu",
-  "5% Cashback Bonus Every Tuesday": "5% endurgreiðslubónus alla þriðjudaga",
   "Partners": "Samstarfsaðilar",
   "Affiliate Program": "Fylgiprogram",
-  "Become a Partner": "Vertu samstarfsaðili"
+  "Become a Partner": "Vertu samstarfsaðili",
+  "Weekly, monthly up to {{percent}}% cashback": "Vikulega, mánaðarlega allt að {{percent}}% endurgreiðsla",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Daglega, vikulega, mánaðarlega allt að {{percent}}% endurgreiðsla"
 }

@@ -21,8 +21,9 @@
   "Stake": "STAKE",
   "Odds": "Kemungkinan",
   "The World's Largest Sportsbook & Online Casino": "De weltgréisste Sportsbook & Online Casino",
-  "5% Cashback Bonus Every Tuesday": "5% Cashback Bonus all Dënschdeg",
   "Partners": "Partneren",
   "Affiliate Program": "Partnerprogramm",
-  "Become a Partner": "Gitt Partner"
+  "Become a Partner": "Gitt Partner",
+  "Weekly, monthly up to {{percent}}% cashback": "Wöchentlech, monatlech bis zu {{percent}}% Cashback",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Deeglech, wöchentlech, monatlech bis zu {{percent}}% Cashback"
 }

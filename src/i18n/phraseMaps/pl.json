@@ -21,7 +21,6 @@
   "Stake": "Stake",
   "Odds": "Odds",
   "The World's Largest Sportsbook & Online Casino": "Największy na świecie zakład sportowy i kasyno online",
-  "5% Cashback Bonus Every Tuesday": "5% premii Cashback w każdy wtorek",
   "Available to Withdraw": "Dostępne do wypłaty",
   "Accruing (Current Month)": "Naliczane (bieżący miesiąc)",
   "Payouts": "Wypłaty",
@@ -61,5 +60,7 @@
   "Rejection reason": "Powód odrzucenia",
   "Partners": "Partnerzy",
   "Affiliate Program": "Program partnerski",
-  "Become a Partner": "Zostań partnerem"
+  "Become a Partner": "Zostań partnerem",
+  "Weekly, monthly up to {{percent}}% cashback": "Cotygodniowy, comiesięczny cashback do {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Codzienny, cotygodniowy, comiesięczny cashback do {{percent}}%"
 }

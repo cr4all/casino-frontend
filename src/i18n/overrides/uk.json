@@ -344,7 +344,6 @@
   "Unable to fetch exchange estimate.": "Не вдалося отримати оцінку обміну.",
   "Unable to reset password. Check the code and try again.": "Не вдалося скинути пароль. Перевірте код і спробуйте знову.",
   "Unable to send verification code. Please try again.": "Не вдалося надіслати код підтвердження. Спробуйте знову.",
-  "UP TO $250 USD": "ДО $250 USD",
   "User": "Користувач",
   "Username": "Ім'я користувача",
   "UserName": "Ім'я користувача",
@@ -378,5 +377,7 @@
   "Your password has been reset. You can now log in with your new password.": "Ваш пароль скинуто. Тепер ви можете увійти з новим паролем.",
   "Your username": "Ваше ім'я користувача",
   "The World's Largest Sportsbook & Online Casino": "Найбільша у світі букмекерська контора та онлайн-казино",
-  "5% Cashback Bonus Every Tuesday": "Бонус кешбеку 5% щовівторка"
+  "UP TO ${{amount}} USD": "ДО ${{amount}} USD",
+  "Weekly, monthly up to {{percent}}% cashback": "Щотижневий, щомісячний кешбек до {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Щоденний, щотижневий, щомісячний кешбек до {{percent}}%"
 }

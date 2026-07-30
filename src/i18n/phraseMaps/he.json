@@ -21,7 +21,6 @@
   "Stake": "Stake",
   "Odds": "Mga Odd",
   "The World's Largest Sportsbook & Online Casino": "ספר הספורט והקזינו המקוון הגדול בעולם",
-  "5% Cashback Bonus Every Tuesday": "בונוס של 5% להחזר כספי בכל יום שלישי",
   "Available to Withdraw": "זמין למשיכה",
   "Accruing (Current Month)": "צבירה (חודש נוכחי)",
   "Payouts": "תשלומים",
@@ -77,5 +76,7 @@
   "Currency": "מטבע",
   "Partners": "שותפים",
   "Affiliate Program": "תוכנית שותפים",
-  "Become a Partner": "הפוך לשותף"
+  "Become a Partner": "הפוך לשותף",
+  "Weekly, monthly up to {{percent}}% cashback": "החזר כספי שבועי וחודשי עד {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "החזר כספי יומי, שבועי וחודשי עד {{percent}}%"
 }

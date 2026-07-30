@@ -21,7 +21,6 @@
   "Stake": "Влог",
   "Odds": "Коефициенти",
   "The World's Largest Sportsbook & Online Casino": "Het grootste sportsbook en online casino ter wereld",
-  "5% Cashback Bonus Every Tuesday": "5% cashbackbonus elke dinsdag",
   "Available to Withdraw": "Beschikbaar om op te nemen",
   "Accruing (Current Month)": "Opbouwend (huidige maand)",
   "Payouts": "Uitbetalingen",
@@ -58,5 +57,7 @@
   "Rejection reason": "Reden van afwijzing",
   "Partners": "Partners",
   "Affiliate Program": "Affiliateprogramma",
-  "Become a Partner": "Word partner"
+  "Become a Partner": "Word partner",
+  "Weekly, monthly up to {{percent}}% cashback": "Wekelijks, maandelijks tot {{percent}}% cashback",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Dagelijks, wekelijks, maandelijks tot {{percent}}% cashback"
 }
