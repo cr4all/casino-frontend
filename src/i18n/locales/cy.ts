@@ -153,7 +153,7 @@ export const cy: LocaleTree = {
     "messages": "Messages",
     "tickets": "Tickets",
     "partners": "Partneriaid",
-    "affiliateProgram": "Rhaglen affiliate",
+    "affiliateProgram": "Rhaglen bartneriaeth",
     "becomePartner": "Dod yn bartner",
     "legal": "Legal",
     "about": "About Us",

@@ -148,7 +148,7 @@ export const zu: LocaleTree = {
     "messages": "Imilayezo",
     "tickets": "Amathekethe",
     "partners": "Abalingani",
-    "affiliateProgram": "Uhlelo lwama-affiliate",
+    "affiliateProgram": "Uhlelo lwabalingani",
     "becomePartner": "Yiba umlingani",
     "legal": "Ezomthetho",
     "about": "Mayelana nathi",

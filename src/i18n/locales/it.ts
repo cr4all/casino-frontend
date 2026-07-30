@@ -154,7 +154,7 @@ export const it: LocaleTree = {
     "tickets": "Ticket",
     "partners": "Partner",
     "affiliateProgram": "Programma affiliati",
-    "becomePartner": "Become a Partner",
+    "becomePartner": "Diventa partner",
     "legal": "Legale",
     "about": "Chi siamo",
     "terms": "Termini e condizioni",

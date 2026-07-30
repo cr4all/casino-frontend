@@ -154,7 +154,7 @@ export const af: LocaleTree = {
     "tickets": "Tickets",
     "partners": "Vennote",
     "affiliateProgram": "Affiliaatprogram",
-    "becomePartner": "Word 'n vennoot",
+    "becomePartner": "Word ’n vennoot",
     "legal": "Reg",
     "about": "oor ons",
     "terms": "BEPALINGS EN VOORWAARDES",

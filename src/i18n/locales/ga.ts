@@ -153,7 +153,7 @@ export const ga: LocaleTree = {
     "messages": "Messages",
     "tickets": "Tickets",
     "partners": "Comhpháirtithe",
-    "affiliateProgram": "Clár affiliate",
+    "affiliateProgram": "Clár comhpháirtíochta",
     "becomePartner": "Bí i do chomhpháirtí",
     "legal": "Legal",
     "about": "About Us",

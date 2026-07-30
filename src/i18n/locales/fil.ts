@@ -148,7 +148,7 @@ export const fil: LocaleTree = {
     "messages": "Mga mensahe",
     "tickets": "Mga ticket",
     "partners": "Mga Partner",
-    "affiliateProgram": "Programa ng Affiliate",
+    "affiliateProgram": "Programang Affiliate",
     "becomePartner": "Maging Partner",
     "legal": "Legal",
     "about": "Tungkol sa amin",
