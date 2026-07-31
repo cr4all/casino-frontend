@@ -10,6 +10,7 @@ import { NavIcon } from '@/components/common/NavIcon';
 import { getGameThumbnailCandidates, isCq9Game } from '@/data/gameThumbnails';
 import { Cq9GameThumbnail } from '@/components/game/Cq9GameThumbnail';
 import { gameHasProviderBonus } from '@/utils/bonusAvailability';
+import { formatVendorName } from '@/utils/formatVendorName';
 import { GameService } from '@/services/GameService';
 
 interface GameCardProps {
@@ -168,7 +169,11 @@ export function GameCard({ game, variant = 'slider', isNew = false }: GameCardPr
         className={`cursor-pointer px-0.5 ${variant === 'grid' ? 'mt-1.5 sm:mt-2' : 'mt-2'}`}
       >
         <p className="text-sm font-semibold text-white truncate">{game.name}</p>
-        <p className="text-[11px] text-muted truncate">{game.vendor?.name ?? game.type?.name ?? 'Casino'}</p>
+        <p className="text-[11px] text-muted truncate">
+          {game.vendor?.name
+            ? formatVendorName(game.vendor.name)
+            : (game.type?.name ?? 'Casino')}
+        </p>
       </div>
     </motion.div>
   );

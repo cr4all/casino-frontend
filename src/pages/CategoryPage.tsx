@@ -18,6 +18,7 @@ import { getVendorBannerUrl } from '@/data/providerBanners';
 import { mockPromotions } from '@/data/mockData';
 import { vendorGradient, vendorPath } from '@/stores/gameStore';
 import { useFavoritesStore } from '@/stores/favoritesStore';
+import { formatVendorName } from '@/utils/formatVendorName';
 import type { Game } from '@/types';
 
 function parseCategoryFilters(category: string) {
@@ -62,7 +63,7 @@ export function CategoryPage() {
     }
     if (vendorId) {
       const vendor = vendors.find((v) => v.id === vendorId);
-      return vendor?.name ?? t('category.games');
+      return vendor ? formatVendorName(vendor.name) : t('category.games');
     }
     if (typeSlug) {
       const type = types.find((tp) => tp.slug === typeSlug);

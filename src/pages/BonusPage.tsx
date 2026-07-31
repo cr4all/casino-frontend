@@ -12,6 +12,7 @@ import { StatusBadge } from '@/components/common/StatusBadge';
 import { getApiErrorMessage } from '@/utils/apiError';
 import { formatBalance } from '@/utils/formatBalance';
 import { countClaimableFreeSpinBonuses, collectBonusProviderSlugs } from '@/utils/bonusAvailability';
+import { formatVendorName } from '@/utils/formatVendorName';
 
 function WageringBar({ required, wagered }: { required: string; wagered: string }) {
   const { t } = useTranslation();
@@ -118,7 +119,9 @@ export function BonusPage() {
   };
 
   const renderPolicyDetails = (policy: BonusPolicy) => {
-    const vendors = (policy.vendor_names ?? []).filter((name) => name.trim() !== '');
+    const vendors = (policy.vendor_names ?? [])
+      .filter((name) => name.trim() !== '')
+      .map(formatVendorName);
     const vendorLine =
       vendors.length > 0 ? (
         <p className="mt-1 text-sm text-muted">
