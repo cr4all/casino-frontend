@@ -163,6 +163,7 @@ export const fa: LocaleTree = {
     "faq": "سؤالات متداول",
     "contact": "تماس با ما",
     "aml": "سیاست AML",
+    "kyc": "سیاست KYC",
     "disclaimer": "18+ | مسئولانه بازی کنید. قمار می‌تواند اعتیادآور باشد.",
     "copyright": "© {{year}} iBets24. تمامی حقوق محفوظ است."
   },

@@ -158,6 +158,7 @@ export const zu: LocaleTree = {
     "faq": "Imibuzo evame ukubuzwa",
     "contact": "Xhumana nathi",
     "aml": "Inqubomgomo ye-AML",
+    "kyc": "Inqubomgomo ye-KYC",
     "disclaimer": "18+ | Dlala ngokuzibophezela. Ukugembula kungaba umlutha.",
     "copyright": "© {{year}} iBets24. Wonke amalungelo agodliwe."
   },

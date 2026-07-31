@@ -6,7 +6,8 @@ export type LegalPageId =
   | 'faq'
   | 'contact'
   | 'partners'
-  | 'aml';
+  | 'aml'
+  | 'kyc';
 
 export interface LegalSection {
   title: string;

@@ -92,5 +92,21 @@
   "How to get in touch": "Əlaqə saxlamağın qaydası",
   "Business and partnership enquiries: partners@ibets24.com": "Biznes və tərəfdaşlıq sorğuları: partners@ibets24.com",
   "Player support (accounts, payments, bonuses): support@ibets24.com": "Oyunçu dəstəyi (hesablar, ödənişlər, bonuslar): support@ibets24.com",
-  "Please do not use the partners inbox for player account issues — those requests are handled by customer support.": "Oyunçu hesabı problemləri üçün tərəfdaşların gələnlər qutusundan istifadə etməyin — bu sorğular müştəri dəstəyi tərəfindən idarə olunur."
+  "Please do not use the partners inbox for player account issues — those requests are handled by customer support.": "Oyunçu hesabı problemləri üçün tərəfdaşların gələnlər qutusundan istifadə etməyin — bu sorğular müştəri dəstəyi tərəfindən idarə olunur.",
+  "KYC Policy": "KYC Siyasət",
+  "This Know Your Customer (KYC) Policy explains how iBets24 verifies player identity to prevent fraud, underage gambling, and money laundering, and to meet regulatory obligations.": "Bu Know Your Customer (KYC) Siyasəti fırıldaqçılığın, azyaşlı qumarın və çirkli pulların yuyulmasının qarşısını almaq və tənzimləyici öhdəlikləri yerinə yetirmək üçün oyunçu şəxsiyyətini iBets24 necə təsdiqlədiyini izah edir.",
+  "KYC helps us confirm that you are who you claim to be, that you meet the legal age requirement, and that your account is not used for illicit activity.": "KYC iddia etdiyiniz şəxs olduğunuzu, qanuni yaş tələbinə cavab verdiyinizi və hesabınızın qanunsuz fəaliyyət üçün istifadə edilmədiyini təsdiq etməyimizə kömək edir.",
+  "Verification supports fair play, secure payments, and compliance with anti-money laundering (AML) standards. See also our AML Policy and Privacy Policy.": "Təsdiqləmə ədalətli oyun, təhlükəsiz ödənişlər və çirkli pulların yuyulmasına qarşı mübarizə (AML) standartlarına uyğunluğu dəstəkləyir. AML Siyasətimizə və Privacy Policy -ə də baxın.",
+  "When verification is required": "Təsdiqləmə tələb olunduqda",
+  "We may request KYC at registration, before or during withdrawals, when transaction patterns appear unusual, for large or cumulative amounts, or as part of periodic reviews.": "Əməliyyat nümunələri qeyri-adi göründükdə, böyük və ya məcmu məbləğlər üçün və ya dövri rəylərin bir hissəsi kimi qeydiyyat zamanı, məxaricdən əvvəl və ya məxaric zamanı KYC sorğusu göndərə bilərik.",
+  "Email and/or phone verification may also be required before certain withdrawal limits apply. Completing full KYC removes the standard withdrawal limit.": "Müəyyən məxaric limitləri tətbiq edilməzdən əvvəl e-poçt və/və ya telefon təsdiqləməsi də tələb oluna bilər. Tam KYC tamamlanması standart məxaric limitini aradan qaldırır.",
+  "Documents we may request": "Sorğu göndərə biləcəyimiz sənədlər",
+  "A valid government-issued photo ID (passport, national ID card, or driving licence).": "Etibarlı rəsmi foto-sənəd (pasport, şəxsiyyət vəsiqəsi və ya sürücülük vəsiqəsi).",
+  "A biometric or liveness check (for example a selfie) processed through our verification partner.": "Təsdiqləmə tərəfdaşımız vasitəsilə emal edilən biometrik və ya canlılıq yoxlaması (məsələn, selfi).",
+  "Proof of address (utility bill, bank statement, or equivalent) dated within the last three months, when required.": "Tələb olunduqda son üç ay ərzində qeyd olunan ünvanın (kommunal xidmət qəbzi, bank çıxarışı və ya ekvivalenti) sübutu.",
+  "Proof that payment methods used for deposits or withdrawals are registered in your name.": "Depozit və ya məxariclər üçün istifadə edilən ödəniş metodlarının adınıza qeydiyyatdan keçirildiyini sübut edin.",
+  "Verification process": "Təsdiqləmə prosesi",
+  "You can start KYC from your profile. Documents are collected and reviewed via a trusted third-party identity verification provider (SumSub).": "Profilinizdən KYC başlaya bilərsiniz. Sənədlər etibarlı üçüncü tərəf şəxsiyyətin təsdiqlənməsi təminatçısı (SumSub) vasitəsilə toplanır və nəzərdən keçirilir.",
+  "Most reviews complete within a short time; complex cases may take longer. We may ask for additional documents if the first submission is unclear or incomplete.": "Əksər rəylər qısa müddət ərzində tamamlanır; mürəkkəb hallar daha uzun çəkə bilər. İlk təqdimetmə aydın deyilsə və ya natamamdırsa, əlavə sənədlər istəyə bilərik.",
+  "Withdrawal limits": "Geri çəkilmə limitləri"
 }

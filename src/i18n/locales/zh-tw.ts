@@ -158,6 +158,7 @@ export const zhTw: LocaleTree = {
     "faq": "FAQ",
     "contact": "聯絡我們",
     "aml": "AML 政策",
+    "kyc": "KYC 政策",
     "disclaimer": "18+ | 請理性博彩。博彩可能成癮。",
     "copyright": "© {{year}} iBets24. 保留所有權利。"
   },

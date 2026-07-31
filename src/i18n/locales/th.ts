@@ -158,6 +158,7 @@ export const th: LocaleTree = {
     "faq": "คำถามที่พบบ่อย",
     "contact": "ติดต่อเรา",
     "aml": "นโยบาย AML",
+    "kyc": "นโยบาย KYC",
     "disclaimer": "18+ | เล่นอย่างมีความรับผิดชอบ การพนันอาจทำให้ติดได้",
     "copyright": "© {{year}} iBets24 สงวนลิขสิทธิ์"
   },

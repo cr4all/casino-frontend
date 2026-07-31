@@ -14,12 +14,6 @@ const PARTNERS_EMAIL = 'partners@ibets24.com';
 /** Regulator verification seals — VALID / Click to verify. */
 const LICENSE_SEALS = [
   {
-    key: 'licenseUkGamblingCommission' as const,
-    href: 'https://www.gamblingcommission.gov.uk/licensees-and-businesses/licences-and-fees/sector/remote',
-    icon: '/trust-badges/ukgc-seal.png',
-    ariaKey: 'licenseUkVerifyAria' as const,
-  },
-  {
     key: 'licenseAnjouan' as const,
     href: 'https://anjouangaming.com/license-register/',
     icon: '/trust-badges/anjouan-seal.png?v=2',
@@ -133,6 +127,7 @@ export function Footer() {
                 {t('footer.responsibleGaming')}
               </Link>
               <Link to="/aml" className="site-footer__col-link">{t('footer.aml')}</Link>
+              <Link to="/kyc" className="site-footer__col-link">{t('footer.kyc')}</Link>
               <Link to="/cookies" className="site-footer__col-link">{t('cookies.policyLink')}</Link>
               <button type="button" onClick={openSettings} className="site-footer__col-link">
                 {t('cookies.settings')}

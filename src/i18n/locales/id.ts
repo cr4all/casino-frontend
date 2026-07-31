@@ -158,6 +158,7 @@ export const id: LocaleTree = {
     "faq": "FAQ",
     "contact": "Hubungi Kami",
     "aml": "Kebijakan AML",
+    "kyc": "Kebijakan KYC",
     "disclaimer": "18+ | Bermain dengan bijak. Judi dapat menyebabkan ketergantungan.",
     "copyright": "© {{year}} iBets24. Hak cipta dilindungi."
   },

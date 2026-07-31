@@ -158,6 +158,7 @@ export const no: LocaleTree = {
     "faq": "FAQ",
     "contact": "Kontakt oss",
     "aml": "AML-policy",
+    "kyc": "KYC-policy",
     "disclaimer": "18+ | Spill ansvarlig. Gambling kan være avhengighetsskapende.",
     "copyright": "© {{year}} iBets24. Alle rettigheter forbeholdt."
   },

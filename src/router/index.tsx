@@ -55,6 +55,7 @@ export const router = Sentry.wrapCreateBrowserRouterV7(createBrowserRouter)([
       { path: 'contact', element: <LegalDocumentPage pageId="contact" /> },
       { path: 'partners', element: <LegalDocumentPage pageId="partners" /> },
       { path: 'aml', element: <LegalDocumentPage pageId="aml" /> },
+      { path: 'kyc', element: <LegalDocumentPage pageId="kyc" /> },
       { path: '*', element: <NotFoundPage /> },
     ],
   },

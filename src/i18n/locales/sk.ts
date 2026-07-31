@@ -158,6 +158,7 @@ export const sk: LocaleTree = {
     "faq": "FAQ",
     "contact": "Kontaktujte nás",
     "aml": "AML politika",
+    "kyc": "KYC politika",
     "disclaimer": "18+ | Hrajte zodpovedne. Hazard môže byť návykový.",
     "copyright": "© {{year}} iBets24. Všetky práva vyhradené."
   },

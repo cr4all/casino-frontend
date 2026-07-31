@@ -64,6 +64,12 @@ const PAGE_META_BY_PATH: Record<string, PageMeta> = {
       'Read the Anti-Money Laundering (AML) Policy explaining how iBets24 protects players and complies with international gaming regulations.',
     canonicalPath: '/aml',
   },
+  '/kyc': {
+    title: 'KYC Policy | Identity Verification | iBets24',
+    description:
+      'Learn how iBets24 verifies player identity (KYC), which documents are required, when checks apply, and how verification affects withdrawals.',
+    canonicalPath: '/kyc',
+  },
   '/cookies': {
     title: 'Website Cookie Policy | iBets24',
     description:

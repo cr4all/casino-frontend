@@ -162,6 +162,7 @@ export const en = {
     faq: 'FAQ',
     contact: 'Contact Us',
     aml: 'AML Policy',
+    kyc: 'KYC Policy',
     licensing: 'Licensing',
     licenseUkGamblingCommission: 'UK Gambling Commission',
     licenseAnjouan: 'Anjouan Gaming Board',
@@ -171,7 +172,7 @@ export const en = {
     licenseAnjouanVerifyAria: 'Verify Anjouan Gaming Board license',
     disclaimer: '18+ | Play responsibly. Gambling can be addictive.',
     operatorInfo:
-      'iBets24 is operated by Novatrix Holding Ltd, incorporated on 20 May 2024 as an International Company under registration number 15727. Licensed by the Finance Authority of the State of Anjouan under The Computer Gaming Licensing Act 007 of 2005, license number ALSI-142406002-FI1, at Hamchako, Mutsamudu, Autonomous Island of Anjouan, Union of Comoros.',
+      'iBets24 is operated by Novatrix Holding Ltd, an International Company incorporated in the Union of Comoros. The company is licensed and regulated by the Finance Authority of the State of Anjouan under the Gaming Licensing.',
     copyright: '© {{year}} iBets24. All rights reserved.',
   },
   legal: {

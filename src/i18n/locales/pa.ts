@@ -163,6 +163,7 @@ export const pa: LocaleTree = {
     "faq": "ਸ- ਜ",
     "contact": "ਸਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੋ",
     "aml": "AML ਨੀਤੀ",
+    "kyc": "KYC ਨੀਤੀ",
     "disclaimer": "18+ | ਜ਼ਿੰਮੇਵਾਰੀ ਨਾਲ ਖੇਡੋ. ਜੂਆ ਖੇਡਣ ਦੀ ਆਦਤ ਪੈ ਸਕਦੀ ਹੈ ।",
     "copyright": "© {{year}} iBets24. ਸਾਰੇ ਹੱਕ ਰਾਖਵੇਂ ਹਨ ।"
   },

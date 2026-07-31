@@ -163,6 +163,7 @@ export const it: LocaleTree = {
     "faq": "FAQ",
     "contact": "Contattaci",
     "aml": "Politica AML",
+    "kyc": "Politica KYC",
     "disclaimer": "18+ | Gioca responsabilmente. Il gioco d'azzardo può creare dipendenza.",
     "copyright": "© {{year}} iBets24. Tutti i diritti riservati."
   },

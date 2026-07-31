@@ -163,6 +163,7 @@ export const hi: LocaleTree = {
     "faq": "FAQ",
     "contact": "Contact Us",
     "aml": "AML Policy",
+    "kyc": "KYC नीति",
     "disclaimer": "18+ | ज़िम्मेदारी से खेलें। जुआ खेलने की लत लग सकती है।",
     "copyright": "© {{year}} iBets24. सर्वाधिकार सुरक्षित।"
   },

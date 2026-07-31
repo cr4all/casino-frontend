@@ -158,6 +158,7 @@ export const ur: LocaleTree = {
     "faq": "FAQ",
     "contact": "ہم سے رابطہ کریں",
     "aml": "AML پالیسی",
+    "kyc": "KYC پالیسی",
     "disclaimer": "18+ | ذمہ داری سے کھیلیں۔ جوئے کی لت لگ سکتی ہے۔",
     "copyright": "© {{year}} iBets24. تمام حقوق محفوظ ہیں۔"
   },

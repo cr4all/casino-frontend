@@ -163,6 +163,7 @@ export const he: LocaleTree = {
     "faq": "שאלות נפוצות",
     "contact": "צור קשר",
     "aml": "מדיניות AML",
+    "kyc": "מדיניות KYC",
     "disclaimer": "18+ | שחק באחריות. הימורים עלולים ליצור התמכרות.",
     "copyright": "© {{year}} iBets24. כל הזכויות שמורות."
   },

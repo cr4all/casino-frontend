@@ -163,6 +163,7 @@ export const lo: LocaleTree = {
     "faq": "ຄຳຖາມທີ່ພົບບ່ອຍ",
     "contact": "Contact Us",
     "aml": "AML Policy",
+    "kyc": "ນະໂຍບາຍ KYC",
     "disclaimer": "18+ ຫຼິ້ນຢ່າງຮັບຜິດຊອບ. ການພະນັນສາມາດ addictive ໄດ້.",
     "copyright": "© {{year}} iBets24. ລິຂະສິດ:."
   },

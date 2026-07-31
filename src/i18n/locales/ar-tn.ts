@@ -163,6 +163,7 @@ export const arTn: LocaleTree = {
     "faq": "FAQ",
     "contact": "Contact Us",
     "aml": "AML Policy",
+    "kyc": "سياسة KYC",
     "disclaimer": "18+ | Play responsibly. Gambling can be addictive.",
     "copyright": "© {{year}} iBets24. All rights reserved."
   },

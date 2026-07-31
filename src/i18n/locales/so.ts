@@ -158,6 +158,7 @@ export const so: LocaleTree = {
     "faq": "FAQ",
     "contact": "Nala soo xiriir",
     "aml": "Siyaasadda AML",
+    "kyc": "Siyaasadda KYC",
     "disclaimer": "18+ | Si mas'uul ah u ciyaar. Khama wuxuu noqon karaa dabeecad.",
     "copyright": "© {{year}} iBets24. Dhammaan xuquuqaha waa la ilaaliyay."
   },

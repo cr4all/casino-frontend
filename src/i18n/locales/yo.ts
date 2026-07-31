@@ -158,6 +158,7 @@ export const yo: LocaleTree = {
     "faq": "Àwọn ìbéèrè tí a máa ń béèrè",
     "contact": "Kàn sí wa",
     "aml": "Ìlànà AML",
+    "kyc": "Ìlànà KYC",
     "disclaimer": "18+ | Ṣe eré pẹ̀lú ìfarabalẹ̀. Títí eré lè mu ọ lọ́wọ́.",
     "copyright": "© {{year}} iBets24. Gbogbo ẹ̀tọ́ ni a pa mọ́."
   },

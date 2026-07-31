@@ -158,6 +158,7 @@ export const lv: LocaleTree = {
     "faq": "FAQ",
     "contact": "Sazinieties ar mums",
     "aml": "AML politika",
+    "kyc": "KYC politika",
     "disclaimer": "18+ | Spēlējiet atbildīgi. Azartspēles var izraisīt atkarību.",
     "copyright": "© {{year}} iBets24. Visas tiesības aizsargātas."
   },

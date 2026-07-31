@@ -158,6 +158,7 @@ export const sl: LocaleTree = {
     "faq": "FAQ",
     "contact": "Kontaktirajte nas",
     "aml": "AML politika",
+    "kyc": "KYC politika",
     "disclaimer": "18+ | Igrajte odgovorno. Igre na srečo lahko povzročijo odvisnost.",
     "copyright": "© {{year}} iBets24. Vse pravice pridržane."
   },

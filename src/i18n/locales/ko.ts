@@ -163,6 +163,7 @@ export const ko: LocaleTree = {
     "faq": "자주 묻는 질문",
     "contact": "문의하기",
     "aml": "AML 정책",
+    "kyc": "KYC 정책",
     "licensing": "라이선스",
     "licenseUkGamblingCommission": "UK Gambling Commission",
     "licenseAnjouan": "Anjouan Gaming Board",

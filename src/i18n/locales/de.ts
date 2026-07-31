@@ -163,6 +163,7 @@ export const de: LocaleTree = {
     "faq": "FAQ",
     "contact": "Kontakt",
     "aml": "Anti-Geldwäsche-Richtlinie",
+    "kyc": "KYC-Richtlinie",
     "disclaimer": "18+ | Spielen Sie verantwortungsbewusst. Glücksspiel kann süchtig machen.",
     "copyright": "© {{year}} iBets24. Alle Rechte vorbehalten."
   },

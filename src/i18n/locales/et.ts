@@ -158,6 +158,7 @@ export const et: LocaleTree = {
     "faq": "KKK",
     "contact": "Kontakt",
     "aml": "AML poliitika",
+    "kyc": "KYC poliitika",
     "disclaimer": "18+ | Mängi vastutustundlikult. Hasartmängud võivad tekitada sõltuvust.",
     "copyright": "© {{year}} iBets24. Kõik õigused kaitstud."
   },

@@ -158,6 +158,7 @@ export const sw: LocaleTree = {
     "faq": "FAQ",
     "contact": "Wasiliana nasi",
     "aml": "Sera ya AML",
+    "kyc": "Sera ya KYC",
     "disclaimer": "18+ | Cheza kwa uwajibikaji. Kamari inaweza kusababisha uraibu.",
     "copyright": "© {{year}} iBets24. Haki zote zimehifadhiwa."
   },

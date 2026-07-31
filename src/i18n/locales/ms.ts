@@ -163,6 +163,7 @@ export const ms: LocaleTree = {
     "faq": "FAQ",
     "contact": "Hubungi Kami",
     "aml": "Dasar AML",
+    "kyc": "Dasar KYC",
     "disclaimer": "18+ | Main secara bertanggungjawab. Perjudian boleh menyebabkan ketagihan.",
     "copyright": "© {{year}} iBets24. Hak cipta terpelihara."
   },

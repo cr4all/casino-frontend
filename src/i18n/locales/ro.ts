@@ -163,6 +163,7 @@ export const ro: LocaleTree = {
     "faq": "FAQ",
     "contact": "Contactați-ne",
     "aml": "Politica AML",
+    "kyc": "Politica KYC",
     "disclaimer": "18+ | Jucați responsabil. Jocurile de noroc pot crea dependență.",
     "copyright": "© {{year}} iBets24. Toate drepturile rezervate."
   },

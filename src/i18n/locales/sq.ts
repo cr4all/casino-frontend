@@ -158,6 +158,7 @@ export const sq: LocaleTree = {
     "faq": "Pyetje të shpeshta",
     "contact": "Na kontaktoni",
     "aml": "Politika AML",
+    "kyc": "Politika KYC",
     "disclaimer": "18+ | Luaj me përgjegjësi. Lojërat e fatit mund të shkaktojnë varësi.",
     "copyright": "© {{year}} iBets24. Të gjitha të drejtat e rezervuara."
   },

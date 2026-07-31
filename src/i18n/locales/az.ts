@@ -163,6 +163,7 @@ export const az: LocaleTree = {
     "faq": "MVS",
     "contact": "Bizimlə əlaqə saxlayın",
     "aml": "AML Siyasəti",
+    "kyc": "KYC Siyasəti",
     "disclaimer": "18+ | Məsuliyyətlə oynayın. Qumar asılılığa səbəb ola bilər.",
     "copyright": "© {{year}} iBets24. Bütün hüquqlar qorunur."
   },

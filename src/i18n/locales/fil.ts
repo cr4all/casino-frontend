@@ -158,6 +158,7 @@ export const fil: LocaleTree = {
     "faq": "FAQ",
     "contact": "Makipag-ugnayan",
     "aml": "Patakaran sa AML",
+    "kyc": "Patakaran sa KYC",
     "disclaimer": "18+ | Maglaro nang responsable. Maaaring maging adik ang pagsusugal.",
     "copyright": "© {{year}} iBets24. Lahat ng karapatan ay nakalaan."
   },

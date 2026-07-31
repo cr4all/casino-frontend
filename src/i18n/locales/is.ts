@@ -163,6 +163,7 @@ export const is: LocaleTree = {
     "faq": "FAQ",
     "contact": "Hafa samband",
     "aml": "Reglur um AML",
+    "kyc": "Reglur um KYC",
     "disclaimer": "18+ | Play responsibly. Gambling can be addictive.",
     "copyright": "© {{year}} iBets24. All rights reserved."
   },

@@ -163,6 +163,7 @@ export const es: LocaleTree = {
     "faq": "FAQ",
     "contact": "Contáctanos",
     "aml": "Política contra el lavado de dinero",
+    "kyc": "Política KYC",
     "disclaimer": "18+ | Juega con responsabilidad. El juego puede ser adictivo.",
     "copyright": "© {{year}} iBets24. Todos los derechos reservados."
   },

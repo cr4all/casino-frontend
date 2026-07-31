@@ -158,6 +158,7 @@ export const fi: LocaleTree = {
     "faq": "FAQ",
     "contact": "Ota yhteyttä",
     "aml": "AML-käytäntö",
+    "kyc": "KYC-käytäntö",
     "disclaimer": "18+ | Pelaa vastuullisesti. Uhkapelaaminen voi aiheuttaa riippuvuutta.",
     "copyright": "© {{year}} iBets24. Kaikki oikeudet pidätetään."
   },

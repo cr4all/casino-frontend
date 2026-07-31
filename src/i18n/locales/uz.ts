@@ -158,6 +158,7 @@ export const uz: LocaleTree = {
     "faq": "FAQ",
     "contact": "Biz bilan bog'laning",
     "aml": "AML siyosati",
+    "kyc": "KYC siyosati",
     "disclaimer": "18+ | Mas'uliyat bilan o'ynang. Qimor o'yinlari qaramlik keltirib chiqarishi mumkin.",
     "copyright": "© {{year}} iBets24. Barcha huquqlar himoyalangan."
   },

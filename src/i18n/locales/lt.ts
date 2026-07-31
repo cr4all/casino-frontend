@@ -163,6 +163,7 @@ export const lt: LocaleTree = {
     "faq": "FAQ",
     "contact": "Susisiekite su mumis",
     "aml": "AML politika",
+    "kyc": "KYC politika",
     "disclaimer": "18+ | Žaiskite atsakingai. Azartiniai lošimai gali sukelti priklausomybę.",
     "copyright": "© {{year}} iBets24. Visos teisės saugomos."
   },

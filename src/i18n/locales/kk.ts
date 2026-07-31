@@ -163,6 +163,7 @@ export const kk: LocaleTree = {
     "faq": "FAQ",
     "contact": "Бізге хабарласу",
     "aml": "AML саясаты",
+    "kyc": "KYC саясаты",
     "disclaimer": "18+ | Жауапкершілікпен ойнаңыз. Құмар ойындар тәуелді болуы мүмкін.",
     "copyright": "© {{year}} iBets24. Барлық құқықтар қорғалған."
   },

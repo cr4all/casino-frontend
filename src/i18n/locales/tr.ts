@@ -158,6 +158,7 @@ export const tr: LocaleTree = {
     "faq": "SSS",
     "contact": "Bize Ulaşın",
     "aml": "AML Politikası",
+    "kyc": "KYC Politikası",
     "disclaimer": "18+ | Sorumlu oynayın. Kumar bağımlılık yapabilir.",
     "copyright": "© {{year}} iBets24. Tüm hakları saklıdır."
   },

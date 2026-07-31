@@ -163,6 +163,7 @@ export const af: LocaleTree = {
     "faq": "V&A",
     "contact": "Kontak ons",
     "aml": "AML-beleid",
+    "kyc": "KYC-beleid",
     "disclaimer": "18+ - Speel verantwoordelik. Dobbelary kan verslawend wees.",
     "copyright": "© {{year}} iBets24. Alle regte voorbehou."
   },

@@ -163,6 +163,7 @@ export const nl: LocaleTree = {
     "faq": "Veelgestelde vragen",
     "contact": "Contact",
     "aml": "AML-beleid",
+    "kyc": "KYC-beleid",
     "disclaimer": "18+ | Speel verantwoord. Gokken kan verslavend zijn.",
     "copyright": "© {{year}} iBets24. Alle rechten voorbehouden."
   },

@@ -158,6 +158,7 @@ export const vi: LocaleTree = {
     "faq": "FAQ",
     "contact": "Liên hệ",
     "aml": "Chính sách AML",
+    "kyc": "Chính sách KYC",
     "disclaimer": "18+ | Chơi có trách nhiệm. Cờ bạc có thể gây nghiện.",
     "copyright": "© {{year}} iBets24. Bảo lưu mọi quyền."
   },

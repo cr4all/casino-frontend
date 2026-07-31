@@ -49,10 +49,19 @@ export const legalEn: LegalContentBundle = {
         ],
       },
       {
+        title: 'Identity verification (KYC)',
+        paragraphs: [
+          'You must complete identity verification (KYC) when requested, and may need to verify email, phone, or both before certain withdrawals.',
+          'Details of documents, triggers, and withdrawal limits are set out in our KYC Policy.',
+          'We may hold, limit, or refuse withdrawals until verification is satisfactorily completed.',
+        ],
+      },
+      {
         title: 'Deposits & withdrawals',
         paragraphs: [
           'Deposits and withdrawals are processed using the payment methods displayed in the cashier.',
-          'We may request identity or payment verification before releasing withdrawals.',
+          'We may request identity or payment verification before releasing withdrawals, as described in our KYC Policy.',
+          'You must only use payment methods registered in your own name. Third-party deposits or withdrawals are prohibited.',
         ],
       },
       {
@@ -60,6 +69,27 @@ export const legalEn: LegalContentBundle = {
         paragraphs: [
           'Bonuses are subject to individual promotion terms including wagering requirements and expiry dates.',
           'Abuse of promotions, including bonus hunting or coordinated play, may result in bonus cancellation.',
+        ],
+      },
+      {
+        title: 'Fair play & prohibited conduct',
+        paragraphs: [
+          'You must play fairly and in good faith. Collusion, chip-dumping, use of bots or automated tools, arbitrage schemes, and any form of cheating are prohibited.',
+          'Opening multiple accounts, chargeback abuse, underage play, and providing false or stolen identity documents are prohibited and may result in account closure and forfeiture of balances where permitted.',
+        ],
+      },
+      {
+        title: 'Games & malfunctions',
+        paragraphs: [
+          'Games are supplied by licensed providers and are governed by the provider’s rules and certified random number generators or live dealer procedures.',
+          'In the event of a technical malfunction, error, or obvious mistake, we may void or adjust affected bets or game outcomes to restore a fair result.',
+        ],
+      },
+      {
+        title: 'Inactive accounts',
+        paragraphs: [
+          'If your account remains inactive for an extended period, we may restrict access, contact you to confirm ownership, or close the account in accordance with applicable rules.',
+          'You may request account closure at any time by contacting customer support.',
         ],
       },
       {
@@ -264,7 +294,7 @@ export const legalEn: LegalContentBundle = {
       {
         title: 'Customer due diligence',
         paragraphs: [
-          'We verify customer identity and monitor transactions for unusual patterns.',
+          'We verify customer identity and monitor transactions for unusual patterns. Identity checks are further described in our KYC Policy.',
           'Enhanced due diligence may apply to high-risk jurisdictions or large transactions.',
         ],
       },
@@ -278,6 +308,71 @@ export const legalEn: LegalContentBundle = {
         title: 'Cooperation',
         paragraphs: [
           'Players must cooperate with verification requests. Failure to provide documents may result in account restrictions.',
+        ],
+      },
+    ],
+  },
+  kyc: {
+    title: 'KYC Policy',
+    intro:
+      'This Know Your Customer (KYC) Policy explains how iBets24 verifies player identity to prevent fraud, underage gambling, and money laundering, and to meet regulatory obligations.',
+    sections: [
+      {
+        title: 'Purpose',
+        paragraphs: [
+          'KYC helps us confirm that you are who you claim to be, that you meet the legal age requirement, and that your account is not used for illicit activity.',
+          'Verification supports fair play, secure payments, and compliance with anti-money laundering (AML) standards. See also our AML Policy and Privacy Policy.',
+        ],
+      },
+      {
+        title: 'When verification is required',
+        paragraphs: [
+          'We may request KYC at registration, before or during withdrawals, when transaction patterns appear unusual, for large or cumulative amounts, or as part of periodic reviews.',
+          'Email and/or phone verification may also be required before certain withdrawal limits apply. Completing full KYC removes the standard withdrawal limit.',
+        ],
+      },
+      {
+        title: 'Documents we may request',
+        paragraphs: [
+          'A valid government-issued photo ID (passport, national ID card, or driving licence).',
+          'A biometric or liveness check (for example a selfie) processed through our verification partner.',
+          'Proof of address (utility bill, bank statement, or equivalent) dated within the last three months, when required.',
+          'Proof that payment methods used for deposits or withdrawals are registered in your name.',
+        ],
+      },
+      {
+        title: 'Verification process',
+        paragraphs: [
+          'You can start KYC from your profile. Documents are collected and reviewed via a trusted third-party identity verification provider (SumSub).',
+          'Most reviews complete within a short time; complex cases may take longer. We may ask for additional documents if the first submission is unclear or incomplete.',
+        ],
+      },
+      {
+        title: 'Withdrawal limits',
+        paragraphs: [
+          'Withdrawal limits depend on your verification level. At least one of email verification, phone verification, or KYC is required to withdraw.',
+          'Email or phone verification alone applies a maximum withdrawal amount in your wallet currency. Email and phone together combine those limits. Full KYC removes the standard withdrawal limit.',
+          'Current limit amounts are shown in the cashier and FAQ, and may be updated from time to time.',
+        ],
+      },
+      {
+        title: 'Non-compliance',
+        paragraphs: [
+          'If you refuse or fail to complete verification within a reasonable time, we may hold withdrawals, restrict deposits or gameplay, suspend the account, or close it.',
+          'Balances may be forfeited where permitted by applicable rules if fraud, underage play, or other serious breaches are confirmed.',
+        ],
+      },
+      {
+        title: 'Data protection',
+        paragraphs: [
+          'Identity documents and biometric data are processed for verification and compliance only, retained as required by law, and protected as described in our Privacy Policy.',
+          'Our verification partner processes data under appropriate contractual and security controls.',
+        ],
+      },
+      {
+        title: 'Contact',
+        paragraphs: [
+          'For KYC questions, email support@ibets24.com or use live chat. Include your registered email so we can locate your account quickly.',
         ],
       },
     ],
