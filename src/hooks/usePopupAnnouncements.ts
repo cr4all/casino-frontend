@@ -6,11 +6,13 @@ import { filterSnoozedPopups } from '@/utils/popupSnooze';
 export function usePopupAnnouncements() {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const userId = useAuthStore((s) => s.user?.id);
+  const userRole = useAuthStore((s) => s.user?.role);
   const [queue, setQueue] = useState<AnnouncementPopup[]>([]);
   const [loaded, setLoaded] = useState(false);
+  const enabled = isAuthenticated && userId != null && userRole !== 'affiliate';
 
   useEffect(() => {
-    if (!isAuthenticated || userId == null) {
+    if (!enabled) {
       setQueue([]);
       setLoaded(false);
       return;
@@ -35,7 +37,7 @@ export function usePopupAnnouncements() {
     return () => {
       cancelled = true;
     };
-  }, [isAuthenticated, userId]);
+  }, [enabled, userId]);
 
   const dismissPopup = useCallback((popupId: number) => {
     setQueue((prev) => prev.filter((popup) => popup.id !== popupId));
