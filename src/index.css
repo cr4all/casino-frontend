@@ -862,6 +862,31 @@ body {
   background: transparent;
 }
 
+/* Lock horizontal page pan while sports iframe is open (mobile swipe bleed). */
+html.sports-page-lock,
+body.sports-page-lock {
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+  max-width: 100%;
+}
+
+.sports-iframe-shell {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
+}
+
+.sports-iframe-shell iframe {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  border: 0;
+  display: block;
+}
+
 /* Offset for fixed mobile deposit/withdraw bar */
 @media (max-width: 1023px) {
   .has-mobile-wallet-bar {

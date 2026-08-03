@@ -73,6 +73,17 @@ export function AppLayout() {
   }, [location.pathname, syncPlatformSection]);
 
   useEffect(() => {
+    const isSportsRoute = location.pathname.startsWith('/sports');
+    document.documentElement.classList.toggle('sports-page-lock', isSportsRoute);
+    document.body.classList.toggle('sports-page-lock', isSportsRoute);
+
+    return () => {
+      document.documentElement.classList.remove('sports-page-lock');
+      document.body.classList.remove('sports-page-lock');
+    };
+  }, [location.pathname]);
+
+  useEffect(() => {
     void loadSessionPolicy();
     void useGameStore.getState().fetchTypes();
     void useGameStore.getState().fetchVendors();
@@ -106,7 +117,7 @@ export function AppLayout() {
   }
 
   return (
-    <div className="flex min-h-screen bg-background">
+    <div className="flex min-h-screen max-w-full overflow-x-hidden bg-background">
       {/* Desktop sidebar */}
       <div className="hidden lg:block">
         <Sidebar />
@@ -126,11 +137,11 @@ export function AppLayout() {
         </>
       )}
 
-      <div className="flex min-w-0 flex-1 flex-col">
+      <div className="flex min-w-0 max-w-full flex-1 flex-col overflow-x-hidden">
         <Header onMenuToggle={() => setMobileOpen(true)} />
         <main
-          className={`flex-1 overflow-x-hidden ${
-            isSportsIframeRoute ? 'p-0' : 'p-4 md:p-6'
+          className={`min-w-0 flex-1 overflow-x-hidden ${
+            isSportsIframeRoute ? 'p-0 overscroll-x-none' : 'p-4 md:p-6'
           } ${isAuthenticated ? 'has-mobile-wallet-bar lg:pb-0' : ''}`}
         >
           <Outlet />
