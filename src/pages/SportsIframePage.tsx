@@ -59,6 +59,8 @@ export function SportsIframePage({ mode }: SportsIframePageProps) {
     ? 'sports-iframe-viewport--with-wallet-bar lg:min-h-[calc(100dvh-3.5rem)] lg:h-auto'
     : 'min-h-[calc(100dvh-3.5rem)]';
 
+  const sportsShellClass = `sports-iframe-shell flex ${sportsViewportHeight} max-w-full min-w-0 flex-col overflow-x-hidden overscroll-x-none bg-background`;
+
   const pageHeading =
     mode === 'live'
       ? 'Live Sports Betting'
@@ -68,7 +70,7 @@ export function SportsIframePage({ mode }: SportsIframePageProps) {
 
   if (loading) {
     return (
-      <div className={`flex ${sportsViewportHeight} flex-col items-center justify-center gap-3 bg-background`}>
+      <div className={`${sportsShellClass} items-center justify-center gap-3`}>
         <h1 className="sr-only">{pageHeading}</h1>
         <div className="h-8 w-8 animate-spin rounded-full border-2 border-accent-gold border-t-transparent" />
         <p className="text-sm text-muted">{t('sports.launching')}</p>
@@ -78,7 +80,7 @@ export function SportsIframePage({ mode }: SportsIframePageProps) {
 
   if (error || !launchUrl) {
     return (
-      <div className={`flex ${sportsViewportHeight} flex-col items-center justify-center gap-3 bg-background px-4 text-center`}>
+      <div className={`${sportsShellClass} items-center justify-center gap-3 px-4 text-center`}>
         <h1 className="sr-only">{pageHeading}</h1>
         <p className="text-sm text-red-400">{error ?? t('sports.error')}</p>
       </div>
@@ -86,12 +88,13 @@ export function SportsIframePage({ mode }: SportsIframePageProps) {
   }
 
   return (
-    <div className={`flex ${sportsViewportHeight} flex-col bg-background`}>
+    <div className={sportsShellClass}>
       <h1 className="sr-only">{pageHeading}</h1>
       <iframe
         title={t(`nav.${mode === 'live' ? 'inLive' : mode === 'history' ? 'sportsHistory' : 'prematch'}`)}
         src={launchUrl}
-        className={`${sportsViewportHeight} w-full flex-1 border-0 bg-background`}
+        className={`${sportsViewportHeight} w-full max-w-full min-w-0 flex-1 border-0 bg-background`}
+        style={{ touchAction: 'pan-y' }}
         allow="fullscreen"
       />
     </div>
