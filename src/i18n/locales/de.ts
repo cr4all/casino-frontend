@@ -52,9 +52,9 @@ export const de: LocaleTree = {
     "allGames": "SPIELE",
     "browseAll": "Alle durchsuchen",
     "deposit": "DEPOT",
-    "depositLabel": "Festgeld",
+    "depositLabel": "Einzahlung",
     "withdraw": "ABHEBEN",
-    "withdrawLabel": "Zurückziehen",
+    "withdrawLabel": "Auszahlung",
     "betHistory": "Wetthistorie",
     "gameBets": "Spieleinsätze",
     "history": "GESCHICHTE",
@@ -256,8 +256,8 @@ export const de: LocaleTree = {
     "manual": "Manuelle Überweisung"
   },
   "txTypes": {
-    "deposit": "Festgeld",
-    "withdraw": "Zurückziehen",
+    "deposit": "Einzahlung",
+    "withdraw": "Auszahlung",
     "bet": "Einsatz",
     "win": "Sieg",
     "bonus": "Bonus",
@@ -372,9 +372,9 @@ export const de: LocaleTree = {
     "challengeFailed": "Verifizierung fehlgeschlagen. Bitte versuchen Sie es erneut."
   },
   "deposit": {
-    "title": "Festgeld",
+    "title": "Einzahlung",
     "bonusesLink": "Tantiemen",
-    "withdrawLink": "Zurückziehen",
+    "withdrawLink": "Auszahlung",
     "selectCountry": "Zahlungsland",
     "selectPaymentOption": "Zahlungsmethode auswählen",
     "noOptionsForCountry": "Für dieses Land sind keine Zahlungsmethoden verfügbar.",
@@ -426,7 +426,7 @@ export const de: LocaleTree = {
     "quoteFailed": "Austauschschätzung kann nicht abgerufen werden."
   },
   "withdraw": {
-    "title": "Zurückziehen",
+    "title": "Auszahlung",
     "backToDeposit": "Depositzahlung",
     "availableBalance": "Verfügbare Summe:",
     "walletAddress": "Wallet-Adresse",
@@ -591,7 +591,7 @@ export const de: LocaleTree = {
   "transactions": {
     "title": "Transaktionsverlauf",
     "depositLink": "+ Einlage",
-    "withdrawLink": "Zurückziehen",
+    "withdrawLink": "Auszahlung",
     "bets": "setzen",
     "deposits": "Einlagen",
     "withdrawals": "Entnahmen",
