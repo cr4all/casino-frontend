@@ -181,31 +181,42 @@
     "Deposits & withdrawals": "Депозити и тегления",
     "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Депозити и тегления се обработват чрез методите на плащане, показани в касата.",
     "Customer due diligence": "Due diligence на клиенти",
-    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Разширена due diligence може да се прилага за юрисдикции с висок риск или големи транзакции."
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Разширена due diligence може да се прилага за юрисдикции с висок риск или големи транзакции.",
+    "KYC Policy": "Политика за KYC",
+    "Purpose": "Цел",
+    "Contact": "Контакт"
   },
   "bn": {
     "Deposits & withdrawals": "জমা ও উত্তোলন",
     "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "জমা ও উত্তোলন ক্যাশিয়ারে প্রদর্শিত পেমেন্ট পদ্ধতি ব্যবহার করে প্রক্রিয়াকৃত হয়।",
     "Customer due diligence": "গ্রাহক due diligence",
-    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "উচ্চ ঝুঁকিপূর্ণ এখতিয়ার বা বড় লেনদেনের ক্ষেত্রে বর্ধিত due diligence প্রয়োগ হতে পারে।"
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "উচ্চ ঝুঁকিপূর্ণ এখতিয়ার বা বড় লেনদেনের ক্ষেত্রে বর্ধিত due diligence প্রয়োগ হতে পারে।",
+    "KYC Policy": "KYC নীতি"
   },
   "cs": {
     "Deposits & withdrawals": "VKLADY/VÝBĚRY",
     "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Vklady a výběry jsou zpracovány pomocí platebních metod zobrazených v pokladně.",
     "Customer due diligence": "Hloubková kontrola klienta",
-    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Zvýšená hloubková kontrola se může vztahovat na vysoce rizikové jurisdikce nebo velké transakce."
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Zvýšená hloubková kontrola se může vztahovat na vysoce rizikové jurisdikce nebo velké transakce.",
+    "KYC Policy": "KYC politika",
+    "Purpose": "Účel",
+    "Contact": "Kontakt"
   },
   "cy": {
     "Deposits & withdrawals": "Adneuo a thynnu arian",
     "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Prosesir adneuo a thynnu arian gan ddefnyddio'r dulliau talu a ddangosir yn y casier.",
     "Customer due diligence": "Due diligence cwsmer",
-    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Gall due diligence gryfhau fod yn berthnasol i awdurdodaethau risg uchel neu drafodion mawr."
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Gall due diligence gryfhau fod yn berthnasol i awdurdodaethau risg uchel neu drafodion mawr.",
+    "KYC Policy": "Polisi KYC"
   },
   "da": {
     "Deposits & withdrawals": "Ind- og udbetalinger",
     "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Ind- og udbetalinger behandles ved hjælp af de betalingsmetoder, der vises i kassen.",
     "Customer due diligence": "Kundekontrol (due diligence)",
-    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Forstærket kundekontrol (due diligence) kan gælde for højrisikojurisdiktioner eller store transaktioner."
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Forstærket kundekontrol (due diligence) kan gælde for højrisikojurisdiktioner eller store transaktioner.",
+    "KYC Policy": "KYC-politik",
+    "Purpose": "Formål",
+    "Contact": "Kontakt"
   },
   "de": {
     "Deposits & withdrawals": "Ein- und Auszahlungen",
@@ -245,36 +256,323 @@
     "Deposits & withdrawals": "Sisse- ja väljamaksed",
     "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Sisse- ja väljamaksed töödeldakse kassas kuvatud makseviisidega.",
     "Customer due diligence": "Kliendi due diligence",
-    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Täiendavat due diligence'i võidakse rakendada kõrge riskiga jurisdiktsioonidele või suurtele tehingutele."
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Täiendavat due diligence'i võidakse rakendada kõrge riskiga jurisdiktsioonidele või suurtele tehingutele.",
+    "KYC Policy": "KYC poliitika"
   },
   "fa": {
     "Deposits & withdrawals": "واریزها و برداشت‌ها",
     "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "واریزها و برداشت‌ها با روش‌های پرداخت نمایش‌داده‌شده در صندوق پردازش می‌شوند.",
     "Customer due diligence": "بررسی دقیق مشتری",
-    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "بررسی دقیق‌تر ممکن است برای حوزه‌های قضایی پرخطر یا تراکنش‌های بزرگ اعمال شود."
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "بررسی دقیق‌تر ممکن است برای حوزه‌های قضایی پرخطر یا تراکنش‌های بزرگ اعمال شود.",
+    "KYC Policy": "سیاست KYC"
   },
   "fi": {
     "Deposits & withdrawals": "Talletukset ja kotiutukset",
     "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Talletukset ja kotiutukset käsitellään kassalla näkyvillä maksutavoilla.",
     "Customer due diligence": "Asiakkaan due diligence",
-    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Tehostettu due diligence voi koskea korkean riskin alueita tai suuria tapahtumia."
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Tehostettu due diligence voi koskea korkean riskin alueita tai suuria tapahtumia.",
+    "KYC Policy": "KYC-käytäntö",
+    "Purpose": "Tarkoitus",
+    "Contact": "Yhteystiedot"
   },
   "fil": {
     "Deposits & withdrawals": "Deposito at pag-withdraw",
     "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Ang deposits at withdrawals ay ipinoproseso gamit ang payment methods na ipinapakita sa cashier.",
     "Customer due diligence": "Due diligence ng customer",
-    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Maaaring ilapat ang enhanced due diligence sa high-risk jurisdictions o malalaking transactions."
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Maaaring ilapat ang enhanced due diligence sa high-risk jurisdictions o malalaking transactions.",
+    "KYC Policy": "Patakaran sa KYC",
+    "Purpose": "Layunin",
+    "When verification is required": "Kailan kinakailangan ang beripikasyon",
+    "Documents we may request": "Mga dokumentong maaari naming hingin",
+    "Verification process": "Proseso ng beripikasyon",
+    "Withdrawal limits": "Mga limitasyon sa withdrawal",
+    "Non-compliance": "Hindi pagsunod",
+    "Data protection": "Proteksyon ng data",
+    "Contact": "Makipag-ugnayan",
+    "Identity verification (KYC)": "Pagberipika ng pagkakakilanlan (KYC)",
+    "Fair play & prohibited conduct": "Fair play at ipinagbabawal na pag-uugali",
+    "Games & malfunctions": "Mga laro at malfunction",
+    "Inactive accounts": "Mga hindi aktibong account"
   },
   "fr": {
     "Deposits & withdrawals": "Dépôts et retraits",
     "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Les dépôts et retraits sont traités via les modes de paiement affichés dans la caisse.",
     "Customer due diligence": "Diligence client",
-    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Une diligence renforcée peut s'appliquer aux juridictions à haut risque ou aux transactions importantes."
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Une diligence renforcée peut s'appliquer aux juridictions à haut risque ou aux transactions importantes.",
+    "KYC Policy": "Politique KYC",
+    "Purpose": "Objectif",
+    "When verification is required": "Quand la vérification est requise",
+    "Documents we may request": "Documents que nous pouvons demander",
+    "Verification process": "Processus de vérification",
+    "Withdrawal limits": "Limites de retrait",
+    "Non-compliance": "Non-conformité",
+    "Data protection": "Protection des données",
+    "Identity verification (KYC)": "Vérification d’identité (KYC)",
+    "Fair play & prohibited conduct": "Jeu équitable et conduites interdites",
+    "Games & malfunctions": "Jeux et dysfonctionnements",
+    "Inactive accounts": "Comptes inactifs"
   },
   "ga": {
     "Deposits & withdrawals": "Taiscí agus aistarraingtí",
     "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Próiseáiltear taiscí agus aistarraingtí ag baint úsáide as na modhanna íocaíochta a thaispeántar sa chuntairí.",
     "Customer due diligence": "Due diligence custaiméara",
-    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Féadfaidh due diligence feabhsaithe a bheith i bhfeidhm ar dhlínsí ardriosca nó ar idirbhearta móra."
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Féadfaidh due diligence feabhsaithe a bheith i bhfeidhm ar dhlínsí ardriosca nó ar idirbhearta móra.",
+    "KYC Policy": "Beartas KYC"
+  },
+  "gu": {
+    "KYC Policy": "KYC નીતિ",
+    "Deposits & withdrawals": "જમા અને નિકાસી",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "જમા અને નિકાસી કેશિયરમાં દર્શાવેલી ચુકવણી પદ્ધતિઓનો ઉપયોગ કરીને પ્રક્રિયા કરવામાં આવે છે.",
+    "Customer due diligence": "ગ્રાહક તપાસ",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "ઉચ્ચ જોખમ વાળા અધિકાર ક્ષેત્રો અથવા મોટા વ્યવહારો પર વધારાની ગ્રાહક તપાસ લાગુ થઈ શકે છે."
+  },
+  "ha": {
+    "KYC Policy": "Manufar KYC",
+    "Deposits & withdrawals": "Ajiya da cire kuɗi",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Ana sarrafa ajiya da cire kuɗi ta hanyar amfani da hanyoyin biyan kuɗi da aka nuna a kantin kuɗi.",
+    "Customer due diligence": "Due diligence na abokin ciniki",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Ana iya amfani da due diligence mai ƙarfi ga yankunan da ke da haɗari ko manyan ciniki."
+  },
+  "he": {
+    "KYC Policy": "מדיניות KYC",
+    "Purpose": "מטרה",
+    "When verification is required": "מתי נדרש אימות",
+    "Documents we may request": "מסמכים שעשויים להידרש",
+    "Verification process": "תהליך אימות",
+    "Withdrawal limits": "מגבלות משיכה",
+    "Non-compliance": "אי-ציות",
+    "Data protection": "הגנת מידע",
+    "Contact": "יצירת קשר",
+    "Identity verification (KYC)": "אימות זהות (KYC)",
+    "Deposits & withdrawals": "הפקדות ומשיכות",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "הפקדות ומשיכות מעובדות באמצעות שיטות התשלום המוצגות בקופה.",
+    "Fair play & prohibited conduct": "משחק הוגן והתנהגות אסורה",
+    "Games & malfunctions": "משחקים ותקלות",
+    "Inactive accounts": "חשבונות לא פעילים",
+    "Customer due diligence": "בדיקת נאותות לקוח",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "בדיקת נאותות מוגברת עשויה לחול על סמכויות שיפוט בסיכון גבוה או על עסקאות גדולות."
+  },
+  "hi": {
+    "KYC Policy": "KYC नीति",
+    "Purpose": "उद्देश्य",
+    "When verification is required": "सत्यापन कब आवश्यक है",
+    "Documents we may request": "वे दस्तावेज़ जिनकी हम माँग सकते हैं",
+    "Verification process": "सत्यापन प्रक्रिया",
+    "Withdrawal limits": "निकासी सीमाएँ",
+    "Non-compliance": "अनुपालन न करना",
+    "Data protection": "डेटा सुरक्षा",
+    "Contact": "संपर्क",
+    "Identity verification (KYC)": "पहचान सत्यापन (KYC)",
+    "Deposits & withdrawals": "जमा और निकासी",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "जमा और निकासी कैशियर में प्रदर्शित भुगतान विधियों का उपयोग करके संसाधित की जाती हैं।",
+    "Fair play & prohibited conduct": "निष्पक्ष खेल और निषिद्ध आचरण",
+    "Games & malfunctions": "गेम और खराबी",
+    "Inactive accounts": "निष्क्रिय खाते",
+    "Customer due diligence": "ग्राहक जाँच",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "उच्च जोखिम वाले अधिकार क्षेत्रों या बड़े लेनदेन पर बढ़ी हुई ग्राहक जाँच लागू हो सकती है।"
+  },
+  "hr": {
+    "KYC Policy": "KYC politika",
+    "Deposits & withdrawals": "Depoziti i isplate",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Depoziti i isplate obrađuju se načinima plaćanja prikazanim u blagajni.",
+    "Customer due diligence": "Due diligence klijenata",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Proširena due diligence može se primijeniti na rizične jurisdikcije ili velike transakcije."
+  },
+  "hu": {
+    "KYC Policy": "KYC szabályzat",
+    "Purpose": "Cél",
+    "Contact": "Kapcsolat",
+    "Deposits & withdrawals": "Befizetések és kifizetések",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "A befizetéseket és kifizetéseket a pénztárban megjelenő fizetési módokkal dolgozzuk fel.",
+    "Customer due diligence": "Ügyfél due diligence",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Fokozott due diligence alkalmazható magas kockázatú joghatóságokra vagy nagy tranzakciókra."
+  },
+  "hy": {
+    "KYC Policy": "KYC Քաղաքականություն",
+    "Deposits & withdrawals": "Avandner ev durs galutyunner",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Avandner ev durs galutyunner mshakum en vcharayin mijocnerov, voronq ertahertvum en kassayum։",
+    "Customer due diligence": "Hachaxordi due diligence",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Lavacvac due diligence karox e kargavarel bardzr rskov jurisdikciunerum kam mets gortserum։"
+  },
+  "id": {
+    "KYC Policy": "Kebijakan KYC",
+    "Purpose": "Tujuan",
+    "When verification is required": "Kapan verifikasi diperlukan",
+    "Documents we may request": "Dokumen yang dapat kami minta",
+    "Verification process": "Proses verifikasi",
+    "Withdrawal limits": "Batas penarikan",
+    "Non-compliance": "Ketidakpatuhan",
+    "Data protection": "Perlindungan data",
+    "Contact": "Kontak",
+    "Identity verification (KYC)": "Verifikasi identitas (KYC)",
+    "Deposits & withdrawals": "Deposit & penarikan",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Deposit dan penarikan diproses menggunakan metode pembayaran yang ditampilkan di kasir.",
+    "Fair play & prohibited conduct": "Fair play dan perilaku terlarang",
+    "Games & malfunctions": "Permainan dan gangguan",
+    "Inactive accounts": "Akun tidak aktif",
+    "Customer due diligence": "Due diligence pelanggan",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Due diligence yang ditingkatkan dapat berlaku untuk yurisdiksi berisiko tinggi atau transaksi besar."
+  },
+  "ig": {
+    "KYC Policy": "Iwu KYC",
+    "Deposits & withdrawals": "Ego a tinyere na iwepụ",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "A na-ahazi ego a tinyere na iwepụ site na iji ụzọ ịkwụ ụgwọ egosiri na cashier.",
+    "Customer due diligence": "Due diligence ndị ahịa",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Due diligence emelitere nwere ike itinye na mpaghara dị egwu ma ọ bụ azụmahịa buru ibu."
+  },
+  "is": {
+    "KYC Policy": "Reglur um KYC",
+    "Deposits & withdrawals": "Innborganir og útborganir",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Innborganir og útborganir eru afgreiddar með greiðslumátum sem birtast í kassa.",
+    "Customer due diligence": "Viðskiptavinaskoðun",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Aukin due diligence getur átt við um hættusamar lögsögur eða stórar viðskipti."
+  },
+  "it": {
+    "KYC Policy": "Politica KYC",
+    "Purpose": "Scopo",
+    "When verification is required": "Quando è richiesta la verifica",
+    "Documents we may request": "Documenti che possiamo richiedere",
+    "Verification process": "Processo di verifica",
+    "Withdrawal limits": "Limiti di prelievo",
+    "Non-compliance": "Mancata conformità",
+    "Data protection": "Protezione dei dati",
+    "Contact": "Contatto",
+    "Identity verification (KYC)": "Verifica dell’identità (KYC)",
+    "Deposits & withdrawals": "Depositi e prelievi",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Depositi e prelievi vengono elaborati utilizzando i metodi di pagamento mostrati nella cassa.",
+    "Fair play & prohibited conduct": "Fair play e condotte vietate",
+    "Games & malfunctions": "Giochi e malfunzionamenti",
+    "Inactive accounts": "Account inattivi",
+    "Customer due diligence": "Due diligence del cliente",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "La due diligence rafforzata può applicarsi a giurisdizioni ad alto rischio o a transazioni di importo elevato."
+  },
+  "ja": {
+    "KYC Policy": "KYCポリシー",
+    "Purpose": "目的",
+    "When verification is required": "本人確認が必要な場合",
+    "Documents we may request": "ご提出いただく書類",
+    "Verification process": "本人確認の流れ",
+    "Withdrawal limits": "出金限度額",
+    "Non-compliance": "未遵守",
+    "Data protection": "データ保護",
+    "Contact": "お問い合わせ",
+    "Identity verification (KYC)": "本人確認（KYC）",
+    "Deposits & withdrawals": "入金と出金",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "入出金は、キャッシャーに表示される決済方法を使用して処理されます。",
+    "Fair play & prohibited conduct": "フェアプレイと禁止行為",
+    "Games & malfunctions": "ゲームと障害",
+    "Inactive accounts": "休止アカウント",
+    "Customer due diligence": "顧客デューデリジェンス",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "高リスク管轄区域または高額取引には、強化されたデューデリジェンスが適用される場合があります。"
+  },
+  "ka": {
+    "KYC Policy": "KYC პოლიტიკა",
+    "Deposits & withdrawals": "შეტანა და გამოტანა",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "დეპოზიტები და თანხები მუშავდება სალაროში ნაჩვენები გადახდის მეთოდების გამოყენებით.",
+    "Customer due diligence": "მომხმარებლის შემოწმება",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "გაძლიერებული სათანადო დილიგი შეიძლება მიმართოს მაღალი რისკის იურისდიქციებს ან დიდ ტრანზაქციებს."
+  },
+  "kk": {
+    "KYC Policy": "KYC саясаты",
+    "Deposits & withdrawals": "Salymdar men shygaru",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Salymdar men shygaru kassada korsetilgen tölem adisteri arqyly öñdelу.",
+    "Customer due diligence": "Klient due diligence",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Joqary tәuekel jurisdiktsiyalar nemese iri tranzaktsiyalar ushın keńeytіlgen due diligence qoldanylady."
+  },
+  "km": {
+    "KYC Policy": "គោលការណ៍ KYC",
+    "Deposits & withdrawals": "ប្រាក់បញ្ញើ",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "ការដាក់ប្រាក់ និងការដកប្រាក់ត្រូវបានដំណើរការដោយប្រើវិធីបង់ប្រាក់ដែលបង្ហាញនៅក្នុងអ្នកគិតលុយ។",
+    "Customer due diligence": "ការឧស្សាហ៍ព្យាយាមរបស់អតិថិជន",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "ភាពឧស្សាហ៍ព្យាយាមដែលប្រសើរឡើងអាចអនុវត្តចំពោះយុត្តាធិការដែលមានហានិភ័យខ្ពស់ ឬប្រតិបត្តិការធំ។"
+  },
+  "kn": {
+    "KYC Policy": "KYC ನೀತಿ",
+    "Deposits & withdrawals": "ಠೇವಣಿ ಮತ್ತು ಹಿಂಪಡೆಯುವಿಕೆ",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "ಠೇವಣಿ ಮತ್ತು ಹಿಂಪಡೆಯುವಿಕೆಗಳನ್ನು ಕ್ಯಾಷಿಯರ್‌ನಲ್ಲಿ ಪ್ರದರ್ಶಿಸಲಾದ ಪಾವತಿ ವಿಧಾನಗಳನ್ನು ಬಳಸಿ ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲಾಗುತ್ತದೆ.",
+    "Customer due diligence": "ಗ್ರಾಹಕ ಪರಿಶೀಲನೆ",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "ಅಧಿಕ ಅಪಾಯದ ಅಧಿಕಾರ ವ್ಯಾಪ್ತಿಗಳು ಅಥವಾ ದೊಡ್ಡ ವಹಿವಾಟುಗಳಿಗೆ ವರ್ಧಿತ ಗ್ರಾಹಕ ಪರಿಶೀಲನೆ ಅನ್ವಯವಾಗಬಹುದು."
+  },
+  "lb": {
+    "KYC Policy": "KYC-Politik",
+    "Deposits & withdrawals": "Depoten an Ausbezuelungen",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Depoten an Ausbezuelungen ginn iwwer d'Bezuelmethoden ofgewickelt, déi am Cashier ugewise ginn.",
+    "Customer due diligence": "Client Due Diligence",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Erweidert Due Diligence kann op Risikorechtsordnungen oder grouss Transaktiounen zoutreffen."
+  },
+  "lo": {
+    "KYC Policy": "ນະໂຍບາຍ KYC",
+    "Deposits & withdrawals": "ການຝາກ ແລະຖອນເງິນ",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "ການຝາກ ແລະຖອນເງິນດຳເນີນການດ້ວຍວິທີການຈ່າຍເງິນທີ່ສະແດງໃນເຄົບເປີ.",
+    "Customer due diligence": "ການກວດສອບລູກຄ້າ",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "ການກວດສອບລູກຄ້າແບບເພີ່ມເຕີມອາດໃຊ້ກັບເຂດອຳນາດສູງຄວາມສ່ຽງ ຫຼື ທຸລະກຳຂະໜາດໃຫຍ່."
+  },
+  "lt": {
+    "KYC Policy": "KYC politika",
+    "Deposits & withdrawals": "Indėliai ir išmokėjimai",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Indėliai ir išmokėjimai apdorojami naudojant kasoje rodomus mokėjimo būdus.",
+    "Customer due diligence": "Kliento due diligence",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Išplėstinė due diligence gali būti taikoma didelės rizikos jurisdikcijoms ar didelėms operacijoms."
+  },
+  "lv": {
+    "KYC Policy": "KYC politika",
+    "Deposits & withdrawals": "Depozīti un izmaksas",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Depozīti un izmaksas tiek apstrādāti, izmantojot kasē redzamos maksājumu veidus.",
+    "Customer due diligence": "Klienta due diligence",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Paplašināta due diligence var tikt piemērota augsta riska jurisdikcijām vai lieliem darījumiem."
+  },
+  "mk": {
+    "KYC Policy": "KYC политика",
+    "Deposits & withdrawals": "Депозити и повлекувања",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Депозити и повлекувања се обработуваат со начините на плаќање прикажани во касата.",
+    "Customer due diligence": "Due diligence на клиенти",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Проширена due diligence може да се примени за ризични надлежности или големи трансакции."
+  },
+  "ml": {
+    "KYC Policy": "KYC നയം",
+    "Deposits & withdrawals": "ഡെപ്പോസിറ്റുകളും പിന്‍വലിക്കലുകളും",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "കാഷിയറില്‍ പ്രദര്‍ശിപ്പിച്ച പേയ്‌മെന്റ് രീതികള്‍ ഉപയോഗിച്ച് ഡെപ്പോസിറ്റുകളും പിന്‍വലിക്കലുകളും പ്രോസസ്സ് ചെയ്യുന്നു.",
+    "Customer due diligence": "ഉപഭോക്തൃ പരിശോധന",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "ഉയര്‍ന്ന അപകടസാധ്യതയുള്ള അധികാരപരിധികളിലോ വലിയ ഇടപാടുകളിലോ വര്‍ദ്ധിത ഉപഭോക്തൃ പരിശോധന ബാധകമായേക്കാം."
+  },
+  "mn": {
+    "KYC Policy": "KYC бодлого",
+    "Deposits & withdrawals": "Орлого ба таталт",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Орлого, таталтыг кассын дээр харуулсан төлбөрийн аргаар боловсруулна.",
+    "Customer due diligence": "Үйлчлүүлэгчийн due diligence",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Өндөр эрсдэлтэй харьяалал эсвэл том гүйлгээнд өргөтгөсөн due diligence хэрэгжиж болно."
+  },
+  "mr": {
+    "KYC Policy": "KYC धोरण",
+    "Deposits & withdrawals": "ठेव आणि पैसे काढणे",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "ठेव आणि पैसे काढणे कॅशियरमध्ये दर्शविलेल्या पेमेंट पद्धतींचा वापर करून प्रक्रिया केली जाते.",
+    "Customer due diligence": "ग्राहक तपास",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "उच्च जोखीम असलेल्या अधिकार क्षेत्रांमध्ये किंवा मोठ्या व्यवहारांवर वाढीव ग्राहक तपास लागू होऊ शकतो."
+  },
+  "ms": {
+    "KYC Policy": "Dasar KYC",
+    "Purpose": "Tujuan",
+    "When verification is required": "Bila pengesahan diperlukan",
+    "Documents we may request": "Dokumen yang mungkin kami minta",
+    "Verification process": "Proses pengesahan",
+    "Withdrawal limits": "Had pengeluaran",
+    "Non-compliance": "Ketidakpatuhan",
+    "Data protection": "Perlindungan data",
+    "Contact": "Hubungi",
+    "Identity verification (KYC)": "Pengesahan identiti (KYC)",
+    "Deposits & withdrawals": "Deposit & pengeluaran",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Deposit dan pengeluaran diproses menggunakan kaedah pembayaran yang dipaparkan di kaunter.",
+    "Fair play & prohibited conduct": "Fair play dan kelakuan dilarang",
+    "Games & malfunctions": "Permainan dan kerosakan",
+    "Inactive accounts": "Akaun tidak aktif",
+    "Customer due diligence": "Due diligence pelanggan",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Due diligence dipertingkat boleh terpakai untuk bidang kuasa berisiko tinggi atau transaksi besar."
+  },
+  "mt": {
+    "KYC Policy": "Politika KYC",
+    "Deposits & withdrawals": "Depositi u irtirar",
+    "Deposits and withdrawals are processed using the payment methods displayed in the cashier.": "Id-deposti u l-irtirar jiġu pproċessati bl-użu tal-metodi ta' pagament murija fil-cashier.",
+    "Customer due diligence": "Due diligence tal-klijent",
+    "Enhanced due diligence may apply to high-risk jurisdictions or large transactions.": "Due diligence mtejba tista' tapplika għal ġurisdizzjonijiet ta' riskju għoli jew tranżazzjonijiet kbar."
   }
 }

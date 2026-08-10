@@ -32,6 +32,16 @@ export interface RegisterPayload {
   risk_context?: ClientRiskContext;
 }
 
+export interface RegisterAffiliatePayload {
+  email: string;
+  password: string;
+  password_confirmation: string;
+  code: string;
+  email_verification_code: string;
+  turnstileToken?: string;
+  risk_context?: ClientRiskContext;
+}
+
 export interface LoginPayload {
   email?: string;
   username?: string;
@@ -72,6 +82,15 @@ export const authApi = {
       '/auth/register',
       { ...body, risk_context },
     );
+    return data.data;
+  },
+
+  registerAffiliate: async (payload: RegisterAffiliatePayload) => {
+    const { turnstileToken, ...body } = payload;
+    const risk_context = await buildRiskContext(turnstileToken);
+    const { data } = await api.post<
+      ApiResponse<{ user: User; affiliate: { id: number; code: string }; access_token: string; expires_in: number }>
+    >('/auth/register/affiliate', { ...body, risk_context });
     return data.data;
   },
 

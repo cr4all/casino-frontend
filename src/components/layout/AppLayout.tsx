@@ -7,6 +7,7 @@ import { MobileWalletActionBar } from '@/components/layout/MobileWalletActionBar
 import { ForgotPasswordModal } from '@/components/auth/ForgotPasswordModal';
 import { LoginModal } from '@/components/auth/LoginModal';
 import { RegisterModal } from '@/components/auth/RegisterModal';
+import { AffiliateRegisterModal } from '@/components/auth/AffiliateRegisterModal';
 import { CookieConsentBanner } from '@/components/common/CookieConsentBanner';
 import { CookieSettingsModal } from '@/components/common/CookieSettingsModal';
 import { ComingSoonModal } from '@/components/common/Modal';
@@ -110,6 +111,7 @@ export function AppLayout() {
         <Footer />
         <LoginModal />
         <RegisterModal />
+        <AffiliateRegisterModal />
         <ForgotPasswordModal />
         <ComingSoonModal />
         <CookieConsentBanner />
@@ -154,6 +156,7 @@ export function AppLayout() {
 
       <LoginModal />
       <RegisterModal />
+      <AffiliateRegisterModal />
       <ForgotPasswordModal />
       <ComingSoonModal />
       <CookieConsentBanner />

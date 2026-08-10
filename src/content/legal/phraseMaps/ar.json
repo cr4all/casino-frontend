@@ -85,7 +85,6 @@
   "Affiliate Program": "برنامج الشركاء",
   "Our affiliate program offers competitive commissions for referring new players who meet our eligibility and compliance requirements.": "يقدم برنامج الشركاء لدينا عمولات تنافسية مقابل إحالة لاعبين جدد يستوفون متطلبات الأهلية والامتثال.",
   "Existing affiliates can access performance stats and payouts from the Affiliate Portal after signing in.": "يمكن للشركاء الحاليين الوصول إلى إحصاءات الأداء والمدفوعات من بوابة الشركاء بعد تسجيل الدخول.",
-  "To apply or request affiliate terms, email partners@ibets24.com with your traffic sources, target markets, and promotional methods.": "للتقديم أو طلب شروط الشراكة، راسل partners@ibets24.com مع مصادر الزيارات والأسواق المستهدفة وأساليب الترويج.",
   "Business Partnerships": "شراكات الأعمال",
   "We collaborate with licensed game providers, payment solution partners, marketing agencies, and technology vendors that share our standards for fairness, security, and responsible gaming.": "نتعاون مع مزودي ألعاب مرخّصين وشركاء حلول دفع ووكالات تسويق وموردي تقنية يشاركوننا معايير النزاهة والأمان واللعب المسؤول.",
   "Send partnership proposals to partners@ibets24.com including company details, product overview, and proposed commercial model.": "أرسل مقترحات الشراكة إلى partners@ibets24.com متضمنة بيانات الشركة ونبذة عن المنتج والنموذج التجاري المقترح.",
@@ -136,5 +135,6 @@
   "Inactive accounts": "حسابات غير النشطة",
   "If your account remains inactive for an extended period, we may restrict access, contact you to confirm ownership, or close the account in accordance with applicable rules.": "إذا ظل حسابك غير نشط لفترة طويلة، فقد نقوم بتقييد الوصول أو الاتصال بك لتأكيد الملكية أو إغلاق الحساب وفقًا للقواعد المعمول بها.",
   "You may request account closure at any time by contacting customer support.": "يمكنك طلب إغلاق الحساب في أي وقت عن طريق الاتصال بدعم العملاء.",
-  "We verify customer identity and monitor transactions for unusual patterns. Identity checks are further described in our KYC Policy.": "نتحقق من هوية العملاء ونراقب المعاملات بحثًا عن أنماط غير عادية. يتم وصف عمليات التحقق من الهوية بشكل أكبر في سياستنا __KP _0__."
+  "We verify customer identity and monitor transactions for unusual patterns. Identity checks are further described in our KYC Policy.": "نتحقق من هوية العملاء ونراقب المعاملات بحثًا عن أنماط غير عادية. يتم وصف عمليات التحقق من الهوية بشكل أكبر في سياستنا __KP _0__.",
+  "To create an affiliate account, visit the Affiliate Program page on our site, verify your email, and register with your preferred referral code.": "To create an affiliate account, visit the Affiliate Program page on our site, verify your email, and register with your preferred referral code."
 }

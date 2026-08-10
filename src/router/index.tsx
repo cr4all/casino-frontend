@@ -19,6 +19,7 @@ import { GamePlayPage } from '@/pages/GamePlayPage';
 import { CookiePolicyPage } from '@/pages/CookiePolicyPage';
 import { LegalDocumentPage } from '@/pages/legal/LegalDocumentPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
+import { AffiliateProgramPage } from '@/pages/AffiliateProgramPage';
 
 export const router = Sentry.wrapCreateBrowserRouterV7(createBrowserRouter)([
   {
@@ -53,7 +54,7 @@ export const router = Sentry.wrapCreateBrowserRouterV7(createBrowserRouter)([
       { path: 'responsible-gaming', element: <LegalDocumentPage pageId="responsibleGaming" /> },
       { path: 'faq', element: <LegalDocumentPage pageId="faq" /> },
       { path: 'contact', element: <LegalDocumentPage pageId="contact" /> },
-      { path: 'partners', element: <LegalDocumentPage pageId="partners" /> },
+      { path: 'partners', element: <AffiliateProgramPage /> },
       { path: 'aml', element: <LegalDocumentPage pageId="aml" /> },
       { path: 'kyc', element: <LegalDocumentPage pageId="kyc" /> },
       { path: '*', element: <NotFoundPage /> },

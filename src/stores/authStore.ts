@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { authApi, type RegisterPayload } from '@/api/auth.api';
+import { authApi, type RegisterAffiliatePayload, type RegisterPayload } from '@/api/auth.api';
 import { disconnectEcho } from '@/lib/echo';
 import { isRiskChallengeError, PostRegisterLoginChallengeError } from '@/utils/apiError';
 import type { User } from '@/types';
@@ -20,6 +20,7 @@ interface AuthState {
     turnstileToken?: string;
   }) => Promise<void>;
   register: (payload: RegisterPayload) => Promise<void>;
+  registerAffiliate: (payload: RegisterAffiliatePayload) => Promise<void>;
   logout: () => void;
 }
 
@@ -49,6 +50,23 @@ export const useAuthStore = create<AuthState>()(
       register: async (payload) => {
         const { turnstileToken, ...registerPayload } = payload;
         await authApi.register({ ...registerPayload, turnstileToken });
+        try {
+          await get().login({
+            email: payload.email,
+            password: payload.password,
+            turnstileToken,
+          });
+        } catch (err) {
+          if (isRiskChallengeError(err)) {
+            throw new PostRegisterLoginChallengeError();
+          }
+          throw err;
+        }
+      },
+
+      registerAffiliate: async (payload) => {
+        const { turnstileToken, ...registerPayload } = payload;
+        await authApi.registerAffiliate({ ...registerPayload, turnstileToken });
         try {
           await get().login({
             email: payload.email,

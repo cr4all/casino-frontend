@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-type ModalType = 'login' | 'register' | 'comingSoon' | 'forgotPassword' | null;
+type ModalType = 'login' | 'register' | 'affiliateRegister' | 'comingSoon' | 'forgotPassword' | null;
 
 interface UiState {
   activeModal: ModalType;

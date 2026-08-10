@@ -29,9 +29,9 @@ const PAGE_META_BY_PATH: Record<string, PageMeta> = {
     canonicalPath: '/contact',
   },
   '/partners': {
-    title: 'Partners & Affiliates | Business Partnerships | iBets24',
+    title: 'Affiliate Program – RevShare, CPA & Hybrid | iBets24',
     description:
-      'Partner with iBets24 through our affiliate program and B2B partnerships. Contact partners@ibets24.com for affiliate, media, payment and technology collaboration.',
+      'Join the iBets24 affiliate program. Earn RevShare, CPA, or hybrid commissions on slots, live casino, and sports. Real-time portal, USD payouts, dedicated partner support.',
     canonicalPath: '/partners',
   },
   '/about': {
