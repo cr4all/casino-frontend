@@ -120,8 +120,14 @@ export const authApi = {
     return data;
   },
 
-  requestRegistrationEmailVerification: async (email: string) => {
-    const { data } = await api.post<ApiResponse<null>>('/auth/register/verify-email/request', { email });
+  requestRegistrationEmailVerification: async (
+    email: string,
+    context: 'player' | 'affiliate' = 'player',
+  ) => {
+    const { data } = await api.post<ApiResponse<null>>('/auth/register/verify-email/request', {
+      email,
+      context,
+    });
     return data;
   },
 

@@ -271,7 +271,7 @@ export function AffiliateRegisterModal() {
 
     setEmailVerifyLoading(true);
     try {
-      await authApi.requestRegistrationEmailVerification(form.email.trim());
+      await authApi.requestRegistrationEmailVerification(form.email.trim(), 'affiliate');
       setEmailOtp('');
       setEmailOtpSent(true);
       setEmailVerifyMessage(t('auth.emailVerificationHint'));
