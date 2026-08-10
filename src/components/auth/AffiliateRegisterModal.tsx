@@ -172,9 +172,6 @@ export function AffiliateRegisterModal() {
   };
 
   const validateForm = (): boolean => {
-    const required = (field: string, value: string) =>
-      requiredValue(value) ? undefined : t('common.fieldRequired', { field });
-
     let emailError: string | undefined;
     if (!requiredValue(form.email)) {
       emailError = t('common.fieldRequired', { field: t('auth.email') });
