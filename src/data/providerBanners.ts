@@ -56,6 +56,16 @@ const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }
   { test: (s, n) => s.includes('sagaming') || n.includes('sagaming'), url: '/providers/sa-gaming.png' },
   { test: (s, n) => s.includes('simpleplay') || n.includes('simpleplay'), url: '/providers/simpleplay.png' },
   { test: (s, n) => s.includes('fachai') || n.includes('fachai'), url: '/providers/fachai.png' },
+  {
+    test: (s, n) =>
+      s === 'funta' ||
+      n === 'funta' ||
+      s.includes('funta') ||
+      n.includes('funta') ||
+      s === 'ftgslot' ||
+      n === 'ftgslot',
+    url: '/providers/funta.png',
+  },
   { test: (s, n) => s.includes('popok') || n.includes('popok'), url: '/providers/popok.png' },
   { test: (s, n) => s.includes('popiplay') || n.includes('popiplay'), url: '/providers/popiplay.png' },
   { test: (s, n) => s.includes('tada') || n.includes('tada'), url: '/providers/tada.png' },
