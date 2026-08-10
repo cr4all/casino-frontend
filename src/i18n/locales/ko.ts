@@ -71,6 +71,8 @@ export const ko: LocaleTree = {
     "playResponsibly": "18+ · 책임감 있는 게임",
     "liveChat": "라이브 채팅",
     "liveChatLabel": "고객 지원",
+    "affiliateProgram": "제휴 프로그램",
+    "affiliateProgramLabel": "파트너 되기",
     "supportTickets": "지원 티켓",
     "supportTicketsLabel": "헬프데스크",
     "casino": "카지노",

@@ -72,6 +72,8 @@ export const en = {
     playResponsibly: '18+ · Play Responsibly',
     liveChat: 'LIVE CHAT',
     liveChatLabel: 'Support',
+    affiliateProgram: 'AFFILIATE PROGRAM',
+    affiliateProgramLabel: 'Become a partner',
     supportTickets: 'SUPPORT TICKETS',
     supportTicketsLabel: 'Help desk',
     casino: 'CASINO',

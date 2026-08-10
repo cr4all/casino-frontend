@@ -276,6 +276,27 @@ export function Sidebar({ onNavigate }: SidebarProps) {
             </span>
           )}
         </button>
+
+        <Link
+          to="/partners"
+          onClick={handleNavClick}
+          className={`group relative flex items-center gap-3 rounded-md px-3 py-3 transition-all ${
+            isPathActive('/partners')
+              ? 'sidebar-active text-accent-gold'
+              : 'text-white hover:bg-card/60'
+          }`}
+        >
+          <NavIcon
+            name="affiliateProgram"
+            className={`${sidebarIconClassName} text-accent-gold`}
+          />
+          <div className="min-w-0 flex-1">
+            <p className={`text-xs font-bold tracking-wide ${isPathActive('/partners') ? 'text-accent-gold' : 'text-white'}`}>
+              {t('nav.affiliateProgram')}
+            </p>
+            <p className="text-[10px] text-muted truncate">{t('nav.affiliateProgramLabel')}</p>
+          </div>
+        </Link>
       </nav>
 
       <div className="border-t border-white/[0.06] p-4">
