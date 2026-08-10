@@ -379,7 +379,30 @@ for (const code of LANGUAGE_CODES) {
     );
   }
 
-  translations[code] = { ...tree, affiliate: mergedAffiliate as typeof en.affiliate };
+  const mappedAffiliateProgram: Partial<typeof en.affiliateProgram> = phraseMap
+    ? applyPhraseMapToValues(en.affiliateProgram, phraseMap)
+    : {};
+  const parentAffiliateProgram = parentCode
+    ? translations[parentCode]?.affiliateProgram
+    : undefined;
+  const mergedAffiliateProgram: Record<string, string> = {};
+
+  for (const key of Object.keys(en.affiliateProgram)) {
+    const english = en.affiliateProgram[key as keyof typeof en.affiliateProgram];
+    mergedAffiliateProgram[key] = pickAffiliateValue(
+      english,
+      tree.affiliateProgram?.[key as keyof typeof en.affiliateProgram],
+      parentAffiliateProgram?.[key as keyof typeof en.affiliateProgram],
+      mappedAffiliateProgram[key as keyof typeof en.affiliateProgram],
+      english,
+    );
+  }
+
+  translations[code] = {
+    ...tree,
+    affiliate: mergedAffiliate as typeof en.affiliate,
+    affiliateProgram: mergedAffiliateProgram as typeof en.affiliateProgram,
+  };
 }
 
 export function translate(

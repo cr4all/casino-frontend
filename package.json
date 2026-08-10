@@ -13,6 +13,7 @@
     "i18n:locales:force": "npx --yes tsx scripts/generate-i18n-locales.mjs --force",
     "i18n:rebuild": "npx --yes tsx scripts/rebuild-i18n-from-maps.mjs",
     "i18n:affiliate": "npx --yes tsx scripts/sync-affiliate-i18n.mjs",
+    "i18n:affiliate-program": "npx --yes tsx scripts/sync-affiliate-program-i18n.mjs",
     "i18n:affiliate:finish": "npx --yes tsx scripts/finish-affiliate-i18n.mjs",
     "i18n:affiliate:overrides": "npx --yes tsx scripts/apply-affiliate-overrides.mjs",
     "sync:platform-languages": "node scripts/sync-platform-languages.mjs",
