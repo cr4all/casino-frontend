@@ -144,7 +144,7 @@
     }
   },
   "fil": {
-    "nav": { "affiliateProgram": "AFFILIATE PROGRAM", "affiliateProgramLabel": "Maging partner" },
+    "nav": { "affiliateProgram": "PROGRAMANG AFFILIATE", "affiliateProgramLabel": "Maging partner" },
     "auth": {
       "affiliatePortalLoginTitle": "Affiliate Portal Login",
       "affiliateRegisterTitle": "Maging partner",
