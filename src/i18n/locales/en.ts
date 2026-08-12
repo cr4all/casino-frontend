@@ -524,7 +524,13 @@ export const en = {
     withdrawableBalance: 'Withdrawable balance',
     withdrawableCash: 'Withdrawable cash',
     withdrawableBonus: 'Withdrawable bonus',
-    bonusLockedHint: 'Bonus funds are locked until wagering requirements are met.',
+    bonusLockedHint:
+      'Withdrawals are locked while any bonus is active. Complete, expire, or forfeit the bonus to withdraw.',
+    forfeitBonus: 'Forfeit bonus',
+    forfeitBonusConfirm:
+      'Forfeit "{{name}}"? Remaining bonus funds or free spins will be removed and withdrawals will unlock.',
+    forfeitBonusSuccess: 'Bonus forfeited. You can withdraw now.',
+    forfeitBonusFailed: 'Could not forfeit bonus. Please try again.',
     showBreakdown: 'Show balance breakdown',
     balanceBreakdown: 'Balance breakdown',
     fundingSource: 'Funding',

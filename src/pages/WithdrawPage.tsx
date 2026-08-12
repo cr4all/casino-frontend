@@ -7,6 +7,7 @@ import {
   type WithdrawalItem,
   type WithdrawQuote,
 } from '@/api/payment.api';
+import { bonusApi, type ActiveBonus } from '@/api/bonus.api';
 import { WithdrawService } from '@/services/WithdrawService';
 import { useAuthStore } from '@/stores/authStore';
 import { DEFAULT_CURRENCY, useWalletStore } from '@/stores/walletStore';
@@ -97,6 +98,8 @@ export function WithdrawPage() {
   const [verificationModalOpen, setVerificationModalOpen] = useState(false);
   const [limitAlertOpen, setLimitAlertOpen] = useState(false);
   const [limitAlertAmount, setLimitAlertAmount] = useState<string | null>(null);
+  const [activeBonuses, setActiveBonuses] = useState<ActiveBonus[]>([]);
+  const [forfeitingBonusId, setForfeitingBonusId] = useState<number | null>(null);
   const {
     challengeRequired,
     setChallengeRequired,
@@ -247,6 +250,41 @@ export function WithdrawPage() {
       })
       .finally(() => setLoading(false));
   }, [isAuthenticated, fetchBalance, fetchProfile]);
+
+  useEffect(() => {
+    if (!isAuthenticated || !balance?.bonus_locked) {
+      setActiveBonuses([]);
+      return;
+    }
+
+    bonusApi
+      .getActive()
+      .then(setActiveBonuses)
+      .catch(() => setActiveBonuses([]));
+  }, [isAuthenticated, balance?.bonus_locked]);
+
+  const handleForfeitBonus = async (bonus: ActiveBonus) => {
+    const name = bonus.policy_name ?? `#${bonus.id}`;
+    if (!window.confirm(t('wallet.forfeitBonusConfirm', { name }))) {
+      return;
+    }
+
+    setForfeitingBonusId(bonus.id);
+    setError(null);
+    setMessage(null);
+
+    try {
+      await bonusApi.forfeit(bonus.id);
+      await fetchBalance();
+      const remaining = await bonusApi.getActive();
+      setActiveBonuses(remaining);
+      setMessage(t('wallet.forfeitBonusSuccess'));
+    } catch {
+      setError(t('wallet.forfeitBonusFailed'));
+    } finally {
+      setForfeitingBonusId(null);
+    }
+  };
 
   useEffect(() => {
     if (!optionsCountry) {
@@ -560,7 +598,40 @@ export function WithdrawPage() {
               </div>
             )}
             {balance?.bonus_locked && (
-              <p className="mt-2 text-xs text-amber-300/90">{t('wallet.bonusLockedHint')}</p>
+              <div className="mt-3 space-y-2 text-left">
+                <p className="text-xs text-amber-300/90">{t('wallet.bonusLockedHint')}</p>
+                {activeBonuses.map((bonus) => (
+                  <div
+                    key={bonus.id}
+                    className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-amber-500/20 bg-amber-500/5 px-3 py-2"
+                  >
+                    <div className="min-w-0 text-xs text-amber-100/90">
+                      <p className="truncate font-medium">{bonus.policy_name ?? `#${bonus.id}`}</p>
+                      {bonus.type === 'free_spin' && bonus.spins_remaining != null ? (
+                        <p className="mt-0.5 text-[11px] text-amber-200/70">
+                          {t('wallet.funding.free_spin')}: {bonus.spins_remaining}
+                          {bonus.spin_count != null ? ` / ${bonus.spin_count}` : ''}
+                        </p>
+                      ) : bonus.wagering ? (
+                        <p className="mt-0.5 text-[11px] text-amber-200/70">
+                          {formatBalance(bonus.wagering.wagered)} / {formatBalance(bonus.wagering.required)}
+                        </p>
+                      ) : null}
+                    </div>
+                    <Button
+                      type="button"
+                      variant="secondary"
+                      className="px-3 py-1.5 text-xs"
+                      disabled={forfeitingBonusId === bonus.id}
+                      onClick={() => void handleForfeitBonus(bonus)}
+                    >
+                      {forfeitingBonusId === bonus.id
+                        ? t('common.loading')
+                        : t('wallet.forfeitBonus')}
+                    </Button>
+                  </div>
+                ))}
+              </div>
             )}
             <p className="mt-2 text-xs text-muted">
               {t('wallet.totalPlayable')}:{' '}
