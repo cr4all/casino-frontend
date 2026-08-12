@@ -1,8 +1,9 @@
 /**
- * Flatten FunTa banner materials into public/providers/funta/{gameId}.{ext}
+ * Flatten FunTa banner materials into public/providers/funta/{gameId}.jpg
  * for VA-style local thumbnail fallback (no CQ9 bg/icon overlay).
  *
  * Source pick order: 英 en → 簡 zh → 日 ja, size folder 245x180.
+ * Non-JPEG sources (png/webp) are converted to JPEG so Admin/API paths stay uniform.
  *
  * Usage:
  *   node scripts/sync-funta-thumbnails.mjs
@@ -11,6 +12,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import sharp from 'sharp';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const FRONTEND_ROOT = path.resolve(__dirname, '..');
@@ -94,7 +96,7 @@ function collectBestPerId(sizeDir, langFolder) {
   return best;
 }
 
-function main() {
+async function main() {
   const { source: bannerRoot } = parseArgs(process.argv.slice(2));
 
   if (!fs.existsSync(bannerRoot)) {
@@ -127,11 +129,24 @@ function main() {
 
   let copied = 0;
   for (const [id, { src, lang }] of [...chosen.entries()].sort((a, b) => Number(a[0]) - Number(b[0]))) {
-    const ext = path.extname(src).toLowerCase() === '.jpeg' ? '.jpg' : path.extname(src).toLowerCase();
-    const dest = path.join(DEST_DIR, `${id}${ext}`);
-    fs.copyFileSync(src, dest);
+    const dest = path.join(DEST_DIR, `${id}.jpg`);
+    // Remove legacy non-jpg sibling so only one extension remains per id.
+    for (const staleExt of ['.png', '.webp', '.jpeg']) {
+      const stale = path.join(DEST_DIR, `${id}${staleExt}`);
+      if (fs.existsSync(stale)) {
+        fs.unlinkSync(stale);
+      }
+    }
+
+    const srcExt = path.extname(src).toLowerCase();
+    if (srcExt === '.jpg' || srcExt === '.jpeg') {
+      fs.copyFileSync(src, dest);
+    } else {
+      // png/webp → jpg so FE fallback and Admin DB paths are always .jpg
+      await sharp(src).jpeg({ quality: 90 }).toFile(dest);
+    }
     copied += 1;
-    console.log(`OK  ${id}${ext}  <-  [${lang}] ${path.basename(src)}`);
+    console.log(`OK  ${id}.jpg  <-  [${lang}] ${path.basename(src)}`);
   }
 
   console.log('');
@@ -140,4 +155,7 @@ function main() {
   console.log(`Destination: ${DEST_DIR}`);
 }
 
-main();
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

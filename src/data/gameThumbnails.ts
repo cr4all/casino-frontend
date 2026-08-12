@@ -109,6 +109,10 @@ export function getLocalGameThumbnailCandidates(game: Game): string[] {
       ? FUNTA_CODE_THUMBNAIL_EXTENSIONS
       : THUMBNAIL_EXTENSIONS;
     for (const folder of folders) {
+      // TPG (and similar) ship name-slug thumbs under /providers/{slug}/games/.
+      for (const ext of nameExtensions) {
+        push(`/providers/${folder}/games/${gameSlug}.${ext}`);
+      }
       for (const ext of nameExtensions) {
         push(`/providers/${folder}/${gameSlug}.${ext}`);
       }
