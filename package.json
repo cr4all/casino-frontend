@@ -18,6 +18,7 @@
     "i18n:affiliate:overrides": "npx --yes tsx scripts/apply-affiliate-overrides.mjs",
     "sync:platform-languages": "node scripts/sync-platform-languages.mjs",
     "sync:funta-thumbs": "node scripts/sync-funta-thumbnails.mjs",
+    "sync:tpg-thumbs": "node scripts/sync-tpg-thumbnails.mjs",
     "sync:contract": "echo Update contracts/player-v1.yaml from https://github.com/cr4all/casino-api-contract tags",
     "test": "vitest run"
   },
