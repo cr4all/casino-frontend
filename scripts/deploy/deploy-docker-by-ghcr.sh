@@ -2,7 +2,7 @@
 # Deploy frontend from GHCR (no git pull, no image build).
 # Copy this entire scripts/deploy/ directory to the production host, e.g.:
 #   /opt/casino/deploy-frontend/
-# Place secrets at /opt/casino/.env (parent of this directory) for FRONTEND_PORT etc.
+# Secrets: shared /dev/shm/casino.env (tmpfs) — same file as backend deploy.
 # Do NOT overwrite /opt/casino/deploy (backend bundle).
 # Run: bash deploy-docker-by-ghcr.sh
 set -euo pipefail
@@ -10,22 +10,16 @@ set -euo pipefail
 DEPLOY_ROOT="$(cd "$(dirname "$0")" && pwd)"
 cd "$DEPLOY_ROOT"
 
+# shellcheck source=load-env.sh
+source "${DEPLOY_ROOT}/load-env.sh"
+ensure_casino_env
+
 GHCR_IMAGE="${GHCR_IMAGE:-ghcr.io/cr4all/casino-frontend}"
 GHCR_TAG="${GHCR_TAG:-latest}"
 LOCAL_IMAGE="${LOCAL_IMAGE:-casino-frontend:latest}"
 GHCR_USERNAME="${GHCR_USERNAME:-cr4all}"
 
 COMPOSE_FILE="${DEPLOY_ROOT}/docker-compose.yml"
-
-ENV_FILE="${CASINO_ENV_FILE:-$DEPLOY_ROOT/../.env}"
-if [[ ! -f "$ENV_FILE" ]]; then
-  ENV_FILE="$DEPLOY_ROOT/.env"
-fi
-if [[ ! -f "$ENV_FILE" ]]; then
-  echo "ERROR: env file not found. Expected $DEPLOY_ROOT/../.env or set CASINO_ENV_FILE" >&2
-  exit 1
-fi
-
 COMPOSE=(docker compose -f "$COMPOSE_FILE" --env-file "$ENV_FILE")
 
 if [[ -z "${GHCR_TOKEN:-}" ]]; then
@@ -52,4 +46,5 @@ echo "Starting frontend..."
 "${COMPOSE[@]}" up -d
 
 echo "Deploy complete (image ${REMOTE_IMAGE} → ${LOCAL_IMAGE})."
+echo "Secrets remain in $ENV_FILE only (tmpfs). Re-run load-env.sh after reboot."
 "${COMPOSE[@]}" ps
