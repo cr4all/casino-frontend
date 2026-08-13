@@ -77,8 +77,28 @@ const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }
     url: '/providers/gtt.png',
   },
   {
+    test: (s, n) =>
+      s === 'galaxsys' ||
+      n === 'galaxsys' ||
+      s.includes('galaxsys') ||
+      n.includes('galaxsys') ||
+      s === 'galaxys' ||
+      n === 'galaxys' ||
+      s.includes('galaxys') ||
+      n.includes('galaxys'),
+    url: '/providers/galaxsys.svg',
+  },
+  {
     test: (s, n) => s.includes('booming') || n.includes('booming'),
     url: 'https://strapi-dev.booming-games.com/15/logo_36bdb913dd.svg',
+  },
+  {
+    test: (s, n) =>
+      s === 'riddec' ||
+      n === 'riddec' ||
+      s.includes('riddec') ||
+      n.includes('riddec'),
+    url: '/providers/riddec.svg',
   },
   { test: (s, n) => s.includes('tpg') || n.includes('tpg'), url: '/providers/tpg.png' },
   { test: (s, n) => s.includes('popok') || n.includes('popok'), url: '/providers/popok.png' },
