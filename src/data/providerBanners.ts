@@ -100,6 +100,18 @@ const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }
       n.includes('riddec'),
     url: '/providers/riddec.svg',
   },
+  {
+    test: (s, n) =>
+      s === 'mvg' ||
+      n === 'mvg' ||
+      s.includes('mvg') ||
+      n.includes('mvg') ||
+      s.includes('massivegaming') ||
+      n.includes('massivegaming') ||
+      s.includes('blitzcrown') ||
+      n.includes('blitzcrown'),
+    url: '/providers/mvg.svg',
+  },
   { test: (s, n) => s.includes('tpg') || n.includes('tpg'), url: '/providers/tpg.png' },
   { test: (s, n) => s.includes('popok') || n.includes('popok'), url: '/providers/popok.png' },
   { test: (s, n) => s.includes('popiplay') || n.includes('popiplay'), url: '/providers/popiplay.png' },
