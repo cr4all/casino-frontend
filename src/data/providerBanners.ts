@@ -86,11 +86,11 @@ const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }
       n === 'galaxys' ||
       s.includes('galaxys') ||
       n.includes('galaxys'),
-    url: '/providers/galaxsys.svg',
+    url: '/providers/galaxsys.png',
   },
   {
     test: (s, n) => s.includes('booming') || n.includes('booming'),
-    url: 'https://strapi-dev.booming-games.com/15/logo_36bdb913dd.svg',
+    url: '/providers/booming.png',
   },
   {
     test: (s, n) =>
@@ -98,7 +98,7 @@ const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }
       n === 'riddec' ||
       s.includes('riddec') ||
       n.includes('riddec'),
-    url: '/providers/riddec.svg',
+    url: '/providers/riddec.png',
   },
   {
     test: (s, n) =>
@@ -110,7 +110,7 @@ const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }
       n.includes('massivegaming') ||
       s.includes('blitzcrown') ||
       n.includes('blitzcrown'),
-    url: '/providers/mvg.svg',
+    url: '/providers/mvg.png',
   },
   { test: (s, n) => s.includes('tpg') || n.includes('tpg'), url: '/providers/tpg.png' },
   { test: (s, n) => s.includes('popok') || n.includes('popok'), url: '/providers/popok.png' },
