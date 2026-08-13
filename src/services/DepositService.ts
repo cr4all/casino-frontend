@@ -12,8 +12,9 @@ export const DepositService = {
     amount: string,
     country: string,
     turnstileToken?: string,
+    destination?: Record<string, string>,
   ) {
-    const result = await paymentApi.createDeposit(optionKey, amount, country, turnstileToken);
+    const result = await paymentApi.createDeposit(optionKey, amount, country, turnstileToken, destination);
     AnalyticsService.track(CasinoAnalyticsEvent.DepositSubmitted, {
       deposit_id: result.deposit_id,
       amount: result.amount,

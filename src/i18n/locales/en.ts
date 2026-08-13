@@ -573,7 +573,12 @@ export const en = {
     address: 'Wallet address',
     network: 'Network',
     account: 'Account / wallet ID',
+    account_name: 'Account name',
     bank_account: 'Bank account',
+    document_no: 'CNIC (13 digits)',
+    phone: 'Nigeria phone (e.g. 2348031234567)',
+    ifsc_code: 'IFSC code',
+    tax_number: 'CPF / CNPJ',
   },
   bonus: {
     title: 'Bonuses',

@@ -144,12 +144,19 @@ export const paymentApi = {
     return data.data;
   },
 
-  createDeposit: async (optionKey: string, amount: string, country: string, turnstileToken?: string) => {
+  createDeposit: async (
+    optionKey: string,
+    amount: string,
+    country: string,
+    turnstileToken?: string,
+    destination?: Record<string, string>,
+  ) => {
     const risk_context = await buildRiskContext(turnstileToken);
     const { data } = await api.post<ApiResponse<DepositRequest>>('/payment/deposits', {
       option_key: optionKey,
       amount,
       country,
+      ...(destination && Object.keys(destination).length > 0 ? { destination } : {}),
       risk_context,
     });
     return data.data;
