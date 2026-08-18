@@ -189,7 +189,7 @@ export function HomePage() {
         </div>
       ) : (
         <>
-          <div className="grid grid-cols-3 gap-2 sm:grid-cols-3 sm:gap-3 md:grid-cols-4 md:gap-4 lg:grid-cols-5 xl:grid-cols-6">
+          <div className="game-list-shell grid grid-cols-3 gap-2 sm:grid-cols-3 sm:gap-3 md:grid-cols-4 md:gap-4 lg:grid-cols-5 xl:grid-cols-6">
             {displayGames.map((game) => (
               <GameCard
                 key={game.id}

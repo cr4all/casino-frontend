@@ -63,6 +63,10 @@ export function AppLayout() {
   const [searchParams] = useSearchParams();
   const location = useLocation();
   usePageMeta(location.pathname);
+  const isSportsIframeRoute = location.pathname.startsWith('/sports');
+  const isCasinoLobbyRoute =
+    location.pathname === '/' || location.pathname.startsWith('/category');
+  const clipHorizontalOverscroll = isSportsIframeRoute || isCasinoLobbyRoute;
   const [mobileOpen, setMobileOpen] = useState(false);
   const user = useAuthStore((s) => s.user);
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
@@ -75,15 +79,14 @@ export function AppLayout() {
   }, [location.pathname, syncPlatformSection]);
 
   useEffect(() => {
-    const isSportsRoute = location.pathname.startsWith('/sports');
-    document.documentElement.classList.toggle('sports-page-lock', isSportsRoute);
-    document.body.classList.toggle('sports-page-lock', isSportsRoute);
+    document.documentElement.classList.toggle('horizontal-page-lock', clipHorizontalOverscroll);
+    document.body.classList.toggle('horizontal-page-lock', clipHorizontalOverscroll);
 
     return () => {
-      document.documentElement.classList.remove('sports-page-lock');
-      document.body.classList.remove('sports-page-lock');
+      document.documentElement.classList.remove('horizontal-page-lock');
+      document.body.classList.remove('horizontal-page-lock');
     };
-  }, [location.pathname]);
+  }, [clipHorizontalOverscroll]);
 
   useEffect(() => {
     void loadSessionPolicy();
@@ -99,8 +102,6 @@ export function AppLayout() {
   if (isAffiliateUser && !location.pathname.startsWith('/affiliate')) {
     return <Navigate to="/affiliate" replace />;
   }
-
-  const isSportsIframeRoute = location.pathname.startsWith('/sports');
 
   if (isAffiliateUser) {
     return (
@@ -145,8 +146,10 @@ export function AppLayout() {
         <Header onMenuToggle={() => setMobileOpen(true)} />
         <main
           className={`min-w-0 flex-1 overflow-x-hidden ${
-            isSportsIframeRoute ? 'p-0 overscroll-x-none' : 'p-4 md:p-6'
-          } ${isAuthenticated ? 'has-mobile-wallet-bar lg:pb-0' : ''}`}
+            isSportsIframeRoute ? 'p-0' : 'p-4 md:p-6'
+          } ${clipHorizontalOverscroll ? 'overscroll-x-none' : ''} ${
+            isAuthenticated ? 'has-mobile-wallet-bar lg:pb-0' : ''
+          }`}
         >
           <Outlet />
         </main>

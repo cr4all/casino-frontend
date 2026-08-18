@@ -862,15 +862,17 @@ body {
   background: transparent;
 }
 
-/* Lock horizontal page pan while sports iframe is open (mobile swipe bleed). */
-html.sports-page-lock,
-body.sports-page-lock {
+/* Lock horizontal page pan on sports iframe, casino/slot lobby, and game play (mobile swipe bleed). */
+html.horizontal-page-lock,
+body.horizontal-page-lock {
   overflow-x: hidden;
   overscroll-behavior-x: none;
   max-width: 100%;
 }
 
-.sports-iframe-shell {
+.sports-iframe-shell,
+.game-list-shell,
+.game-play-shell {
   width: 100%;
   max-width: 100%;
   min-width: 0;
@@ -879,7 +881,8 @@ body.sports-page-lock {
   touch-action: pan-y;
 }
 
-.sports-iframe-shell iframe {
+.sports-iframe-shell iframe,
+.game-play-shell iframe {
   width: 100%;
   max-width: 100%;
   min-width: 0;

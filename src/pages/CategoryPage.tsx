@@ -193,7 +193,7 @@ export function CategoryPage() {
             <p className="text-muted">{t('category.noProvidersFound')}</p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+          <div className="game-list-shell grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
             {vendors.map((vendor, index) => (
               <ProviderCard
                 key={vendor.id}
@@ -274,7 +274,7 @@ export function CategoryPage() {
         </div>
       ) : (
         <>
-          <div className="grid grid-cols-3 gap-2 sm:grid-cols-3 sm:gap-3 md:grid-cols-4 md:gap-4 lg:grid-cols-5 xl:grid-cols-6">
+          <div className="game-list-shell grid grid-cols-3 gap-2 sm:grid-cols-3 sm:gap-3 md:grid-cols-4 md:gap-4 lg:grid-cols-5 xl:grid-cols-6">
             {displayGames.map((game) => (
               <GameCard key={game.id} game={game} variant="grid" />
             ))}
