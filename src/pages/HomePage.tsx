@@ -9,6 +9,7 @@ import { gameApi } from '@/api/game.api';
 import { useDebouncedValue } from '@/hooks/useDebouncedValue';
 import { useProvidersForCategory } from '@/hooks/useProvidersForCategory';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useAuthStore } from '@/stores/authStore';
 import { useFavoritesStore } from '@/stores/favoritesStore';
 import type { Game } from '@/types';
 
@@ -16,6 +17,7 @@ const PER_PAGE = 24;
 
 export function HomePage() {
   const { t } = useTranslation();
+  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const [activeCategory, setActiveCategory] = useState<HomeCategory>('all');
   const providerTypeSlug = isTypeCategory(activeCategory) ? getTypeSlug(activeCategory) : null;
   const { vendors, loading: vendorsLoading } = useProvidersForCategory(providerTypeSlug);
@@ -66,6 +68,13 @@ export function HomePage() {
     const loadGames = async () => {
       try {
         if (activeCategory === 'favorites') {
+          if (!isAuthenticated) {
+            if (cancelled) return;
+            setLastPage(1);
+            setGames([]);
+            return;
+          }
+
           const data = await gameApi.getFavorites(page, PER_PAGE);
           if (cancelled) return;
           setLastPage(data.pagination.last_page);
@@ -122,7 +131,7 @@ export function HomePage() {
     return () => {
       cancelled = true;
     };
-  }, [activeCategory, selectedVendorId, page, debouncedSearch]);
+  }, [activeCategory, selectedVendorId, page, debouncedSearch, isAuthenticated]);
 
   const handleShowMore = () => {
     if (loadingMore || page >= lastPage) return;

@@ -16,6 +16,7 @@ import { useGameVendors } from '@/hooks/useGameVendors';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getVendorBannerUrl } from '@/data/providerBanners';
 import { mockPromotions } from '@/data/mockData';
+import { useAuthStore } from '@/stores/authStore';
 import { vendorGradient, vendorPath } from '@/stores/gameStore';
 import { useFavoritesStore } from '@/stores/favoritesStore';
 import { formatVendorName } from '@/utils/formatVendorName';
@@ -36,6 +37,7 @@ function parseCategoryFilters(category: string) {
 
 export function CategoryPage() {
   const { t, tGameType, tCollection } = useTranslation();
+  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const { category = 'all' } = useParams<{ category: string }>();
   const [searchParams, setSearchParams] = useSearchParams();
   const { vendors, loading: vendorsLoading } = useGameVendors();
@@ -121,6 +123,14 @@ export function CategoryPage() {
       return;
     }
 
+    if (isFavorites && !isAuthenticated) {
+      setGames([]);
+      setLastPage(1);
+      setLoading(false);
+      setLoadingMore(false);
+      return;
+    }
+
     let cancelled = false;
     const isFirstPage = page === 1;
 
@@ -171,7 +181,7 @@ export function CategoryPage() {
     return () => {
       cancelled = true;
     };
-  }, [category, isFavorites, effectiveVendorId, typeSlug, collectionSlug, page, debouncedSearch]);
+  }, [category, isFavorites, isAuthenticated, effectiveVendorId, typeSlug, collectionSlug, page, debouncedSearch]);
 
   const handleShowMore = () => {
     if (loadingMore || page >= lastPage) return;

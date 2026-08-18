@@ -10,6 +10,7 @@ interface AuthState {
   refreshToken: string | null;
   user: User | null;
   isAuthenticated: boolean;
+  hasHydrated: boolean;
   setTokens: (access: string, refresh: string) => void;
   setUser: (user: User) => void;
   login: (credentials: {
@@ -24,6 +25,29 @@ interface AuthState {
   logout: () => void;
 }
 
+function markAuthHydrated() {
+  // localStorage rehydration can finish during create(), before the const binding exists.
+  queueMicrotask(() => {
+    const state = useAuthStore.getState();
+    if (state.isAuthenticated && !state.accessToken) {
+      useAuthStore.setState({
+        accessToken: null,
+        refreshToken: null,
+        user: null,
+        isAuthenticated: false,
+        hasHydrated: true,
+      });
+      return;
+    }
+
+    useAuthStore.setState({ hasHydrated: true });
+  });
+}
+
+export function hasAccessToken(): boolean {
+  return Boolean(useAuthStore.getState().accessToken);
+}
+
 export const useAuthStore = create<AuthState>()(
   persist(
     (set, get) => ({
@@ -31,6 +55,7 @@ export const useAuthStore = create<AuthState>()(
       refreshToken: null,
       user: null,
       isAuthenticated: false,
+      hasHydrated: false,
 
       setTokens: (access, refresh) =>
         set({ accessToken: access, refreshToken: refresh, isAuthenticated: true }),
@@ -103,6 +128,20 @@ export const useAuthStore = create<AuthState>()(
         user: state.user,
         isAuthenticated: state.isAuthenticated,
       }),
+      onRehydrateStorage: () => (_state, error) => {
+        if (error) {
+          console.error('Auth rehydration failed', error);
+        }
+        markAuthHydrated();
+      },
     },
   ),
 );
+
+if (useAuthStore.persist?.hasHydrated()) {
+  markAuthHydrated();
+} else {
+  useAuthStore.persist?.onFinishHydration(() => {
+    markAuthHydrated();
+  });
+}
