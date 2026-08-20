@@ -6,7 +6,9 @@ import { useAuthStore } from '@/stores/authStore';
 import { useBonusStore } from '@/stores/bonusStore';
 import { useNotificationStore } from '@/stores/notificationStore';
 import { useWalletStore } from '@/stores/walletStore';
+import { useForfeitBonus } from '@/hooks/useForfeitBonus';
 import { useTranslation } from '@/hooks/useTranslation';
+import { ForfeitBonusModal } from '@/components/bonus/ForfeitBonusModal';
 import { Button } from '@/components/common/Button';
 import { StatusBadge } from '@/components/common/StatusBadge';
 import { getApiErrorMessage } from '@/utils/apiError';
@@ -76,6 +78,22 @@ export function BonusPage() {
       })
       .finally(() => setLoading(false));
   };
+
+  const {
+    targetBonus,
+    isOpen: forfeitModalOpen,
+    submitting: forfeiting,
+    errorMessage: forfeitError,
+    requestForfeit,
+    confirmForfeit,
+    closeForfeit,
+  } = useForfeitBonus({
+    onSuccess: async () => {
+      setMessage(t('wallet.forfeitBonusSuccess'));
+      setError(null);
+      load();
+    },
+  });
 
   useEffect(() => {
     if (!isAuthenticated) return;
@@ -248,6 +266,17 @@ export function BonusPage() {
                         wagered={bonus.wagering.wagered}
                       />
                     )}
+                    {bonus.status === 'active' && (
+                      <Button
+                        type="button"
+                        variant="secondary"
+                        className="mt-4 w-full text-xs"
+                        disabled={forfeiting}
+                        onClick={() => requestForfeit(bonus)}
+                      >
+                        {t('wallet.forfeitBonus')}
+                      </Button>
+                    )}
                   </div>
                 ))}
               </div>
@@ -301,6 +330,15 @@ export function BonusPage() {
           </section>
         </div>
       )}
+
+      <ForfeitBonusModal
+        bonus={targetBonus}
+        isOpen={forfeitModalOpen}
+        submitting={forfeiting}
+        errorMessage={forfeitError}
+        onConfirm={() => void confirmForfeit()}
+        onClose={closeForfeit}
+      />
     </div>
   );
 }

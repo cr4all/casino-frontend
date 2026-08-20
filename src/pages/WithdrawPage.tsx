@@ -13,6 +13,7 @@ import { useAuthStore } from '@/stores/authStore';
 import { DEFAULT_CURRENCY, useWalletStore } from '@/stores/walletStore';
 import { usePlayerStore } from '@/stores/playerStore';
 import { formatBalance } from '@/utils/formatBalance';
+import { ForfeitBonusModal } from '@/components/bonus/ForfeitBonusModal';
 import { Button } from '@/components/common/Button';
 import { FormTextField } from '@/components/common/FormTextField';
 import { Modal } from '@/components/common/Modal';
@@ -22,6 +23,7 @@ import { DepositStepIndicator } from '@/components/deposit/DepositStepIndicator'
 import { PaymentKindGrid } from '@/components/deposit/PaymentKindGrid';
 import { PaymentCountrySelect } from '@/components/payment/PaymentCountrySelect';
 import { PaymentOptionGrid, PaymentOptionSummary } from '@/components/payment/PaymentOptionGrid';
+import { useForfeitBonus } from '@/hooks/useForfeitBonus';
 import { useTranslation } from '@/hooks/useTranslation';
 import {
   getApiErrorDetails,
@@ -99,7 +101,6 @@ export function WithdrawPage() {
   const [limitAlertOpen, setLimitAlertOpen] = useState(false);
   const [limitAlertAmount, setLimitAlertAmount] = useState<string | null>(null);
   const [activeBonuses, setActiveBonuses] = useState<ActiveBonus[]>([]);
-  const [forfeitingBonusId, setForfeitingBonusId] = useState<number | null>(null);
   const {
     challengeRequired,
     setChallengeRequired,
@@ -107,6 +108,22 @@ export function WithdrawPage() {
     registerWidgetReset,
     resetWidget,
   } = useRiskChallenge();
+  const {
+    targetBonus,
+    isOpen: forfeitModalOpen,
+    submitting: forfeiting,
+    errorMessage: forfeitError,
+    requestForfeit,
+    confirmForfeit,
+    closeForfeit,
+  } = useForfeitBonus({
+    onSuccess: async () => {
+      const remaining = await bonusApi.getActive();
+      setActiveBonuses(remaining);
+      setMessage(t('wallet.forfeitBonusSuccess'));
+      setError(null);
+    },
+  });
 
   const eligibility = profile?.withdrawal_eligibility;
   const walletCurrency = balance?.currency ?? profile?.currency ?? DEFAULT_CURRENCY;
@@ -262,29 +279,6 @@ export function WithdrawPage() {
       .then(setActiveBonuses)
       .catch(() => setActiveBonuses([]));
   }, [isAuthenticated, balance?.bonus_locked]);
-
-  const handleForfeitBonus = async (bonus: ActiveBonus) => {
-    const name = bonus.policy_name ?? `#${bonus.id}`;
-    if (!window.confirm(t('wallet.forfeitBonusConfirm', { name }))) {
-      return;
-    }
-
-    setForfeitingBonusId(bonus.id);
-    setError(null);
-    setMessage(null);
-
-    try {
-      await bonusApi.forfeit(bonus.id);
-      await fetchBalance();
-      const remaining = await bonusApi.getActive();
-      setActiveBonuses(remaining);
-      setMessage(t('wallet.forfeitBonusSuccess'));
-    } catch {
-      setError(t('wallet.forfeitBonusFailed'));
-    } finally {
-      setForfeitingBonusId(null);
-    }
-  };
 
   useEffect(() => {
     if (!optionsCountry) {
@@ -622,12 +616,10 @@ export function WithdrawPage() {
                       type="button"
                       variant="secondary"
                       className="px-3 py-1.5 text-xs"
-                      disabled={forfeitingBonusId === bonus.id}
-                      onClick={() => void handleForfeitBonus(bonus)}
+                      disabled={forfeiting}
+                      onClick={() => requestForfeit(bonus)}
                     >
-                      {forfeitingBonusId === bonus.id
-                        ? t('common.loading')
-                        : t('wallet.forfeitBonus')}
+                      {t('wallet.forfeitBonus')}
                     </Button>
                   </div>
                 ))}
@@ -640,6 +632,15 @@ export function WithdrawPage() {
               </span>
             </p>
           </div>
+
+          <ForfeitBonusModal
+            bonus={targetBonus}
+            isOpen={forfeitModalOpen}
+            submitting={forfeiting}
+            errorMessage={forfeitError}
+            onConfirm={() => void confirmForfeit()}
+            onClose={closeForfeit}
+          />
 
           {eligibility?.requires_verification && (
             <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">

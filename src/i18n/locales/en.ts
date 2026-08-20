@@ -527,8 +527,15 @@ export const en = {
     bonusLockedHint:
       'Withdrawals are locked while any bonus is active. Complete, expire, or forfeit the bonus to withdraw.',
     forfeitBonus: 'Forfeit bonus',
+    forfeitBonusTitle: 'Forfeit bonus',
     forfeitBonusConfirm:
       'Forfeit "{{name}}"? Remaining bonus funds or free spins will be removed and withdrawals will unlock.',
+    forfeitBonusAmountLabel: 'Bonus amount to forfeit',
+    forfeitBonusFreeSpinsLabel: 'Remaining free spins',
+    forfeitBonusWageringLabel: 'Wagering progress',
+    forfeitBonusWarning: 'This action cannot be undone. Forfeited bonus funds and free spins cannot be restored.',
+    forfeitBonusConfirmCta: 'Forfeit bonus',
+    forfeitBonusCancelCta: 'Keep bonus',
     forfeitBonusSuccess: 'Bonus forfeited. You can withdraw now.',
     forfeitBonusFailed: 'Could not forfeit bonus. Please try again.',
     showBreakdown: 'Show balance breakdown',
