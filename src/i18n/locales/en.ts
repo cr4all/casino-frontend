@@ -572,6 +572,11 @@ export const en = {
     bank_name: 'Bank name',
     account_name: 'Account name',
     account_number: 'Account number',
+    cbu_cvu: 'CVU/CBU',
+    payment_type: 'Payment type',
+    beneficiary_name: 'Beneficiary',
+    qr_image_url: 'QR image',
+    expires_at: 'Expires at',
     reference: 'Reference',
     amount: 'Amount',
     currency: 'Currency',
@@ -581,6 +586,7 @@ export const en = {
     network: 'Network',
     account: 'Account / wallet ID',
     account_name: 'Account name',
+    cbu_cvu: 'CVU/CBU',
     bank_account: 'Bank account',
     document_no: 'CNIC (13 digits)',
     phone: 'Nigeria phone (e.g. 2348031234567)',
@@ -735,6 +741,9 @@ export const en = {
     analyticsDescription: 'Help us understand how the site is used so we can improve it.',
     chatTitle: 'Live chat cookies',
     chatDescription: 'Enable the live chat widget and support conversations.',
+    marketingTitle: 'Marketing cookies',
+    marketingDescription:
+      'Allow our advertising partners to measure campaign performance and show you more relevant offers.',
     savePreferences: 'Save preferences',
     policyPageTitle: 'Cookie Policy',
     policyIntro:
@@ -745,6 +754,8 @@ export const en = {
       'Analytics cookies are optional. They collect anonymous usage data to help us improve the product.',
     policyChat:
       'Live chat cookies are optional. They load the support chat widget when you allow them.',
+    policyMarketing:
+      'Marketing cookies are optional. They load third-party advertising and affiliate tags that measure campaign performance when you allow them.',
     managePreferences: 'Manage cookie preferences',
     backHome: '← Back to home',
   },

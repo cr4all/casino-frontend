@@ -513,6 +513,11 @@ export const es: LocaleTree = {
     "bank_name": "Nombre del banco",
     "account_name": "Titular de la cuenta",
     "account_number": "Número de cuenta",
+    "cbu_cvu": "CVU/CBU",
+    "payment_type": "Tipo de pago",
+    "beneficiary_name": "Beneficiario",
+    "qr_image_url": "Imagen QR",
+    "expires_at": "Vence",
     "reference": "Referencia",
     "amount": "Importe",
     "currency": "Moneda"
@@ -521,6 +526,8 @@ export const es: LocaleTree = {
     "address": "Dirección de wallet",
     "network": "Red",
     "account": "Cuenta / ID de wallet",
+    "account_name": "Nombre del titular",
+    "cbu_cvu": "CVU/CBU",
     "bank_account": "Cuenta bancaria"
   },
   "bonus": {
@@ -666,12 +673,15 @@ export const es: LocaleTree = {
     "analyticsDescription": "Ayúdanos a entender cómo se utiliza el sitio para que podamos mejorarlo.",
     "chatTitle": "Cookies de chat en vivo",
     "chatDescription": "Habilite el widget de chat en vivo y las conversaciones de soporte.",
+    "marketingTitle": "Cookies de marketing",
+    "marketingDescription": "Permite que nuestros socios publicitarios midan el rendimiento de las campañas y te muestren ofertas más relevantes.",
     "savePreferences": "Guardar preferencias",
     "policyPageTitle": "Política de cookies",
     "policyIntro": "Este sitio utiliza cookies para mantenerte conectado durante tu sesión, recordar tu idioma y, opcionalmente, admitir análisis y chat en vivo.",
     "policyNecessary": "Las cookies necesarias están siempre activas. Son necesarios para la autenticación, la seguridad y las preferencias básicas.",
     "policyAnalytics": "Las cookies de análisis son opcionales. Recopilan datos de uso anónimos para ayudarnos a mejorar el producto.",
     "policyChat": "Las cookies de chat en vivo son opcionales. Cargan el widget de chat de soporte cuando los permites.",
+    "policyMarketing": "Las cookies de marketing son opcionales. Cargan etiquetas publicitarias y de afiliados de terceros que miden el rendimiento de las campañas cuando las permites.",
     "managePreferences": "Gestionar preferencias de «cookies»",
     "backHome": "Volver al Inicio"
   },

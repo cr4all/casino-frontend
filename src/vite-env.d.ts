@@ -14,6 +14,8 @@ interface ImportMetaEnv {
   readonly VITE_SENTRY_TRACES_SAMPLE_RATE?: string;
   readonly VITE_POSTHOG_KEY?: string;
   readonly VITE_POSTHOG_HOST?: string;
+  readonly VITE_MARKETING_PIXEL_ID?: string;
+  readonly VITE_MARKETING_PIXEL_SRC?: string;
 }
 
 interface ImportMeta {

@@ -23,10 +23,11 @@ export function CookieSettingsModal() {
       setDraft({
         analytics: preferences.analytics,
         chat: preferences.chat,
+        marketing: preferences.marketing,
       });
     }
     wasOpenRef.current = settingsOpen;
-  }, [settingsOpen, preferences.analytics, preferences.chat]);
+  }, [settingsOpen, preferences.analytics, preferences.chat, preferences.marketing]);
 
   const setPreference = (key: keyof CookiePreferences, value: boolean) => {
     setDraft((prev) => ({ ...prev, [key]: value }));
@@ -36,6 +37,7 @@ export function CookieSettingsModal() {
     savePreferences({
       analytics: draft.analytics,
       chat: draft.chat,
+      marketing: draft.marketing,
     });
   };
 
@@ -87,6 +89,20 @@ export function CookieSettingsModal() {
           <label htmlFor="cookie-chat" className="min-w-0 flex-1 cursor-pointer">
             <p className="text-sm font-medium text-white">{t('cookies.chatTitle')}</p>
             <p className="mt-1 text-xs text-muted">{t('cookies.chatDescription')}</p>
+          </label>
+        </div>
+
+        <div className="flex items-start gap-3 rounded-lg border border-white/10 bg-background/50 p-3">
+          <input
+            id="cookie-marketing"
+            type="checkbox"
+            checked={draft.marketing}
+            onChange={(e) => setPreference('marketing', e.target.checked)}
+            className="mt-0.5 accent-accent-gold"
+          />
+          <label htmlFor="cookie-marketing" className="min-w-0 flex-1 cursor-pointer">
+            <p className="text-sm font-medium text-white">{t('cookies.marketingTitle')}</p>
+            <p className="mt-1 text-xs text-muted">{t('cookies.marketingDescription')}</p>
           </label>
         </div>
       </div>

@@ -539,6 +539,11 @@ export const ko: LocaleTree = {
     "bank_name": "은행명",
     "account_name": "예금주",
     "account_number": "계좌번호",
+    "cbu_cvu": "CVU/CBU",
+    "payment_type": "결제 유형",
+    "beneficiary_name": "수취인",
+    "qr_image_url": "QR 이미지",
+    "expires_at": "만료",
     "reference": "참조",
     "amount": "금액",
     "currency": "통화"
@@ -547,6 +552,8 @@ export const ko: LocaleTree = {
     "address": "지갑 주소",
     "network": "네트워크",
     "account": "계좌 / 지갑 ID",
+    "account_name": "예금주명",
+    "cbu_cvu": "CVU/CBU",
     "bank_account": "은행 계좌"
   },
   "bonus": {
@@ -692,12 +699,15 @@ export const ko: LocaleTree = {
     "analyticsDescription": "사이트 사용 방식을 이해하고 개선하는 데 도움이 됩니다.",
     "chatTitle": "라이브 채팅 쿠키",
     "chatDescription": "라이브 채팅 위젯과 고객 지원 대화를 활성화합니다.",
+    "marketingTitle": "마케팅 쿠키",
+    "marketingDescription": "광고 파트너가 캠페인 성과를 측정하고 더 관련성 높은 혜택을 보여줄 수 있도록 허용합니다.",
     "savePreferences": "설정 저장",
     "policyPageTitle": "쿠키 정책",
     "policyIntro": "이 사이트는 세션 동안 로그인 상태 유지, 언어 기억, 선택적 분석 및 라이브 채팅을 위해 쿠키를 사용합니다.",
     "policyNecessary": "필수 쿠키는 항상 활성화됩니다. 인증, 보안 및 기본 설정에 필요합니다.",
     "policyAnalytics": "분석 쿠키는 선택 사항입니다. 익명 사용 데이터를 수집하여 제품을 개선합니다.",
     "policyChat": "라이브 채팅 쿠키는 선택 사항입니다. 허용 시 지원 채팅 위젯을 로드합니다.",
+    "policyMarketing": "마케팅 쿠키는 선택 사항입니다. 허용 시 캠페인 성과를 측정하는 제3자 광고 및 제휴 태그를 로드합니다.",
     "managePreferences": "쿠키 설정 관리",
     "backHome": "← 홈으로"
   },

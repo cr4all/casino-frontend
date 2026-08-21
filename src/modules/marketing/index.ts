@@ -1,0 +1,1 @@
+export { MarketingPixel } from './MarketingPixel';
