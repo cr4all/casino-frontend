@@ -112,6 +112,14 @@ const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }
       n.includes('blitzcrown'),
     url: '/providers/mvg.png',
   },
+  {
+    test: (s, n) =>
+      s === 'luckymonaco' ||
+      n === 'luckymonaco' ||
+      s.includes('luckymonaco') ||
+      n.includes('luckymonaco'),
+    url: '/providers/luckymonaco.png',
+  },
   { test: (s, n) => s.includes('tpg') || n.includes('tpg'), url: '/providers/tpg.png' },
   { test: (s, n) => s.includes('popok') || n.includes('popok'), url: '/providers/popok.png' },
   { test: (s, n) => s.includes('popiplay') || n.includes('popiplay'), url: '/providers/popiplay.png' },
