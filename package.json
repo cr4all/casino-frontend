@@ -19,6 +19,7 @@
     "sync:platform-languages": "node scripts/sync-platform-languages.mjs",
     "sync:funta-thumbs": "node scripts/sync-funta-thumbnails.mjs",
     "sync:tpg-thumbs": "node scripts/sync-tpg-thumbnails.mjs",
+    "sync:dreamplay-thumbs": "node scripts/sync-dreamplay-thumbnails.mjs",
     "sync:contract": "echo Update contracts/player-v1.yaml from https://github.com/cr4all/casino-api-contract tags",
     "test": "vitest run"
   },

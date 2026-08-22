@@ -5,6 +5,10 @@ const THUMBNAIL_EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp'] as const;
 const CODE_THUMBNAIL_EXTENSIONS = ['webp', 'png', 'jpg', 'jpeg'] as const;
 /** FunTa ships per-game icons as `{game_code}.jpg` under /providers/funta/. */
 const FUNTA_CODE_THUMBNAIL_EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp'] as const;
+/** Dreamplay ships 287x193 icons as `{game_id}.png` under /providers/dreamplay/. */
+const DREAMPLAY_CODE_THUMBNAIL_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
+/** TurboGames (direct Hub) icons as `{game_id}.png` under /providers/turbogames/. */
+const TURBOGAMES_CODE_THUMBNAIL_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
 const CQ9_BG_EXTENSIONS = ['jpg', 'png', 'jpeg', 'webp'] as const;
 const CQ9_ICON_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
 /** Archived single-file CQ9 assets (pre-overlay). */
@@ -24,6 +28,18 @@ function isFunTaSlug(slug: string | null | undefined): boolean {
   return key === 'funta' || key === 'ftgslot' || key.includes('funta');
 }
 
+function isDreamplaySlug(slug: string | null | undefined): boolean {
+  if (!slug) return false;
+  const key = slug.toLowerCase().replace(/[^a-z0-9]/g, '');
+  return key === 'dreamplay' || key.includes('dreamplay');
+}
+
+function isTurboGamesSlug(slug: string | null | undefined): boolean {
+  if (!slug) return false;
+  const key = slug.toLowerCase().replace(/[^a-z0-9]/g, '');
+  return key === 'turbogames' || key === 'turbo' || key.includes('turbogame');
+}
+
 function providerFolders(game: Game): string[] {
   const folders = [game.vendor?.slug, game.provider?.slug].filter(
     (slug): slug is string => typeof slug === 'string' && slug.length > 0,
@@ -32,6 +48,14 @@ function providerFolders(game: Game): string[] {
   // FunTa hall external id is FTGSLOT; assets live under /providers/funta/.
   if (folders.some(isFunTaSlug) && !folders.includes('funta')) {
     folders.push('funta');
+  }
+
+  if (folders.some(isDreamplaySlug) && !folders.includes('dreamplay')) {
+    folders.push('dreamplay');
+  }
+
+  if (folders.some(isTurboGamesSlug) && !folders.includes('turbogames')) {
+    folders.push('turbogames');
   }
 
   return [...new Set(folders)];
@@ -43,6 +67,14 @@ export function isCq9Game(game: Game): boolean {
 
 export function isFunTaGame(game: Game): boolean {
   return [game.vendor?.slug, game.provider?.slug].some(isFunTaSlug);
+}
+
+export function isDreamplayGame(game: Game): boolean {
+  return [game.vendor?.slug, game.provider?.slug].some(isDreamplaySlug);
+}
+
+export function isTurboGamesGame(game: Game): boolean {
+  return [game.vendor?.slug, game.provider?.slug].some(isTurboGamesSlug);
 }
 
 export type Cq9OverlayCandidates = {
@@ -93,7 +125,11 @@ export function getLocalGameThumbnailCandidates(game: Game): string[] {
   const gameCode = game.game_code?.trim();
   const codeExtensions = isFunTaGame(game)
     ? FUNTA_CODE_THUMBNAIL_EXTENSIONS
-    : CODE_THUMBNAIL_EXTENSIONS;
+    : isDreamplayGame(game)
+      ? DREAMPLAY_CODE_THUMBNAIL_EXTENSIONS
+      : isTurboGamesGame(game)
+        ? TURBOGAMES_CODE_THUMBNAIL_EXTENSIONS
+        : CODE_THUMBNAIL_EXTENSIONS;
 
   if (gameCode) {
     for (const folder of folders) {
@@ -107,7 +143,11 @@ export function getLocalGameThumbnailCandidates(game: Game): string[] {
   if (gameSlug) {
     const nameExtensions = isFunTaGame(game)
       ? FUNTA_CODE_THUMBNAIL_EXTENSIONS
-      : THUMBNAIL_EXTENSIONS;
+      : isDreamplayGame(game)
+        ? DREAMPLAY_CODE_THUMBNAIL_EXTENSIONS
+        : isTurboGamesGame(game)
+          ? TURBOGAMES_CODE_THUMBNAIL_EXTENSIONS
+          : THUMBNAIL_EXTENSIONS;
     for (const folder of folders) {
       // TPG (and similar) ship name-slug thumbs under /providers/{slug}/games/.
       for (const ext of nameExtensions) {
