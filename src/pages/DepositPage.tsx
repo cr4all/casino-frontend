@@ -620,10 +620,19 @@ export function DepositPage() {
               <dl className="space-y-2">
                 {Object.entries(lastDeposit.payment_info).map(([key, value]) => {
                   if (key === 'payment_url' || key === 'qr_string') return null;
-                  const display = typeof value === 'object' ? JSON.stringify(value) : String(value);
+                  const raw = typeof value === 'object' ? JSON.stringify(value) : String(value);
+                  // expires_at may be ISO-8601 from API, or a legacy Unix-seconds integer.
+                  const display = key === 'expires_at'
+                    ? formatDate(
+                        /^\d+$/.test(raw)
+                          ? new Date(Number(raw) * 1000).toISOString()
+                          : raw,
+                      )
+                    : raw;
                   const isCopyable = key === 'address'
                     || key === 'pay_address'
                     || key === 'account_number'
+                    || key === 'cbu_cvu'
                     || key === 'payment_requisite';
 
                   return (
