@@ -102,15 +102,25 @@ const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }
   },
   {
     test: (s, n) =>
+      s === 'slotmart' ||
+      n === 'slotmart' ||
+      s.includes('slotmart') ||
+      n.includes('slotmart'),
+    url: '/providers/slotmart.png',
+  },
+  {
+    test: (s, n) =>
+      s === 'blitzcrown' ||
+      n === 'blitzcrown' ||
+      s.includes('blitzcrown') ||
+      n.includes('blitzcrown') ||
       s === 'mvg' ||
       n === 'mvg' ||
       s.includes('mvg') ||
       n.includes('mvg') ||
       s.includes('massivegaming') ||
-      n.includes('massivegaming') ||
-      s.includes('blitzcrown') ||
-      n.includes('blitzcrown'),
-    url: '/providers/mvg.png',
+      n.includes('massivegaming'),
+    url: '/providers/blitzcrown.png',
   },
   {
     test: (s, n) =>
@@ -119,6 +129,16 @@ const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }
       s.includes('luckymonaco') ||
       n.includes('luckymonaco'),
     url: '/providers/luckymonaco.png',
+  },
+  {
+    test: (s, n) =>
+      s === 'zillion' ||
+      n === 'zillion' ||
+      s.includes('zillion') ||
+      n.includes('zillion') ||
+      s === 'zilion' ||
+      n === 'zilion',
+    url: '/providers/zillion.png',
   },
   { test: (s, n) => s.includes('tpg') || n.includes('tpg'), url: '/providers/tpg.png' },
   { test: (s, n) => s.includes('popok') || n.includes('popok'), url: '/providers/popok.png' },

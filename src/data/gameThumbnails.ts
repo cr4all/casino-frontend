@@ -9,6 +9,8 @@ const FUNTA_CODE_THUMBNAIL_EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp'] as const;
 const DREAMPLAY_CODE_THUMBNAIL_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
 /** TurboGames (direct Hub) icons as `{game_id}.png` under /providers/turbogames/. */
 const TURBOGAMES_CODE_THUMBNAIL_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
+/** Zillion has no remote thumb API; lobby cards are `{game_id}.png` under /providers/zillion/. */
+const ZILLION_CODE_THUMBNAIL_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
 const CQ9_BG_EXTENSIONS = ['jpg', 'png', 'jpeg', 'webp'] as const;
 const CQ9_ICON_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
 /** Archived single-file CQ9 assets (pre-overlay). */
@@ -40,6 +42,13 @@ function isTurboGamesSlug(slug: string | null | undefined): boolean {
   return key === 'turbogames' || key === 'turbo' || key.includes('turbogame');
 }
 
+function isZillionSlug(slug: string | null | undefined): boolean {
+  if (!slug) return false;
+  const key = slug.toLowerCase().replace(/[^a-z0-9]/g, '');
+  // Local folder is misspelled Zilion; product slug is zillion.
+  return key === 'zillion' || key === 'zilion' || key.includes('zillion');
+}
+
 function providerFolders(game: Game): string[] {
   const folders = [game.vendor?.slug, game.provider?.slug].filter(
     (slug): slug is string => typeof slug === 'string' && slug.length > 0,
@@ -56,6 +65,10 @@ function providerFolders(game: Game): string[] {
 
   if (folders.some(isTurboGamesSlug) && !folders.includes('turbogames')) {
     folders.push('turbogames');
+  }
+
+  if (folders.some(isZillionSlug) && !folders.includes('zillion')) {
+    folders.push('zillion');
   }
 
   return [...new Set(folders)];
@@ -75,6 +88,10 @@ export function isDreamplayGame(game: Game): boolean {
 
 export function isTurboGamesGame(game: Game): boolean {
   return [game.vendor?.slug, game.provider?.slug].some(isTurboGamesSlug);
+}
+
+export function isZillionGame(game: Game): boolean {
+  return [game.vendor?.slug, game.provider?.slug].some(isZillionSlug);
 }
 
 export type Cq9OverlayCandidates = {
@@ -129,7 +146,9 @@ export function getLocalGameThumbnailCandidates(game: Game): string[] {
       ? DREAMPLAY_CODE_THUMBNAIL_EXTENSIONS
       : isTurboGamesGame(game)
         ? TURBOGAMES_CODE_THUMBNAIL_EXTENSIONS
-        : CODE_THUMBNAIL_EXTENSIONS;
+        : isZillionGame(game)
+          ? ZILLION_CODE_THUMBNAIL_EXTENSIONS
+          : CODE_THUMBNAIL_EXTENSIONS;
 
   if (gameCode) {
     for (const folder of folders) {
@@ -147,7 +166,9 @@ export function getLocalGameThumbnailCandidates(game: Game): string[] {
         ? DREAMPLAY_CODE_THUMBNAIL_EXTENSIONS
         : isTurboGamesGame(game)
           ? TURBOGAMES_CODE_THUMBNAIL_EXTENSIONS
-          : THUMBNAIL_EXTENSIONS;
+          : isZillionGame(game)
+            ? ZILLION_CODE_THUMBNAIL_EXTENSIONS
+            : THUMBNAIL_EXTENSIONS;
     for (const folder of folders) {
       // TPG (and similar) ship name-slug thumbs under /providers/{slug}/games/.
       for (const ext of nameExtensions) {
