@@ -140,6 +140,14 @@ const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }
       n === 'zilion',
     url: '/providers/zillion.png',
   },
+  {
+    test: (s, n) =>
+      s === 'jacktop' ||
+      n === 'jacktop' ||
+      s.includes('jacktop') ||
+      n.includes('jacktop'),
+    url: '/providers/jacktop.png',
+  },
   { test: (s, n) => s.includes('tpg') || n.includes('tpg'), url: '/providers/tpg.png' },
   { test: (s, n) => s.includes('popok') || n.includes('popok'), url: '/providers/popok.png' },
   { test: (s, n) => s.includes('popiplay') || n.includes('popiplay'), url: '/providers/popiplay.png' },

@@ -11,6 +11,8 @@ const DREAMPLAY_CODE_THUMBNAIL_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as co
 const TURBOGAMES_CODE_THUMBNAIL_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
 /** Zillion has no remote thumb API; lobby cards are `{game_id}.png` under /providers/zillion/. */
 const ZILLION_CODE_THUMBNAIL_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
+/** JackTop has no remote thumb API; lobby cards use slugified game names under /providers/jacktop/. */
+const JACKTOP_CODE_THUMBNAIL_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
 const CQ9_BG_EXTENSIONS = ['jpg', 'png', 'jpeg', 'webp'] as const;
 const CQ9_ICON_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
 /** Archived single-file CQ9 assets (pre-overlay). */
@@ -49,6 +51,12 @@ function isZillionSlug(slug: string | null | undefined): boolean {
   return key === 'zillion' || key === 'zilion' || key.includes('zillion');
 }
 
+function isJacktopSlug(slug: string | null | undefined): boolean {
+  if (!slug) return false;
+  const key = slug.toLowerCase().replace(/[^a-z0-9]/g, '');
+  return key === 'jacktop' || key.includes('jacktop');
+}
+
 function providerFolders(game: Game): string[] {
   const folders = [game.vendor?.slug, game.provider?.slug].filter(
     (slug): slug is string => typeof slug === 'string' && slug.length > 0,
@@ -69,6 +77,10 @@ function providerFolders(game: Game): string[] {
 
   if (folders.some(isZillionSlug) && !folders.includes('zillion')) {
     folders.push('zillion');
+  }
+
+  if (folders.some(isJacktopSlug) && !folders.includes('jacktop')) {
+    folders.push('jacktop');
   }
 
   return [...new Set(folders)];
@@ -92,6 +104,10 @@ export function isTurboGamesGame(game: Game): boolean {
 
 export function isZillionGame(game: Game): boolean {
   return [game.vendor?.slug, game.provider?.slug].some(isZillionSlug);
+}
+
+export function isJacktopGame(game: Game): boolean {
+  return [game.vendor?.slug, game.provider?.slug].some(isJacktopSlug);
 }
 
 export type Cq9OverlayCandidates = {
@@ -140,6 +156,19 @@ export function getLocalGameThumbnailCandidates(game: Game): string[] {
   }
 
   const gameCode = game.game_code?.trim();
+  const gameSlug = slugifyGameName(game.name);
+
+  if (isJacktopGame(game)) {
+    const jacktopExtensions = JACKTOP_CODE_THUMBNAIL_EXTENSIONS;
+    if (gameSlug) {
+      for (const ext of jacktopExtensions) {
+        push(`/providers/jacktop/${gameSlug}.${ext}`);
+        push(`/providers/jacktop/slot/${gameSlug}.${ext}`);
+      }
+    }
+    return candidates;
+  }
+
   const codeExtensions = isFunTaGame(game)
     ? FUNTA_CODE_THUMBNAIL_EXTENSIONS
     : isDreamplayGame(game)
@@ -158,7 +187,6 @@ export function getLocalGameThumbnailCandidates(game: Game): string[] {
     }
   }
 
-  const gameSlug = slugifyGameName(game.name);
   if (gameSlug) {
     const nameExtensions = isFunTaGame(game)
       ? FUNTA_CODE_THUMBNAIL_EXTENSIONS
