@@ -1,20 +1,19 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useAuthStore } from '@/stores/authStore';
+import { usePlayerSession } from '@/hooks/usePlayerSession';
 import { useBonusStore } from '@/stores/bonusStore';
 
 const POLL_INTERVAL_MS = 30_000;
 
 export function useBonusSync() {
   const location = useLocation();
-  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
-  const user = useAuthStore((s) => s.user);
+  const { hasHydrated, enabled } = usePlayerSession();
   const fetchBonusState = useBonusStore((s) => s.fetchBonusState);
   const clear = useBonusStore((s) => s.clear);
 
-  const enabled = isAuthenticated && user?.role !== 'affiliate';
-
   useEffect(() => {
+    if (!hasHydrated) return;
+
     if (!enabled) {
       clear();
       return;
@@ -35,19 +34,12 @@ export function useBonusSync() {
     document.addEventListener('visibilitychange', handleVisibility);
     window.addEventListener('focus', handleVisibility);
 
-    const unsubHydration = useAuthStore.persist.onFinishHydration(() => {
-      if (useAuthStore.getState().isAuthenticated) {
-        void fetchBonusState();
-      }
-    });
-
     return () => {
       clearInterval(pollId);
       document.removeEventListener('visibilitychange', handleVisibility);
       window.removeEventListener('focus', handleVisibility);
-      unsubHydration?.();
     };
-  }, [enabled, fetchBonusState, clear]);
+  }, [hasHydrated, enabled, fetchBonusState, clear]);
 
   useEffect(() => {
     if (!enabled) return;

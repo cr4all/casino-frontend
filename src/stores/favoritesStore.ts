@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { gameApi } from '@/api/game.api';
+import { hasAccessToken } from '@/stores/authStore';
 
 interface FavoritesState {
   favoriteIds: Set<number>;
@@ -19,7 +20,7 @@ export const useFavoritesStore = create<FavoritesState>((set, get) => ({
   loading: false,
 
   fetchFavorites: async () => {
-    if (get().loading) return;
+    if (!hasAccessToken() || get().loading) return;
 
     set({ loading: true });
     try {
@@ -45,6 +46,9 @@ export const useFavoritesStore = create<FavoritesState>((set, get) => ({
   isFavorite: (gameId) => get().favoriteIds.has(gameId),
 
   toggleFavorite: async (gameId) => {
+    if (!hasAccessToken()) {
+      throw new Error('Login required');
+    }
     const currentlyFavorite = get().favoriteIds.has(gameId);
     const next = new Set(get().favoriteIds);
 

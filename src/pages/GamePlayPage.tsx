@@ -13,6 +13,7 @@ import type { Game } from '@/types';
 export function GamePlayPage() {
   const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
+  const hasHydrated = useAuthStore((s) => s.hasHydrated);
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const [game, setGame] = useState<Game | null>(null);
   const [launchUrl, setLaunchUrl] = useState<string | null>(null);
@@ -21,6 +22,16 @@ export function GamePlayPage() {
 
   useLanguageInit();
   useScrollToTopOnNavigate();
+
+  useEffect(() => {
+    document.documentElement.classList.add('horizontal-page-lock');
+    document.body.classList.add('horizontal-page-lock');
+
+    return () => {
+      document.documentElement.classList.remove('horizontal-page-lock');
+      document.body.classList.remove('horizontal-page-lock');
+    };
+  }, []);
 
   useEffect(() => {
     const channel = new BroadcastChannel(GAME_FOCUS_CHANNEL);
@@ -46,6 +57,8 @@ export function GamePlayPage() {
   }, [id]);
 
   useEffect(() => {
+    if (!hasHydrated) return;
+
     if (!isAuthenticated) {
       setLoading(false);
       setError(t('gamePlay.loginRequired'));
@@ -65,11 +78,14 @@ export function GamePlayPage() {
         setError(getApiErrorMessage(err, t('gamePlay.launchError')));
       })
       .finally(() => setLoading(false));
-  }, [id, isAuthenticated, t]);
+  }, [id, hasHydrated, isAuthenticated, t]);
+
+  const playShellClass =
+    'game-play-shell relative flex h-dvh w-dvw max-w-full min-w-0 flex-col overflow-hidden overscroll-x-none bg-black';
 
   if (loading) {
     return (
-      <div className="flex h-dvh w-dvw flex-col items-center justify-center gap-3 bg-black">
+      <div className={`${playShellClass} items-center justify-center gap-3`}>
         <div className="h-8 w-8 animate-spin rounded-full border-2 border-accent-gold border-t-transparent" />
         <p className="text-sm text-muted">{t('gamePlay.launching')}</p>
       </div>
@@ -78,7 +94,7 @@ export function GamePlayPage() {
 
   if (error || !launchUrl) {
     return (
-      <div className="flex h-dvh w-dvw flex-col items-center justify-center gap-4 bg-black px-6 text-center">
+      <div className={`${playShellClass} items-center justify-center gap-4 px-6 text-center`}>
         <p className="text-red-400">{error ?? t('gamePlay.launchFailed')}</p>
         <p className="text-sm text-muted">{t('gamePlay.tryAgain')}</p>
         <button
@@ -93,11 +109,12 @@ export function GamePlayPage() {
   }
 
   return (
-    <div className="relative h-dvh w-dvw overflow-hidden bg-black">
+    <div className={playShellClass}>
       <iframe
         src={launchUrl}
         title={game?.name ?? t('gamePlay.defaultName')}
-        className="h-full w-full border-0 bg-black"
+        className="h-full w-full max-w-full min-w-0 flex-1 border-0 bg-black"
+        style={{ touchAction: 'pan-y' }}
         allow="fullscreen; autoplay"
       />
     </div>

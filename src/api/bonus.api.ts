@@ -63,4 +63,9 @@ export const bonusApi = {
     const { data } = await api.post<ApiResponse<ClaimBonusResult>>(`/bonus/${policyId}/claim`);
     return data.data;
   },
+
+  forfeit: async (playerBonusId: number) => {
+    const { data } = await api.post<ApiResponse<ClaimBonusResult>>(`/bonus/${playerBonusId}/forfeit`);
+    return data.data;
+  },
 };

@@ -1,0 +1,19 @@
+# Frontend-only stack from GHCR. Project name differs from backend casino-prod.
+name: casino-frontend-prod
+
+services:
+  frontend:
+    image: casino-frontend:latest
+    container_name: casino_prod_frontend
+    restart: unless-stopped
+    ports:
+      - "${FRONTEND_PORT:-8001}:80"
+    networks:
+      - casino-frontend
+    mem_limit: 256m
+    mem_reservation: 128m
+    cpus: 0.25
+
+networks:
+  casino-frontend:
+    driver: bridge

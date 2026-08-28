@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { subscribePlayerVipLevel } from '@/api/playerLevelRealtime';
+import { usePlayerSession } from '@/hooks/usePlayerSession';
 import { refreshEchoToken } from '@/lib/echo';
-import { useAuthStore } from '@/stores/authStore';
 import { usePlayerStore } from '@/stores/playerStore';
 
 export interface LevelUpNotice {
@@ -10,15 +10,13 @@ export interface LevelUpNotice {
 }
 
 export function usePlayerLevelSync() {
-  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
-  const user = useAuthStore((s) => s.user);
+  const enabled = usePlayerSession().enabled;
   const profile = usePlayerStore((s) => s.profile);
   const setProfile = usePlayerStore((s) => s.setProfile);
   const fetchProfile = usePlayerStore((s) => s.fetchProfile);
   const [levelUpNotice, setLevelUpNotice] = useState<LevelUpNotice | null>(null);
   const knownLevelRef = useRef<number | null>(null);
 
-  const enabled = isAuthenticated && user?.role !== 'affiliate';
   const playerId = profile?.id ?? null;
 
   const handleLevelIncrease = (level: number, levelName: string, levelSlug: string) => {

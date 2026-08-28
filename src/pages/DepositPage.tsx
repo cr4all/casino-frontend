@@ -14,6 +14,7 @@ import { DepositService } from '@/services/DepositService';
 import { useAuthStore } from '@/stores/authStore';
 import { useWalletStore } from '@/stores/walletStore';
 import { Button } from '@/components/common/Button';
+import { FormTextField } from '@/components/common/FormTextField';
 import { StatusBadge } from '@/components/common/StatusBadge';
 import { CryptoAmountInput } from '@/components/deposit/CryptoAmountInput';
 import { DepositStepIndicator } from '@/components/deposit/DepositStepIndicator';
@@ -64,7 +65,7 @@ function CopyButton({ value }: { value: string }) {
 }
 
 export function DepositPage() {
-  const { t, tPaymentMethod, tPaymentInfoField, tStatus, formatDate } = useTranslation();
+  const { t, tPaymentMethod, tPaymentInfoField, tDestinationField, tStatus, formatDate } = useTranslation();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const fetchBalance = useWalletStore((s) => s.fetchBalance);
   const [countries, setCountries] = useState<PaymentCountry[]>([]);
@@ -78,6 +79,7 @@ export function DepositPage() {
   const [confirmedOption, setConfirmedOption] = useState<PaymentOption | null>(null);
   const [optionKey, setOptionKey] = useState('');
   const [cryptoSearch, setCryptoSearch] = useState('');
+  const [destinationValues, setDestinationValues] = useState<Record<string, string>>({});
   const [amount, setAmount] = useState('');
   const [quote, setQuote] = useState<DepositQuote | null>(null);
   const [quoteLoading, setQuoteLoading] = useState(false);
@@ -253,13 +255,41 @@ export function DepositPage() {
     return () => clearTimeout(timer);
   }, [step, optionKey, amount, effectiveCountry]);
 
+  useEffect(() => {
+    if (!confirmedOption) {
+      setDestinationValues({});
+      return;
+    }
+
+    const initial: Record<string, string> = {};
+    confirmedOption.destination_fields.forEach((field) => {
+      initial[field.name] = '';
+    });
+    setDestinationValues(initial);
+  }, [confirmedOption?.key]);
+
   if (!isAuthenticated) {
     return <Navigate to="/" replace />;
   }
 
+  const handleDestinationChange = (name: string, value: string) => {
+    setDestinationValues((prev) => ({ ...prev, [name]: value }));
+    setFieldErrors((prev) => omitFieldError(prev, name));
+  };
+
   const performDeposit = async (turnstileToken?: string) => {
     if (!optionKey || !amount || !effectiveCountry) return;
-    const result = await DepositService.create(optionKey, amount, effectiveCountry, turnstileToken);
+    const destination =
+      confirmedOption && confirmedOption.destination_fields.length > 0
+        ? destinationValues
+        : undefined;
+    const result = await DepositService.create(
+      optionKey,
+      amount,
+      effectiveCountry,
+      turnstileToken,
+      destination,
+    );
     setLastDeposit(result);
     setMessage(t('deposit.submitted', { id: result.deposit_id, status: tStatus(result.status) }));
     setAmount('');
@@ -298,7 +328,18 @@ export function DepositPage() {
         ? t('common.fieldRequired', { field: t('deposit.amount') })
         : undefined;
 
-    const errors = collectFieldErrors([['amount', amountError]]);
+    const checks: Array<[string, string | undefined]> = [['amount', amountError]];
+
+    confirmedOption?.destination_fields.forEach((field) => {
+      if (field.required && !requiredValue(destinationValues[field.name] ?? '')) {
+        checks.push([
+          field.name,
+          t('common.fieldRequired', { field: tDestinationField(field.name, field.label) }),
+        ]);
+      }
+    });
+
+    const errors = collectFieldErrors(checks);
     if (hasFieldErrors(errors)) {
       setFieldErrors(errors);
       return;
@@ -454,6 +495,19 @@ export function DepositPage() {
                   <PaymentOptionMinMax option={confirmedOption} />
                 )}
 
+                {confirmedOption?.destination_fields.map((field) => (
+                  <FormTextField
+                    key={field.name}
+                    id={`deposit-${field.name}`}
+                    label={tDestinationField(field.name, field.label)}
+                    type="text"
+                    value={destinationValues[field.name] ?? ''}
+                    onChange={(e) => handleDestinationChange(field.name, e.target.value)}
+                    error={fieldErrors[field.name]}
+                    inputClassName="bg-background py-2"
+                  />
+                ))}
+
                 {amount && Number(amount) > 0 && (
                   <div className="rounded-lg border border-white/10 bg-background/50 p-3 text-sm">
                     {quoteLoading && (
@@ -566,10 +620,19 @@ export function DepositPage() {
               <dl className="space-y-2">
                 {Object.entries(lastDeposit.payment_info).map(([key, value]) => {
                   if (key === 'payment_url' || key === 'qr_string') return null;
-                  const display = typeof value === 'object' ? JSON.stringify(value) : String(value);
+                  const raw = typeof value === 'object' ? JSON.stringify(value) : String(value);
+                  // expires_at may be ISO-8601 from API, or a legacy Unix-seconds integer.
+                  const display = key === 'expires_at'
+                    ? formatDate(
+                        /^\d+$/.test(raw)
+                          ? new Date(Number(raw) * 1000).toISOString()
+                          : raw,
+                      )
+                    : raw;
                   const isCopyable = key === 'address'
                     || key === 'pay_address'
                     || key === 'account_number'
+                    || key === 'cbu_cvu'
                     || key === 'payment_requisite';
 
                   return (

@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { notificationApi } from '@/api/notification.api';
+import { hasAccessToken } from '@/stores/authStore';
 
 interface NotificationState {
   unreadCount: number;
@@ -13,6 +14,8 @@ export const useNotificationStore = create<NotificationState>((set) => ({
   unreadCount: 0,
 
   fetchUnreadCount: async () => {
+    if (!hasAccessToken()) return;
+
     try {
       const data = await notificationApi.getMessages(1, 50);
       set({ unreadCount: data.items.filter((m) => !m.is_read).length });

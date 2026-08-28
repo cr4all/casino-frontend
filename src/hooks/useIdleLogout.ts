@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { useAuthStore } from '@/stores/authStore';
+import { usePlayerSession } from '@/hooks/usePlayerSession';
 import { useSessionPolicy } from '@/hooks/useSessionPolicy';
 import { AuthService } from '@/services/AuthService';
 import { subscribeUserActivity } from '@/utils/userActivity';
@@ -7,13 +7,11 @@ import { subscribeUserActivity } from '@/utils/userActivity';
 const ACTIVITY_EVENTS = ['mousedown', 'keydown', 'touchstart', 'scroll', 'click'] as const;
 
 export function useIdleLogout() {
-  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
-  const user = useAuthStore((s) => s.user);
+  const sessionEnabled = usePlayerSession().enabled;
   const { idleTimeoutMinutes, isLoaded } = useSessionPolicy();
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const enabled =
-    isAuthenticated && user?.role !== 'affiliate' && isLoaded && idleTimeoutMinutes > 0;
+  const enabled = sessionEnabled && isLoaded && idleTimeoutMinutes > 0;
 
   useEffect(() => {
     if (!enabled) {

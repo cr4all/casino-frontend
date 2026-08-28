@@ -6,6 +6,7 @@ export type CookieConsentLevel = 'pending' | 'necessary' | 'custom' | 'all';
 export interface CookiePreferences {
   analytics: boolean;
   chat: boolean;
+  marketing: boolean;
 }
 
 interface CookieConsentState {
@@ -21,12 +22,17 @@ interface CookieConsentState {
   setHasHydrated: (value: boolean) => void;
 }
 
-const ALL_PREFERENCES: CookiePreferences = { analytics: true, chat: true };
-const NECESSARY_PREFERENCES: CookiePreferences = { analytics: false, chat: false };
+const ALL_PREFERENCES: CookiePreferences = { analytics: true, chat: true, marketing: true };
+const NECESSARY_PREFERENCES: CookiePreferences = {
+  analytics: false,
+  chat: false,
+  marketing: false,
+};
 
 function deriveLevel(preferences: CookiePreferences): CookieConsentLevel {
-  if (!preferences.analytics && !preferences.chat) return 'necessary';
-  if (preferences.analytics && preferences.chat) return 'all';
+  const optional = [preferences.analytics, preferences.chat, preferences.marketing];
+  if (optional.every((allowed) => !allowed)) return 'necessary';
+  if (optional.every((allowed) => allowed)) return 'all';
   return 'custom';
 }
 
@@ -66,6 +72,7 @@ export const useCookieConsentStore = create<CookieConsentState>()(
           preferences: {
             analytics: preferences.analytics,
             chat: preferences.chat,
+            marketing: preferences.marketing,
           },
           settingsOpen: false,
         }),
@@ -95,6 +102,7 @@ export const useCookieConsentStore = create<CookieConsentState>()(
           preferences: {
             analytics: persisted.preferences?.analytics ?? false,
             chat: persisted.preferences?.chat ?? false,
+            marketing: persisted.preferences?.marketing ?? false,
           },
         };
       },
@@ -125,4 +133,8 @@ export function canLoadChat(level: CookieConsentLevel, preferences: CookiePrefer
 
 export function canLoadAnalytics(level: CookieConsentLevel, preferences: CookiePreferences): boolean {
   return level !== 'pending' && preferences.analytics;
+}
+
+export function canLoadMarketing(level: CookieConsentLevel, preferences: CookiePreferences): boolean {
+  return level !== 'pending' && preferences.marketing;
 }

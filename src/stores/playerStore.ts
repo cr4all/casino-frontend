@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { playerApi } from '@/api/wallet.api';
+import { hasAccessToken } from '@/stores/authStore';
 import type { PlayerProfile } from '@/types';
 
 interface PlayerState {
@@ -17,6 +18,10 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
   isLoading: false,
 
   fetchProfile: async (force = false) => {
+    if (!hasAccessToken()) {
+      return null;
+    }
+
     if (!force && get().profile) {
       return get().profile;
     }

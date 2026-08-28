@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useAuthStore } from '@/stores/authStore';
+import { usePlayerSession } from '@/hooks/usePlayerSession';
 import { useLiveChatStore } from '@/stores/liveChatStore';
 import { useUiStore } from '@/stores/uiStore';
 
@@ -8,15 +8,14 @@ const POLL_INTERVAL_MS = 15_000;
 
 export function useLiveChatSync() {
   const location = useLocation();
-  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
-  const user = useAuthStore((s) => s.user);
+  const { hasHydrated, enabled } = usePlayerSession();
   const liveChatOpen = useUiStore((s) => s.liveChatOpen);
   const fetchUnreadCount = useLiveChatStore((s) => s.fetchUnreadCount);
   const clear = useLiveChatStore((s) => s.clear);
 
-  const enabled = isAuthenticated && user?.role !== 'affiliate';
-
   useEffect(() => {
+    if (!hasHydrated) return;
+
     if (!enabled) {
       clear();
       return;
@@ -45,7 +44,7 @@ export function useLiveChatSync() {
       window.clearInterval(pollId);
       document.removeEventListener('visibilitychange', handleVisibility);
     };
-  }, [enabled, liveChatOpen, fetchUnreadCount, clear]);
+  }, [hasHydrated, enabled, liveChatOpen, fetchUnreadCount, clear]);
 
   useEffect(() => {
     if (!enabled || liveChatOpen) return;

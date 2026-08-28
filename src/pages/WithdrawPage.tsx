@@ -7,11 +7,13 @@ import {
   type WithdrawalItem,
   type WithdrawQuote,
 } from '@/api/payment.api';
+import { bonusApi, type ActiveBonus } from '@/api/bonus.api';
 import { WithdrawService } from '@/services/WithdrawService';
 import { useAuthStore } from '@/stores/authStore';
 import { DEFAULT_CURRENCY, useWalletStore } from '@/stores/walletStore';
 import { usePlayerStore } from '@/stores/playerStore';
 import { formatBalance } from '@/utils/formatBalance';
+import { ForfeitBonusModal } from '@/components/bonus/ForfeitBonusModal';
 import { Button } from '@/components/common/Button';
 import { FormTextField } from '@/components/common/FormTextField';
 import { Modal } from '@/components/common/Modal';
@@ -21,6 +23,7 @@ import { DepositStepIndicator } from '@/components/deposit/DepositStepIndicator'
 import { PaymentKindGrid } from '@/components/deposit/PaymentKindGrid';
 import { PaymentCountrySelect } from '@/components/payment/PaymentCountrySelect';
 import { PaymentOptionGrid, PaymentOptionSummary } from '@/components/payment/PaymentOptionGrid';
+import { useForfeitBonus } from '@/hooks/useForfeitBonus';
 import { useTranslation } from '@/hooks/useTranslation';
 import {
   getApiErrorDetails,
@@ -97,6 +100,7 @@ export function WithdrawPage() {
   const [verificationModalOpen, setVerificationModalOpen] = useState(false);
   const [limitAlertOpen, setLimitAlertOpen] = useState(false);
   const [limitAlertAmount, setLimitAlertAmount] = useState<string | null>(null);
+  const [activeBonuses, setActiveBonuses] = useState<ActiveBonus[]>([]);
   const {
     challengeRequired,
     setChallengeRequired,
@@ -104,6 +108,22 @@ export function WithdrawPage() {
     registerWidgetReset,
     resetWidget,
   } = useRiskChallenge();
+  const {
+    targetBonus,
+    isOpen: forfeitModalOpen,
+    submitting: forfeiting,
+    errorMessage: forfeitError,
+    requestForfeit,
+    confirmForfeit,
+    closeForfeit,
+  } = useForfeitBonus({
+    onSuccess: async () => {
+      const remaining = await bonusApi.getActive();
+      setActiveBonuses(remaining);
+      setMessage(t('wallet.forfeitBonusSuccess'));
+      setError(null);
+    },
+  });
 
   const eligibility = profile?.withdrawal_eligibility;
   const walletCurrency = balance?.currency ?? profile?.currency ?? DEFAULT_CURRENCY;
@@ -247,6 +267,18 @@ export function WithdrawPage() {
       })
       .finally(() => setLoading(false));
   }, [isAuthenticated, fetchBalance, fetchProfile]);
+
+  useEffect(() => {
+    if (!isAuthenticated || !balance?.bonus_locked) {
+      setActiveBonuses([]);
+      return;
+    }
+
+    bonusApi
+      .getActive()
+      .then(setActiveBonuses)
+      .catch(() => setActiveBonuses([]));
+  }, [isAuthenticated, balance?.bonus_locked]);
 
   useEffect(() => {
     if (!optionsCountry) {
@@ -560,7 +592,38 @@ export function WithdrawPage() {
               </div>
             )}
             {balance?.bonus_locked && (
-              <p className="mt-2 text-xs text-amber-300/90">{t('wallet.bonusLockedHint')}</p>
+              <div className="mt-3 space-y-2 text-left">
+                <p className="text-xs text-amber-300/90">{t('wallet.bonusLockedHint')}</p>
+                {activeBonuses.map((bonus) => (
+                  <div
+                    key={bonus.id}
+                    className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-amber-500/20 bg-amber-500/5 px-3 py-2"
+                  >
+                    <div className="min-w-0 text-xs text-amber-100/90">
+                      <p className="truncate font-medium">{bonus.policy_name ?? `#${bonus.id}`}</p>
+                      {bonus.type === 'free_spin' && bonus.spins_remaining != null ? (
+                        <p className="mt-0.5 text-[11px] text-amber-200/70">
+                          {t('wallet.funding.free_spin')}: {bonus.spins_remaining}
+                          {bonus.spin_count != null ? ` / ${bonus.spin_count}` : ''}
+                        </p>
+                      ) : bonus.wagering ? (
+                        <p className="mt-0.5 text-[11px] text-amber-200/70">
+                          {formatBalance(bonus.wagering.wagered)} / {formatBalance(bonus.wagering.required)}
+                        </p>
+                      ) : null}
+                    </div>
+                    <Button
+                      type="button"
+                      variant="secondary"
+                      className="px-3 py-1.5 text-xs"
+                      disabled={forfeiting}
+                      onClick={() => requestForfeit(bonus)}
+                    >
+                      {t('wallet.forfeitBonus')}
+                    </Button>
+                  </div>
+                ))}
+              </div>
             )}
             <p className="mt-2 text-xs text-muted">
               {t('wallet.totalPlayable')}:{' '}
@@ -569,6 +632,15 @@ export function WithdrawPage() {
               </span>
             </p>
           </div>
+
+          <ForfeitBonusModal
+            bonus={targetBonus}
+            isOpen={forfeitModalOpen}
+            submitting={forfeiting}
+            errorMessage={forfeitError}
+            onConfirm={() => void confirmForfeit()}
+            onClose={closeForfeit}
+          />
 
           {eligibility?.requires_verification && (
             <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">
