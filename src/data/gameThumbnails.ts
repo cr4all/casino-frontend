@@ -13,6 +13,8 @@ const TURBOGAMES_CODE_THUMBNAIL_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as c
 const ZILLION_CODE_THUMBNAIL_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
 /** JackTop has no remote thumb API; lobby cards use slugified game names under /providers/jacktop/. */
 const JACKTOP_CODE_THUMBNAIL_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
+/** Megafair has no remote thumb API; lobby cards are `{gameId}.png` under /providers/megafair/. */
+const MEGAFAIR_CODE_THUMBNAIL_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
 const CQ9_BG_EXTENSIONS = ['jpg', 'png', 'jpeg', 'webp'] as const;
 const CQ9_ICON_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
 /** Archived single-file CQ9 assets (pre-overlay). */
@@ -57,6 +59,12 @@ function isJacktopSlug(slug: string | null | undefined): boolean {
   return key === 'jacktop' || key.includes('jacktop');
 }
 
+function isMegafairSlug(slug: string | null | undefined): boolean {
+  if (!slug) return false;
+  const key = slug.toLowerCase().replace(/[^a-z0-9]/g, '');
+  return key === 'megafair' || key.includes('megafair');
+}
+
 function providerFolders(game: Game): string[] {
   const folders = [game.vendor?.slug, game.provider?.slug].filter(
     (slug): slug is string => typeof slug === 'string' && slug.length > 0,
@@ -81,6 +89,10 @@ function providerFolders(game: Game): string[] {
 
   if (folders.some(isJacktopSlug) && !folders.includes('jacktop')) {
     folders.push('jacktop');
+  }
+
+  if (folders.some(isMegafairSlug) && !folders.includes('megafair')) {
+    folders.push('megafair');
   }
 
   return [...new Set(folders)];
@@ -108,6 +120,10 @@ export function isZillionGame(game: Game): boolean {
 
 export function isJacktopGame(game: Game): boolean {
   return [game.vendor?.slug, game.provider?.slug].some(isJacktopSlug);
+}
+
+export function isMegafairGame(game: Game): boolean {
+  return [game.vendor?.slug, game.provider?.slug].some(isMegafairSlug);
 }
 
 export type Cq9OverlayCandidates = {
@@ -177,7 +193,9 @@ export function getLocalGameThumbnailCandidates(game: Game): string[] {
         ? TURBOGAMES_CODE_THUMBNAIL_EXTENSIONS
         : isZillionGame(game)
           ? ZILLION_CODE_THUMBNAIL_EXTENSIONS
-          : CODE_THUMBNAIL_EXTENSIONS;
+          : isMegafairGame(game)
+            ? MEGAFAIR_CODE_THUMBNAIL_EXTENSIONS
+            : CODE_THUMBNAIL_EXTENSIONS;
 
   if (gameCode) {
     for (const folder of folders) {
