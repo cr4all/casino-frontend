@@ -5,6 +5,7 @@ import { useAuthStore } from '@/stores/authStore';
 import { usePlayerStore } from '@/stores/playerStore';
 import { useWalletStore } from '@/stores/walletStore';
 import { useUiStore } from '@/stores/uiStore';
+import { useContrastStore } from '@/stores/contrastStore';
 import { useUnreadNotifications } from '@/hooks/useUnreadNotifications';
 import { useTranslation } from '@/hooks/useTranslation';
 import { AuthService } from '@/services/AuthService';
@@ -26,6 +27,8 @@ export function Header({ onMenuToggle, onOpenVipLevels }: HeaderProps) {
   const balance = useWalletStore((s) => s.balance);
   const profile = usePlayerStore((s) => s.profile);
   const openModal = useUiStore((s) => s.openModal);
+  const highContrast = useContrastStore((s) => s.highContrast);
+  const toggleHighContrast = useContrastStore((s) => s.toggleHighContrast);
   const unreadCount = useUnreadNotifications();
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const userMenuRef = useRef<HTMLDivElement>(null);
@@ -61,6 +64,40 @@ export function Header({ onMenuToggle, onOpenVipLevels }: HeaderProps) {
       </div>
 
       <div className="col-start-3 flex min-w-0 shrink-0 items-center justify-end gap-1.5 sm:gap-2 md:gap-3 lg:col-start-2">
+        <button
+          type="button"
+          onClick={toggleHighContrast}
+          aria-pressed={highContrast}
+          aria-label={highContrast ? t('common.outdoorModeOn') : t('common.outdoorModeOff')}
+          title={t('common.outdoorMode')}
+          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-md border transition-colors ${
+            highContrast
+              ? 'border-accent-gold/60 bg-accent-gold/15 text-accent-gold'
+              : 'border-white/10 text-white hover:border-accent-gold/40'
+          }`}
+        >
+          {highContrast ? (
+            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.75}
+                d="M12 3v1.5M12 19.5V21M4.5 12H3m18 0h-1.5M6.2 6.2l-1 1m13.6 13.6-1-1M6.2 17.8l-1-1m13.6-13.6-1 1M12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5z"
+              />
+            </svg>
+          ) : (
+            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.75}
+                d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 0v18"
+              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M12 3a9 9 0 010 18" fill="currentColor" opacity="0.35" />
+            </svg>
+          )}
+        </button>
+
         <LanguageSelector />
 
         {isAuthenticated ? (
@@ -131,6 +168,14 @@ export function Header({ onMenuToggle, onOpenVipLevels }: HeaderProps) {
                     className="block px-4 py-2.5 text-sm text-white hover:bg-surface transition-colors"
                   >
                     {t('nav.bonusesLabel')}
+                  </Link>
+                  <Link
+                    to="/invite"
+                    role="menuitem"
+                    onClick={closeUserMenu}
+                    className="block px-4 py-2.5 text-sm text-white hover:bg-surface transition-colors"
+                  >
+                    {t('nav.inviteLabel')}
                   </Link>
                   <Link
                     to="/transactions"

@@ -7,6 +7,7 @@ import { MobileWalletActionBar } from '@/components/layout/MobileWalletActionBar
 import { ForgotPasswordModal } from '@/components/auth/ForgotPasswordModal';
 import { LoginModal } from '@/components/auth/LoginModal';
 import { RegisterModal } from '@/components/auth/RegisterModal';
+import { AffiliateRegisterModal } from '@/components/auth/AffiliateRegisterModal';
 import { CookieConsentBanner } from '@/components/common/CookieConsentBanner';
 import { CookieSettingsModal } from '@/components/common/CookieSettingsModal';
 import { ComingSoonModal } from '@/components/common/Modal';
@@ -20,6 +21,7 @@ import { useScrollToTopOnNavigate } from '@/hooks/useScrollToTopOnNavigate';
 import { usePageMeta } from '@/hooks/usePageMeta';
 import { useIdleLogout } from '@/hooks/useIdleLogout';
 import { useLanguageInit } from '@/hooks/useLanguageInit';
+import { useContrastInit } from '@/hooks/useContrastInit';
 import { useLiveChatSync } from '@/hooks/useLiveChatSync';
 import { useSupportTicketSync } from '@/hooks/useSupportTicketSync';
 import { useNotificationSync } from '@/hooks/useNotificationSync';
@@ -34,6 +36,7 @@ import { useAuthStore } from '@/stores/authStore';
 import { usePlayerStore } from '@/stores/playerStore';
 import { useGameStore } from '@/stores/gameStore';
 import { captureAffiliateReferralFromUrl } from '@/utils/affiliateReferral';
+import { captureInviteReferralFromUrl } from '@/utils/inviteReferral';
 import { usePlatformSectionStore } from '@/stores/platformSectionStore';
 
 export function AppLayout() {
@@ -55,12 +58,17 @@ export function AppLayout() {
   useSupportTicketSync();
   useIdleLogout();
   useLanguageInit();
+  useContrastInit();
   useCloseLiveChatOnNavigate();
   useScrollToTopOnNavigate();
   const { activePopup, dismissPopup, userId } = usePopupAnnouncements();
   const [searchParams] = useSearchParams();
   const location = useLocation();
   usePageMeta(location.pathname);
+  const isSportsIframeRoute = location.pathname.startsWith('/sports');
+  const isCasinoLobbyRoute =
+    location.pathname === '/' || location.pathname.startsWith('/category');
+  const clipHorizontalOverscroll = isSportsIframeRoute || isCasinoLobbyRoute;
   const [mobileOpen, setMobileOpen] = useState(false);
   const user = useAuthStore((s) => s.user);
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
@@ -73,15 +81,14 @@ export function AppLayout() {
   }, [location.pathname, syncPlatformSection]);
 
   useEffect(() => {
-    const isSportsRoute = location.pathname.startsWith('/sports');
-    document.documentElement.classList.toggle('sports-page-lock', isSportsRoute);
-    document.body.classList.toggle('sports-page-lock', isSportsRoute);
+    document.documentElement.classList.toggle('horizontal-page-lock', clipHorizontalOverscroll);
+    document.body.classList.toggle('horizontal-page-lock', clipHorizontalOverscroll);
 
     return () => {
-      document.documentElement.classList.remove('sports-page-lock');
-      document.body.classList.remove('sports-page-lock');
+      document.documentElement.classList.remove('horizontal-page-lock');
+      document.body.classList.remove('horizontal-page-lock');
     };
-  }, [location.pathname]);
+  }, [clipHorizontalOverscroll]);
 
   useEffect(() => {
     void loadSessionPolicy();
@@ -91,13 +98,12 @@ export function AppLayout() {
 
   useEffect(() => {
     captureAffiliateReferralFromUrl(searchParams);
+    captureInviteReferralFromUrl(searchParams);
   }, [searchParams]);
 
   if (isAffiliateUser && !location.pathname.startsWith('/affiliate')) {
     return <Navigate to="/affiliate" replace />;
   }
-
-  const isSportsIframeRoute = location.pathname.startsWith('/sports');
 
   if (isAffiliateUser) {
     return (
@@ -108,6 +114,7 @@ export function AppLayout() {
         <Footer />
         <LoginModal />
         <RegisterModal />
+        <AffiliateRegisterModal />
         <ForgotPasswordModal />
         <ComingSoonModal />
         <CookieConsentBanner />
@@ -141,8 +148,10 @@ export function AppLayout() {
         <Header onMenuToggle={() => setMobileOpen(true)} />
         <main
           className={`min-w-0 flex-1 overflow-x-hidden ${
-            isSportsIframeRoute ? 'p-0 overscroll-x-none' : 'p-4 md:p-6'
-          } ${isAuthenticated ? 'has-mobile-wallet-bar lg:pb-0' : ''}`}
+            isSportsIframeRoute ? 'p-0' : 'p-4 md:p-6'
+          } ${clipHorizontalOverscroll ? 'overscroll-x-none' : ''} ${
+            isAuthenticated ? 'has-mobile-wallet-bar lg:pb-0' : ''
+          }`}
         >
           <Outlet />
         </main>
@@ -152,6 +161,7 @@ export function AppLayout() {
 
       <LoginModal />
       <RegisterModal />
+      <AffiliateRegisterModal />
       <ForgotPasswordModal />
       <ComingSoonModal />
       <CookieConsentBanner />
