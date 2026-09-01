@@ -21,7 +21,6 @@
   "Stake": "Stake",
   "Odds": "Mga Odd",
   "The World's Largest Sportsbook & Online Casino": "Աշխարհի ամենամեծ սպորտային գրքույկը և առցանց կազինոն",
-  "5% Cashback Bonus Every Tuesday": "5% Cashback բոնուս ամեն երեքշաբթի",
   "Bank transfer": "Բանկային փոխանցում",
   "Other": "Այլ",
   "Account name": "Հաշվի անուն",
@@ -33,5 +32,8 @@
   "Currency": "Հատուկ դրամ",
   "Partners": "Գործընկերներ",
   "Affiliate Program": "Գործընկերային ծրագիր",
-  "Become a Partner": "Դարձեք գործընկեր"
+  "Become a Partner": "Դարձեք գործընկեր",
+  "Weekly, monthly up to {{percent}}% cashback": "Շաբաթական, ամսական մինչև {{percent}}% cashback",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Օրական, շաբաթական, ամսական մինչև {{percent}}% cashback",
+  "KYC Policy": "KYC Քաղաքականություն"
 }

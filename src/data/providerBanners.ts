@@ -56,6 +56,99 @@ const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }
   { test: (s, n) => s.includes('sagaming') || n.includes('sagaming'), url: '/providers/sa-gaming.png' },
   { test: (s, n) => s.includes('simpleplay') || n.includes('simpleplay'), url: '/providers/simpleplay.png' },
   { test: (s, n) => s.includes('fachai') || n.includes('fachai'), url: '/providers/fachai.png' },
+  {
+    test: (s, n) =>
+      s === 'funta' ||
+      n === 'funta' ||
+      s.includes('funta') ||
+      n.includes('funta') ||
+      s === 'ftgslot' ||
+      n === 'ftgslot',
+    url: '/providers/funta.png',
+  },
+  {
+    test: (s, n) =>
+      s === 'gtt' ||
+      n === 'gtt' ||
+      s.includes('gtt') ||
+      n.includes('gtt') ||
+      s.includes('gametimetec') ||
+      n.includes('gametimetec'),
+    url: '/providers/gtt.png',
+  },
+  {
+    test: (s, n) =>
+      s === 'galaxsys' ||
+      n === 'galaxsys' ||
+      s.includes('galaxsys') ||
+      n.includes('galaxsys') ||
+      s === 'galaxys' ||
+      n === 'galaxys' ||
+      s.includes('galaxys') ||
+      n.includes('galaxys'),
+    url: '/providers/galaxsys.png',
+  },
+  {
+    test: (s, n) => s.includes('booming') || n.includes('booming'),
+    url: '/providers/booming.png',
+  },
+  {
+    test: (s, n) =>
+      s === 'riddec' ||
+      n === 'riddec' ||
+      s.includes('riddec') ||
+      n.includes('riddec'),
+    url: '/providers/riddec.png',
+  },
+  {
+    test: (s, n) =>
+      s === 'slotmart' ||
+      n === 'slotmart' ||
+      s.includes('slotmart') ||
+      n.includes('slotmart'),
+    url: '/providers/slotmart.png',
+  },
+  {
+    test: (s, n) =>
+      s === 'blitzcrown' ||
+      n === 'blitzcrown' ||
+      s.includes('blitzcrown') ||
+      n.includes('blitzcrown') ||
+      s === 'mvg' ||
+      n === 'mvg' ||
+      s.includes('mvg') ||
+      n.includes('mvg') ||
+      s.includes('massivegaming') ||
+      n.includes('massivegaming'),
+    url: '/providers/blitzcrown.png',
+  },
+  {
+    test: (s, n) =>
+      s === 'luckymonaco' ||
+      n === 'luckymonaco' ||
+      s.includes('luckymonaco') ||
+      n.includes('luckymonaco'),
+    url: '/providers/luckymonaco.png',
+  },
+  {
+    test: (s, n) =>
+      s === 'zillion' ||
+      n === 'zillion' ||
+      s.includes('zillion') ||
+      n.includes('zillion') ||
+      s === 'zilion' ||
+      n === 'zilion',
+    url: '/providers/zillion.png',
+  },
+  {
+    test: (s, n) =>
+      s === 'jacktop' ||
+      n === 'jacktop' ||
+      s.includes('jacktop') ||
+      n.includes('jacktop'),
+    url: '/providers/jacktop.png',
+  },
+  { test: (s, n) => s.includes('tpg') || n.includes('tpg'), url: '/providers/tpg.png' },
   { test: (s, n) => s.includes('popok') || n.includes('popok'), url: '/providers/popok.png' },
   { test: (s, n) => s.includes('popiplay') || n.includes('popiplay'), url: '/providers/popiplay.png' },
   { test: (s, n) => s.includes('tada') || n.includes('tada'), url: '/providers/tada.png' },

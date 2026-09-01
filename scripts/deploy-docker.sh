@@ -16,7 +16,7 @@ fi
 COMPOSE=(docker compose -f "$COMPOSE_FILE" --env-file "$ENV_FILE")
 
 echo "Pulling latest code..."
-git pull origin main
+git pull origin
 
 echo "Building frontend image..."
 echo "  (VITE_REVERB_*, VITE_TURNSTILE_SITE_KEY, VITE_SENTRY_*, VITE_POSTHOG_* from env — rebuild when those change)"

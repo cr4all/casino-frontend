@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { GameVendor } from '@/api/game.api';
 import { getVendorLogoUrl } from '@/data/providerBanners';
 import { useTranslation } from '@/hooks/useTranslation';
+import { formatVendorName } from '@/utils/formatVendorName';
 
 interface ProviderSelectProps {
   vendors: GameVendor[];
@@ -46,7 +47,9 @@ export function ProviderSelect({ vendors, selectedVendorId, onChange, loading }:
   const containerRef = useRef<HTMLDivElement>(null);
 
   const selectedVendor = vendors.find((vendor) => vendor.id === selectedVendorId) ?? null;
-  const triggerLabel = selectedVendor?.name ?? t('nav.browseAll');
+  const triggerLabel = selectedVendor
+    ? formatVendorName(selectedVendor.name)
+    : t('nav.browseAll');
 
   useEffect(() => {
     if (!open) return;
@@ -117,7 +120,9 @@ export function ProviderSelect({ vendors, selectedVendorId, onChange, loading }:
                     isSelected ? 'bg-accent-gold/10 text-accent-gold' : 'text-white hover:bg-surface'
                   }`}
                 >
-                  <span className="min-w-0 truncate font-bold">{vendor.name}</span>
+                  <span className="min-w-0 truncate font-bold">
+                    {formatVendorName(vendor.name)}
+                  </span>
                   <ProviderLogo vendor={vendor} className="h-[28px] w-[90px]" />
                 </button>
               </li>

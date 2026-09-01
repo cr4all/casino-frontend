@@ -344,7 +344,6 @@
   "Unable to fetch exchange estimate.": "ไม่สามารถดึงการประมาณอัตราแลกเปลี่ยนได้",
   "Unable to reset password. Check the code and try again.": "ไม่สามารถรีเซ็ตรหัสผ่านได้ ตรวจสอบรหัสแล้วลองอีกครั้ง",
   "Unable to send verification code. Please try again.": "ไม่สามารถส่งรหัสยืนยันได้ โปรดลองอีกครั้ง",
-  "UP TO $250 USD": "สูงสุด $250 USD",
   "User": "ผู้ใช้",
   "Username": "ชื่อผู้ใช้",
   "UserName": "ชื่อผู้ใช้",
@@ -378,5 +377,7 @@
   "Your password has been reset. You can now log in with your new password.": "รีเซ็ตรหัสผ่านเรียบร้อยแล้ว คุณสามารถเข้าสู่ระบบด้วยรหัสผ่านใหม่ได้",
   "Your username": "ชื่อผู้ใช้ของคุณ",
   "The World's Largest Sportsbook & Online Casino": "สปอร์ตบุ๊คและคาสิโนออนไลน์ที่ใหญ่ที่สุดในโลก",
-  "5% Cashback Bonus Every Tuesday": "โบนัสเงินคืน 5% ทุกวันอังคาร"
+  "UP TO ${{amount}} USD": "สูงสุด ${{amount}} USD",
+  "Weekly, monthly up to {{percent}}% cashback": "รายสัปดาห์ รายเดือน แคชแบ็คสูงสุด {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "รายวัน รายสัปดาห์ รายเดือน แคชแบ็คสูงสุด {{percent}}%"
 }

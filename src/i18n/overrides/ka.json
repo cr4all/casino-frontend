@@ -185,7 +185,6 @@
   "Change Password": "პაროლის შეცვლა",
   "Privacy Policy": "კონფიდენციალურობის პოლიტიკა",
   "← Back to home": "← დაბრუნება მთავარ გვერდზე",
-  "UP TO $250 USD": "მდე $250 აშშ დოლარი",
   "View Bonuses →": "ბონუსების ნახვა →",
   "{{name}} Games": "{{name}} თამაშები",
   "Cryptocurrency": "კრიპტოვალუტა",
@@ -378,5 +377,7 @@
   "OK": "OK",
   "ID": "ID",
   "The World's Largest Sportsbook & Online Casino": "Მსოფლიოს უმსხვილესი სპორტული წიგნაკი და ონლაინ კაზინო",
-  "5% Cashback Bonus Every Tuesday": "5% -იანი ქეშბექის ბონუსი ყოველ სამშაბათს"
+  "UP TO ${{amount}} USD": "მდე ${{amount}} აშშ დოლარი",
+  "Weekly, monthly up to {{percent}}% cashback": "ყოველკვირეული, ყოველთვიური ქეშბექი {{percent}}%-მდე",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "ყოველდღიური, ყოველკვირეული, ყოველთვიური ქეშბექი {{percent}}%-მდე"
 }

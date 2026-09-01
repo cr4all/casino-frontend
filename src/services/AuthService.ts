@@ -1,4 +1,4 @@
-import type { LoginPayload, RegisterPayload } from '@/api/auth.api';
+import type { LoginPayload, RegisterAffiliatePayload, RegisterPayload } from '@/api/auth.api';
 import { AnalyticsService, CasinoAnalyticsEvent } from '@/modules/analytics';
 import { useAuthStore } from '@/stores/authStore';
 import { isPostRegisterLoginChallengeError } from '@/utils/apiError';
@@ -12,6 +12,18 @@ export const AuthService = {
   async register(payload: RegisterPayload): Promise<void> {
     try {
       await useAuthStore.getState().register(payload);
+      AnalyticsService.track(CasinoAnalyticsEvent.RegisterCompleted, {});
+    } catch (err) {
+      if (isPostRegisterLoginChallengeError(err)) {
+        AnalyticsService.track(CasinoAnalyticsEvent.RegisterCompleted, {});
+      }
+      throw err;
+    }
+  },
+
+  async registerAffiliate(payload: RegisterAffiliatePayload): Promise<void> {
+    try {
+      await useAuthStore.getState().registerAffiliate(payload);
       AnalyticsService.track(CasinoAnalyticsEvent.RegisterCompleted, {});
     } catch (err) {
       if (isPostRegisterLoginChallengeError(err)) {

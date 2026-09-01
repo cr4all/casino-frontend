@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { bonusApi } from '@/api/bonus.api';
+import { hasAccessToken } from '@/stores/authStore';
 import {
   collectBonusProviderSlugs,
   countClaimableFreeSpinBonuses,
@@ -19,6 +20,8 @@ export const useBonusStore = create<BonusState>((set) => ({
   bonusProviderSlugs: [],
 
   fetchBonusState: async () => {
+    if (!hasAccessToken()) return;
+
     try {
       const [available, active] = await Promise.all([
         bonusApi.getAvailable(),

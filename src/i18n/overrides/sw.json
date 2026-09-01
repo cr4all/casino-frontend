@@ -185,7 +185,6 @@
   "Change Password": "Badilisha nenosiri",
   "Privacy Policy": "Sera ya faragha",
   "← Back to home": "← Rudi nyumbani",
-  "UP TO $250 USD": "HADI $250 USD",
   "View Bonuses →": "Angalia bonasi →",
   "{{name}} Games": "Michezo ya {{name}}",
   "Cryptocurrency": "Sarafu ya kidijitali",
@@ -378,5 +377,7 @@
   "OK": "OK",
   "ID": "ID",
   "The World's Largest Sportsbook & Online Casino": "Kitabu cha Michezo Kubwa Zaidi Duniani na Kasino ya Mtandaoni",
-  "5% Cashback Bonus Every Tuesday": "Bonasi ya Kurudishiwa Pesa ya 5% Kila Juman"
+  "UP TO ${{amount}} USD": "HADI ${{amount}} USD",
+  "Weekly, monthly up to {{percent}}% cashback": "Kila wiki, kila mwezi cashback hadi {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Kila siku, kila wiki, kila mwezi cashback hadi {{percent}}%"
 }

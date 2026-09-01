@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { subscribeWalletBalance } from '@/api/walletRealtime';
+import { usePlayerSession } from '@/hooks/usePlayerSession';
 import { disconnectEcho, refreshEchoToken } from '@/lib/echo';
-import { useAuthStore } from '@/stores/authStore';
 import { useWalletStore } from '@/stores/walletStore';
 
 const POLL_INTERVAL_PLAYING_MS = 5_000;
@@ -18,8 +18,7 @@ function isPlayingPath(pathname: string): boolean {
 }
 
 export function useWalletSync() {
-  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
-  const user = useAuthStore((s) => s.user);
+  const { hasHydrated, enabled } = usePlayerSession();
   const playerId = useWalletStore((s) => s.balance?.player_id);
   const fetchBalance = useWalletStore((s) => s.fetchBalance);
   const applyBalanceUpdate = useWalletStore((s) => s.applyBalanceUpdate);
@@ -28,8 +27,6 @@ export function useWalletSync() {
   const wsFailuresRef = useRef(0);
   const isPlayingRef = useRef(false);
   const activePlayerIdRef = useRef<number | null>(null);
-
-  const enabled = isAuthenticated && user?.role !== 'affiliate';
 
   const stopPolling = () => {
     if (pollRef.current) {
@@ -86,6 +83,10 @@ export function useWalletSync() {
   }, [location.pathname, enabled, fetchBalance]);
 
   useEffect(() => {
+    if (!hasHydrated) {
+      return;
+    }
+
     if (!enabled) {
       activePlayerIdRef.current = null;
       disconnectEcho();
@@ -170,5 +171,5 @@ export function useWalletSync() {
       stopPolling();
       document.removeEventListener('visibilitychange', handleVisibility);
     };
-  }, [enabled, playerId, fetchBalance, applyBalanceUpdate]);
+  }, [hasHydrated, enabled, playerId, fetchBalance, applyBalanceUpdate]);
 }

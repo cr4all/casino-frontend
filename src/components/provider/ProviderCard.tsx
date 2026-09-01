@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useTranslation } from '@/hooks/useTranslation';
+import { formatVendorName } from '@/utils/formatVendorName';
 
 interface ProviderCardProps {
   name: string;
@@ -43,7 +44,9 @@ export function ProviderCard({ name, gameCount, imageUrl, gradient, path }: Prov
         />
 
         <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 p-3">
-          <p className="min-w-0 truncate text-sm font-bold text-white drop-shadow-md">{name}</p>
+          <p className="min-w-0 truncate text-sm font-bold text-white drop-shadow-md">
+            {formatVendorName(name)}
+          </p>
           <p className="shrink-0 text-sm font-bold text-white drop-shadow-md">
             {t('common.gamesCount', { count: gameCount })}
           </p>
@@ -66,7 +69,7 @@ export function ProviderStrip({ vendors }: ProviderStripProps) {
           to={vendor.path}
           className="rounded-full border border-white/10 bg-card px-4 py-2 text-xs font-medium text-white transition-colors hover:border-accent/50 hover:bg-surface"
         >
-          {vendor.name}
+          {formatVendorName(vendor.name)}
         </Link>
       ))}
     </div>

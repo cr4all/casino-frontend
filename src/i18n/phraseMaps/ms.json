@@ -21,10 +21,12 @@
   "Stake": "Влог",
   "Odds": "Коефициенти",
   "The World's Largest Sportsbook & Online Casino": "Buku Sukan & Kasino Dalam Talian Terbesar di Dunia",
-  "5% Cashback Bonus Every Tuesday": "Bonus Pulangan Tunai 5% Setiap Selasa",
   "Country": "Negara",
   "Currency": "Mata wang",
   "Partners": "Rakan kongsi",
   "Affiliate Program": "Program afiliasi",
-  "Become a Partner": "Jadi rakan kongsi"
+  "Become a Partner": "Jadi rakan kongsi",
+  "Weekly, monthly up to {{percent}}% cashback": "Mingguan, bulanan cashback sehingga {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Harian, mingguan, bulanan cashback sehingga {{percent}}%",
+  "KYC Policy": "Dasar KYC"
 }

@@ -21,10 +21,12 @@
   "Stake": "STAKE",
   "Odds": "Kemungkinan",
   "The World's Largest Sportsbook & Online Casino": "Მსოფლიოს უმსხვილესი სპორტული წიგნაკი და ონლაინ კაზინო",
-  "5% Cashback Bonus Every Tuesday": "5% -იანი ქეშბექის ბონუსი ყოველ სამშაბათს",
   "Country": "ქვეყანა",
   "Currency": "ვალუტა",
   "Partners": "პარტნიორები",
   "Affiliate Program": "პარტნიორული პროგრამა",
-  "Become a Partner": "გახდი პარტნიორი"
+  "Become a Partner": "გახდი პარტნიორი",
+  "Weekly, monthly up to {{percent}}% cashback": "ყოველკვირეული, ყოველთვიური ქეშბექი {{percent}}%-მდე",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "ყოველდღიური, ყოველკვირეული, ყოველთვიური ქეშბექი {{percent}}%-მდე",
+  "KYC Policy": "KYC პოლიტიკა"
 }

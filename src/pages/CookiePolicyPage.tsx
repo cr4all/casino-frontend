@@ -14,6 +14,7 @@ export function CookiePolicyPage() {
         <p>{t('cookies.policyNecessary')}</p>
         <p>{t('cookies.policyAnalytics')}</p>
         <p>{t('cookies.policyChat')}</p>
+        <p>{t('cookies.policyMarketing')}</p>
       </div>
       <button
         type="button"

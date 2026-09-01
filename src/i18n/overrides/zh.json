@@ -1,4 +1,5 @@
 {
   "The World's Largest Sportsbook & Online Casino": "全球最大的体育博彩和在线赌场",
-  "5% Cashback Bonus Every Tuesday": "每周二5%返现奖励"
+  "Weekly, monthly up to {{percent}}% cashback": "每周、每月最高{{percent}}%返现",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "每日、每周、每月最高{{percent}}%返现"
 }

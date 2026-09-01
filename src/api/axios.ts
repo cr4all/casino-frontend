@@ -2,6 +2,7 @@ import axios, { type AxiosError, type InternalAxiosRequestConfig } from 'axios';
 import { refreshEchoToken } from '@/lib/echo';
 import { useAuthStore } from '@/stores/authStore';
 import { getApiBaseUrl } from '@/utils/apiBase';
+import { requestRequiresAuth } from '@/utils/requestRequiresAuth';
 
 const api = axios.create({
   baseURL: getApiBaseUrl(),
@@ -18,6 +19,10 @@ api.interceptors.request.use((config: InternalAxiosRequestConfig) => {
   const token = useAuthStore.getState().accessToken;
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
+  } else if (requestRequiresAuth(config.url, config.method)) {
+    const error = new axios.CanceledError('Skipped authenticated request while logged out');
+    error.config = config;
+    throw error;
   }
   if (config.data instanceof FormData) {
     delete config.headers['Content-Type'];
@@ -47,7 +52,7 @@ api.interceptors.response.use(
   async (error: AxiosError) => {
     const originalRequest = error.config as InternalAxiosRequestConfig & { _retry?: boolean };
 
-    if (error.response?.status !== 401 || originalRequest._retry) {
+    if (!originalRequest || error.response?.status !== 401 || originalRequest._retry) {
       return Promise.reject(error);
     }
 
@@ -63,10 +68,12 @@ api.interceptors.response.use(
     originalRequest._retry = true;
     isRefreshing = true;
 
-    const refreshToken = useAuthStore.getState().refreshToken;
+    const { accessToken, refreshToken, isAuthenticated } = useAuthStore.getState();
 
     if (!refreshToken) {
-      useAuthStore.getState().logout();
+      if (accessToken || isAuthenticated) {
+        useAuthStore.getState().logout();
+      }
       return Promise.reject(error);
     }
 

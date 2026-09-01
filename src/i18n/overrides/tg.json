@@ -344,7 +344,6 @@
   "Unable to fetch exchange estimate.": "Тахминии курсро гирифта нашуд.",
   "Unable to reset password. Check the code and try again.": "Паролро барқарор карда нашуд. Рамзро санҷед ва дубора кӯшиш кунед.",
   "Unable to send verification code. Please try again.": "Рамзи тасдиқро фиристода нашуд. Лутфан дубора кӯшиш кунед.",
-  "UP TO $250 USD": "ТО $250 USD",
   "User": "Корбар",
   "Username": "Номи корбар",
   "UserName": "Номи корбар",
@@ -378,5 +377,7 @@
   "Your password has been reset. You can now log in with your new password.": "Пароли шумо барқарор шуд. Акнун бо пароли нав ворид шавед.",
   "Your username": "Номи корбари шумо",
   "The World's Largest Sportsbook & Online Casino": "Бузургтарин Sportsbook дар ҷаҳон & онлайн Казино",
-  "5% Cashback Bonus Every Tuesday": "5% Бонус Cashback ҳар сешанбе"
+  "UP TO ${{amount}} USD": "ТО ${{amount}} USD",
+  "Weekly, monthly up to {{percent}}% cashback": "Ҳафтаина, моҳона то {{percent}}% кэшбэк",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Рӯзона, ҳафтаина, моҳона то {{percent}}% кэшбэк"
 }

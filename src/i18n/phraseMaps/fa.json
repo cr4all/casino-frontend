@@ -21,10 +21,12 @@
   "Stake": "KINNITUS-",
   "Odds": "Koefitsiendid",
   "The World's Largest Sportsbook & Online Casino": "بزرگترین سایت شرط بندی ورزشی و کازینو آنلاین جهان",
-  "5% Cashback Bonus Every Tuesday": "5% بونوس بازگشت وجه هر سه‌شنبه",
   "Country": "کشور",
   "Currency": "ارز",
   "Partners": "شرکا",
   "Affiliate Program": "برنامه همکاری",
-  "Become a Partner": "شریک شوید"
+  "Become a Partner": "شریک شوید",
+  "Weekly, monthly up to {{percent}}% cashback": "بازگشت وجه هفتگی و ماهانه تا {{percent}}٪",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "بازگشت وجه روزانه، هفتگی و ماهانه تا {{percent}}٪",
+  "KYC Policy": "سیاست KYC"
 }

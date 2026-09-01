@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { liveChatApi } from '@/api/liveChat.api';
+import { hasAccessToken } from '@/stores/authStore';
 
 interface LiveChatState {
   unreadCount: number;
@@ -12,6 +13,8 @@ export const useLiveChatStore = create<LiveChatState>((set) => ({
   unreadCount: 0,
 
   fetchUnreadCount: async () => {
+    if (!hasAccessToken()) return;
+
     try {
       const config = await liveChatApi.getConfig();
       if (!config.enabled) {

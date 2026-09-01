@@ -185,7 +185,6 @@
   "Change Password": "Keisti slaptažodį",
   "Privacy Policy": "Privatumo politika",
   "← Back to home": "← Atgal į pradžią",
-  "UP TO $250 USD": "IKI 250 USD",
   "View Bonuses →": "Peržiūrėti premijas →",
   "{{name}} Games": "{{name}} žaidimai",
   "Cryptocurrency": "Kriptovaliuta",
@@ -378,5 +377,7 @@
   "OK": "OK",
   "ID": "ID",
   "The World's Largest Sportsbook & Online Casino": "Didžiausia pasaulyje sporto lažybų ir internetinio kazino platforma",
-  "5% Cashback Bonus Every Tuesday": "5% pinigų grąžinimo premija kiekvieną antradienį"
+  "UP TO ${{amount}} USD": "IKI {{amount}} USD",
+  "Weekly, monthly up to {{percent}}% cashback": "Savaitinis, mėnesinis cashback iki {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Kasdieninis, savaitinis, mėnesinis cashback iki {{percent}}%"
 }

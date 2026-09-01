@@ -21,10 +21,12 @@
   "Stake": "STAKE",
   "Odds": "Kemungkinan",
   "The World's Largest Sportsbook & Online Casino": "សៀវភៅកីឡាដ៏ធំបំផុតរបស់ពិភពលោក & កាស៊ីណូអនឡាញ",
-  "5% Cashback Bonus Every Tuesday": "5% ប្រាក់រង្វាន់ Cashback រៀងរាល់ថ្ងៃអង្គារ",
   "Country": "ប្រទេស",
   "Currency": "រូបិយវត្ថុ",
   "Partners": "ដៃគូ",
   "Affiliate Program": "កម្មវិធីសម្ព័ន្ធ",
-  "Become a Partner": "ក្លាយជាដៃគូ"
+  "Become a Partner": "ក្លាយជាដៃគូ",
+  "Weekly, monthly up to {{percent}}% cashback": "ប្រចាំសប្តាហ៍ ប្រចាំខែ cashback រហូតដល់ {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "ប្រចាំថ្ងៃ ប្រចាំសប្តាហ៍ ប្រចាំខែ cashback រហូតដល់ {{percent}}%",
+  "KYC Policy": "គោលការណ៍ KYC"
 }

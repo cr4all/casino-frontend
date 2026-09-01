@@ -344,7 +344,6 @@
   "Unable to fetch exchange estimate.": "Không thể lấy ước tính tỷ giá.",
   "Unable to reset password. Check the code and try again.": "Không thể đặt lại mật khẩu. Kiểm tra mã và thử lại.",
   "Unable to send verification code. Please try again.": "Không thể gửi mã xác minh. Vui lòng thử lại.",
-  "UP TO $250 USD": "LÊN ĐẾN 250 USD",
   "User": "Người dùng",
   "Username": "Tên đăng nhập",
   "UserName": "Tên người dùng",
@@ -378,5 +377,7 @@
   "Your password has been reset. You can now log in with your new password.": "Mật khẩu đã được đặt lại. Bạn có thể đăng nhập bằng mật khẩu mới.",
   "Your username": "Tên đăng nhập",
   "The World's Largest Sportsbook & Online Casino": "Sòng bạc trực tuyến & cá cược thể thao lớn nhất thế giới",
-  "5% Cashback Bonus Every Tuesday": "Tiền thưởng hoàn tiền 5% vào thứ Ba hàng tuần"
+  "UP TO ${{amount}} USD": "LÊN ĐẾN {{amount}} USD",
+  "Weekly, monthly up to {{percent}}% cashback": "Hàng tuần, hàng tháng hoàn tiền lên đến {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Hàng ngày, hàng tuần, hàng tháng hoàn tiền lên đến {{percent}}%"
 }

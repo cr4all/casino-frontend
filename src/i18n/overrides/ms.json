@@ -344,7 +344,6 @@
   "Unable to fetch exchange estimate.": "Tidak dapat mendapatkan anggaran pertukaran.",
   "Unable to reset password. Check the code and try again.": "Tidak dapat menetapkan semula kata laluan. Semak kod dan cuba lagi.",
   "Unable to send verification code. Please try again.": "Tidak dapat menghantar kod pengesahan. Sila cuba lagi.",
-  "UP TO $250 USD": "SEHINGGA $250 USD",
   "User": "Pengguna",
   "Username": "Nama pengguna",
   "UserName": "Nama Pengguna",
@@ -378,5 +377,7 @@
   "Your password has been reset. You can now log in with your new password.": "Kata laluan anda telah ditetapkan semula. Anda kini boleh log masuk dengan kata laluan baharu.",
   "Your username": "Nama pengguna anda",
   "The World's Largest Sportsbook & Online Casino": "Buku Sukan & Kasino Dalam Talian Terbesar di Dunia",
-  "5% Cashback Bonus Every Tuesday": "Bonus Pulangan Tunai 5% Setiap Selasa"
+  "UP TO ${{amount}} USD": "SEHINGGA ${{amount}} USD",
+  "Weekly, monthly up to {{percent}}% cashback": "Mingguan, bulanan cashback sehingga {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Harian, mingguan, bulanan cashback sehingga {{percent}}%"
 }

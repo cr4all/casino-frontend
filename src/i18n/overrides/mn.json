@@ -185,7 +185,6 @@
   "Change Password": "Нууц үг солих",
   "Privacy Policy": "Нууцлалын бодлого",
   "← Back to home": "← Нүүр рүү буцах",
-  "UP TO $250 USD": "250 USD ХҮРТЭЛ",
   "View Bonuses →": "Bonus үзэх →",
   "{{name}} Games": "{{name}} тоглоомууд",
   "Cryptocurrency": "Cryptocurrency",
@@ -378,5 +377,7 @@
   "OK": "OK",
   "ID": "ID",
   "The World's Largest Sportsbook & Online Casino": "Дэлхийн хамгийн том sportsbook болон online casino",
-  "5% Cashback Bonus Every Tuesday": "Мягмар гараг бүр 5% Cashback урамшуулал"
+  "UP TO ${{amount}} USD": "{{amount}} USD ХҮРТЭЛ",
+  "Weekly, monthly up to {{percent}}% cashback": "Долоо хоног, сар бүр {{percent}}% хүртэл cashback",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Өдөр, долоо хоног, сар бүр {{percent}}% хүртэл cashback"
 }

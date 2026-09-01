@@ -21,8 +21,10 @@
   "Stake": "STAKE",
   "Odds": "Kemungkinan",
   "The World's Largest Sportsbook & Online Casino": "ವಿಶ್ವದ ಅತಿದೊಡ್ಡ ಸ್ಪೋರ್ಟ್ಸ್‌ಬುಕ್ ಮತ್ತು ಆನ್‌ಲೈನ್ ಕ್ಯಾಸಿನೊ",
-  "5% Cashback Bonus Every Tuesday": "ಪ್ರತಿ ಮಂಗಳವಾರ 5% ಕ್ಯಾಶ್‌ಬ್ಯಾಕ್ ಬೋನಸ್",
   "Partners": "ಪಾಲುದಾರರು",
   "Affiliate Program": "ಅಫಿಲಿಯೇಟ್ ಪ್ರೋಗ್ರಾಂ",
-  "Become a Partner": "ಪಾಲುದಾರರಾಗಿ"
+  "Become a Partner": "ಪಾಲುದಾರರಾಗಿ",
+  "Weekly, monthly up to {{percent}}% cashback": "ಸಾಪ್ತಾಹಿಕ, ಮಾಸಿಕ {{percent}}% ವರೆಗೆ ಕ್ಯಾಶ್‌ಬ್ಯಾಕ್",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "ದೈನಂದಿನ, ಸಾಪ್ತಾಹಿಕ, ಮಾಸಿಕ {{percent}}% ವರೆಗೆ ಕ್ಯಾಶ್‌ಬ್ಯಾಕ್",
+  "KYC Policy": "KYC ನೀತಿ"
 }

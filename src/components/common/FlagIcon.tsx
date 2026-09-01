@@ -64,7 +64,6 @@ const FLAG_COUNTRY_CODES: Partial<Record<Language, string>> = {
   te: 'in',
   tg: 'tj',
   th: 'th',
-  uk: 'ua',
   uz: 'uz',
   vi: 'vn',
   yo: 'ng',
@@ -127,14 +126,6 @@ export function FlagIcon({ language, className = baseClass }: FlagIconProps) {
           <rect width="1" height="2" fill="#002395" />
           <rect width="1" height="2" x="1" fill="#fff" />
           <rect width="1" height="2" x="2" fill="#ED2939" />
-        </svg>
-      );
-    case 'ru':
-      return (
-        <svg className={className} viewBox="0 0 3 2" aria-hidden="true">
-          <rect width="3" height="2" fill="#fff" />
-          <rect width="3" height="1.333" y="0.667" fill="#0039A6" />
-          <rect width="3" height="0.667" y="1.333" fill="#D52B1E" />
         </svg>
       );
     case 'zh':

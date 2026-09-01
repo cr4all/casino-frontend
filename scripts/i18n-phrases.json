@@ -259,7 +259,7 @@
   "max {{amount}}",
   "Privacy Policy",
   "← Back to home",
-  "UP TO $250 USD",
+  "UP TO ${{amount}} USD",
   "View Bonuses →",
   "{{name}} Games",
   "Cryptocurrency",
@@ -433,7 +433,6 @@
   "NOTICES",
   "Notices",
   "BONUSES",
-  "Bonuses",
   "Profile",
   "Balance",
   "Support",
@@ -523,5 +522,7 @@
   "No",
   "ID",
   "To",
-  "—"
+  "—",
+  "Weekly, monthly up to {{percent}}% cashback",
+  "Daily, weekly, monthly up to {{percent}}% cashback"
 ]

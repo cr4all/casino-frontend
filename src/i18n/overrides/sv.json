@@ -185,7 +185,6 @@
   "Change Password": "Byt lösenord",
   "Privacy Policy": "Integritetspolicy",
   "← Back to home": "← Tillbaka till startsidan",
-  "UP TO $250 USD": "UPP TILL $250 USD",
   "View Bonuses →": "Visa bonusar →",
   "{{name}} Games": "{{name}} spel",
   "Cryptocurrency": "Kryptovaluta",
@@ -378,5 +377,7 @@
   "OK": "OK",
   "ID": "ID",
   "The World's Largest Sportsbook & Online Casino": "Världens största sportsbook och online casino",
-  "5% Cashback Bonus Every Tuesday": "5% cashbackbonus varje tisdag"
+  "UP TO ${{amount}} USD": "UPP TILL ${{amount}} USD",
+  "Weekly, monthly up to {{percent}}% cashback": "Veckovis, månadsvis upp till {{percent}}% cashback",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Dagligen, veckovis, månadsvis upp till {{percent}}% cashback"
 }

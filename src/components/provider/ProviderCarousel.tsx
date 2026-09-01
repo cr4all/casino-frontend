@@ -7,6 +7,7 @@ import { SectionTitle } from '@/components/common/SectionTitle';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getVendorLogoUrl } from '@/data/providerBanners';
 import { providersPath } from '@/stores/gameStore';
+import { formatVendorName } from '@/utils/formatVendorName';
 
 interface ProviderCarouselProps {
   vendors: GameVendor[];
@@ -27,12 +28,13 @@ function ProviderLogoTile({
   const [imgError, setImgError] = useState(false);
   const logoUrl = getVendorLogoUrl(vendor);
   const showLogo = logoUrl && !imgError;
+  const displayName = formatVendorName(vendor.name);
 
   return (
     <button
       type="button"
       onClick={onSelect}
-      title={vendor.name}
+      title={displayName}
       className="block shrink-0 p-0"
     >
       <div
@@ -43,13 +45,13 @@ function ProviderLogoTile({
         {showLogo ? (
           <img
             src={logoUrl}
-            alt={vendor.name}
+            alt={displayName}
             className="h-full w-full object-contain"
             onError={() => setImgError(true)}
           />
         ) : (
           <span className="line-clamp-2 px-1 text-center text-[10px] font-bold leading-tight text-white">
-            {vendor.name}
+            {displayName}
           </span>
         )}
       </div>

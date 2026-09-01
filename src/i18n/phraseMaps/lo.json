@@ -21,8 +21,10 @@
   "Stake": "STAKE",
   "Odds": "Kemungkinan",
   "The World's Largest Sportsbook & Online Casino": "ປື້ມບັນທຶກກິລາ & ຄາສິໂນ Online ທີ່ໃຫຍ່ທີ່ສຸດໃນໂລກ",
-  "5% Cashback Bonus Every Tuesday": "ໂບນັດ 5% Cashback ທຸກໆວັນອັງຄານ",
-  "Partners": "Partners",
-  "Affiliate Program": "Affiliate Program",
-  "Become a Partner": "Become a Partner"
+  "Partners": "ຄູ່ຮ່ວມງານ",
+  "Affiliate Program": "ໂຄງການແອຟຟິລຽດ",
+  "Become a Partner": "ກາຍເປັນຄູ່ຮ່ວມງານ",
+  "Weekly, monthly up to {{percent}}% cashback": "ອາທິດລະ, ເດືອນລະ cashback ສູງສຸດ {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "ມື້ລະ, ອາທິດລະ, ເດືອນລະ cashback ສູງສຸດ {{percent}}%",
+  "KYC Policy": "ນະໂຍບາຍ KYC"
 }

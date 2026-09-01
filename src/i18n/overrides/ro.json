@@ -185,7 +185,6 @@
   "Change Password": "Schimbați parola",
   "Privacy Policy": "Politica de confidențialitate",
   "← Back to home": "← Înapoi acasă",
-  "UP TO $250 USD": "PÂNĂ LA 250 USD",
   "View Bonuses →": "Vedeți bonusuri →",
   "{{name}} Games": "Jocuri {{name}}",
   "Cryptocurrency": "Criptomonedă",
@@ -378,5 +377,7 @@
   "OK": "OK",
   "ID": "ID",
   "The World's Largest Sportsbook & Online Casino": "Cea mai mare platformă de pariuri sportive și cazinou online din lume",
-  "5% Cashback Bonus Every Tuesday": "Bonus Cashback 5% în fiecare marți"
+  "UP TO ${{amount}} USD": "PÂNĂ LA {{amount}} USD",
+  "Weekly, monthly up to {{percent}}% cashback": "Săptămânal, lunar cashback până la {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Zilnic, săptămânal, lunar cashback până la {{percent}}%"
 }

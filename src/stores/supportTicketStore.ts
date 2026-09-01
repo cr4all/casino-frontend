@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { supportTicketsApi } from '@/api/supportTickets.api';
+import { hasAccessToken } from '@/stores/authStore';
 
 interface SupportTicketState {
   unreadCount: number;
@@ -12,6 +13,8 @@ export const useSupportTicketStore = create<SupportTicketState>((set) => ({
   unreadCount: 0,
 
   fetchUnreadCount: async () => {
+    if (!hasAccessToken()) return;
+
     try {
       const data = await supportTicketsApi.getUnreadCount();
       set({ unreadCount: data.unread_count });

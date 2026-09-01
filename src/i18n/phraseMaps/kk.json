@@ -21,10 +21,12 @@
   "Stake": "STAKE",
   "Odds": "Kemungkinan",
   "The World's Largest Sportsbook & Online Casino": "Әлемдегі ең ірі спорт кітабы және онлайн-казино",
-  "5% Cashback Bonus Every Tuesday": "5% қолма-қол ақшаны қайтару бонусы әр сейсенбі сайын",
   "Country": "Ел",
   "Currency": "Валюта",
   "Partners": "Серіктестер",
   "Affiliate Program": "Серіктестік бағдарламасы",
-  "Become a Partner": "Серіктес болыңыз"
+  "Become a Partner": "Серіктес болыңыз",
+  "Weekly, monthly up to {{percent}}% cashback": "Апталық, айлық {{percent}}%-ға дейін кэшбэк",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Күнделікті, апталық, айлық {{percent}}%-ға дейін кэшбэк",
+  "KYC Policy": "KYC саясаты"
 }

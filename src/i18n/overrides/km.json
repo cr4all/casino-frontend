@@ -185,7 +185,6 @@
   "Change Password": "ផ្លាស់ប្តូរពាក្យសម្ងាត់",
   "Privacy Policy": "គោលការណ៍ឯកជន",
   "← Back to home": "← ត្រឡប់ទៅផ្ទៃផ្ទះ",
-  "UP TO $250 USD": "រហូតដល់ $250 ដុល្លារ Mỹ",
   "View Bonuses →": "មើលប្រាក់រង្វាន់ →",
   "{{name}} Games": "{{name}} ហ្គេម",
   "Cryptocurrency": "រូបិយប័ណ្ណឌីជីថល",
@@ -378,5 +377,7 @@
   "OK": "OK",
   "ID": "ID",
   "The World's Largest Sportsbook & Online Casino": "សៀវភៅកីឡាដ៏ធំបំផុតរបស់ពិភពលោក & កាស៊ីណូអនឡាញ",
-  "5% Cashback Bonus Every Tuesday": "5% ប្រាក់រង្វាន់ Cashback រៀងរាល់ថ្ងៃអង្គារ"
+  "UP TO ${{amount}} USD": "រហូតដល់ ${{amount}} ដុល្លារ Mỹ",
+  "Weekly, monthly up to {{percent}}% cashback": "ប្រចាំសប្តាហ៍ ប្រចាំខែ cashback រហូតដល់ {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "ប្រចាំថ្ងៃ ប្រចាំសប្តាហ៍ ប្រចាំខែ cashback រហូតដល់ {{percent}}%"
 }

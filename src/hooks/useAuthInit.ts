@@ -1,18 +1,19 @@
 import { useEffect } from 'react';
-import { useAuthStore } from '@/stores/authStore';
+import { usePlayerSession } from '@/hooks/usePlayerSession';
 import { useWalletStore } from '@/stores/walletStore';
 
 export function useAuthInit() {
-  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
-  const user = useAuthStore((s) => s.user);
+  const { hasHydrated, enabled } = usePlayerSession();
   const fetchBalance = useWalletStore((s) => s.fetchBalance);
   const clearWallet = useWalletStore((s) => s.clear);
 
   useEffect(() => {
-    if (isAuthenticated && user?.role !== 'affiliate') {
+    if (!hasHydrated) return;
+
+    if (enabled) {
       fetchBalance();
     } else {
       clearWallet();
     }
-  }, [isAuthenticated, user?.role, fetchBalance, clearWallet]);
+  }, [hasHydrated, enabled, fetchBalance, clearWallet]);
 }

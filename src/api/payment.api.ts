@@ -42,6 +42,11 @@ export interface PaymentOptionList {
   items: PaymentOption[];
 }
 
+export interface WithdrawalVerificationLimits {
+  email_verified_limit: string;
+  phone_verified_limit: string;
+}
+
 export interface DepositQuote {
   payment_amount: string;
   payment_currency: string;
@@ -104,6 +109,13 @@ export const paymentApi = {
     return data.data;
   },
 
+  getWithdrawalVerificationLimits: async () => {
+    const { data } = await api.get<ApiResponse<WithdrawalVerificationLimits>>(
+      '/payment/withdrawal-verification-limits',
+    );
+    return data.data;
+  },
+
   getDepositOptions: async (country: string) => {
     const { data } = await api.get<ApiResponse<PaymentOptionList>>('/payment/deposit-options', {
       params: { country },
@@ -132,12 +144,19 @@ export const paymentApi = {
     return data.data;
   },
 
-  createDeposit: async (optionKey: string, amount: string, country: string, turnstileToken?: string) => {
+  createDeposit: async (
+    optionKey: string,
+    amount: string,
+    country: string,
+    turnstileToken?: string,
+    destination?: Record<string, string>,
+  ) => {
     const risk_context = await buildRiskContext(turnstileToken);
     const { data } = await api.post<ApiResponse<DepositRequest>>('/payment/deposits', {
       option_key: optionKey,
       amount,
       country,
+      ...(destination && Object.keys(destination).length > 0 ? { destination } : {}),
       risk_context,
     });
     return data.data;

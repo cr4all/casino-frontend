@@ -26,6 +26,17 @@ export interface RegisterPayload {
   country: string;
   currency: string;
   affiliate_code?: string;
+  invite_code?: string;
+  email_verification_code: string;
+  turnstileToken?: string;
+  risk_context?: ClientRiskContext;
+}
+
+export interface RegisterAffiliatePayload {
+  email: string;
+  password: string;
+  password_confirmation: string;
+  code: string;
   email_verification_code: string;
   turnstileToken?: string;
   risk_context?: ClientRiskContext;
@@ -74,6 +85,15 @@ export const authApi = {
     return data.data;
   },
 
+  registerAffiliate: async (payload: RegisterAffiliatePayload) => {
+    const { turnstileToken, ...body } = payload;
+    const risk_context = await buildRiskContext(turnstileToken);
+    const { data } = await api.post<
+      ApiResponse<{ user: User; affiliate: { id: number; code: string }; access_token: string; expires_in: number }>
+    >('/auth/register/affiliate', { ...body, risk_context });
+    return data.data;
+  },
+
   login: async (payload: LoginPayload) => {
     const { turnstileToken, ...body } = payload;
     const risk_context = await buildRiskContext(turnstileToken);
@@ -100,8 +120,14 @@ export const authApi = {
     return data;
   },
 
-  requestRegistrationEmailVerification: async (email: string) => {
-    const { data } = await api.post<ApiResponse<null>>('/auth/register/verify-email/request', { email });
+  requestRegistrationEmailVerification: async (
+    email: string,
+    context: 'player' | 'affiliate' = 'player',
+  ) => {
+    const { data } = await api.post<ApiResponse<null>>('/auth/register/verify-email/request', {
+      email,
+      context,
+    });
     return data;
   },
 

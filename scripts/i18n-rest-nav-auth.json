@@ -1,0 +1,578 @@
+{
+  "bg": {
+    "nav": { "affiliateProgram": "ПАРТНЬОРСКА ПРОГРАМА", "affiliateProgramLabel": "Станете партньор" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Станете партньор",
+      "affiliateReferralCode": "Реферален код",
+      "affiliateReferralCodeHint": "Само букви, цифри, тирета и долни черти. Показва се в рефералната ви връзка.",
+      "affiliateReferralCodeInvalid": "Използвайте 1–50 символа: букви, цифри, тирета или долни черти.",
+      "affiliateRegisterError": "Регистрацията на партньор не бе успешна. Моля, проверете данните си.",
+      "hasAffiliateAccount": "Вече сте партньор?"
+    }
+  },
+  "hr": {
+    "nav": { "affiliateProgram": "PARTNERSKI PROGRAM", "affiliateProgramLabel": "Postanite partner" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Postanite partner",
+      "affiliateReferralCode": "Referalni kod",
+      "affiliateReferralCodeHint": "Samo slova, brojevi, crtice i podvlake. Prikazuje se u vašoj referalnoj poveznici.",
+      "affiliateReferralCodeInvalid": "Koristite 1–50 znakova: slova, brojevi, crtice ili podvlake.",
+      "affiliateRegisterError": "Registracija partnera nije uspjela. Provjerite svoje podatke.",
+      "hasAffiliateAccount": "Već ste partner?"
+    }
+  },
+  "sr": {
+    "nav": { "affiliateProgram": "ПАРТНЕРСКИ ПРОГРАМ", "affiliateProgramLabel": "Постаните партнер" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Постаните партнер",
+      "affiliateReferralCode": "Реферални код",
+      "affiliateReferralCodeHint": "Само слова, бројеви, цртице и доње црте. Приказује се у вашој рефералној вези.",
+      "affiliateReferralCodeInvalid": "Користите 1–50 знакова: слова, бројеви, цртице или доње црте.",
+      "affiliateRegisterError": "Регистрација партнера није успела. Проверите своје податке.",
+      "hasAffiliateAccount": "Већ сте партнер?"
+    }
+  },
+  "sl": {
+    "nav": { "affiliateProgram": "PARTNERSKI PROGRAM", "affiliateProgramLabel": "Postanite partner" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Postanite partner",
+      "affiliateReferralCode": "Referenčna koda",
+      "affiliateReferralCodeHint": "Samo črke, številke, pomišljaji in podčrtaji. Prikazano v vaši referenčni povezavi.",
+      "affiliateReferralCodeInvalid": "Uporabite 1–50 znakov: črke, številke, pomišljaji ali podčrtaji.",
+      "affiliateRegisterError": "Registracija partnerja ni uspela. Preverite svoje podatke.",
+      "hasAffiliateAccount": "Ste že partner?"
+    }
+  },
+  "el": {
+    "nav": { "affiliateProgram": "ΠΡΟΓΡΑΜΜΑ ΣΥΝΕΡΓΑΤΩΝ", "affiliateProgramLabel": "Γίνετε συνεργάτης" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Γίνετε συνεργάτης",
+      "affiliateReferralCode": "Κωδικός παραπομπής",
+      "affiliateReferralCodeHint": "Μόνο γράμματα, αριθμοί, παύλες και κάτω παύλες. Εμφανίζεται στον σύνδεσμο παραπομπής σας.",
+      "affiliateReferralCodeInvalid": "Χρησιμοποιήστε 1–50 χαρακτήρες: γράμματα, αριθμοί, παύλες ή κάτω παύλες.",
+      "affiliateRegisterError": "Η εγγραφή συνεργάτη απέτυχε. Ελέγξτε τα στοιχεία σας.",
+      "hasAffiliateAccount": "Είστε ήδη συνεργάτης;"
+    }
+  },
+  "et": {
+    "nav": { "affiliateProgram": "PARTNERLUSPROGRAMM", "affiliateProgramLabel": "Hakka partneriks" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Hakka partneriks",
+      "affiliateReferralCode": "Soovituskood",
+      "affiliateReferralCodeHint": "Ainult tähed, numbrid, sidekriipsud ja alakriipsud. Kuvatakse teie soovituslingis.",
+      "affiliateReferralCodeInvalid": "Kasutage 1–50 tähemärki: tähed, numbrid, sidekriipsud või alakriipsud.",
+      "affiliateRegisterError": "Partneri registreerimine ebaõnnestus. Kontrollige oma andmeid.",
+      "hasAffiliateAccount": "Olete juba partner?"
+    }
+  },
+  "lt": {
+    "nav": { "affiliateProgram": "PARTNERYSTĖS PROGRAMA", "affiliateProgramLabel": "Tapkite partneriu" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Tapkite partneriu",
+      "affiliateReferralCode": "Rekomendacijos kodas",
+      "affiliateReferralCodeHint": "Tik raidės, skaičiai, brūkšneliai ir apatiniai brūkšneliai. Rodoma jūsų rekomendacijos nuorodoje.",
+      "affiliateReferralCodeInvalid": "Naudokite 1–50 simbolių: raidės, skaičiai, brūkšneliai arba apatiniai brūkšneliai.",
+      "affiliateRegisterError": "Partnerio registracija nepavyko. Patikrinkite savo duomenis.",
+      "hasAffiliateAccount": "Jau esate partneris?"
+    }
+  },
+  "lv": {
+    "nav": { "affiliateProgram": "PARTNERU PROGRAMMA", "affiliateProgramLabel": "Kļūstiet par partneri" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Kļūstiet par partneri",
+      "affiliateReferralCode": "Ieteikuma kods",
+      "affiliateReferralCodeHint": "Tikai burti, cipari, defises un pasvītras. Parādīts jūsu ieteikuma saitē.",
+      "affiliateReferralCodeInvalid": "Izmantojiet 1–50 rakstzīmes: burti, cipari, defises vai pasvītras.",
+      "affiliateRegisterError": "Partnera reģistrācija neizdevās. Lūdzu, pārbaudiet savus datus.",
+      "hasAffiliateAccount": "Jau esat partneris?"
+    }
+  },
+  "mk": {
+    "nav": { "affiliateProgram": "ПАРТНЕРСКА ПРОГРАМА", "affiliateProgramLabel": "Станете партнер" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Станете партнер",
+      "affiliateReferralCode": "Реферален код",
+      "affiliateReferralCodeHint": "Само букви, броеви, цртички и долни црти. Се прикажува во вашата реферална врска.",
+      "affiliateReferralCodeInvalid": "Користете 1–50 знаци: букви, броеви, цртички или долни црти.",
+      "affiliateRegisterError": "Регистрацијата на партнер не успеа. Проверете ги вашите податоци.",
+      "hasAffiliateAccount": "Веќе сте партнер?"
+    }
+  },
+  "bn": {
+    "nav": { "affiliateProgram": "অ্যাফিলিয়েট প্রোগ্রাম", "affiliateProgramLabel": "পার্টনার হন" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "পার্টনার হন",
+      "affiliateReferralCode": "রেফারেল কোড",
+      "affiliateReferralCodeHint": "শুধু অক্ষর, সংখ্যা, ড্যাশ এবং আন্ডারস্কোর। আপনার রেফারেল লিঙ্কে দেখানো হয়।",
+      "affiliateReferralCodeInvalid": "১–৫০ অক্ষর ব্যবহার করুন: অক্ষর, সংখ্যা, ড্যাশ বা আন্ডারস্কোর।",
+      "affiliateRegisterError": "পার্টনার নিবন্ধন ব্যর্থ হয়েছে। অনুগ্রহ করে আপনার বিবরণ পরীক্ষা করুন।",
+      "hasAffiliateAccount": "ইতিমধ্যে পার্টনার?"
+    }
+  },
+  "fa": {
+    "nav": { "affiliateProgram": "برنامه همکاری در فروش", "affiliateProgramLabel": "شریک شوید" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "شریک شوید",
+      "affiliateReferralCode": "کد معرفی",
+      "affiliateReferralCodeHint": "فقط حروف، اعداد، خط تیره و زیرخط. در لینک معرفی شما نمایش داده می‌شود.",
+      "affiliateReferralCodeInvalid": "از ۱ تا ۵۰ کاراکتر استفاده کنید: حروف، اعداد، خط تیره یا زیرخط.",
+      "affiliateRegisterError": "ثبت‌نام شریک ناموفق بود. لطفاً جزئیات خود را بررسی کنید.",
+      "hasAffiliateAccount": "قبلاً شریک هستید؟"
+    }
+  },
+  "ms": {
+    "nav": { "affiliateProgram": "PROGRAM AFFILIATE", "affiliateProgramLabel": "Jadi rakan kongsi" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Jadi rakan kongsi",
+      "affiliateReferralCode": "Kod rujukan",
+      "affiliateReferralCodeHint": "Hanya huruf, nombor, sempang dan garis bawah. Dipaparkan dalam pautan rujukan anda.",
+      "affiliateReferralCodeInvalid": "Gunakan 1–50 aksara: huruf, nombor, sempang atau garis bawah.",
+      "affiliateRegisterError": "Pendaftaran rakan kongsi gagal. Sila semak butiran anda.",
+      "hasAffiliateAccount": "Sudah menjadi rakan kongsi?"
+    }
+  },
+  "fil": {
+    "nav": { "affiliateProgram": "PROGRAMANG AFFILIATE", "affiliateProgramLabel": "Maging partner" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Maging partner",
+      "affiliateReferralCode": "Referral code",
+      "affiliateReferralCodeHint": "Mga titik, numero, gitling at underscore lamang. Ipapakita sa iyong referral link.",
+      "affiliateReferralCodeInvalid": "Gumamit ng 1–50 character: titik, numero, gitling o underscore.",
+      "affiliateRegisterError": "Nabigo ang pagpaparehistro ng partner. Pakisuri ang iyong mga detalye.",
+      "hasAffiliateAccount": "Partner ka na ba?"
+    }
+  },
+  "sw": {
+    "nav": { "affiliateProgram": "PROGRAMU YA USHIRIKIANO", "affiliateProgramLabel": "Kuwa mshirika" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Kuwa mshirika",
+      "affiliateReferralCode": "Msimbo wa rufaa",
+      "affiliateReferralCodeHint": "Herufi, nambari, mistari na alama za chini pekee. Inaonyeshwa kwenye kiungo chako cha rufaa.",
+      "affiliateReferralCodeInvalid": "Tumia herufi 1–50: herufi, nambari, mistari au alama za chini.",
+      "affiliateRegisterError": "Usajili wa mshirika umeshindikana. Tafadhali angalia maelezo yako.",
+      "hasAffiliateAccount": "Tayari ni mshirika?"
+    }
+  },
+  "ta": {
+    "nav": { "affiliateProgram": "இணைப்பு திட்டம்", "affiliateProgramLabel": "கூட்டாளராகுங்கள்" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "கூட்டாளராகுங்கள்",
+      "affiliateReferralCode": "பரிந்துரை குறியீடு",
+      "affiliateReferralCodeHint": "எழுத்துகள், எண்கள், கோடுகள் மற்றும் அடிக்கோடுகள் மட்டும். உங்கள் பரிந்துரை இணைப்பில் காட்டப்படும்.",
+      "affiliateReferralCodeInvalid": "1–50 எழுத்துகளைப் பயன்படுத்தவும்: எழுத்துகள், எண்கள், கோடுகள் அல்லது அடிக்கோடுகள்.",
+      "affiliateRegisterError": "கூட்டாளர் பதிவு தோல்வியடைந்தது. உங்கள் விவரங்களைச் சரிபார்க்கவும்.",
+      "hasAffiliateAccount": "ஏற்கனவே கூட்டாளரா?"
+    }
+  },
+  "te": {
+    "nav": { "affiliateProgram": "అఫిలియేట్ ప్రోగ్రామ్", "affiliateProgramLabel": "భాగస్వామి అవ్వండి" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "భాగస్వామి అవ్వండి",
+      "affiliateReferralCode": "రెఫరల్ కోడ్",
+      "affiliateReferralCodeHint": "అక్షరాలు, సంఖ్యలు, డాష్‌లు మరియు అండర్‌స్కోర్‌లు మాత్రమే. మీ రెఫరల్ లింక్‌లో చూపబడుతుంది.",
+      "affiliateReferralCodeInvalid": "1–50 అక్షరాలు ఉపయోగించండి: అక్షరాలు, సంఖ్యలు, డాష్‌లు లేదా అండర్‌స్కోర్‌లు.",
+      "affiliateRegisterError": "భాగస్వామి నమోదు విఫలమైంది. దయచేసి మీ వివరాలను తనిఖీ చేయండి.",
+      "hasAffiliateAccount": "ఇప్పటికే భాగస్వామివా?"
+    }
+  },
+  "ur": {
+    "nav": { "affiliateProgram": "ملحق پروگرام", "affiliateProgramLabel": "پارٹنر بنیں" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "پارٹنر بنیں",
+      "affiliateReferralCode": "ریفرل کوڈ",
+      "affiliateReferralCodeHint": "صرف حروف، اعداد، ڈیش اور انڈر سکور۔ آپ کے ریفرل لنک میں دکھایا جاتا ہے۔",
+      "affiliateReferralCodeInvalid": "1–50 حروف استعمال کریں: حروف، اعداد، ڈیش یا انڈر سکور۔",
+      "affiliateRegisterError": "پارٹنر رجسٹریشن ناکام ہوئی۔ براہ کرم اپنی تفصیلات چیک کریں۔",
+      "hasAffiliateAccount": "پہلے سے پارٹنر ہیں؟"
+    }
+  },
+  "uz": {
+    "nav": { "affiliateProgram": "HAMKORLIK DASTURI", "affiliateProgramLabel": "Hamkor bo'ling" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Hamkor bo'ling",
+      "affiliateReferralCode": "Referral kodi",
+      "affiliateReferralCodeHint": "Faqat harflar, raqamlar, chiziqcha va pastki chiziq. Referral havolangizda ko'rsatiladi.",
+      "affiliateReferralCodeInvalid": "1–50 belgi ishlating: harflar, raqamlar, chiziqcha yoki pastki chiziq.",
+      "affiliateRegisterError": "Hamkor ro'yxatdan o'tishi muvaffaqiyatsiz. Ma'lumotlaringizni tekshiring.",
+      "hasAffiliateAccount": "Allaqachon hamkormisiz?"
+    }
+  },
+  "ka": {
+    "nav": { "affiliateProgram": "პარტნიორობის პროგრამა", "affiliateProgramLabel": "გახდით პარტნიორი" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "გახდით პარტნიორი",
+      "affiliateReferralCode": "რეფერალური კოდი",
+      "affiliateReferralCodeHint": "მხოლოდ ასოები, ციფრები, ტირეები და ქვედა ხაზები. ნაჩვენებია თქვენს რეფერალურ ბმულში.",
+      "affiliateReferralCodeInvalid": "გამოიყენეთ 1–50 სიმბოლო: ასოები, ციფრები, ტირეები ან ქვედა ხაზები.",
+      "affiliateRegisterError": "პარტნიორის რეგისტრაცია ვერ მოხერხდა. გთხოვთ, შეამოწმოთ თქვენი მონაცემები.",
+      "hasAffiliateAccount": "უკვე პარტნიორი ხართ?"
+    }
+  },
+  "kk": {
+    "nav": { "affiliateProgram": "СЕРІКТЕСТІК БАҒДАРЛАМАСЫ", "affiliateProgramLabel": "Серіктес болыңыз" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Серіктес болыңыз",
+      "affiliateReferralCode": "Рефералдық код",
+      "affiliateReferralCodeHint": "Тек әріптер, сандар, сызықшалар және астыңғы сызықтар. Реферал сілтемеңізде көрсетіледі.",
+      "affiliateReferralCodeInvalid": "1–50 таңба пайдаланыңыз: әріптер, сандар, сызықшалар немесе астыңғы сызықтар.",
+      "affiliateRegisterError": "Серіктес тіркелуі сәтсіз аяқталды. Деректеріңізді тексеріңіз.",
+      "hasAffiliateAccount": "Серіктес болып қазірдің өзінде тіркелгенсіз бе?"
+    }
+  },
+  "az": {
+    "nav": { "affiliateProgram": "TƏRƏFDAŞLIQ PROQRAMI", "affiliateProgramLabel": "Tərəfdaş olun" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Tərəfdaş olun",
+      "affiliateReferralCode": "Referral kodu",
+      "affiliateReferralCodeHint": "Yalnız hərflər, rəqəmlər, tire və alt xətlər. Referral linkinizdə göstərilir.",
+      "affiliateReferralCodeInvalid": "1–50 simvol istifadə edin: hərflər, rəqəmlər, tire və ya alt xətlər.",
+      "affiliateRegisterError": "Tərəfdaş qeydiyyatı uğursuz oldu. Məlumatlarınızı yoxlayın.",
+      "hasAffiliateAccount": "Artıq tərəfdaşsınız?"
+    }
+  },
+  "be": {
+    "nav": { "affiliateProgram": "ПАРТНЁРСКАЯ ПРАГРАМА", "affiliateProgramLabel": "Стаць партнёрам" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Стаць партнёрам",
+      "affiliateReferralCode": "Рэферальны код",
+      "affiliateReferralCodeHint": "Толькі літары, лічбы, злучкі і падкрэсліванні. Адлюстроўваецца ў вашай рэферальнай спасылцы.",
+      "affiliateReferralCodeInvalid": "Выкарыстоўвайце 1–50 сімвалаў: літары, лічбы, злучкі або падкрэсліванні.",
+      "affiliateRegisterError": "Рэгістрацыя партнёра не ўдалася. Калі ласка, праверце свае даныя.",
+      "hasAffiliateAccount": "Ужо партнёр?"
+    }
+  },
+  "hy": {
+    "nav": { "affiliateProgram": "ԳՈՐԾԸՆԿԵՐԱԿԱՆ ԾՐԱԳԻՐ", "affiliateProgramLabel": "Դարձեք գործընկեր" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Դարձեք գործընկեր",
+      "affiliateReferralCode": "Ռեֆերալ կոդ",
+      "affiliateReferralCodeHint": "Միայն տառեր, թվեր, գծիկներ և ընդգծումներ։ Ցուցադրվում է ձեր ռեֆերալ հղման մեջ։",
+      "affiliateReferralCodeInvalid": "Օգտագործեք 1–50 նիշ՝ տառեր, թվեր, գծիկներ կամ ընդգծումներ։",
+      "affiliateRegisterError": "Գործընկերի գրանցումը ձախողվեց։ Խնդրում ենք ստուգել ձեր տվյալները։",
+      "hasAffiliateAccount": "Արդեն գործընկեր եք?"
+    }
+  },
+  "mn": {
+    "nav": { "affiliateProgram": "ТҮНШИЙН ХӨТӨЛБӨР", "affiliateProgramLabel": "Түнш болох" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Түнш болох",
+      "affiliateReferralCode": "Урилгын код",
+      "affiliateReferralCodeHint": "Зөвхөн үсэг, тоо, зураас болон доогуур зураас. Таны урилгын холбоос дээр харагдана.",
+      "affiliateReferralCodeInvalid": "1–50 тэмдэгт ашиглана уу: үсэг, тоо, зураас эсвэл доогуур зураас.",
+      "affiliateRegisterError": "Түншийн бүртгэл амжилтгүй боллоо. Мэдээллээ шалгана уу.",
+      "hasAffiliateAccount": "Аль хэдийн түнш үү?"
+    }
+  },
+  "ne": {
+    "nav": { "affiliateProgram": "साझेदारी कार्यक्रम", "affiliateProgramLabel": "साझेदार बन्नुहोस्" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "साझेदार बन्नुहोस्",
+      "affiliateReferralCode": "रेफरल कोड",
+      "affiliateReferralCodeHint": "अक्षर, संख्या, ड्यास र अन्डरस्कोर मात्र। तपाईंको रेफरल लिङ्कमा देखाइन्छ।",
+      "affiliateReferralCodeInvalid": "1–50 वर्ण प्रयोग गर्नुहोस्: अक्षर, संख्या, ड्यास वा अन्डरस्कोर।",
+      "affiliateRegisterError": "साझेदार दर्ता असफल भयो। कृपया आफ्नो विवरण जाँच गर्नुहोस्।",
+      "hasAffiliateAccount": "पहिले नै साझेदार हुनुहुन्छ?"
+    }
+  },
+  "pa": {
+    "nav": { "affiliateProgram": "ਐਫੀਲੀਏਟ ਪ੍ਰੋਗਰਾਮ", "affiliateProgramLabel": "ਪਾਰਟਨਰ ਬਣੋ" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "ਪਾਰਟਨਰ ਬਣੋ",
+      "affiliateReferralCode": "ਰੈਫਰਲ ਕੋਡ",
+      "affiliateReferralCodeHint": "ਸਿਰਫ਼ ਅੱਖਰ, ਨੰਬਰ, ਡੈਸ਼ ਅਤੇ ਅੰਡਰਸਕੋਰ। ਤੁਹਾਡੀ ਰੈਫਰਲ ਲਿੰਕ ਵਿੱਚ ਦਿਖਾਇਆ ਜਾਂਦਾ ਹੈ।",
+      "affiliateReferralCodeInvalid": "1–50 ਅੱਖਰ ਵਰਤੋ: ਅੱਖਰ, ਨੰਬਰ, ਡੈਸ਼ ਜਾਂ ਅੰਡਰਸਕੋਰ।",
+      "affiliateRegisterError": "ਪਾਰਟਨਰ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਅਸਫਲ ਰਹੀ। ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਵੇਰਵੇ ਜਾਂਚੋ।",
+      "hasAffiliateAccount": "ਪਹਿਲਾਂ ਤੋਂ ਪਾਰਟਨਰ ਹੋ?"
+    }
+  },
+  "tg": {
+    "nav": { "affiliateProgram": "БАРНАМАИ ШАРИКИ", "affiliateProgramLabel": "Шарик шавед" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Шарик шавед",
+      "affiliateReferralCode": "Рамзи реферал",
+      "affiliateReferralCodeHint": "Фақат ҳарфҳо, рақамҳо, тире ва хатти поёнӣ. Дар пайванди реферали шумо намоиш дода мешавад.",
+      "affiliateReferralCodeInvalid": "1–50 аломат истифода баред: ҳарфҳо, рақамҳо, тире ё хатти поёнӣ.",
+      "affiliateRegisterError": "Бақайдгирии шарик ноком шуд. Лутфан маълумоти худро санҷед.",
+      "hasAffiliateAccount": "Аллакай шарик ҳастед?"
+    }
+  },
+  "yo": {
+    "nav": { "affiliateProgram": "Ẹ̀KÁ AJÉMÁRA", "affiliateProgramLabel": "Di alábàápọ̀" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Di alábàápọ̀",
+      "affiliateReferralCode": "Kóòdù ìtọ́kasí",
+      "affiliateReferralCodeHint": "Àwọn lẹ́tà, nọ́mbà, dáàṣì àti àmì ìsàlẹ̀ nìkan. A fi hàn ní ọ̀nà àsopọ̀ ìtọ́kasí rẹ.",
+      "affiliateReferralCodeInvalid": "Lo àmì 1–50: àwọn lẹ́tà, nọ́mbà, dáàṣì tàbí àmì ìsàlẹ̀.",
+      "affiliateRegisterError": "Ìforúkọsí alábàápọ̀ kùnà. Jọ̀wọ́ ṣàyẹ̀wò àlàyé rẹ.",
+      "hasAffiliateAccount": "Ti di alábàápọ̀ tẹ́lẹ̀?"
+    }
+  },
+  "zu": {
+    "nav": { "affiliateProgram": "UHLELO LOKUHAMBISANA", "affiliateProgramLabel": "Yiba ngumlingani" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Yiba ngumlingani",
+      "affiliateReferralCode": "Ikhodi yokudlulisela",
+      "affiliateReferralCodeHint": "Izinhlamvu, izinombolo, amadashi nezansi kuphela. Kuboniswa kusixhumanisi sakho sokudlulisela.",
+      "affiliateReferralCodeInvalid": "Sebenzisa izinhlamvu ezingama-1–50: izinhlamvu, izinombolo, amadashi noma izansi.",
+      "affiliateRegisterError": "Ukubhaliswa komlingani kuhlulekile. Sicela uhlole imininingwane yakho.",
+      "hasAffiliateAccount": "Usuvele ungumlingani?"
+    }
+  },
+  "ga": {
+    "nav": { "affiliateProgram": "CLÁR COMHPHÁIRTÍOCHTA", "affiliateProgramLabel": "Bí i do chomhpháirtí" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Bí i do chomhpháirtí",
+      "affiliateReferralCode": "Cód atreoraithe",
+      "affiliateReferralCodeHint": "Litreacha, uimhreacha, daiseanna agus béim íochtarach amháin. Taispeántar i do nasc atreoraithe.",
+      "affiliateReferralCodeInvalid": "Úsáid 1–50 carachtar: litreacha, uimhreacha, daiseanna nó béim íochtarach.",
+      "affiliateRegisterError": "Theip ar chlárú comhpháirtí. Seiceáil do shonraí le do thoil.",
+      "hasAffiliateAccount": "An bhfuil tú i do chomhpháirtí cheana?"
+    }
+  },
+  "gu": {
+    "nav": { "affiliateProgram": "એફિલિએટ પ્રોગ્રામ", "affiliateProgramLabel": "પાર્ટનર બનો" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "પાર્ટનર બનો",
+      "affiliateReferralCode": "રેફરલ કોડ",
+      "affiliateReferralCodeHint": "માત્ર અક્ષરો, સંખ્યાઓ, ડેશ અને અન્ડરસ્કોર. તમારી રેફરલ લિંકમાં દર્શાવવામાં આવે છે.",
+      "affiliateReferralCodeInvalid": "1–50 અક્ષરો વાપરો: અક્ષરો, સંખ્યાઓ, ડેશ અથવા અન્ડરસ્કોર.",
+      "affiliateRegisterError": "પાર્ટનર નોંધણી નિષ્ફળ ગઈ. કૃપા કરીને તમારી વિગતો તપાસો.",
+      "hasAffiliateAccount": "પહેલેથી પાર્ટનર છો?"
+    }
+  },
+  "ha": {
+    "nav": { "affiliateProgram": "SHIRIN ABOKAN HARKA", "affiliateProgramLabel": "Zama abokin harka" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Zama abokin harka",
+      "affiliateReferralCode": "Lambar turawa",
+      "affiliateReferralCodeHint": "Haruffa, lambobi, gajeren layi da ƙasa kawai. Ana nuna shi a cikin hanyar turawa.",
+      "affiliateReferralCodeInvalid": "Yi amfani da haruffa 1–50: haruffa, lambobi, gajeren layi ko ƙasa.",
+      "affiliateRegisterError": "Rajistar abokin harka ta gaza. Da fatan za a duba bayananku.",
+      "hasAffiliateAccount": "Kuna da abokin harka tuni?"
+    }
+  },
+  "ig": {
+    "nav": { "affiliateProgram": "PROGRAMMM KỌMMỤNỌ", "affiliateProgramLabel": "Bụrụ onye mmekọ" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Bụrụ onye mmekọ",
+      "affiliateReferralCode": "Koodu ntụaka",
+      "affiliateReferralCodeHint": "Edemede, nọmba, dash na underscore naanị. A gosipụta ya na njikọ ntụaka gị.",
+      "affiliateReferralCodeInvalid": "Jiri akara 1–50: edemede, nọmba, dash ma ọ bụ underscore.",
+      "affiliateRegisterError": "Ndebanye aha onye mmekọ dara ada. Biko lelee nkọwa gị.",
+      "hasAffiliateAccount": "Ị bụrụgo onye mmekọ?"
+    }
+  },
+  "lb": {
+    "nav": { "affiliateProgram": "PARTNERSCHAFTSPROGRAMM", "affiliateProgramLabel": "Partner ginn" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Partner ginn",
+      "affiliateReferralCode": "Referenzcode",
+      "affiliateReferralCodeHint": "Nëmmen Buchstawen, Zuelen, Strécher an Ënnerstrécher. Gewise an Ärem Referenzlink.",
+      "affiliateReferralCodeInvalid": "Benotzt 1–50 Zeechen: Buchstawen, Zuelen, Strécher oder Ënnerstrécher.",
+      "affiliateRegisterError": "Partnerregistréierung feelgeschloen. Kontrolléiert w.e.g. Är Detailer.",
+      "hasAffiliateAccount": "Sidd Dir schonn Partner?"
+    }
+  },
+  "lo": {
+    "nav": { "affiliateProgram": "ໂຄງການຄູ່ຮ່ວມງານ", "affiliateProgramLabel": "ເປັນຄູ່ຮ່ວມງານ" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "ເປັນຄູ່ຮ່ວມງານ",
+      "affiliateReferralCode": "ລະຫັດແນະນຳ",
+      "affiliateReferralCodeHint": "ຕົວອັກສອນ, ຕົວເລກ, ຂີດກາງ ແລະ ຂີດລຸ່ມເທົ່ານັ້ນ. ສະແດງໃນລິ້ງແນະນຳຂອງທ່ານ.",
+      "affiliateReferralCodeInvalid": "ໃຊ້ 1–50 ຕົວອັກສອນ: ຕົວອັກສອນ, ຕົວເລກ, ຂີດກາງ ຫຼື ຂີດລຸ່ມ.",
+      "affiliateRegisterError": "ການລົງທະບຽນຄູ່ຮ່ວມງານລົ້ມເຫຼວ. ກະລຸນາກວດສອບລາຍລະອຽດຂອງທ່ານ.",
+      "hasAffiliateAccount": "ເປັນຄູ່ຮ່ວມງານແລ້ວບໍ?"
+    }
+  },
+  "ml": {
+    "nav": { "affiliateProgram": "അഫിലിയേറ്റ് പ്രോഗ്രാം", "affiliateProgramLabel": "പങ്കാളിയാകുക" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "പങ്കാളിയാകുക",
+      "affiliateReferralCode": "റഫറൽ കോഡ്",
+      "affiliateReferralCodeHint": "അക്ഷരങ്ങൾ, സംഖ്യകൾ, ഡാഷുകൾ, അണ്ടർസ്കോറുകൾ മാത്രം. നിങ്ങളുടെ റഫറൽ ലിങ്കിൽ കാണിക്കുന്നു.",
+      "affiliateReferralCodeInvalid": "1–50 അക്ഷരങ്ങൾ ഉപയോഗിക്കുക: അക്ഷരങ്ങൾ, സംഖ്യകൾ, ഡാഷുകൾ അല്ലെങ്കിൽ അണ്ടർസ്കോറുകൾ.",
+      "affiliateRegisterError": "പങ്കാളി രജിസ്ട്രേഷൻ പരാജയപ്പെട്ടു. ദയവായി നിങ്ങളുടെ വിവരങ്ങൾ പരിശോധിക്കുക.",
+      "hasAffiliateAccount": "ഇതിനകം പങ്കാളിയാണോ?"
+    }
+  },
+  "mr": {
+    "nav": { "affiliateProgram": "अॅफिलिएट प्रोग्राम", "affiliateProgramLabel": "भागीदार व्हा" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "भागीदार व्हा",
+      "affiliateReferralCode": "रेफरल कोड",
+      "affiliateReferralCodeHint": "फक्त अक्षरे, संख्या, डॅश आणि अंडरस्कोर. तुमच्या रेफरल लिंकमध्ये दाखवले जाते.",
+      "affiliateReferralCodeInvalid": "1–50 वर्ण वापरा: अक्षरे, संख्या, डॅश किंवा अंडरस्कोर.",
+      "affiliateRegisterError": "भागीदार नोंदणी अयशस्वी. कृपया तुमचे तपशील तपासा.",
+      "hasAffiliateAccount": "आधीच भागीदार आहात?"
+    }
+  },
+  "mt": {
+    "nav": { "affiliateProgram": "PROGRAMM TA' SĦUBIJA", "affiliateProgramLabel": "Issir sieħeb" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Issir sieħeb",
+      "affiliateReferralCode": "Kodiċi ta' riferiment",
+      "affiliateReferralCodeHint": "Ittri, numri, sing u linji ta' taħt biss. Jidher fil-link tar-riferiment tiegħek.",
+      "affiliateReferralCodeInvalid": "Uża 1–50 karattru: ittri, numri, sing jew linji ta' taħt.",
+      "affiliateRegisterError": "Ir-reġistrazzjoni tas-sieħeb falliet. Jekk jogħġbok iċċekkja d-dettalji tiegħek.",
+      "hasAffiliateAccount": "Diġà sieħeb?"
+    }
+  },
+  "my": {
+    "nav": { "affiliateProgram": "ပူးပေါင်းဆောင်ရွက်မှု အစီအစဉ်", "affiliateProgramLabel": "ပါတနာ ဖြစ်လာပါ" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "ပါတနာ ဖြစ်လာပါ",
+      "affiliateReferralCode": "ရည်ညွှန်းကုဒ်",
+      "affiliateReferralCodeHint": "စာလုံး၊ နံပါတ်၊ မျဉ်းတို နှင့် အောက်မျဉ်းသာ။ သင့်ရည်ညွှန်းလင့်ခ်တွင် ပြသသည်။",
+      "affiliateReferralCodeInvalid": "စာလုံး ၁–၅၀ သုံးပါ- စာလုံး၊ နံပါတ်၊ မျဉ်းတို သို့မဟုတ် အောက်မျဉ်း။",
+      "affiliateRegisterError": "ပါတနာ မှတ်ပုံတင်ခြင်း မအောင်မြင်ပါ။ သင့်အချက်အလက်များကို စစ်ဆေးပါ။",
+      "hasAffiliateAccount": "ပါတနာ ဖြစ်ပြီးသားလား?"
+    }
+  },
+  "si": {
+    "nav": { "affiliateProgram": "අනුබද්ධ වැඩසටහන", "affiliateProgramLabel": "හවුල්කරු වන්න" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "හවුල්කරු වන්න",
+      "affiliateReferralCode": "යොමු කේතය",
+      "affiliateReferralCodeHint": "අකුරු, සංඛ්‍යා, ඉරි සහ යටි ඉරි පමණි. ඔබේ යොමු සබැඳියේ පෙන්වයි.",
+      "affiliateReferralCodeInvalid": "අක්ෂර 1–50 භාවිතා කරන්න: අකුරු, සංඛ්‍යා, ඉරි හෝ යටි ඉරි.",
+      "affiliateRegisterError": "හවුල්කරු ලියාපදිංචිය අසාර්ථක විය. කරුණාකර ඔබේ විස්තර පරීක්ෂා කරන්න.",
+      "hasAffiliateAccount": "දැනටමත් හවුල්කරුද?"
+    }
+  },
+  "so": {
+    "nav": { "affiliateProgram": "BARNAAJIJA ISKAASHIGA", "affiliateProgramLabel": "Noqo lammaane" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Noqo lammaane",
+      "affiliateReferralCode": "Koodhka tixraaca",
+      "affiliateReferralCodeHint": "Xarfo, lambaro, xariijimo iyo hoosta oo keliya. Waxaa lagu muujiyaa xiriirkaaga tixraaca.",
+      "affiliateReferralCodeInvalid": "Isticmaal 1–50 xaraf: xarfo, lambaro, xariijimo ama hoosta.",
+      "affiliateRegisterError": "Diiwaangelinta lammaanaha way fashilantay. Fadlan hubi faahfaahintaada.",
+      "hasAffiliateAccount": "Horeba lammaane ma tahay?"
+    }
+  },
+  "cy": {
+    "nav": { "affiliateProgram": "RHAGLEN GYFEILLIO", "affiliateProgramLabel": "Dewch yn bartner" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Dewch yn bartner",
+      "affiliateReferralCode": "Cod cyfeirio",
+      "affiliateReferralCodeHint": "Llythrennau, rhifau, dyfnodau a thanlinellau yn unig. Yn cael ei ddangos yn eich dolen gyfeirio.",
+      "affiliateReferralCodeInvalid": "Defnyddiwch 1–50 nod: llythrennau, rhifau, dyfnodau neu danlinellau.",
+      "affiliateRegisterError": "Methodd cofrestru partner. Gwiriwch eich manylion.",
+      "hasAffiliateAccount": "Eisoes yn bartner?"
+    }
+  },
+  "is": {
+    "nav": { "affiliateProgram": "SAMSTARFSÁÆTLUN", "affiliateProgramLabel": "Vertu samstarfsaðili" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Vertu samstarfsaðili",
+      "affiliateReferralCode": "Tilvísunarkóði",
+      "affiliateReferralCodeHint": "Aðeins bókstafir, tölur, bandstrik og undirstrik. Birtist í tilvísunartenglinum þínum.",
+      "affiliateReferralCodeInvalid": "Notaðu 1–50 stafi: bókstafi, tölur, bandstrik eða undirstrik.",
+      "affiliateRegisterError": "Skráning samstarfsaðila mistókst. Vinsamlegast athugaðu upplýsingarnar þínar.",
+      "hasAffiliateAccount": "Ertu þegar samstarfsaðili?"
+    }
+  },
+  "km": {
+    "nav": { "affiliateProgram": "កម្មវិធីដៃគូ", "affiliateProgramLabel": "ក្លាយជាដៃគូ" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "ក្លាយជាដៃគូ",
+      "affiliateReferralCode": "លេខកូដណែនាំ",
+      "affiliateReferralCodeHint": "តែអក្សរ លេខ សហសញ្ញា និងគូសខាងក្រោម។ បង្ហាញក្នុងតំណណែនាំរបស់អ្នក។",
+      "affiliateReferralCodeInvalid": "ប្រើ 1–50 តួអក្សរ៖ អក្សរ លេខ សហសញ្ញា ឬគូសខាងក្រោម។",
+      "affiliateRegisterError": "ការចុះឈ្មោះដៃគូបរាជ័យ។ សូមពិនិត្យព័ត៌មានរបស់អ្នក។",
+      "hasAffiliateAccount": "ជាដៃគូរួចហើយ?"
+    }
+  },
+  "kn": {
+    "nav": { "affiliateProgram": "ಅಫಿಲಿಯೇಟ್ ಕಾರ್ಯಕ್ರಮ", "affiliateProgramLabel": "ಪಾಲುದಾರರಾಗಿ" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "ಪಾಲುದಾರರಾಗಿ",
+      "affiliateReferralCode": "ರೆಫರಲ್ ಕೋಡ್",
+      "affiliateReferralCodeHint": "ಅಕ್ಷರಗಳು, ಸಂಖ್ಯೆಗಳು, ಡ್ಯಾಶ್‌ಗಳು ಮತ್ತು ಅಂಡರ್‌ಸ್ಕೋರ್‌ಗಳು ಮಾತ್ರ. ನಿಮ್ಮ ರೆಫರಲ್ ಲಿಂಕ್‌ನಲ್ಲಿ ತೋರಿಸಲಾಗುತ್ತದೆ.",
+      "affiliateReferralCodeInvalid": "1–50 ಅಕ್ಷರಗಳನ್ನು ಬಳಸಿ: ಅಕ್ಷರಗಳು, ಸಂಖ್ಯೆಗಳು, ಡ್ಯಾಶ್‌ಗಳು ಅಥವಾ ಅಂಡರ್‌ಸ್ಕೋರ್‌ಗಳು.",
+      "affiliateRegisterError": "ಪಾಲುದಾರ ನೋಂದಣಿ ವಿಫಲವಾಗಿದೆ. ದಯವಿಟ್ಟು ನಿಮ್ಮ ವಿವರಗಳನ್ನು ಪರಿಶೀಲಿಸಿ.",
+      "hasAffiliateAccount": "ಈಗಾಗಲೇ ಪಾಲುದಾರರೇ?"
+    }
+  },
+  "af": {
+    "nav": { "affiliateProgram": "AFFILIATE-PROGRAM", "affiliateProgramLabel": "Word 'n vennoot" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Word 'n vennoot",
+      "affiliateReferralCode": "Verwysingskode",
+      "affiliateReferralCodeHint": "Slegs letters, syfers, strepies en onderstrepe. Word in jou verwysingskakel gewys.",
+      "affiliateReferralCodeInvalid": "Gebruik 1–50 karakters: letters, syfers, strepies of onderstrepe.",
+      "affiliateRegisterError": "Vennootregistrasie het misluk. Gaan asseblief jou besonderhede na.",
+      "hasAffiliateAccount": "Reeds 'n vennoot?"
+    }
+  },
+  "am": {
+    "nav": { "affiliateProgram": "የአጋርነት ፕሮግራም", "affiliateProgramLabel": "አጋር ይሁኑ" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "አጋር ይሁኑ",
+      "affiliateReferralCode": "የሪፈራል ኮድ",
+      "affiliateReferralCodeHint": "ፊደላት፣ ቁጥሮች፣ ቀስቶች እና ከታች መስመሮች ብቻ። በሪፈራል አገናኝዎ ላይ ይታያል።",
+      "affiliateReferralCodeInvalid": "1–50 ቁምፊዎችን ይጠቀሙ፡ ፊደላት፣ ቁጥሮች፣ ቀስቶች ወይም ከታች መስመሮች።",
+      "affiliateRegisterError": "የአጋር ምዝገባ አልተሳካም። ዝርዝሮችዎን ያረጋግጡ።",
+      "hasAffiliateAccount": "አስቀድመው አጋር ነዎት?"
+    }
+  },
+  "sq": {
+    "nav": { "affiliateProgram": "PROGRAMI I PARTNERITETIT", "affiliateProgramLabel": "Bëhu partner" },
+    "auth": {
+      "affiliatePortalLoginTitle": "Affiliate Portal Login",
+      "affiliateRegisterTitle": "Bëhu partner",
+      "affiliateReferralCode": "Kodi i referimit",
+      "affiliateReferralCodeHint": "Vetëm shkronja, numra, viza dhe nënvizime. Shfaqet në lidhjen tuaj të referimit.",
+      "affiliateReferralCodeInvalid": "Përdorni 1–50 karaktere: shkronja, numra, viza ose nënvizime.",
+      "affiliateRegisterError": "Regjistrimi i partnerit dështoi. Kontrolloni detajet tuaja.",
+      "hasAffiliateAccount": "Tashmë partner?"
+    }
+  }
+}

@@ -19,6 +19,7 @@ export interface BonusPolicy {
   spin_count?: number | null;
   provider_slug?: string | null;
   provider_name?: string | null;
+  vendor_names?: string[];
 }
 
 export interface ActiveBonus {
@@ -60,6 +61,11 @@ export const bonusApi = {
 
   claim: async (policyId: number) => {
     const { data } = await api.post<ApiResponse<ClaimBonusResult>>(`/bonus/${policyId}/claim`);
+    return data.data;
+  },
+
+  forfeit: async (playerBonusId: number) => {
+    const { data } = await api.post<ApiResponse<ClaimBonusResult>>(`/bonus/${playerBonusId}/forfeit`);
     return data.data;
   },
 };

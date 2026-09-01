@@ -185,7 +185,6 @@
   "Change Password": "تغییر رمز عبور",
   "Privacy Policy": "سیاست حریم خصوصی",
   "← Back to home": "← بازگشت به خانه",
-  "UP TO $250 USD": "تا ۲۵۰ دلار آمریکا",
   "View Bonuses →": "مشاهده بونوس‌ها →",
   "{{name}} Games": "بازی‌های {{name}}",
   "Cryptocurrency": "رمزارز",
@@ -378,5 +377,7 @@
   "OK": "OK",
   "ID": "ID",
   "The World's Largest Sportsbook & Online Casino": "بزرگترین سایت شرط بندی ورزشی و کازینو آنلاین جهان",
-  "5% Cashback Bonus Every Tuesday": "5% بونوس بازگشت وجه هر سه‌شنبه"
+  "UP TO ${{amount}} USD": "تا {{amount}} دلار آمریکا",
+  "Weekly, monthly up to {{percent}}% cashback": "بازگشت وجه هفتگی و ماهانه تا {{percent}}٪",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "بازگشت وجه روزانه، هفتگی و ماهانه تا {{percent}}٪"
 }

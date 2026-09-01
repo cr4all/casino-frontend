@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { walletApi } from '@/api/wallet.api';
+import { hasAccessToken } from '@/stores/authStore';
 import type { WalletBalance } from '@/types';
 import { formatBalance } from '@/utils/formatBalance';
 import { reportUserActivity } from '@/utils/userActivity';
@@ -70,6 +71,7 @@ export const useWalletStore = create<WalletState>()(
       error: null,
 
       fetchBalance: async () => {
+        if (!hasAccessToken()) return;
         if (balanceInflight) return balanceInflight;
 
         set({ isLoading: true, error: null });

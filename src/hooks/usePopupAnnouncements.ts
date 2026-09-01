@@ -1,16 +1,19 @@
 import { useCallback, useEffect, useState } from 'react';
 import { notificationApi, type AnnouncementPopup } from '@/api/notification.api';
+import { usePlayerSession } from '@/hooks/usePlayerSession';
 import { useAuthStore } from '@/stores/authStore';
 import { filterSnoozedPopups } from '@/utils/popupSnooze';
 
 export function usePopupAnnouncements() {
-  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
+  const { hasHydrated, enabled } = usePlayerSession();
   const userId = useAuthStore((s) => s.user?.id);
   const [queue, setQueue] = useState<AnnouncementPopup[]>([]);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    if (!isAuthenticated || userId == null) {
+    if (!hasHydrated) return;
+
+    if (!enabled || userId == null) {
       setQueue([]);
       setLoaded(false);
       return;
@@ -35,7 +38,7 @@ export function usePopupAnnouncements() {
     return () => {
       cancelled = true;
     };
-  }, [isAuthenticated, userId]);
+  }, [hasHydrated, enabled, userId]);
 
   const dismissPopup = useCallback((popupId: number) => {
     setQueue((prev) => prev.filter((popup) => popup.id !== popupId));

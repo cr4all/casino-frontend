@@ -8,6 +8,7 @@ import { ProfilePage } from '@/pages/ProfilePage';
 import { DepositPage } from '@/pages/DepositPage';
 import { WithdrawPage } from '@/pages/WithdrawPage';
 import { BonusPage } from '@/pages/BonusPage';
+import { InviteFriendPage } from '@/pages/InviteFriendPage';
 import { NotificationsPage } from '@/pages/NotificationsPage';
 import { SupportTicketsPage } from '@/pages/SupportTicketsPage';
 import { SupportTicketDetailPage } from '@/pages/SupportTicketDetailPage';
@@ -18,6 +19,7 @@ import { GamePlayPage } from '@/pages/GamePlayPage';
 import { CookiePolicyPage } from '@/pages/CookiePolicyPage';
 import { LegalDocumentPage } from '@/pages/legal/LegalDocumentPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
+import { AffiliateProgramPage } from '@/pages/AffiliateProgramPage';
 
 export const router = Sentry.wrapCreateBrowserRouterV7(createBrowserRouter)([
   {
@@ -38,6 +40,7 @@ export const router = Sentry.wrapCreateBrowserRouterV7(createBrowserRouter)([
       { path: 'deposit', element: <DepositPage /> },
       { path: 'withdraw', element: <WithdrawPage /> },
       { path: 'bonus', element: <BonusPage /> },
+      { path: 'invite', element: <InviteFriendPage /> },
       { path: 'notifications', element: <NotificationsPage /> },
       { path: 'support-tickets', element: <SupportTicketsPage /> },
       { path: 'support-tickets/:id', element: <SupportTicketDetailPage /> },
@@ -51,8 +54,9 @@ export const router = Sentry.wrapCreateBrowserRouterV7(createBrowserRouter)([
       { path: 'responsible-gaming', element: <LegalDocumentPage pageId="responsibleGaming" /> },
       { path: 'faq', element: <LegalDocumentPage pageId="faq" /> },
       { path: 'contact', element: <LegalDocumentPage pageId="contact" /> },
-      { path: 'partners', element: <LegalDocumentPage pageId="partners" /> },
+      { path: 'partners', element: <AffiliateProgramPage /> },
       { path: 'aml', element: <LegalDocumentPage pageId="aml" /> },
+      { path: 'kyc', element: <LegalDocumentPage pageId="kyc" /> },
       { path: '*', element: <NotFoundPage /> },
     ],
   },

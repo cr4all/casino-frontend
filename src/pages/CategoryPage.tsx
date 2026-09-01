@@ -16,8 +16,10 @@ import { useGameVendors } from '@/hooks/useGameVendors';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getVendorBannerUrl } from '@/data/providerBanners';
 import { mockPromotions } from '@/data/mockData';
+import { useAuthStore } from '@/stores/authStore';
 import { vendorGradient, vendorPath } from '@/stores/gameStore';
 import { useFavoritesStore } from '@/stores/favoritesStore';
+import { formatVendorName } from '@/utils/formatVendorName';
 import type { Game } from '@/types';
 
 function parseCategoryFilters(category: string) {
@@ -35,6 +37,7 @@ function parseCategoryFilters(category: string) {
 
 export function CategoryPage() {
   const { t, tGameType, tCollection } = useTranslation();
+  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const { category = 'all' } = useParams<{ category: string }>();
   const [searchParams, setSearchParams] = useSearchParams();
   const { vendors, loading: vendorsLoading } = useGameVendors();
@@ -62,7 +65,7 @@ export function CategoryPage() {
     }
     if (vendorId) {
       const vendor = vendors.find((v) => v.id === vendorId);
-      return vendor?.name ?? t('category.games');
+      return vendor ? formatVendorName(vendor.name) : t('category.games');
     }
     if (typeSlug) {
       const type = types.find((tp) => tp.slug === typeSlug);
@@ -120,6 +123,14 @@ export function CategoryPage() {
       return;
     }
 
+    if (isFavorites && !isAuthenticated) {
+      setGames([]);
+      setLastPage(1);
+      setLoading(false);
+      setLoadingMore(false);
+      return;
+    }
+
     let cancelled = false;
     const isFirstPage = page === 1;
 
@@ -170,7 +181,7 @@ export function CategoryPage() {
     return () => {
       cancelled = true;
     };
-  }, [category, isFavorites, effectiveVendorId, typeSlug, collectionSlug, page, debouncedSearch]);
+  }, [category, isFavorites, isAuthenticated, effectiveVendorId, typeSlug, collectionSlug, page, debouncedSearch]);
 
   const handleShowMore = () => {
     if (loadingMore || page >= lastPage) return;
@@ -192,7 +203,7 @@ export function CategoryPage() {
             <p className="text-muted">{t('category.noProvidersFound')}</p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+          <div className="game-list-shell grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
             {vendors.map((vendor, index) => (
               <ProviderCard
                 key={vendor.id}
@@ -273,7 +284,7 @@ export function CategoryPage() {
         </div>
       ) : (
         <>
-          <div className="grid grid-cols-3 gap-2 sm:grid-cols-3 sm:gap-3 md:grid-cols-4 md:gap-4 lg:grid-cols-5 xl:grid-cols-6">
+          <div className="game-list-shell grid grid-cols-3 gap-2 sm:grid-cols-3 sm:gap-3 md:grid-cols-4 md:gap-4 lg:grid-cols-5 xl:grid-cols-6">
             {displayGames.map((game) => (
               <GameCard key={game.id} game={game} variant="grid" />
             ))}

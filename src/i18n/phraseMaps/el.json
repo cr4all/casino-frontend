@@ -21,7 +21,6 @@
   "Stake": "Ποντάρισμα",
   "Odds": "Αποδόσεις",
   "The World's Largest Sportsbook & Online Casino": "Το Μεγαλύτερο Αθλητικό Στοίχημα & Online Καζίνο στον Κόσμο",
-  "5% Cashback Bonus Every Tuesday": "Μπόνους επιστροφής χρημάτων 5% κάθε Τρίτη",
   "Available to Withdraw": "Διαθέσιμο για ανάληψη",
   "Accruing (Current Month)": "Συγκεντρωτικά (Τρέχων μήνας)",
   "Payouts": "Χρηματική επιβράβευση",
@@ -63,5 +62,8 @@
   "Email": "Ηλεκτρονικό ταχυδρομείο",
   "Partners": "Συνεργάτες",
   "Affiliate Program": "Πρόγραμμα συνεργατών",
-  "Become a Partner": "Γίνετε συνεργάτης"
+  "Become a Partner": "Γίνετε συνεργάτης",
+  "Weekly, monthly up to {{percent}}% cashback": "Εβδομαδιαίο, μηνιαίο cashback έως {{percent}}%",
+  "Daily, weekly, monthly up to {{percent}}% cashback": "Ημερήσιο, εβδομαδιαίο, μηνιαίο cashback έως {{percent}}%",
+  "KYC Policy": "Πολιτική KYC"
 }
