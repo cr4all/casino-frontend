@@ -46,6 +46,11 @@ export const ko: LocaleTree = {
     "fieldSelectRequired": "{{field}}을(를) 선택해 주세요.",
     "fieldCodeInvalid": "6자리 인증 코드를 입력해 주세요.",
     "language": "언어",
+    "theme": "테마",
+    "themeDark": "다크 테마",
+    "themeLight": "라이트 테마",
+    "switchToLightTheme": "라이트 테마로 전환",
+    "switchToDarkTheme": "다크 테마로 전환",
     "actions": "작업"
   },
   "nav": {

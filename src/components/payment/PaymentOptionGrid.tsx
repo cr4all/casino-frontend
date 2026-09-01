@@ -17,7 +17,7 @@ export function PaymentOptionLogo({ option, className }: { option: PaymentOption
       <img
         src={`/payment-logos/${option.logo_key}.svg`}
         alt=""
-        className={`${logoClass} shrink-0 rounded-lg border border-white/10 bg-white object-contain p-1.5`}
+        className={`${logoClass} shrink-0 rounded-lg border border-white/10 bg-paper object-contain p-1.5`}
         onError={() => setImgError(true)}
       />
     );

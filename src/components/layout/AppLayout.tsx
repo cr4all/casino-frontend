@@ -105,7 +105,7 @@ export function AppLayout() {
 
   if (isAffiliateUser) {
     return (
-      <div className="min-h-screen bg-background p-4 md:p-6 flex flex-col">
+      <div className="app-shell min-h-screen bg-background p-4 md:p-6 flex flex-col">
         <div className="flex-1">
           <Outlet />
         </div>
@@ -122,7 +122,7 @@ export function AppLayout() {
   }
 
   return (
-    <div className="flex min-h-screen max-w-full overflow-x-hidden bg-background">
+    <div className="app-shell flex min-h-screen max-w-full overflow-x-hidden bg-background">
       {/* Desktop sidebar */}
       <div className="hidden lg:block">
         <Sidebar />

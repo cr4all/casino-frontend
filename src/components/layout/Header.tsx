@@ -10,6 +10,7 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { AuthService } from '@/services/AuthService';
 import { Button } from '@/components/common/Button';
 import { LanguageSelector } from '@/components/common/LanguageSelector';
+import { ThemeToggle } from '@/components/common/ThemeToggle';
 import { Logo } from '@/components/common/Logo';
 import { WalletBalanceBreakdown } from '@/components/wallet/WalletBalanceBreakdown';
 import { WalletActionButtons } from '@/components/layout/WalletActionButtons';
@@ -61,6 +62,7 @@ export function Header({ onMenuToggle, onOpenVipLevels }: HeaderProps) {
       </div>
 
       <div className="col-start-3 flex min-w-0 shrink-0 items-center justify-end gap-1.5 sm:gap-2 md:gap-3 lg:col-start-2">
+        <ThemeToggle />
         <LanguageSelector />
 
         {isAuthenticated ? (

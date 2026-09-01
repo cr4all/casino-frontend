@@ -45,6 +45,11 @@ export const en = {
     fieldSelectRequired: 'Please select {{field}}.',
     fieldCodeInvalid: 'Please enter the 6-digit verification code.',
     language: 'Language',
+    theme: 'Theme',
+    themeDark: 'Dark theme',
+    themeLight: 'Light theme',
+    switchToLightTheme: 'Switch to light theme',
+    switchToDarkTheme: 'Switch to dark theme',
   },
   nav: {
     allGames: 'ALL GAMES',

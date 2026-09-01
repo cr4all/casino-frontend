@@ -4,6 +4,23 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=6" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <script>
+      (function () {
+        var theme = 'dark';
+        try {
+          var raw = localStorage.getItem('ibets24-theme');
+          if (raw) {
+            var parsed = JSON.parse(raw);
+            if (parsed && parsed.state && (parsed.state.theme === 'light' || parsed.state.theme === 'dark')) {
+              theme = parsed.state.theme;
+            }
+          }
+        } catch (e) {}
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
     <meta
       name="description"
       content="Play online casino games, live casino, poker, slots, table games and sports betting at iBets24. Enjoy secure gaming, fast payouts and premium casino entertainment."
@@ -24,6 +41,11 @@
         background: #0b101b;
       }
 
+      html[data-theme='light'],
+      html[data-theme='light'] body {
+        background: #f4ead6;
+      }
+
       #site-splash {
         position: fixed;
         inset: 0;
@@ -36,6 +58,16 @@
           #0b101b;
         opacity: 1;
         transition: opacity 0.45s ease;
+      }
+
+      html[data-theme='light'] #site-splash {
+        background:
+          radial-gradient(ellipse 70% 55% at 50% 45%, rgba(255, 193, 7, 0.24) 0%, transparent 65%),
+          #f4ead6;
+      }
+
+      html[data-theme='light'] #site-splash .logo-wordmark {
+        fill: #2b2318;
       }
 
       #site-splash.site-splash--hide {
@@ -71,7 +103,7 @@
           font-style="italic"
           letter-spacing="-0.08em"
         >
-          <tspan fill="#FFFFFF">IBETS</tspan>
+          <tspan class="logo-wordmark" fill="#FFFFFF">IBETS</tspan>
           <tspan fill="url(#ibets24-splash-gold)">24</tspan>
         </text>
       </svg>

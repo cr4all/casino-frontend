@@ -14,6 +14,7 @@ import { AffiliatePayoutSection } from '@/components/affiliate/AffiliatePayoutSe
 import { Button } from '@/components/common/Button';
 import { FormTextField } from '@/components/common/FormTextField';
 import { LanguageSelector } from '@/components/common/LanguageSelector';
+import { ThemeToggle } from '@/components/common/ThemeToggle';
 import { Modal } from '@/components/common/Modal';
 import { ChangePasswordForm } from '@/components/profile/ChangePasswordForm';
 import { StatusBadge } from '@/components/common/StatusBadge';
@@ -334,6 +335,7 @@ export function AffiliateDashboardPage() {
           )}
         </div>
         <div className="flex flex-wrap items-center gap-2">
+          <ThemeToggle />
           <LanguageSelector />
           <Button variant="secondary" onClick={() => setShowPasswordDialog(true)}>
             {t('affiliate.changePassword')}
