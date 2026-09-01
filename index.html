@@ -16,29 +16,11 @@
       rel="stylesheet"
     />
     <title>Online Casino, Live Casino & Sports Betting | iBets24</title>
-    <script>
-      (function () {
-        try {
-          var raw = localStorage.getItem('ibets24-contrast-v3');
-          if (raw) {
-            var parsed = JSON.parse(raw);
-            if (parsed && parsed.state && parsed.state.highContrast === false) {
-              document.documentElement.classList.add('indoor-contrast');
-            }
-          }
-        } catch (e) {}
-      })();
-    </script>
     <style>
       html,
       body {
         margin: 0;
         min-height: 100%;
-        background: #2c3a52;
-      }
-
-      html.indoor-contrast,
-      html.indoor-contrast body {
         background: #0b101b;
       }
 
@@ -51,15 +33,9 @@
         justify-content: center;
         background:
           radial-gradient(ellipse 70% 55% at 50% 45%, rgba(255, 193, 7, 0.1) 0%, transparent 65%),
-          #2c3a52;
+          #0b101b;
         opacity: 1;
         transition: opacity 0.45s ease;
-      }
-
-      html.indoor-contrast #site-splash {
-        background:
-          radial-gradient(ellipse 70% 55% at 50% 45%, rgba(255, 193, 7, 0.1) 0%, transparent 65%),
-          #0b101b;
       }
 
       #site-splash.site-splash--hide {

@@ -8,30 +8,6 @@
 @import 'swiper/css/pagination';
 
 @theme {
-  /* Default = outdoor / sunlight-readable palette */
-  --color-background: #2c3a52;
-  --color-surface: #3a4b66;
-  --color-sidebar: #33445c;
-  --color-card: #455872;
-  --color-card-hover: #536687;
-  --color-accent: #ffe082;
-  --color-accent-gold: #ffe082;
-  --color-accent-purple: #ffe082;
-  --color-accent-blue: #ffe082;
-  --color-accent-pink: #ffe082;
-  --color-muted: #e2e8f0;
-  --color-border: rgba(255, 255, 255, 0.42);
-  --radius-sm: 8px;
-  --radius-md: 10px;
-  --radius-lg: 12px;
-  --shadow-card: 0 4px 18px rgba(0, 0, 0, 0.35);
-  --shadow-gold: 0 0 24px rgba(255, 224, 130, 0.35);
-  --font-sans: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-condensed: 'Roboto Condensed', 'Roboto', sans-serif;
-}
-
-/* Indoor (dark) — only when user turns outdoor mode off */
-html.indoor-contrast {
   --color-background: #0b101b;
   --color-surface: #0f1522;
   --color-sidebar: #0c111c;
@@ -44,30 +20,13 @@ html.indoor-contrast {
   --color-accent-pink: #ffc107;
   --color-muted: #6b7280;
   --color-border: rgba(255, 255, 255, 0.08);
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
   --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.4);
   --shadow-gold: 0 0 20px rgba(255, 193, 7, 0.15);
-}
-
-/* Opaque chrome for outdoor default (sunlight); indoor keeps previous look */
-html:not(.indoor-contrast) header.sticky,
-html:not(.indoor-contrast) .mobile-wallet-action-bar {
-  background-color: var(--color-background) !important;
-  border-color: var(--color-border) !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
-
-html:not(.indoor-contrast) .text-muted,
-html:not(.indoor-contrast) [class*='text-muted'] {
-  color: var(--color-muted);
-}
-
-html:not(.indoor-contrast) .border-white\/5,
-html:not(.indoor-contrast) .border-white\/\[0\.05\],
-html:not(.indoor-contrast) .border-white\/\[0\.06\],
-html:not(.indoor-contrast) .border-white\/\[0\.08\],
-html:not(.indoor-contrast) .border-white\/10 {
-  border-color: var(--color-border);
+  --font-sans: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-condensed: 'Roboto Condensed', 'Roboto', sans-serif;
 }
 
 * {
@@ -1334,8 +1293,8 @@ body.horizontal-page-lock {
 .live-bet-feed__table-wrap {
   overflow-x: auto;
   border-radius: 12px;
-  border: 1px solid var(--color-border);
-  background: var(--color-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(10, 14, 22, 0.65);
 }
 
 .live-bet-feed__table {
@@ -1358,9 +1317,8 @@ body.horizontal-page-lock {
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.02em;
-  color: var(--color-muted);
-  border-bottom: 1px solid var(--color-border);
-  background: var(--color-surface);
+  color: rgba(255, 255, 255, 0.45);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .live-bet-feed__tbody {
@@ -1376,14 +1334,14 @@ body.horizontal-page-lock {
 }
 
 .live-bet-feed__row:first-child {
-  background: color-mix(in srgb, var(--color-accent-gold) 10%, transparent);
+  background: rgba(255, 193, 7, 0.04);
 }
 
 .live-bet-feed__cell {
   padding: 0.65rem 1rem;
   vertical-align: middle;
-  border-bottom: 1px solid var(--color-border);
-  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .live-bet-feed__tbody .live-bet-feed__row:last-child .live-bet-feed__cell {
@@ -1421,7 +1379,7 @@ body.horizontal-page-lock {
 }
 
 .live-bet-feed__cell--time {
-  color: var(--color-muted);
+  color: rgba(255, 255, 255, 0.55);
   white-space: nowrap;
 }
 
@@ -1447,7 +1405,7 @@ body.horizontal-page-lock {
   border-radius: 6px;
   object-fit: cover;
   overflow: hidden;
-  background: color-mix(in srgb, #ffffff 12%, var(--color-surface));
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .live-bet-feed__game-fallback {
@@ -1458,7 +1416,7 @@ body.horizontal-page-lock {
   align-items: center;
   justify-content: center;
   border-radius: 6px;
-  background: color-mix(in srgb, #ffffff 12%, var(--color-surface));
+  background: rgba(255, 255, 255, 0.06);
   font-size: 0.875rem;
 }
 
@@ -1467,7 +1425,6 @@ body.horizontal-page-lock {
   text-overflow: ellipsis;
   white-space: nowrap;
   font-weight: 700;
-  color: #ffffff;
 }
 
 .live-bet-feed__username {
@@ -1479,7 +1436,7 @@ body.horizontal-page-lock {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  color: var(--color-muted);
+  color: rgba(255, 255, 255, 0.45);
 }
 
 .live-bet-feed__hidden-icon {
@@ -1501,8 +1458,8 @@ body.horizontal-page-lock {
 .live-bet-feed__row--mega {
   background: linear-gradient(
     90deg,
-    color-mix(in srgb, var(--color-accent-gold) 22%, transparent) 0%,
-    color-mix(in srgb, var(--color-accent-gold) 8%, transparent) 55%,
+    rgba(255, 193, 7, 0.14) 0%,
+    rgba(255, 193, 7, 0.04) 55%,
     transparent 100%
   );
 }
@@ -1510,25 +1467,25 @@ body.horizontal-page-lock {
 .live-bet-feed__row--mega:first-child {
   background: linear-gradient(
     90deg,
-    color-mix(in srgb, var(--color-accent-gold) 28%, transparent) 0%,
-    color-mix(in srgb, var(--color-accent-gold) 12%, transparent) 55%,
-    color-mix(in srgb, var(--color-accent-gold) 4%, transparent) 100%
+    rgba(255, 193, 7, 0.22) 0%,
+    rgba(255, 193, 7, 0.08) 55%,
+    rgba(255, 193, 7, 0.03) 100%
   );
 }
 
 .live-bet-feed__multiplier--mega {
   font-weight: 700;
-  color: var(--color-accent-gold);
+  color: #ffc107;
 }
 
 .live-bet-feed__payout--mega {
   font-weight: 700;
-  color: var(--color-accent-gold);
-  text-shadow: 0 0 12px color-mix(in srgb, var(--color-accent-gold) 40%, transparent);
+  color: #ffc107;
+  text-shadow: 0 0 12px rgba(255, 193, 7, 0.35);
 }
 
 .live-bet-feed__payout--loss {
-  color: var(--color-muted);
+  color: rgba(255, 255, 255, 0.45);
 }
 
 @media (max-width: 767px) {

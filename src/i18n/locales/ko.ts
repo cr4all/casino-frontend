@@ -46,10 +46,7 @@ export const ko: LocaleTree = {
     "fieldSelectRequired": "{{field}}을(를) 선택해 주세요.",
     "fieldCodeInvalid": "6자리 인증 코드를 입력해 주세요.",
     "language": "언어",
-    "actions": "작업",
-    "outdoorMode": "야외 모드",
-    "outdoorModeOn": "야외 모드 켜짐 — 탭하면 실내 대비로",
-    "outdoorModeOff": "야외 모드 꺼짐 — 탭하면 햇빛에서도 잘 보이게"
+    "actions": "작업"
   },
   "nav": {
     "allGames": "전체 게임",

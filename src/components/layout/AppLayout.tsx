@@ -21,7 +21,6 @@ import { useScrollToTopOnNavigate } from '@/hooks/useScrollToTopOnNavigate';
 import { usePageMeta } from '@/hooks/usePageMeta';
 import { useIdleLogout } from '@/hooks/useIdleLogout';
 import { useLanguageInit } from '@/hooks/useLanguageInit';
-import { useContrastInit } from '@/hooks/useContrastInit';
 import { useLiveChatSync } from '@/hooks/useLiveChatSync';
 import { useSupportTicketSync } from '@/hooks/useSupportTicketSync';
 import { useNotificationSync } from '@/hooks/useNotificationSync';
@@ -58,7 +57,6 @@ export function AppLayout() {
   useSupportTicketSync();
   useIdleLogout();
   useLanguageInit();
-  useContrastInit();
   useCloseLiveChatOnNavigate();
   useScrollToTopOnNavigate();
   const { activePopup, dismissPopup, userId } = usePopupAnnouncements();
