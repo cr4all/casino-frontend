@@ -178,6 +178,43 @@ html[data-theme='light'] .live-bet-feed__table thead th {
   background: #f4ead6;
 }
 
+/* Bet history Spin Type pills were authored for dark surfaces (slate-200 ≈ white). */
+html[data-theme='light'] .spin-type-badge--cash {
+  color: #1e293b;
+  border-color: rgb(100 116 139 / 0.45);
+}
+
+html[data-theme='light'] .spin-type-badge--cash .spin-type-dot {
+  background-color: #475569;
+}
+
+html[data-theme='light'] .spin-type-badge--bonus {
+  color: #92400e;
+  border-color: rgb(217 119 6 / 0.45);
+}
+
+html[data-theme='light'] .spin-type-badge--bonus .spin-type-dot {
+  background-color: #d97706;
+}
+
+html[data-theme='light'] .spin-type-badge--mixed {
+  color: #155e75;
+  border-color: rgb(8 145 178 / 0.45);
+}
+
+html[data-theme='light'] .spin-type-badge--mixed .spin-type-dot {
+  background: linear-gradient(to right, #475569, #d97706);
+}
+
+html[data-theme='light'] .spin-type-badge--free-spin {
+  color: #5b21b6;
+  border-color: rgb(124 58 237 / 0.45);
+}
+
+html[data-theme='light'] .spin-type-badge--free-spin .spin-type-dot {
+  background-color: #7c3aed;
+}
+
 html[data-theme='light'] .site-footer {
   border-top-color: rgba(201, 162, 39, 0.22);
 }

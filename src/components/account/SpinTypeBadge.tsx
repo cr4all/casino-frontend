@@ -2,17 +2,17 @@ import { useTranslation } from '@/hooks/useTranslation';
 import type { BetFundingSource } from '@/types';
 
 const SPIN_TYPE_STYLES: Record<BetFundingSource, string> = {
-  cash: 'bg-slate-500/15 text-slate-200 border-slate-400/35',
-  bonus: 'bg-amber-500/15 text-amber-300 border-amber-400/40',
-  mixed: 'bg-cyan-500/15 text-cyan-300 border-cyan-400/40',
-  free_spin: 'bg-violet-500/15 text-violet-300 border-violet-400/40',
+  cash: 'spin-type-badge--cash bg-slate-500/15 text-slate-200 border-slate-400/35',
+  bonus: 'spin-type-badge--bonus bg-amber-500/15 text-amber-300 border-amber-400/40',
+  mixed: 'spin-type-badge--mixed bg-cyan-500/15 text-cyan-300 border-cyan-400/40',
+  free_spin: 'spin-type-badge--free-spin bg-violet-500/15 text-violet-300 border-violet-400/40',
 };
 
 const SPIN_TYPE_DOTS: Record<BetFundingSource, string> = {
-  cash: 'bg-slate-300',
-  bonus: 'bg-amber-400',
-  mixed: 'bg-gradient-to-r from-slate-300 to-amber-400',
-  free_spin: 'bg-violet-400',
+  cash: 'spin-type-dot bg-slate-300',
+  bonus: 'spin-type-dot bg-amber-400',
+  mixed: 'spin-type-dot bg-gradient-to-r from-slate-300 to-amber-400',
+  free_spin: 'spin-type-dot bg-violet-400',
 };
 
 function spinTypeLabelKey(source: BetFundingSource): string {
