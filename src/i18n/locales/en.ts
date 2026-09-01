@@ -45,6 +45,9 @@ export const en = {
     fieldSelectRequired: 'Please select {{field}}.',
     fieldCodeInvalid: 'Please enter the 6-digit verification code.',
     language: 'Language',
+    outdoorMode: 'Outdoor mode',
+    outdoorModeOn: 'Outdoor mode on — tap for indoor contrast',
+    outdoorModeOff: 'Outdoor mode off — tap for sunlight readability',
   },
   nav: {
     allGames: 'ALL GAMES',
