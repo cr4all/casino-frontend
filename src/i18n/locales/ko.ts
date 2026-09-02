@@ -558,6 +558,7 @@ export const ko: LocaleTree = {
     "network": "네트워크",
     "account": "계좌 / 지갑 ID",
     "account_name": "예금주명",
+    "iban": "IBAN",
     "cbu_cvu": "CVU/CBU",
     "bank_account": "은행 계좌"
   },
