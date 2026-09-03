@@ -20,6 +20,8 @@
   --color-accent-pink: #ffc107;
   --color-muted: #6b7280;
   --color-border: rgba(255, 255, 255, 0.08);
+  --color-foreground: #ffffff;
+  --color-paper: #ffffff;
   --radius-sm: 8px;
   --radius-md: 10px;
   --radius-lg: 12px;
@@ -27,6 +29,268 @@
   --shadow-gold: 0 0 20px rgba(255, 193, 7, 0.15);
   --font-sans: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-condensed: 'Roboto Condensed', 'Roboto', sans-serif;
+}
+
+html {
+  color-scheme: dark;
+  --ui-text: var(--color-foreground);
+  --ui-text-soft: color-mix(in srgb, var(--color-foreground) 78%, transparent);
+  --ui-text-muted: color-mix(in srgb, var(--color-foreground) 48%, transparent);
+  --ui-line: var(--color-border);
+  --ui-fill: color-mix(in srgb, var(--color-foreground) 8%, transparent);
+}
+
+html[data-theme='light'] {
+  color-scheme: light;
+  --color-background: #f4ead6;
+  --color-surface: #eadcbc;
+  --color-sidebar: #efe3c8;
+  --color-card: #fffaf0;
+  --color-card-hover: #fff4dc;
+  --color-muted: #5c4a32;
+  --color-border: rgba(90, 62, 20, 0.22);
+  --color-foreground: #2b2318;
+  --color-white: #2b2318;
+  /* Dark bronze for text/borders — bright gold stays on .bg-accent-gold fills. */
+  --color-accent: #8a5410;
+  --color-accent-gold: #8a5410;
+  --color-accent-purple: #8a5410;
+  --color-accent-blue: #8a5410;
+  --color-accent-pink: #8a5410;
+  --shadow-card:
+    0 1px 0 rgba(255, 255, 255, 0.72) inset,
+    0 10px 28px rgba(90, 62, 20, 0.1);
+  --shadow-gold: 0 10px 28px rgba(201, 162, 39, 0.28);
+}
+
+/* Gold buttons keep espresso text on champagne gold. */
+html[data-theme='light'] .text-background {
+  color: #2b2318 !important;
+}
+
+/* QR codes and payment logos must stay actual white. */
+html[data-theme='light'] .bg-white,
+html[data-theme='light'] .bg-paper {
+  background-color: var(--color-paper);
+}
+
+html[data-theme='light'] body {
+  background-color: var(--color-background);
+  background-image:
+    radial-gradient(ellipse 90% 55% at 100% -8%, rgba(255, 193, 7, 0.22) 0%, transparent 52%),
+    radial-gradient(ellipse 55% 40% at -5% 100%, rgba(201, 148, 64, 0.16) 0%, transparent 58%),
+    linear-gradient(180deg, #f8f0dc 0%, #f3e6c8 46%, #ecd9b0 100%);
+  background-attachment: fixed;
+}
+
+html[data-theme='light'] .app-shell {
+  background-color: transparent;
+  background-image:
+    radial-gradient(ellipse 90% 55% at 100% -8%, rgba(255, 193, 7, 0.18) 0%, transparent 52%),
+    radial-gradient(ellipse 55% 40% at -5% 100%, rgba(201, 148, 64, 0.12) 0%, transparent 58%),
+    linear-gradient(180deg, #f8f0dc 0%, #f3e6c8 46%, #ecd9b0 100%);
+  background-attachment: fixed;
+}
+
+html[data-theme='light'] header.sticky {
+  background: color-mix(in srgb, #fffaf0 86%, transparent);
+  border-bottom-color: rgba(201, 162, 39, 0.28) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 10px 28px rgba(90, 62, 20, 0.07);
+  backdrop-filter: blur(18px) saturate(1.15);
+}
+
+html[data-theme='light'] aside.bg-sidebar {
+  background:
+    linear-gradient(180deg, rgba(255, 248, 230, 0.55) 0%, transparent 28%),
+    linear-gradient(180deg, #f7eed8 0%, #ead8b0 100%);
+  border-right-color: rgba(201, 162, 39, 0.26) !important;
+  box-shadow: 12px 0 36px rgba(90, 62, 20, 0.08);
+}
+
+html[data-theme='light'] .sidebar-active {
+  background: linear-gradient(90deg, rgba(232, 185, 35, 0.32) 0%, rgba(232, 185, 35, 0.04) 100%);
+  border-left-color: #c99612;
+}
+
+html[data-theme='light'] .sidebar-section-toggle {
+  background: color-mix(in srgb, #2b2318 6%, #f4ead6);
+  border-color: rgba(201, 162, 39, 0.28);
+  box-shadow:
+    inset 0 1px 2px rgba(90, 62, 20, 0.12),
+    0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+html[data-theme='light'] .sidebar-section-toggle__indicator {
+  background: linear-gradient(180deg, #ffe082 0%, #f5c518 100%);
+  border-color: rgba(184, 134, 11, 0.45);
+  box-shadow:
+    0 4px 12px rgba(201, 162, 39, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+html[data-theme='light'] .sidebar-section-toggle__tab[aria-selected='true'] {
+  color: #5c4308;
+}
+
+html[data-theme='light'] .theme-toggle {
+  border-color: rgba(201, 162, 39, 0.42);
+  background: linear-gradient(180deg, #fff8e1 0%, #ffe082 100%);
+  color: #6b4f12;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 4px 12px rgba(201, 162, 39, 0.28);
+}
+
+html[data-theme='light'] .theme-toggle:hover {
+  border-color: rgba(184, 134, 11, 0.6);
+  color: #5c4308;
+}
+
+html[data-theme='light'] .bg-accent-gold {
+  background-image: linear-gradient(180deg, #ffd54f 0%, #ffc107 48%, #f59e0b 100%);
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.32);
+}
+
+html[data-theme='light'] .mobile-wallet-action-bar {
+  border-top-color: rgba(201, 162, 39, 0.28);
+  background: color-mix(in srgb, #fffaf0 92%, transparent);
+  box-shadow: 0 -10px 28px rgba(90, 62, 20, 0.08);
+}
+
+html[data-theme='light'] .swiper-pagination-bullet {
+  background: rgba(43, 35, 24, 0.28) !important;
+}
+
+html[data-theme='light'] .site-splash {
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 45%, rgba(255, 193, 7, 0.22) 0%, transparent 65%),
+    #f4ead6;
+}
+
+html[data-theme='light'] .live-bet-feed__table-wrap {
+  background: #fffaf0;
+  border-color: rgba(201, 162, 39, 0.22);
+  box-shadow: var(--shadow-card);
+}
+
+html[data-theme='light'] .live-bet-feed__table thead th {
+  background: #f4ead6;
+}
+
+/* Bet history Spin Type pills were authored for dark surfaces (slate-200 ≈ white). */
+html[data-theme='light'] .spin-type-badge--cash {
+  color: #1e293b;
+  border-color: rgb(100 116 139 / 0.45);
+}
+
+html[data-theme='light'] .spin-type-badge--cash .spin-type-dot {
+  background-color: #475569;
+}
+
+html[data-theme='light'] .spin-type-badge--bonus {
+  color: #92400e;
+  border-color: rgb(217 119 6 / 0.45);
+}
+
+html[data-theme='light'] .spin-type-badge--bonus .spin-type-dot {
+  background-color: #d97706;
+}
+
+html[data-theme='light'] .spin-type-badge--mixed {
+  color: #155e75;
+  border-color: rgb(8 145 178 / 0.45);
+}
+
+html[data-theme='light'] .spin-type-badge--mixed .spin-type-dot {
+  background: linear-gradient(to right, #475569, #d97706);
+}
+
+html[data-theme='light'] .spin-type-badge--free-spin {
+  color: #5b21b6;
+  border-color: rgb(124 58 237 / 0.45);
+}
+
+html[data-theme='light'] .spin-type-badge--free-spin .spin-type-dot {
+  background-color: #7c3aed;
+}
+
+/*
+  Dark-theme utilities that stay pale yellow/white. Unlayered so they beat
+  Tailwind @layer utilities even when those classes inline #fff / amber-100.
+*/
+html[data-theme='light'] :where([class*='text-white']) {
+  color: var(--color-foreground) !important;
+}
+
+html[data-theme='light'] :where(
+  [class*='text-amber-100'],
+  [class*='text-amber-200'],
+  [class*='text-amber-300'],
+  [class*='text-yellow-100'],
+  [class*='text-yellow-200'],
+  [class*='text-yellow-300']
+) {
+  color: #7c3d0a !important;
+}
+
+html[data-theme='light'] :where([class*='text-orange-300']) {
+  color: #9a3412 !important;
+}
+
+html[data-theme='light'] :where([class*='text-slate-200'], [class*='text-slate-300']) {
+  color: #1e293b !important;
+}
+
+html[data-theme='light'] .text-accent-gold\/80,
+html[data-theme='light'] .text-accent-gold\/90 {
+  color: #8a5410 !important;
+}
+
+html[data-theme='light'] .site-footer {
+  border-top-color: rgba(201, 162, 39, 0.22);
+}
+
+html[data-theme='light'] .site-footer__columns,
+html[data-theme='light'] .site-footer__dark {
+  background: transparent;
+}
+
+html[data-theme='light'] .site-footer__seal-check {
+  border-color: #f4ead6;
+}
+
+html[data-theme='light'] [class*='shadow-card'],
+html[data-theme='light'] .bg-card {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 8px 22px rgba(90, 62, 20, 0.08);
+}
+
+html[data-theme='light'] header.sticky .bg-card,
+html[data-theme='light'] .theme-toggle,
+html[data-theme='light'] .bg-accent-gold {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 4px 12px rgba(201, 162, 39, 0.22);
+}
+
+html[data-theme='light'] .bg-accent-gold {
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.32);
+}
+
+html[data-theme='light'] input:not([type='checkbox']):not([type='radio']):not([type='hidden']):not([type='file']),
+html[data-theme='light'] textarea,
+html[data-theme='light'] select {
+  background-color: color-mix(in srgb, #fffaf0 82%, #eadcbc);
+}
+
+html[data-theme='light'] input:not([type='checkbox']):not([type='radio']):not([type='hidden']):not([type='file']):focus,
+html[data-theme='light'] textarea:focus,
+html[data-theme='light'] select:focus {
+  border-color: rgba(201, 162, 39, 0.55);
+  box-shadow: 0 0 0 3px rgba(232, 185, 35, 0.18);
 }
 
 * {
@@ -41,7 +305,7 @@ body {
   margin: 0;
   min-height: 100vh;
   background-color: var(--color-background);
-  color: #ffffff;
+  color: var(--color-foreground);
   font-family: var(--font-sans);
   font-weight: 700;
   line-height: 1.4;
@@ -149,9 +413,9 @@ body {
   grid-template-columns: 1fr 1fr;
   padding: 3px;
   border-radius: 10px;
-  background: rgba(0, 0, 0, 0.32);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.28);
+  background: color-mix(in srgb, var(--color-foreground) 8%, var(--color-surface));
+  border: 1px solid var(--color-border);
+  box-shadow: inset 0 1px 2px color-mix(in srgb, #000 18%, transparent);
 }
 
 .sidebar-section-toggle__indicator {
@@ -193,13 +457,13 @@ body {
   font-weight: 800 !important;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.42);
+  color: var(--ui-text-muted);
   cursor: pointer;
   transition: color 0.2s ease;
 }
 
 .sidebar-section-toggle__tab:hover {
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--ui-text-soft);
 }
 
 .sidebar-section-toggle__tab[aria-selected='true'] {
@@ -228,7 +492,7 @@ body {
   background:
     radial-gradient(ellipse 80% 60% at 70% 50%, rgba(255, 193, 7, 0.18) 0%, transparent 60%),
     radial-gradient(ellipse 40% 40% at 90% 30%, rgba(255, 193, 7, 0.1) 0%, transparent 50%),
-    linear-gradient(135deg, #0b101b 0%, #121828 50%, #0b101b 100%);
+    linear-gradient(135deg, var(--color-background) 0%, var(--color-surface) 50%, var(--color-background) 100%);
 }
 
 /* Hero banner — layered bg (1920×500) + dealer overlay */
@@ -722,7 +986,7 @@ body {
     max-height: none;
     background:
       radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255, 193, 7, 0.12) 0%, transparent 60%),
-      linear-gradient(135deg, #0b101b 0%, #121828 50%, #0b101b 100%);
+      linear-gradient(135deg, var(--color-background) 0%, var(--color-surface) 50%, var(--color-background) 100%);
   }
 
   .hero-banner__content-wrap {
@@ -838,7 +1102,7 @@ body {
 
 .scrollbar-dark {
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  scrollbar-color: color-mix(in srgb, var(--color-foreground) 22%, transparent) transparent;
 }
 
 .scrollbar-dark::-webkit-scrollbar {
@@ -850,12 +1114,12 @@ body {
 }
 
 .scrollbar-dark::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.18);
+  background-color: color-mix(in srgb, var(--color-foreground) 18%, transparent);
   border-radius: 9999px;
 }
 
 .scrollbar-dark::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 255, 255, 0.28);
+  background-color: color-mix(in srgb, var(--color-foreground) 28%, transparent);
 }
 
 .scrollbar-dark::-webkit-scrollbar-corner {
@@ -905,7 +1169,7 @@ body.horizontal-page-lock {
 
 /* Site footer — columns + legal bar + payment methods */
 .site-footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--color-border);
 }
 
 .site-footer__columns {
@@ -943,7 +1207,7 @@ body.horizontal-page-lock {
   font-size: 0.875rem;
   font-weight: 700;
   line-height: 1.3;
-  color: #fff;
+  color: var(--color-foreground);
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
@@ -966,7 +1230,7 @@ body.horizontal-page-lock {
 .site-footer__accordion-chevron {
   display: none;
   flex-shrink: 0;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--ui-text-muted);
   transition: transform 0.2s ease;
 }
 
@@ -983,14 +1247,14 @@ body.horizontal-page-lock {
   padding: 0;
   font-size: 0.8125rem;
   line-height: 1.45;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--ui-text-muted);
   text-align: left;
   cursor: pointer;
   transition: color 0.15s ease;
 }
 
 .site-footer__col-link:hover {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-foreground);
 }
 
 .site-footer__email {
@@ -1001,7 +1265,7 @@ body.horizontal-page-lock {
   background: var(--color-background);
   padding: 1.75rem 1rem 1.5rem;
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--color-border);
 }
 
 .site-footer__license {
@@ -1083,7 +1347,7 @@ body.horizontal-page-lock {
   font-size: 0.6875rem;
   font-weight: 600;
   line-height: 1.25;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--ui-text-soft);
   text-align: center;
 }
 
@@ -1100,7 +1364,7 @@ body.horizontal-page-lock {
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.3;
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--color-foreground);
 }
 
 .site-footer__operator {
@@ -1108,20 +1372,20 @@ body.horizontal-page-lock {
   margin: 0 auto 1rem;
   font-size: 0.6875rem;
   line-height: 1.55;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--ui-text-muted);
 }
 
 .site-footer__disclaimer {
   font-size: 0.75rem;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--ui-text-muted);
 }
 
 .site-footer__copyright {
   margin-top: 0.5rem;
   font-size: 0.75rem;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--ui-text-muted);
 }
 
 @media (max-width: 900px) {
@@ -1149,8 +1413,8 @@ body.horizontal-page-lock {
   .site-footer__col {
     width: 100%;
     border-radius: 0.875rem;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--color-border);
+    background: var(--color-card);
     overflow: hidden;
   }
 
@@ -1293,8 +1557,8 @@ body.horizontal-page-lock {
 .live-bet-feed__table-wrap {
   overflow-x: auto;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: rgba(10, 14, 22, 0.65);
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
 }
 
 .live-bet-feed__table {
@@ -1317,8 +1581,9 @@ body.horizontal-page-lock {
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.02em;
-  color: rgba(255, 255, 255, 0.45);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--color-muted);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
 }
 
 .live-bet-feed__tbody {
@@ -1334,14 +1599,14 @@ body.horizontal-page-lock {
 }
 
 .live-bet-feed__row:first-child {
-  background: rgba(255, 193, 7, 0.04);
+  background: color-mix(in srgb, var(--color-accent-gold) 10%, transparent);
 }
 
 .live-bet-feed__cell {
   padding: 0.65rem 1rem;
   vertical-align: middle;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-  color: rgba(255, 255, 255, 0.82);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-foreground);
 }
 
 .live-bet-feed__tbody .live-bet-feed__row:last-child .live-bet-feed__cell {
@@ -1379,7 +1644,7 @@ body.horizontal-page-lock {
 }
 
 .live-bet-feed__cell--time {
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--color-muted);
   white-space: nowrap;
 }
 
@@ -1405,7 +1670,7 @@ body.horizontal-page-lock {
   border-radius: 6px;
   object-fit: cover;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.06);
+  background: color-mix(in srgb, var(--color-foreground) 8%, var(--color-surface));
 }
 
 .live-bet-feed__game-fallback {
@@ -1416,7 +1681,7 @@ body.horizontal-page-lock {
   align-items: center;
   justify-content: center;
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.06);
+  background: color-mix(in srgb, var(--color-foreground) 8%, var(--color-surface));
   font-size: 0.875rem;
 }
 
@@ -1429,14 +1694,14 @@ body.horizontal-page-lock {
 
 .live-bet-feed__username {
   font-weight: 700;
-  color: #fff;
+  color: var(--color-foreground);
 }
 
 .live-bet-feed__hidden {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--color-muted);
 }
 
 .live-bet-feed__hidden-icon {
@@ -1485,7 +1750,7 @@ body.horizontal-page-lock {
 }
 
 .live-bet-feed__payout--loss {
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--color-muted);
 }
 
 @media (max-width: 767px) {
@@ -1831,7 +2096,7 @@ body.horizontal-page-lock {
 .affiliate-program__cta h2 {
   margin: 0 0 0.65rem;
   font-size: clamp(1.35rem, 3vw, 1.85rem);
-  color: #fff;
+  color: var(--color-foreground);
 }
 
 .affiliate-program__section-head p,
@@ -1841,7 +2106,7 @@ body.horizontal-page-lock {
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.62);
+  color: var(--color-muted);
 }
 
 .affiliate-program__commission-grid {
@@ -1854,8 +2119,8 @@ body.horizontal-page-lock {
   position: relative;
   padding: 1.35rem;
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: linear-gradient(165deg, rgba(21, 27, 40, 0.95) 0%, rgba(15, 21, 34, 0.98) 100%);
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
   box-shadow: var(--shadow-card);
   overflow: hidden;
 }
@@ -1886,8 +2151,8 @@ body.horizontal-page-lock {
   margin-bottom: 0.75rem;
   padding: 0.2rem 0.55rem;
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.78);
+  background: var(--ui-fill);
+  color: var(--ui-text-soft);
   font-size: 0.72rem;
   letter-spacing: 0.06em;
 }
@@ -1895,14 +2160,14 @@ body.horizontal-page-lock {
 .affiliate-program__card-title {
   margin: 0 0 0.55rem;
   font-size: 1.05rem;
-  color: #fff;
+  color: var(--color-foreground);
 }
 
 .affiliate-program__card-desc {
   margin: 0 0 1rem;
   font-size: 0.88rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.62);
+  color: var(--color-muted);
 }
 
 .affiliate-program__point-list,
@@ -1919,7 +2184,7 @@ body.horizontal-page-lock {
   gap: 0.55rem;
   font-size: 0.84rem;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--ui-text-soft);
 }
 
 .affiliate-program__point-list li + li,
@@ -1948,8 +2213,8 @@ body.horizontal-page-lock {
 .affiliate-program__benefit-card {
   padding: 1.25rem;
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  background: rgba(15, 21, 34, 0.75);
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -1989,8 +2254,8 @@ body.horizontal-page-lock {
   gap: 0.85rem;
   padding: 1.15rem;
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  background: rgba(21, 27, 40, 0.55);
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
 }
 
 .affiliate-program__step-num {
@@ -2009,14 +2274,14 @@ body.horizontal-page-lock {
 .affiliate-program__step h3 {
   margin: 0 0 0.35rem;
   font-size: 0.98rem;
-  color: #fff;
+  color: var(--color-foreground);
 }
 
 .affiliate-program__step p {
   margin: 0;
   font-size: 0.86rem;
   line-height: 1.55;
-  color: rgba(255, 255, 255, 0.62);
+  color: var(--color-muted);
 }
 
 .affiliate-program__portal {
@@ -2031,7 +2296,7 @@ body.horizontal-page-lock {
   border: 1px solid rgba(255, 193, 7, 0.18);
   background:
     radial-gradient(ellipse 70% 80% at 100% 0%, rgba(255, 193, 7, 0.08) 0%, transparent 60%),
-    linear-gradient(145deg, rgba(21, 27, 40, 0.95) 0%, rgba(12, 17, 28, 0.98) 100%);
+    linear-gradient(145deg, var(--color-card) 0%, var(--color-surface) 100%);
 }
 
 .affiliate-program__portal-list {
@@ -2044,27 +2309,27 @@ body.horizontal-page-lock {
   gap: 0.65rem;
   padding: 1rem;
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(11, 16, 27, 0.85);
+  border: 1px solid var(--color-border);
+  background: var(--color-background);
 }
 
 .affiliate-program__portal-stat {
   padding: 0.75rem;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--ui-fill);
 }
 
 .affiliate-program__portal-stat span {
   display: block;
   font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.48);
+  color: var(--color-muted);
 }
 
 .affiliate-program__portal-stat strong {
   display: block;
   margin-top: 0.25rem;
   font-size: 1rem;
-  color: #fff;
+  color: var(--color-foreground);
   font-variant-numeric: tabular-nums;
 }
 
@@ -2124,10 +2389,10 @@ body.horizontal-page-lock {
   padding: 2rem 1.5rem;
   text-align: center;
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--color-border);
   background:
     radial-gradient(ellipse 80% 100% at 50% 0%, rgba(255, 193, 7, 0.1) 0%, transparent 70%),
-    rgba(15, 21, 34, 0.9);
+    var(--color-card);
 }
 
 .affiliate-program__email {
@@ -2145,14 +2410,14 @@ body.horizontal-page-lock {
 .affiliate-program__support-note {
   margin-top: 1rem !important;
   font-size: 0.82rem !important;
-  color: rgba(255, 255, 255, 0.45) !important;
+  color: var(--color-muted) !important;
 }
 
 .affiliate-program__footer-link {
   max-width: 72rem;
   margin: 1.5rem auto 0;
   padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--color-border);
 }
 
 @media (max-width: 1023px) {

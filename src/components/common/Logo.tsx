@@ -38,7 +38,7 @@ export function LogoMark({
       fill="none"
       {...(width != null ? { width } : {})}
       {...(height != null ? { height } : {})}
-      className={className}
+      className={`logo-mark text-foreground ${className ?? ''}`}
       style={style}
       role="img"
       aria-label="IBETS24"
@@ -61,7 +61,7 @@ export function LogoMark({
         fontStyle="italic"
         letterSpacing={LOGO_LETTER_SPACING}
       >
-        <tspan fill="#FFFFFF">IBETS</tspan>
+        <tspan fill="currentColor">IBETS</tspan>
         <tspan fill={`url(#${gradientId})`}>24</tspan>
       </text>
     </svg>

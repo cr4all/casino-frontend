@@ -502,6 +502,8 @@ export const tr: LocaleTree = {
     "address": "Cüzdan adresi",
     "network": "Ağ",
     "account": "Hesap / cüzdan ID",
+    "account_name": "Hesap sahibi adı",
+    "iban": "IBAN",
     "bank_account": "Banka hesabı"
   },
   "bonus": {

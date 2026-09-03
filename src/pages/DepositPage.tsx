@@ -610,7 +610,7 @@ export function DepositPage() {
 
               {qrString && (
                 <div className="mb-3 flex flex-col items-center gap-2">
-                  <div className="w-full max-w-[200px] rounded-lg bg-white p-3">
+                  <div className="w-full max-w-[200px] rounded-lg bg-paper p-3">
                     <QRCode value={qrString} size={256} className="h-auto w-full" />
                   </div>
                   <CopyButton value={qrString} />

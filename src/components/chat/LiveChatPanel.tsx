@@ -139,7 +139,7 @@ export function LiveChatPanel() {
   };
 
   return (
-    <div className="fixed inset-y-0 right-0 z-[70] flex w-full max-w-md flex-col border-l border-white/10 bg-[#12121a] shadow-2xl lg:top-[var(--header-height,0px)]">
+    <div className="fixed inset-y-0 right-0 z-[70] flex w-full max-w-md flex-col border-l border-white/10 bg-card shadow-2xl lg:top-[var(--header-height,0px)]">
       <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
         <div>
           <p className="text-sm font-bold text-white">{t('liveChat.title')}</p>
