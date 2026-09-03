@@ -7,8 +7,8 @@ const CODE_THUMBNAIL_EXTENSIONS = ['webp', 'png', 'jpg', 'jpeg'] as const;
 const FUNTA_CODE_THUMBNAIL_EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp'] as const;
 /** Dreamplay ships 287x193 icons as `{game_id}.png` under /providers/dreamplay/. */
 const DREAMPLAY_CODE_THUMBNAIL_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
-/** TurboGames (direct Hub) icons as `{game_id}.png` under /providers/turbogames/. */
-const TURBOGAMES_CODE_THUMBNAIL_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
+/** TurboGames (direct Hub) lobby cards: 3:2 art as `{game_id}.png|jpg|webp` under /providers/turbogames/. */
+const TURBOGAMES_CODE_THUMBNAIL_EXTENSIONS = ['png', 'jpg', 'jpeg', 'webp'] as const;
 /** Zillion has no remote thumb API; lobby cards are `{game_id}.png` under /providers/zillion/. */
 const ZILLION_CODE_THUMBNAIL_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
 /** JackTop has no remote thumb API; lobby cards use slugified game names under /providers/jacktop/. */

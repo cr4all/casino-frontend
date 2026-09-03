@@ -23,8 +23,11 @@ const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }
   { test: (s, n) => s.includes('netent') || n.includes('netent'), url: '/providers/ruby.png' },
   {
     test: (s, n) =>
-      s.includes('kagaming') || n.includes('kagaming') || s.includes('kagame') || n.includes('kagame'),
-    url: '/providers/ka-game.png',
+      s.includes('kagaming') ||
+      n.includes('kagaming') ||
+      s.includes('kagame') ||
+      n.includes('kagame'),
+    url: '/providers/kagaming.png',
   },
   { test: (s, n) => s.includes('habanero') || n.includes('habanero'), url: '/providers/habanero.png' },
   { test: (s, n) => s.includes('evoplay') || n.includes('evoplay'), url: '/providers/evoplay.png' },
