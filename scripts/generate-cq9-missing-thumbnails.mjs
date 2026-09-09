@@ -1,5 +1,6 @@
 /**
  * Generate CQ9-style circular emblem thumbnails for games missing official icons.
+ * Writes to casino-assets/storage/providers/cq9/.
  * Overwrites only codes listed in .tmp-cq9-missing-thumbs.json (or --all-missing).
  * Keeps existing downloaded official arts untouched.
  */
@@ -12,7 +13,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const catalogPath = path.resolve(root, '../casino-backend/storage/app/cq9-games.json');
 const missingPath = path.join(root, '.tmp-cq9-missing-thumbs.json');
-const outDir = path.join(root, 'public/providers/cq9');
+const outDir = path.join(path.resolve(root, '..'), 'casino-assets/storage/providers/cq9');
 const WIDTH = 300;
 const HEIGHT = 210;
 

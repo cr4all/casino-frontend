@@ -1,6 +1,6 @@
 /**
  * Download CQ9 thumbnails using embedded gameList JSON (game_id → icon.en)
- * from site.cq9gaming.com/en/games.
+ * from site.cq9gaming.com/en/games into casino-assets/storage/providers/cq9/.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -10,7 +10,7 @@ import sharp from 'sharp';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const catalogPath = path.resolve(root, '../casino-backend/storage/app/cq9-games.json');
-const outDir = path.join(root, 'public/providers/cq9');
+const outDir = path.join(path.resolve(root, '..'), 'casino-assets/storage/providers/cq9');
 const htmlCache = path.join(root, '.tmp-cq9-games.html');
 const WIDTH = 300;
 const HEIGHT = 210;

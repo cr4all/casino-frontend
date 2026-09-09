@@ -1,6 +1,6 @@
 /**
- * Flatten FunTa banner materials into public/providers/funta/{gameId}.jpg
- * for VA-style local thumbnail fallback (no CQ9 bg/icon overlay).
+ * Flatten FunTa banner materials into casino-assets/storage/providers/funta/{gameId}.jpg
+ * (public GET /providers/funta/{gameId}.jpg). VA-style local thumbnails (no CQ9 overlay).
  *
  * Source pick order: 英 en → 簡 zh → 日 ja, size folder 245x180.
  * Non-JPEG sources (png/webp) are converted to JPEG so Admin/API paths stay uniform.
@@ -16,11 +16,12 @@ import sharp from 'sharp';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const FRONTEND_ROOT = path.resolve(__dirname, '..');
+const REPO_ROOT = path.resolve(FRONTEND_ROOT, '..');
 const DEFAULT_MATERIALS = path.resolve(
   FRONTEND_ROOT,
   '../game_provider/funta/0_Game Materials(遊戲素材)_通用簡英日(語言別)/01_banner',
 );
-const DEST_DIR = path.join(FRONTEND_ROOT, 'public/providers/funta');
+const DEST_DIR = path.join(REPO_ROOT, 'casino-assets/storage/providers/funta');
 const SIZE_FOLDER = '245x180';
 const LANG_ORDER = ['英 en', '簡 zh', '日 ja'];
 const IMAGE_EXT = new Set(['.jpg', '.jpeg', '.png', '.webp']);
