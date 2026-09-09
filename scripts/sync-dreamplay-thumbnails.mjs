@@ -1,9 +1,11 @@
 /**
- * Flatten Dreamplay 287x193 PNG icons into public/providers/dreamplay/{game_id}.png.
+ * Flatten Dreamplay 287x193 PNG icons into casino-assets/storage/providers/dreamplay/{game_id}.png.
  *
  * Dreamplay Games API has no thumbnail/logo URL. Icons live in
  * game_provider/DreamPlay/_drive_assets/{nn}-{slug}/.../static/png/.
- * Catalog sync (FunTa pattern) stores the relative path; Admin prefixes FRONTEND_URL.
+ * Catalog sync stores the relative path `/providers/dreamplay/{game_id}.png`.
+ * casino-assets serves GET /providers/...; admin uses ASSETS_PUBLIC_URL,
+ * player FE uses VITE_ASSETS_BASE_URL + resolveAssetUrl().
  *
  * Matching order:
  *   1) Manual aliases (filename/folder slug → Games API game_id)
@@ -27,7 +29,7 @@ const REPO_ROOT = path.resolve(FRONTEND_ROOT, '..');
 const DEFAULT_SOURCE = path.resolve(REPO_ROOT, 'game_provider/DreamPlay/_drive_assets');
 const GAMELIST_PATH = path.resolve(REPO_ROOT, 'game_provider/DreamPlay/_gamelist.json');
 const MAP_PATH = path.resolve(REPO_ROOT, 'game_provider/DreamPlay/_thumb_map.json');
-const DEST_DIR = path.join(FRONTEND_ROOT, 'public/providers/dreamplay');
+const DEST_DIR = path.join(REPO_ROOT, 'casino-assets/storage/providers/dreamplay');
 const PUBLIC_PREFIX = '/providers/dreamplay';
 
 /** 287x193 including Latin x and Cyrillic х used in some Dreamplay filenames. */
@@ -294,7 +296,7 @@ async function main() {
 
   const mapDoc = {
     url_pattern: `${PUBLIC_PREFIX}/{game_id}.png`,
-    dest_dir: 'casino-frontend/public/providers/dreamplay',
+    dest_dir: 'casino-assets/storage/providers/dreamplay',
     size: '287x193',
     catalog_count: catalog.length,
     mapped_in_games_api: apiMatched.length,

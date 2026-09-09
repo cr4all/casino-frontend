@@ -1,12 +1,15 @@
 /**
- * Copy JackTop 400x300 PNG thumbnails into public/providers/jacktop/.
+ * Copy JackTop 400x300 PNG thumbnails into casino-assets/storage/providers/jacktop/.
  *
  * Source layout (game_provider/JackTop/JackTop Image/):
  *   - Root PNGs  → live/table/crash/mini casino games (slugified gameName under /providers/jacktop/)
  *   - slot/*.png → slot games (slugified name under /providers/jacktop/slot/)
  *
- * Also copies vendor logo.png → public/providers/jacktop.png
- * and mirrors thumbnail paths into backend + source catalog JSON.
+ * Also copies vendor logo.png → casino-assets/storage/providers/jacktop.png
+ * and mirrors relative thumbnail paths into backend + source catalog JSON.
+ *
+ * casino-assets serves GET /providers/...; admin uses ASSETS_PUBLIC_URL,
+ * player FE uses VITE_ASSETS_BASE_URL + resolveAssetUrl (DB keeps /providers/... relative).
  *
  * Usage:
  *   node scripts/sync-jacktop-thumbnails.mjs
@@ -27,9 +30,9 @@ const BACKEND_CATALOG = path.resolve(
   REPO_ROOT,
   'casino-backend/app/Infrastructure/Provider/Adapters/Jacktop/catalog.json',
 );
-const DEST_ROOT = path.join(FRONTEND_ROOT, 'public/providers/jacktop');
+const DEST_ROOT = path.join(REPO_ROOT, 'casino-assets/storage/providers/jacktop');
 const DEST_SLOT = path.join(DEST_ROOT, 'slot');
-const DEST_LOGO = path.join(FRONTEND_ROOT, 'public/providers/jacktop.png');
+const DEST_LOGO = path.join(REPO_ROOT, 'casino-assets/storage/providers/jacktop.png');
 
 const IMAGE_EXT = new Set(['.png', '.jpg', '.jpeg', '.webp']);
 
@@ -269,7 +272,7 @@ function main() {
 
   if (fs.existsSync(args.logo)) {
     copyFile(args.logo, DEST_LOGO, args.dryRun);
-    console.log(`${args.dryRun ? '[dry-run] ' : ''}logo -> public/providers/jacktop.png`);
+    console.log(`${args.dryRun ? '[dry-run] ' : ''}logo -> casino-assets/storage/providers/jacktop.png`);
   } else {
     console.warn(`WARN: logo not found: ${args.logo}`);
   }

@@ -1,19 +1,20 @@
 import type { Game } from '@/types';
+import { resolveAssetUrl, resolveAssetUrlRequired } from '@/data/resolveAssetUrl';
 
 const THUMBNAIL_EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp'] as const;
-/** Prefer webp first when matching by game_code (VAGaming icons are *.webp). */
+/** Prefer webp first when matching by game_code (VAGaming icons under casino-assets /providers/vagaming/). */
 const CODE_THUMBNAIL_EXTENSIONS = ['webp', 'png', 'jpg', 'jpeg'] as const;
-/** FunTa ships per-game icons as `{game_code}.jpg` under /providers/funta/. */
+/** FunTa ships per-game icons as `{game_code}.jpg` under casino-assets /providers/funta/. */
 const FUNTA_CODE_THUMBNAIL_EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp'] as const;
-/** Dreamplay ships 287x193 icons as `{game_id}.png` under /providers/dreamplay/. */
+/** Dreamplay ships 287x193 icons as `{game_id}.png` under casino-assets /providers/dreamplay/. */
 const DREAMPLAY_CODE_THUMBNAIL_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
-/** TurboGames (direct Hub) lobby cards: 3:2 art as `{game_id}.png|jpg|webp` under /providers/turbogames/. */
+/** TurboGames (direct Hub) lobby cards: 3:2 art as `{game_id}.png|jpg|webp` under casino-assets /providers/turbogames/. */
 const TURBOGAMES_CODE_THUMBNAIL_EXTENSIONS = ['png', 'jpg', 'jpeg', 'webp'] as const;
-/** Zillion has no remote thumb API; lobby cards are `{game_id}.png` under /providers/zillion/. */
+/** Zillion has no remote thumb API; lobby cards are `{game_id}.png` under casino-assets /providers/zillion/. */
 const ZILLION_CODE_THUMBNAIL_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
-/** JackTop has no remote thumb API; lobby cards use slugified game names under /providers/jacktop/. */
+/** JackTop has no remote thumb API; lobby cards use slugified names under /providers/jacktop/ (casino-assets). */
 const JACKTOP_CODE_THUMBNAIL_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
-/** Megafair has no remote thumb API; lobby cards are `{gameId}.png` under /providers/megafair/. */
+/** Megafair has no remote thumb API; lobby cards are `{gameId}.png` under casino-assets /providers/megafair/. */
 const MEGAFAIR_CODE_THUMBNAIL_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
 const CQ9_BG_EXTENSIONS = ['jpg', 'png', 'jpeg', 'webp'] as const;
 const CQ9_ICON_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
@@ -70,7 +71,7 @@ function providerFolders(game: Game): string[] {
     (slug): slug is string => typeof slug === 'string' && slug.length > 0,
   );
 
-  // FunTa hall external id is FTGSLOT; assets live under /providers/funta/.
+  // FunTa hall external id is FTGSLOT; assets live under casino-assets /providers/funta/.
   if (folders.some(isFunTaSlug) && !folders.includes('funta')) {
     folders.push('funta');
   }
@@ -129,22 +130,30 @@ export function isMegafairGame(game: Game): boolean {
 export type Cq9OverlayCandidates = {
   backgrounds: string[];
   icons: string[];
-  /** Single-image fallbacks from archived /providers/cq9_ assets. */
+  /** Single-image fallbacks from archived casino-assets /providers/cq9_ paths. */
   legacy: string[];
 };
 
-/** CQ9 demo-style layered assets: background + icon overlay by gamecode. */
+/** CQ9 demo-style layered assets on casino-assets: background + icon overlay by gamecode. */
 export function getCq9OverlayCandidates(game: Game): Cq9OverlayCandidates | null {
   if (!isCq9Game(game)) return null;
 
   const gameCode = game.game_code?.trim();
   if (!gameCode) return null;
 
-  const backgrounds = CQ9_BG_EXTENSIONS.map((ext) => `/providers/cq9/bg/${gameCode}.${ext}`);
-  const icons = CQ9_ICON_EXTENSIONS.map((ext) => `/providers/cq9/icon/${gameCode}.${ext}`);
+  const backgrounds = CQ9_BG_EXTENSIONS.map(
+    (ext) => resolveAssetUrlRequired(`/providers/cq9/bg/${gameCode}.${ext}`),
+  );
+  const icons = CQ9_ICON_EXTENSIONS.map(
+    (ext) => resolveAssetUrlRequired(`/providers/cq9/icon/${gameCode}.${ext}`),
+  );
   const legacy = [
-    ...CQ9_LEGACY_EXTENSIONS.map((ext) => `/providers/cq9_/${gameCode}.${ext}`),
-    ...CQ9_LEGACY_EXTENSIONS.map((ext) => `/providers/cq9_/thumbs/${gameCode}.${ext}`),
+    ...CQ9_LEGACY_EXTENSIONS.map((ext) =>
+      resolveAssetUrlRequired(`/providers/cq9_/${gameCode}.${ext}`),
+    ),
+    ...CQ9_LEGACY_EXTENSIONS.map((ext) =>
+      resolveAssetUrlRequired(`/providers/cq9_/thumbs/${gameCode}.${ext}`),
+    ),
   ];
 
   return { backgrounds, icons, legacy };
@@ -216,7 +225,7 @@ export function getLocalGameThumbnailCandidates(game: Game): string[] {
             ? ZILLION_CODE_THUMBNAIL_EXTENSIONS
             : THUMBNAIL_EXTENSIONS;
     for (const folder of folders) {
-      // TPG (and similar) ship name-slug thumbs under /providers/{slug}/games/.
+      // TPG (and similar) ship name-slug thumbs under casino-assets /providers/{slug}/games/.
       for (const ext of nameExtensions) {
         push(`/providers/${folder}/games/${gameSlug}.${ext}`);
       }
@@ -234,12 +243,14 @@ export function getGameThumbnailCandidates(game: Game): string[] {
   const candidates: string[] = [];
 
   if (game.thumbnail) {
-    candidates.push(game.thumbnail);
+    const resolved = resolveAssetUrl(game.thumbnail);
+    if (resolved) candidates.push(resolved);
   }
 
   for (const url of getLocalGameThumbnailCandidates(game)) {
-    if (!candidates.includes(url)) {
-      candidates.push(url);
+    const resolved = resolveAssetUrl(url);
+    if (resolved && !candidates.includes(resolved)) {
+      candidates.push(resolved);
     }
   }
 

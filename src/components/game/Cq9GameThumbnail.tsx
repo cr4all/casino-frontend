@@ -11,6 +11,7 @@ interface Cq9GameThumbnailProps {
 
 /**
  * CQ9 demo lobby style: background (zoomed) + icon overlay, keyed by gamecode.
+ * Assets are served from casino-assets (/providers/cq9/...).
  * Falls back to archived /providers/cq9_ single images when overlay assets are missing.
  */
 export function Cq9GameThumbnail({ game, alt, className = '', onFailed }: Cq9GameThumbnailProps) {
