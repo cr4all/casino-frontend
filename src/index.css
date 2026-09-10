@@ -1154,10 +1154,10 @@ body.horizontal-page-lock {
   display: block;
 }
 
-/* Offset for fixed mobile deposit/withdraw bar */
+/* Offset for fixed mobile wallet CTAs + bottom tab bar */
 @media (max-width: 1023px) {
   .has-mobile-wallet-bar {
-    --mobile-wallet-bar-offset: calc(3.75rem + max(0.5rem, env(safe-area-inset-bottom)) + 0.5rem);
+    --mobile-wallet-bar-offset: calc(8rem + max(0.5rem, env(safe-area-inset-bottom)) + 0.5rem);
     padding-bottom: var(--mobile-wallet-bar-offset);
   }
 

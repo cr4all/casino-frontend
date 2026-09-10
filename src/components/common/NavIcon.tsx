@@ -13,7 +13,11 @@ export type NavIconName =
   | 'affiliateProgram'
   | 'prematch'
   | 'inLive'
-  | 'sportsHistory';
+  | 'sportsHistory'
+  | 'sports'
+  | 'casino'
+  | 'liveCasino'
+  | 'menu';
 
 interface NavIconProps extends SVGProps<SVGSVGElement> {
   name: NavIconName;
@@ -125,6 +129,38 @@ const icons: Record<NavIconName, ReactNode> = {
       <path d="M9 16h4" />
     </>
   ),
+  sports: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 3c2.2 2.5 3.5 5.6 3.5 9s-1.3 6.5-3.5 9c-2.2-2.5-3.5-5.6-3.5-9s1.3-6.5 3.5-9Z" />
+      <path d="M3.6 9h16.8" />
+      <path d="M3.6 15h16.8" />
+    </>
+  ),
+  casino: (
+    <>
+      <rect x="3.5" y="5" width="11" height="15" rx="1.5" transform="rotate(-12 9 12.5)" />
+      <rect x="9.5" y="4" width="11" height="15" rx="1.5" transform="rotate(8 15 11.5)" />
+      <circle cx="15" cy="9" r="1" fill="currentColor" stroke="none" />
+      <circle cx="15" cy="13.5" r="1" fill="currentColor" stroke="none" />
+    </>
+  ),
+  liveCasino: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="12" r="5.5" />
+      <path d="M12 8.5v7" />
+      <path d="M9.5 10.2h5" />
+      <path d="M9.5 13.8h5" />
+    </>
+  ),
+  menu: (
+    <>
+      <path d="M4 7h16" />
+      <path d="M4 12h16" />
+      <path d="M4 17h16" />
+    </>
+  ),
 };
 
 export function NavIcon({ name, className = 'h-5 w-5', ...props }: NavIconProps) {
@@ -149,6 +185,10 @@ const NAV_ICON_FILES: Record<NavIconName, string> = {
   prematch: 'transactions',
   inLive: 'transactions',
   sportsHistory: 'transactions',
+  sports: 'home',
+  casino: 'home',
+  liveCasino: 'home',
+  menu: 'home',
 };
 
 export function navIconSrc(name: NavIconName): string {

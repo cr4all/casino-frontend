@@ -69,7 +69,6 @@ export function AppLayout() {
   const clipHorizontalOverscroll = isSportsIframeRoute || isCasinoLobbyRoute;
   const [mobileOpen, setMobileOpen] = useState(false);
   const user = useAuthStore((s) => s.user);
-  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const profile = usePlayerStore((s) => s.profile);
   const isAffiliateUser = user?.role === 'affiliate';
   const syncPlatformSection = usePlatformSectionStore((s) => s.syncFromPathname);
@@ -145,16 +144,14 @@ export function AppLayout() {
       <div className="flex min-w-0 max-w-full flex-1 flex-col overflow-x-hidden">
         <Header onMenuToggle={() => setMobileOpen(true)} />
         <main
-          className={`min-w-0 flex-1 overflow-x-hidden ${
+          className={`has-mobile-wallet-bar min-w-0 flex-1 overflow-x-hidden lg:pb-0 ${
             isSportsIframeRoute ? 'p-0' : 'p-4 md:p-6'
-          } ${clipHorizontalOverscroll ? 'overscroll-x-none' : ''} ${
-            isAuthenticated ? 'has-mobile-wallet-bar lg:pb-0' : ''
-          }`}
+          } ${clipHorizontalOverscroll ? 'overscroll-x-none' : ''}`}
         >
           <Outlet />
         </main>
         {!isSportsIframeRoute && <Footer />}
-        <MobileWalletActionBar />
+        <MobileWalletActionBar onMenuToggle={() => setMobileOpen(true)} />
       </div>
 
       <LoginModal />
