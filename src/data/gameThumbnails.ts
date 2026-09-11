@@ -1,5 +1,5 @@
 import type { Game } from '@/types';
-import { resolveAssetUrl } from '@/data/resolveAssetUrl';
+import { resolveAssetUrl} from '@/data/resolveAssetUrl';
 
 const THUMBNAIL_EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp'] as const;
 /** Prefer webp first when matching by game_code (VAGaming icons under casino-assets /providers/vagaming/). */
