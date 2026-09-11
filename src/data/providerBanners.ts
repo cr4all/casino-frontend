@@ -1,4 +1,5 @@
 import type { GameVendor } from '@/api/game.api';
+import { resolveAssetUrl } from '@/data/resolveAssetUrl';
 
 const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }[] = [
   {
@@ -23,8 +24,11 @@ const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }
   { test: (s, n) => s.includes('netent') || n.includes('netent'), url: '/providers/ruby.png' },
   {
     test: (s, n) =>
-      s.includes('kagaming') || n.includes('kagaming') || s.includes('kagame') || n.includes('kagame'),
-    url: '/providers/ka-game.png',
+      s.includes('kagaming') ||
+      n.includes('kagaming') ||
+      s.includes('kagame') ||
+      n.includes('kagame'),
+    url: '/providers/kagaming.png',
   },
   { test: (s, n) => s.includes('habanero') || n.includes('habanero'), url: '/providers/habanero.png' },
   { test: (s, n) => s.includes('evoplay') || n.includes('evoplay'), url: '/providers/evoplay.png' },
@@ -132,6 +136,14 @@ const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }
   },
   {
     test: (s, n) =>
+      s === 'dreamplay' ||
+      n === 'dreamplay' ||
+      s.includes('dreamplay') ||
+      n.includes('dreamplay'),
+    url: '/providers/dreamplay.png',
+  },
+  {
+    test: (s, n) =>
       s === 'zillion' ||
       n === 'zillion' ||
       s.includes('zillion') ||
@@ -147,6 +159,25 @@ const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }
       s.includes('jacktop') ||
       n.includes('jacktop'),
     url: '/providers/jacktop.png',
+  },
+  {
+    test: (s, n) =>
+      s === 'megafair' ||
+      n === 'megafair' ||
+      s.includes('megafair') ||
+      n.includes('megafair'),
+    url: '/providers/megafair.png',
+  },
+  {
+    // Provider slug turbogames / hall vendor turbo; on-disk logo is turbo-games.png
+    test: (s, n) =>
+      s === 'turbogames' ||
+      s === 'turbo' ||
+      s === 'turbo-games' ||
+      n === 'turbo games' ||
+      s.includes('turbogame') ||
+      n.includes('turbo games'),
+    url: '/providers/turbo-games.png',
   },
   { test: (s, n) => s.includes('tpg') || n.includes('tpg'), url: '/providers/tpg.png' },
   { test: (s, n) => s.includes('popok') || n.includes('popok'), url: '/providers/popok.png' },
@@ -188,7 +219,7 @@ function matchLocalLogo(vendor: GameVendor): string | null {
     }
   }
 
-  // Vendor slugs come from Laravel Str::slug(name) — matches public/providers/{slug}.png
+  // Vendor slugs come from Laravel Str::slug(name) — matches casino-assets /providers/{slug}.png
   if (vendor.slug && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(vendor.slug)) {
     return slugLogoUrl(vendor.slug);
   }
@@ -198,10 +229,10 @@ function matchLocalLogo(vendor: GameVendor): string | null {
 
 export function getVendorLogoUrl(vendor: GameVendor): string | null {
   const local = matchLocalLogo(vendor);
-  if (local) return local;
+  if (local) return resolveAssetUrl(local) ?? local;
 
   const remote = vendor.logo_url?.trim();
-  return remote || null;
+  return remote ? resolveAssetUrl(remote) ?? remote : null;
 }
 
 /** Wide banner art for provider cards on grid pages. */

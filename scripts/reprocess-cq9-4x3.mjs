@@ -1,5 +1,6 @@
 /**
- * Pad CQ9 thumbnails to exact 4:3 without cropping the circular emblem.
+ * Pad CQ9 thumbnails under casino-assets/storage/providers/cq9/ to exact 4:3
+ * without cropping the circular emblem.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -7,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const dir = path.join(__dirname, '../public/providers/cq9');
+const dir = path.join(__dirname, '../../casino-assets/storage/providers/cq9');
 const WIDTH = 400;
 const HEIGHT = 300; // 4:3
 

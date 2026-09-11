@@ -1,6 +1,7 @@
 /**
  * Match TPG catalog games to assets/images thumbnails and copy into
- * public/providers/tpg/games/{slug}.png. Also rewrite catalog.json thumbnails.
+ * casino-assets/storage/providers/tpg/games/{slug}.png (public /providers/tpg/games/...).
+ * Also rewrite catalog.json thumbnails as relative /providers/... paths.
  *
  * Matching order:
  *   1) Manual aliases by gameCode (typos / compressed names)
@@ -35,8 +36,8 @@ const CATALOG_PATH = path.resolve(
   REPO_ROOT,
   'casino-backend/app/Infrastructure/Provider/Adapters/Tpg/catalog.json',
 );
-const DEST_GAMES = path.join(FRONTEND_ROOT, 'public/providers/tpg/games');
-const DEST_LOGO = path.join(FRONTEND_ROOT, 'public/providers/tpg.png');
+const DEST_GAMES = path.join(REPO_ROOT, 'casino-assets/storage/providers/tpg/games');
+const DEST_LOGO = path.join(REPO_ROOT, 'casino-assets/storage/providers/tpg.png');
 const IMAGE_EXT = new Set(['.png', '.jpg', '.jpeg', '.webp']);
 
 /** Manual source filename overrides for typos / compressed names. */

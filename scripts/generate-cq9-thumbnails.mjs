@@ -1,5 +1,6 @@
 /**
- * Generate local CQ9 game thumbnails into public/providers/cq9/{gamecode}.png
+ * Generate CQ9 game thumbnails into casino-assets/storage/providers/cq9/{gamecode}.png
+ * (public GET /providers/cq9/...). Prefer download-cq9-thumbnails.mjs for official art.
  *
  * Source catalog: casino-backend/storage/app/cq9-games.json
  * (refresh with: php scripts/fetch-cq9-games.php)
@@ -12,7 +13,7 @@ import sharp from 'sharp';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const catalogPath = path.resolve(root, '../casino-backend/storage/app/cq9-games.json');
-const outDir = path.join(root, 'public/providers/cq9');
+const outDir = path.join(path.resolve(root, '..'), 'casino-assets/storage/providers/cq9');
 
 const WIDTH = 300;
 const HEIGHT = 210;
