@@ -18,6 +18,8 @@ const JACKTOP_CODE_THUMBNAIL_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as cons
 const MEGAFAIR_CODE_THUMBNAIL_EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'] as const;
 /** CQ9 single-file cards under casino-assets /providers/cq9/{gamecode}.* (no bg/icon overlay). */
 const CQ9_CODE_THUMBNAIL_EXTENSIONS = ['png', 'jpg', 'jpeg', 'webp'] as const;
+/** Lucky Heaven lobby cards: slugified game names as `{name}.jpg` under /providers/luckyheaven/. */
+const LUCKYHEAVEN_CODE_THUMBNAIL_EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp'] as const;
 
 function slugifyGameName(name: string): string {
   return name
@@ -70,6 +72,12 @@ function isCq9Slug(slug: string | null | undefined): boolean {
   return key === 'cq9' || key.includes('cq9');
 }
 
+function isLuckyHeavenSlug(slug: string | null | undefined): boolean {
+  if (!slug) return false;
+  const key = slug.toLowerCase().replace(/[^a-z0-9]/g, '');
+  return key === 'luckyheaven' || key.includes('luckyheaven');
+}
+
 function providerFolders(game: Game): string[] {
   const folders = [game.vendor?.slug, game.provider?.slug].filter(
     (slug): slug is string => typeof slug === 'string' && slug.length > 0,
@@ -104,6 +112,10 @@ function providerFolders(game: Game): string[] {
     folders.push('cq9');
   }
 
+  if (folders.some(isLuckyHeavenSlug) && !folders.includes('luckyheaven')) {
+    folders.push('luckyheaven');
+  }
+
   return [...new Set(folders)];
 }
 
@@ -133,6 +145,10 @@ export function isJacktopGame(game: Game): boolean {
 
 export function isMegafairGame(game: Game): boolean {
   return [game.vendor?.slug, game.provider?.slug].some(isMegafairSlug);
+}
+
+export function isLuckyHeavenGame(game: Game): boolean {
+  return [game.vendor?.slug, game.provider?.slug].some(isLuckyHeavenSlug);
 }
 
 /** API thumbnail 없을 때 시도할 로컬 경로 목록 (우선순위 순) */
@@ -181,7 +197,9 @@ export function getLocalGameThumbnailCandidates(game: Game): string[] {
           ? ZILLION_CODE_THUMBNAIL_EXTENSIONS
           : isMegafairGame(game)
             ? MEGAFAIR_CODE_THUMBNAIL_EXTENSIONS
-            : CODE_THUMBNAIL_EXTENSIONS;
+            : isLuckyHeavenGame(game)
+              ? LUCKYHEAVEN_CODE_THUMBNAIL_EXTENSIONS
+              : CODE_THUMBNAIL_EXTENSIONS;
 
   if (gameCode) {
     for (const folder of folders) {
@@ -200,7 +218,9 @@ export function getLocalGameThumbnailCandidates(game: Game): string[] {
           ? TURBOGAMES_CODE_THUMBNAIL_EXTENSIONS
           : isZillionGame(game)
             ? ZILLION_CODE_THUMBNAIL_EXTENSIONS
-            : THUMBNAIL_EXTENSIONS;
+            : isLuckyHeavenGame(game)
+              ? LUCKYHEAVEN_CODE_THUMBNAIL_EXTENSIONS
+              : THUMBNAIL_EXTENSIONS;
     for (const folder of folders) {
       // TPG (and similar) ship name-slug thumbs under casino-assets /providers/{slug}/games/.
       for (const ext of nameExtensions) {
