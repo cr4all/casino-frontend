@@ -68,6 +68,7 @@ VITE_SENTRY_ENVIRONMENT="$(env_get VITE_SENTRY_ENVIRONMENT 'production')"
 VITE_SENTRY_TRACES_SAMPLE_RATE="$(env_get VITE_SENTRY_TRACES_SAMPLE_RATE '0.1')"
 VITE_POSTHOG_KEY="$(env_get VITE_POSTHOG_KEY '')"
 VITE_POSTHOG_HOST="$(env_get VITE_POSTHOG_HOST 'https://us.i.posthog.com')"
+VITE_ASSETS_BASE_URL="$(env_get VITE_ASSETS_BASE_URL '')"
 
 if [[ -z "${GHCR_TOKEN:-}" ]]; then
   read -r -s -p "GHCR_TOKEN (GitHub PAT with write:packages): " GHCR_TOKEN
@@ -87,6 +88,7 @@ IMAGE_LATEST="${GHCR_IMAGE}:latest"
 
 echo "Building Docker image (${DOCKER_PLATFORM})..."
 echo "  VITE_API_URL=${VITE_API_URL}"
+echo "  VITE_ASSETS_BASE_URL=${VITE_ASSETS_BASE_URL}"
 echo "  VITE_REVERB_HOST=${VITE_REVERB_HOST} VITE_REVERB_PORT=${VITE_REVERB_PORT} VITE_REVERB_SCHEME=${VITE_REVERB_SCHEME}"
 
 docker build \
@@ -105,6 +107,7 @@ docker build \
   --build-arg "VITE_SENTRY_TRACES_SAMPLE_RATE=${VITE_SENTRY_TRACES_SAMPLE_RATE}" \
   --build-arg "VITE_POSTHOG_KEY=${VITE_POSTHOG_KEY}" \
   --build-arg "VITE_POSTHOG_HOST=${VITE_POSTHOG_HOST}" \
+  --build-arg "VITE_ASSETS_BASE_URL=${VITE_ASSETS_BASE_URL}" \
   -t "$IMAGE_SHA" \
   -t "$IMAGE_LATEST" \
   .
