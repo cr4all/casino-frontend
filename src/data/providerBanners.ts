@@ -136,6 +136,14 @@ const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }
   },
   {
     test: (s, n) =>
+      s === 'luckyheaven' ||
+      n === 'luckyheaven' ||
+      s.includes('luckyheaven') ||
+      n.includes('luckyheaven'),
+    url: '/providers/luckyheaven.png',
+  },
+  {
+    test: (s, n) =>
       s === 'dreamplay' ||
       n === 'dreamplay' ||
       s.includes('dreamplay') ||
