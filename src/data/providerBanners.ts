@@ -177,6 +177,17 @@ const LOGO_RULES: { test: (slug: string, name: string) => boolean; url: string }
     url: '/providers/megafair.png',
   },
   {
+    test: (s, n) =>
+      s === 'betcore' ||
+      n === 'betcore' ||
+      s.includes('betcore') ||
+      n.includes('betcore') ||
+      s === 'tvbet' ||
+      n === 'tvbet' ||
+      n.includes('bet core'),
+    url: '/providers/betcore.png',
+  },
+  {
     // Provider slug turbogames / hall vendor turbo; on-disk logo is turbo-games.png
     test: (s, n) =>
       s === 'turbogames' ||
