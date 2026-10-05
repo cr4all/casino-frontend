@@ -162,7 +162,7 @@ export const tr: LocaleTree = {
     "aml": "AML Politikası",
     "kyc": "KYC Politikası",
     "disclaimer": "18+ | Sorumlu oynayın. Kumar bağımlılık yapabilir.",
-    "copyright": "© {{year}} iBets24. Tüm hakları saklıdır."
+    "copyright": "© {{year}} YouWin24. Tüm hakları saklıdır."
   },
   "legal": {
     "backHome": "← Ana sayfaya dön"
@@ -618,7 +618,7 @@ export const tr: LocaleTree = {
     "comingSoon": "Yakında"
   },
   "cookies": {
-    "title": "iBets24 çerez kullanır",
+    "title": "YouWin24 çerez kullanır",
     "description": "Daha iyi ve kişiselleştirilmiş bir deneyim sunmak için çerezler kullanıyoruz. Daha fazla bilgi için",
     "policyLink": "Çerez Politikası",
     "settings": "Çerez ayarları",
@@ -835,7 +835,7 @@ export const tr: LocaleTree = {
     "hybridPoint1": "İlk yatırımda CPA artı gelecek aktivitede RevShare",
     "hybridPoint2": "Trafik profilinize göre özelleştirilmiş esnek bölünme",
     "hybridPoint3": "Influencer'lar ve çok kanallı ortaklar arasında popüler",
-    "benefitsTitle": "Neden iBets24 ile Ortak Olmalısınız?",
+    "benefitsTitle": "Neden YouWin24 ile Ortak Olmalısınız?",
     "benefitsSubtitle": "Yönlendirmelerinizin oynamaya devam etmesi — ve sizin kazanmaya devam etmeniz için dönüşüm, elde tutma ve ürün derinliğine yatırım yapıyoruz.",
     "benefit1Title": "Tam Ürün Portföyü",
     "benefit1Desc": "Tek bir markadan slotlar, canlı krupiye masaları, crash oyunları ve spor bahisleri tanıtın — her ziyaretçiyi dönüştürmenin daha fazla yolu.",
@@ -852,7 +852,7 @@ export const tr: LocaleTree = {
     "howTitle": "Nasıl Çalışır",
     "howSubtitle": "Başvurudan ödemeye dört basit adımda.",
     "step1Title": "Başvurun ve Onay Alın",
-    "step1Desc": "Trafik kaynaklarınız, hedef pazarlarınız ve tanıtım yöntemlerinizle partners@ibets24.com adresine e-posta gönderin. Onboarding öncesi uygunluk ve uyumluluğu inceleriz.",
+    "step1Desc": "Trafik kaynaklarınız, hedef pazarlarınız ve tanıtım yöntemlerinizle partners@youwin24.com adresine e-posta gönderin. Onboarding öncesi uygunluk ve uyumluluğu inceleriz.",
     "step2Title": "Takip Varlıklarınızı Alın",
     "step2Desc": "Onaylanan ortaklar benzersiz bir referans kodu, takip bağlantısı ve canlı performans raporlamalı Affiliate Portal erişimi alır.",
     "step3Title": "Nitelikli Oyuncular Getirin",
@@ -871,8 +871,8 @@ export const tr: LocaleTree = {
     "businessCta": "B2B Teklifleri Gönderin",
     "ctaTitle": "Birlikte Büyümeye Hazır mısınız?",
     "ctaSubtitle": "Kitleniz ve trafik kanallarınız hakkında bize bilgi verin. Ekibimiz özel komisyon koşulları ve sonraki adımlarla yanıt verecektir.",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "Oyuncu hesabı, ödeme veya bonus sorunları için lütfen support@ibets24.com ile iletişime geçin — partners gelen kutusunu değil.",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "Oyuncu hesabı, ödeme veya bonus sorunları için lütfen support@youwin24.com ile iletişime geçin — partners gelen kutusunu değil.",
     "backHome": "← Ana sayfaya dön"
   }
 };

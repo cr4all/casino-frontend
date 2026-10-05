@@ -165,7 +165,7 @@ export const de: LocaleTree = {
     "aml": "Anti-Geldwäsche-Richtlinie",
     "kyc": "KYC-Richtlinie",
     "disclaimer": "18+ | Spielen Sie verantwortungsbewusst. Glücksspiel kann süchtig machen.",
-    "copyright": "© {{year}} iBets24. Alle Rechte vorbehalten."
+    "copyright": "© {{year}} YouWin24. Alle Rechte vorbehalten."
   },
   "legal": {
     "backHome": "Zurück zur Startseite"
@@ -649,7 +649,7 @@ export const de: LocaleTree = {
     "comingSoon": "Demnächst verfügbar"
   },
   "cookies": {
-    "title": "iBets24 verwendet Cookies",
+    "title": "YouWin24 verwendet Cookies",
     "description": "Wir verwenden Cookies, um ein besseres und personalisierteres Erlebnis zu bieten. Weitere Informationen finden Sie in unserem",
     "policyLink": "Cookie-Richtlinie",
     "settings": "Cookie-Einstellungen ",
@@ -845,7 +845,7 @@ export const de: LocaleTree = {
     "hybridPoint1": "CPA bei Ersteinzahlung plus RevShare auf künftige Aktivität",
     "hybridPoint2": "Flexible Aufteilung passend zu Ihrem Traffic-Profil",
     "hybridPoint3": "Beliebt bei Influencern und Multi-Channel-Partnern",
-    "benefitsTitle": "Warum Partner von iBets24 werden?",
+    "benefitsTitle": "Warum Partner von YouWin24 werden?",
     "benefitsSubtitle": "Wir investieren in Conversion, Retention und Produktiefe, damit Ihre Referrals weiter spielen — und Sie weiter verdienen.",
     "benefit1Title": "Volles Produktportfolio",
     "benefit1Desc": "Bewerben Sie Slots, Live-Dealer-Tische, Crash-Games und Sportwetten aus einer Marke — mehr Wege, jeden Besucher zu konvertieren.",
@@ -862,7 +862,7 @@ export const de: LocaleTree = {
     "howTitle": "So funktioniert es",
     "howSubtitle": "Von der Bewerbung bis zur Auszahlung in vier einfachen Schritten.",
     "step1Title": "Bewerben & freigeschaltet werden",
-    "step1Desc": "Schreiben Sie an partners@ibets24.com mit Ihren Traffic-Quellen, Zielmärkten und Werbemethoden. Wir prüfen Passung und Compliance vor dem Onboarding.",
+    "step1Desc": "Schreiben Sie an partners@youwin24.com mit Ihren Traffic-Quellen, Zielmärkten und Werbemethoden. Wir prüfen Passung und Compliance vor dem Onboarding.",
     "step2Title": "Tracking-Assets erhalten",
     "step2Desc": "Freigeschaltete Partner erhalten einen eindeutigen Referral-Code, Tracking-Link und Zugang zum Affiliate Portal mit Live-Performance-Reporting.",
     "step3Title": "Qualifizierte Spieler bringen",
@@ -881,8 +881,8 @@ export const de: LocaleTree = {
     "businessCta": "B2B-Anfragen senden",
     "ctaTitle": "Bereit gemeinsam zu wachsen?",
     "ctaSubtitle": "Erzählen Sie uns von Ihrer Audience und Ihren Traffic-Kanälen. Unser Team antwortet mit maßgeschneiderten Provisionsbedingungen und nächsten Schritten.",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "Bei Fragen zu Spielerkonten, Zahlungen oder Boni wenden Sie sich bitte an support@ibets24.com — nicht an die Partner-Inbox.",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "Bei Fragen zu Spielerkonten, Zahlungen oder Boni wenden Sie sich bitte an support@youwin24.com — nicht an die Partner-Inbox.",
     "backHome": "← Zur Startseite"
   }
 };

@@ -167,7 +167,7 @@ export const ru: LocaleTree = {
     "aml": "AML Policy",
     "kyc": "Политика KYC",
     "disclaimer": "18+ | Play responsibly. Gambling can be addictive.",
-    "copyright": "© {{year}} iBets24. All rights reserved."
+    "copyright": "© {{year}} YouWin24. All rights reserved."
   },
   "legal": {
     "backHome": "← Back to home"
@@ -640,7 +640,7 @@ export const ru: LocaleTree = {
     "comingSoon": "Coming Soon"
   },
   "cookies": {
-    "title": "iBets24 uses cookies",
+    "title": "YouWin24 uses cookies",
     "description": "We use cookies to provide a better and more personalized experience. For more information, see our",
     "policyLink": "Cookie Policy",
     "settings": "Cookie settings",
@@ -836,7 +836,7 @@ export const ru: LocaleTree = {
     "hybridPoint1": "CPA за первый депозит плюс RevShare за будущую активность",
     "hybridPoint2": "Гибкое распределение, адаптированное к вашему профилю трафика",
     "hybridPoint3": "Популярно среди инфлюенсеров и партнёров с несколькими каналами",
-    "benefitsTitle": "Почему стоит сотрудничать с iBets24?",
+    "benefitsTitle": "Почему стоит сотрудничать с YouWin24?",
     "benefitsSubtitle": "Мы инвестируем в конверсию, удержание и глубину продукта, чтобы ваши рефералы продолжали играть — а вы продолжали зарабатывать.",
     "benefit1Title": "Полный продуктовый портфель",
     "benefit1Desc": "Продвигайте слоты, live-столы с дилерами, crash-игры и ставки на спорт одного бренда — больше способов конвертировать каждого посетителя.",
@@ -853,7 +853,7 @@ export const ru: LocaleTree = {
     "howTitle": "Как это работает",
     "howSubtitle": "От заявки до выплаты — четыре простых шага.",
     "step1Title": "Подайте заявку и получите одобрение",
-    "step1Desc": "Напишите на partners@ibets24.com с указанием источников трафика, целевых рынков и методов продвижения. Мы оцениваем соответствие и комплаенс перед подключением.",
+    "step1Desc": "Напишите на partners@youwin24.com с указанием источников трафика, целевых рынков и методов продвижения. Мы оцениваем соответствие и комплаенс перед подключением.",
     "step2Title": "Получите трекинговые материалы",
     "step2Desc": "Одобренные партнёры получают уникальный реферальный код, трекинговую ссылку и доступ к Affiliate Portal с отчётами о результатах в реальном времени.",
     "step3Title": "Привлекайте квалифицированных игроков",
@@ -872,8 +872,8 @@ export const ru: LocaleTree = {
     "businessCta": "Отправить B2B-предложения",
     "ctaTitle": "Готовы расти вместе?",
     "ctaSubtitle": "Расскажите нам о вашей аудитории и каналах трафика. Наша команда ответит с индивидуальными условиями комиссий и следующими шагами.",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "По вопросам аккаунта игрока, платежей или бонусов обращайтесь на support@ibets24.com — не на партнёрский ящик.",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "По вопросам аккаунта игрока, платежей или бонусов обращайтесь на support@youwin24.com — не на партнёрский ящик.",
     "backHome": "← На главную"
   }
 };

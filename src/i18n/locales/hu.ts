@@ -167,7 +167,7 @@ export const hu: LocaleTree = {
     "aml": "AML Policy",
     "kyc": "KYC szabályzat",
     "disclaimer": "18+ | Play responsibly. Gambling can be addictive.",
-    "copyright": "© {{year}} iBets24. All rights reserved."
+    "copyright": "© {{year}} YouWin24. All rights reserved."
   },
   "legal": {
     "backHome": "← Back to home"
@@ -638,7 +638,7 @@ export const hu: LocaleTree = {
     "comingSoon": "Coming Soon"
   },
   "cookies": {
-    "title": "iBets24 uses cookies",
+    "title": "YouWin24 uses cookies",
     "description": "We use cookies to provide a better and more personalized experience. For more information, see our",
     "policyLink": "Cookie Policy",
     "settings": "Cookie settings",
@@ -831,7 +831,7 @@ export const hu: LocaleTree = {
     "hybridPoint1": "CPA az első befizetéskor plusz RevShare a jövőbeli aktivitás után",
     "hybridPoint2": "Rugalmas megosztás a forgalmi profiljához igazítva",
     "hybridPoint3": "Népszerű influencerek és többcsatornás partnerek körében",
-    "benefitsTitle": "Miért legyen partner az iBets24-nél?",
+    "benefitsTitle": "Miért legyen partner az YouWin24-nél?",
     "benefitsSubtitle": "A konverzióba, megtartásba és termékmélységbe fektetünk, hogy ajánlásai tovább játsszanak — és Ön tovább keressen.",
     "benefit1Title": "Teljes termékportfólió",
     "benefit1Desc": "Promóciózzon nyerőgépeket, live dealer asztalokat, crash játékokat és sportfogadást egy márkából — több mód minden látogató konvertálására.",
@@ -848,7 +848,7 @@ export const hu: LocaleTree = {
     "howTitle": "Hogyan működik",
     "howSubtitle": "A jelentkezéstől a kifizetésig négy egyszerű lépésben.",
     "step1Title": "Jelentkezzen és kapjon jóváhagyást",
-    "step1Desc": "Írjon a partners@ibets24.com címre forgalmi forrásaival, célpiacaival és promóciós módszereivel. Az onboarding előtt felmérjük az illeszkedést és a compliance-t.",
+    "step1Desc": "Írjon a partners@youwin24.com címre forgalmi forrásaival, célpiacaival és promóciós módszereivel. Az onboarding előtt felmérjük az illeszkedést és a compliance-t.",
     "step2Title": "Kapja meg követőeszközeit",
     "step2Desc": "A jóváhagyott partnerek egyedi ajánlókódot, követőlinket és hozzáférést kapnak az Affiliate Portalhoz élő teljesítményjelentéssel.",
     "step3Title": "Hozzon minősített játékosokat",
@@ -867,8 +867,8 @@ export const hu: LocaleTree = {
     "businessCta": "B2B javaslatok küldése",
     "ctaTitle": "Készen áll a közös növekedésre?",
     "ctaSubtitle": "Meséljen közönségéről és forgalmi csatornáiról. Csapatunk testreszabott jutalékfeltételekkel és a következő lépésekkel válaszol.",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "Játékosfiók, fizetés vagy bónusz problémák esetén kérjük, lépjen kapcsolatba a support@ibets24.com címmel — ne a partners postaládával.",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "Játékosfiók, fizetés vagy bónusz problémák esetén kérjük, lépjen kapcsolatba a support@youwin24.com címmel — ne a partners postaládával.",
     "backHome": "← Vissza a főoldalra"
   }
 };

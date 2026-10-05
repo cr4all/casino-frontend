@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 162 52" fill="none" role="img" aria-label="IBETS24">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 52" fill="none" role="img" aria-label="YOUWIN24">
   <defs>
-    <linearGradient id="ibets24-gold" x1="0" y1="0" x2="0" y2="1">
+    <linearGradient id="youwin24-gold" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#FFD54F"/>
       <stop offset="45%" stop-color="#FFB300"/>
       <stop offset="100%" stop-color="#F57C00"/>
@@ -17,6 +17,6 @@
     font-style="italic"
     letter-spacing="-0.08em"
   >
-    <tspan fill="#FFFFFF">IBETS</tspan><tspan fill="url(#ibets24-gold)">24</tspan>
+    <tspan fill="#FFFFFF">YOUWIN</tspan><tspan fill="url(#youwin24-gold)">24</tspan>
   </text>
 </svg>

@@ -162,7 +162,7 @@ export const no: LocaleTree = {
     "aml": "AML-policy",
     "kyc": "KYC-policy",
     "disclaimer": "18+ | Spill ansvarlig. Gambling kan være avhengighetsskapende.",
-    "copyright": "© {{year}} iBets24. Alle rettigheter forbeholdt."
+    "copyright": "© {{year}} YouWin24. Alle rettigheter forbeholdt."
   },
   "legal": {
     "backHome": "← Tilbake til forsiden"
@@ -617,7 +617,7 @@ export const no: LocaleTree = {
     "comingSoon": "Kommer snart"
   },
   "cookies": {
-    "title": "iBets24 bruker informasjonskapsler",
+    "title": "YouWin24 bruker informasjonskapsler",
     "description": "Vi bruker informasjonskapsler for å gi en bedre og mer personlig opplevelse. For mer informasjon, se vår",
     "policyLink": "Informasjonskapsel-policy",
     "settings": "Informasjonskapsel-innstillinger",
@@ -831,7 +831,7 @@ export const no: LocaleTree = {
     "hybridPoint1": "CPA ved første innskudd pluss RevShare på fremtidig aktivitet",
     "hybridPoint2": "Fleksibel fordeling tilpasset trafikkprofilen din",
     "hybridPoint3": "Populært blant influencere og flerkanalspartnere",
-    "benefitsTitle": "Hvorfor bli partner med iBets24?",
+    "benefitsTitle": "Hvorfor bli partner med YouWin24?",
     "benefitsSubtitle": "Vi investerer i konvertering, retention og produktdybde slik at henvisningene dine fortsetter å spille — og du fortsetter å tjene.",
     "benefit1Title": "Fullt produktportefølje",
     "benefit1Desc": "Promoter spilleautomater, live dealer-bord, crash-spill og sportsbetting fra ett merke — flere måter å konvertere hver besøkende på.",
@@ -848,7 +848,7 @@ export const no: LocaleTree = {
     "howTitle": "Slik fungerer det",
     "howSubtitle": "Fra søknad til utbetaling i fire enkle trinn.",
     "step1Title": "Søk og bli godkjent",
-    "step1Desc": "Send e-post til partners@ibets24.com med trafikkildene, målmarkedene og markedsføringsmetodene dine. Vi vurderer passform og compliance før onboarding.",
+    "step1Desc": "Send e-post til partners@youwin24.com med trafikkildene, målmarkedene og markedsføringsmetodene dine. Vi vurderer passform og compliance før onboarding.",
     "step2Title": "Motta sporingsressursene dine",
     "step2Desc": "Godkjente partnere får en unik henvisningskode, sporingslenke og tilgang til Affiliate Portal med live ytelsesrapportering.",
     "step3Title": "Skaff kvalifiserte spillere",
@@ -867,8 +867,8 @@ export const no: LocaleTree = {
     "businessCta": "Send B2B-forslag",
     "ctaTitle": "Klar til å vokse sammen?",
     "ctaSubtitle": "Fortell oss om publikummet og trafikkanalene dine. Teamet vårt svarer med skreddersydde provisjonsvilkår og neste steg.",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "For spillerkonto-, betalings- eller bonusproblemer, kontakt support@ibets24.com — ikke partnerinnboksen.",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "For spillerkonto-, betalings- eller bonusproblemer, kontakt support@youwin24.com — ikke partnerinnboksen.",
     "backHome": "← Tilbake til forsiden"
   }
 };

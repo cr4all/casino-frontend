@@ -160,7 +160,7 @@ export const sq: LocaleTree = {
     "aml": "Politika AML",
     "kyc": "Politika KYC",
     "disclaimer": "18+ | Luaj me përgjegjësi. Lojërat e fatit mund të shkaktojnë varësi.",
-    "copyright": "© {{year}} iBets24. Të gjitha të drejtat e rezervuara."
+    "copyright": "© {{year}} YouWin24. Të gjitha të drejtat e rezervuara."
   },
   "legal": {
     "backHome": "← Kthehu në faqen kryesore"
@@ -608,7 +608,7 @@ export const sq: LocaleTree = {
     "comingSoon": "Së shpejti"
   },
   "cookies": {
-    "title": "iBets24 përdor cookies",
+    "title": "YouWin24 përdor cookies",
     "description": "Ne përdorim cookies për të ofruar një përvojë më të mirë dhe më të personalizuar. Për më shumë informacion, shihni",
     "policyLink": "Politikën e cookies",
     "settings": "Cilësimet e cookies",
@@ -825,7 +825,7 @@ export const sq: LocaleTree = {
     "hybridPoint1": "CPA për depozitimin e parë plus RevShare për veprimtarinë e ardhshme",
     "hybridPoint2": "Ndarje fleksibël e përshtatur për profilin tënd të trafikut",
     "hybridPoint3": "Popullor me influencues dhe partnerë me kanale të përziera",
-    "benefitsTitle": "Pse të bashkëpunosh me iBets24?",
+    "benefitsTitle": "Pse të bashkëpunosh me YouWin24?",
     "benefitsSubtitle": "Ne investojmë në konvertimin, ruajtjen dhe thellësinë e produktit në mënyrë që rekomandimet e tua të vazhdojnë të luajnë — dhe ti të vazhdosh të fitosh.",
     "benefit1Title": "Portofoli i plotë i produkteve",
     "benefit1Desc": "Promovoni lojëra elektronike, tabela të drejtpërdrejta shitësish, lojëra përplasjesh dhe baste sportive nga një markë — më shumë mënyra për të konvertuar çdo vizitor.",
@@ -842,7 +842,7 @@ export const sq: LocaleTree = {
     "howTitle": "Si funksionon?",
     "howSubtitle": "Nga aplikimi deri te shlyerja e pagesës në katër hapa të drejtpërdrejtë.",
     "step1Title": "Apliko dhe merr miratimin",
-    "step1Desc": "Dërgo email partners@ibets24.com me burimet e trafikut, tregjet e synuara dhe metodat promocionale. Ne shqyrtojmë përshtatshmërinë dhe pajtueshmërinë para se të futemi në bord.",
+    "step1Desc": "Dërgo email partners@youwin24.com me burimet e trafikut, tregjet e synuara dhe metodat promocionale. Ne shqyrtojmë përshtatshmërinë dhe pajtueshmërinë para se të futemi në bord.",
     "step2Title": "Merr aktivet e ndjekjes",
     "step2Desc": "Partnerët e miratuar marrin një kod unik rekomandimi, linkun e gjurmimit dhe qasje në Affiliate Portal me raportim të drejtpërdrejtë të performancës.",
     "step3Title": "Nxiti lojtarët e kualifikuar",
@@ -862,7 +862,7 @@ export const sq: LocaleTree = {
     "ctaTitle": "Gati për t 'u rritur së bashku?",
     "ctaSubtitle": "Na trego për audiencën tënde dhe kanalet e trafikut. Ekipi ynë do të përgjigjet me kushtet e përshtatura të komisionit dhe hapat e ardhshëm.",
     "partnersEmail": "PK",
-    "supportNote": "Për çështje të llogarisë së lojtarit, pagesës ose bonusit, ju lutemi kontaktoni support@ibets24.com — jo kutinë e mesazheve të partnerëve.",
+    "supportNote": "Për çështje të llogarisë së lojtarit, pagesës ose bonusit, ju lutemi kontaktoni support@youwin24.com — jo kutinë e mesazheve të partnerëve.",
     "backHome": "Kthehu në faqen kryesore"
   }
 };

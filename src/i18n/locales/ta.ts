@@ -160,7 +160,7 @@ export const ta: LocaleTree = {
     "aml": "AML கொள்கை",
     "kyc": "KYC கொள்கை",
     "disclaimer": "18+ | பொறுப்புடன் விளையாடுங்கள். சூதாட்டம் போதையை ஏற்படுத்தலாம்.",
-    "copyright": "© {{year}} iBets24. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை."
+    "copyright": "© {{year}} YouWin24. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை."
   },
   "legal": {
     "backHome": "← முகப்புக்குத் திரும்பு"
@@ -606,7 +606,7 @@ export const ta: LocaleTree = {
     "comingSoon": "விரைவில்"
   },
   "cookies": {
-    "title": "iBets24 குக்கீகளைப் பயன்படுத்துகிறது",
+    "title": "YouWin24 குக்கீகளைப் பயன்படுத்துகிறது",
     "description": "சிறந்த மற்றும் தனிப்பயனாக்கப்பட்ட அனுபவத்திற்காக குக்கீகளைப் பயன்படுத்துகிறோம். மேலும் தகவலுக்கு எங்கள்",
     "policyLink": "குக்கீக் கொள்கை",
     "settings": "குக்கீ அமைப்புகள்",
@@ -820,7 +820,7 @@ export const ta: LocaleTree = {
     "hybridPoint1": "CPA on first deposit plus RevShare on future activity",
     "hybridPoint2": "Flexible split tailored to your traffic profile",
     "hybridPoint3": "Popular with influencers and mixed-channel partners",
-    "benefitsTitle": "Why Partner with iBets24?",
+    "benefitsTitle": "Why Partner with YouWin24?",
     "benefitsSubtitle": "We invest in conversion, retention, and product depth so your referrals keep playing — and you keep earning.",
     "benefit1Title": "Full Product Portfolio",
     "benefit1Desc": "Promote slots, live dealer tables, crash games, and sports betting from one brand — more ways to convert every visitor.",
@@ -837,7 +837,7 @@ export const ta: LocaleTree = {
     "howTitle": "How It Works",
     "howSubtitle": "From application to payout in four straightforward steps.",
     "step1Title": "Apply & Get Approved",
-    "step1Desc": "Email partners@ibets24.com with your traffic sources, target markets, and promotional methods. We review fit and compliance before onboarding.",
+    "step1Desc": "Email partners@youwin24.com with your traffic sources, target markets, and promotional methods. We review fit and compliance before onboarding.",
     "step2Title": "Receive Your Tracking Assets",
     "step2Desc": "Approved partners get a unique referral code, tracking link, and access to the Affiliate Portal with live performance reporting.",
     "step3Title": "Drive Qualified Players",
@@ -856,8 +856,8 @@ export const ta: LocaleTree = {
     "businessCta": "Send B2B Proposals",
     "ctaTitle": "Ready to Grow Together?",
     "ctaSubtitle": "Tell us about your audience and traffic channels. Our team will respond with tailored commission terms and next steps.",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "For player account, payment, or bonus issues, please contact support@ibets24.com — not the partners inbox.",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "For player account, payment, or bonus issues, please contact support@youwin24.com — not the partners inbox.",
     "backHome": "← Back to home"
   }
 };

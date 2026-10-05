@@ -7,9 +7,9 @@ export interface PageMeta {
 }
 
 const HOME_META: PageMeta = {
-  title: 'Online Casino, Live Casino & Sports Betting | iBets24',
+  title: 'Online Casino, Live Casino & Sports Betting | YouWin24',
   description:
-    'Play online casino games, live casino, poker, slots, table games and sports betting at iBets24. Enjoy secure gaming, fast payouts and premium casino entertainment.',
+    'Play online casino games, live casino, poker, slots, table games and sports betting at YouWin24. Enjoy secure gaming, fast payouts and premium casino entertainment.',
   canonicalPath: '/',
 };
 
@@ -17,111 +17,111 @@ const HOME_META: PageMeta = {
 const PAGE_META_BY_PATH: Record<string, PageMeta> = {
   '/': HOME_META,
   '/faq': {
-    title: 'FAQ – Online Casino Help & Support | iBets24',
+    title: 'FAQ – Online Casino Help & Support | YouWin24',
     description:
-      'Find answers about online casino games, live casino, poker, sports betting, deposits, withdrawals, bonuses and account management at iBets24.',
+      'Find answers about online casino games, live casino, poker, sports betting, deposits, withdrawals, bonuses and account management at YouWin24.',
     canonicalPath: '/faq',
   },
   '/contact': {
-    title: 'Contact iBets24 – Online Casino Customer Support',
+    title: 'Contact YouWin24 – Online Casino Customer Support',
     description:
-      'Contact the iBets24 support team for assistance with your online casino account, live casino games, sports betting, payments and technical questions.',
+      'Contact the YouWin24 support team for assistance with your online casino account, live casino games, sports betting, payments and technical questions.',
     canonicalPath: '/contact',
   },
   '/partners': {
-    title: 'Affiliate Program – RevShare, CPA & Hybrid | iBets24',
+    title: 'Affiliate Program – RevShare, CPA & Hybrid | YouWin24',
     description:
-      'Join the iBets24 affiliate program. Earn RevShare, CPA, or hybrid commissions on slots, live casino, and sports. Real-time portal, USD payouts, dedicated partner support.',
+      'Join the YouWin24 affiliate program. Earn RevShare, CPA, or hybrid commissions on slots, live casino, and sports. Real-time portal, USD payouts, dedicated partner support.',
     canonicalPath: '/partners',
   },
   '/about': {
-    title: 'About iBets24 – Trusted Online Casino Platform',
+    title: 'About YouWin24 – Trusted Online Casino Platform',
     description:
-      'Learn about iBets24, a trusted online casino offering live casino, poker, sports betting, slots and secure gaming with leading casino providers.',
+      'Learn about YouWin24, a trusted online casino offering live casino, poker, sports betting, slots and secure gaming with leading casino providers.',
     canonicalPath: '/about',
   },
   '/terms': {
-    title: 'Terms & Conditions | iBets24 Online Casino',
+    title: 'Terms & Conditions | YouWin24 Online Casino',
     description:
-      'Read the iBets24 Terms & Conditions covering online casino games, sports betting, player accounts, bonuses, payments and responsible gaming.',
+      'Read the YouWin24 Terms & Conditions covering online casino games, sports betting, player accounts, bonuses, payments and responsible gaming.',
     canonicalPath: '/terms',
   },
   '/privacy': {
-    title: 'Privacy Policy | iBets24',
+    title: 'Privacy Policy | YouWin24',
     description:
-      'Learn how iBets24 collects, stores and protects your personal information while using our online casino, live casino and sports betting platform.',
+      'Learn how YouWin24 collects, stores and protects your personal information while using our online casino, live casino and sports betting platform.',
     canonicalPath: '/privacy',
   },
   '/responsible-gaming': {
-    title: 'Responsible Gaming | Safe Online Casino | iBets24',
+    title: 'Responsible Gaming | Safe Online Casino | YouWin24',
     description:
       'Discover responsible gaming tools, player protection measures and support resources to help maintain a safe and enjoyable online casino experience.',
     canonicalPath: '/responsible-gaming',
   },
   '/aml': {
-    title: 'Anti-Money Laundering Policy | iBets24',
+    title: 'Anti-Money Laundering Policy | YouWin24',
     description:
-      'Read the Anti-Money Laundering (AML) Policy explaining how iBets24 protects players and complies with international gaming regulations.',
+      'Read the Anti-Money Laundering (AML) Policy explaining how YouWin24 protects players and complies with international gaming regulations.',
     canonicalPath: '/aml',
   },
   '/kyc': {
-    title: 'KYC Policy | Identity Verification | iBets24',
+    title: 'KYC Policy | Identity Verification | YouWin24',
     description:
-      'Learn how iBets24 verifies player identity (KYC), which documents are required, when checks apply, and how verification affects withdrawals.',
+      'Learn how YouWin24 verifies player identity (KYC), which documents are required, when checks apply, and how verification affects withdrawals.',
     canonicalPath: '/kyc',
   },
   '/cookies': {
-    title: 'Website Cookie Policy | iBets24',
+    title: 'Website Cookie Policy | YouWin24',
     description:
-      'Learn how cookies improve your browsing experience, personalize content and enhance security while using the iBets24 online casino platform.',
+      'Learn how cookies improve your browsing experience, personalize content and enhance security while using the YouWin24 online casino platform.',
     canonicalPath: '/cookies',
   },
   '/category/type-slot': {
-    title: 'Online Slot Games | Best Slot Casino Games | iBets24',
+    title: 'Online Slot Games | Best Slot Casino Games | YouWin24',
     description:
-      'Play exciting online slot games featuring jackpots, bonus rounds and premium themes. Enjoy the best online casino slots at iBets24.',
+      'Play exciting online slot games featuring jackpots, bonus rounds and premium themes. Enjoy the best online casino slots at YouWin24.',
     canonicalPath: '/category/type-slot',
   },
   '/category/type-live_casino': {
-    title: 'Live Casino Games | Real Dealer Casino | iBets24',
+    title: 'Live Casino Games | Real Dealer Casino | YouWin24',
     description:
-      'Experience live casino games with professional dealers. Play blackjack, roulette, baccarat and more in real time at iBets24. Real Dealer Casino.',
+      'Experience live casino games with professional dealers. Play blackjack, roulette, baccarat and more in real time at YouWin24. Real Dealer Casino.',
     canonicalPath: '/category/type-live_casino',
   },
   '/category/type-mini_game': {
-    title: 'Best Mini Casino Games Online | iBets24',
+    title: 'Best Mini Casino Games Online | YouWin24',
     description:
-      'Play exciting mini casino games online with fast gameplay, rewarding features and instant entertainment at iBets24. Best Mini Casino Games Online.',
+      'Play exciting mini casino games online with fast gameplay, rewarding features and instant entertainment at YouWin24. Best Mini Casino Games Online.',
     canonicalPath: '/category/type-mini_game',
   },
   '/category/type-table': {
-    title: 'Online Table Games | Blackjack, Roulette & More | iBets24',
+    title: 'Online Table Games | Blackjack, Roulette & More | YouWin24',
     description:
-      'Enjoy online table games including blackjack, roulette, baccarat and poker. Play premium casino table games securely at iBets24. Best Blackjack, Roulette & More.',
+      'Enjoy online table games including blackjack, roulette, baccarat and poker. Play premium casino table games securely at YouWin24. Best Blackjack, Roulette & More.',
     canonicalPath: '/category/type-table',
   },
   '/category/type-crash': {
-    title: 'Online Crash Games | Fast Casino Action | iBets24',
+    title: 'Online Crash Games | Fast Casino Action | YouWin24',
     description:
-      'Play exciting online crash games with instant action, thrilling multipliers and rewarding gameplay only at iBets24. Best Online Crash Games and Fast Casino Action.',
+      'Play exciting online crash games with instant action, thrilling multipliers and rewarding gameplay only at YouWin24. Best Online Crash Games and Fast Casino Action.',
     canonicalPath: '/category/type-crash',
   },
   '/category/type-fishing': {
-    title: 'Online Fish Games | Fish Shooting Casino Games | iBets24',
+    title: 'Online Fish Games | Fish Shooting Casino Games | YouWin24',
     description:
-      'Play online fish games featuring immersive fish shooting gameplay, best exciting rewards and premium casino entertainment at iBets24.',
+      'Play online fish games featuring immersive fish shooting gameplay, best exciting rewards and premium casino entertainment at YouWin24.',
     canonicalPath: '/category/type-fishing',
   },
   '/sports/prematch': {
-    title: 'Pre-Match Sports Betting | Best Odds & Markets | iBets24',
+    title: 'Pre-Match Sports Betting | Best Odds & Markets | YouWin24',
     description:
-      'Place pre-match sports bets on football, cricket, basketball, tennis and more at iBets24. Get competitive odds, diverse betting markets and a secure sportsbook experience.',
+      'Place pre-match sports bets on football, cricket, basketball, tennis and more at YouWin24. Get competitive odds, diverse betting markets and a secure sportsbook experience.',
     canonicalPath: '/sports/prematch',
   },
   '/sports/live': {
-    title: 'Live Sports Betting | Football, Cricket & More | iBets24',
+    title: 'Live Sports Betting | Football, Cricket & More | YouWin24',
     description:
-      'Bet on live sports with real-time odds at iBets24. Enjoy live betting on football, cricket, basketball, tennis and more with fast markets and secure gameplay.',
+      'Bet on live sports with real-time odds at YouWin24. Enjoy live betting on football, cricket, basketball, tennis and more with fast markets and secure gameplay.',
     canonicalPath: '/sports/live',
   },
 };

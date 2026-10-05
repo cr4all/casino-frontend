@@ -165,7 +165,7 @@ export const am: LocaleTree = {
     "aml": "AML Policy",
     "kyc": "KYC ፖሊሲ",
     "disclaimer": "18+ | Play responsibly. Gambling can be addictive.",
-    "copyright": "© {{year}} iBets24. All rights reserved."
+    "copyright": "© {{year}} YouWin24. All rights reserved."
   },
   "legal": {
     "backHome": "← Back to home"
@@ -640,7 +640,7 @@ export const am: LocaleTree = {
     "comingSoon": "Coming Soon"
   },
   "cookies": {
-    "title": "iBets24 uses cookies",
+    "title": "YouWin24 uses cookies",
     "description": "We use cookies to provide a better and more personalized experience. For more information, see our",
     "policyLink": "Cookie Policy",
     "settings": "Cookie settings",
@@ -833,7 +833,7 @@ export const am: LocaleTree = {
     "hybridPoint1": "CPA on first deposit plus RevShare on future activity",
     "hybridPoint2": "ተጣጣፊ ክፍፍል ለትራፊክ መገለጫዎ የተስተካከለ",
     "hybridPoint3": "ተጽዕኖ ፈጣሪዎች እና ድብልቅ ቻናል አጋሮች ጋር ታዋቂ",
-    "benefitsTitle": "Why Partner with iBets24?",
+    "benefitsTitle": "Why Partner with YouWin24?",
     "benefitsSubtitle": "ሪፈራልዎ መጫወት እንዲቀጥሉ በልወጣ ፣ በማቆየት እና በምርት ጥልቀት ላይ ኢንቬስት እናደርጋለን — እና ገቢዎን ይቀጥላሉ ።",
     "benefit1Title": "ሙሉ የምርት ፖርትፎሊዮ",
     "benefit1Desc": "ቦታዎች ያስተዋውቁ, የቀጥታ ሻጭ ሰንጠረዦች, አደጋ ጨዋታዎች, እና የስፖርት ውርርድ ከአንድ ብራንድ — እያንዳንዱ ጎብኚ ለመለወጥ ተጨማሪ መንገዶች.",
@@ -850,7 +850,7 @@ export const am: LocaleTree = {
     "howTitle": "እንዴት እንደሚሰራ፦",
     "howSubtitle": "በአራት ቀጥተኛ ደረጃዎች ውስጥ ከመተግበሪያ እስከ ክፍያ ድረስ ።",
     "step1Title": "ያመልክቱ & ተቀባይነት ያግኙ",
-    "step1Desc": "ኢሜይል partners@ibets24.com ከትራፊክ ምንጮችዎ ፣ ከዒላማ ገበያዎችዎ እና ከማስተዋወቂያ ዘዴዎችዎ ጋር ። ከመጫንዎ በፊት ተስማሚ እና ተገዢነትን እንገመግማለን ።",
+    "step1Desc": "ኢሜይል partners@youwin24.com ከትራፊክ ምንጮችዎ ፣ ከዒላማ ገበያዎችዎ እና ከማስተዋወቂያ ዘዴዎችዎ ጋር ። ከመጫንዎ በፊት ተስማሚ እና ተገዢነትን እንገመግማለን ።",
     "step2Title": "የመከታተያ ንብረቶችዎን ይቀበሉ",
     "step2Desc": "Approved partners get a unique referral code, tracking link, and access to the Affiliate Portal with live performance reporting.",
     "step3Title": "ብቃት ያላቸው ተጫዋቾችን ያሽከርክሩ",
@@ -869,8 +869,8 @@ export const am: LocaleTree = {
     "businessCta": "ይላኩ B2B ፕሮፖዛሎች",
     "ctaTitle": "አብረው ለማደግ ዝግጁ?",
     "ctaSubtitle": "ስለ ታዳሚዎችዎ እና የትራፊክ ሰርጦችዎ ይንገሩን ። ቡድናችን በተስተካከለ የኮሚሽን ውሎች እና በሚቀጥሉት እርምጃዎች ምላሽ ይሰጣል ።",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "For player account, payment, or bonus issues, please contact support@ibets24.com — not the partners inbox.",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "For player account, payment, or bonus issues, please contact support@youwin24.com — not the partners inbox.",
     "backHome": "ወደ ዋና ገፅ መመለስ"
   }
 };

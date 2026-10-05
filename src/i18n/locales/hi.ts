@@ -167,7 +167,7 @@ export const hi: LocaleTree = {
     "aml": "AML Policy",
     "kyc": "KYC नीति",
     "disclaimer": "18+ | ज़िम्मेदारी से खेलें। जुआ खेलने की लत लग सकती है।",
-    "copyright": "© {{year}} iBets24. सर्वाधिकार सुरक्षित।"
+    "copyright": "© {{year}} YouWin24. सर्वाधिकार सुरक्षित।"
   },
   "legal": {
     "backHome": "← Back to home"
@@ -638,7 +638,7 @@ export const hi: LocaleTree = {
     "comingSoon": "Coming Soon"
   },
   "cookies": {
-    "title": "iBets24 uses cookies",
+    "title": "YouWin24 uses cookies",
     "description": "हम एक बेहतर और अधिक व्यक्तिगत अनुभव प्रदान करने के लिए कुकीज़ का उपयोग करते हैं। अधिक जानकारी के लिए, हमारे देखें",
     "policyLink": "Cookie Policy",
     "settings": "Cookie settings",
@@ -831,7 +831,7 @@ export const hi: LocaleTree = {
     "hybridPoint1": "पहली जमा पर CPA और भविष्य की गतिविधि पर RevShare",
     "hybridPoint2": "आपके ट्रैफ़िक प्रोफ़ाइल के अनुरूप लचीला विभाजन",
     "hybridPoint3": "इन्फ़्लुएंसर और मल्टी-चैनल पार्टनर के बीच लोकप्रिय",
-    "benefitsTitle": "iBets24 के साथ पार्टनर क्यों बनें?",
+    "benefitsTitle": "YouWin24 के साथ पार्टनर क्यों बनें?",
     "benefitsSubtitle": "हम रूपांतरण, प्रतिधारण और उत्पाद गहराई में निवेश करते हैं ताकि आपके रेफ़रल खेलते रहें — और आप कमाते रहें।",
     "benefit1Title": "पूर्ण उत्पाद पोर्टफ़ोलियो",
     "benefit1Desc": "एक ब्रांड से स्लॉट्स, लाइव डीलर टेबल, क्रैश गेम और स्पोर्ट्स बेटिंग प्रचारित करें — हर आगंतुक को रूपांतरित करने के और अधिक तरीके।",
@@ -848,7 +848,7 @@ export const hi: LocaleTree = {
     "howTitle": "यह कैसे काम करता है",
     "howSubtitle": "आवेदन से भुगतान तक चार सीधे चरणों में।",
     "step1Title": "आवेदन करें और स्वीकृति पाएँ",
-    "step1Desc": "अपने ट्रैफ़िक स्रोत, लक्षित बाज़ार और प्रचार विधियों के साथ partners@ibets24.com पर ईमेल करें। ऑनबोर्डिंग से पहले हम उपयुक्तता और compliance की समीक्षा करते हैं।",
+    "step1Desc": "अपने ट्रैफ़िक स्रोत, लक्षित बाज़ार और प्रचार विधियों के साथ partners@youwin24.com पर ईमेल करें। ऑनबोर्डिंग से पहले हम उपयुक्तता और compliance की समीक्षा करते हैं।",
     "step2Title": "अपने ट्रैकिंग संसाधन प्राप्त करें",
     "step2Desc": "स्वीकृत पार्टनर को एक अद्वितीय रेफ़रल कोड, ट्रैकिंग लिंक और लाइव प्रदर्शन रिपोर्टिंग वाले Affiliate Portal तक पहुँच मिलती है।",
     "step3Title": "योग्य खिलाड़ी लाएँ",
@@ -867,8 +867,8 @@ export const hi: LocaleTree = {
     "businessCta": "B2B प्रस्ताव भेजें",
     "ctaTitle": "साथ मिलकर बढ़ने के लिए तैयार?",
     "ctaSubtitle": "हमें अपने दर्शकों और ट्रैफ़िक चैनलों के बारे में बताएँ। हमारी टीम अनुकूलित कमीशन शर्तों और अगले चरणों के साथ जवाब देगी।",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "खिलाड़ी खाता, भुगतान या बोनस समस्याओं के लिए कृपया support@ibets24.com से संपर्क करें — पार्टनर इनबॉक्स से नहीं।",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "खिलाड़ी खाता, भुगतान या बोनस समस्याओं के लिए कृपया support@youwin24.com से संपर्क करें — पार्टनर इनबॉक्स से नहीं।",
     "backHome": "← होम पर वापस जाएँ"
   }
 };

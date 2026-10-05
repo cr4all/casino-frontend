@@ -162,7 +162,7 @@ export const fi: LocaleTree = {
     "aml": "AML-käytäntö",
     "kyc": "KYC-käytäntö",
     "disclaimer": "18+ | Pelaa vastuullisesti. Uhkapelaaminen voi aiheuttaa riippuvuutta.",
-    "copyright": "© {{year}} iBets24. Kaikki oikeudet pidätetään."
+    "copyright": "© {{year}} YouWin24. Kaikki oikeudet pidätetään."
   },
   "legal": {
     "backHome": "← Takaisin etusivulle"
@@ -614,7 +614,7 @@ export const fi: LocaleTree = {
     "comingSoon": "Tulossa pian"
   },
   "cookies": {
-    "title": "iBets24 käyttää evästeitä",
+    "title": "YouWin24 käyttää evästeitä",
     "description": "Käytämme evästeitä tarjotaksemme paremman ja henkilökohtaisemman kokemuksen. Lisätietoja:",
     "policyLink": "Evästekäytäntö",
     "settings": "Evästeasetukset",
@@ -828,7 +828,7 @@ export const fi: LocaleTree = {
     "hybridPoint1": "CPA ensitalletuksesta plus RevShare tulevasta aktiviteetista",
     "hybridPoint2": "Joustava jako liikenneprofiilisi mukaan",
     "hybridPoint3": "Suosittu vaikuttajien ja monikanavaisten kumppaneiden keskuudessa",
-    "benefitsTitle": "Miksi kumppanuus iBets24:n kanssa?",
+    "benefitsTitle": "Miksi kumppanuus YouWin24:n kanssa?",
     "benefitsSubtitle": "Investoimme konversioon, säilyttämiseen ja tuotesyvyyteen, jotta suosittelusi jatkavat pelaamista — ja sinä jatkat ansaitsemista.",
     "benefit1Title": "Täydellinen tuotevalikoima",
     "benefit1Desc": "Markkinoi kolikkopelejä, live-jakajapöytiä, crash-pelejä ja urheiluvedonlyöntiä yhdestä brändistä — enemmän tapoja muuntaa jokainen kävijä.",
@@ -845,7 +845,7 @@ export const fi: LocaleTree = {
     "howTitle": "Miten se toimii",
     "howSubtitle": "Hakemuksesta maksuun neljässä suorassa vaiheessa.",
     "step1Title": "Hae ja saa hyväksyntä",
-    "step1Desc": "Lähetä sähköpostia osoitteeseen partners@ibets24.com liikennelähteistäsi, kohdemarkkinoistasi ja markkinointimenetelmistäsi. Arvioimme sopivuuden ja compliance:n ennen käyttöönottoa.",
+    "step1Desc": "Lähetä sähköpostia osoitteeseen partners@youwin24.com liikennelähteistäsi, kohdemarkkinoistasi ja markkinointimenetelmistäsi. Arvioimme sopivuuden ja compliance:n ennen käyttöönottoa.",
     "step2Title": "Vastaanota seurantaresurssisi",
     "step2Desc": "Hyväksytyt kumppanit saavat yksilöllisen suosittelukoodin, seurantalinkin ja pääsyn Affiliate Portaliin reaaliaikaisella suorituskykyraportoinnilla.",
     "step3Title": "Hanki hyväksyttyjä pelaajia",
@@ -864,8 +864,8 @@ export const fi: LocaleTree = {
     "businessCta": "Lähetä B2B-ehdotuksia",
     "ctaTitle": "Valmis kasvamaan yhdessä?",
     "ctaSubtitle": "Kerro meille yleisöstäsi ja liikennekanavistasi. Tiimimme vastaa räätälöidyillä provisioehdoilla ja seuraavilla vaiheilla.",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "Pelaajatilin, maksun tai bonuksen ongelmissa ota yhteyttä osoitteeseen support@ibets24.com — älä kumppaneiden postilaatikkoon.",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "Pelaajatilin, maksun tai bonuksen ongelmissa ota yhteyttä osoitteeseen support@youwin24.com — älä kumppaneiden postilaatikkoon.",
     "backHome": "← Takaisin etusivulle"
   }
 };

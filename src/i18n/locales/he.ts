@@ -167,7 +167,7 @@ export const he: LocaleTree = {
     "aml": "מדיניות AML",
     "kyc": "מדיניות KYC",
     "disclaimer": "18+ | שחק באחריות. הימורים עלולים ליצור התמכרות.",
-    "copyright": "© {{year}} iBets24. כל הזכויות שמורות."
+    "copyright": "© {{year}} YouWin24. כל הזכויות שמורות."
   },
   "legal": {
     "backHome": "← חזרה לדף הבית"
@@ -638,7 +638,7 @@ export const he: LocaleTree = {
     "comingSoon": "בקרוב"
   },
   "cookies": {
-    "title": "iBets24 משתמש בעוגיות",
+    "title": "YouWin24 משתמש בעוגיות",
     "description": "אנו משתמשים בעוגיות כדי לספק חוויה טובה ומותאמת אישית יותר. למידע נוסף, עיין ב",
     "policyLink": "מדיניות עוגיות",
     "settings": "הגדרות עוגיות",
@@ -831,7 +831,7 @@ export const he: LocaleTree = {
     "hybridPoint1": "CPA בהפקדה ראשונה ועוד RevShare על פעילות עתידית",
     "hybridPoint2": "חלוקה גמישה המותאמת לפרופיל התנועה שלכם",
     "hybridPoint3": "פופולרי בקרב משפיענים ושותפים רב-ערוציים",
-    "benefitsTitle": "למה לשתף פעולה עם iBets24?",
+    "benefitsTitle": "למה לשתף פעולה עם YouWin24?",
     "benefitsSubtitle": "אנחנו משקיעים בהמרה, שימור ועומק מוצר כדי שההפניות שלכם ימשיכו לשחק — ואתם תמשיכו להרוויח.",
     "benefit1Title": "תיק מוצרים מלא",
     "benefit1Desc": "קדמו מכונות מזל, שולחנות דילר חי, משחקי crash והימורי ספורט ממותג אחד — יותר דרכים להמיר כל מבקר.",
@@ -848,7 +848,7 @@ export const he: LocaleTree = {
     "howTitle": "איך זה עובד",
     "howSubtitle": "מבקשה ועד תשלום בארבעה שלבים פשוטים.",
     "step1Title": "הגישו בקשה וקבלו אישור",
-    "step1Desc": "שלחו דוא\"ל ל-partners@ibets24.com עם מקורות התנועה, השווקים המיועדים ושיטות הקידום שלכם. אנחנו בודקים התאמה ו-compliance לפני onboarding.",
+    "step1Desc": "שלחו דוא\"ל ל-partners@youwin24.com עם מקורות התנועה, השווקים המיועדים ושיטות הקידום שלכם. אנחנו בודקים התאמה ו-compliance לפני onboarding.",
     "step2Title": "קבלו את נכסי המעקב שלכם",
     "step2Desc": "שותפים מאושרים מקבלים קוד הפניה ייחודי, קישור מעקב וגישה ל-Affiliate Portal עם דיווח ביצועים חי.",
     "step3Title": "הביאו שחקנים מוכשרים",
@@ -867,8 +867,8 @@ export const he: LocaleTree = {
     "businessCta": "שלחו הצעות B2B",
     "ctaTitle": "מוכנים לגדול יחד?",
     "ctaSubtitle": "ספרו לנו על הקהל וערוצי התנועה שלכם. הצוות שלנו יגיב עם תנאי עמלה מותאמים ושלבים הבאים.",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "לבעיות בחשבון שחקן, תשלום או בונוס, פנו ל-support@ibets24.com — לא לתיבת השותפים.",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "לבעיות בחשבון שחקן, תשלום או בונוס, פנו ל-support@youwin24.com — לא לתיבת השותפים.",
     "backHome": "← חזרה לדף הבית"
   }
 };

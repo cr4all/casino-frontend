@@ -167,7 +167,7 @@ export const ro: LocaleTree = {
     "aml": "Politica AML",
     "kyc": "Politica KYC",
     "disclaimer": "18+ | Jucați responsabil. Jocurile de noroc pot crea dependență.",
-    "copyright": "© {{year}} iBets24. Toate drepturile rezervate."
+    "copyright": "© {{year}} YouWin24. Toate drepturile rezervate."
   },
   "legal": {
     "backHome": "← Înapoi acasă"
@@ -638,7 +638,7 @@ export const ro: LocaleTree = {
     "comingSoon": "În curând"
   },
   "cookies": {
-    "title": "iBets24 folosește cookie-uri",
+    "title": "YouWin24 folosește cookie-uri",
     "description": "Folosim cookie-uri pentru o experiență mai bună și personalizată. Pentru mai multe informații, consultați",
     "policyLink": "Politica cookie-urilor",
     "settings": "Setări cookie",
@@ -831,7 +831,7 @@ export const ro: LocaleTree = {
     "hybridPoint1": "CPA la primul depozit plus RevShare pentru activitatea viitoare",
     "hybridPoint2": "Împărțire flexibilă adaptată profilului dvs. de trafic",
     "hybridPoint3": "Popular printre influenceri și parteneri multicanal",
-    "benefitsTitle": "De ce să deveniți partener cu iBets24?",
+    "benefitsTitle": "De ce să deveniți partener cu YouWin24?",
     "benefitsSubtitle": "Investim în conversie, retenție și profunzimea produsului, astfel încât recomandările dvs. să continue să joace — iar dvs. să continuați să câștigați.",
     "benefit1Title": "Portofoliu complet de produse",
     "benefit1Desc": "Promovați sloturi, mese cu dealer live, jocuri crash și pariuri sportive dintr-un singur brand — mai multe modalități de a converti fiecare vizitator.",
@@ -848,7 +848,7 @@ export const ro: LocaleTree = {
     "howTitle": "Cum funcționează",
     "howSubtitle": "De la aplicare la plată în patru pași simpli.",
     "step1Title": "Aplicați și obțineți aprobarea",
-    "step1Desc": "Trimiteți un e-mail la partners@ibets24.com cu sursele de trafic, piețele țintă și metodele promoționale. Evaluăm potrivirea și conformitatea înainte de onboarding.",
+    "step1Desc": "Trimiteți un e-mail la partners@youwin24.com cu sursele de trafic, piețele țintă și metodele promoționale. Evaluăm potrivirea și conformitatea înainte de onboarding.",
     "step2Title": "Primiți resursele de urmărire",
     "step2Desc": "Partenerii aprobați primesc un cod de recomandare unic, link de urmărire și acces la Affiliate Portal cu raportare live a performanței.",
     "step3Title": "Aduceți jucători calificați",
@@ -867,8 +867,8 @@ export const ro: LocaleTree = {
     "businessCta": "Trimiteți propuneri B2B",
     "ctaTitle": "Gata să creștem împreună?",
     "ctaSubtitle": "Spuneți-ne despre audiența și canalele dvs. de trafic. Echipa noastră va răspunde cu termeni de comision personalizați și pașii următori.",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "Pentru probleme legate de contul jucătorului, plăți sau bonusuri, contactați support@ibets24.com — nu inbox-ul pentru parteneri.",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "Pentru probleme legate de contul jucătorului, plăți sau bonusuri, contactați support@youwin24.com — nu inbox-ul pentru parteneri.",
     "backHome": "← Înapoi acasă"
   }
 };

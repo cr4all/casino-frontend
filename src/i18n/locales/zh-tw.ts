@@ -162,7 +162,7 @@ export const zhTw: LocaleTree = {
     "aml": "AML 政策",
     "kyc": "KYC 政策",
     "disclaimer": "18+ | 請理性博彩。博彩可能成癮。",
-    "copyright": "© {{year}} iBets24. 保留所有權利。"
+    "copyright": "© {{year}} YouWin24. 保留所有權利。"
   },
   "legal": {
     "backHome": "← 返回首頁"
@@ -616,7 +616,7 @@ export const zhTw: LocaleTree = {
     "comingSoon": "即將上線"
   },
   "cookies": {
-    "title": "iBets24 使用 Cookie",
+    "title": "YouWin24 使用 Cookie",
     "description": "我們使用 Cookie 以提供更優質、更個人化的體驗。詳情請參閱我們的",
     "policyLink": "Cookie 政策",
     "settings": "Cookie 設定",
@@ -833,7 +833,7 @@ export const zhTw: LocaleTree = {
     "hybridPoint1": "首次存款 CPA 加未來活動 RevShare",
     "hybridPoint2": "依流量特徵靈活分配比例",
     "hybridPoint3": "深受網紅和多管道合作夥伴青睞",
-    "benefitsTitle": "為何選擇與 iBets24 合作？",
+    "benefitsTitle": "為何選擇與 YouWin24 合作？",
     "benefitsSubtitle": "我們投資於轉化、留存和產品深度，讓您的推薦玩家持續遊戲——您也持續獲利。",
     "benefit1Title": "完整產品組合",
     "benefit1Desc": "從一個品牌推廣老虎機、真人荷官桌、崩盤遊戲和體育博彩——更多方式轉化每一位訪客。",
@@ -850,7 +850,7 @@ export const zhTw: LocaleTree = {
     "howTitle": "運作方式",
     "howSubtitle": "從申請到付款，四個簡單步驟。",
     "step1Title": "申請並獲得批准",
-    "step1Desc": "請將您的流量來源、目標市場和推廣方式寄送至 partners@ibets24.com。我們在入駐前會審核適配性和合規性。",
+    "step1Desc": "請將您的流量來源、目標市場和推廣方式寄送至 partners@youwin24.com。我們在入駐前會審核適配性和合規性。",
     "step2Title": "取得追蹤資產",
     "step2Desc": "獲批合作夥伴將獲得唯一推薦碼、追蹤連結，以及可即時查看績效報告的 Affiliate Portal 存取權限。",
     "step3Title": "引流合格玩家",
@@ -869,8 +869,8 @@ export const zhTw: LocaleTree = {
     "businessCta": "傳送 B2B 提案",
     "ctaTitle": "準備好共同成長了嗎？",
     "ctaSubtitle": "告訴我們您的受眾和流量管道。我們的團隊將回覆自訂佣金條款和後續步驟。",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "如有玩家帳戶、付款或獎金問題，請聯絡 support@ibets24.com——請勿寄送至合作夥伴信箱。",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "如有玩家帳戶、付款或獎金問題，請聯絡 support@youwin24.com——請勿寄送至合作夥伴信箱。",
     "backHome": "← 返回首頁"
   }
 };

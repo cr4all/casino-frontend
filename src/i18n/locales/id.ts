@@ -162,7 +162,7 @@ export const id: LocaleTree = {
     "aml": "Kebijakan AML",
     "kyc": "Kebijakan KYC",
     "disclaimer": "18+ | Bermain dengan bijak. Judi dapat menyebabkan ketergantungan.",
-    "copyright": "© {{year}} iBets24. Hak cipta dilindungi."
+    "copyright": "© {{year}} YouWin24. Hak cipta dilindungi."
   },
   "legal": {
     "backHome": "← Kembali ke beranda"
@@ -619,7 +619,7 @@ export const id: LocaleTree = {
     "comingSoon": "Segera hadir"
   },
   "cookies": {
-    "title": "iBets24 menggunakan cookie",
+    "title": "YouWin24 menggunakan cookie",
     "description": "Kami menggunakan cookie untuk memberikan pengalaman yang lebih baik dan personal. Untuk informasi lebih lanjut, lihat",
     "policyLink": "Kebijakan Cookie",
     "settings": "Pengaturan cookie",
@@ -836,7 +836,7 @@ export const id: LocaleTree = {
     "hybridPoint1": "CPA pada deposit pertama plus RevShare untuk aktivitas mendatang",
     "hybridPoint2": "Pembagian fleksibel disesuaikan dengan profil lalu lintas Anda",
     "hybridPoint3": "Populer di kalangan influencer dan mitra multi-saluran",
-    "benefitsTitle": "Mengapa Bermitra dengan iBets24?",
+    "benefitsTitle": "Mengapa Bermitra dengan YouWin24?",
     "benefitsSubtitle": "Kami berinvestasi dalam konversi, retensi, dan kedalaman produk agar rujukan Anda terus bermain — dan Anda terus mendapatkan.",
     "benefit1Title": "Portofolio Produk Lengkap",
     "benefit1Desc": "Promosikan slot, meja dealer langsung, game crash, dan taruhan olahraga dari satu merek — lebih banyak cara untuk mengonversi setiap pengunjung.",
@@ -853,7 +853,7 @@ export const id: LocaleTree = {
     "howTitle": "Cara Kerjanya",
     "howSubtitle": "Dari pendaftaran hingga pembayaran dalam empat langkah mudah.",
     "step1Title": "Daftar dan Dapatkan Persetujuan",
-    "step1Desc": "Email partners@ibets24.com dengan sumber lalu lintas, pasar target, dan metode promosi Anda. Kami meninjau kesesuaian dan kepatuhan sebelum onboarding.",
+    "step1Desc": "Email partners@youwin24.com dengan sumber lalu lintas, pasar target, dan metode promosi Anda. Kami meninjau kesesuaian dan kepatuhan sebelum onboarding.",
     "step2Title": "Terima Aset Pelacakan Anda",
     "step2Desc": "Mitra yang disetujui mendapat kode referral unik, tautan pelacakan, dan akses ke Affiliate Portal dengan pelaporan kinerja langsung.",
     "step3Title": "Bawa Pemain yang Memenuhi Syarat",
@@ -872,8 +872,8 @@ export const id: LocaleTree = {
     "businessCta": "Kirim Proposal B2B",
     "ctaTitle": "Siap Tumbuh Bersama?",
     "ctaSubtitle": "Ceritakan tentang audiens dan saluran lalu lintas Anda. Tim kami akan merespons dengan ketentuan komisi yang disesuaikan dan langkah selanjutnya.",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "Untuk masalah akun pemain, pembayaran, atau bonus, hubungi support@ibets24.com — bukan kotak masuk partners.",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "Untuk masalah akun pemain, pembayaran, atau bonus, hubungi support@youwin24.com — bukan kotak masuk partners.",
     "backHome": "← Kembali ke beranda"
   }
 };

@@ -165,7 +165,7 @@ export const af: LocaleTree = {
     "aml": "AML-beleid",
     "kyc": "KYC-beleid",
     "disclaimer": "18+ - Speel verantwoordelik. Dobbelary kan verslawend wees.",
-    "copyright": "© {{year}} iBets24. Alle regte voorbehou."
+    "copyright": "© {{year}} YouWin24. Alle regte voorbehou."
   },
   "legal": {
     "backHome": "Terug na Tuis"
@@ -640,7 +640,7 @@ export const af: LocaleTree = {
     "comingSoon": "Kom binnekort"
   },
   "cookies": {
-    "title": "iBets24 gebruik koekies",
+    "title": "YouWin24 gebruik koekies",
     "description": "Ons gebruik koekies om 'n beter en meer persoonlike ervaring te bied. Vir meer inligting, sien ons",
     "policyLink": " Nuwe Koekie Beleid",
     "settings": "Cookie settings",
@@ -833,7 +833,7 @@ export const af: LocaleTree = {
     "hybridPoint1": "CPA op eerste deposito plus RevShare op toekomstige aktiwiteit",
     "hybridPoint2": "Buigsame skeuring aangepas by jou verkeersprofiel",
     "hybridPoint3": "Gewild met beïnvloeders en gemengde-kanaal vennote",
-    "benefitsTitle": "Waarom vennoot met iBets24?",
+    "benefitsTitle": "Waarom vennoot met YouWin24?",
     "benefitsSubtitle": "Ons belê in omskakeling, behoud en produkdiepte sodat u verwysings aanhou speel — en u bly verdien.",
     "benefit1Title": "Volledige produk portefeulje",
     "benefit1Desc": "Bevorder slots, live handelaar tafels, crash games, en sport verbintenis van een handelsmerk — meer maniere om elke besoeker te omskep.",
@@ -850,7 +850,7 @@ export const af: LocaleTree = {
     "howTitle": "Hoe dit werk",
     "howSubtitle": "Van toepassing tot uitbetaling in vier eenvoudige stappe.",
     "step1Title": "Doen aansoek en word goedgekeur",
-    "step1Desc": "E-pos partners@ibets24.com met jou verkeersbronne, teikenmarkte en promosiemetodes. Ons hersien pas en nakoming voor aan boord.",
+    "step1Desc": "E-pos partners@youwin24.com met jou verkeersbronne, teikenmarkte en promosiemetodes. Ons hersien pas en nakoming voor aan boord.",
     "step2Title": "Ontvang jou opsporingsbates",
     "step2Desc": "Goedgekeurde vennote kry 'n unieke verwysingskode, opsporingskakel en toegang tot die Affiliate Portal met lewendige prestasieverslagdoening.",
     "step3Title": "Ry gekwalifiseerde spelers",
@@ -870,7 +870,7 @@ export const af: LocaleTree = {
     "ctaTitle": "Klaar om te groeien?",
     "ctaSubtitle": "Vertel ons van jou gehoor en verkeer. Ons span sal reageer met pasgemaakte kommissiebepalings en volgende stappe.",
     "partnersEmail": "KP",
-    "supportNote": "Vir speler rekening, betaling, of bonus kwessies, kontak asseblief support@ibets24.com — nie die vennote inkassie.",
+    "supportNote": "Vir speler rekening, betaling, of bonus kwessies, kontak asseblief support@youwin24.com — nie die vennote inkassie.",
     "backHome": "Terug na Tuis"
   }
 };

@@ -165,7 +165,7 @@ export const frBe: LocaleTree = {
     "aml": "AML Policy",
     "kyc": "Politique KYC",
     "disclaimer": "18+ | Play responsibly. Gambling can be addictive.",
-    "copyright": "© {{year}} iBets24. All rights reserved."
+    "copyright": "© {{year}} YouWin24. All rights reserved."
   },
   "legal": {
     "backHome": "← Back to home"
@@ -632,7 +632,7 @@ export const frBe: LocaleTree = {
     "comingSoon": "Coming Soon"
   },
   "cookies": {
-    "title": "iBets24 uses cookies",
+    "title": "YouWin24 uses cookies",
     "description": "We use cookies to provide a better and more personalized experience. For more information, see our",
     "policyLink": "Cookie Policy",
     "settings": "Cookie settings",
@@ -828,7 +828,7 @@ export const frBe: LocaleTree = {
     "hybridPoint1": "CPA au premier dépôt plus RevShare sur l'activité future",
     "hybridPoint2": "Répartition flexible adaptée à votre profil de trafic",
     "hybridPoint3": "Populaire auprès des influenceurs et partenaires multicanaux",
-    "benefitsTitle": "Pourquoi devenir partenaire d'iBets24 ?",
+    "benefitsTitle": "Pourquoi devenir partenaire de YouWin24 ?",
     "benefitsSubtitle": "Nous investissons dans la conversion, la rétention et la profondeur produit pour que vos filleuls continuent de jouer — et que vous continuiez à gagner.",
     "benefit1Title": "Portefeuille produit complet",
     "benefit1Desc": "Promouvez machines à sous, tables avec croupier en direct, crash games et paris sportifs depuis une seule marque — plus de façons de convertir chaque visiteur.",
@@ -845,7 +845,7 @@ export const frBe: LocaleTree = {
     "howTitle": "Comment ça marche",
     "howSubtitle": "De la candidature au paiement en quatre étapes simples.",
     "step1Title": "Postulez et obtenez l'approbation",
-    "step1Desc": "Envoyez un e-mail à partners@ibets24.com avec vos sources de trafic, marchés cibles et méthodes promotionnelles. Nous évaluons l'adéquation et la conformité avant l'intégration.",
+    "step1Desc": "Envoyez un e-mail à partners@youwin24.com avec vos sources de trafic, marchés cibles et méthodes promotionnelles. Nous évaluons l'adéquation et la conformité avant l'intégration.",
     "step2Title": "Recevez vos outils de suivi",
     "step2Desc": "Les partenaires approuvés obtiennent un code de parrainage unique, un lien de suivi et l'accès à l'Affiliate Portal avec des rapports de performance en direct.",
     "step3Title": "Générez des joueurs qualifiés",
@@ -864,8 +864,8 @@ export const frBe: LocaleTree = {
     "businessCta": "Envoyer des propositions B2B",
     "ctaTitle": "Prêt à grandir ensemble ?",
     "ctaSubtitle": "Parlez-nous de votre audience et de vos canaux de trafic. Notre équipe répondra avec des conditions de commission sur mesure et les prochaines étapes.",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "Pour les problèmes de compte joueur, de paiement ou de bonus, contactez support@ibets24.com — et non la boîte partenaires.",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "Pour les problèmes de compte joueur, de paiement ou de bonus, contactez support@youwin24.com — et non la boîte partenaires.",
     "backHome": "← Retour à l'accueil"
   }
 };

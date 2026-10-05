@@ -160,7 +160,7 @@ export const vi: LocaleTree = {
     "aml": "Chính sách AML",
     "kyc": "Chính sách KYC",
     "disclaimer": "18+ | Chơi có trách nhiệm. Cờ bạc có thể gây nghiện.",
-    "copyright": "© {{year}} iBets24. Bảo lưu mọi quyền."
+    "copyright": "© {{year}} YouWin24. Bảo lưu mọi quyền."
   },
   "legal": {
     "backHome": "← Về trang chủ"
@@ -608,7 +608,7 @@ export const vi: LocaleTree = {
     "comingSoon": "Sắp ra mắt"
   },
   "cookies": {
-    "title": "iBets24 sử dụng cookie",
+    "title": "YouWin24 sử dụng cookie",
     "description": "Chúng tôi dùng cookie để mang lại trải nghiệm tốt hơn và cá nhân hóa. Để biết thêm, xem",
     "policyLink": "Chính sách cookie",
     "settings": "Cài đặt cookie",
@@ -825,7 +825,7 @@ export const vi: LocaleTree = {
     "hybridPoint1": "CPA khi nạp đầu tiên cộng RevShare cho hoạt động tương lai",
     "hybridPoint2": "Chia tách linh hoạt phù hợp hồ sơ lưu lượng của bạn",
     "hybridPoint3": "Phổ biến với influencer và đối tác đa kênh",
-    "benefitsTitle": "Tại sao hợp tác với iBets24?",
+    "benefitsTitle": "Tại sao hợp tác với YouWin24?",
     "benefitsSubtitle": "Chúng tôi đầu tư vào chuyển đổi, giữ chân và chiều sâu sản phẩm để người được giới thiệu tiếp tục chơi — và bạn tiếp tục kiếm tiền.",
     "benefit1Title": "Danh mục sản phẩm đầy đủ",
     "benefit1Desc": "Quảng bá slots, bàn dealer trực tiếp, game crash và cá cược thể thao từ một thương hiệu — nhiều cách hơn để chuyển đổi mọi khách truy cập.",
@@ -842,7 +842,7 @@ export const vi: LocaleTree = {
     "howTitle": "Cách hoạt động",
     "howSubtitle": "Từ đăng ký đến thanh toán trong bốn bước đơn giản.",
     "step1Title": "Đăng ký và được phê duyệt",
-    "step1Desc": "Gửi email đến partners@ibets24.com với nguồn lưu lượng, thị trường mục tiêu và phương thức quảng bá. Chúng tôi xem xét phù hợp và tuân thủ trước khi onboarding.",
+    "step1Desc": "Gửi email đến partners@youwin24.com với nguồn lưu lượng, thị trường mục tiêu và phương thức quảng bá. Chúng tôi xem xét phù hợp và tuân thủ trước khi onboarding.",
     "step2Title": "Nhận tài sản theo dõi",
     "step2Desc": "Đối tác được phê duyệt nhận mã giới thiệu duy nhất, liên kết theo dõi và quyền truy cập Affiliate Portal với báo cáo hiệu suất trực tiếp.",
     "step3Title": "Thúc đẩy người chơi đủ điều kiện",
@@ -861,8 +861,8 @@ export const vi: LocaleTree = {
     "businessCta": "Gửi đề xuất B2B",
     "ctaTitle": "Sẵn sàng cùng phát triển?",
     "ctaSubtitle": "Cho chúng tôi biết về khán giả và kênh lưu lượng của bạn. Đội ngũ sẽ phản hồi với điều khoản hoa hồng tùy chỉnh và các bước tiếp theo.",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "Với vấn đề tài khoản người chơi, thanh toán hoặc bonus, vui lòng liên hệ support@ibets24.com — không phải hộp thư partners.",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "Với vấn đề tài khoản người chơi, thanh toán hoặc bonus, vui lòng liên hệ support@youwin24.com — không phải hộp thư partners.",
     "backHome": "← Về trang chủ"
   }
 };

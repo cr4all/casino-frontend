@@ -160,7 +160,7 @@ export const so: LocaleTree = {
     "aml": "Siyaasadda AML",
     "kyc": "Siyaasadda KYC",
     "disclaimer": "18+ | Si mas'uul ah u ciyaar. Khama wuxuu noqon karaa dabeecad.",
-    "copyright": "© {{year}} iBets24. Dhammaan xuquuqaha waa la ilaaliyay."
+    "copyright": "© {{year}} YouWin24. Dhammaan xuquuqaha waa la ilaaliyay."
   },
   "legal": {
     "backHome": "← Ku noqo guriga"
@@ -609,7 +609,7 @@ export const so: LocaleTree = {
     "comingSoon": "Dhawaan imanaya"
   },
   "cookies": {
-    "title": "iBets24 wuxuu isticmaalaa kukiyada",
+    "title": "YouWin24 wuxuu isticmaalaa kukiyada",
     "description": "Waxaan isticmaalnaa kukiyada si aan u bixino khibrad wanaagsan oo shakhsi ah. Macluumaad dheeraad ah, eeg",
     "policyLink": "Siyaasadda kukiyada",
     "settings": "Goobaha kukiyada",
@@ -823,7 +823,7 @@ export const so: LocaleTree = {
     "hybridPoint1": "CPA on first deposit plus RevShare on future activity",
     "hybridPoint2": "Flexible split tailored to your traffic profile",
     "hybridPoint3": "Popular with influencers and mixed-channel partners",
-    "benefitsTitle": "Why Partner with iBets24?",
+    "benefitsTitle": "Why Partner with YouWin24?",
     "benefitsSubtitle": "We invest in conversion, retention, and product depth so your referrals keep playing — and you keep earning.",
     "benefit1Title": "Full Product Portfolio",
     "benefit1Desc": "Promote slots, live dealer tables, crash games, and sports betting from one brand — more ways to convert every visitor.",
@@ -840,7 +840,7 @@ export const so: LocaleTree = {
     "howTitle": "How It Works",
     "howSubtitle": "From application to payout in four straightforward steps.",
     "step1Title": "Apply & Get Approved",
-    "step1Desc": "Email partners@ibets24.com with your traffic sources, target markets, and promotional methods. We review fit and compliance before onboarding.",
+    "step1Desc": "Email partners@youwin24.com with your traffic sources, target markets, and promotional methods. We review fit and compliance before onboarding.",
     "step2Title": "Receive Your Tracking Assets",
     "step2Desc": "Approved partners get a unique referral code, tracking link, and access to the Affiliate Portal with live performance reporting.",
     "step3Title": "Drive Qualified Players",
@@ -859,8 +859,8 @@ export const so: LocaleTree = {
     "businessCta": "Dir B2B Soo jeedinta",
     "ctaTitle": "Diyaar ma u tahay in ay si wadajir ah u koraan?",
     "ctaSubtitle": "Noo sheeg dhagaystayaashaada iyo kanaalada taraafikada. Kooxdayadu waxay ka jawaabi doonaan shuruudaha komishanka ee loo habeeyay iyo talaabooyinka soo socda.",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "Xisaabta ciyaaryahanka, lacag bixinta, ama arrimaha gunnada, fadlan la xiriir support@ibets24.com — ma aha sanduuqyada la-hawlgalayaasha.",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "Xisaabta ciyaaryahanka, lacag bixinta, ama arrimaha gunnada, fadlan la xiriir support@youwin24.com — ma aha sanduuqyada la-hawlgalayaasha.",
     "backHome": "Ku Laabo Guriga"
   }
 };

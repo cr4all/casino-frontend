@@ -2,9 +2,9 @@ import type { LegalContentBundle } from './types';
 
 export const legalKo: LegalContentBundle = {
   about: {
-    title: 'iBets24 소개',
+    title: 'YouWin24 소개',
     intro:
-      'iBets24는 전 세계 플레이어를 위한 슬롯, 라이브 카지노, 안전한 결제 옵션을 제공하는 온라인 카지노 플랫폼입니다. 공정한 게임, 빠른 출금, 신속한 고객 지원을 목표로 합니다.',
+      'YouWin24는 전 세계 플레이어를 위한 슬롯, 라이브 카지노, 안전한 결제 옵션을 제공하는 온라인 카지노 플랫폼입니다. 공정한 게임, 빠른 출금, 신속한 고객 지원을 목표로 합니다.',
     sections: [
       {
         title: '미션',
@@ -16,14 +16,14 @@ export const legalKo: LegalContentBundle = {
       {
         title: '라이선스 및 규정 준수',
         paragraphs: [
-          'iBets24는 서비스가 제공되는 관할 구역의 applicable 게임 규정을 준수합니다.',
+          'YouWin24는 서비스가 제공되는 관할 구역의 applicable 게임 규정을 준수합니다.',
           '연령 확인, 자금세탁방지(AML) 통제, 데이터 보호 기준을 모든 상품에 적용합니다.',
         ],
       },
       {
         title: '고객 지원',
         paragraphs: [
-          '라이브 채팅 및 support@ibets24.com 이메일로 지원팀에 문의할 수 있습니다.',
+          '라이브 채팅 및 support@youwin24.com 이메일로 지원팀에 문의할 수 있습니다.',
           '계정, 결제, 보너스 문의는 중복 요청 전에 먼저 연락해 주세요.',
         ],
       },
@@ -32,7 +32,7 @@ export const legalKo: LegalContentBundle = {
   terms: {
     title: '이용약관',
     intro:
-      '본 이용약관은 iBets24 이용에 적용됩니다. 회원가입 또는 서비스 이용 시 본 약관에 동의한 것으로 간주됩니다.',
+      '본 이용약관은 YouWin24 이용에 적용됩니다. 회원가입 또는 서비스 이용 시 본 약관에 동의한 것으로 간주됩니다.',
     sections: [
       {
         title: '자격',
@@ -95,7 +95,7 @@ export const legalKo: LegalContentBundle = {
       {
         title: '책임 제한',
         paragraphs: [
-          'iBets24는 연결 문제, 제3자 제공사 장애, 불가항력으로 인한 손실에 대해 책임지지 않습니다.',
+          'YouWin24는 연결 문제, 제3자 제공사 장애, 불가항력으로 인한 손실에 대해 책임지지 않습니다.',
           '약관을 변경할 수 있으며, 중요한 변경은 본 페이지에 게시합니다.',
         ],
       },
@@ -103,7 +103,7 @@ export const legalKo: LegalContentBundle = {
   },
   privacy: {
     title: '개인정보 처리방침',
-    intro: '본 방침은 iBets24가 개인정보를 수집·이용·보호하는 방법을 설명합니다.',
+    intro: '본 방침은 YouWin24가 개인정보를 수집·이용·보호하는 방법을 설명합니다.',
     sections: [
       {
         title: '수집 정보',
@@ -128,7 +128,7 @@ export const legalKo: LegalContentBundle = {
       {
         title: '이용자 권리',
         paragraphs: [
-          '관할에 따라 support@ibets24.com으로 열람·정정·삭제를 요청할 수 있습니다.',
+          '관할에 따라 support@youwin24.com으로 열람·정정·삭제를 요청할 수 있습니다.',
         ],
       },
     ],
@@ -136,7 +136,7 @@ export const legalKo: LegalContentBundle = {
   responsibleGaming: {
     title: '책임감 있는 게임',
     intro:
-      '도박은 수입 수단이 아닌 오락이어야 합니다. iBets24는 책임감 있는 플레이를 권장하고 자기 통제 도구를 제공합니다.',
+      '도박은 수입 수단이 아닌 오락이어야 합니다. YouWin24는 책임감 있는 플레이를 권장하고 자기 통제 도구를 제공합니다.',
     sections: [
       {
         title: '책임감 있게 플레이',
@@ -168,7 +168,7 @@ export const legalKo: LegalContentBundle = {
   },
   faq: {
     title: '자주 묻는 질문',
-    intro: 'iBets24 계정, 결제, 게임에 대한 일반적인 질문과 답변입니다.',
+    intro: 'YouWin24 계정, 결제, 게임에 대한 일반적인 질문과 답변입니다.',
     sections: [
       {
         title: '회원가입 방법',
@@ -223,7 +223,7 @@ export const legalKo: LegalContentBundle = {
       {
         title: '고객 지원 문의',
         paragraphs: [
-          '사이드바 라이브 채팅 또는 support@ibets24.com 이메일을 이용하세요. 등록 이메일을 함께 알려주시면 더 빠릅니다.',
+          '사이드바 라이브 채팅 또는 support@youwin24.com 이메일을 이용하세요. 등록 이메일을 함께 알려주시면 더 빠릅니다.',
         ],
       },
     ],
@@ -235,7 +235,7 @@ export const legalKo: LegalContentBundle = {
       {
         title: '지원 채널',
         paragraphs: [
-          '이메일: support@ibets24.com',
+          '이메일: support@youwin24.com',
           '라이브 채팅: 로그인 후 사이드바에서 이용 (가용 여부에 따름)',
         ],
       },
@@ -256,28 +256,28 @@ export const legalKo: LegalContentBundle = {
   partners: {
     title: '파트너',
     intro:
-      'iBets24는 어필리에이트, 미디어, 결제 제공사, 게임 스튜디오 및 기타 B2B 파트너와의 장기 협력을 환영합니다.',
+      'YouWin24는 어필리에이트, 미디어, 결제 제공사, 게임 스튜디오 및 기타 B2B 파트너와의 장기 협력을 환영합니다.',
     sections: [
       {
         title: '제휴 프로그램',
         paragraphs: [
           '제휴 프로그램은 자격 및 컴플라이언스 요건을 충족하는 신규 플레이어 추천에 대해 경쟁력 있는 커미션을 제공합니다.',
           '기존 어필리에이트는 로그인 후 어필리에이트 포털에서 성과 통계와 정산을 확인할 수 있습니다.',
-          '신청 또는 조건 문의는 트래픽 소스, 타깃 시장, 프로모션 방법과 함께 partners@ibets24.com으로 보내 주세요.',
+          '신청 또는 조건 문의는 트래픽 소스, 타깃 시장, 프로모션 방법과 함께 partners@youwin24.com으로 보내 주세요.',
         ],
       },
       {
         title: '비즈니스 파트너십',
         paragraphs: [
           '공정성, 보안, 책임감 있는 게임 기준을 공유하는 라이선스 게임 제공사, 결제 솔루션, 마케팅 대행사, 기술 벤더와 협력합니다.',
-          '회사 소개, 제품 개요, 제안 상업 모델을 포함해 partners@ibets24.com으로 제휴 제안을 보내 주세요.',
+          '회사 소개, 제품 개요, 제안 상업 모델을 포함해 partners@youwin24.com으로 제휴 제안을 보내 주세요.',
         ],
       },
       {
         title: '문의 방법',
         paragraphs: [
-          '비즈니스 및 파트너십 문의: partners@ibets24.com',
-          '플레이어 지원(계정, 결제, 보너스): support@ibets24.com',
+          '비즈니스 및 파트너십 문의: partners@youwin24.com',
+          '플레이어 지원(계정, 결제, 보너스): support@youwin24.com',
           '플레이어 계정 문제는 파트너 메일함이 아닌 고객 지원으로 문의해 주세요.',
         ],
       },
@@ -286,7 +286,7 @@ export const legalKo: LegalContentBundle = {
   aml: {
     title: 'AML 정책',
     intro:
-      'iBets24는 applicable 규정에 따라 자금세탁방지(AML) 및 테러 자금 조달 방지 절차를 운영합니다.',
+      'YouWin24는 applicable 규정에 따라 자금세탁방지(AML) 및 테러 자금 조달 방지 절차를 운영합니다.',
     sections: [
       {
         title: '고객 확인',
@@ -310,7 +310,7 @@ export const legalKo: LegalContentBundle = {
   kyc: {
     title: 'KYC 정책',
     intro:
-      '본 Know Your Customer(KYC) 정책은 iBets24가 사기·미성년자 도박·자금세탁을 방지하고 규제 의무를 이행하기 위해 플레이어 신원을 확인하는 방법을 설명합니다.',
+      '본 Know Your Customer(KYC) 정책은 YouWin24가 사기·미성년자 도박·자금세탁을 방지하고 규제 의무를 이행하기 위해 플레이어 신원을 확인하는 방법을 설명합니다.',
     sections: [
       {
         title: '목적',
@@ -367,7 +367,7 @@ export const legalKo: LegalContentBundle = {
       {
         title: '문의',
         paragraphs: [
-          'KYC 문의는 support@ibets24.com 또는 라이브 채팅으로 연락해 주세요. 등록 이메일을 포함하면 계정을 빠르게 확인할 수 있습니다.',
+          'KYC 문의는 support@youwin24.com 또는 라이브 채팅으로 연락해 주세요. 등록 이메일을 포함하면 계정을 빠르게 확인할 수 있습니다.',
         ],
       },
     ],

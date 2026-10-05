@@ -160,7 +160,7 @@ export const sl: LocaleTree = {
     "aml": "AML politika",
     "kyc": "KYC politika",
     "disclaimer": "18+ | Igrajte odgovorno. Igre na srečo lahko povzročijo odvisnost.",
-    "copyright": "© {{year}} iBets24. Vse pravice pridržane."
+    "copyright": "© {{year}} YouWin24. Vse pravice pridržane."
   },
   "legal": {
     "backHome": "← Nazaj na domačo stran"
@@ -609,7 +609,7 @@ export const sl: LocaleTree = {
     "comingSoon": "Kmalu"
   },
   "cookies": {
-    "title": "iBets24 uporablja piškotke",
+    "title": "YouWin24 uporablja piškotke",
     "description": "Uporabljamo piškotke za boljšo in bolj prilagojeno izkušnjo. Za več informacij glejte našo",
     "policyLink": "Politiko piškotkov",
     "settings": "Nastavitve piškotkov",
@@ -823,7 +823,7 @@ export const sl: LocaleTree = {
     "hybridPoint1": "CPA na prvi depozit in RevShare na prihodnjo dejavnost",
     "hybridPoint2": "Prilagodljiva razdelitev, prilagojena vašemu prometnemu profilu",
     "hybridPoint3": "Priljubljeno pri vplivnežih in partnerjih mešanih kanalov",
-    "benefitsTitle": "Zakaj sodelovati z iBets24?",
+    "benefitsTitle": "Zakaj sodelovati z YouWin24?",
     "benefitsSubtitle": "Vlagamo v konverzijo, hrambo in globino izdelkov, da bodo vaši povabljeni uporabniki še naprej igrali — in vi boste še naprej zaslužili.",
     "benefit1Title": "Portfelj izdelkov",
     "benefit1Desc": "Promovirajte igralne avtomate, mize trgovcev v živo, igre na srečo in športne stave ene blagovne znamke — več načinov za pretvorbo vsakega obiskovalca.",
@@ -840,7 +840,7 @@ export const sl: LocaleTree = {
     "howTitle": "Kako deluje",
     "howSubtitle": "Od vloge do izplačila v štirih preprostih korakih.",
     "step1Title": "Uporabi in pridobi odobritev",
-    "step1Desc": "Pošljite e-pošto partners@ibets24.com s svojimi viri prometa, ciljnimi trgi in promocijskimi metodami. Pred uvajanjem preverimo ustreznost in skladnost.",
+    "step1Desc": "Pošljite e-pošto partners@youwin24.com s svojimi viri prometa, ciljnimi trgi in promocijskimi metodami. Pred uvajanjem preverimo ustreznost in skladnost.",
     "step2Title": "Prejmite sredstva za sledenje",
     "step2Desc": "Odobreni partnerji dobijo edinstveno kodo priporočila, povezavo za sledenje in dostop do Affiliate Portal s poročanjem o uspešnosti v živo.",
     "step3Title": "Pogon kvalificiranih igralcev",
@@ -859,8 +859,8 @@ export const sl: LocaleTree = {
     "businessCta": "Pošlji B2B predloge",
     "ctaTitle": "Ste pripravljeni na skupno rast?",
     "ctaSubtitle": "Povejte nam več o svojem občinstvu in prometnih kanalih. Naša ekipa se bo odzvala s prilagojenimi pogoji provizije in naslednjimi koraki.",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "Za težave z igralnim računom, plačilom ali bonusom se obrnite na support@ibets24.com — ne na nabiralnik partnerjev.",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "Za težave z igralnim računom, plačilom ali bonusom se obrnite na support@youwin24.com — ne na nabiralnik partnerjev.",
     "backHome": "Nazaj domov"
   }
 };

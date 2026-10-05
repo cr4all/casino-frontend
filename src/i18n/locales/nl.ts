@@ -167,7 +167,7 @@ export const nl: LocaleTree = {
     "aml": "AML-beleid",
     "kyc": "KYC-beleid",
     "disclaimer": "18+ | Speel verantwoord. Gokken kan verslavend zijn.",
-    "copyright": "© {{year}} iBets24. Alle rechten voorbehouden."
+    "copyright": "© {{year}} YouWin24. Alle rechten voorbehouden."
   },
   "legal": {
     "backHome": "← Terug naar home"
@@ -640,7 +640,7 @@ export const nl: LocaleTree = {
     "comingSoon": "Binnenkort beschikbaar"
   },
   "cookies": {
-    "title": "iBets24 gebruikt cookies",
+    "title": "YouWin24 gebruikt cookies",
     "description": "We gebruiken cookies om een betere en meer gepersonaliseerde ervaring te bieden. Voor meer informatie, zie ons",
     "policyLink": "Cookiebeleid",
     "settings": "Cookie-instellingen",
@@ -836,7 +836,7 @@ export const nl: LocaleTree = {
     "hybridPoint1": "CPA bij eerste storting plus RevShare op toekomstige activiteit",
     "hybridPoint2": "Flexibele verdeling afgestemd op uw verkeersprofiel",
     "hybridPoint3": "Populair bij influencers en multi-kanaal partners",
-    "benefitsTitle": "Waarom partner worden van iBets24?",
+    "benefitsTitle": "Waarom partner worden van YouWin24?",
     "benefitsSubtitle": "We investeren in conversie, retentie en productdiepte zodat uw referrals blijven spelen — en u blijft verdienen.",
     "benefit1Title": "Volledig productportfolio",
     "benefit1Desc": "Promoot slots, live dealer-tafels, crash-games en sportweddenschappen vanuit één merk — meer manieren om elke bezoeker te converteren.",
@@ -853,7 +853,7 @@ export const nl: LocaleTree = {
     "howTitle": "Hoe het werkt",
     "howSubtitle": "Van aanmelding tot uitbetaling in vier eenvoudige stappen.",
     "step1Title": "Aanmelden en goedgekeurd worden",
-    "step1Desc": "E-mail partners@ibets24.com met uw verkeersbronnen, doelmarkten en promotiemethoden. We beoordelen fit en compliance vóór onboarding.",
+    "step1Desc": "E-mail partners@youwin24.com met uw verkeersbronnen, doelmarkten en promotiemethoden. We beoordelen fit en compliance vóór onboarding.",
     "step2Title": "Ontvang uw trackingassets",
     "step2Desc": "Goedgekeurde partners krijgen een unieke referralcode, trackinglink en toegang tot de Affiliate Portal met live prestaterapportage.",
     "step3Title": "Breng gekwalificeerde spelers",
@@ -872,8 +872,8 @@ export const nl: LocaleTree = {
     "businessCta": "B2B-voorstellen versturen",
     "ctaTitle": "Klaar om samen te groeien?",
     "ctaSubtitle": "Vertel ons over uw publiek en verkeerskanalen. Ons team reageert met aangepaste commissievoorwaarden en vervolgstappen.",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "Voor problemen met spelersaccounts, betalingen of bonussen, neem contact op met support@ibets24.com — niet de partners-inbox.",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "Voor problemen met spelersaccounts, betalingen of bonussen, neem contact op met support@youwin24.com — niet de partners-inbox.",
     "backHome": "← Terug naar home"
   }
 };

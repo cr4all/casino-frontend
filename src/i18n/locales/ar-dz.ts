@@ -165,7 +165,7 @@ export const arDz: LocaleTree = {
     "aml": "AML Policy",
     "kyc": "سياسة KYC",
     "disclaimer": "18+ | Play responsibly. Gambling can be addictive.",
-    "copyright": "© {{year}} iBets24. All rights reserved."
+    "copyright": "© {{year}} YouWin24. All rights reserved."
   },
   "legal": {
     "backHome": "← Back to home"
@@ -642,7 +642,7 @@ export const arDz: LocaleTree = {
     "comingSoon": "Coming Soon"
   },
   "cookies": {
-    "title": "iBets24 uses cookies",
+    "title": "YouWin24 uses cookies",
     "description": "We use cookies to provide a better and more personalized experience. For more information, see our",
     "policyLink": "Cookie Policy",
     "settings": "Cookie settings",
@@ -838,7 +838,7 @@ export const arDz: LocaleTree = {
     "hybridPoint1": "CPA عند الإيداع الأول بالإضافة إلى RevShare على النشاط المستقبلي",
     "hybridPoint2": "تقسيم مرن مصمم خصيصًا لملفك التعريفي لحركة المرور",
     "hybridPoint3": "يحظى بشعبية لدى المؤثرين والشركاء ذوي القنوات المختلطة",
-    "benefitsTitle": "لماذا الشراكة مع iBets24؟",
+    "benefitsTitle": "لماذا الشراكة مع YouWin24؟",
     "benefitsSubtitle": "نحن نستثمر في التحويل والاحتفاظ وعمق المنتج حتى تستمر إحالاتك في اللعب — وتستمر في تحقيق الأرباح.",
     "benefit1Title": "حافظة المنتجات",
     "benefit1Desc": "قم بترويج ماكينات السلوت، وطاولات الموزعين المباشرين، وألعاب التصادم، والمراهنات الرياضية من علامة تجارية واحدة — طرق أكثر لتحويل كل زائر.",
@@ -855,7 +855,7 @@ export const arDz: LocaleTree = {
     "howTitle": "كيفية الاستخدام",
     "howSubtitle": "من التطبيق إلى دفع العائد في أربع خطوات مباشرة.",
     "step1Title": "تقديم الطلب والحصول على الموافقة",
-    "step1Desc": "أرسل بريداً إلى partners@ibets24.com مع مصادر حركة المرور والأسواق المستهدفة وطرق الترويج. نراجع الملاءمة والامتثال قبل الإدماج.",
+    "step1Desc": "أرسل بريداً إلى partners@youwin24.com مع مصادر حركة المرور والأسواق المستهدفة وطرق الترويج. نراجع الملاءمة والامتثال قبل الإدماج.",
     "step2Title": "استلام أصول التتبع الخاصة بك",
     "step2Desc": "يحصل الشركاء المعتمدون على رمز إحالة فريد ورابط تتبع ووصول إلى Affiliate Portal مع تقارير أداء مباشرة.",
     "step3Title": "دفع اللاعبين المؤهلين",
@@ -875,7 +875,7 @@ export const arDz: LocaleTree = {
     "ctaTitle": "هل أنت مستعد للنمو معًا ؟",
     "ctaSubtitle": "أخبرنا عن جمهورك وقنواتك المرورية. سيرد فريقنا بشروط عمولة مخصصة والخطوات التالية.",
     "partnersEmail": "English",
-    "supportNote": "لمشاكل حساب اللاعب أو الدفع أو المكافآت، يرجى التواصل مع support@ibets24.com — وليس بريد الشركاء.",
+    "supportNote": "لمشاكل حساب اللاعب أو الدفع أو المكافآت، يرجى التواصل مع support@youwin24.com — وليس بريد الشركاء.",
     "backHome": "العودة إلى الصفحة الرئيسية"
   }
 };

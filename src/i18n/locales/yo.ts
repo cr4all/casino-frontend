@@ -160,7 +160,7 @@ export const yo: LocaleTree = {
     "aml": "Ìlànà AML",
     "kyc": "Ìlànà KYC",
     "disclaimer": "18+ | Ṣe eré pẹ̀lú ìfarabalẹ̀. Títí eré lè mu ọ lọ́wọ́.",
-    "copyright": "© {{year}} iBets24. Gbogbo ẹ̀tọ́ ni a pa mọ́."
+    "copyright": "© {{year}} YouWin24. Gbogbo ẹ̀tọ́ ni a pa mọ́."
   },
   "legal": {
     "backHome": "Padà sí ilé"
@@ -606,7 +606,7 @@ export const yo: LocaleTree = {
     "comingSoon": "Ó ń bọ̀ láìpẹ́"
   },
   "cookies": {
-    "title": "iBets24 lo àwọn kúkì",
+    "title": "YouWin24 lo àwọn kúkì",
     "description": "A lo àwọn kúkì láti pèsè ìrírí tó dára sí i àti tó ṣe àdáni. Fún àlàyé síwájú sí i, wo",
     "policyLink": "Ìlànà kúkì",
     "settings": "Àwọn ètò kúkì",
@@ -820,7 +820,7 @@ export const yo: LocaleTree = {
     "hybridPoint1": "CPA on first deposit plus RevShare on future activity",
     "hybridPoint2": "Flexible split tailored to your traffic profile",
     "hybridPoint3": "Popular with influencers and mixed-channel partners",
-    "benefitsTitle": "Why Partner with iBets24?",
+    "benefitsTitle": "Why Partner with YouWin24?",
     "benefitsSubtitle": "We invest in conversion, retention, and product depth so your referrals keep playing — and you keep earning.",
     "benefit1Title": "Full Product Portfolio",
     "benefit1Desc": "Promote slots, live dealer tables, crash games, and sports betting from one brand — more ways to convert every visitor.",
@@ -837,7 +837,7 @@ export const yo: LocaleTree = {
     "howTitle": "How It Works",
     "howSubtitle": "From application to payout in four straightforward steps.",
     "step1Title": "Apply & Get Approved",
-    "step1Desc": "Email partners@ibets24.com with your traffic sources, target markets, and promotional methods. We review fit and compliance before onboarding.",
+    "step1Desc": "Email partners@youwin24.com with your traffic sources, target markets, and promotional methods. We review fit and compliance before onboarding.",
     "step2Title": "Receive Your Tracking Assets",
     "step2Desc": "Approved partners get a unique referral code, tracking link, and access to the Affiliate Portal with live performance reporting.",
     "step3Title": "Drive Qualified Players",
@@ -856,8 +856,8 @@ export const yo: LocaleTree = {
     "businessCta": "Send B2B Proposals",
     "ctaTitle": "Ready to Grow Together?",
     "ctaSubtitle": "Tell us about your audience and traffic channels. Our team will respond with tailored commission terms and next steps.",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "For player account, payment, or bonus issues, please contact support@ibets24.com — not the partners inbox.",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "For player account, payment, or bonus issues, please contact support@youwin24.com — not the partners inbox.",
     "backHome": "← Back to home"
   }
 };

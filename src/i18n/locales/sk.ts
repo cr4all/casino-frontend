@@ -162,7 +162,7 @@ export const sk: LocaleTree = {
     "aml": "AML politika",
     "kyc": "KYC politika",
     "disclaimer": "18+ | Hrajte zodpovedne. Hazard môže byť návykový.",
-    "copyright": "© {{year}} iBets24. Všetky práva vyhradené."
+    "copyright": "© {{year}} YouWin24. Všetky práva vyhradené."
   },
   "legal": {
     "backHome": "← Späť na domovskú stránku"
@@ -617,7 +617,7 @@ export const sk: LocaleTree = {
     "comingSoon": "Čoskoro"
   },
   "cookies": {
-    "title": "iBets24 používa súbory cookie",
+    "title": "YouWin24 používa súbory cookie",
     "description": "Používame súbory cookie na lepší a personalizovanejší zážitok. Viac informácií nájdete v našich",
     "policyLink": "Zásadách používania súborov cookie",
     "settings": "Nastavenia súborov cookie",
@@ -831,7 +831,7 @@ export const sk: LocaleTree = {
     "hybridPoint1": "CPA pri prvom vklade plus RevShare z budúcej aktivity",
     "hybridPoint2": "Flexibilné rozdelenie prispôsobené vášmu profilu návštevnosti",
     "hybridPoint3": "Obľúbené u influencerov a partnerov s viacerými kanálmi",
-    "benefitsTitle": "Prečo spolupracovať s iBets24?",
+    "benefitsTitle": "Prečo spolupracovať s YouWin24?",
     "benefitsSubtitle": "Investujeme do konverzie, retencie a hĺbky produktu, aby vaše odporúčania pokračovali v hre — a vy v zárobku.",
     "benefit1Title": "Kompletné produktové portfólio",
     "benefit1Desc": "Propagujte automaty, live dealer stoly, crash hry a športové stávkovanie z jednej značky — viac spôsobov, ako konvertovať každého návštevníka.",
@@ -848,7 +848,7 @@ export const sk: LocaleTree = {
     "howTitle": "Ako to funguje",
     "howSubtitle": "Od žiadosti po vyplatenie prostriedkov v štyroch jednoduchých krokoch.",
     "step1Title": "Použiť a získať schválenie",
-    "step1Desc": "Pošlite e-mail partners@ibets24.com so zdrojmi návštevnosti, cieľovými trhmi a propagačnými metódami. Pred vstupom do programu kontrolujeme spôsobilosť a dodržiavanie predpisov.",
+    "step1Desc": "Pošlite e-mail partners@youwin24.com so zdrojmi návštevnosti, cieľovými trhmi a propagačnými metódami. Pred vstupom do programu kontrolujeme spôsobilosť a dodržiavanie predpisov.",
     "step2Title": "Prijmite svoje sledovacie prostriedky",
     "step2Desc": "Schválení partneri získajú jedinečný odporúčací kód, sledovací odkaz a prístup k Affiliate Portal so správami o aktuálnej výkonnosti.",
     "step3Title": "Šoférujte kvalifikovaných hráčov",
@@ -867,8 +867,8 @@ export const sk: LocaleTree = {
     "businessCta": "Odoslať návrhy (B2B)",
     "ctaTitle": "Ste pripravení spoločne rásť?",
     "ctaSubtitle": "Povedzte nám o svojom publiku a dopravných kanáloch. Náš tím odpovie prispôsobenými províziami a ďalšími krokmi.",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "V prípade problémov s účtom hráča, platbami alebo bonusmi kontaktujte support@ibets24.com — nie doručenú poštu partnerov.",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "V prípade problémov s účtom hráča, platbami alebo bonusmi kontaktujte support@youwin24.com — nie doručenú poštu partnerov.",
     "backHome": "Späť na úvod"
   }
 };

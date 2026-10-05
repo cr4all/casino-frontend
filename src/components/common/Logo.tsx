@@ -41,7 +41,7 @@ export function LogoMark({
       className={`logo-mark text-foreground ${className ?? ''}`}
       style={style}
       role="img"
-      aria-label="IBETS24"
+      aria-label="YOUWIN24"
     >
       <defs>
         <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
@@ -61,7 +61,7 @@ export function LogoMark({
         fontStyle="italic"
         letterSpacing={LOGO_LETTER_SPACING}
       >
-        <tspan fill="currentColor">IBETS</tspan>
+        <tspan fill="currentColor">YOUWIN</tspan>
         <tspan fill={`url(#${gradientId})`}>24</tspan>
       </text>
     </svg>
@@ -79,7 +79,7 @@ export function Logo({ className = '', height = 32, fill = false, onClick }: Log
       onClick={onClick}
       dir="ltr"
       className={`inline-flex shrink-0 items-center ${fill ? 'block w-full' : ''} ${className}`}
-      aria-label="IBETS24"
+      aria-label="YOUWIN24"
     >
       <LogoMark
         gradientId={gradientId}

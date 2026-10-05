@@ -129,7 +129,7 @@ function WelcomeHeroSlide() {
       <HeroSlideContent>
         <HeroBannerText
           topLine={isAuthenticated ? t('hero.playNow') : t('hero.registerPromo')}
-          heroLine="IBETS24"
+          heroLine="YOUWIN24"
           subtitleLine={t('hero.welcomeTagline')}
         />
         <HeroCtaButton playTo="/category/all" />

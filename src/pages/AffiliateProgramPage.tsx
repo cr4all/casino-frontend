@@ -5,7 +5,7 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { useAuthStore } from '@/stores/authStore';
 import { useUiStore } from '@/stores/uiStore';
 
-const PARTNERS_EMAIL = 'partners@ibets24.com';
+const PARTNERS_EMAIL = 'partners@youwin24.com';
 
 function CheckIcon() {
   return (

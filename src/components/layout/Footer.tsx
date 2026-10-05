@@ -7,8 +7,8 @@ import { useCookieConsentStore } from '@/stores/cookieConsentStore';
 import { useRequestLiveChat } from '@/hooks/useRequestLiveChat';
 import { typePath } from '@/stores/gameStore';
 
-const SUPPORT_EMAIL = 'support@ibets24.com';
-const PARTNERS_EMAIL = 'partners@ibets24.com';
+const SUPPORT_EMAIL = 'support@youwin24.com';
+const PARTNERS_EMAIL = 'partners@youwin24.com';
 
 const SOCIAL_LINKS = [
   {
@@ -19,7 +19,7 @@ const SOCIAL_LINKS = [
   {
     key: 'telegram',
     label: 'Telegram',
-    href: 'https://t.me/ibets24official',
+    href: 'https://t.me/youwin24official',
   },
   {
     key: 'whatsapp',

@@ -167,7 +167,7 @@ export const cs: LocaleTree = {
     "aml": "AML Policy",
     "kyc": "KYC politika",
     "disclaimer": "18+ | Play responsibly. Gambling can be addictive.",
-    "copyright": "© {{year}} iBets24. All rights reserved."
+    "copyright": "© {{year}} YouWin24. All rights reserved."
   },
   "legal": {
     "backHome": "← Back to home"
@@ -648,7 +648,7 @@ export const cs: LocaleTree = {
     "comingSoon": "Coming Soon"
   },
   "cookies": {
-    "title": "iBets24 uses cookies",
+    "title": "YouWin24 uses cookies",
     "description": "We use cookies to provide a better and more personalized experience. For more information, see our",
     "policyLink": "Cookie Policy",
     "settings": "Cookie settings",
@@ -841,7 +841,7 @@ export const cs: LocaleTree = {
     "hybridPoint1": "CPA při prvním vkladu plus RevShare z budoucí aktivity",
     "hybridPoint2": "Flexibilní rozdělení přizpůsobené vašemu provoznímu profilu",
     "hybridPoint3": "Oblíbené u influencerů a partnerů s více kanály",
-    "benefitsTitle": "Proč spolupracovat s iBets24?",
+    "benefitsTitle": "Proč spolupracovat s YouWin24?",
     "benefitsSubtitle": "Investujeme do konverze, retence a hloubky produktu, aby vaše doporučení pokračovala ve hře — a vy v zisku.",
     "benefit1Title": "Kompletní produktové portfolio",
     "benefit1Desc": "Propagujte automaty, live dealer stoly, crash hry a sportovní sázení z jedné značky — více způsobů, jak konvertovat každého návštěvníka.",
@@ -858,7 +858,7 @@ export const cs: LocaleTree = {
     "howTitle": "Jak to funguje",
     "howSubtitle": "Od žádosti po výplatu ve čtyřech jednoduchých krocích.",
     "step1Title": "Požádejte a získejte schválení",
-    "step1Desc": "Napište na partners@ibets24.com se zdroji provozu, cílovými trhy a propagačními metodami. Před onboardingem posoudíme vhodnost a compliance.",
+    "step1Desc": "Napište na partners@youwin24.com se zdroji provozu, cílovými trhy a propagačními metodami. Před onboardingem posoudíme vhodnost a compliance.",
     "step2Title": "Získejte sledovací materiály",
     "step2Desc": "Schválení partneři získají jedinečný referenční kód, sledovací odkaz a přístup do Affiliate Portal s živým reportováním výkonu.",
     "step3Title": "Přiveďte kvalifikované hráče",
@@ -877,8 +877,8 @@ export const cs: LocaleTree = {
     "businessCta": "Odeslat B2B návrhy",
     "ctaTitle": "Připraveni růst společně?",
     "ctaSubtitle": "Řekněte nám o svém publiku a provozních kanálech. Náš tým odpoví s přizpůsobenými provizními podmínkami a dalšími kroky.",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "V případě problémů s hráčským účtem, platbami nebo bonusy kontaktujte support@ibets24.com — nikoli partnerskou schránku.",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "V případě problémů s hráčským účtem, platbami nebo bonusy kontaktujte support@youwin24.com — nikoli partnerskou schránku.",
     "backHome": "← Zpět na úvodní stránku"
   }
 };

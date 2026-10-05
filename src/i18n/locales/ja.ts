@@ -165,7 +165,7 @@ export const ja: LocaleTree = {
     "aml": "AML Policy",
     "kyc": "KYCポリシー",
     "disclaimer": "18+ | Play responsibly. Gambling can be addictive.",
-    "copyright": "© {{year}} iBets24. All rights reserved."
+    "copyright": "© {{year}} YouWin24. All rights reserved."
   },
   "legal": {
     "backHome": "← Back to home"
@@ -643,7 +643,7 @@ export const ja: LocaleTree = {
     "comingSoon": "Coming Soon"
   },
   "cookies": {
-    "title": "iBets24 uses cookies",
+    "title": "YouWin24 uses cookies",
     "description": "We use cookies to provide a better and more personalized experience. For more information, see our",
     "policyLink": "Cookie Policy",
     "settings": "Cookie settings",
@@ -839,7 +839,7 @@ export const ja: LocaleTree = {
     "hybridPoint1": "初回入金の CPA と将来活動の RevShare",
     "hybridPoint2": "トラフィックプロファイルに合わせた柔軟な配分",
     "hybridPoint3": "インフルエンサーやマルチチャネルパートナーに人気",
-    "benefitsTitle": "iBets24 と提携する理由",
+    "benefitsTitle": "YouWin24 と提携する理由",
     "benefitsSubtitle": "コンバージョン、リテンション、製品の深さに投資し、紹介プレイヤーが継続してプレイし、あなたも継続して収益を得られるようにします。",
     "benefit1Title": "フルプロダクトポートフォリオ",
     "benefit1Desc": "スロット、ライブディーラーテーブル、クラッシュゲーム、スポーツベッティングをひとつのブランドからプロモート — すべての訪問者をコンバージョンする方法が増えます。",
@@ -856,7 +856,7 @@ export const ja: LocaleTree = {
     "howTitle": "仕組み",
     "howSubtitle": "申請から支払いまで、4つのシンプルなステップ。",
     "step1Title": "申請して承認を受ける",
-    "step1Desc": "トラフィックソース、ターゲット市場、プロモーション方法を partners@ibets24.com にメールでお送りください。オンボーディング前に適合性とコンプライアンスを審査します。",
+    "step1Desc": "トラフィックソース、ターゲット市場、プロモーション方法を partners@youwin24.com にメールでお送りください。オンボーディング前に適合性とコンプライアンスを審査します。",
     "step2Title": "トラッキングアセットを受け取る",
     "step2Desc": "承認されたパートナーには、固有の紹介コード、トラッキングリンク、ライブパフォーマンスレポート付きの Affiliate Portal へのアクセスが付与されます。",
     "step3Title": "適格プレイヤーを獲得する",
@@ -875,8 +875,8 @@ export const ja: LocaleTree = {
     "businessCta": "B2B 提案を送る",
     "ctaTitle": "一緒に成長する準備はできていますか？",
     "ctaSubtitle": "オーディエンスとトラフィックチャネルについてお聞かせください。チームがカスタマイズされたコミッション条件と次のステップでご連絡します。",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "プレイヤーアカウント、支払い、ボーナスに関する問題は、パートナー用受信箱ではなく support@ibets24.com までご連絡ください。",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "プレイヤーアカウント、支払い、ボーナスに関する問題は、パートナー用受信箱ではなく support@youwin24.com までご連絡ください。",
     "backHome": "← ホームに戻る"
   }
 };

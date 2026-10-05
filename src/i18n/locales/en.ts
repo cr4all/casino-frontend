@@ -184,8 +184,8 @@ export const en = {
     licenseAnjouanVerifyAria: 'Verify Anjouan Gaming Board license',
     disclaimer: '18+ | Play responsibly. Gambling can be addictive.',
     operatorInfo:
-      'iBets24 is operated by Novatrix Holding Ltd, an International Company incorporated in the Union of Comoros. The company is licensed and regulated by the Finance Authority of the State of Anjouan under the Gaming Licensing.',
-    copyright: '© {{year}} iBets24. All rights reserved.',
+      'YouWin24 is operated by Novatrix Holding Ltd, an International Company incorporated in the Union of Comoros. The company is licensed and regulated by the Finance Authority of the State of Anjouan under the Gaming Licensing.',
+    copyright: '© {{year}} YouWin24. All rights reserved.',
   },
   legal: {
     backHome: '← Back to home',
@@ -736,7 +736,7 @@ export const en = {
     comingSoon: 'Coming Soon',
   },
   cookies: {
-    title: 'iBets24 uses cookies',
+    title: 'YouWin24 uses cookies',
     description:
       'We use cookies to provide a better and more personalized experience. For more information, see our',
     policyLink: 'Cookie Policy',
@@ -951,7 +951,7 @@ export const en = {
     hybridPoint1: 'CPA on first deposit plus RevShare on future activity',
     hybridPoint2: 'Flexible split tailored to your traffic profile',
     hybridPoint3: 'Popular with influencers and mixed-channel partners',
-    benefitsTitle: 'Why Partner with iBets24?',
+    benefitsTitle: 'Why Partner with YouWin24?',
     benefitsSubtitle:
       'We invest in conversion, retention, and product depth so your referrals keep playing — and you keep earning.',
     benefit1Title: 'Full Product Portfolio',
@@ -976,7 +976,7 @@ export const en = {
     howSubtitle: 'From application to payout in four straightforward steps.',
     step1Title: 'Apply & Get Approved',
     step1Desc:
-      'Email partners@ibets24.com with your traffic sources, target markets, and promotional methods. We review fit and compliance before onboarding.',
+      'Email partners@youwin24.com with your traffic sources, target markets, and promotional methods. We review fit and compliance before onboarding.',
     step2Title: 'Receive Your Tracking Assets',
     step2Desc:
       'Approved partners get a unique referral code, tracking link, and access to the Affiliate Portal with live performance reporting.',
@@ -1000,9 +1000,9 @@ export const en = {
     ctaTitle: 'Ready to Grow Together?',
     ctaSubtitle:
       'Tell us about your audience and traffic channels. Our team will respond with tailored commission terms and next steps.',
-    partnersEmail: 'partners@ibets24.com',
+    partnersEmail: 'partners@youwin24.com',
     supportNote:
-      'For player account, payment, or bonus issues, please contact support@ibets24.com — not the partners inbox.',
+      'For player account, payment, or bonus issues, please contact support@youwin24.com — not the partners inbox.',
     backHome: '← Back to home',
   },
 } as const;

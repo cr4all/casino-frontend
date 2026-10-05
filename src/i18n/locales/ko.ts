@@ -179,8 +179,8 @@ export const ko: LocaleTree = {
     "licenseUkVerifyAria": "UK Gambling Commission 라이선스 확인",
     "licenseAnjouanVerifyAria": "Anjouan Gaming Board 라이선스 확인",
     "disclaimer": "18+ | 책임감 있게 플레이하세요. 도박은 중독을 유발할 수 있습니다.",
-    "operatorInfo": "iBets24는 2024년 5월 20일 국제회사로 설립된 Novatrix Holding Ltd(등록번호 15727)가 운영합니다. The Computer Gaming Licensing Act 007 of 2005에 따라 Anjouan주 Finance Authority 라이선스(번호 ALSI-142406002-FI1)를 보유하며, 소재지는 Hamchako, Mutsamudu, Autonomous Island of Anjouan, Union of Comoros입니다.",
-    "copyright": "© {{year}} iBets24. 모든 권리 보유."
+    "operatorInfo": "YouWin24는 2024년 5월 20일 국제회사로 설립된 Novatrix Holding Ltd(등록번호 15727)가 운영합니다. The Computer Gaming Licensing Act 007 of 2005에 따라 Anjouan주 Finance Authority 라이선스(번호 ALSI-142406002-FI1)를 보유하며, 소재지는 Hamchako, Mutsamudu, Autonomous Island of Anjouan, Union of Comoros입니다.",
+    "copyright": "© {{year}} YouWin24. 모든 권리 보유."
   },
   "liveBetFeed": {
     "title": "실시간 베팅",
@@ -690,7 +690,7 @@ export const ko: LocaleTree = {
     "comingSoon": "곧 출시"
   },
   "cookies": {
-    "title": "iBets24는 쿠키를 사용합니다",
+    "title": "YouWin24는 쿠키를 사용합니다",
     "description": "더 나은 맞춤형 경험을 위해 쿠키를 사용합니다. 자세한 내용은",
     "policyLink": "쿠키 정책",
     "settings": "쿠키 설정",
@@ -880,7 +880,7 @@ export const ko: LocaleTree = {
     "hybridPoint1": "첫 입금 CPA + 이후 활동 RevShare",
     "hybridPoint2": "트래픽 프로필에 맞춘 유연한 비율 구성",
     "hybridPoint3": "인플루언서 및 멀티 채널 파트너에게 인기",
-    "benefitsTitle": "iBets24와 협력하면 좋은 이유",
+    "benefitsTitle": "YouWin24와 협력하면 좋은 이유",
     "benefitsSubtitle": "전환, 리텐션, 제품 깊이에 투자하여 추천 플레이어가 계속 플레이하고, 파트너 수익도 지속되도록 합니다.",
     "benefit1Title": "풀 프로덕트 포트폴리오",
     "benefit1Desc": "슬롯, 라이브 딜러, 크래시 게임, 스포츠 베팅을 하나의 브랜드로 프로모션 — 방문자를 전환할 기회를 극대화합니다.",
@@ -897,7 +897,7 @@ export const ko: LocaleTree = {
     "howTitle": "진행 방식",
     "howSubtitle": "신청부터 정산까지 4단계로 간단하게 진행됩니다.",
     "step1Title": "신청 및 승인",
-    "step1Desc": "트래픽 소스, 타겟 시장, 프로모션 방식을 partners@ibets24.com 으로 보내주세요. 적합성과 컴플라이언스를 검토 후 온보딩합니다.",
+    "step1Desc": "트래픽 소스, 타겟 시장, 프로모션 방식을 partners@youwin24.com 으로 보내주세요. 적합성과 컴플라이언스를 검토 후 온보딩합니다.",
     "step2Title": "트래킹 자산 수령",
     "step2Desc": "승인된 파트너는 고유 추천 코드, 트래킹 링크, 실시간 성과 리포트가 가능한 어필리에이트 포털 접근 권한을 받습니다.",
     "step3Title": "적격 플레이어 유입",
@@ -916,8 +916,8 @@ export const ko: LocaleTree = {
     "businessCta": "B2B 제안 보내기",
     "ctaTitle": "함께 성장할 준비가 되셨나요?",
     "ctaSubtitle": "오디언스와 트래픽 채널을 알려주시면, 맞춤 커미션 조건과 다음 단계를 안내해 드립니다.",
-    "partnersEmail": "partners@ibets24.com",
-    "supportNote": "플레이어 계정, 결제, 보너스 문의는 support@ibets24.com 으로 연락해 주세요. 파트너스 이메일은 사용하지 마세요.",
+    "partnersEmail": "partners@youwin24.com",
+    "supportNote": "플레이어 계정, 결제, 보너스 문의는 support@youwin24.com 으로 연락해 주세요. 파트너스 이메일은 사용하지 마세요.",
     "backHome": "← 홈으로"
   }
 };

@@ -2,9 +2,9 @@ import type { LegalContentBundle } from './types';
 
 export const legalEn: LegalContentBundle = {
   about: {
-    title: 'About iBets24',
+    title: 'About YouWin24',
     intro:
-      'iBets24 is an online casino platform offering slots, live dealer games, and secure payment options for players worldwide. We focus on fair play, fast payouts, and responsive customer support.',
+      'YouWin24 is an online casino platform offering slots, live dealer games, and secure payment options for players worldwide. We focus on fair play, fast payouts, and responsive customer support.',
     sections: [
       {
         title: 'Our mission',
@@ -16,14 +16,14 @@ export const legalEn: LegalContentBundle = {
       {
         title: 'Licence & compliance',
         paragraphs: [
-          'iBets24 operates in accordance with applicable gaming regulations in the jurisdictions where our services are offered.',
+          'YouWin24 operates in accordance with applicable gaming regulations in the jurisdictions where our services are offered.',
           'We apply age verification, anti-money laundering controls, and data protection standards across all products.',
         ],
       },
       {
         title: 'Customer support',
         paragraphs: [
-          'Our support team is available via live chat and email at support@ibets24.com.',
+          'Our support team is available via live chat and email at support@youwin24.com.',
           'For account, payment, or bonus questions, please contact us before submitting duplicate requests.',
         ],
       },
@@ -32,7 +32,7 @@ export const legalEn: LegalContentBundle = {
   terms: {
     title: 'Terms & Conditions',
     intro:
-      'These Terms & Conditions govern your use of iBets24. By registering or using our services, you agree to these terms.',
+      'These Terms & Conditions govern your use of YouWin24. By registering or using our services, you agree to these terms.',
     sections: [
       {
         title: 'Eligibility',
@@ -95,7 +95,7 @@ export const legalEn: LegalContentBundle = {
       {
         title: 'Limitation of liability',
         paragraphs: [
-          'iBets24 is not liable for losses arising from connectivity issues, third-party provider outages, or force majeure events.',
+          'YouWin24 is not liable for losses arising from connectivity issues, third-party provider outages, or force majeure events.',
           'We reserve the right to amend these terms. Material changes will be published on this page.',
         ],
       },
@@ -104,7 +104,7 @@ export const legalEn: LegalContentBundle = {
   privacy: {
     title: 'Privacy Policy',
     intro:
-      'This Privacy Policy explains how iBets24 collects, uses, and protects your personal information.',
+      'This Privacy Policy explains how YouWin24 collects, uses, and protects your personal information.',
     sections: [
       {
         title: 'Information we collect',
@@ -129,7 +129,7 @@ export const legalEn: LegalContentBundle = {
       {
         title: 'Your rights',
         paragraphs: [
-          'Depending on your jurisdiction, you may request access, correction, or deletion of personal data by contacting support@ibets24.com.',
+          'Depending on your jurisdiction, you may request access, correction, or deletion of personal data by contacting support@youwin24.com.',
         ],
       },
     ],
@@ -137,7 +137,7 @@ export const legalEn: LegalContentBundle = {
   responsibleGaming: {
     title: 'Responsible Gaming',
     intro:
-      'Gambling should be entertainment, not a way to make money. iBets24 promotes responsible play and provides tools to help you stay in control.',
+      'Gambling should be entertainment, not a way to make money. YouWin24 promotes responsible play and provides tools to help you stay in control.',
     sections: [
       {
         title: 'Play responsibly',
@@ -169,7 +169,7 @@ export const legalEn: LegalContentBundle = {
   },
   faq: {
     title: 'FAQ',
-    intro: 'Answers to common questions about iBets24 accounts, payments, and games.',
+    intro: 'Answers to common questions about YouWin24 accounts, payments, and games.',
     sections: [
       {
         title: 'How do I register?',
@@ -226,7 +226,7 @@ export const legalEn: LegalContentBundle = {
       {
         title: 'How do I contact support?',
         paragraphs: [
-          'Use Live Chat in the sidebar or email support@ibets24.com. Include your registered email for faster assistance.',
+          'Use Live Chat in the sidebar or email support@youwin24.com. Include your registered email for faster assistance.',
         ],
       },
     ],
@@ -238,7 +238,7 @@ export const legalEn: LegalContentBundle = {
       {
         title: 'Support channels',
         paragraphs: [
-          'Email: support@ibets24.com',
+          'Email: support@youwin24.com',
           'Live chat: available from the sidebar when signed in (subject to availability).',
         ],
       },
@@ -259,28 +259,28 @@ export const legalEn: LegalContentBundle = {
   partners: {
     title: 'Partners',
     intro:
-      'iBets24 welcomes long-term partnerships with affiliates, media publishers, payment providers, game studios, and other B2B partners.',
+      'YouWin24 welcomes long-term partnerships with affiliates, media publishers, payment providers, game studios, and other B2B partners.',
     sections: [
       {
         title: 'Affiliate Program',
         paragraphs: [
           'Our affiliate program offers competitive commissions for referring new players who meet our eligibility and compliance requirements.',
           'Existing affiliates can access performance stats and payouts from the Affiliate Portal after signing in.',
-          'To apply or request affiliate terms, email partners@ibets24.com with your traffic sources, target markets, and promotional methods.',
+          'To apply or request affiliate terms, email partners@youwin24.com with your traffic sources, target markets, and promotional methods.',
         ],
       },
       {
         title: 'Business Partnerships',
         paragraphs: [
           'We collaborate with licensed game providers, payment solution partners, marketing agencies, and technology vendors that share our standards for fairness, security, and responsible gaming.',
-          'Send partnership proposals to partners@ibets24.com including company details, product overview, and proposed commercial model.',
+          'Send partnership proposals to partners@youwin24.com including company details, product overview, and proposed commercial model.',
         ],
       },
       {
         title: 'How to get in touch',
         paragraphs: [
-          'Business and partnership enquiries: partners@ibets24.com',
-          'Player support (accounts, payments, bonuses): support@ibets24.com',
+          'Business and partnership enquiries: partners@youwin24.com',
+          'Player support (accounts, payments, bonuses): support@youwin24.com',
           'Please do not use the partners inbox for player account issues — those requests are handled by customer support.',
         ],
       },
@@ -289,7 +289,7 @@ export const legalEn: LegalContentBundle = {
   aml: {
     title: 'AML Policy',
     intro:
-      'iBets24 maintains anti-money laundering (AML) and counter-terrorist financing procedures in line with applicable regulations.',
+      'YouWin24 maintains anti-money laundering (AML) and counter-terrorist financing procedures in line with applicable regulations.',
     sections: [
       {
         title: 'Customer due diligence',
@@ -315,7 +315,7 @@ export const legalEn: LegalContentBundle = {
   kyc: {
     title: 'KYC Policy',
     intro:
-      'This Know Your Customer (KYC) Policy explains how iBets24 verifies player identity to prevent fraud, underage gambling, and money laundering, and to meet regulatory obligations.',
+      'This Know Your Customer (KYC) Policy explains how YouWin24 verifies player identity to prevent fraud, underage gambling, and money laundering, and to meet regulatory obligations.',
     sections: [
       {
         title: 'Purpose',
@@ -372,7 +372,7 @@ export const legalEn: LegalContentBundle = {
       {
         title: 'Contact',
         paragraphs: [
-          'For KYC questions, email support@ibets24.com or use live chat. Include your registered email so we can locate your account quickly.',
+          'For KYC questions, email support@youwin24.com or use live chat. Include your registered email so we can locate your account quickly.',
         ],
       },
     ],
