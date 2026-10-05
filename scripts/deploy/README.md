@@ -88,15 +88,21 @@ Container name: `casino_prod_frontend_design_dark`
 
 ### Run multiple designs side-by-side (separate ports)
 
+Each design is its own Compose project (`casino-frontend-<tag>`). Deploying one does not stop or remove the others. Give each design its own host port — two containers cannot bind the same port.
+
 ```bash
 # First design — port 8001
 BRANCH=main FRONTEND_PORT=8001 bash deploy-docker-by-ghcr.sh
 
 # Second design — port 8002
-BRANCH=design-dark FRONTEND_PORT=8002 bash deploy-docker-by-ghcr.sh
+BRANCH=youwin24 FRONTEND_PORT=8002 bash deploy-docker-by-ghcr.sh
 ```
 
-Each container runs under a distinct name and port so they coexist without conflict.
+Stop only one design:
+
+```bash
+docker compose -p casino-frontend-youwin24 -f docker-compose.yml down
+```
 
 ### Rollback to a specific SHA
 
@@ -119,7 +125,7 @@ After reboot, re-run `load-env.sh` before `compose up`.
 | `GHCR_IMAGE` | `ghcr.io/cr4all/casino-frontend` | Registry image path |
 | `FRONTEND_PORT` | `8001` | Host port |
 | `FRONTEND_CONTAINER_NAME` | `casino_prod_frontend_<tag>` | Override container name manually |
-| `LOCAL_IMAGE` | `casino-frontend:<tag>` | Local image tag after pull |
+| `COMPOSE_PROJECT_NAME` | `casino-frontend-<tag>` | Set by the script; one project per design |
 | `SHM_ENV_FILE` | `/dev/shm/casino.env` | tmpfs secrets path |
 | `CASINO_ENV_FILE` | | Env file to copy into shm |
 | `CASINO_ENV_STDIN` | `0` | `1` = read stdin into shm |

@@ -1,5 +1,6 @@
-# Frontend-only stack from GHCR. Project name differs from backend casino-prod.
-name: casino-frontend-prod
+# Frontend-only stack from GHCR.
+# Project name is passed with `docker compose -p` (one project per design).
+# A fixed name here would make `up` replace every other design's container.
 
 services:
   frontend:
