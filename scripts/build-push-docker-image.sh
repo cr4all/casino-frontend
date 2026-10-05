@@ -16,6 +16,9 @@ GIT_REF="${GIT_REF:-main}"
 DOCKER_PLATFORM="${DOCKER_PLATFORM:-linux/amd64}"
 SKIP_GIT_PULL="${SKIP_GIT_PULL:-0}"
 
+# Sanitize branch name → Docker-safe tag (lowercase, non-alphanumeric → "-")
+BRANCH_TAG="$(echo "$GIT_REF" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9._-]/-/g')"
+
 ENV_FILE="${CASINO_ENV_FILE:-$ROOT/../.env}"
 if [[ ! -f "$ENV_FILE" ]]; then
   ENV_FILE="$ROOT/.env"
@@ -84,9 +87,16 @@ echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_USERNAME" --password-stdin
 unset GHCR_TOKEN
 
 IMAGE_SHA="${GHCR_IMAGE}:${SHORT_SHA}"
-IMAGE_LATEST="${GHCR_IMAGE}:latest"
+IMAGE_BRANCH="${GHCR_IMAGE}:${BRANCH_TAG}"
+
+# latest tag is only applied when building from main
+EXTRA_TAGS=()
+if [[ "$GIT_REF" == "main" ]]; then
+  EXTRA_TAGS+=(-t "${GHCR_IMAGE}:latest")
+fi
 
 echo "Building Docker image (${DOCKER_PLATFORM})..."
+echo "  Branch: ${GIT_REF}  →  tag: ${BRANCH_TAG}"
 echo "  VITE_API_URL=${VITE_API_URL}"
 echo "  VITE_ASSETS_BASE_URL=${VITE_ASSETS_BASE_URL}"
 echo "  VITE_REVERB_HOST=${VITE_REVERB_HOST} VITE_REVERB_PORT=${VITE_REVERB_PORT} VITE_REVERB_SCHEME=${VITE_REVERB_SCHEME}"
@@ -109,16 +119,24 @@ docker build \
   --build-arg "VITE_POSTHOG_HOST=${VITE_POSTHOG_HOST}" \
   --build-arg "VITE_ASSETS_BASE_URL=${VITE_ASSETS_BASE_URL}" \
   -t "$IMAGE_SHA" \
-  -t "$IMAGE_LATEST" \
+  -t "$IMAGE_BRANCH" \
+  "${EXTRA_TAGS[@]}" \
   .
 
 echo "Pushing ${IMAGE_SHA} ..."
 docker push "$IMAGE_SHA"
-echo "Pushing ${IMAGE_LATEST} ..."
-docker push "$IMAGE_LATEST"
+echo "Pushing ${IMAGE_BRANCH} ..."
+docker push "$IMAGE_BRANCH"
+if [[ "$GIT_REF" == "main" ]]; then
+  echo "Pushing ${GHCR_IMAGE}:latest ..."
+  docker push "${GHCR_IMAGE}:latest"
+fi
 
 echo "Done. Pushed:"
 echo "  ${IMAGE_SHA}"
-echo "  ${IMAGE_LATEST}"
+echo "  ${IMAGE_BRANCH}"
+[[ "$GIT_REF" == "main" ]] && echo "  ${GHCR_IMAGE}:latest"
+echo ""
 echo "Deploy on production with scripts/deploy/deploy-docker-by-ghcr.sh"
+echo "  e.g.  BRANCH=${GIT_REF} bash deploy-docker-by-ghcr.sh"
 echo "  (copy scripts/deploy/ to /opt/casino/deploy-frontend — not the backend deploy/ folder)"

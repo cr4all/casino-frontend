@@ -4,6 +4,23 @@ Self-contained **frontend** stack for the production host. No frontend git check
 
 VITE_* values are already baked into the image at `build-push` time. Runtime only needs port (etc.) from the shared tmpfs env file.
 
+---
+
+## Per-branch (design) image strategy
+
+Each design branch is published as an independent Docker image tag.
+
+| Branch | GHCR tags | `:latest`? |
+|--------|-----------|-----------|
+| `main` | `:main` + `:<sha>` | ✅ also pushed as `:latest` |
+| `design-dark` | `:design-dark` + `:<sha>` | ❌ |
+| `feature/new-ui` | `:feature-new-ui` + `:<sha>` | ❌ |
+
+> Branch names are automatically normalised to lowercase with `/`, uppercase letters, and special characters replaced by `-`.
+> `:latest` always points to the most recent build of the `main` branch.
+
+---
+
 ## Layout on the server
 
 ```text
@@ -19,6 +36,8 @@ VITE_* values are already baked into the image at `build-push` time. Runtime onl
 
 Do **not** copy this folder over `/opt/casino/deploy` (backend).
 
+---
+
 ## One-time setup
 
 1. Copy this folder to `/opt/casino/deploy-frontend`.
@@ -30,38 +49,92 @@ ssh prod 'cd /opt/casino/deploy-frontend && CASINO_ENV_STDIN=1 bash load-env.sh'
 
 3. Have a GitHub PAT with `read:packages`.
 
-## Deploy
+---
+
+## Build / push (build machine)
+
+Run from the `casino-frontend` git checkout.
+
+```bash
+# Build main branch → pushes 3 tags: :main + :<sha> + :latest
+GIT_REF=main bash scripts/build-push-docker-image.sh
+
+# Build a design branch → pushes 2 tags: :design-dark + :<sha>
+GIT_REF=design-dark bash scripts/build-push-docker-image.sh
+```
+
+Omitting `GIT_REF` defaults to `main`.
+
+---
+
+## Deploy (production server)
+
+### Default — deploy main (latest)
 
 ```bash
 cd /opt/casino/deploy-frontend
-bash deploy-docker-by-ghcr.sh
+BRANCH=main bash deploy-docker-by-ghcr.sh
 ```
 
-After reboot, re-run `load-env.sh` before deploy/`compose up`.
+Container name: `casino_prod_frontend_main`
 
-Optional:
+### Deploy a specific design branch
 
-| Variable | Default | Meaning |
-|----------|---------|---------|
-| `GHCR_IMAGE` | `ghcr.io/cr4all/casino-frontend` | Registry image |
-| `GHCR_TAG` | `latest` | Tag to pull |
-| `SHM_ENV_FILE` | `/dev/shm/casino.env` | tmpfs secrets |
-| `CASINO_ENV_FILE` | | Copied into shm if set |
-| `CASINO_ENV_STDIN` | `0` | `1` = read stdin into shm |
-| `GHCR_USERNAME` | `cr4all` | ghcr.io login user |
-| `GHCR_TOKEN` | (prompted) | GitHub PAT |
+```bash
+BRANCH=design-dark bash deploy-docker-by-ghcr.sh
+```
 
-Rollback:
+Container name: `casino_prod_frontend_design_dark`
+
+### Run multiple designs side-by-side (separate ports)
+
+```bash
+# First design — port 8001
+BRANCH=main FRONTEND_PORT=8001 bash deploy-docker-by-ghcr.sh
+
+# Second design — port 8002
+BRANCH=design-dark FRONTEND_PORT=8002 bash deploy-docker-by-ghcr.sh
+```
+
+Each container runs under a distinct name and port so they coexist without conflict.
+
+### Rollback to a specific SHA
 
 ```bash
 GHCR_TAG=<short-sha> bash deploy-docker-by-ghcr.sh
 ```
 
-## Build / push (dev server)
+After reboot, re-run `load-env.sh` before `compose up`.
 
-From the `casino-frontend` git checkout (after testing with `scripts/deploy-docker.sh`):
+---
 
-```bash
-bash scripts/build-push-docker-image.sh
-# reads VITE_* from env file on the build machine, builds, pushes to GHCR
-```
+## Environment variable reference
+
+### deploy-docker-by-ghcr.sh
+
+| Variable | Default | Meaning |
+|----------|---------|---------|
+| `BRANCH` | (interactive prompt) | Branch / design name to deploy |
+| `GHCR_TAG` | normalised `BRANCH` value | Set directly to override `BRANCH` |
+| `GHCR_IMAGE` | `ghcr.io/cr4all/casino-frontend` | Registry image path |
+| `FRONTEND_PORT` | `8001` | Host port |
+| `FRONTEND_CONTAINER_NAME` | `casino_prod_frontend_<tag>` | Override container name manually |
+| `LOCAL_IMAGE` | `casino-frontend:<tag>` | Local image tag after pull |
+| `SHM_ENV_FILE` | `/dev/shm/casino.env` | tmpfs secrets path |
+| `CASINO_ENV_FILE` | | Env file to copy into shm |
+| `CASINO_ENV_STDIN` | `0` | `1` = read stdin into shm |
+| `GHCR_USERNAME` | `cr4all` | ghcr.io login user |
+| `GHCR_TOKEN` | (prompted) | GitHub PAT (`read:packages`) |
+
+### build-push-docker-image.sh
+
+| Variable | Default | Meaning |
+|----------|---------|---------|
+| `GIT_REF` | `main` | Branch to build (used as image tag) |
+| `GHCR_IMAGE` | `ghcr.io/cr4all/casino-frontend` | Registry image path |
+| `GHCR_USERNAME` | `cr4all` | ghcr.io login user |
+| `GHCR_TOKEN` | (prompted) | GitHub PAT (`write:packages`) |
+| `GIT_REMOTE` | `origin` | Git remote name |
+| `DOCKER_PLATFORM` | `linux/amd64` | Build platform |
+| `SKIP_GIT_PULL` | `0` | `1` = skip git pull before build |
+| `CASINO_ENV_FILE` | `../.env` | Env file to read VITE_* values from |

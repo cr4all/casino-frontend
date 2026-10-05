@@ -3,8 +3,8 @@ name: casino-frontend-prod
 
 services:
   frontend:
-    image: casino-frontend:latest
-    container_name: casino_prod_frontend
+    image: ${FRONTEND_IMAGE:-casino-frontend:latest}
+    container_name: ${FRONTEND_CONTAINER_NAME:-casino_prod_frontend}
     restart: unless-stopped
     ports:
       - "${FRONTEND_PORT:-8001}:80"
