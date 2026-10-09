@@ -5,6 +5,8 @@ import { isLanguage, type Language } from '@/i18n';
 const RTL_LANGUAGES = new Set<Language>(['ar', 'ar-ma', 'ar-dz', 'ar-tn', 'fa', 'he', 'ur']);
 const DEFAULT_LANGUAGE: Language = 'en';
 
+export const LANGUAGE_STORAGE_KEY = 'ibets24-language';
+
 export function isRtlLanguage(language: Language): boolean {
   return RTL_LANGUAGES.has(language);
 }
@@ -29,7 +31,7 @@ export const useLanguageStore = create<LanguageState>()(
       },
     }),
     {
-      name: 'ibets24-language',
+      name: LANGUAGE_STORAGE_KEY,
       onRehydrateStorage: () => (state) => {
         if (!state?.language) return;
 
