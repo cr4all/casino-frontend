@@ -18,6 +18,7 @@ import {
   type Language,
 } from '@/i18n';
 import { formatDateTime } from '@/utils/formatDateTime';
+import { noteExplicitLanguageChoice } from '@/i18n/detectVisitorLanguage';
 import { useLanguageStore } from '@/stores/languageStore';
 
 export function useTranslation() {
@@ -31,6 +32,7 @@ export function useTranslation() {
 
   const changeLanguage = useCallback(
     async (next: Language) => {
+      noteExplicitLanguageChoice();
       setLanguage(next);
       const { isAuthenticated, user } = useAuthStore.getState();
       if (!isAuthenticated || user?.role === 'affiliate') {
