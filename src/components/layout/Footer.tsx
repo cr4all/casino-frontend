@@ -168,6 +168,17 @@ export function Footer() {
           </nav>
         </div>
         <p className="site-footer__operator">{t('footer.operatorInfo')}</p>
+        <p className="site-footer__developer">
+          {t('footer.developedBy')}{' '}
+          <a
+            href="https://ascendraplatforms.com"
+            className="site-footer__developer-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t('footer.developedByName')}
+          </a>
+        </p>        
         <p className="site-footer__disclaimer">{t('footer.disclaimer')}</p>
         <p className="site-footer__copyright">
           {t('footer.copyright', { year: new Date().getFullYear() })}

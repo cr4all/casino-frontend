@@ -184,7 +184,9 @@ export const en = {
     licenseAnjouanVerifyAria: 'Verify Anjouan Gaming Board license',
     disclaimer: '18+ | Play responsibly. Gambling can be addictive.',
     operatorInfo:
-      'YouWin24 is operated by Novatrix Holding Ltd, an International Company incorporated in the Union of Comoros. The company is licensed and regulated by the Finance Authority of the State of Anjouan under the Gaming Licensing.',
+      'YouWin24 is operated by Ascendra Holding Ltd, an International Company incorporated in the Union of Comoros. The company is licensed and regulated by the Finance Authority of the State of Anjouan under the Gaming Licensing.',
+    developedBy: 'This website is developed by',
+    developedByName: 'Ascendra Platforms',
     copyright: '© {{year}} YouWin24. All rights reserved.',
   },
   legal: {

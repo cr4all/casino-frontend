@@ -1369,12 +1369,29 @@ body.horizontal-page-lock {
 
 .site-footer__operator {
   max-width: 48rem;
+  margin: 0 auto 0.35rem;
+  font-size: 0.6875rem;
+  line-height: 1.55;
+  color: var(--ui-text-muted);
+}
+
+.site-footer__developer {
+  max-width: 48rem;
   margin: 0 auto 1rem;
   font-size: 0.6875rem;
   line-height: 1.55;
   color: var(--ui-text-muted);
 }
 
+.site-footer__developer-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.site-footer__developer-link:hover {
+  opacity: 0.85;
+}
 .site-footer__disclaimer {
   font-size: 0.75rem;
   line-height: 1.5;
