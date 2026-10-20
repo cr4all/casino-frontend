@@ -513,6 +513,7 @@ export const zu: LocaleTree = {
     "freeSpinCount": "{{count}} umayisiyo wamahle",
     "freeSpinUsage": "{{used}} / {{total}} umayisiyo usetshenzisiwe",
     "freeSpinProvider": "Umhlinzeki: {{provider}}",
+    "usableOnAllGames": "Kuyadlaleka kuwo wonke imidlalo",
     "freeSpinClaimed": "Umayisiyo wamahle ufunwe: {{count}} ({{status}})",
     "freeSpinWinnings": "Ukuwina: {{amount}}",
     "depositRequired": "Yenza okungenani idiphozithi eyodwa ukuze ufake isicelo sale bhonasi.",

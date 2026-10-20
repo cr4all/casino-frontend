@@ -513,6 +513,7 @@ export const ta: LocaleTree = {
     "freeSpinCount": "{{count}} இலவச சுழற்சிகள்",
     "freeSpinUsage": "{{used}} / {{total}} சுழற்சிகள் பயன்படுத்தப்பட்டன",
     "freeSpinProvider": "வழங்குநர்: {{provider}}",
+    "usableOnAllGames": "அனைத்து விளையாட்டுகளிலும் விளையாடலாம்",
     "freeSpinClaimed": "இலவச சுழற்சிகள் கோரப்பட்டன: {{count}} ({{status}})",
     "freeSpinWinnings": "வெற்றி: {{amount}}",
     "depositRequired": "இந்த போனஸைக் கோர குறைந்தபட்சம் ஒரு வைப்பு செய்யவும்.",

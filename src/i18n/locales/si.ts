@@ -521,6 +521,7 @@ export const si: LocaleTree = {
     "freeSpinCount": "{{count}} Free Spins",
     "freeSpinUsage": "{{used}} / {{total}} spins used",
     "freeSpinProvider": "Provider: {{provider}}",
+    "usableOnAllGames": "සියලුම ක්‍රීඩා වල ක්‍රීඩා කළ හැක",
     "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
     "freeSpinWinnings": "Winnings: {{amount}}",
     "depositRequired": "Make at least one deposit to claim this bonus.",

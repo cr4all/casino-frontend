@@ -529,6 +529,7 @@ export const hi: LocaleTree = {
     "freeSpinCount": "{{count}} Free Spins",
     "freeSpinUsage": "{{used}} / {{total}} इस्तेमाल किए गए स्पिन",
     "freeSpinProvider": "Provider: {{provider}}",
+    "usableOnAllGames": "सभी गेम पर उपलब्ध",
     "freeSpinClaimed": "दावा किए गए मुफ़्त स्पिन: {{count}} ({{status}})",
     "freeSpinWinnings": "Winnings: {{amount}}",
     "depositRequired": "इस बोनस का दावा करने के लिए कम से कम एक डिपॉजिट करें।",

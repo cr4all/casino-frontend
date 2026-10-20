@@ -526,6 +526,7 @@ export const pl: LocaleTree = {
     "freeSpinCount": "{{count}} darmowych spinów",
     "freeSpinUsage": "{{used}} / {{total}} spinów wykorzystanych",
     "freeSpinProvider": "Dostawca: {{provider}}",
+    "usableOnAllGames": "Dostępne we wszystkich grach",
     "freeSpinClaimed": "Darmowe spiny odebrane: {{count}} ({{status}})",
     "freeSpinWinnings": "Wygrane: {{amount}}",
     "depositRequired": "Dokonaj co najmniej jednej wpłaty, aby odebrać ten bonus.",

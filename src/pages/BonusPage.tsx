@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { bonusApi, type ActiveBonus, type BonusPolicy } from '@/api/bonus.api';
 import { BonusService } from '@/services/BonusService';
@@ -140,12 +140,16 @@ export function BonusPage() {
     const vendors = (policy.vendor_names ?? [])
       .filter((name) => name.trim() !== '')
       .map(formatVendorName);
-    const vendorLine =
-      vendors.length > 0 ? (
+    let vendorLine: ReactNode = null;
+    if (policy.usable_on_all_games) {
+      vendorLine = <p className="mt-1 text-sm text-muted">{t('bonus.usableOnAllGames')}</p>;
+    } else if (vendors.length > 0) {
+      vendorLine = (
         <p className="mt-1 text-sm text-muted">
           {t('bonus.usableAtVendors', { vendors: vendors.join(', ') })}
         </p>
-      ) : null;
+      );
+    }
 
     if (policy.type === 'free_spin') {
       return (

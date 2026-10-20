@@ -515,6 +515,7 @@ export const vi: LocaleTree = {
     "freeSpinCount": "{{count}} vòng quay miễn phí",
     "freeSpinUsage": "Đã dùng {{used}} / {{total}} vòng quay",
     "freeSpinProvider": "Nhà cung cấp: {{provider}}",
+    "usableOnAllGames": "Chơi được trên mọi trò chơi",
     "freeSpinClaimed": "Đã nhận vòng quay miễn phí: {{count}} ({{status}})",
     "freeSpinWinnings": "Thắng: {{amount}}",
     "depositRequired": "Nạp ít nhất một lần để nhận thưởng này.",

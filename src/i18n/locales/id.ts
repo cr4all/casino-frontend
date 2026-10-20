@@ -526,6 +526,7 @@ export const id: LocaleTree = {
     "freeSpinCount": "{{count}} Putaran Gratis",
     "freeSpinUsage": "{{used}} / {{total}} putaran digunakan",
     "freeSpinProvider": "Penyedia: {{provider}}",
+    "usableOnAllGames": "Dapat dimainkan di semua permainan",
     "freeSpinClaimed": "Putaran gratis diklaim: {{count}} ({{status}})",
     "freeSpinWinnings": "Kemenangan: {{amount}}",
     "depositRequired": "Lakukan minimal satu deposit untuk mengklaim bonus ini.",

@@ -521,6 +521,7 @@ export const ha: LocaleTree = {
     "freeSpinCount": "{{count}} Free Spins",
     "freeSpinUsage": "{{used}} / {{total}} spins used",
     "freeSpinProvider": "Provider: {{provider}}",
+    "usableOnAllGames": "Ana iya buga a duk wasanni",
     "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
     "freeSpinWinnings": "Winnings: {{amount}}",
     "depositRequired": "Make at least one deposit to claim this bonus.",

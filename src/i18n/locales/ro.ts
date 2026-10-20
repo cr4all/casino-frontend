@@ -529,6 +529,7 @@ export const ro: LocaleTree = {
     "freeSpinCount": "{{count}} Free Spins",
     "freeSpinUsage": "{{used}} / {{total}} spins used",
     "freeSpinProvider": "Provider: {{provider}}",
+    "usableOnAllGames": "Disponibil la toate jocurile",
     "freeSpinClaimed": "Free spins claimed: {{count}} ({{status}})",
     "freeSpinWinnings": "Winnings: {{amount}}",
     "depositRequired": "Make at least one deposit to claim this bonus.",

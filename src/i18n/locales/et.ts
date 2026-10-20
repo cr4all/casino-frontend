@@ -513,6 +513,7 @@ export const et: LocaleTree = {
     "freeSpinCount": "{{count}} tasuta spinni",
     "freeSpinUsage": "{{used}} / {{total}} spinni kasutatud",
     "freeSpinProvider": "Pakkuja: {{provider}}",
+    "usableOnAllGames": "Mängitav kõikidel mängudel",
     "freeSpinClaimed": "Tasuta spinnid lunastatud: {{count}} ({{status}})",
     "freeSpinWinnings": "Võidud: {{amount}}",
     "depositRequired": "Selle boonuse lunastamiseks tee vähemalt üks sissemakse.",

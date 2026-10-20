@@ -516,6 +516,7 @@ export const sr: LocaleTree = {
     "freeSpinCount": "{{count}} бесплатних spinova",
     "freeSpinUsage": "{{used}} / {{total}} spinova искориштено",
     "freeSpinProvider": "Пружатељ: {{provider}}",
+    "usableOnAllGames": "Доступно на свим играма",
     "freeSpinClaimed": "Бесплатни окретаји преузети: {{count}} ({{status}})",
     "freeSpinWinnings": "Добитци: {{amount}}",
     "depositRequired": "Уплатите барем један депозит како бисте преузели овај бонус.",

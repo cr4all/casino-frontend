@@ -628,6 +628,7 @@ export const en = {
     freeSpinProvider: 'Provider: {{provider}}',
     usableAtProvider: 'Playable on {{provider}} games',
     usableAtVendors: 'Playable on: {{vendors}}',
+    usableOnAllGames: 'Playable on all games',
     freeSpinClaimed: 'Free spins claimed: {{count}} ({{status}})',
     freeSpinWinnings: 'Winnings: {{amount}}',
     depositRequired: 'Make at least one deposit to claim this bonus.',

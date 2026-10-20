@@ -513,6 +513,7 @@ export const uz: LocaleTree = {
     "freeSpinCount": "{{count}} bepul aylantirish",
     "freeSpinUsage": "{{used}} / {{total}} aylantirish ishlatildi",
     "freeSpinProvider": "Provayder: {{provider}}",
+    "usableOnAllGames": "Barcha o‘yinlarda mavjud",
     "freeSpinClaimed": "Bepul aylantirish olindi: {{count}} ({{status}})",
     "freeSpinWinnings": "Yutuq: {{amount}}",
     "depositRequired": "Ushbu bonusni olish uchun kamida bitta depozit qiling.",

@@ -523,6 +523,7 @@ export const zhTw: LocaleTree = {
     "freeSpinCount": "{{count}} 次免費旋轉",
     "freeSpinUsage": "已使用 {{used}} / {{total}} 次旋轉",
     "freeSpinProvider": "供應商：{{provider}}",
+    "usableOnAllGames": "可用於所有遊戲",
     "freeSpinClaimed": "已領取免費旋轉：{{count}}（{{status}}）",
     "freeSpinWinnings": "贏取：{{amount}}",
     "depositRequired": "請至少完成一次存款以領取此獎金。",

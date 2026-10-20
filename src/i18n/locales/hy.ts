@@ -521,6 +521,7 @@ export const hy: LocaleTree = {
     "freeSpinCount": "{{count}} անվճար պտույթ",
     "freeSpinUsage": "{{used}} / {{total}} պտույթ օգտագործված",
     "freeSpinProvider": "Մատակարար՝ {{provider}}",
+    "usableOnAllGames": "Հասանելի է բոլոր խաղերում",
     "freeSpinClaimed": "Անվճար պտույթներ ստացված՝ {{count}} ({{status}})",
     "freeSpinWinnings": "Շահույթ՝ {{amount}}",
     "depositRequired": "Այս բոնուսը ստանալու համար կատարեք առնվազն մեկ ավանդ:",

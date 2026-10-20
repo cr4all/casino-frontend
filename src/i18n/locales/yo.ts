@@ -513,6 +513,7 @@ export const yo: LocaleTree = {
     "freeSpinCount": "{{count}} yíyí padà àìsàn",
     "freeSpinUsage": "{{used}} / {{total}} yíyí padà tí a lo",
     "freeSpinProvider": "Olùpèsè: {{provider}}",
+    "usableOnAllGames": "Wà fún gbogbo eré",
     "freeSpinClaimed": "A ti gba yíyí padà àìsàn: {{count}} ({{status}})",
     "freeSpinWinnings": "Ère: {{amount}}",
     "depositRequired": "Fi owó sílẹ̀ o kéré jù lẹ́ẹ̀kan láti gba ẹ̀bùn yìí.",

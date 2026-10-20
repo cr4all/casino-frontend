@@ -531,6 +531,7 @@ export const it: LocaleTree = {
     "freeSpinCount": "{{count}} giri gratis",
     "freeSpinUsage": "{{used}} / {{total}} giri usati",
     "freeSpinProvider": "Fornitore: {{provider}}",
+    "usableOnAllGames": "Disponibile su tutti i giochi",
     "freeSpinClaimed": "Giri gratis riscattati: {{count}} ({{status}})",
     "freeSpinWinnings": "Vincite: {{amount}}",
     "depositRequired": "Effettua almeno un deposito per riscattare questo bonus.",

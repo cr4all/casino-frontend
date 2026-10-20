@@ -521,6 +521,7 @@ export const lo: LocaleTree = {
     "freeSpinCount": "{{count}} ຟລີສະປິນ",
     "freeSpinUsage": "{{used}} / {{total}} ສະປິນທີ່ໃຊ້",
     "freeSpinProvider": "ຜູ້ໃຫ້ບໍລິການ: {{provider}}",
+    "usableOnAllGames": "ຫຼິ້ນໄດ້ທຸກເກມ",
     "freeSpinClaimed": "ຟລີສະປິນທີ່ອ້າງວ່າ: {{count}} ({{status}})",
     "freeSpinWinnings": "ການຊະນະ: {{amount}}",
     "depositRequired": "ໃຫ້ເງິນຝາກຢ່າງຫນ້ອຍຫນຶ່ງເພື່ອຂໍເງິນໂບນັດນີ້.",

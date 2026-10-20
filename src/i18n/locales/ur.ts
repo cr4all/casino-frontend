@@ -513,6 +513,7 @@ export const ur: LocaleTree = {
     "freeSpinCount": "{{count}} مفت اسپن",
     "freeSpinUsage": "{{used}} / {{total}} اسپن استعمال",
     "freeSpinProvider": "فراہم کنندہ: {{provider}}",
+    "usableOnAllGames": "تمام گیمز پر دستیاب",
     "freeSpinClaimed": "مفت اسپن حاصل: {{count}} ({{status}})",
     "freeSpinWinnings": "جیت: {{amount}}",
     "depositRequired": "یہ بونس حاصل کرنے کے لیے کم از کم ایک جمع کریں۔",

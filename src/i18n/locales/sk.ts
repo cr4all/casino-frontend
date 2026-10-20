@@ -524,6 +524,7 @@ export const sk: LocaleTree = {
     "freeSpinCount": "{{count}} voľných spinov",
     "freeSpinUsage": "{{used}} / {{total}} spinov použitých",
     "freeSpinProvider": "Poskytovateľ: {{provider}}",
+    "usableOnAllGames": "Hrateľné na všetkých hrách",
     "freeSpinClaimed": "Voľné spiny prevzaté: {{count}} ({{status}})",
     "freeSpinWinnings": "Výhry: {{amount}}",
     "depositRequired": "Ak chcete prevziať tento bonus, vykonajte aspoň jeden vklad.",

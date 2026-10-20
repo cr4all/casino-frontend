@@ -581,6 +581,7 @@ export const ko: LocaleTree = {
     "freeSpinCount": "무료 스핀 {{count}}회",
     "freeSpinUsage": "{{used}} / {{total}} 스핀 사용",
     "freeSpinProvider": "프로바이더: {{provider}}",
+    "usableOnAllGames": "모든게임 이용가능",
     "freeSpinClaimed": "무료 스핀 {{count}}회를 받았습니다 ({{status}})",
     "freeSpinWinnings": "당첨금: {{amount}}",
     "depositRequired": "이 보너스를 받으려면 최소 1회 입금이 필요합니다.",
