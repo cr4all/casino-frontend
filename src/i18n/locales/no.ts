@@ -524,6 +524,7 @@ export const no: LocaleTree = {
     "freeSpinCount": "{{count}} gratis spinn",
     "freeSpinUsage": "{{used}} / {{total}} spinn brukt",
     "freeSpinProvider": "Leverandør: {{provider}}",
+    "usableOnAllGames": "Spillbart på alle spill",
     "freeSpinClaimed": "Gratis spinn hentet: {{count}} ({{status}})",
     "freeSpinWinnings": "Gevinster: {{amount}}",
     "depositRequired": "Gjør minst ett innskudd for å hente denne bonusen.",

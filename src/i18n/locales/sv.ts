@@ -521,6 +521,7 @@ export const sv: LocaleTree = {
     "freeSpinCount": "{{count}} gratissnurr",
     "freeSpinUsage": "{{used}} / {{total}} snurr använda",
     "freeSpinProvider": "Leverantör: {{provider}}",
+    "usableOnAllGames": "Spelbart på alla spel",
     "freeSpinClaimed": "Gratissnurr hämtade: {{count}} ({{status}})",
     "freeSpinWinnings": "Vinster: {{amount}}",
     "depositRequired": "Gör minst en insättning för att hämta denna bonus.",

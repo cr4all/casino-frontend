@@ -20,6 +20,7 @@ export interface BonusPolicy {
   provider_slug?: string | null;
   provider_name?: string | null;
   vendor_names?: string[];
+  usable_on_all_games?: boolean;
 }
 
 export interface ActiveBonus {

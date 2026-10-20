@@ -529,6 +529,7 @@ export const he: LocaleTree = {
     "freeSpinCount": "{{count}} ספינים בחינם",
     "freeSpinUsage": "{{used}} / {{total}} נעשה שימוש בספינים",
     "freeSpinProvider": "ספק: {{provider}}",
+    "usableOnAllGames": "זמין בכל המשחקים",
     "freeSpinClaimed": "ספינים בחינם עם דרישת בעלות: {{count}} ({{status}})",
     "freeSpinWinnings": "זכיות: {{amount}}",
     "depositRequired": "בצע לפחות הפקדה אחת כדי לממש בונוס זה.",

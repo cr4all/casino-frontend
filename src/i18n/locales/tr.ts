@@ -525,6 +525,7 @@ export const tr: LocaleTree = {
     "freeSpinCount": "{{count}} Ücretsiz Dönüş",
     "freeSpinUsage": "{{used}} / {{total}} dönüş kullanıldı",
     "freeSpinProvider": "Sağlayıcı: {{provider}}",
+    "usableOnAllGames": "Tüm oyunlarda kullanılabilir",
     "freeSpinClaimed": "Ücretsiz dönüşler talep edildi: {{count}} ({{status}})",
     "freeSpinWinnings": "Kazanç: {{amount}}",
     "depositRequired": "Bu bonusu talep etmek için en az bir yatırım yapın.",

@@ -526,6 +526,7 @@ export const zh: LocaleTree = {
     "freeSpinCount": "{{count}} 次免费旋转",
     "freeSpinUsage": "已使用 {{used}} / {{total}} 次旋转",
     "freeSpinProvider": "供应商：{{provider}}",
+    "usableOnAllGames": "可用于所有游戏",
     "freeSpinClaimed": "已领取免费旋转：{{count}}（{{status}}）",
     "freeSpinWinnings": "赢取：{{amount}}",
     "depositRequired": "请至少完成一次存款以领取此奖金。",

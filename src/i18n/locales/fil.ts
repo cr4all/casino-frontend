@@ -513,6 +513,7 @@ export const fil: LocaleTree = {
     "freeSpinCount": "{{count}} Libreng Spins",
     "freeSpinUsage": "{{used}} / {{total}} spins ang nagamit",
     "freeSpinProvider": "Provider: {{provider}}",
+    "usableOnAllGames": "Puwedeng laruin sa lahat ng laro",
     "freeSpinClaimed": "Nakuha ang libreng spins: {{count}} ({{status}})",
     "freeSpinWinnings": "Panalo: {{amount}}",
     "depositRequired": "Gumawa ng kahit isang deposit para makuha ang bonus na ito.",

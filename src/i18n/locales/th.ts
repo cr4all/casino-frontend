@@ -526,6 +526,7 @@ export const th: LocaleTree = {
     "freeSpinCount": "{{count}} ฟรีสปิน",
     "freeSpinUsage": "ใช้ {{used}} / {{total}} สปิน",
     "freeSpinProvider": "ผู้ให้บริการ: {{provider}}",
+    "usableOnAllGames": "เล่นได้ทุกเกม",
     "freeSpinClaimed": "รับฟรีสปินแล้ว: {{count}} ({{status}})",
     "freeSpinWinnings": "เงินรางวัล: {{amount}}",
     "depositRequired": "ฝากเงินอย่างน้อยหนึ่งครั้งเพื่อรับโบนัสนี้",

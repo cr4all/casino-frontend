@@ -516,6 +516,7 @@ export const so: LocaleTree = {
     "freeSpinCount": "{{count}} dabagal bilaash ah",
     "freeSpinUsage": "{{used}} / {{total}} dabagal la isticmaalay",
     "freeSpinProvider": "Bixiye: {{provider}}",
+    "usableOnAllGames": "Lagu ciyaari karo dhammaan ciyaaraha",
     "freeSpinClaimed": "Dabagal bilaash ah la dalbaday: {{count}} ({{status}})",
     "freeSpinWinnings": "Guulaha: {{amount}}",
     "depositRequired": "Dhig ugu yaraan hal lacag si aad u dalbato gunno.",

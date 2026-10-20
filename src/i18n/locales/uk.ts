@@ -524,6 +524,7 @@ export const uk: LocaleTree = {
     "freeSpinCount": "{{count}} безкоштовних обертів",
     "freeSpinUsage": "Використано {{used}} з {{total}} обертів",
     "freeSpinProvider": "Провайдер: {{provider}}",
+    "usableOnAllGames": "Доступно в усіх іграх",
     "freeSpinClaimed": "Безкоштовні оберти отримано: {{count}} ({{status}})",
     "freeSpinWinnings": "Виграш: {{amount}}",
     "depositRequired": "Зробіть хоча б один депозит, щоб отримати цей бонус.",

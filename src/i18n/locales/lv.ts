@@ -516,6 +516,7 @@ export const lv: LocaleTree = {
     "freeSpinCount": "{{count}} bezmaksas griezieni",
     "freeSpinUsage": "{{used}} / {{total}} griezieni izmantoti",
     "freeSpinProvider": "Sniedzējs: {{provider}}",
+    "usableOnAllGames": "Pieejams visās spēlēs",
     "freeSpinClaimed": "Bezmaksas griezieni saņemti: {{count}} ({{status}})",
     "freeSpinWinnings": "Laimesti: {{amount}}",
     "depositRequired": "Veiciet vismaz vienu iemaksu, lai saņemtu šo bonusu.",

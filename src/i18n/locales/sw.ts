@@ -513,6 +513,7 @@ export const sw: LocaleTree = {
     "freeSpinCount": "Mizunguko {{count}} bila malipo",
     "freeSpinUsage": "Mizunguko {{used}} / {{total}} imetumika",
     "freeSpinProvider": "Mtoa huduma: {{provider}}",
+    "usableOnAllGames": "Inachezeka kwenye michezo yote",
     "freeSpinClaimed": "Mizunguko bila malipo imedaiwa: {{count}} ({{status}})",
     "freeSpinWinnings": "Ushindi: {{amount}}",
     "depositRequired": "Fanya angalau uwekaji mmoja ili kudai bonasi hii.",

@@ -516,6 +516,7 @@ export const tg: LocaleTree = {
     "freeSpinCount": "{{count}} чархи бепул",
     "freeSpinUsage": "{{used}} / {{total}} чарх истифода шуд",
     "freeSpinProvider": "Таъминкунанда: {{provider}}",
+    "usableOnAllGames": "Дар ҳамаи бозиҳо дастрас аст",
     "freeSpinClaimed": "Чархҳои бепул гирифта шуд: {{count}} ({{status}})",
     "freeSpinWinnings": "Бурд: {{amount}}",
     "depositRequired": "Барои гирифтани ин бонус ҳадди ақал як депозит гузоред.",

@@ -516,6 +516,7 @@ export const te: LocaleTree = {
     "freeSpinCount": "{{count}} ఉచిత స్పిన్‌లు",
     "freeSpinUsage": "{{used}} / {{total}} స్పిన్‌లు ఉపయోగించబడ్డాయి",
     "freeSpinProvider": "ప్రొవైడర్: {{provider}}",
+    "usableOnAllGames": "అన్ని గేమ్‌లలో ఆడవచ్చు",
     "freeSpinClaimed": "ఉచిత స్పిన్‌లు క్లెయిమ్ చేయబడ్డాయి: {{count}} ({{status}})",
     "freeSpinWinnings": "గెలుపు మొత్తం: {{amount}}",
     "depositRequired": "ఈ బోనస్ క్లెయిమ్ చేయడానికి కనీసం ఒక డిపాజిట్ చేయండి.",

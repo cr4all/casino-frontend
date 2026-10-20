@@ -521,6 +521,7 @@ export const fi: LocaleTree = {
     "freeSpinCount": "{{count}} ilmaiskierrosta",
     "freeSpinUsage": "{{used}} / {{total}} kierrosta käytetty",
     "freeSpinProvider": "Tarjoaja: {{provider}}",
+    "usableOnAllGames": "Pelattavissa kaikissa peleissä",
     "freeSpinClaimed": "Ilmaiskierrokset lunastettu: {{count}} ({{status}})",
     "freeSpinWinnings": "Voitot: {{amount}}",
     "depositRequired": "Tee vähintään yksi talletus lunastaaksesi tämän bonuksen.",

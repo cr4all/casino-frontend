@@ -515,6 +515,7 @@ export const sq: LocaleTree = {
     "freeSpinCount": "{{count}} rrotullime falas",
     "freeSpinUsage": "{{used}} / {{total}} rrotullime të përdorura",
     "freeSpinProvider": "Ofruesi: {{provider}}",
+    "usableOnAllGames": "I disponueshëm në të gjitha lojërat",
     "freeSpinClaimed": "Rrotullimet falas u morën: {{count}} ({{status}})",
     "freeSpinWinnings": "Fitimet: {{amount}}",
     "depositRequired": "Bëni të paktën një depozitë për të marrë këtë bonus.",

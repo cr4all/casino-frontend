@@ -521,6 +521,7 @@ export const pa: LocaleTree = {
     "freeSpinCount": "{{count}} ਮੁਫਤ ਸਪਿਨ",
     "freeSpinUsage": "{{used}} / {{total}} ਸਪਿਨ ਵਰਤੇ ਗਏ",
     "freeSpinProvider": "ਪ੍ਰੋਵਾਈਡਰ: {{provider}}",
+    "usableOnAllGames": "ਸਾਰੀਆਂ ਗੇਮਾਂ ਵਿੱਚ ਉਪਲਬਧ",
     "freeSpinClaimed": "ਮੁਫਤ ਸਪਿਨ ਦਾਅਵਾ ਕੀਤਾ: {{count}} ({{status}})",
     "freeSpinWinnings": "ਜਿੱਤਾਂ: {{amount}}",
     "depositRequired": "ਇਸ ਬੋਨਸ ਦਾ ਦਾਅਵਾ ਕਰਨ ਲਈ ਘੱਟੋ-ਘੱਟ ਇੱਕ ਡਿਪਾਜ਼ਿਟ ਬਣਾਓ.",
