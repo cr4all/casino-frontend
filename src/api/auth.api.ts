@@ -11,6 +11,8 @@ export interface RegistrationOption {
 
 export interface RegisterOptions {
   currencies: RegistrationOption[];
+  /** False when this market registers without an email verification code. */
+  require_email_verification?: boolean;
 }
 
 export interface SessionPolicy {
@@ -27,7 +29,7 @@ export interface RegisterPayload {
   currency: string;
   affiliate_code?: string;
   invite_code?: string;
-  email_verification_code: string;
+  email_verification_code?: string;
   turnstileToken?: string;
   risk_context?: ClientRiskContext;
 }

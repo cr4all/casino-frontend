@@ -73,6 +73,7 @@ export function RegisterModal() {
     resetWidget,
   } = useRiskChallenge();
   const registerInFlightRef = useRef(false);
+  const requireEmailVerification = options != null && options.require_email_verification !== false;
 
   useEffect(() => {
     if (activeModal !== 'register') {
@@ -101,7 +102,7 @@ export function RegisterModal() {
       .catch(() => {
         if (!cancelled) {
           // Unlock the form even when options fail — email verify does not need currencies.
-          setOptions({ currencies: [] });
+          setOptions({ currencies: [], require_email_verification: true });
           setError(t('auth.registerError'));
         }
       });
@@ -171,7 +172,7 @@ export function RegisterModal() {
     phone: form.phone,
     country: phoneCountryCode,
     currency: form.currency,
-    email_verification_code: emailOtp,
+    ...(requireEmailVerification ? { email_verification_code: emailOtp } : {}),
     ...(form.affiliate_code ? { affiliate_code: form.affiliate_code } : {}),
     ...(form.invite_code ? { invite_code: form.invite_code } : {}),
     ...(turnstileToken ? { turnstileToken } : {}),
@@ -286,13 +287,18 @@ export function RegisterModal() {
       ['currency', required(t('auth.currency'), form.currency)],
       ['password', passwordError],
       ['password_confirmation', confirmError],
-      ['email_verification_code', !emailOtpSent
-        ? t('auth.emailVerificationRequired')
-        : !requiredValue(emailOtp)
-          ? t('common.fieldRequired', { field: t('auth.emailVerificationCode') })
-          : emailOtp.length !== 6
-            ? t('common.fieldCodeInvalid')
-            : undefined],
+      [
+        'email_verification_code',
+        requireEmailVerification
+          ? !emailOtpSent
+            ? t('auth.emailVerificationRequired')
+            : !requiredValue(emailOtp)
+              ? t('common.fieldRequired', { field: t('auth.emailVerificationCode') })
+              : emailOtp.length !== 6
+                ? t('common.fieldCodeInvalid')
+                : undefined
+          : undefined,
+      ],
     ]);
 
     setFieldErrors(errors);
@@ -386,7 +392,7 @@ export function RegisterModal() {
           <label htmlFor="reg-email" className="mb-1 block text-xs text-muted">
             {t('auth.email')}
           </label>
-          <div className="flex gap-2">
+          <div className={requireEmailVerification ? 'flex gap-2' : undefined}>
             <input
               id="reg-email"
               type="email"
@@ -396,17 +402,19 @@ export function RegisterModal() {
               aria-invalid={fieldErrors.email ? true : undefined}
               aria-describedby={emailErrorId}
               placeholder={t('auth.emailPlaceholder')}
-              className={`${fieldControlClassName(Boolean(fieldErrors.email))} min-w-0 flex-1`}
+              className={`${fieldControlClassName(Boolean(fieldErrors.email))} ${requireEmailVerification ? 'min-w-0 flex-1' : 'w-full'}`}
             />
-            <Button
-              type="button"
-              variant="secondary"
-              disabled={emailVerifyLoading}
-              onClick={() => void handleRequestEmailVerification()}
-              className="h-[42px] shrink-0 px-4"
-            >
-              {emailVerifyLoading ? t('common.loading') : t('profile.verifyNow')}
-            </Button>
+            {requireEmailVerification && (
+              <Button
+                type="button"
+                variant="secondary"
+                disabled={emailVerifyLoading}
+                onClick={() => void handleRequestEmailVerification()}
+                className="h-[42px] shrink-0 px-4"
+              >
+                {emailVerifyLoading ? t('common.loading') : t('profile.verifyNow')}
+              </Button>
+            )}
           </div>
           <FieldError id={emailErrorId} message={fieldErrors.email} />
         </div>
@@ -467,23 +475,25 @@ export function RegisterModal() {
           onChange={(e) => update('password_confirmation', e.target.value)}
           error={fieldErrors.password_confirmation}
         />
-        <FormTextField
-          id="reg-email-otp"
-          label={t('auth.emailVerificationCode')}
-          type="text"
-          inputMode="numeric"
-          maxLength={6}
-          autoComplete="one-time-code"
-          value={emailOtp}
-          onChange={(e) => {
-            setEmailOtp(e.target.value.replace(/\D/g, '').slice(0, 6));
-            setFieldErrors((prev) => omitFieldError(prev, 'email_verification_code'));
-          }}
-          placeholder="000000"
-          disabled={!emailOtpSent}
-          error={fieldErrors.email_verification_code}
-        />
-        {emailVerifyMessage && !fieldErrors.email_verification_code && !fieldErrors.email && (
+        {requireEmailVerification && (
+          <FormTextField
+            id="reg-email-otp"
+            label={t('auth.emailVerificationCode')}
+            type="text"
+            inputMode="numeric"
+            maxLength={6}
+            autoComplete="one-time-code"
+            value={emailOtp}
+            onChange={(e) => {
+              setEmailOtp(e.target.value.replace(/\D/g, '').slice(0, 6));
+              setFieldErrors((prev) => omitFieldError(prev, 'email_verification_code'));
+            }}
+            placeholder="000000"
+            disabled={!emailOtpSent}
+            error={fieldErrors.email_verification_code}
+          />
+        )}
+        {requireEmailVerification && emailVerifyMessage && !fieldErrors.email_verification_code && !fieldErrors.email && (
           <p className={`text-xs ${emailOtpSent ? 'text-accent' : 'text-red-400'}`}>{emailVerifyMessage}</p>
         )}
         {challengeRequired && (
