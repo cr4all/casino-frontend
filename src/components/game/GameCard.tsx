@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState, type MouseEvent } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import type { Game } from '@/types';
 import { useAuthStore } from '@/stores/authStore';
 import { useFavoritesStore } from '@/stores/favoritesStore';
@@ -20,6 +21,7 @@ interface GameCardProps {
 
 export function GameCard({ game, variant = 'slider', isNew = false }: GameCardProps) {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const openModal = useUiStore((s) => s.openModal);
   const favoriteIds = useFavoritesStore((s) => s.favoriteIds);
@@ -42,7 +44,7 @@ export function GameCard({ game, variant = 'slider', isNew = false }: GameCardPr
       openModal('login');
       return;
     }
-    GameService.openGameWindow(game.id);
+    GameService.openGameWindow(game.id, navigate);
   };
 
   const handleFavoriteClick = async (e: MouseEvent) => {

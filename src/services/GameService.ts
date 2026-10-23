@@ -1,3 +1,4 @@
+import type { NavigateFunction } from 'react-router-dom';
 import { gameApi } from '@/api/game.api';
 import { AnalyticsService, CasinoAnalyticsEvent } from '@/modules/analytics';
 import { openGameWindow as openGameWindowUtil } from '@/utils/openGameWindow';
@@ -7,9 +8,9 @@ export const GameService = {
   getGames: gameApi.getGames,
   getVendors: gameApi.getVendors,
 
-  openGameWindow(gameId: number): boolean {
+  openGameWindow(gameId: number, navigate?: NavigateFunction): boolean {
     AnalyticsService.track(CasinoAnalyticsEvent.GameLaunchClicked, { game_id: gameId });
-    return openGameWindowUtil(gameId);
+    return openGameWindowUtil(gameId, navigate);
   },
 
   async launch(gameId: number) {

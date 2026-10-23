@@ -7,6 +7,11 @@
     "dev": "vite",
     "build": "npm run generate:api && tsc -b && vite build",
     "preview": "vite preview",
+    "mobile:build": "npm run generate:api && tsc -b && vite build --mode mobile",
+    "mobile:sync": "npm run mobile:build && npx cap sync",
+    "mobile:android": "npx cap open android",
+    "mobile:ios": "npx cap open ios",
+    "mobile:copy": "npx cap copy",
     "generate:api": "openapi-typescript contracts/player-v1.yaml -o src/types/api.generated.ts",
     "i18n:extract": "npx --yes tsx scripts/extract-i18n-phrases.mjs",
     "i18n:locales": "npx --yes tsx scripts/generate-i18n-locales.mjs",
@@ -25,6 +30,11 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/app": "^8.1.2",
+    "@capacitor/browser": "^8.0.5",
+    "@capacitor/core": "^8.5.3",
+    "@capacitor/ios": "^8.5.3",
     "@fingerprintjs/fingerprintjs": "^5.2.0",
     "@fontsource/roboto": "^5.2.10",
     "@fontsource/roboto-condensed": "^5.2.8",
@@ -45,6 +55,7 @@
     "zustand": "^5.0.5"
   },
   "devDependencies": {
+    "@capacitor/cli": "^8.5.3",
     "@sentry/vite-plugin": "^5.4.0",
     "@tailwindcss/vite": "^4.1.8",
     "@types/node": "^22.15.0",

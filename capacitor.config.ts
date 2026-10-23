@@ -1,0 +1,33 @@
+import type { CapacitorConfig } from '@capacitor/cli';
+
+/**
+ * Capacitor config for the iBets24 native apps.
+ * Production uses bundled web assets from `dist/` — do not set server.url for release builds.
+ */
+const config: CapacitorConfig = {
+  appId: 'com.ibets24.app',
+  appName: 'iBets24',
+  webDir: 'dist',
+  server: {
+    // Secure context on Android (required for clipboard, media, etc.).
+    androidScheme: 'https',
+  },
+  android: {
+    allowMixedContent: false,
+  },
+  ios: {
+    // Sumsub KYC and game iframes may use inline media / camera.
+    contentInset: 'automatic',
+    allowsLinkPreview: false,
+  },
+  plugins: {
+    CapacitorHttp: {
+      // Native only: patch fetch/XHR through Android/iOS HTTP stacks so API calls
+      // are not blocked by WebView CORS (origin is https://localhost). Website builds
+      // are unaffected. Does not disable TLS or widen server CORS allowlists.
+      enabled: true,
+    },
+  },
+};
+
+export default config;

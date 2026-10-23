@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link, Navigate, useSearchParams } from 'react-router-dom';
 import { paymentApi, type DepositItem, type WithdrawalItem } from '@/api/payment.api';
 import { type SportsBetItem } from '@/api/sports.api';
@@ -40,6 +40,7 @@ export function TransactionsPage() {
   const [pagination, setPagination] = useState<PaginationMeta>(EMPTY_PAGINATION);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
+  const tabListRef = useRef<HTMLDivElement>(null);
 
   const setTab = (next: Tab) => {
     setSearchParams({ tab: next });
@@ -84,6 +85,20 @@ export function TransactionsPage() {
     setPage(1);
   }, [tab]);
 
+  useEffect(() => {
+    const scroller = tabListRef.current;
+    const active = scroller?.querySelector<HTMLButtonElement>('[data-active="true"]');
+    if (!scroller || !active) return;
+
+    const scrollerRect = scroller.getBoundingClientRect();
+    const activeRect = active.getBoundingClientRect();
+    if (activeRect.left < scrollerRect.left) {
+      scroller.scrollLeft -= scrollerRect.left - activeRect.left;
+    } else if (activeRect.right > scrollerRect.right) {
+      scroller.scrollLeft += activeRect.right - scrollerRect.right;
+    }
+  }, [tab]);
+
   if (!isAuthenticated) {
     return <Navigate to="/" replace />;
   }
@@ -125,7 +140,7 @@ export function TransactionsPage() {
   ];
 
   return (
-    <div className="py-8">
+    <div className="min-w-0 max-w-full py-8">
       <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
         <h1 className="text-2xl font-bold text-white">{t('transactions.title')}</h1>
         <div className="flex gap-2">
@@ -134,13 +149,17 @@ export function TransactionsPage() {
         </div>
       </div>
 
-      <div className="mb-6 flex gap-2 border-b border-white/5">
+      <div
+        ref={tabListRef}
+        className="mb-6 flex w-full min-w-0 touch-pan-x gap-1 overflow-x-auto overflow-y-hidden overscroll-x-contain border-b border-white/5 scrollbar-hide"
+      >
         {tabs.map((tabItem) => (
           <button
             key={tabItem.id}
             type="button"
+            data-active={tab === tabItem.id ? 'true' : 'false'}
             onClick={() => setTab(tabItem.id)}
-            className={`px-4 py-2 text-sm font-medium transition-colors border-b-2 -mb-px ${
+            className={`shrink-0 whitespace-nowrap px-4 py-2 text-sm font-medium transition-colors border-b-2 -mb-px ${
               tab === tabItem.id
                 ? 'border-accent text-white'
                 : 'border-transparent text-muted hover:text-white'

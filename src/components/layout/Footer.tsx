@@ -6,6 +6,7 @@ import { Logo } from '@/components/common/Logo';
 import { useCookieConsentStore } from '@/stores/cookieConsentStore';
 import { useRequestLiveChat } from '@/hooks/useRequestLiveChat';
 import { typePath } from '@/stores/gameStore';
+import { handleExternalLinkClick } from '@/utils/openExternalUrl';
 
 const SUPPORT_EMAIL = 'support@ibets24.com';
 const PARTNERS_EMAIL = 'partners@ibets24.com';
@@ -197,6 +198,7 @@ export function Footer() {
                 className="site-footer__seal"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleExternalLinkClick}
                 aria-label={t(`footer.${seal.ariaKey}`)}
               >
                 <span className="site-footer__seal-icon-wrap">
@@ -226,6 +228,7 @@ export function Footer() {
             className="site-footer__developer-link"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handleExternalLinkClick}
           >
             {t('footer.developedByName')}
           </a>
@@ -242,6 +245,7 @@ export function Footer() {
               className={`site-footer__social-link site-footer__social-link--${link.key}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleExternalLinkClick}
               aria-label={link.label}
             >
               <span className="site-footer__social-icon">

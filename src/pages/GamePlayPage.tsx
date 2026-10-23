@@ -1,17 +1,19 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useAuthStore } from '@/stores/authStore';
 import { useLanguageInit } from '@/hooks/useLanguageInit';
 import { useScrollToTopOnNavigate } from '@/hooks/useScrollToTopOnNavigate';
 import { useTranslation } from '@/hooks/useTranslation';
 import { GameService } from '@/services/GameService';
 import { getApiErrorMessage } from '@/utils/apiError';
+import { isNativeApp } from '@/utils/capacitor';
 import { fitGameWindow } from '@/utils/gameWindow';
 import { GAME_FOCUS_CHANNEL } from '@/utils/openGameWindow';
 import type { Game } from '@/types';
 
 export function GamePlayPage() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const hasHydrated = useAuthStore((s) => s.hasHydrated);
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
@@ -19,6 +21,7 @@ export function GamePlayPage() {
   const [launchUrl, setLaunchUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const nativeApp = isNativeApp();
 
   useLanguageInit();
   useScrollToTopOnNavigate();
@@ -34,6 +37,8 @@ export function GamePlayPage() {
   }, []);
 
   useEffect(() => {
+    if (nativeApp) return;
+
     const channel = new BroadcastChannel(GAME_FOCUS_CHANNEL);
     channel.onmessage = (event: MessageEvent<{ type?: string }>) => {
       if (event.data?.type === 'focus') {
@@ -41,20 +46,30 @@ export function GamePlayPage() {
       }
     };
     return () => channel.close();
-  }, []);
+  }, [nativeApp]);
 
   useEffect(() => {
+    if (nativeApp) return;
     fitGameWindow();
-  }, []);
+  }, [nativeApp]);
 
   useEffect(() => {
-    if (!launchUrl) return;
+    if (nativeApp || !launchUrl) return;
     fitGameWindow();
-  }, [launchUrl]);
+  }, [launchUrl, nativeApp]);
 
   useEffect(() => {
+    if (nativeApp) return;
     window.focus();
-  }, [id]);
+  }, [id, nativeApp]);
+
+  const handleClose = () => {
+    if (nativeApp || !window.opener) {
+      navigate(-1);
+      return;
+    }
+    window.close();
+  };
 
   useEffect(() => {
     if (!hasHydrated) return;
@@ -99,7 +114,7 @@ export function GamePlayPage() {
         <p className="text-sm text-muted">{t('gamePlay.tryAgain')}</p>
         <button
           type="button"
-          onClick={() => window.close()}
+          onClick={handleClose}
           className="rounded-lg bg-accent-gold px-6 py-2 text-sm font-bold text-background hover:bg-accent-gold/90"
         >
           {t('gamePlay.closeWindow')}

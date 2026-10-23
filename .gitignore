@@ -2,4 +2,17 @@ node_modules
 dist
 .env
 .env.local
+.env.mobile
 *.local
+
+# Capacitor / native tooling
+android/local.properties
+android/.gradle
+android/app/build
+android/build
+android/captures
+ios/App/Pods
+ios/App/Podfile.lock
+*.keystore
+*.jks
+*.mobileprovision

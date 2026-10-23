@@ -1,3 +1,5 @@
+import type { NavigateFunction } from 'react-router-dom';
+import { isNativeApp } from '@/utils/capacitor';
 import { getInitialGameWindowSize } from '@/utils/gameWindow';
 
 export const GAME_POPUP_NAME = 'casino-game-play';
@@ -21,8 +23,24 @@ function focusPopup(popup: Window) {
   }
 }
 
-export function openGameWindow(gameId: number): boolean {
-  const url = `${window.location.origin}/games/${gameId}/play`;
+/**
+ * Opens a game in a desktop popup (web) or in-app full-screen route (native).
+ * Pass `navigate` from React Router when calling from a component so the native
+ * path uses client-side routing instead of a full document load.
+ */
+export function openGameWindow(gameId: number, navigate?: NavigateFunction): boolean {
+  const path = `/games/${gameId}/play`;
+
+  if (isNativeApp()) {
+    if (navigate) {
+      navigate(path);
+      return true;
+    }
+    window.location.assign(path);
+    return true;
+  }
+
+  const url = `${window.location.origin}${path}`;
   const { width, height, left, top } = getInitialGameWindowSize();
   const features = [
     `width=${width}`,

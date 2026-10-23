@@ -1154,6 +1154,12 @@ body.horizontal-page-lock {
   display: block;
 }
 
+/* Native / notched devices: keep sticky header clear of the status bar */
+header.sticky {
+  padding-top: env(safe-area-inset-top, 0px);
+  height: calc(3.5rem + env(safe-area-inset-top, 0px));
+}
+
 /* Offset for fixed mobile wallet CTAs + bottom tab bar */
 @media (max-width: 1023px) {
   .has-mobile-wallet-bar {
@@ -1162,8 +1168,8 @@ body.horizontal-page-lock {
   }
 
   .sports-iframe-viewport--with-wallet-bar {
-    min-height: calc(100dvh - 3.5rem - var(--mobile-wallet-bar-offset, 0px));
-    height: calc(100dvh - 3.5rem - var(--mobile-wallet-bar-offset, 0px));
+    min-height: calc(100dvh - 3.5rem - env(safe-area-inset-top, 0px) - var(--mobile-wallet-bar-offset, 0px));
+    height: calc(100dvh - 3.5rem - env(safe-area-inset-top, 0px) - var(--mobile-wallet-bar-offset, 0px));
   }
 }
 

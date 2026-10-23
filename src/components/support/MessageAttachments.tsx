@@ -70,7 +70,16 @@ function AuthenticatedFileLink({
 
     try {
       const blobUrl = await fetchAuthenticatedBlobUrl(url);
-      window.open(blobUrl, '_blank', 'noopener,noreferrer');
+      // Prefer a download/open via an anchor — window.open(blob:) is unreliable
+      // inside Capacitor WebViews and some mobile browsers.
+      const anchor = document.createElement('a');
+      anchor.href = blobUrl;
+      anchor.target = '_blank';
+      anchor.rel = 'noopener noreferrer';
+      anchor.download = name;
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
       window.setTimeout(() => URL.revokeObjectURL(blobUrl), 60_000);
     } catch {
       // Ignore — link stays inert on failure.

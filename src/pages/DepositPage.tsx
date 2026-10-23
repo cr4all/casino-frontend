@@ -40,6 +40,7 @@ import {
   requiredValue,
   type FieldErrors,
 } from '@/utils/formValidation';
+import { handleExternalLinkClick } from '@/utils/openExternalUrl';
 
 type DepositStep = 1 | 2 | 3;
 
@@ -601,6 +602,7 @@ export function DepositPage() {
                     href={paymentUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={handleExternalLinkClick}
                     className="inline-flex rounded-md bg-accent-gold px-4 py-2 text-sm font-semibold text-background hover:bg-accent-gold/90"
                   >
                     {t('deposit.openPaymentPage')}
