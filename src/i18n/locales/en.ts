@@ -189,6 +189,11 @@ export const en = {
     developedByName: 'Ascendra Platforms',
   
       copyright: '© {{year}} iBets24. All rights reserved.',
+    downloadApp: 'Download Android app',
+    download: 'Download',
+  },
+  mobileUpdate: {
+    updating: 'Downloading the latest app version…',
   },
   legal: {
     backHome: '← Back to home',

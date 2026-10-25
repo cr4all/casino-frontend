@@ -1157,7 +1157,30 @@ body.horizontal-page-lock {
 /* Native / notched devices: keep sticky header clear of the status bar */
 header.sticky {
   padding-top: env(safe-area-inset-top, 0px);
-  height: calc(3.5rem + env(safe-area-inset-top, 0px));
+  height: auto;
+  min-height: calc(3.5rem + env(safe-area-inset-top, 0px));
+}
+
+.mobile-app-banner {
+  height: calc(3.25rem + env(safe-area-inset-top, 0px));
+  padding-top: env(safe-area-inset-top, 0px);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.35);
+  background: linear-gradient(90deg, #3d3214 0%, #1c160c 100%);
+}
+
+.mobile-app-banner-spacer {
+  height: calc(3.25rem + env(safe-area-inset-top, 0px));
+}
+
+html[data-theme='light'] .mobile-app-banner {
+  border-bottom-color: rgba(184, 134, 11, 0.4);
+  background: linear-gradient(90deg, #ffe082 0%, #fff3c4 100%);
+}
+
+@media (max-width: 1023px) {
+  header.sticky:has(.mobile-app-banner-spacer) {
+    padding-top: 0;
+  }
 }
 
 /* Offset for fixed mobile wallet CTAs + bottom tab bar */
@@ -1167,9 +1190,13 @@ header.sticky {
     padding-bottom: var(--mobile-wallet-bar-offset);
   }
 
+  .app-shell:has(.mobile-app-banner-spacer) {
+    --site-header-offset: calc(6.75rem + env(safe-area-inset-top, 0px));
+  }
+
   .sports-iframe-viewport--with-wallet-bar {
-    min-height: calc(100dvh - 3.5rem - env(safe-area-inset-top, 0px) - var(--mobile-wallet-bar-offset, 0px));
-    height: calc(100dvh - 3.5rem - env(safe-area-inset-top, 0px) - var(--mobile-wallet-bar-offset, 0px));
+    min-height: calc(100dvh - var(--site-header-offset, calc(3.5rem + env(safe-area-inset-top, 0px))) - var(--mobile-wallet-bar-offset, 0px));
+    height: calc(100dvh - var(--site-header-offset, calc(3.5rem + env(safe-area-inset-top, 0px))) - var(--mobile-wallet-bar-offset, 0px));
   }
 }
 
@@ -1397,6 +1424,19 @@ header.sticky {
 
 .site-footer__developer-link:hover {
   opacity: 0.85;
+}
+
+.mobile-app-update {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: color-mix(in srgb, var(--color-background) 88%, transparent);
+  color: var(--color-foreground);
+  text-align: center;
 }
 .site-footer__disclaimer {
   font-size: 0.75rem;

@@ -9,22 +9,32 @@ import '@fontsource/roboto-condensed/400.css';
 import '@fontsource/roboto-condensed/700.css';
 import { App } from '@/App';
 import { AnalyticsProvider } from '@/modules/analytics';
+import { isNativeApp } from '@/utils/capacitor';
+import { resolveMobileEndpoints } from '@/utils/mobileEndpoints';
 import '@/index.css';
 
-const rootElement = document.getElementById('root');
+async function start(): Promise<void> {
+  if (isNativeApp()) {
+    await resolveMobileEndpoints();
+  }
 
-if (!rootElement) {
-  throw new Error('Root element #root not found');
+  const rootElement = document.getElementById('root');
+
+  if (!rootElement) {
+    throw new Error('Root element #root not found');
+  }
+
+  createRoot(rootElement, {
+    onUncaughtError: Sentry.reactErrorHandler(),
+    onCaughtError: Sentry.reactErrorHandler(),
+    onRecoverableError: Sentry.reactErrorHandler(),
+  }).render(
+    <StrictMode>
+      <AnalyticsProvider>
+        <App />
+      </AnalyticsProvider>
+    </StrictMode>,
+  );
 }
 
-createRoot(rootElement, {
-  onUncaughtError: Sentry.reactErrorHandler(),
-  onCaughtError: Sentry.reactErrorHandler(),
-  onRecoverableError: Sentry.reactErrorHandler(),
-}).render(
-  <StrictMode>
-    <AnalyticsProvider>
-      <App />
-    </AnalyticsProvider>
-  </StrictMode>,
-);
+void start();

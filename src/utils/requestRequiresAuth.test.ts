@@ -40,6 +40,7 @@ describe('requestRequiresAuth', () => {
     expect(requestRequiresAuth('/auth/login', 'post')).toBe(false);
     expect(requestRequiresAuth('/auth/register-options')).toBe(false);
     expect(requestRequiresAuth('/live-chat/config')).toBe(false);
+    expect(requestRequiresAuth('/mobile-app/version')).toBe(false);
     expect(requestRequiresAuth('/player-levels/tiers')).toBe(false);
     expect(requestRequiresAuth('/sports/launch', 'post')).toBe(false);
     expect(requestRequiresAuth('/payment/withdrawal-verification-limits')).toBe(false);

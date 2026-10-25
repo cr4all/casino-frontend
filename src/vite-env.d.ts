@@ -17,7 +17,11 @@ interface ImportMetaEnv {
   readonly VITE_MARKETING_PIXEL_ID?: string;
   readonly VITE_MARKETING_PIXEL_SRC?: string;
   readonly VITE_ASSETS_BASE_URL?: string;
+  readonly VITE_PASTEBIN_API_DEV_KEY?: string;
+  readonly VITE_PASTEBIN_API_USER_KEY?: string;
 }
+
+declare const __APP_VERSION__: string;
 
 interface ImportMeta {
   readonly env: ImportMetaEnv;

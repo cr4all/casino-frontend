@@ -2,6 +2,7 @@ import Echo from 'laravel-echo';
 import Pusher from 'pusher-js';
 import { useAuthStore } from '@/stores/authStore';
 import { getApiBaseUrl, getReverbHost, getReverbPort, getReverbScheme } from '@/utils/apiBase';
+import { getResolvedMobileEndpoints } from '@/utils/mobileEndpoints';
 
 declare global {
   interface Window {
@@ -26,7 +27,7 @@ function createEchoInstance(accessToken: string): Echo<'reverb'> {
 
   return new Echo({
     broadcaster: 'reverb',
-    key: import.meta.env.VITE_REVERB_APP_KEY ?? 'casino-local-key',
+    key: getResolvedMobileEndpoints()?.reverbAppKey || import.meta.env.VITE_REVERB_APP_KEY || 'casino-local-key',
     wsHost: getReverbHost(),
     wsPort: port,
     wssPort: port,

@@ -10,7 +10,7 @@ export function requestRequiresAuth(url = '', method = 'get'): boolean {
     return false;
   }
 
-  if (path === 'live-chat/config') {
+  if (path === 'live-chat/config' || path === 'mobile-app/version') {
     return false;
   }
 

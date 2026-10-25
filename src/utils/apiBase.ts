@@ -1,3 +1,5 @@
+import { getResolvedMobileEndpoints } from '@/utils/mobileEndpoints';
+
 /**
  * Resolves player API / Reverb endpoints from the browser host.
  *
@@ -103,6 +105,9 @@ export function resolveReverbPort(options: {
 
 /** API base including `/api/v1` (no trailing slash). */
 export function getApiBaseUrl(): string {
+  const pasted = getResolvedMobileEndpoints()?.apiUrl;
+  if (pasted) return pasted;
+
   const override = import.meta.env.VITE_API_URL;
 
   if (typeof window === 'undefined' || !window.location?.hostname) {
@@ -118,6 +123,9 @@ export function getApiBaseUrl(): string {
 }
 
 export function getReverbHost(): string {
+  const pasted = getResolvedMobileEndpoints()?.reverbHost;
+  if (pasted) return pasted;
+
   return resolveReverbHost({
     hostname: typeof window !== 'undefined' ? window.location.hostname : 'localhost',
     isDev: import.meta.env.DEV,
@@ -126,6 +134,9 @@ export function getReverbHost(): string {
 }
 
 export function getReverbScheme(): string {
+  const pasted = getResolvedMobileEndpoints()?.reverbScheme;
+  if (pasted) return pasted;
+
   return resolveReverbScheme({
     hostname: typeof window !== 'undefined' ? window.location.hostname : 'localhost',
     protocol: typeof window !== 'undefined' ? window.location.protocol : 'http:',
@@ -135,6 +146,9 @@ export function getReverbScheme(): string {
 }
 
 export function getReverbPort(): number {
+  const pasted = getResolvedMobileEndpoints()?.reverbPort;
+  if (pasted) return pasted;
+
   return resolveReverbPort({
     hostname: typeof window !== 'undefined' ? window.location.hostname : 'localhost',
     protocol: typeof window !== 'undefined' ? window.location.protocol : 'http:',

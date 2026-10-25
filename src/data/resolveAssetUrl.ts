@@ -1,3 +1,5 @@
+import { getResolvedMobileEndpoints } from '@/utils/mobileEndpoints';
+
 /**
  * Game thumbnails live on the assets host, not in the native app bundle.
  * Used when a mobile build omits VITE_ASSETS_BASE_URL. The WebView origin is
@@ -6,6 +8,9 @@
 const MOBILE_ASSETS_BASE_URL = 'https://image.ibets24.com';
 
 function assetsBaseUrl(): string {
+  const pasted = getResolvedMobileEndpoints()?.assetsBaseUrl?.replace(/\/$/, '') ?? '';
+  if (pasted) return pasted;
+
   const configured = (import.meta.env.VITE_ASSETS_BASE_URL as string | undefined)?.trim().replace(/\/$/, '') ?? '';
   if (configured) return configured;
   if (import.meta.env.MODE === 'mobile') return MOBILE_ASSETS_BASE_URL;

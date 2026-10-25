@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Casino Platform Player API
-  version: 1.10.0
+  version: 1.11.0
   description: |
     Player-facing REST API for the casino platform.
     Source of truth derived from `routes/api.php` and Feature Tests.
@@ -21,6 +21,7 @@ tags:
   - name: Affiliate
   - name: Notification
   - name: Game
+  - name: MobileApp
 
 security:
   - bearerAuth: []
@@ -1565,6 +1566,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorEnvelope'
+
+  /mobile-app/version:
+    get:
+      tags: [MobileApp]
+      summary: Current Android app version and APK download URL
+      security: []
+      responses:
+        '200':
+          description: Current mobile app release. Fields are null when no release is configured.
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessEnvelope'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        required: [version, download_url]
+                        properties:
+                          version:
+                            type: string
+                            nullable: true
+                            example: 1.2.0
+                          download_url:
+                            type: string
+                            format: uri
+                            nullable: true
+                            example: https://cdn.example.com/app.apk
 
 components:
   securitySchemes:

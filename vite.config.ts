@@ -2,6 +2,7 @@ import { defineConfig, type Connect, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { sentryVitePlugin } from '@sentry/vite-plugin';
+import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -44,6 +45,7 @@ function visitorCountryPlugin(): Plugin {
 }
 
 const dir = path.dirname(fileURLToPath(import.meta.url));
+const appVersion = JSON.parse(readFileSync(path.join(dir, 'package.json'), 'utf8')).version as string;
 
 const sentryAuthToken = process.env.SENTRY_AUTH_TOKEN;
 const sentryOrg = process.env.SENTRY_ORG;
@@ -65,6 +67,9 @@ export default defineConfig({
         ]
       : []),
   ],
+  define: {
+    __APP_VERSION__: JSON.stringify(appVersion),
+  },
   resolve: {
     alias: {
       '@': path.resolve(dir, './src'),
