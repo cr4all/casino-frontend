@@ -8,6 +8,7 @@ dist
 # Capacitor / native tooling
 android/local.properties
 android/.gradle
+android/.idea
 android/app/build
 android/build
 android/captures

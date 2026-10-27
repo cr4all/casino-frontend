@@ -182,6 +182,15 @@ export const ko: LocaleTree = {
     "operatorInfo": "iBets24는 2024년 5월 20일 국제회사로 설립된  Ascendra Holding Ltd(등록번호 15727)가 운영합니다. The Computer Gaming Licensing Act 007 of 2005에 따라 Anjouan주 Finance Authority 라이선스(번호 ALSI-142406002-FI1)를 보유하며, 소재지는 Hamchako, Mutsamudu, Autonomous Island of Anjouan, Union of Comoros입니다.",
     "copyright": "© {{year}} iBets24. 모든 권리 보유."
   },
+  "mobileUpdate": {
+    "title": "새 버전이 있습니다",
+    "message": "{{version}} 버전을 받을 수 있습니다. 지금 업데이트할까요?",
+    "update": "업데이트",
+    "later": "나중에",
+    "updating": "새 버전을 다운로드하는 중…",
+    "permission": "이 앱의 설치를 허용한 뒤 다시 업데이트해 주세요.",
+    "failed": "새 버전을 받지 못했습니다. 다시 시도해 주세요."
+  },
   "liveBetFeed": {
     "title": "실시간 베팅",
     "game": "게임",

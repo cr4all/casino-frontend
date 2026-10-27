@@ -193,7 +193,13 @@ export const en = {
     download: 'Download',
   },
   mobileUpdate: {
+    title: 'A new version is available',
+    message: 'Version {{version}} is ready. Download it now?',
+    update: 'Update',
+    later: 'Later',
     updating: 'Downloading the latest app version…',
+    permission: 'Allow installs from this app, then try the update again.',
+    failed: 'The new version could not be downloaded. Please try again.',
   },
   legal: {
     backHome: '← Back to home',
