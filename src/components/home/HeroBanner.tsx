@@ -10,6 +10,8 @@ import {
   HERO_LIVE_CASINO_CASHBACK_PERCENT,
   HERO_PRAGMATIC_CASHBACK_PERCENT,
 } from '@/constants/heroBannerPromo';
+import { resolveAssetUrl } from '@/data/resolveAssetUrl';
+import { useIsMobile } from '@/hooks/useMediaQuery';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useAuthStore } from '@/stores/authStore';
 import { typePath } from '@/stores/gameStore';
@@ -17,6 +19,7 @@ import { isRtlLanguage } from '@/stores/languageStore';
 import { usePlatformSectionStore } from '@/stores/platformSectionStore';
 import { useUiStore } from '@/stores/uiStore';
 import type { HeroBannerSlide, HeroBannersResponse } from '@/types';
+import { handleExternalLinkClick } from '@/utils/openExternalUrl';
 
 function isExternalUrl(url: string): boolean {
   return /^https?:\/\//i.test(url);
@@ -223,47 +226,48 @@ function FirstDepositHeroSlide({ backgroundSrc }: { backgroundSrc: string }) {
   );
 }
 
+function heroSlideImageUrl(slide: HeroBannerSlide, isMobile: boolean): string | undefined {
+  const desktopUrl = resolveAssetUrl(slide.image_url);
+  const mobileUrl = resolveAssetUrl(slide.mobile_image_url);
+  return (isMobile ? mobileUrl ?? desktopUrl : desktopUrl ?? mobileUrl) || undefined;
+}
+
+function isVisibleHeroSlide(slide: HeroBannerSlide): boolean {
+  if (slide.enabled === false) return false;
+  return Boolean(resolveAssetUrl(slide.image_url) || resolveAssetUrl(slide.mobile_image_url));
+}
+
+const heroSlideLinkClass =
+  'absolute inset-0 z-20 cursor-pointer border-0 bg-transparent p-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent-gold';
+
 function ApiHeroSlide({ slide }: { slide: HeroBannerSlide }) {
-  const body = (
-    <div className="hero-banner hero-banner--image-only relative overflow-hidden">
-      <picture className="hero-banner__picture">
-        {slide.mobile_image_url ? (
-          <source media="(max-width: 767px)" srcSet={slide.mobile_image_url} />
-        ) : null}
-        <img
-          src={slide.image_url}
-          alt=""
-          className="hero-banner__scene hero-banner__scene--full"
-          loading="lazy"
-        />
-      </picture>
-    </div>
-  );
-
-  if (!slide.link_url) {
-    return body;
-  }
-
-  if (isExternalUrl(slide.link_url)) {
-    return (
-      <a
-        href={slide.link_url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent-gold"
-      >
-        {body}
-      </a>
-    );
-  }
+  const isMobile = useIsMobile();
+  const imageUrl = heroSlideImageUrl(slide, isMobile);
 
   return (
-    <Link
-      to={slide.link_url}
-      className="block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent-gold"
-    >
-      {body}
-    </Link>
+    <div className="hero-banner hero-banner--image-only relative overflow-hidden">
+      {imageUrl ? (
+        <img
+          src={imageUrl}
+          alt=""
+          className="hero-banner__scene hero-banner__scene--full"
+          loading="eager"
+        />
+      ) : null}
+      {slide.link_url ? (
+        isExternalUrl(slide.link_url) ? (
+          <a
+            href={slide.link_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={heroSlideLinkClass}
+            onClick={handleExternalLinkClick}
+          />
+        ) : (
+          <Link to={slide.link_url} className={heroSlideLinkClass} />
+        )
+      ) : null}
+    </div>
   );
 }
 
@@ -308,7 +312,7 @@ export function HeroBanner() {
   }
 
   const showDefault = config.show_default_hero !== false;
-  const customSlides = config.slides;
+  const customSlides = config.slides.filter(isVisibleHeroSlide);
   const slideCount = (showDefault ? DEFAULT_SLIDE_COUNT : 0) + customSlides.length;
 
   if (slideCount === 0) {

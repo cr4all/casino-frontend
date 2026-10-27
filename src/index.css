@@ -1044,7 +1044,9 @@ body {
   height: 100%;
 }
 
-.hero-slider__swiper .swiper-slide > .hero-banner {
+.hero-slider__swiper .swiper-slide > .hero-banner,
+.hero-slider__swiper .swiper-slide > a,
+.hero-slider__swiper .swiper-slide > a > .hero-banner {
   aspect-ratio: unset;
   max-height: none;
   height: 100%;
@@ -1063,7 +1065,9 @@ body {
     height: 100%;
   }
 
-  .hero-slider__swiper .swiper-slide > .hero-banner {
+  .hero-slider__swiper .swiper-slide > .hero-banner,
+  .hero-slider__swiper .swiper-slide > a,
+  .hero-slider__swiper .swiper-slide > a > .hero-banner {
     height: 100%;
     aspect-ratio: unset;
     min-height: 0;
