@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { fetchMobileAppRelease } from '@/api/mobileApp.api';
 import { useTranslation } from '@/hooks/useTranslation';
-import { isHttpsUrl } from '@/utils/appVersion';
+import { isHttpUrl } from '@/utils/appVersion';
 import { isNativeApp } from '@/utils/capacitor';
 import { handleExternalLinkClick } from '@/utils/openExternalUrl';
 
@@ -16,7 +16,7 @@ function useApkDownloadUrl(): string | null {
     void fetchMobileAppRelease().then((release) => {
       if (cancelled) return;
       const downloadUrl = release?.download_url;
-      setUrl(isHttpsUrl(downloadUrl) ? downloadUrl : null);
+      setUrl(isHttpUrl(downloadUrl) ? downloadUrl : null);
     });
 
     return () => {

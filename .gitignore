@@ -16,3 +16,5 @@ ios/App/Podfile.lock
 *.keystore
 *.jks
 *.mobileprovision
+android/keystore.properties
+android/*-upload-certificate.pem

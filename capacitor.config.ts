@@ -20,14 +20,6 @@ const config: CapacitorConfig = {
     contentInset: 'automatic',
     allowsLinkPreview: false,
   },
-  plugins: {
-    CapacitorHttp: {
-      // Native only: patch fetch/XHR through Android/iOS HTTP stacks so API calls
-      // are not blocked by WebView CORS (origin is https://localhost). Website builds
-      // are unaffected. Does not disable TLS or widen server CORS allowlists.
-      enabled: true,
-    },
-  },
 };
 
 export default config;

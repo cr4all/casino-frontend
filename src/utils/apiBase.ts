@@ -105,8 +105,8 @@ export function resolveReverbPort(options: {
 
 /** API base including `/api/v1` (no trailing slash). */
 export function getApiBaseUrl(): string {
-  const pasted = getResolvedMobileEndpoints()?.apiUrl;
-  if (pasted) return pasted;
+  const remote = getResolvedMobileEndpoints()?.apiUrl;
+  if (remote) return remote;
 
   const override = import.meta.env.VITE_API_URL;
 
@@ -123,8 +123,8 @@ export function getApiBaseUrl(): string {
 }
 
 export function getReverbHost(): string {
-  const pasted = getResolvedMobileEndpoints()?.reverbHost;
-  if (pasted) return pasted;
+  const remote = getResolvedMobileEndpoints()?.reverbHost;
+  if (remote) return remote;
 
   return resolveReverbHost({
     hostname: typeof window !== 'undefined' ? window.location.hostname : 'localhost',
@@ -134,8 +134,8 @@ export function getReverbHost(): string {
 }
 
 export function getReverbScheme(): string {
-  const pasted = getResolvedMobileEndpoints()?.reverbScheme;
-  if (pasted) return pasted;
+  const remote = getResolvedMobileEndpoints()?.reverbScheme;
+  if (remote) return remote;
 
   return resolveReverbScheme({
     hostname: typeof window !== 'undefined' ? window.location.hostname : 'localhost',
@@ -146,8 +146,8 @@ export function getReverbScheme(): string {
 }
 
 export function getReverbPort(): number {
-  const pasted = getResolvedMobileEndpoints()?.reverbPort;
-  if (pasted) return pasted;
+  const remote = getResolvedMobileEndpoints()?.reverbPort;
+  if (remote) return remote;
 
   return resolveReverbPort({
     hostname: typeof window !== 'undefined' ? window.location.hostname : 'localhost',

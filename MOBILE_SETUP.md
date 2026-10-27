@@ -60,7 +60,7 @@ VITE_ASSETS_BASE_URL=https://image.ibets24.com
 
 3. Optional: Turnstile, Sentry, PostHog, Tawk, assets base URL — same `VITE_*` names as the website.
 
-**CORS / HTTP:** Native apps enable Capacitor’s `CapacitorHttp` so axios/`fetch` go through the OS HTTP stack and are **not** subject to WebView CORS (`https://localhost`). The website is unchanged and still relies on normal browser CORS. WebSockets (Reverb) still use the WebView and may need server-side origin checks separately. Auth uses Bearer tokens in `localStorage`; no server secrets are embedded in the app.
+**CORS / HTTP:** Native `fetch` and axios stay in the WebView. The API must allow origin `https://localhost` (the Android app origin). The website is unchanged and still relies on normal browser CORS. WebSockets (Reverb) use the WebView and may need the same origin allowed. Auth uses Bearer tokens in `localStorage`; no server secrets are embedded in the app.
 
 Website / Docker deploys continue to use existing `.env` / CI env vars. `npm run build` is unchanged.
 
@@ -157,7 +157,7 @@ Optional features **not** added (ask before enabling): push notifications, biome
 - Support ticket **file attachments** use a download `<a>` fallback; if that fails on a device, consider `@capacitor/filesystem` + `@capacitor/share` (not installed yet).
 - Clipboard copy may need `@capacitor/clipboard` on some OS versions if `navigator.clipboard` is blocked.
 - Cloudflare Turnstile / Sumsub / Tawk widgets need device testing inside the WebView.
-- Backend must accept the mobile `VITE_API_URL` / Reverb endpoints. REST CORS from `https://localhost` is bypassed via CapacitorHttp on native; Reverb/WebSocket origin policy may still need review.
+- Backend must accept the mobile `VITE_API_URL` / Reverb endpoints, including CORS and WebSocket origin `https://localhost`.
 - iOS **build** cannot be validated on Windows.
 
 ---
@@ -182,5 +182,5 @@ Optional features **not** added (ask before enabling): push notifications, biome
 
 - No disabling TLS verification
 - No unrestricted WebView navigation allowlists
-- No permissive CORS “fix” that widens production website origins; native REST uses CapacitorHttp instead of opening CORS to `*`
+- No permissive CORS “fix” that widens production website origins. Native REST needs `https://localhost` allowed, not `*`
 - No embedding API secrets, signing keys, or Reverb private credentials in the frontend beyond existing public `VITE_*` keys

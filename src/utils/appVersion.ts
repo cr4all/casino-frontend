@@ -17,12 +17,22 @@ export function isNewerVersion(remote: string, current: string): boolean {
 }
 
 export function isHttpsUrl(value: string | null | undefined): value is string {
-  if (!value) return false;
+  return urlProtocol(value) === 'https:';
+}
+
+/** Absolute http or https URL. The mobile-web banner also accepts LAN http links. */
+export function isHttpUrl(value: string | null | undefined): value is string {
+  const protocol = urlProtocol(value);
+  return protocol === 'http:' || protocol === 'https:';
+}
+
+function urlProtocol(value: string | null | undefined): string | null {
+  if (!value) return null;
 
   try {
-    return new URL(value).protocol === 'https:';
+    return new URL(value).protocol;
   } catch {
-    return false;
+    return null;
   }
 }
 

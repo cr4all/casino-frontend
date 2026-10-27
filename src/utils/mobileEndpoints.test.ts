@@ -3,45 +3,38 @@ import { getApiBaseUrl, getReverbHost, getReverbPort, getReverbScheme } from './
 import { isNewerVersion } from './appVersion';
 import {
   clearResolvedMobileEndpoints,
-  parseEndpointPaste,
+  firebaseEndpointUrl,
+  parseEndpointDocument,
   resolveMobileEndpoints,
-  selectLatestPasteKey,
 } from './mobileEndpoints';
 
-const LISTING = `
-<paste>
-  <paste_key>olderkey1</paste_key>
-  <paste_date>100</paste_date>
-</paste>
-<paste>
-  <paste_key>newestkey</paste_key>
-  <paste_date>300</paste_date>
-</paste>
-<paste>
-  <paste_key>middlekey</paste_key>
-  <paste_date>200</paste_date>
-</paste>
-`;
+const DATABASE_URL = 'https://casino-default-rtdb.asia-southeast1.firebasedatabase.app';
+const ENDPOINT_URL = `${DATABASE_URL}/mobile/endpoints.json`;
 
 afterEach(() => {
   clearResolvedMobileEndpoints();
 });
 
-describe('selectLatestPasteKey', () => {
-  it('picks the paste with the greatest paste_date', () => {
-    expect(selectLatestPasteKey(LISTING)).toBe('newestkey');
+describe('firebaseEndpointUrl', () => {
+  it('builds the public endpoints document URL', () => {
+    expect(firebaseEndpointUrl(`${DATABASE_URL}/`)).toBe(ENDPOINT_URL);
+    expect(firebaseEndpointUrl('https://casino-default-rtdb.firebaseio.com')).toBe(
+      'https://casino-default-rtdb.firebaseio.com/mobile/endpoints.json',
+    );
   });
 
-  it('returns null when the account has no pastes', () => {
-    expect(selectLatestPasteKey('No pastes found.')).toBeNull();
-    expect(selectLatestPasteKey('Bad API request, invalid api_user_key')).toBeNull();
+  it('rejects addresses that are not a Firebase database root', () => {
+    expect(firebaseEndpointUrl('')).toBeNull();
+    expect(firebaseEndpointUrl('http://casino-default-rtdb.firebaseio.com')).toBeNull();
+    expect(firebaseEndpointUrl('https://evil.example')).toBeNull();
+    expect(firebaseEndpointUrl(`${DATABASE_URL}/other.json`)).toBeNull();
   });
 });
 
-describe('parseEndpointPaste', () => {
+describe('parseEndpointDocument', () => {
   it('reads the API url and optional hosts', () => {
     expect(
-      parseEndpointPaste(
+      parseEndpointDocument(
         JSON.stringify({
           apiUrl: 'https://api.example.com/api/v1/',
           reverbHost: 'api.example.com',
@@ -62,19 +55,16 @@ describe('parseEndpointPaste', () => {
   });
 
   it('rejects text that is not an endpoint JSON object', () => {
-    expect(parseEndpointPaste('not json')).toBeNull();
-    expect(parseEndpointPaste(JSON.stringify({ reverbHost: 'api.example.com' }))).toBeNull();
-    expect(parseEndpointPaste(JSON.stringify({ apiUrl: 'ftp://files.example.com' }))).toBeNull();
+    expect(parseEndpointDocument('not json')).toBeNull();
+    expect(parseEndpointDocument(JSON.stringify({ reverbHost: 'api.example.com' }))).toBeNull();
+    expect(parseEndpointDocument(JSON.stringify({ apiUrl: 'ftp://files.example.com' }))).toBeNull();
   });
 });
 
 describe('resolveMobileEndpoints', () => {
-  it('uses the latest paste and exposes it as the API base', async () => {
+  it('reads the Firebase document and exposes it as the API base', async () => {
     const fetchImpl = async (input: RequestInfo | URL) => {
-      const url = String(input);
-      if (url.endsWith('/api_post.php')) {
-        return new Response(LISTING, { status: 200 });
-      }
+      expect(String(input)).toBe(ENDPOINT_URL);
       return new Response(
         JSON.stringify({
           apiUrl: 'https://api.example.com/api/v1',
@@ -88,8 +78,7 @@ describe('resolveMobileEndpoints', () => {
 
     const config = await resolveMobileEndpoints({
       fetchImpl: fetchImpl as typeof fetch,
-      devKey: 'dev',
-      userKey: 'user',
+      databaseUrl: DATABASE_URL,
     });
 
     expect(config?.apiUrl).toBe('https://api.example.com/api/v1');
@@ -99,39 +88,75 @@ describe('resolveMobileEndpoints', () => {
     expect(getReverbPort()).toBe(443);
   });
 
-  it('keeps the build-time API address when the paste is not JSON', async () => {
+  it('keeps the build-time API address when the document is missing or not JSON', async () => {
     const buildTimeUrl = getApiBaseUrl();
-    const fetchImpl = async (input: RequestInfo | URL) => {
-      const url = String(input);
-      if (url.endsWith('/api_post.php')) {
-        return new Response('<paste><paste_key>abc</paste_key><paste_date>1</paste_date></paste>', {
-          status: 200,
-        });
-      }
-      return new Response('hello', { status: 200 });
-    };
 
     await resolveMobileEndpoints({
-      fetchImpl: fetchImpl as typeof fetch,
-      devKey: 'dev',
-      userKey: 'user',
+      fetchImpl: (async () => new Response('null', { status: 200 })) as typeof fetch,
+      databaseUrl: DATABASE_URL,
+    });
+    expect(getApiBaseUrl()).toBe(buildTimeUrl);
+
+    clearResolvedMobileEndpoints();
+
+    await resolveMobileEndpoints({
+      fetchImpl: (async () => new Response('hello', { status: 200 })) as typeof fetch,
+      databaseUrl: DATABASE_URL,
+    });
+    expect(getApiBaseUrl()).toBe(buildTimeUrl);
+  });
+
+  it('skips the request when the database URL is missing or not Firebase', async () => {
+    let called = false;
+    const fetchImpl = (async () => {
+      called = true;
+      return new Response('', { status: 200 });
+    }) as typeof fetch;
+
+    await resolveMobileEndpoints({ fetchImpl, databaseUrl: '' });
+    await resolveMobileEndpoints({ fetchImpl, databaseUrl: 'https://evil.example' });
+
+    expect(called).toBe(false);
+  });
+
+  it('accepts the Capacitor HTTP proxy when it targeted Firebase', async () => {
+    const proxy = `https://localhost/_capacitor_http_interceptor_?u=${encodeURIComponent(ENDPOINT_URL)}`;
+    const response = new Response(JSON.stringify({ apiUrl: 'https://api.example.com/api/v1' }), { status: 200 });
+    Object.defineProperty(response, 'url', { value: proxy });
+
+    const config = await resolveMobileEndpoints({
+      fetchImpl: (async () => response) as typeof fetch,
+      databaseUrl: DATABASE_URL,
+    });
+
+    expect(config?.apiUrl).toBe('https://api.example.com/api/v1');
+  });
+
+  it('ignores a Capacitor HTTP proxy that targeted another host', async () => {
+    const buildTimeUrl = getApiBaseUrl();
+    const proxy = `https://localhost/_capacitor_http_interceptor_?u=${encodeURIComponent('https://evil.example/mobile/endpoints.json')}`;
+    const response = new Response(JSON.stringify({ apiUrl: 'https://evil.example/api/v1' }), { status: 200 });
+    Object.defineProperty(response, 'url', { value: proxy });
+
+    await resolveMobileEndpoints({
+      fetchImpl: (async () => response) as typeof fetch,
+      databaseUrl: DATABASE_URL,
     });
 
     expect(getApiBaseUrl()).toBe(buildTimeUrl);
   });
 
-  it('skips Pastebin when a key is missing', async () => {
-    let called = false;
+  it('ignores a response that left the Firebase host', async () => {
+    const buildTimeUrl = getApiBaseUrl();
+    const response = new Response(JSON.stringify({ apiUrl: 'https://evil.example/api/v1' }), { status: 200 });
+    Object.defineProperty(response, 'url', { value: 'https://evil.example/mobile/endpoints.json' });
+
     await resolveMobileEndpoints({
-      fetchImpl: (async () => {
-        called = true;
-        return new Response('', { status: 200 });
-      }) as typeof fetch,
-      devKey: 'dev',
-      userKey: '',
+      fetchImpl: (async () => response) as typeof fetch,
+      databaseUrl: DATABASE_URL,
     });
 
-    expect(called).toBe(false);
+    expect(getApiBaseUrl()).toBe(buildTimeUrl);
   });
 });
 

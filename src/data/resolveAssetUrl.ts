@@ -8,8 +8,8 @@ import { getResolvedMobileEndpoints } from '@/utils/mobileEndpoints';
 const MOBILE_ASSETS_BASE_URL = 'https://image.ibets24.com';
 
 function assetsBaseUrl(): string {
-  const pasted = getResolvedMobileEndpoints()?.assetsBaseUrl?.replace(/\/$/, '') ?? '';
-  if (pasted) return pasted;
+  const remote = getResolvedMobileEndpoints()?.assetsBaseUrl?.replace(/\/$/, '') ?? '';
+  if (remote) return remote;
 
   const configured = (import.meta.env.VITE_ASSETS_BASE_URL as string | undefined)?.trim().replace(/\/$/, '') ?? '';
   if (configured) return configured;

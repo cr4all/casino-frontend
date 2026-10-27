@@ -1,5 +1,5 @@
 /**
- * Native builds read the latest Pastebin paste as JSON and use it as the
+ * Native builds read Firebase Realtime Database JSON and use it as the
  * API / Reverb / assets configuration. Any failure keeps the build-time env.
  */
 
@@ -12,8 +12,8 @@ export interface MobileEndpointConfig {
   assetsBaseUrl?: string;
 }
 
-const LIST_URL = 'https://pastebin.com/api/api_post.php';
-const RAW_URL = 'https://pastebin.com/api/api_raw.php';
+const ENDPOINT_PATH = 'mobile/endpoints.json';
+const CAPACITOR_HTTP_INTERCEPTOR = '/_capacitor_http_interceptor_';
 const DEFAULT_TIMEOUT_MS = 5000;
 
 let resolved: MobileEndpointConfig | null = null;
@@ -26,30 +26,26 @@ export function clearResolvedMobileEndpoints(): void {
   resolved = null;
 }
 
-export function selectLatestPasteKey(listing: string): string | null {
-  const trimmed = listing.trim();
-  if (!trimmed || /^no pastes found\.?$/i.test(trimmed) || trimmed.startsWith('Bad API request')) {
+export function firebaseEndpointUrl(databaseUrl: string): string | null {
+  const trimmed = databaseUrl.trim().replace(/\/+$/, '');
+  if (!trimmed) return null;
+
+  let url: URL;
+  try {
+    url = new URL(trimmed);
+  } catch {
     return null;
   }
 
-  let latestKey: string | null = null;
-  let latestDate = -1;
+  if (url.protocol !== 'https:') return null;
+  if (url.username || url.password || url.search || url.hash) return null;
+  if (url.pathname !== '/' && url.pathname !== '') return null;
+  if (!isFirebaseHost(url.hostname)) return null;
 
-  for (const match of listing.matchAll(/<paste>([\s\S]*?)<\/paste>/gi)) {
-    const block = match[1] ?? '';
-    const key = block.match(/<paste_key>([^<]+)<\/paste_key>/i)?.[1]?.trim() ?? '';
-    const date = Number(block.match(/<paste_date>(\d+)<\/paste_date>/i)?.[1]);
-    if (!key || !Number.isFinite(date)) continue;
-    if (date >= latestDate) {
-      latestDate = date;
-      latestKey = key;
-    }
-  }
-
-  return latestKey;
+  return `${url.origin}/${ENDPOINT_PATH}`;
 }
 
-export function parseEndpointPaste(body: string): MobileEndpointConfig | null {
+export function parseEndpointDocument(body: string): MobileEndpointConfig | null {
   let parsed: unknown;
   try {
     parsed = JSON.parse(body);
@@ -90,14 +86,14 @@ export function parseEndpointPaste(body: string): MobileEndpointConfig | null {
 export async function resolveMobileEndpoints(options?: {
   fetchImpl?: typeof fetch;
   timeoutMs?: number;
-  devKey?: string;
-  userKey?: string;
+  databaseUrl?: string;
 }): Promise<MobileEndpointConfig | null> {
-  const devKey = (options?.devKey ?? import.meta.env.VITE_PASTEBIN_API_DEV_KEY ?? '').trim();
-  const userKey = (options?.userKey ?? import.meta.env.VITE_PASTEBIN_API_USER_KEY ?? '').trim();
+  const databaseUrl = (options?.databaseUrl ?? import.meta.env.VITE_FIREBASE_DATABASE_URL ?? '').trim();
+  const endpointUrl = firebaseEndpointUrl(databaseUrl);
 
-  if (!devKey || !userKey) {
+  if (!endpointUrl) {
     resolved = null;
+    console.warn('[mobile-endpoints]', 'missing-database-url');
     return null;
   }
 
@@ -106,42 +102,47 @@ export async function resolveMobileEndpoints(options?: {
   const timer = setTimeout(() => controller.abort(), options?.timeoutMs ?? DEFAULT_TIMEOUT_MS);
 
   try {
-    const listing = await postForm(
-      LIST_URL,
-      {
-        api_option: 'list',
-        api_dev_key: devKey,
-        api_user_key: userKey,
-        api_results_limit: '50',
-      },
-      fetchImpl,
-      controller.signal,
-    );
-    const pasteKey = selectLatestPasteKey(listing);
-    if (!pasteKey) {
+    const response = await fetchImpl(endpointUrl, { method: 'GET', signal: controller.signal });
+    const text = (await response.text()).trim();
+    if (!response.ok || !text || text === 'null' || !responseStayedOnFirebase(response)) {
       resolved = null;
+      console.warn('[mobile-endpoints]', 'request-failed');
       return null;
     }
 
-    const raw = await postForm(
-      RAW_URL,
-      {
-        api_option: 'show_paste',
-        api_dev_key: devKey,
-        api_user_key: userKey,
-        api_paste_key: pasteKey,
-      },
-      fetchImpl,
-      controller.signal,
-    );
-    const config = parseEndpointPaste(raw);
+    const config = parseEndpointDocument(text);
     resolved = config;
+    console.warn('[mobile-endpoints]', config?.apiUrl ?? 'parse-failed');
     return config;
   } catch {
     resolved = null;
+    console.warn('[mobile-endpoints]', 'request-failed');
     return null;
   } finally {
     clearTimeout(timer);
+  }
+}
+
+function isFirebaseHost(hostname: string): boolean {
+  const host = hostname.toLowerCase();
+
+  return host.endsWith('.firebasedatabase.app') || host.endsWith('.firebaseio.com');
+}
+
+function responseStayedOnFirebase(response: Response): boolean {
+  if (!response.url) return true;
+
+  try {
+    const url = new URL(response.url);
+    if (url.pathname === CAPACITOR_HTTP_INTERCEPTOR) {
+      const target = url.searchParams.get('u');
+      if (!target) return false;
+      return isFirebaseHost(new URL(target).hostname);
+    }
+
+    return isFirebaseHost(url.hostname);
+  } catch {
+    return false;
   }
 }
 
@@ -157,25 +158,4 @@ function httpUrl(value: unknown): string | null {
   } catch {
     return null;
   }
-}
-
-async function postForm(
-  url: string,
-  fields: Record<string, string>,
-  fetchImpl: typeof fetch,
-  signal: AbortSignal,
-): Promise<string> {
-  const response = await fetchImpl(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams(fields),
-    signal,
-  });
-
-  const text = await response.text();
-  if (!response.ok || text.startsWith('Bad API request')) {
-    throw new Error('Pastebin request failed');
-  }
-
-  return text;
 }
