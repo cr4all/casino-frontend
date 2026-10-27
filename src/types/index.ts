@@ -193,6 +193,19 @@ export interface HeroBanner {
   gradient: string;
 }
 
+export interface HeroBannerSlide {
+  image_url: string;
+  mobile_image_url?: string | null;
+  link_url?: string | null;
+  enabled: boolean;
+  sort_order: number;
+}
+
+export interface HeroBannersResponse {
+  slides: HeroBannerSlide[];
+  show_default_hero: boolean;
+}
+
 export interface Winner {
   id: string;
   player: string;

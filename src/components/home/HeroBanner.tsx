@@ -1,13 +1,8 @@
-import { type CSSProperties, type ReactNode } from 'react';
+import { type CSSProperties, type ReactNode, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
-import { useTranslation } from '@/hooks/useTranslation';
-import { isRtlLanguage } from '@/stores/languageStore';
-import { useAuthStore } from '@/stores/authStore';
-import { typePath } from '@/stores/gameStore';
-import { usePlatformSectionStore } from '@/stores/platformSectionStore';
-import { useUiStore } from '@/stores/uiStore';
+import { platformApi } from '@/api/platform.api';
 import { Button } from '@/components/common/Button';
 import { FirstDepositBonusText, firstDepositBannerAriaLabel } from '@/components/home/FirstDepositBonusText';
 import { HeroBannerText } from '@/components/home/HeroBannerText';
@@ -15,6 +10,17 @@ import {
   HERO_LIVE_CASINO_CASHBACK_PERCENT,
   HERO_PRAGMATIC_CASHBACK_PERCENT,
 } from '@/constants/heroBannerPromo';
+import { useTranslation } from '@/hooks/useTranslation';
+import { useAuthStore } from '@/stores/authStore';
+import { typePath } from '@/stores/gameStore';
+import { isRtlLanguage } from '@/stores/languageStore';
+import { usePlatformSectionStore } from '@/stores/platformSectionStore';
+import { useUiStore } from '@/stores/uiStore';
+import type { HeroBannerSlide, HeroBannersResponse } from '@/types';
+
+function isExternalUrl(url: string): boolean {
+  return /^https?:\/\//i.test(url);
+}
 
 function HeroSportsCtaButton() {
   const { t } = useTranslation();
@@ -217,64 +223,167 @@ function FirstDepositHeroSlide({ backgroundSrc }: { backgroundSrc: string }) {
   );
 }
 
+function ApiHeroSlide({ slide }: { slide: HeroBannerSlide }) {
+  const body = (
+    <div className="hero-banner hero-banner--image-only relative overflow-hidden">
+      <picture className="hero-banner__picture">
+        {slide.mobile_image_url ? (
+          <source media="(max-width: 767px)" srcSet={slide.mobile_image_url} />
+        ) : null}
+        <img
+          src={slide.image_url}
+          alt=""
+          className="hero-banner__scene hero-banner__scene--full"
+          loading="lazy"
+        />
+      </picture>
+    </div>
+  );
+
+  if (!slide.link_url) {
+    return body;
+  }
+
+  if (isExternalUrl(slide.link_url)) {
+    return (
+      <a
+        href={slide.link_url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent-gold"
+      >
+        {body}
+      </a>
+    );
+  }
+
+  return (
+    <Link
+      to={slide.link_url}
+      className="block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent-gold"
+    >
+      {body}
+    </Link>
+  );
+}
+
+function HeroBannerSkeleton() {
+  return (
+    <section className="hero-slider" aria-hidden="true">
+      <div className="hero-slider__swiper overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.04] animate-pulse" />
+    </section>
+  );
+}
+
+const DEFAULT_SLIDE_COUNT = 5;
+
 export function HeroBanner() {
   const { t, language } = useTranslation();
   const isRtl = isRtlLanguage(language);
+  const [config, setConfig] = useState<HeroBannersResponse | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    platformApi
+      .getBanners()
+      .then((data) => {
+        if (!cancelled) {
+          setConfig(data);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setConfig({ slides: [], show_default_hero: true });
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  if (config === null) {
+    return <HeroBannerSkeleton />;
+  }
+
+  const showDefault = config.show_default_hero !== false;
+  const customSlides = config.slides;
+  const slideCount = (showDefault ? DEFAULT_SLIDE_COUNT : 0) + customSlides.length;
+
+  if (slideCount === 0) {
+    return null;
+  }
 
   return (
     <section className="hero-slider" aria-label="Promotions">
       <Swiper
-        key={language}
+        key={`${language}-${showDefault}-${customSlides.length}`}
         dir={isRtl ? 'rtl' : 'ltr'}
         modules={[Autoplay, Pagination]}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
-        loop
+        loop={slideCount > 1}
         autoHeight={false}
         className="hero-slider__swiper overflow-hidden rounded-xl border border-white/[0.08]"
       >
-        <SwiperSlide>
-          <WelcomeHeroSlide />
-        </SwiperSlide>
-        <SwiperSlide>
-          <FirstDepositHeroSlide backgroundSrc="/hero-slides/first-deposit-bonus-bg.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <PromoHeroSlide
-            imageSrc="/hero-slides/pragmatic-slots.jpg"
-            line1={t('hero.pragmaticLine1')}
-            line1Accent={t('hero.pragmaticAccent')}
-            line2={t('hero.pragmaticLine2', { percent: HERO_PRAGMATIC_CASHBACK_PERCENT })}
-            to={typePath('slot')}
-            layout="welcome"
-            heroNowrap
-            heroCase="title"
-            subtitleSize="large"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <PromoHeroSlide
-            imageSrc="/hero-slides/sportsbook.jpg"
-            line1={t('hero.sportsbookLine1')}
-            line1Accent={t('hero.sportsbookAccent')}
-            to="/sports/prematch"
-            cta="sports"
-            accentAsHero
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <PromoHeroSlide
-            imageSrc="/hero-slides/live-casino.jpg"
-            line1={t('hero.liveCasinoLine1')}
-            line1Accent={t('hero.liveCasinoAccent')}
-            line2={t('hero.liveCasinoLine2', { percent: HERO_LIVE_CASINO_CASHBACK_PERCENT })}
-            to={typePath('live_casino')}
-            layout="welcome"
-            heroNowrap
-            heroCase="title"
-            subtitleSize="large"
-          />
-        </SwiperSlide>
+        {showDefault ? (
+          <SwiperSlide key="default-welcome">
+            <WelcomeHeroSlide />
+          </SwiperSlide>
+        ) : null}
+        {showDefault ? (
+          <SwiperSlide key="default-first-deposit">
+            <FirstDepositHeroSlide backgroundSrc="/hero-slides/first-deposit-bonus-bg.jpg" />
+          </SwiperSlide>
+        ) : null}
+        {showDefault ? (
+          <SwiperSlide key="default-pragmatic">
+            <PromoHeroSlide
+              imageSrc="/hero-slides/pragmatic-slots.jpg"
+              line1={t('hero.pragmaticLine1')}
+              line1Accent={t('hero.pragmaticAccent')}
+              line2={t('hero.pragmaticLine2', { percent: HERO_PRAGMATIC_CASHBACK_PERCENT })}
+              to={typePath('slot')}
+              layout="welcome"
+              heroNowrap
+              heroCase="title"
+              subtitleSize="large"
+            />
+          </SwiperSlide>
+        ) : null}
+        {showDefault ? (
+          <SwiperSlide key="default-sportsbook">
+            <PromoHeroSlide
+              imageSrc="/hero-slides/sportsbook.jpg"
+              line1={t('hero.sportsbookLine1')}
+              line1Accent={t('hero.sportsbookAccent')}
+              to="/sports/prematch"
+              cta="sports"
+              accentAsHero
+            />
+          </SwiperSlide>
+        ) : null}
+        {showDefault ? (
+          <SwiperSlide key="default-live-casino">
+            <PromoHeroSlide
+              imageSrc="/hero-slides/live-casino.jpg"
+              line1={t('hero.liveCasinoLine1')}
+              line1Accent={t('hero.liveCasinoAccent')}
+              line2={t('hero.liveCasinoLine2', { percent: HERO_LIVE_CASINO_CASHBACK_PERCENT })}
+              to={typePath('live_casino')}
+              layout="welcome"
+              heroNowrap
+              heroCase="title"
+              subtitleSize="large"
+            />
+          </SwiperSlide>
+        ) : null}
+        {customSlides.map((slide, index) => (
+          <SwiperSlide key={`custom-${slide.sort_order}-${slide.image_url}-${index}`}>
+            <ApiHeroSlide slide={slide} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </section>
   );
