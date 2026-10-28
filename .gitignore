@@ -19,3 +19,4 @@ ios/App/Podfile.lock
 *.mobileprovision
 android/keystore.properties
 android/*-upload-certificate.pem
+android/app/google-services.json

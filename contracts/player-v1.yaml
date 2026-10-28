@@ -1155,6 +1155,48 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
+  /notifications/device-token:
+    post:
+      tags: [Notification]
+      summary: Register native device push token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [token, platform]
+              properties:
+                token:
+                  type: string
+                  maxLength: 512
+                platform:
+                  type: string
+                  enum: [android, ios]
+      responses:
+        '200':
+          description: Device token registered
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessEnvelope'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        required: [id, platform]
+                        properties:
+                          id:
+                            type: integer
+                          platform:
+                            type: string
+                            enum: [android, ios]
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+
   /notifications/announcements/{id}/read:
     post:
       tags: [Notification]

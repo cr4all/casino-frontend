@@ -78,6 +78,14 @@ export const notificationApi = {
     );
     return data.data;
   },
+
+  registerDeviceToken: async (token: string, platform: 'android' | 'ios') => {
+    const { data } = await api.post<ApiResponse<{ id: number; platform: string }>>(
+      '/notifications/device-token',
+      { token, platform },
+    );
+    return data.data;
+  },
 };
 
 export interface AnnouncementPopup {

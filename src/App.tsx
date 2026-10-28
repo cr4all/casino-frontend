@@ -5,6 +5,7 @@ import { TawkToChat } from '@/components/chat/TawkToChat';
 import { MarketingPixel } from '@/modules/marketing';
 import { useAndroidBackButton } from '@/hooks/useAndroidBackButton';
 import { useDismissInitialSplash } from '@/hooks/useDismissInitialSplash';
+import { usePushNotifications } from '@/hooks/usePushNotifications';
 import { useThemeInit } from '@/hooks/useThemeInit';
 import { router } from '@/router';
 
@@ -12,6 +13,7 @@ export function App() {
   useThemeInit();
   useDismissInitialSplash();
   useAndroidBackButton();
+  usePushNotifications();
 
   return (
     <>
