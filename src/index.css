@@ -1073,6 +1073,18 @@ body {
     min-height: 0;
   }
 
+  /*
+   * Custom slides are only an absolutely positioned image. A percentage
+   * height then resolves to 0 on mobile browsers, so the slide paints empty.
+   * Size the banner from its own width instead.
+   */
+  .hero-slider__swiper .swiper-slide > .hero-banner--image-only,
+  .hero-slider__swiper .swiper-slide > a > .hero-banner--image-only {
+    aspect-ratio: 8 / 5;
+    height: auto;
+    width: 100%;
+  }
+
   .hero-banner--image-only {
     position: relative;
     min-height: 0;
