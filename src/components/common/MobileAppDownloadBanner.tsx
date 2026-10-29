@@ -2,12 +2,47 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { fetchMobileAppRelease } from '@/api/mobileApp.api';
 import { useTranslation } from '@/hooks/useTranslation';
-import { isHttpUrl } from '@/utils/appVersion';
+import { apkDownloadFilename, isHttpUrl } from '@/utils/appVersion';
 import { isNativeApp } from '@/utils/capacitor';
 import { handleExternalLinkClick } from '@/utils/openExternalUrl';
 
-function useApkDownloadUrl(): string | null {
-  const [url, setUrl] = useState<string | null>(null);
+interface ApkDownload {
+  url: string;
+  filename: string;
+}
+
+async function saveApkAs(url: string, filename: string): Promise<void> {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+    const blob = await response.blob();
+    const objectUrl = URL.createObjectURL(blob);
+    try {
+      const anchor = document.createElement('a');
+      anchor.href = objectUrl;
+      anchor.download = filename;
+      anchor.rel = 'noopener';
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
+    } finally {
+      URL.revokeObjectURL(objectUrl);
+    }
+  } catch {
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.download = filename;
+    anchor.target = '_blank';
+    anchor.rel = 'noopener noreferrer';
+    document.body.appendChild(anchor);
+    anchor.click();
+    anchor.remove();
+  }
+}
+
+function useApkDownload(): ApkDownload | null {
+  const [download, setDownload] = useState<ApkDownload | null>(null);
 
   useEffect(() => {
     if (isNativeApp()) return undefined;
@@ -16,7 +51,15 @@ function useApkDownloadUrl(): string | null {
     void fetchMobileAppRelease().then((release) => {
       if (cancelled) return;
       const downloadUrl = release?.download_url;
-      setUrl(isHttpUrl(downloadUrl) ? downloadUrl : null);
+      if (!isHttpUrl(downloadUrl)) {
+        setDownload(null);
+        return;
+      }
+
+      setDownload({
+        url: downloadUrl,
+        filename: apkDownloadFilename(release?.version),
+      });
     });
 
     return () => {
@@ -24,23 +67,30 @@ function useApkDownloadUrl(): string | null {
     };
   }, []);
 
-  return url;
+  return download;
 }
 
 export function MobileAppDownloadBanner() {
   const { t } = useTranslation();
-  const apkDownloadUrl = useApkDownloadUrl();
+  const apkDownload = useApkDownload();
 
-  if (!apkDownloadUrl) return null;
+  if (!apkDownload) return null;
 
   const label = t('footer.downloadApp');
   const bar = (
     <a
-      href={apkDownloadUrl}
+      href={apkDownload.url}
+      download={apkDownload.filename}
       className="mobile-app-banner fixed inset-x-0 top-0 z-[35] flex items-center gap-2.5 px-3 lg:hidden"
       target="_blank"
       rel="noopener noreferrer"
-      onClick={handleExternalLinkClick}
+      onClick={(event) => {
+        handleExternalLinkClick(event);
+        if (isNativeApp()) return;
+
+        event.preventDefault();
+        void saveApkAs(apkDownload.url, apkDownload.filename);
+      }}
       aria-label={label}
     >
       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent-gold text-background">

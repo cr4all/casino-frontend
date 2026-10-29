@@ -42,6 +42,12 @@ export function getInstalledAppVersion(): string {
   return SEMVER.test(version) ? version : '0.0.0';
 }
 
+/** Suggested on-disk name for a published Android APK download. */
+export function apkDownloadFilename(version: string | null | undefined): string {
+  const cleaned = (version ?? '').trim();
+  return `ibets24_${SEMVER.test(cleaned) ? cleaned : 'latest'}.apk`;
+}
+
 function parseSemver(value: string): [number, number, number] | null {
   const match = SEMVER.exec(value.trim());
   if (!match) return null;
