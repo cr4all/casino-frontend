@@ -1714,6 +1714,58 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/notifications/device-token": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Register native device push token */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": {
+                        token: string;
+                        /** @enum {string} */
+                        platform: "android" | "ios";
+                    };
+                };
+            };
+            responses: {
+                /** @description Device token registered */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SuccessEnvelope"] & {
+                            data?: {
+                                id: number;
+                                /** @enum {string} */
+                                platform: "android" | "ios";
+                            };
+                        };
+                    };
+                };
+                401: components["responses"]["Unauthorized"];
+                422: components["responses"]["ValidationError"];
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/notifications/announcements/{id}/read": {
         parameters: {
             query?: never;
