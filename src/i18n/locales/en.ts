@@ -187,6 +187,8 @@ export const en = {
       'iBets24 is operated by  Ascendra Holding Ltd, an International Company incorporated in the Union of Comoros. The company is licensed and regulated by the Finance Authority of the State of Anjouan under the Gaming Licensing.',
     developedBy: 'This website is developed by',
     developedByName: 'Ascendra Platforms',
+    paymentProvider: 'Supported Payment Service Provider:',
+    paymentProviderName: 'MoniqoPay',
   
       copyright: '© {{year}} iBets24. All rights reserved.',
     downloadApp: 'Download Android app',

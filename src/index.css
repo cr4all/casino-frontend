@@ -1440,10 +1440,14 @@ html[data-theme='light'] .mobile-app-banner {
 
 .site-footer__developer {
   max-width: 48rem;
-  margin: 0 auto 1rem;
+  margin: 0 auto 0.15rem;
   font-size: 0.6875rem;
   line-height: 1.55;
   color: var(--ui-text-muted);
+}
+
+.site-footer__payment-provider {
+  margin-bottom: 1rem;
 }
 
 .site-footer__developer-link {

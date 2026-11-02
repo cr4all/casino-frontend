@@ -232,7 +232,19 @@ export function Footer() {
           >
             {t('footer.developedByName')}
           </a>
-        </p>        
+        </p>
+        <p className="site-footer__developer site-footer__payment-provider">
+          {t('footer.paymentProvider')}{' '}
+          <a
+            href="https://moniqopay.com/"
+            className="site-footer__developer-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={handleExternalLinkClick}
+          >
+            {t('footer.paymentProviderName')}
+          </a>
+        </p>
         <p className="site-footer__disclaimer">{t('footer.disclaimer')}</p>
         <p className="site-footer__copyright">
           {t('footer.copyright', { year: new Date().getFullYear() })}
