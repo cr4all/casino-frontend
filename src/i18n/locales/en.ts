@@ -187,6 +187,8 @@ export const en = {
       'YouWin24 is operated by Ascendra Holding Ltd, an International Company incorporated in the Union of Comoros. The company is licensed and regulated by the Finance Authority of the State of Anjouan under the Gaming Licensing.',
     developedBy: 'This website is developed by',
     developedByName: 'Ascendra Platforms',
+    paymentProvider: 'Supported Payment Service Provider:',
+    paymentProviderName: 'MoniqoPay',
     copyright: '© {{year}} YouWin24. All rights reserved.',
   },
   legal: {
