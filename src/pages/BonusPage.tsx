@@ -14,6 +14,7 @@ import { StatusBadge } from '@/components/common/StatusBadge';
 import { getApiErrorMessage } from '@/utils/apiError';
 import { formatBalance } from '@/utils/formatBalance';
 import { countClaimableFreeSpinBonuses, collectBonusProviderSlugs } from '@/utils/bonusAvailability';
+import { activeBonusTitle } from '@/utils/activeBonusTitle';
 import { formatVendorName } from '@/utils/formatVendorName';
 
 function WageringBar({ required, wagered }: { required: string; wagered: string }) {
@@ -242,7 +243,7 @@ export function BonusPage() {
                     <div className="flex items-start justify-between gap-2">
                       <div>
                         <h3 className="font-semibold text-white">
-                          {bonus.policy_name ?? t('bonus.defaultName')}
+                          {activeBonusTitle(bonus, t('bonusTypes.promotion'), t('bonus.defaultName'))}
                         </h3>
                         {bonus.type === 'free_spin' && bonus.spin_count != null ? (
                           <>

@@ -541,7 +541,8 @@ export const tr: LocaleTree = {
     "first_deposit": "İlk Yatırım",
     "reload": "Yeniden Yükleme",
     "cashback": "Nakit İade",
-    "free_spin": "Ücretsiz Dönüş"
+    "free_spin": "Ücretsiz Dönüş",
+    "promotion": "Promosyon bonusu"
   },
   "messages": {
     "title": "Mesajlar",

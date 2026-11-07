@@ -12,6 +12,7 @@ import { WithdrawService } from '@/services/WithdrawService';
 import { useAuthStore } from '@/stores/authStore';
 import { DEFAULT_CURRENCY, useWalletStore } from '@/stores/walletStore';
 import { usePlayerStore } from '@/stores/playerStore';
+import { activeBonusTitle } from '@/utils/activeBonusTitle';
 import { formatBalance } from '@/utils/formatBalance';
 import { ForfeitBonusModal } from '@/components/bonus/ForfeitBonusModal';
 import { Button } from '@/components/common/Button';
@@ -600,7 +601,9 @@ export function WithdrawPage() {
                     className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-amber-500/20 bg-amber-500/5 px-3 py-2"
                   >
                     <div className="min-w-0 text-xs text-amber-100/90">
-                      <p className="truncate font-medium">{bonus.policy_name ?? `#${bonus.id}`}</p>
+                      <p className="truncate font-medium">
+                        {activeBonusTitle(bonus, t('bonusTypes.promotion'), `#${bonus.id}`)}
+                      </p>
                       {bonus.type === 'free_spin' && bonus.spins_remaining != null ? (
                         <p className="mt-0.5 text-[11px] text-amber-200/70">
                           {t('wallet.funding.free_spin')}: {bonus.spins_remaining}

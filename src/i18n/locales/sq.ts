@@ -531,7 +531,8 @@ export const sq: LocaleTree = {
     "first_deposit": "Depozita e parë",
     "reload": "Rimbushje",
     "cashback": "Cashback",
-    "free_spin": "Rrotullim falas"
+    "free_spin": "Rrotullim falas",
+    "promotion": "Bonus promocional"
   },
   "messages": {
     "title": "Mesazhet",

@@ -547,7 +547,8 @@ export const it: LocaleTree = {
     "first_deposit": "Primo deposito",
     "reload": "Ricarica",
     "cashback": "Rimborso",
-    "free_spin": "Giro gratis"
+    "free_spin": "Giro gratis",
+    "promotion": "Bonus promozionale"
   },
   "messages": {
     "title": "Messaggi",

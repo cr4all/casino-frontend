@@ -2,6 +2,7 @@ import type { ActiveBonus } from '@/api/bonus.api';
 import { Modal } from '@/components/common/Modal';
 import { Button } from '@/components/common/Button';
 import { useTranslation } from '@/hooks/useTranslation';
+import { activeBonusTitle } from '@/utils/activeBonusTitle';
 import { formatBalance } from '@/utils/formatBalance';
 
 interface ForfeitBonusModalProps {
@@ -52,7 +53,7 @@ export function ForfeitBonusModal({
     return null;
   }
 
-  const name = bonus.policy_name ?? `#${bonus.id}`;
+  const name = activeBonusTitle(bonus, t('bonusTypes.promotion'), `#${bonus.id}`);
   const isFreeSpin = bonus.type === 'free_spin';
   const showAmount = !isFreeSpin || parseFloat(bonus.amount) > 0;
 

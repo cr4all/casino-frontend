@@ -659,6 +659,7 @@ export const en = {
     reload: 'Reload',
     cashback: 'Cashback',
     free_spin: 'Free Spin',
+    promotion: 'Promotion Bonus',
     referral_referrer: 'Invite Referrer',
     referral_invitee: 'Invite Friend',
   },

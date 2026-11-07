@@ -558,7 +558,8 @@ export const ptBr: LocaleTree = {
     "first_deposit": "Primeiro depósito",
     "reload": "Recarregar",
     "cashback": "Reembolso",
-    "free_spin": "Giro grátis"
+    "free_spin": "Giro grátis",
+    "promotion": "Bônus promocional"
   },
   "messages": {
     "title": "Mensagens",

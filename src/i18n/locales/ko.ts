@@ -607,7 +607,8 @@ export const ko: LocaleTree = {
     "first_deposit": "첫 입금",
     "reload": "리로드",
     "cashback": "캐시백",
-    "free_spin": "프리 스핀(FTD)"
+    "free_spin": "프리 스핀(FTD)",
+    "promotion": "프로모션 보너스"
   },
   "messages": {
     "title": "메시지",

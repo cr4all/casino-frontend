@@ -556,7 +556,8 @@ export const de: LocaleTree = {
     "first_deposit": "Erste Einzahlung",
     "reload": "Nachladen",
     "cashback": "Rückvergütung",
-    "free_spin": "Free Spin"
+    "free_spin": "Free Spin",
+    "promotion": "Promotionsbonus"
   },
   "messages": {
     "title": "Nachrichten",
