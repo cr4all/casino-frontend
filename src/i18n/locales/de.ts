@@ -318,6 +318,7 @@ export const de: LocaleTree = {
     "country": "Land",
     "currency": "Währung",
     "confirmPassword": "Passwort bestätigen",
+    "promoCode": "Promo-Code (optional)",
     "loginError": "Benutzername oder Passwort ungültig.",
     "riskBlocked": "This action was blocked for security reasons.",
     "riskChallenge": "Additional verification is required before you can continue.",

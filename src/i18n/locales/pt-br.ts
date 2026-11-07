@@ -314,6 +314,7 @@ export const ptBr: LocaleTree = {
     "country": "País",
     "currency": "Moeda",
     "confirmPassword": "Confirmar senha",
+    "promoCode": "Código promocional (opcional)",
     "loginError": "Email, nome de utilizador ou palavra-passe inválidos.",
     "riskBlocked": "Esta ação foi bloqueada por motivos de segurança.",
     "riskChallenge": "É necessária verificação adicional antes de continuar.",

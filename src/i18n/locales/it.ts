@@ -314,6 +314,7 @@ export const it: LocaleTree = {
     "country": "Paese",
     "currency": "Valuta",
     "confirmPassword": "Conferma password",
+    "promoCode": "Codice promozionale (facoltativo)",
     "loginError": "Email, nome utente o password non validi.",
     "riskBlocked": "Questa azione è stata bloccata per motivi di sicurezza.",
     "riskChallenge": "È richiesta una verifica aggiuntiva prima di continuare.",

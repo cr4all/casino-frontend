@@ -307,6 +307,7 @@ export const sq: LocaleTree = {
     "country": "Vendi",
     "currency": "Monedha",
     "confirmPassword": "Konfirmo fjalëkalimin",
+    "promoCode": "Kodi promocional (opsional)",
     "loginError": "Email, emri i përdoruesit ose fjalëkalimi i pavlefshëm.",
     "riskBlocked": "Ky veprim u bllokua për arsye sigurie.",
     "riskChallenge": "Kërkohet verifikim shtesë para se të vazhdoni.",

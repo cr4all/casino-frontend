@@ -54,6 +54,7 @@ export function RegisterModal() {
     currency: '',
     affiliate_code: '' as string | undefined,
     invite_code: '' as string | undefined,
+    promo_code: '',
   });
   const [phoneCountryCode, setPhoneCountryCode] = useState('US');
   const [emailOtp, setEmailOtp] = useState('');
@@ -153,6 +154,7 @@ export function RegisterModal() {
       currency: options?.currencies[0]?.code ?? '',
       affiliate_code: getStoredAffiliateCode() ?? undefined,
       invite_code: getStoredInviteCode() ?? undefined,
+      promo_code: '',
     });
     setPhoneCountryCode('US');
     setEmailOtp('');
@@ -175,6 +177,7 @@ export function RegisterModal() {
     ...(requireEmailVerification ? { email_verification_code: emailOtp } : {}),
     ...(form.affiliate_code ? { affiliate_code: form.affiliate_code } : {}),
     ...(form.invite_code ? { invite_code: form.invite_code } : {}),
+    ...(form.promo_code.trim() ? { promo_code: form.promo_code.trim() } : {}),
     ...(turnstileToken ? { turnstileToken } : {}),
   });
 
@@ -280,6 +283,10 @@ export function RegisterModal() {
       ? undefined
       : t('auth.phoneInvalid');
 
+    const promoCode = form.promo_code.trim();
+    const promoCodeError =
+      promoCode.length > 16 ? t('common.fieldMaxLength', { count: 16 }) : undefined;
+
     const errors = collectFieldErrors([
       ['email', emailError],
       ['nickname', required(t('auth.username'), form.nickname)],
@@ -287,6 +294,7 @@ export function RegisterModal() {
       ['currency', required(t('auth.currency'), form.currency)],
       ['password', passwordError],
       ['password_confirmation', confirmError],
+      ['promo_code', promoCodeError],
       [
         'email_verification_code',
         requireEmailVerification
@@ -474,6 +482,18 @@ export function RegisterModal() {
           value={form.password_confirmation}
           onChange={(e) => update('password_confirmation', e.target.value)}
           error={fieldErrors.password_confirmation}
+        />
+        <FormTextField
+          id="reg-promo-code"
+          label={t('auth.promoCode')}
+          type="text"
+          maxLength={16}
+          autoComplete="off"
+          autoCapitalize="characters"
+          spellCheck={false}
+          value={form.promo_code}
+          onChange={(e) => update('promo_code', e.target.value)}
+          error={fieldErrors.promo_code}
         />
         {requireEmailVerification && (
           <FormTextField

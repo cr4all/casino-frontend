@@ -29,6 +29,8 @@ export interface RegisterPayload {
   currency: string;
   affiliate_code?: string;
   invite_code?: string;
+  /** Signup promo code. Invalid codes fail registration with 422 on this field. */
+  promo_code?: string;
   email_verification_code?: string;
   turnstileToken?: string;
   risk_context?: ClientRiskContext;

@@ -309,6 +309,7 @@ export const tr: LocaleTree = {
     "country": "Ülke",
     "currency": "Para birimi",
     "confirmPassword": "Şifreyi Onayla",
+    "promoCode": "Promosyon kodu (isteğe bağlı)",
     "loginError": "Geçersiz e-posta, kullanıcı adı veya şifre.",
     "riskBlocked": "Bu işlem güvenlik nedeniyle engellendi.",
     "riskChallenge": "Devam etmeden önce ek doğrulama gereklidir.",
