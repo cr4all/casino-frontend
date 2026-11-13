@@ -39,18 +39,18 @@ export function WalletActionButtons({ layout }: WalletActionButtonsProps) {
   }
 
   return (
-    <div className="grid grid-cols-2 gap-2 px-3 pt-2">
+    <div className="grid grid-cols-2 gap-2 px-3 pt-1.5">
       <Link
         to="/deposit"
         onClick={requireAuth}
-        className="inline-flex h-11 items-center justify-center rounded-full bg-accent-gold text-sm font-semibold text-background transition-opacity hover:opacity-90"
+        className="inline-flex h-9 items-center justify-center rounded-full bg-accent-gold text-xs font-semibold text-background transition-opacity hover:opacity-90"
       >
         {t('nav.depositLabel')}
       </Link>
       <Link
         to="/withdraw"
         onClick={requireAuth}
-        className="inline-flex h-11 items-center justify-center rounded-full border border-white/15 bg-card text-sm font-semibold text-white transition-colors hover:border-accent-gold/40"
+        className="inline-flex h-9 items-center justify-center rounded-full border border-white/15 bg-card text-xs font-semibold text-white transition-colors hover:border-accent-gold/40"
       >
         {t('nav.withdrawLabel')}
       </Link>

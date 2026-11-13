@@ -66,12 +66,12 @@ export function MobileWalletActionBar({ onMenuToggle }: MobileWalletActionBarPro
     <div className="mobile-wallet-action-bar fixed inset-x-0 bottom-0 z-30 border-t border-white/10 bg-background/95 backdrop-blur-md lg:hidden">
       <WalletActionButtons layout="mobile" />
       <nav
-        className="grid grid-cols-5 gap-1 px-1.5 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-1.5"
+        className="grid grid-cols-5 gap-1 px-1.5 pb-[max(0.375rem,env(safe-area-inset-bottom))] pt-1"
         aria-label={t('nav.platformSection')}
       >
         {tabs.map((tab) => {
           const active = tab.isActive(location.pathname);
-          const className = `flex min-h-11 min-w-0 flex-col items-center justify-center gap-1 rounded-md px-1 py-2 text-xs font-semibold transition-colors ${
+          const className = `flex min-h-9 min-w-0 flex-col items-center justify-center gap-0.5 rounded-md px-1 py-1 text-[10px] font-semibold transition-colors ${
             active ? 'text-accent-gold' : 'text-white/70 hover:text-white'
           }`;
 
@@ -83,7 +83,7 @@ export function MobileWalletActionBar({ onMenuToggle }: MobileWalletActionBarPro
                 className={className}
                 aria-current={active ? 'page' : undefined}
               >
-                <NavIcon name={tab.icon} className="h-6 w-6" />
+                <NavIcon name={tab.icon} className="h-5 w-5" />
                 <span className="truncate leading-tight">{t(tab.labelKey)}</span>
               </Link>
             );
@@ -96,7 +96,7 @@ export function MobileWalletActionBar({ onMenuToggle }: MobileWalletActionBarPro
               onClick={tab.onClick}
               className={className}
             >
-              <NavIcon name={tab.icon} className="h-6 w-6" />
+              <NavIcon name={tab.icon} className="h-5 w-5" />
               <span className="truncate leading-tight">{t(tab.labelKey)}</span>
             </button>
           );

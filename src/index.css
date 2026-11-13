@@ -1194,7 +1194,7 @@ header.sticky {
 /* Offset for fixed mobile wallet CTAs + bottom tab bar */
 @media (max-width: 1023px) {
   .has-mobile-wallet-bar {
-    --mobile-wallet-bar-offset: calc(8rem + max(0.5rem, env(safe-area-inset-bottom)) + 0.5rem);
+    --mobile-wallet-bar-offset: calc(6rem + max(0.375rem, env(safe-area-inset-bottom)));
     padding-bottom: var(--mobile-wallet-bar-offset);
   }
 
