@@ -1191,37 +1191,11 @@ header.sticky {
   min-height: calc(3.5rem + env(safe-area-inset-top, 0px));
 }
 
-.mobile-app-banner {
-  height: calc(3.25rem + env(safe-area-inset-top, 0px));
-  padding-top: env(safe-area-inset-top, 0px);
-  border-bottom: 1px solid rgba(201, 162, 39, 0.35);
-  background: linear-gradient(90deg, #3d3214 0%, #1c160c 100%);
-}
-
-.mobile-app-banner-spacer {
-  height: calc(3.25rem + env(safe-area-inset-top, 0px));
-}
-
-html[data-theme='light'] .mobile-app-banner {
-  border-bottom-color: rgba(184, 134, 11, 0.4);
-  background: linear-gradient(90deg, #ffe082 0%, #fff3c4 100%);
-}
-
-@media (max-width: 1023px) {
-  header.sticky:has(.mobile-app-banner-spacer) {
-    padding-top: 0;
-  }
-}
-
 /* Offset for fixed mobile wallet CTAs + bottom tab bar */
 @media (max-width: 1023px) {
   .has-mobile-wallet-bar {
     --mobile-wallet-bar-offset: calc(8rem + max(0.5rem, env(safe-area-inset-bottom)) + 0.5rem);
     padding-bottom: var(--mobile-wallet-bar-offset);
-  }
-
-  .app-shell:has(.mobile-app-banner-spacer) {
-    --site-header-offset: calc(6.75rem + env(safe-area-inset-top, 0px));
   }
 
   .sports-iframe-viewport--with-wallet-bar {

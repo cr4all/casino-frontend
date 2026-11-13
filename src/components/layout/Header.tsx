@@ -10,7 +10,6 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { AuthService } from '@/services/AuthService';
 import { Button } from '@/components/common/Button';
 import { LanguageSelector } from '@/components/common/LanguageSelector';
-import { MobileAppDownloadBanner } from '@/components/common/MobileAppDownloadBanner';
 import { ThemeToggle } from '@/components/common/ThemeToggle';
 import { Logo } from '@/components/common/Logo';
 import { WalletBalanceBreakdown } from '@/components/wallet/WalletBalanceBreakdown';
@@ -49,7 +48,6 @@ export function Header({ onMenuToggle, onOpenVipLevels }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-30 min-w-0 border-b border-white/[0.06] bg-background/95 backdrop-blur-md">
-      <MobileAppDownloadBanner />
       <div className="grid h-14 min-w-0 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-x-2 px-3 sm:px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_auto]">
       <button
         type="button"
